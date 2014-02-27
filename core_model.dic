@@ -1,0 +1,2398 @@
+#############################################################################
+#                                                                            #
+#                      CIF CORE MODEL DICTIONARY                             #
+#                                                                            #
+##############################################################################
+ 
+data_CORE_MODEL
+ 
+    _dictionary.title            CORE_MODEL
+    _dictionary.class            Instance
+    _dictionary.version          1.4.06 
+    _dictionary.date             2013-01-22
+    _dictionary.uri              www.iucr.org/cif/dic/core_model.dic
+    _dictionary.ddl_conformance  3.10.03
+    _dictionary.namespace        CoreModel
+    _description.text
+;
+    The DICTIONARY group encompassing the CORE MODEL data items defined
+    and used with in the Crystallographic Information Framework (CIF).
+;
+ 
+
+save_MODEL
+    _definition.id               MODEL
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2012-11-22
+    _description.text
+;
+    Items in the MODEL Category specify data for the crystal structure 
+    postulated and modelled from the atomic coordinates derived and 
+    refined from the diffraction information. The structural model is
+    described principally in terms of the geometry of the 'connected'
+    atom sites and the crystal symmetry in which they reside.
+;
+    _name.category_id            CIF_CORE
+    _name.object_id              MODEL
+      
+#============================================================================
+ 
+save_GEOM
+    _definition.id               GEOM
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to specify the geometry 
+     of the structural model as derived from the atomic sites.
+     The geometry is expressed in terms of the interatomic
+     angles (GEOM_ANGLE data), covalent bond distances 
+     (GEOM_BOND data), contact distances (GEOM_CONTACT data),
+     hydrogen bonds (GEOM_HBOND data) and torsion geometry
+     (GEOM_TORSION data).
+     Geometry data are usually redundant, in that they can be
+     calculated from other more fundamental quantities in the data
+     block. However, they serve the dual purposes of providing a
+     check on the correctness of both sets of data and of enabling
+     the most important geometric data to be identified for
+     publication by setting the appropriate publication flag.
+;
+    _description.common         'Structural geometry'
+    _name.category_id            MODEL
+    _name.object_id              GEOM
+ 
+ 
+save_geom.bond_distance_incr
+    _definition.id             '_geom.bond_distance_incr'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Increment added to the bond radii for the atomic species to
+     specify the maximum permitted "bonded" distance between two
+     atom sites.
+;
+    _description.common         'GeomBondDistIncr'
+    _name.category_id            geom
+    _name.object_id              bond_distance_incr
+    _type.purpose                Quantity     
+    _type.source                 Assigned     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0.2
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_geom.bond_distance_min
+    _definition.id             '_geom.bond_distance_min'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Minimum permitted "bonded" distance between two atom sites.
+;
+    _description.common         'GeomBondDistMin'
+    _name.category_id            geom
+    _name.object_id              bond_distance_min
+    _type.purpose                Quantity     
+    _type.source                 Assigned     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0.2
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_geom.contact_distance_incr
+    _definition.id             '_geom.contact_distance_incr'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Increment added to the bond radii for the atomic species to
+     specify the maximum permitted "contact" distance between two
+     "non-bonded" atom sites.
+;
+    _description.common         'GeomContactDistIncr'
+    _name.category_id            geom
+    _name.object_id              contact_distance_incr
+    _type.purpose                Quantity     
+    _type.source                 Assigned     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0.2
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_geom.contact_distance_min
+    _definition.id             '_geom.contact_distance_min'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Minimum permitted "contact" distance between two "non-bonded" atom sites.
+;
+    _description.common         'GeomContactDistMin'
+    _name.category_id            geom
+    _name.object_id              contact_distance_min
+    _type.purpose                Quantity     
+    _type.source                 Assigned     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0.2
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_geom.special_details
+    _definition.id             '_geom.special_details'
+     loop_
+    _alias.definition_id       '_geom_special_details'
+                               '_geom.details'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Description of geometry information not covered by the existing data
+     names in the geometry categories, such as least-squares planes.
+;
+    _description.common         'GeomSpecialDetails'
+    _name.category_id            geom
+    _name.object_id              special_details
+    _type.purpose                Describe   
+    _type.source                 Assigned     
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+#----------------------------------------------------------------------------
+
+save_GEOM_ANGLE
+    _definition.id               GEOM_ANGLE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to specify the geometry angles in the
+     structural model as derived from the atomic sites.
+;
+    _description.common         'BondAngleList'
+    _name.category_id            GEOM
+    _name.object_id              ANGLE
+    _category.key_id           '_geom_angle.key'
+    loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     dmin =  _geom.bond_distance_min
+
+     Loop  m1  as  model_site  :i  {   # loop vertex model site
+
+        rad1  =   m1.radius_bond + _geom.bond_distance_incr
+
+        Loop  m2  as  model_site  :j  {  # loop first target site
+
+           If (i==j or m1.mole_index != m2.mole_index) Next
+           v1 =  m2.Cartn_xyz - m1.Cartn_xyz
+           d1 =  Norm (v1)
+
+           If (d1<dmin or d1>(rad1+m2.radius_bond))  Next
+
+           rad2  =   m2.radius_bond + _geom.bond_distance_incr
+
+           Loop  m3  as  model_site  :k>j  {  # loop second target site
+
+              If (i==k or m1.mole_index != m3.mole_index) Next
+              v2 =  m3.Cartn_xyz - m1.Cartn_xyz
+              d2 =  Norm (v2)
+
+              If (d2<dmin or d2>(rad2+m3.radius_bond)) Next
+
+              angle =  Acosd ( v1*v2 / (d1*d2) )
+
+              geom_angle( .id        =  List ( m2.id, m1.id, m3.id ),
+                          .distances =  List ( d1, d2 ),
+                          .value     =  angle )
+     }   }   } 
+;
+
+
+save_geom_angle.key
+    _definition.id             '_geom_angle.key'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Value is a unique key to a set of GEOM_ANGLE items
+     in a looped list.
+;
+    _description.common         'Key to geometry angles'
+    _name.category_id            angle
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled   
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(geom_angle.id)
+;
+     Evaluation
+;              _geom_angle.key = _geom_angle.id
+;
+     save_
+ 
+
+save_geom_angle.atom_site_label_1
+    _definition.id             '_geom_angle.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_geom_angle_atom_site_label_1'
+                               '_geom_angle.atom_site_id_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            angle
+    _name.object_id              atom_site_label_1
+     save_
+ 
+ 
+save_geom_angle.atom_site_label_2
+    _definition.id             '_geom_angle.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_geom_angle_atom_site_label_2'
+                               '_geom_angle.atom_site_id_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            angle
+    _name.object_id              atom_site_label_2
+     save_
+ 
+ 
+save_geom_angle.atom_site_label_3
+    _definition.id             '_geom_angle.atom_site_label_3'
+     loop_
+    _alias.definition_id       '_geom_angle_atom_site_label_3'
+                               '_geom_angle.atom_site_id_3'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            angle
+    _name.object_id              atom_site_label_3
+     save_
+ 
+ 
+save_geom_angle.distances
+    _definition.id             '_geom_angle.distances'
+    _definition.update           2012-11-22
+    _description.text
+;
+     The pair of distances between sites 1 - 2 and 2 - 3.
+;
+    _name.category_id            angle
+    _name.object_id              distances
+    _type.purpose                Measurand   
+    _type.source                 Derived     
+    _type.container              List 
+    _type.contents               Real
+    _type.dimension              [2]
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_geom_angle.id
+    _definition.id             '_geom_angle.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the 
+     three atom sites which identify the angle. The second label-symop
+     pair in the list identifies the site at the apex of the angle.
+;
+    _description.common         'BondAngleId'
+    _name.category_id            angle
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Assembled
+    _type.container              List
+    _type.contents              'List(Code,Symop)'    
+    _type.dimension              [3]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_angle
+ 
+         _geom_angle.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                            [ a.atom_site_label_2, a.site_symmetry_2 ],
+                            [ a.atom_site_label_3, a.site_symmetry_3 ]]
+;
+     save_
+ 
+ 
+save_geom_angle.publ_flag
+    _definition.id             '_geom_angle.publ_flag'
+     loop_
+    _alias.definition_id       '_geom_angle_publ_flag'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Code signals if the angle is referred to in a publication or 
+     should be placed in a table of significant angles.
+;
+    _description.common         'BondAnglePublFlag'
+    _name.category_id            angle
+    _name.object_id              publ_flag
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+  loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+                                 no  'do not include angle in special list'
+                                 n   'abbreviation for "no"'
+                                 yes 'do include angle in special list'
+                                 y   'abbreviation for "yes"'
+    _enumeration.default         no
+     save_
+ 
+ 
+save_geom_angle.site_symmetry_1
+    _definition.id             '_geom_angle.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_geom_angle_site_symmetry_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            angle
+    _name.object_id              site_symmetry_1
+     save_
+ 
+ 
+save_geom_angle.site_symmetry_2
+    _definition.id             '_geom_angle.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_geom_angle_site_symmetry_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            angle
+    _name.object_id              site_symmetry_2
+     save_
+ 
+ 
+save_geom_angle.site_symmetry_3
+    _definition.id             '_geom_angle.site_symmetry_3'
+     loop_
+    _alias.definition_id       '_geom_angle_site_symmetry_3'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            angle
+    _name.object_id              site_symmetry_3
+     save_
+ 
+ 
+save_geom_angle.value
+    _definition.id             '_geom_angle.value'
+    loop_
+    _alias.definition_id       '_geom_angle'  
+    _definition.update           2012-12-14
+    _description.text
+;
+     Angle defined by the sites identified by _geom_angle.id
+;
+    _description.common         'BondAngle'
+    _name.category_id            angle
+    _name.object_id              value
+    _type.purpose                Measurand   
+    _type.source                 Derived    
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  degrees
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With a as geom_angle
+
+     xc = List()
+
+     For [label,symop] in  a.id   {
+
+         xf   =   SymEquiv(symop,  _atom_site[label].fract_xyz)
+
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+      }
+         v1,v2  =  xc[0]-xc[1], xc[2]-xc[1]
+
+      _geom_angle.value =  Acosd ( v1 * v2 / ( Norm (v1) * Norm (v2) ) )
+;
+     save_
+
+     save_    #----------- close of GEOM_ANGLE category
+
+#----------------------------------------------------------------------------
+ 
+ 
+save_GEOM_BOND
+    _definition.id               GEOM_BOND
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to specify the geometry bonds in the
+     structural model as derived from the atomic sites.
+;
+    _description.common         'BondDistList'
+    _name.category_id            GEOM
+    _name.object_id              BOND
+    _category.key_id           '_geom_bond.key'
+    loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     dmin =  _geom.bond_distance_min
+
+     Loop  m1  as  model_site  :i  {
+
+        rad   =   m1.radius_bond + _geom.bond_distance_incr
+
+        Loop  m2  as  model_site  :j  {
+
+           If (i==j or m1.mole_index != m2.mole_index) Next
+
+           d =  Norm (m1.Cartn_xyz - m2.Cartn_xyz)
+
+           If (d<dmin or d>(rad+m2.radius_bond)) Next
+
+           geom_bond( .id        =  List ( m1.id, m2.id ),
+                      .distance  =  d  )
+      }   }       
+;
+
+
+save_geom_bond.key
+    _definition.id             '_geom_bond.key'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Value is a unique key to a set of GEOM_BOND items
+     in a looped list.
+;
+    _description.common         'Key to geometry distances'
+    _name.category_id            bond
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(geom_bond.id)
+;
+     Evaluation
+;              _geom_bond.key = _geom_bond.id
+;
+     save_
+
+ 
+save_geom_bond.atom_site_label_1
+    _definition.id             '_geom_bond.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_geom_bond_atom_site_label_1'
+                               '_geom_bond.atom_site_id_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            bond
+    _name.object_id              atom_site_label_1
+     save_
+ 
+ 
+save_geom_bond.atom_site_label_2
+    _definition.id             '_geom_bond.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_geom_bond_atom_site_label_2'
+                               '_geom_bond.atom_site_id_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            bond
+    _name.object_id              atom_site_label_2
+     save_
+ 
+ 
+save_geom_bond.distance
+    _definition.id             '_geom_bond.distance'
+     loop_
+    _alias.definition_id       '_geom_bond_distance'
+                               '_geom_bond.dist'
+    _definition.update           2012-12-14
+    _description.text
+;
+     Intramolecular bond distance between the sites identified 
+     by _geom_bond.id
+;
+    _description.common         'BondDist'
+    _name.category_id            bond
+    _name.object_id              distance
+    _type.purpose                Measurand   
+    _type.source                 Derived    
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms 
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With b as geom_bond
+
+     xc = List()
+
+     For [label,symop] in  b.id   {
+
+         xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
+
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+      }
+      _geom_bond.distance =  Norm ( xc[0] - xc[1] )
+;
+     save_
+ 
+
+save_geom_bond.valence
+    _definition.id             '_geom_bond.valence'
+     loop_
+    _alias.definition_id       '_geom_bond_valence'
+    _definition.update           2012-12-11
+    _description.text
+;
+     Bond valence calculated from the bond distance.
+;
+    _name.category_id            bond
+    _name.object_id              valence
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+     save_
+
+
+save_geom_bond.id
+    _definition.id             '_geom_bond.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond distance in terms of the atom site labels and 
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _description.common         'BondDistId'
+    _name.category_id            bond
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Assembled
+    _type.container              List
+    _type.contents              'List(Code,Symop)'      
+    _type.dimension              [2]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_bond
+ 
+           _geom_bond.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                             [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+ 
+ 
+save_geom_bond.publ_flag
+    _definition.id             '_geom_bond.publ_flag'
+     loop_
+    _alias.definition_id       '_geom_bond_publ_flag'
+    _definition.update           2012-11-22
+    _description.text
+;
+     This code signals whether the angle is referred to in a
+     publication or should be placed in a table of significant angles.
+;
+    _description.common         'BondDistPublFlag'
+    _name.category_id            bond
+    _name.object_id              publ_flag
+    _type.purpose                Quantity     
+    _type.source                 Selected     
+    _type.container              Single
+  loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+                                 no  'do not include bond in special list'
+                                 n   'abbreviation for "no"'
+                                 yes 'do include bond in special list'
+                                 y   'abbreviation for "yes"'
+    _enumeration.default         no
+     save_
+ 
+
+save_geom_bond.multiplicity
+    _definition.id             '_geom_bond.multiplicity'
+     loop_
+    _alias.definition_id       '_geom_bond_multiplicity'
+    _definition.update           2013-01-22
+    _description.text
+;
+     The number of times the given bond appears in the environment
+     of the atoms labelled _geom_bond.atom_site_label_1. In cases
+     where the full list of bonds is given, one of the series of
+     equivalent bonds may be assigned the appropriate multiplicity
+     while the others are assigned a value of 0.
+;
+    _name.category_id            bond
+    _name.object_id              multiplicity
+    _type.purpose                Quantity
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Count
+     save_
+
+ 
+save_geom_bond.site_symmetry_1
+    _definition.id             '_geom_bond.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_geom_bond_site_symmetry_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            bond
+    _name.object_id              site_symmetry_1
+     save_
+ 
+ 
+save_geom_bond.site_symmetry_2
+    _definition.id             '_geom_bond.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_geom_bond_site_symmetry_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            bond
+    _name.object_id              site_symmetry_2
+     save_
+
+     save_    #----------- close of GEOM_BOND category
+ 
+#----------------------------------------------------------------------------
+ 
+ 
+save_GEOM_CONTACT
+    _definition.id               GEOM_CONTACT
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to specify the interatomic
+     contact distances in the structural model.
+;
+    _description.common         'Bond contact list'
+    _name.category_id            GEOM
+    _name.object_id              CONTACT
+    _category.key_id           '_geom_contact.key'
+    loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     Loop  m1  as  model_site  {
+
+        rb  =   m1.radius_bond    + _geom.bond_distance_incr
+        rc  =   m1.radius_contact + _geom.contact_distance_incr
+
+        Loop  m2  as  model_site  {
+
+           If (m2.id[1] != '1_555')  Next
+           radb  =   rb + m2.radius_bond 
+           radc  =   rc + m2.radius_contact
+           label =   m2.id[0]
+
+           Loop  s  as  symmetry_equiv  :ns   {
+
+              axyz      =   s.R * m2.fract_xyz + s.T
+
+              Do i = -2,2 { Do j = -2,2 { Do k = -2,2 { # cell translations
+
+                 tran  =   List ([i,j,k])
+                 bxyz  =   axyz + tran
+                 cxyz  =  _atom_sites_Cartn_transform.matrix * bxyz
+                 d     =   Norm (cxyz - m1.Cartn_xyz)
+
+                 If (d < radb or d > radc) Next
+
+                 id        =  List( m1.id, List( label, Symop(ns+1,tran) ) )
+
+                 geom_contact( .id        =  id, 
+                               .distance  =  d  )
+     }  }  }  }  }  }
+;
+
+
+save_geom_contact.key
+    _definition.id             '_geom_contact.key'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Value is a unique key to a set of GEOM_CONTACT items
+     in a looped list.
+;
+    _description.common         'Key to geometry contact data'
+    _name.category_id            contact
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled    
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(geom_contact.id)
+;
+     Evaluation
+;              _geom_contact.key = _geom_contact.id
+;
+     save_
+ 
+ 
+save_geom_contact.atom_site_label_1
+    _definition.id             '_geom_contact.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_geom_contact_atom_site_label_1'
+                               '_geom_contact.atom_site_id_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            contact
+    _name.object_id              atom_site_label_1
+     save_
+ 
+ 
+save_geom_contact.atom_site_label_2
+    _definition.id             '_geom_contact.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_geom_contact_atom_site_label_2'
+                               '_geom_contact.atom_site_id_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            contact
+    _name.object_id              atom_site_label_2
+     save_
+ 
+
+save_geom_contact.distance
+    _definition.id             '_geom_contact.distance'
+     loop_
+    _alias.definition_id       '_geom_contact_distance'
+                               '_geom_contact.dist'
+    _definition.update           2012-12-14
+    _description.text
+;
+     Intermolecular distance between the atomic sites identifyed 
+     by _geom_contact.id
+;
+    _description.common         'BondContactDist'
+    _name.category_id            contact
+    _name.object_id              distance
+    _type.purpose                Measurand   
+    _type.source                 Derived      
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms 
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With c as geom_contact
+
+     xc = List()
+
+     For [label,symop] in  c.id   {
+
+         xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
+
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+     }
+     _geom_contact.distance =  Norm ( xc[0] - xc[1] )
+;
+     save_
+ 
+ 
+save_geom_contact.id
+    _definition.id             '_geom_contact.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     two atom sites which define the contact bond.
+;
+    _description.common         'BondContactId'
+    _name.category_id            contact
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Assembled    
+    _type.container              List
+    _type.contents              'List(Code,Symop)'      
+    _type.dimension              [2]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_contact
+ 
+          _geom_contact.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                               [ a.atom_site_label_2, a.site_symmetry_2 ]] 
+;
+     save_
+
+
+save_geom_contact.publ_flag
+    _definition.id             '_geom_contact.publ_flag'
+     loop_
+    _alias.definition_id       '_geom_contact_publ_flag'
+    _definition.update           2012-11-22
+    _description.text
+;
+     This code signals whether the contact distance is referred to
+     in a publication or should be placed in a list of significant
+     contact distances.
+;
+    _description.common         'BondContactPublFlag'
+    _name.category_id            contact
+    _name.object_id              publ_flag
+    _type.purpose                Quantity     
+    _type.source                 Selected     
+    _type.container              Single
+  loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+                                 no  'do not include distance in special list'
+                                 n   'abbreviation for "no"'
+                                 yes 'do include distance in special list'
+                                 y   'abbreviation for "yes"'
+    _enumeration.default         no
+     save_
+ 
+ 
+save_geom_contact.site_symmetry_1
+    _definition.id             '_geom_contact.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_geom_contact_site_symmetry_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            contact
+    _name.object_id              site_symmetry_1
+     save_
+ 
+ 
+save_geom_contact.site_symmetry_2
+    _definition.id             '_geom_contact.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_geom_contact_site_symmetry_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            contact
+    _name.object_id              site_symmetry_2
+     save_
+
+     save_    #----------- close of GEOM_CONTACT category
+ 
+#----------------------------------------------------------------------------
+
+ 
+save_GEOM_HBOND
+    _definition.id               GEOM_HBOND
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to specify the hydrogen bond 
+     distances in the structural model as derived from atomic sites.
+;
+    _description.common         'HbondList'
+    _name.category_id            GEOM
+    _name.object_id              HBOND
+    _category.key_id           '_geom_hbond.key'
+
+
+save_geom_hbond.key
+    _definition.id             '_geom_hbond.key'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Value is a unique key to a set of GEOM_HBOND items
+     in a looped list.
+;
+    _description.common         'Key to hydrogen bond data'
+    _name.category_id            hbond
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled   
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(geom_hbond.id)
+;
+     Evaluation
+;              _geom_hbond.key = _geom_hbond.id
+;
+     save_
+ 
+ 
+save_geom_hbond.angle_DHA
+    _definition.id             '_geom_hbond.angle_DHA'
+     loop_
+    _alias.definition_id       '_geom_hbond_angle_DHA'
+    _definition.update           2012-12-14
+    _description.text
+;
+     Angle subtended by the sites identifyed in _geom_hbond.id.
+     The hydrogen at site H is at the apex of the angle.
+;
+    _description.common         'HbondAngleDHA'
+    _name.category_id            hbond
+    _name.object_id              angle_DHA
+    _type.purpose                Measurand   
+    _type.source                 Derived     
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  degrees
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With h as geom_hbond
+
+     xc = List()
+
+     For [label,symop] in  h.id   {
+
+         xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
+
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+      }
+         v1,v2  =  xc[0]-xc[1], xc[2]-xc[1]
+
+     _geom_hbond.angle_DHA  =  Acosd ( v1 * v2 / ( Norm (v1) * Norm (v2) ) )
+;
+    save_
+ 
+ 
+save_geom_hbond.atom_site_label_A
+    _definition.id             '_geom_hbond.atom_site_label_A'
+     loop_
+    _alias.definition_id       '_geom_hbond_atom_site_label_A'
+                               '_geom_hbond.atom_site_id_A'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            hbond
+    _name.object_id              atom_site_label_A
+     save_
+ 
+ 
+save_geom_hbond.atom_site_label_D
+    _definition.id             '_geom_hbond.atom_site_label_D'
+     loop_
+    _alias.definition_id       '_geom_hbond_atom_site_label_D'
+                               '_geom_hbond.atom_site_id_D'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            hbond
+    _name.object_id              atom_site_label_D
+     save_
+ 
+ 
+save_geom_hbond.atom_site_label_H
+    _definition.id             '_geom_hbond.atom_site_label_H'
+     loop_
+    _alias.definition_id       '_geom_hbond_atom_site_label_H'
+                               '_geom_hbond.atom_site_id_H'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            hbond
+    _name.object_id              atom_site_label_H
+     save_
+ 
+ 
+save_geom_hbond.distance_DH
+    _definition.id             '_geom_hbond.distance_DH'
+     loop_
+    _alias.definition_id       '_geom_hbond_distance_DH'
+                               '_geom_hbond.dist_DH'
+    _definition.update           2012-12-14
+    _description.text
+;
+     The set of data items which specify the distance between the
+     three atom sites identified by _geom_hbond.id.
+;
+    _name.category_id            hbond
+    _name.object_id              distance_DH
+    _type.purpose                Measurand   
+    _type.source                 Derived     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  angstroms 
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     xc = List()
+ 
+     Do i=0,1  {
+         l,s  =   _geom_hbond.id [i]
+         xf   =   SymEquiv(s, _atom_site[l].fract_xyz)
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+     }
+      _geom_hbond.distance_DH =  Norm ( xc[0] - xc[1] )
+;
+     save_
+ 
+ 
+save_geom_hbond.distance_HA
+    _definition.id             '_geom_hbond.distance_HA'
+     loop_
+    _alias.definition_id       '_geom_hbond_distance_HA'
+                               '_geom_hbond.dist_HA'
+    _definition.update           2012-12-14
+    _description.text
+;
+     The set of data items which specify the distance between the
+     three atom sites identified by _geom_hbond.id.
+;
+    _name.category_id            hbond
+    _name.object_id              distance_HA
+    _type.purpose                Measurand   
+    _type.source                 Derived     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  angstroms 
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     xc = List()
+ 
+     Do i=1,2  {
+         l,s  =   _geom_hbond.id [i]
+         xf   =   SymEquiv(s, _atom_site[l].fract_xyz)
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+     }
+      _geom_hbond.distance_HA =  Norm ( xc[0] - xc[1] )
+;
+     save_
+ 
+ 
+save_geom_hbond.distance_DA
+    _definition.id             '_geom_hbond.distance_DA'
+     loop_
+    _alias.definition_id       '_geom_hbond_distance_DA'
+                               '_geom_hbond.dist_DA'
+    _definition.update           2012-12-14
+    _description.text
+;
+     The set of data items which specify the distance between the
+     three atom sites identified by _geom_hbond.id.
+;
+    _name.category_id            hbond
+    _name.object_id              distance_DA
+    _type.purpose                Measurand   
+    _type.source                 Derived     
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  angstroms 
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     xc = List()
+ 
+     Do i=0,2,2  {
+         l,s  =   _geom_hbond.id [i]
+         xf   =   SymEquiv(s, _atom_site[l].fract_xyz)
+         xc ++=  _atom_sites_Cartn_transform.matrix * xf
+      }
+      _geom_hbond.distance_DA =  Norm ( xc[0] - xc[1] )
+;
+     save_
+ 
+ 
+save_geom_hbond.id
+    _definition.id             '_geom_hbond.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     three atom sites which define the hydrogen angle and distances.
+     Site H is at the apex of the angle.
+;
+    _description.common         'HbondId'
+    _name.category_id            hbond
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Assembled
+    _type.container              List
+    _type.contents              'List(Code,Symop)'      
+    _type.dimension              [3]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_hbond
+ 
+         _geom_hbond.id =  [[ a.atom_site_label_D, a.site_symmetry_D ],
+                            [ a.atom_site_label_H, a.site_symmetry_H ],
+                            [ a.atom_site_label_A, a.site_symmetry_A ]]
+;
+     save_
+
+
+save_geom_hbond.publ_flag
+    _definition.id             '_geom_hbond.publ_flag'
+     loop_
+    _alias.definition_id       '_geom_hbond_publ_flag'
+    _definition.update           2012-11-22
+    _description.text
+;
+     This code signals whether the hydrogen-bond information
+     is referred to in a publication or should be placed in a
+     table of significant hydrogen-bond geometry.
+;
+    _description.common         'HbondPublFlag'
+    _name.category_id            hbond
+    _name.object_id              publ_flag
+    _type.purpose                Quantity     
+    _type.source                 Selected     
+    _type.container              Single
+  loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+                                 no  'do not include bond in special list'
+                                 n   'abbreviation for "no"'
+                                 yes 'do include bond in special list'
+                                 y   'abbreviation for "yes"'
+    _enumeration.default         no
+     save_
+ 
+ 
+save_geom_hbond.site_symmetry_A
+    _definition.id             '_geom_hbond.site_symmetry_A'
+     loop_
+    _alias.definition_id       '_geom_hbond_site_symmetry_A'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            hbond
+    _name.object_id              site_symmetry_A
+     save_
+
+ 
+save_geom_hbond.site_symmetry_D
+    _definition.id             '_geom_hbond.site_symmetry_D'
+     loop_
+    _alias.definition_id       '_geom_hbond_site_symmetry_D'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            hbond
+    _name.object_id              site_symmetry_D
+     save_
+ 
+ 
+save_geom_hbond.site_symmetry_H
+    _definition.id             '_geom_hbond.site_symmetry_H'
+     loop_
+    _alias.definition_id       '_geom_hbond_site_symmetry_H'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            hbond
+    _name.object_id              site_symmetry_H
+     save_
+
+     save_    #----------- close of GEOM_HBOND category
+ 
+#----------------------------------------------------------------------------
+ 
+ 
+save_GEOM_TORSION
+    _definition.id               GEOM_TORSION
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to specify the torsion angles in the
+     structural model as derived from the atomic sites.
+;
+    _description.common         'Torsion angle list'
+    _name.category_id            GEOM
+    _name.object_id              TORSION
+    _category.key_id           '_geom_torsion.key'
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     dmin =  _geom.bond_distance_min
+
+     Loop  m1  as  model_site  :i  {
+
+        rad1  =   m1.radius_bond + _geom.bond_distance_incr
+
+        Loop  m2  as  model_site  :j  {
+
+           If (i==j or m2.mole_index!=m1.mole_index) Next
+           v21 =  m1.Cartn_xyz - m2.Cartn_xyz
+           d21 =  Norm (v21)
+
+           If (d21 < dmin or d21 > (rad1+m2.radius_bond)) Next
+           rad2  =   m2.radius_bond + _geom.bond_distance_incr
+
+           Loop  m3  as  model_site  :k  {
+
+              If (k==i or k==j or m3.mole_index!=m2.mole_index) Next
+              v23 =  m3.Cartn_xyz - m2.Cartn_xyz
+              d23 =  Norm (v23)
+
+              If (d23 < dmin or d23 > (rad2+m3.radius_bond)) Next
+              rad3  =   m3.radius_bond + _geom.bond_distance_incr
+
+              Loop  m4  as  model_site  :l  {
+
+                 If (l==k or l==j or l==i or m4.mole_index!=m3.mole_index) Next
+                 v34 =  m4.Cartn_xyz - m3.Cartn_xyz
+                 d34 =  Norm (v34)
+
+                 If (d34 < dmin or d34 > (rad3+m4.radius_bond)) Next
+
+                 u1    =   v21 ^ v23
+                 u2    =   v34 ^ v23
+
+                 angle =  Acosd ( u1 * u2 / ( Norm(u1) * Norm(u2) ) )
+                 If ( (u1^u2)*v23 < 0 ) angle = -angle
+
+                 geom_torsion( .id        =  List ( m1.id,m2.id,m3.id,m4.id ),
+                               .distances =  List ( d21,d23,d34 ),
+                               .angle     =  angle )
+     }   }   }    } 
+;
+
+
+save_geom_torsion.key
+    _definition.id             '_geom_torsion.key'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Value is a unique key to a set of GEOM_TORSION items
+     in a looped list.
+;
+    _description.common         'Key to geometry torsion data'
+    _name.category_id            torsion
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(geom_torsion.id)
+;
+     Evaluation
+;              _geom_torsion.key = _geom_torsion.id
+;
+     save_
+ 
+ 
+save_geom_torsion.atom_site_label_1
+    _definition.id             '_geom_torsion.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_geom_torsion_atom_site_label_1'
+                               '_geom_torsion.atom_site_id_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            torsion
+    _name.object_id              atom_site_label_1
+     save_
+ 
+ 
+save_geom_torsion.atom_site_label_2
+    _definition.id             '_geom_torsion.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_geom_torsion_atom_site_label_2'
+                               '_geom_torsion.atom_site_id_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            torsion
+    _name.object_id              atom_site_label_2
+     save_
+ 
+ 
+save_geom_torsion.atom_site_label_3
+    _definition.id             '_geom_torsion.atom_site_label_3'
+     loop_
+    _alias.definition_id       '_geom_torsion_atom_site_label_3'
+                               '_geom_torsion.atom_site_id_3'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            torsion
+    _name.object_id              atom_site_label_3
+     save_
+ 
+ 
+save_geom_torsion.atom_site_label_4
+    _definition.id             '_geom_torsion.atom_site_label_4'
+     loop_
+    _alias.definition_id       '_geom_torsion_atom_site_label_4'
+                               '_geom_torsion.atom_site_id_4'
+    _import.get          [{"file":'templ_attr.cif',"save":'atom_site_label'}]
+    _name.category_id            torsion
+    _name.object_id              atom_site_label_4
+     save_
+ 
+
+save_geom_torsion.distances
+    _definition.id             '_geom_torsion.distances'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Distances between sites 1 - 2, 2 - 3 and 3 - 4.
+;
+    _name.category_id            torsion
+    _name.object_id              distances
+    _type.purpose                Measurand   
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               Real
+    _type.dimension              [3]
+    _units.code                  angstroms
+     save_
+
+ 
+save_geom_torsion.id
+    _definition.id             '_geom_torsion.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     four atom sites which define the torsion angle.
+;
+    _description.common         'TorsionAngleId'
+    _name.category_id            torsion
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Assembled
+    _type.container              List
+    _type.contents              'List(Code,Symop)'    
+    _type.dimension              [4]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_torsion
+ 
+         _geom_torsion.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                              [ a.atom_site_label_2, a.site_symmetry_2 ],
+                              [ a.atom_site_label_3, a.site_symmetry_3 ],
+                              [ a.atom_site_label_4, a.site_symmetry_4 ]]
+;
+     save_
+ 
+ 
+save_geom_torsion.publ_flag
+    _definition.id             '_geom_torsion.publ_flag'
+     loop_
+    _alias.definition_id       '_geom_torsion_publ_flag'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Code signals if the torsion angle is required for publication.
+;
+    _description.common         'TorsionAnglePublFlag'
+    _name.category_id            torsion
+    _name.object_id              publ_flag
+    _type.purpose                Quantity     
+    _type.source                 Selected     
+    _type.container              Single
+  loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+                                 Yes  'Publish'
+                                 No   'Do not publish'
+    _enumeration.default         No
+     save_
+ 
+ 
+save_geom_torsion.angle
+    _definition.id             '_geom_torsion.angle'
+     loop_
+    _alias.definition_id       '_geom_torsion'
+                               '_geom_torsion.value'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Angle defined by the sites identifyed in _geom_torsion.id.
+     The torsion-angle definition should be that of Klyne and Prelog. 
+     The vector direction *_label_2 to *_label_3 is the viewing 
+     direction, and the torsion angle is the angle of twist required
+     to superimpose the projection of the vector between site 2 and
+     site 1 onto the projection of the vector between site 3 and 
+     site 4. Clockwise torsions are positive, anticlockwise torsions
+     are negative.
+     Ref: Klyne, W. & Prelog, V. (1960). Experientia, 16, 521-523.
+;
+    _description.common         'TorsionAngle'
+    _name.category_id            torsion
+    _name.object_id              angle
+    _type.purpose                Measurand   
+    _type.source                 Derived      
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  degrees
+     save_
+ 
+ 
+save_geom_torsion.site_symmetry_1
+    _definition.id             '_geom_torsion.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_geom_torsion_site_symmetry_1'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            torsion
+    _name.object_id              site_symmetry_1
+     save_
+ 
+ 
+save_geom_torsion.site_symmetry_2
+    _definition.id             '_geom_torsion.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_geom_torsion_site_symmetry_2'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            torsion
+    _name.object_id              site_symmetry_2
+     save_
+ 
+ 
+save_geom_torsion.site_symmetry_3
+    _definition.id             '_geom_torsion.site_symmetry_3'
+     loop_
+    _alias.definition_id       '_geom_torsion_site_symmetry_3'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            torsion
+    _name.object_id              site_symmetry_3
+     save_
+ 
+ 
+save_geom_torsion.site_symmetry_4
+    _definition.id             '_geom_torsion.site_symmetry_4'
+     loop_
+    _alias.definition_id       '_geom_torsion_site_symmetry_4'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            torsion
+    _name.object_id              site_symmetry_4
+     save_
+
+     save_    #----------- close of GEOM_TORSION category
+
+     save_    #----------- close of GEOM category
+
+
+#============================================================================
+
+save_VALENCE
+    _definition.id               VALENCE
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2012-12-13
+    _description.text
+;
+     The CATEGORY of items used to specify bond valence parameters
+     used to calculate bond valences from bond lengths. 
+;
+    _description.common         'BondValence'
+    _name.category_id            MODEL
+    _name.object_id              VALENCE
+
+
+#----------------------------------------------------------------------------
+
+save_VALENCE_PARAM
+    _definition.id               VALENCE_PARAM
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-12-13
+    _description.text
+;
+     The CATEGORY of items for listing bond valences.
+;
+    _name.category_id            VALENCE
+    _name.object_id              PARAM
+    _category.key_id           '_valence_param.key'
+
+
+save_valence_param.key
+    _definition.id             '_valence_param.key'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Unique key to looped list of VALENCE_PARAM items.
+;
+    _description.common         'Key to bond valences'
+    _name.category_id            param
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(valence_param.id)
+;
+     Evaluation
+;              _valence_param.key = _valence_param.id
+;
+     save_
+
+
+save_valence_param.id
+    _definition.id             '_valence_param.id'
+     loop_
+    _alias.definition_id       '_valence_param_id'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Unique index loop number of the valence parameter loop.
+;
+    _name.category_id            param
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Index
+     save_
+
+
+save_valence_param.ref_id
+    _definition.id             '_valence_param.ref_id'
+     loop_
+    _alias.definition_id       '_valence_param_ref_id'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Code linking parameters to the key valence_ref.id key
+     in the reference list in category VALENCE_REF.
+;
+    _name.category_id            param
+    _name.object_id              ref_id
+    _name.linked_item_id       '_valence_ref.id'
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Code
+     save_
+
+
+save_valence_param.atom_1
+    _definition.id             '_valence_param.atom_1'
+     loop_
+    _alias.definition_id       '_valence_param_atom_1'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Atom type symbol for atom 1 forming a bond whose
+     valence parameters are given in this category.
+;
+    _name.category_id            param
+    _name.object_id              atom_1
+    _name.linked_item_id       '_atom_type.symbol'
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Code
+     save_
+
+
+save_valence_param.atom_2       
+    _definition.id             '_valence_param.atom_2'
+     loop_
+    _alias.definition_id       '_valence_param_atom_2'
+    _definition.update           2012-12-13
+    _description.text            
+;   
+     Atom type symbol for atom 2 forming a bond whose
+     valence parameters are given in this category.
+;   
+    _name.category_id            param
+    _name.object_id              atom_2
+    _name.linked_item_id       '_atom_type.symbol'
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Code
+     save_
+
+
+save_valence_param.atom_1_valence       
+    _definition.id             '_valence_param.atom_1_valence'
+     loop_
+    _alias.definition_id       '_valence_param_atom_1_valence'
+    _definition.update           2012-12-13
+    _description.text            
+;   
+     The valence (formal charge) of the atom 1 whose bond
+     valence parameters are given in this category.
+;   
+    _name.category_id            param
+    _name.object_id              atom_1_valence
+    _type.purpose                Quantity
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+     save_
+
+
+save_valence_param.atom_2_valence
+    _definition.id             '_valence_param.atom_2_valence'
+     loop_
+    _alias.definition_id       '_valence_param_atom_2_valence'
+    _definition.update           2012-12-13
+    _description.text
+;
+     The valence (formal charge) of the atom 2 whose bond
+     valence parameters are given in this category. 
+;  
+    _name.category_id            param
+    _name.object_id              atom_2_valence
+    _type.purpose                Quantity
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+     save_
+
+
+save_valence_param.B
+    _definition.id             '_valence_param.B'
+     loop_
+    _alias.definition_id       '_valence_param_B'
+    _definition.update           2012-12-13
+    _description.text
+;
+     The bond valence parameter B used in the expression
+     s = exp[(Ro - R)/B] where s is the valence of bond length R.
+; 
+    _name.category_id            param
+    _name.object_id              B
+    _type.purpose                Quantity
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  Angstroms
+     save_
+
+
+save_valence_param.Ro
+    _definition.id             '_valence_param.Ro'
+     loop_
+    _alias.definition_id       '_valence_param_Ro'
+    _definition.update           2012-12-13
+    _description.text
+;   
+     The bond valence parameter Ro used in the expression
+     s = exp[(Ro - R)/B] where s is the valence of bond length R.
+;   
+    _name.category_id            param
+    _name.object_id              Ro
+    _type.purpose                Quantity
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  Angstroms
+     save_
+
+
+save_valence_param.details
+    _definition.id             '_valence_param.details'
+     loop_
+    _alias.definition_id       '_valence_param_details'
+    _definition.update           2012-12-13
+    _description.text
+;   
+     Details of valence parameters of stated bond.
+;   
+    _name.category_id            param
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+     save_
+
+     save_    #----------- close of VALENCE_PARAM category
+
+
+#----------------------------------------------------------------------------
+
+save_VALENCE_REF
+    _definition.id               VALENCE_REF
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-12-13
+    _description.text
+;
+     The CATEGORY of items for listing valence references.
+;
+    _name.category_id            VALENCE
+    _name.object_id              REF
+    _category.key_id           '_valence_ref.key'
+
+
+save_valence_ref.key
+    _definition.id             '_valence_ref.key'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Unique key to looped list of VALENCE_REF items.
+;
+    _description.common         'Key to bond valences'
+    _name.category_id            ref
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(valence_ref.id)
+;
+     Evaluation
+;              _valence_ref.key = _valence_ref.id
+;
+     save_
+
+
+save_valence_ref.id
+    _definition.id             '_valence_ref.id'
+     loop_
+    _alias.definition_id       '_valence_ref_id'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Unique loop code of the valence references.
+;
+    _name.category_id            ref
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Code
+     save_
+
+
+save_valence_ref.reference
+    _definition.id             '_valence_ref.reference'
+     loop_
+    _alias.definition_id       '_valence_ref_reference'
+    _definition.update           2012-12-13
+    _description.text
+;  
+     Literature reference from which the valence parameters
+     identified by _valence_param.id were taken
+;  
+    _name.category_id            ref
+    _name.object_id              reference
+    _type.purpose                Describe
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+     save_
+
+     save_    #----------- close of VALENCE_REF category
+
+     save_    #----------- close of VALENCE category
+
+
+#============================================================================
+
+save_MODEL_SITE
+    _definition.id               MODEL_SITE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2012-11-22
+    _description.text
+;
+     The CATEGORY of data items used to describe atomic sites and 
+     connections in the proposed atomic model.
+;
+    _description.common         'ModelSiteList'
+    _name.category_id            MODEL
+    _name.object_id              SITE
+    _category.key_id           '_model_site.key'
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+# Store unique sites as a local list   
+
+     atomlist  = List()
+     Loop  a  as  atom_site  {
+        axyz       =    a.fract_xyz
+        cxyz       =   _atom_sites_Cartn_transform.matrix * axyz
+        radb       =   _atom_type[a.type_symbol].radius_bond
+        radc       =   _atom_type[a.type_symbol].radius_contact
+        ls         =   List ( a.label, "1_555" )
+        atomlist ++=   [ls, axyz, cxyz, radb, radc, 0]
+     }
+
+# Store closest connected sites as a list
+
+     molelist  = List()
+     dmin     =  _geom.bond_distance_min
+     m        =  0
+     n        =  0
+
+     For [ls1,a1,c1,rb1,rc1,m1] in atomlist  {
+         If (m1 != 0) Next 
+         m         +=  1 
+         n         +=  1 
+         molelist ++=  [ls1,a1,c1,rb1,rc1,n,m]
+         atomlist --=  [ls1,a1,c1,rb1,rc1,m]
+  
+         Repeat  {
+             connect =  "no"
+
+             For [ls2,a2,c2,rb2,rc2,n2,m2] in molelist  {
+                 If (m2 != m) Next 
+   
+                 For [ls3,a3,c3,rb3,rc3,m3] in atomlist  {
+                     dmax  =  rb2 + rb3 + _geom.bond_distance_incr
+   
+                     Loop  s  as  symmetry_equiv  :ns   {
+
+                         axyz      =   s.R * a3 + s.T
+                         bxyz,tran =   Closest (axyz, a2)    
+                         cxyz      =  _atom_sites_Cartn_transform.matrix *bxyz
+                         d         =   Norm (cxyz - c2)     
+      
+                        If (d > dmin and d < dmax)          {
+                            ls  =   List ( ls3[0], Symop(ns+1, tran) )    
+      
+                            If (ls not in Strip(molelist,0))    {   
+                                n         +=  1
+                                molelist ++=  [ls,bxyz,cxyz,rb3,rc3,n,m] 
+                                atomlist --=  [ls3,a3,c3,rb3,rc3,m]  
+                                connect    =  "yes"
+         }   }   }   }   }
+        If (connect == "no") Break
+     }  }  
+
+# Store connected molecular sites as MODEL_SITE list
+
+     For [ls,ax,cx,rb,rc,n,m] in molelist  {
+
+        model_site( .id              =  ls,
+                    .fract_xyz       =  ax,
+                    .Cartn_xyz       =  cx,
+                    .radius_bond     =  rb,
+                    .radius_contact  =  rc,
+                    .index           =  n,
+                    .mole_index      =  m  )  
+      }
+;
+
+
+save_model_site.key
+    _definition.id             '_model_site.key'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Value is a unique key to a set of MODEL_SITE items
+     in a looped list.
+;
+    _description.common         'Key to model atomic sites'
+    _name.category_id            site
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Assembled
+    _type.container              Single
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;              _type.contents = Type_Contents(model_site.id)
+;
+     Evaluation
+;              _model_site.key = _model_site.id
+;
+     save_
+
+ 
+save_model_site.display_colour
+    _definition.id             '_model_site.display_colour'
+    _definition.update           2013-01-23
+    _description.text
+;
+     Display colour code assigned to this atom site. Note that the
+     possible colours are enumerated in the colour_RBG list, and 
+     the default code is enumerated in the colour_hue list.
+;
+    _description.common         'AtomTypeColour'
+    _name.category_id            site
+    _name.object_id              display_colour
+    _type.purpose                State
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Code
+    _import.get          [{"file":'templ_enum.cif',"save":'colour_RGB'},
+                          {"file":'templ_enum.cif',"save":'colour_hue'}]
+    _enumeration.def_index_id  '_model_site.type_symbol'
+     save_
+ 
+
+save_model_site.radius_bond
+    _definition.id             '_model_site.radius_bond'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atomic radius of atom located at this site.
+;
+    _description.common         'ModelSiteBondRadius'
+    _name.category_id            site
+    _name.object_id              radius_bond
+    _type.purpose                Quantity     
+    _type.source                 Derived 
+    _type.container              Single
+    _type.contents               Real
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  m  as  model_site
+
+    _model_site.radius_bond =  _atom_type[m.type_symbol].radius_bond
+;
+     save_
+
+
+save_model_site.adp_matrix_beta
+    _definition.id             '_model_site.adp_matrix_beta'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Matrix of dimensionless anisotropic atomic displacement parameters.
+;
+    _description.common         'ModelSiteAdpMatrixBeta'
+    _name.category_id            site
+    _name.object_id              adp_matrix_beta
+    _type.purpose                Measurand   
+    _type.source                 Derived 
+    _type.container              Matrix
+    _type.contents               Real
+    _type.dimension              [3,3]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     [label,symop] =   _model_site.id
+
+     a = atom_site[label]
+     s = symmetry_equiv[SymKey(symop)]
+
+     _model_site.adp_matrix_beta =  s.R * a.matrix_beta * s.RT
+;
+     save_
+
+
+save_model_site.adp_eigen_system
+    _definition.id             '_model_site.adp_eigen_system'
+    _definition.update           2012-11-22
+    _description.text
+;
+     The set of three adp eigenvales and associated eigenvectors 
+     in the form of 4 element List. Each list has the form 
+
+                   (val, vecX, vecY, vecZ) 
+
+     where the vector elements are direction cosines to the orthogonal
+     axes X,Y,Z. The lists are sorted in descending magnitude of val.
+     That is, the list with the largest val is first, and the smallest
+     val is last.
+;
+    _description.common         'ModelSiteAdpEigenSystem'
+    _name.category_id            site
+    _name.object_id              adp_eigen_system
+    _type.purpose                Measurand   
+    _type.source                 Derived 
+    _type.container              List
+    _type.contents               List(Real,Real,Real,Real)
+    _type.dimension              [3]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+      A    =  _cell.orthogonal_matrix
+      U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
+
+      _model_site.adp_eigen_system  =  Eigen( U )
+
+;
+     save_
+
+
+save_model_site.radius_contact
+    _definition.id             '_model_site.radius_contact'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atomic contact radius of atom specie located at this site.
+;
+    _description.common         'ModelSiteContactRadius'
+    _name.category_id            site
+    _name.object_id              radius_contact
+    _type.purpose                Quantity     
+    _type.source                 Derived 
+    _type.container              Single
+    _type.contents               Real
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  m  as  model_site
+
+    _model_site.radius_contact =  _atom_type[m.type_symbol].radius_contact
+;
+     save_
+
+
+save_model_site.Cartn_xyz
+    _definition.id             '_model_site.Cartn_xyz'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Vector of Cartesian (orthogonal angstrom) atom site coordinates.
+;
+    _description.common         'ModelCartCoords'
+    _name.category_id            site
+    _name.object_id              Cartn_xyz
+    _type.purpose                Measurand   
+    _type.source                 Derived 
+    _type.container              Matrix
+    _type.contents               Real
+    _type.dimension              [3]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With  m  as  model_site
+
+    _model_site.Cartn_xyz =  _atom_sites_Cartn_transform.matrix * m.fract_xyz 
+;
+     save_
+
+
+save_model_site.fract_xyz
+    _definition.id             '_model_site.fract_xyz'
+    _definition.update           2012-12-14
+    _description.text
+;
+     Vector of fractional atom site coordinates.
+;
+    _description.common         'ModelFractCoords'
+    _name.category_id            site
+    _name.object_id              fract_xyz
+    _type.purpose                Measurand   
+    _type.source                 Derived 
+    _type.container              Matrix
+    _type.contents               Real
+    _type.dimension              [3]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+        With  m  as  model_site
+
+                      xyz =  _atom_site[m.label].fract_xyz
+
+    _model_site.fract_xyz =  SymEquiv(m.symop, xyz)
+;
+     save_
+
+
+save_model_site.id
+    _definition.id             '_model_site.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identifier of model site in terms of the atom site label and 
+     symmetry operator.
+;
+    _description.common         'ModelSiteId'
+    _name.category_id            site
+    _name.object_id              id
+    _type.purpose                Quantity
+    _type.source                 Assembled
+    _type.container              List
+    _type.contents               Code,Symop
+    _type.dimension              [1]
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+     With m as model_site
+
+      _model_site.id =   List ( m.label, m.symop )
+;
+     save_
+
+
+save_model_site.index
+    _definition.id             '_model_site.index'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Index number of an atomic site in the connected molecule.
+;
+    _description.common         'ModelSiteIndex'
+    _name.category_id            site
+    _name.object_id              index
+    _type.purpose                Quantity 
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Index
+     save_
+
+
+save_model_site.label
+    _definition.id             '_model_site.label'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Code identifies a site in the atom_site category of data.
+;
+    _description.common         'ModelSiteLabel'
+    _name.category_id            site
+    _name.object_id              label
+    _name.linked_item_id       '_atom_site.label'
+    _type.purpose                Link
+    _type.source                 Assembled
+    _type.container              Single
+    _type.contents               Code
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+      _model_site.label =   _model_site.id [0]
+;
+     save_
+
+
+save_model_site.mole_index
+    _definition.id             '_model_site.mole_index'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Index number of a distinct molecules in the cell, not related by
+     symmetry.
+;
+    _description.common         'ModelSiteMoleIndex'
+    _name.category_id            site
+    _name.object_id              mole_index
+    _type.purpose                Quantity
+    _type.source                 Selected
+    _type.container              Single
+    _type.contents               Index
+     save_
+
+
+save_model_site.symop
+    _definition.id             '_model_site.symop'
+    _import.get          [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _description.common         'ModelSiteSymop'
+    _name.category_id            site
+    _name.object_id              symop
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+      _model_site.symop =   _model_site.id [1]
+;
+     save_
+
+
+save_model_site.type_symbol
+    _definition.id             '_model_site.type_symbol'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Code to identify the atom specie(s) occupying this site.
+;
+    _description.common         'ModelSiteAtomType'
+    _name.category_id            site
+    _name.object_id              type_symbol
+    _name.linked_item_id       '_atom_type.symbol'
+    _type.purpose                Link
+    _type.source                 Assembled
+    _type.container              Single
+    _type.contents               Code
+     loop_
+    _method.purpose   
+    _method.expression
+     Evaluation
+;
+    _model_site.type_symbol  =   AtomType ( _model_site.label )
+;
+     save_
+
+     save_    #----------- close of MODEL_SITE category
+
+     save_    #----------- close of MODEL category
+
+
+#=============================================================================
+#  The dictionary's definition creation history.
+#============================================================================
+   
+     loop_
+    _dictionary_audit.version
+    _dictionary_audit.date
+    _dictionary_audit.revision
+   
+     1.1.01   2006-03-07
+;
+     Initial CORE_MODEL dictionary constructed from CORE_3 v3.5.02
+;
+     1.1.02   2006-06-17
+;
+     Apply the DDL 3.6.01 changes.
+;
+     1.1.03   2006-06-17
+;
+     Apply changes to state values in _item.purpose enumeration list.
+;
+     1.1.04   2006-06-20
+;
+     Change Point to Link for _type.contents.
+     Change Point to Model for _type.contents.
+;
+     1.1.05   2006-06-30
+;
+     Apply the DDL 3.6.05 changes.
+;
+     1.1.06   2006-09-07
+;
+     Apply the DDL 3.6.08 changes.
+;
+     1.1.07   2006-11-13
+;
+     Apply DDL3 3.6.10 attributes.
+	 Change method.id to method.purpose; EVAL to Evaluation
+;
+     1.1.08   2006-12-14
+;
+     Apply DDL3 3.7.01 attributes.
+;
+     1.2.01   2007-02-07
+;
+     Apply DDL3 3.7.04 attributes.
+;
+     1.2.02   2007-02-09
+;
+     In _model_site.mole_index changed  type.purpose and 
+	 type.contents
+;
+     1.2.03   2007-10-13
+;
+     Placed tags in _category_key.primitive lists within quotes.
+;
+     1.2.04   2007-10-17
+;
+     Removed redundant '[' from method expression in _geom_bond.id
+;
+     1.2.05   2008-01-18
+;
+	 Replaced import_list controls with leading uppercase character
+     Changed import_list [....] to [[....]]
+;
+     1.2.06   2008-01-22
+;
+    Change _import.scope in _import_list.id to 'Val'
+	Set _enumeration.def_index_id to  '_model_site.type_symbol'
+
+	 Replaced import_list controls with leading uppercase character
+     Changed import_list [....] to [[....]]
+;
+     1.2.07   2008-03-28
+;
+    Replaced 'Limit' with 'Assigned' in a number of preset items.
+;
+     1.2.08   2008-06-18
+;
+    Change _import_list.id to be ((.....))
+    For all *.key items change _type.contents from Code to Inherited
+	For other *.id items some _type.purpose from Key to Identify
+;
+     1.2.09   2008-06-24
+;
+    Change all _type.dimension values
+;
+     1.2.10   2008-08-14
+;
+    Replace the "<=" substitution digraph (previously "<<=") with a
+	new trigraph "--=" (the reverse of "++=").
+;
+     1.3.01   2011-06-07
+;
+   Replace category class "List" with "Loop"
+   Replace all "Tuple" with "List"
+   Replace all "Array" with "List"
+   Place all import lists into [[......]]
+;
+     1.3.01   2011-08-02
+;
+   Install nested save frames and import.get attributes.
+   Comply with the DDL 3.8 attributes.
+;
+     1.3.02   2011-08-03
+;
+   Change name of import file com_att.dic to templ_attr.cif
+   Change name of import file com_val.dic to templ_templcif
+;
+     1.3.03   2011-10-27
+;
+   Place "With" in all geom_* methods for idividual bonds & angles
+;
+     1.3.04   2011-12-01
+;
+   Change container type from List to Matrix for relevant item definitions
+;
+     1.3.05   2012-01-25
+;
+   For import.get change the key "fram" to "save".
+;
+     1.4.01   2012-05-07
+;
+   Apply DDL 3.10.01 changes.
+;
+     1.4.02   2012-10-16
+;
+   Apply DDL 3.10.02 changes.
+   Remove type.contents "Inherited"; insert Definition method expression.
+;
+     1.4.03   2012-11-20
+;
+   Invoke container functions Matrix, List in methods scripts where needed.
+;
+     1.4.04   2012-11-22
+;
+   Add DDL1 tags as alias.definition_id values
+;
+    1.4.05   2012-12-13
+;
+   Add the VALENCE, VALENCE_PARAM and VALENCE_REF definitions.
+;
+    1.4.06   2013-01-22
+;
+   Add geom_bond.multiplicity and align some descriptions.
+;

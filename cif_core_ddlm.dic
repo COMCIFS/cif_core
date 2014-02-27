@@ -1,0 +1,112 @@
+##############################################################################
+#                                                                            #
+#                      CIF CORE DICTIONARY                                   #
+#                                                                            #
+##############################################################################
+ 
+data_CIF_CORE
+ 
+    _dictionary.title            CIF_CORE
+    _dictionary.class            Instance
+    _dictionary.version          1.4.02 
+    _dictionary.date             2012-12-18
+    _dictionary.uri              www.iucr.org/cif/dic/cif_core.dic
+    _dictionary.ddl_conformance  3.10.3 
+    _dictionary.namespace        CifCore 
+    _description.text
+;
+     Dictionary shell for the definitions of COMCIFS-approved CORE data
+     used within the Crystallographic Information Framework.
+;
+
+save_CIF_CORE
+    _definition.id               CIF_CORE
+    _definition.scope            Category
+    _definition.class            Head       
+    _definition.update           2012-12-18
+    _description.text
+;
+     The DICTIONARY group encompassing all CORE data items defined and
+     used with in the Crystallographic Information Framework (CIF).
+;
+    _name.category_id           CIF_DIC
+    _name.object_id             CIF_CORE
+
+   _import.get       
+        [{"save":'EXPERIMENTAL', "file":'core_exptl.dic', "mode":'full' },
+         {"save":'DIFFRACTION',  "file":'core_diffr.dic', "mode":'full' },
+         {"save":'STRUCTURE',    "file":'core_struc.dic', "mode":'full' },
+         {"save":'MODEL',        "file":'core_model.dic', "mode":'full' },
+         {"save":'PUBLICATION',  "file":'core_publn.dic', "mode":'full' },
+         {"save":'FUNCTION',     "file":'core_funct.dic', "mode":'full' }]
+ 
+
+    save_   #---------- close of CIF_CORE category
+
+#=============================================================================
+#  The dictionary's creation history.
+#============================================================================
+
+     loop_
+    _dictionary_audit.version
+    _dictionary_audit.date
+    _dictionary_audit.revision
+ 
+      1.0.0   2005-12-12
+;
+   Initial version created from the CORE_3 version 3.5.02.
+;
+      1.0.01   2006-02-06
+;
+   Place all _import_dictionary.id components into a tuple.
+;
+      1.1.01   2006-02-08
+;
+   Remove save frame from dictionary definition attributes.
+   Add definition id to the import dictionary tuple.
+;
+      1.1.02   2006-02-12
+;
+   Add attribute _dictionary.parent_id
+;
+      1.1.03   2006-02-12
+;
+   Change loop_ of _import_dictionary.id to a tuple.
+;
+      1.2.01   2006-02-21
+;
+   Basic change in dictionary structure where the dictionary data block now
+   contains a saveframe defining the category of the DICTIONRY to which
+   contained data categories are linked. It differs from other CATEGORY
+   definitions in that its name is NOT part of the child data tags.
+   This change allows imported dictionaries to be inserted without their
+   data block header or non-savedframed attributes.
+;
+      1.2.02   2006-02-30
+;
+   Apply the DDL 3.6.05 attribute changes.
+;
+      1.2.03   2006-11-13
+;
+   Apply the DDL 3.6.10 attribute changes.
+;
+      1.2.04   2008-02-12
+;
+   Updated the IMPORT values as per ddl.dic 3.07.09
+;
+      1.2.05   2008-05-18
+;
+   Changed looped list of imports to _import_list.id syntax.
+;
+     1.3.01   2011-06-07
+;
+   Place all import lists into [[......]]
+;
+     1.4.01   2012-01-25
+;
+   For import.get change the key "fram" to "save".
+;
+     1.4.02   2012-12-18
+;
+   Add import for FUNCTION category containing all function definitions.
+;
