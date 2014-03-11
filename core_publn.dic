@@ -8,10 +8,10 @@ data_CORE_PUBLN
  
     _dictionary.title            CORE_PUBLN
     _dictionary.class            Instance
-    _dictionary.version          1.4.09 
-    _dictionary.date             2013-01-23
+    _dictionary.version          1.5.06 
+    _dictionary.date             2013-09-08
     _dictionary.uri              www.iucr.org/cif/dic/core_publn.dic
-    _dictionary.ddl_conformance  3.10.03
+    _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CorePubln
     _description.text
 ;
@@ -69,7 +69,7 @@ save_publ.contact_letter
     _name.category_id            publ
     _name.object_id              contact_letter
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -103,7 +103,7 @@ save_publ_manuscript.creation
     _name.category_id            manuscript
     _name.object_id              creation
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -124,7 +124,7 @@ save_publ_manuscript.processed
     _name.category_id            manuscript
     _name.object_id              processed
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -143,7 +143,7 @@ save_publ_manuscript.text
     _name.category_id            manuscript
     _name.object_id              text
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -155,7 +155,7 @@ save_PUBL_MANUSCRIPT_INCL_EXTRA
     _definition.id               PUBL_MANUSCRIPT_INCL_EXTRA
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-13
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of data items that allow the authors of a manuscript to
@@ -170,6 +170,7 @@ save_PUBL_MANUSCRIPT_INCL_EXTRA
     _name.category_id            PUBL_MANUSCRIPT
     _name.object_id              INCL_EXTRA
     _category.key_id           '_publ_manuscript_incl_extra.key'
+    _category.key_list        ['_publ_manuscript_incl_extra.item']
 
 
 save_publ_manuscript_incl_extra.key
@@ -183,8 +184,9 @@ save_publ_manuscript_incl_extra.key
     _name.category_id            publ_manuscript_incl_extra
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -211,7 +213,7 @@ save_publ_manuscript_incl_extra.item
 ;
     _name.category_id            incl_extra
     _name.object_id              item
-    _type.purpose                Key
+    _type.purpose                Link
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Tag
@@ -232,7 +234,7 @@ save_publ_manuscript_incl_extra.info
     _name.category_id            incl_extra
     _name.object_id              info
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -250,13 +252,13 @@ save_publ_manuscript_incl_extra.defn
     _name.category_id            incl_extra
     _name.object_id              defn
     _type.purpose                State
-    _type.source                 Selected
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
     _enumeration_set.state
-    _enumeration_set.detail     yes   "yes include item in journal request list"
-                                y     "yes include item in journal request list"
+    _enumeration_set.detail     yes   "include item in journal request list"
+                                y     "include item in journal request list"
                                 no    "exclude item in journal request list"
                                 n     "exclude item in journal request list"
     _enumeration.default        yes
@@ -298,7 +300,7 @@ save_publ_requested.category
     _name.category_id            requested
     _name.object_id              category
     _type.purpose                State
-    _type.source                 Selected
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
     loop_ _enumeration_set.state
@@ -332,7 +334,7 @@ save_publ_requested.coeditor_name
     _name.category_id            requested
     _name.object_id              coeditor_name
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -350,7 +352,7 @@ save_publ_requested.journal
     _name.category_id            requested
     _name.object_id              journal
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -390,7 +392,7 @@ save_publ_section.title
     _name.category_id            section
     _name.object_id              title
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -408,7 +410,7 @@ save_publ_section.title_footnote
     _name.category_id            section
     _name.object_id              title_footnote
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -426,7 +428,7 @@ save_publ_section.synopsis
     _name.category_id            section
     _name.object_id              synopsis
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -444,7 +446,7 @@ save_publ_section.abstract
     _name.category_id            section
     _name.object_id              abstract
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -454,15 +456,15 @@ save_publ_section.comment
     _definition.id             '_publ_section.comment'
      loop_
     _alias.definition_id       '_publ_section_comment'
-    _definition.update           2012-11-29
+    _definition.update           2013-02-22
     _description.text
 ;
     The comment section of the submitted paper.
 ;
     _name.category_id            section
-    _name.object_id              abstract
+    _name.object_id              comment
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -480,7 +482,7 @@ save_publ_section.introduction
     _name.category_id            section
     _name.object_id              introduction
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -498,7 +500,7 @@ save_publ_section.experimental
     _name.category_id            section
     _name.object_id              experimental
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -516,7 +518,7 @@ save_publ_section.exptl_prep
     _name.category_id            section
     _name.object_id              exptl_prep
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -534,7 +536,7 @@ save_publ_section.exptl_refinement
     _name.category_id            section
     _name.object_id              exptl_refinement
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -552,7 +554,7 @@ save_publ_section.exptl_solution
     _name.category_id            section
     _name.object_id              exptl_solution
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -570,7 +572,7 @@ save_publ_section.discussion
     _name.category_id            section
     _name.object_id              discussion
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -588,7 +590,7 @@ save_publ_section.acknowledgements
     _name.category_id            section
     _name.object_id              acknowledgements
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -606,7 +608,7 @@ save_publ_section.references
     _name.category_id            section
     _name.object_id              references
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -624,7 +626,7 @@ save_publ_section.related_literature
     _name.category_id            section
     _name.object_id              related_literature
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -642,7 +644,7 @@ save_publ_section.figure_captions
     _name.category_id            section
     _name.object_id              figure_captions
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -660,7 +662,7 @@ save_publ_section.table_legends
     _name.category_id            section
     _name.object_id              table_legends
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -678,7 +680,7 @@ save_publ_section.keywords
     _name.category_id            section
     _name.object_id              keywords
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -692,7 +694,7 @@ save_PUBL_BODY
     _definition.id               PUBL_BODY
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-13
+    _definition.update           2013-09-08
     _description.text
 ;
      Data items in the PUBL_BODY category permit labelling of
@@ -705,7 +707,8 @@ save_PUBL_BODY
 ;
     _name.category_id            PUBL
     _name.object_id              BODY
-    _category.key_id           '_publ_author.key'
+    _category.key_id           '_publ_body.key'
+    _category.key_list        ['_publ_body.label']
 
 
 save_publ_body.key
@@ -719,8 +722,9 @@ save_publ_body.key
     _name.category_id            publ_body
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -744,7 +748,7 @@ save_publ_body.label
 ;
     _name.category_id            body
     _name.object_id              label
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -764,7 +768,7 @@ save_publ_body.element
     _name.category_id            body
     _name.object_id              element
     _type.purpose                State
-    _type.source                 Selected
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_ _enumeration_set.state   section
@@ -772,6 +776,7 @@ save_publ_body.element
                                     subsubsection
                                     appendix
                                     footnote
+    _enumeration.default         section
      save_
 
 
@@ -787,7 +792,7 @@ save_publ_body.contents
     _name.category_id            body
     _name.object_id              contents
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -805,7 +810,7 @@ save_publ_body.title
     _name.category_id            body
     _name.object_id              title
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -849,7 +854,7 @@ save_PUBL_AUTHOR
     _definition.id               PUBL_AUTHOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-13
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of data items recording the author information.
@@ -857,6 +862,7 @@ save_PUBL_AUTHOR
     _name.category_id            PUBL
     _name.object_id              AUTHOR
     _category.key_id           '_publ_author.key'
+    _category.key_list        ['_publ_author.name']
 
 
 save_publ_author.key
@@ -870,8 +876,9 @@ save_publ_author.key
     _name.category_id            publ_author
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -898,8 +905,8 @@ save_publ_author.name
 ;
     _name.category_id            author
     _name.object_id              name
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Describe
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_  _description_example.case 'Bleary, Percival R.'
@@ -925,7 +932,7 @@ save_publ_author.address
     _name.category_id            author
     _name.object_id              address
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_  _description_example.case
@@ -954,7 +961,7 @@ save_publ_author.email
     _name.category_id            author
     _name.object_id              email
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -974,7 +981,7 @@ save_publ_author.footnote
     _name.category_id            author
     _name.object_id              footnote
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -993,8 +1000,8 @@ save_publ_author.id_iucr
 ;
     _name.category_id            author
     _name.object_id              id_iucr
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1008,7 +1015,7 @@ save_PUBL_CONTACT_AUTHOR
     _definition.id               PUBL_CONTACT_AUTHOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-05-07
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of items describing contact author(s) details.
@@ -1016,6 +1023,7 @@ save_PUBL_CONTACT_AUTHOR
     _name.category_id            PUBL
     _name.object_id              CONTACT_AUTHOR
     _category.key_id           '_publ_contact_author.key'
+    _category.key_list        ['_publ_contact_author.name']
 
 
 save_publ_contact_author.key
@@ -1029,8 +1037,9 @@ save_publ_contact_author.key
     _name.category_id            publ_contact_author
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -1057,8 +1066,8 @@ save_publ_contact_author.name
 ;
     _name.category_id            contact_author
     _name.object_id              name
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Describe
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_  _description_example.case 'Professor George Ferguson'
@@ -1079,7 +1088,7 @@ save_publ_contact_author.address
     _name.category_id            contact_author
     _name.object_id              address
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_  _description_example.case
@@ -1106,8 +1115,8 @@ save_publ_contact_author.email
 ;
     _name.category_id            contact_author
     _name.object_id              email
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1129,8 +1138,8 @@ save_publ_contact_author.phone
 ;
     _name.category_id            contact_author
     _name.object_id              phone
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1156,8 +1165,8 @@ save_publ_contact_author.fax
 ;   
     _name.category_id            contact_author
     _name.object_id              fax
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1176,8 +1185,8 @@ save_publ_contact_author.id_iucr
 ;  
     _name.category_id            contact_author
     _name.object_id              id_iucr
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1217,7 +1226,7 @@ save_journal.coden_ASTM
 ;
     _name.category_id            journal
     _name.object_id              coden_ASTM
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -1235,7 +1244,7 @@ save_journal.coden_Cambridge
 ;
     _name.category_id            journal
     _name.object_id              coden_Cambridge
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -1253,7 +1262,7 @@ save_journal.validation_number
 ;
     _name.category_id            journal
     _name.object_id              validation_number
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -1271,8 +1280,8 @@ save_journal.issue
 ;
     _name.category_id            journal
     _name.object_id              issue
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1289,8 +1298,8 @@ save_journal.language
 ;
     _name.category_id            journal
     _name.object_id              language
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1308,7 +1317,7 @@ save_journal.name_full
     _name.category_id            journal
     _name.object_id              name_full
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1325,10 +1334,11 @@ save_journal.page_first
 ;
     _name.category_id            journal
     _name.object_id              page_first
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _enumeration.default         1
      save_
 
 
@@ -1343,10 +1353,11 @@ save_journal.page_last
 ;
     _name.category_id            journal
     _name.object_id              page_last
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _enumeration.range           1:
      save_
 
 
@@ -1361,8 +1372,8 @@ save_journal.paper_category
 ;
     _name.category_id            journal
     _name.object_id              paper_category
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1379,8 +1390,8 @@ save_journal.paper_doi
 ;
     _name.category_id            journal
     _name.object_id              paper_doi
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1397,8 +1408,8 @@ save_journal.suppl_publ_number
 ;
     _name.category_id            journal
     _name.object_id              suppl_publ_number
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1415,10 +1426,11 @@ save_journal.suppl_publ_pages
 ;
     _name.category_id            journal
     _name.object_id              suppl_publ_pages
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _enumeration.range           1:
      save_
 
 
@@ -1433,10 +1445,11 @@ save_journal.volume
 ;
     _name.category_id            journal
     _name.object_id              volume
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _enumeration.range           1:
      save_
 
 
@@ -1451,10 +1464,11 @@ save_journal.year
 ;
     _name.category_id            journal
     _name.object_id              year
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _enumeration.range           1700:2100
      save_
 
 
@@ -1484,8 +1498,8 @@ save_journal_coeditor.code
 ;
     _name.category_id            coeditor
     _name.object_id              code
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1503,7 +1517,7 @@ save_journal_coeditor.name
     _name.category_id            coeditor
     _name.object_id              name
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1521,7 +1535,7 @@ save_journal_coeditor.address
     _name.category_id            coeditor
     _name.object_id              address
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1538,8 +1552,8 @@ save_journal_coeditor.email
 ;    
     _name.category_id            coeditor
     _name.object_id              email
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1556,10 +1570,10 @@ save_journal_coeditor.phone
 ;   
     _name.category_id            coeditor
     _name.object_id              phone
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               text
      save_
 
 
@@ -1574,10 +1588,10 @@ save_journal_coeditor.fax
 ;  
     _name.category_id            coeditor
     _name.object_id              fax
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               text
      save_
 
 
@@ -1593,7 +1607,7 @@ save_journal_coeditor.notes
     _name.category_id            coeditor
     _name.object_id              notes
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1627,8 +1641,8 @@ save_journal_date.accepted
 ;
     _name.category_id            date
     _name.object_id              accepted
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1645,8 +1659,8 @@ save_journal_date.from_coeditor
 ;
     _name.category_id            date
     _name.object_id              from_coeditor
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1663,8 +1677,8 @@ save_journal_date.to_coeditor
 ;
     _name.category_id            date
     _name.object_id              to_coeditor
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1681,8 +1695,8 @@ save_journal_date.printers_final
 ;
     _name.category_id            date
     _name.object_id              printers_final
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1699,8 +1713,8 @@ save_journal_date.printers_first
 ;
     _name.category_id            date
     _name.object_id              printers_first
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1717,8 +1731,8 @@ save_journal_date.proofs_in
 ;
     _name.category_id            date
     _name.object_id              proofs_in
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1735,8 +1749,8 @@ save_journal_date.proofs_out
 ;
     _name.category_id            date
     _name.object_id              proofs_out
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1753,8 +1767,8 @@ save_journal_date.recd_copyright
 ;
     _name.category_id            date
     _name.object_id              recd_copyright
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1771,8 +1785,8 @@ save_journal_date.recd_electronic
 ;
     _name.category_id            date
     _name.object_id              recd_electronic
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1789,8 +1803,8 @@ save_journal_date.recd_hard_copy
 ;
     _name.category_id            date
     _name.object_id              recd_hard_copy
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      save_
@@ -1825,8 +1839,8 @@ save_journal_techeditor.code
 ;
     _name.category_id            techeditor
     _name.object_id              code
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -1844,7 +1858,7 @@ save_journal_techeditor.name
     _name.category_id            techeditor
     _name.object_id              name
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1862,7 +1876,7 @@ save_journal_techeditor.address
     _name.category_id            techeditor
     _name.object_id              address
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1879,8 +1893,8 @@ save_journal_techeditor.email
 ;
     _name.category_id            techeditor
     _name.object_id              email
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1897,10 +1911,10 @@ save_journal_techeditor.phone
 ;
     _name.category_id            techeditor
     _name.object_id              phone
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               Text
      save_
 
 
@@ -1915,10 +1929,10 @@ save_journal_techeditor.fax
 ;
     _name.category_id            techeditor
     _name.object_id              fax
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               Text
      save_
 
 
@@ -1934,9 +1948,9 @@ save_journal_techeditor.notes
     _name.category_id            techeditor
     _name.object_id              notes
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               Text
      save_
 
      save_     #--------- close the JOURNAL_TECHEDITOR category
@@ -1948,7 +1962,7 @@ save_JOURNAL_INDEX
     _definition.id               JOURNAL_INDEX
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-11
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of items describing publication indices.
@@ -1956,6 +1970,7 @@ save_JOURNAL_INDEX
     _name.category_id            JOURNAL
     _name.object_id              INDEX
     _category.key_id           '_journal_index.key'
+    _category.key_list        ['_journal_index.id']
 
 
 save_journal_index.key
@@ -1969,8 +1984,9 @@ save_journal_index.key
     _name.category_id            index
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -1994,10 +2010,11 @@ save_journal_index.id
 ;
     _name.category_id            journal_index
     _name.object_id              id
-    _type.purpose                Key
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
 
 
@@ -2012,7 +2029,7 @@ save_journal_index.subterm
 ;
     _name.category_id            journal_index
     _name.object_id              subterm
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -2030,7 +2047,7 @@ save_journal_index.term
 ;
     _name.category_id            journal_index
     _name.object_id              term
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -2056,6 +2073,7 @@ save_journal_index.type
           _enumeration_set.detail
                    O  '???????? formula ??????????????'
                    S  '???????? structure description ???????'
+    _enumeration.default      O      
      save_
 
      save_     #--------- close the JOURNAL_INDEX category
@@ -2069,7 +2087,7 @@ save_CITATION
     _definition.id               CITATION
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-11
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of items describing literature cited in the publication.
@@ -2077,6 +2095,7 @@ save_CITATION
     _name.category_id            PUBLICATION
     _name.object_id              CITATION
     _category.key_id           '_citation.key'
+    _category.key_list        ['_citation.id']
 
 
 save_citation.key
@@ -2090,8 +2109,9 @@ save_citation.key
     _name.category_id            citation
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -2119,8 +2139,8 @@ save_citation.id
 ;
     _name.category_id            citation
     _name.object_id              id
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
     loop_ _description_example.case  primary  1  2  3
@@ -2141,7 +2161,7 @@ save_citation.abstract
     _name.category_id            citation
     _name.object_id              abstract
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2158,8 +2178,8 @@ save_citation.abstract_id_CAS
 ;
     _name.category_id            citation
     _name.object_id              abstract_id_CAS
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2175,10 +2195,11 @@ save_citation.page_first
 ;
     _name.category_id            citation
     _name.object_id              page_first
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
 
 
@@ -2193,10 +2214,11 @@ save_citation.page_last
 ;
     _name.category_id            citation
     _name.object_id              page_last
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
 
 
@@ -2213,7 +2235,7 @@ save_citation.special_details
     _name.category_id            citation
     _name.object_id              special_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2231,7 +2253,7 @@ save_citation.title
     _name.category_id            citation
     _name.object_id              title
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2248,8 +2270,8 @@ save_citation.year
 ;
     _name.category_id            citation
     _name.object_id              year
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2280,6 +2302,7 @@ save_citation.coordinate_linkage
                    n   'abbreviation for "no"'
                    yes 'citation related to current coordinates'
                    y   'abbreviation for "yes"'
+    _enumeration.default    yes
      save_
 
 
@@ -2294,8 +2317,8 @@ save_citation.country
 ;
     _name.category_id            citation
     _name.object_id              country
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2313,8 +2336,8 @@ save_citation.database_id_CSD
 ;
     _name.category_id            citation
     _name.object_id              database_id_CSD
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2331,10 +2354,10 @@ i    Medline accession number categorizing a bibliographic entry.
 ;
     _name.category_id            citation
     _name.object_id              database_id_Medline
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               Code
      save_
 
 
@@ -2349,8 +2372,8 @@ save_citation.book_id_ISBN
 ;
     _name.category_id            citation
     _name.object_id              book_id_ISBN
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2368,7 +2391,7 @@ save_citation.book_publisher
     _name.category_id            citation
     _name.object_id              book_publisher
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2386,7 +2409,7 @@ save_citation.book_publisher_city
     _name.category_id            citation
     _name.object_id              book_publisher_city
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2404,7 +2427,7 @@ save_citation.book_title
     _name.category_id            citation
     _name.object_id              book_title
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2423,7 +2446,7 @@ save_citation.journal_abbrev
     _name.category_id            citation
     _name.object_id              journal_abbrev
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case   'J. Mol. Biol.'
@@ -2442,7 +2465,7 @@ save_citation.journal_full
     _name.category_id            citation
     _name.object_id              journal_full
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case  'Journal of Molecular Biology'
@@ -2462,8 +2485,8 @@ save_citation.journal_id_ASTM
 ;   
     _name.category_id            citation
     _name.object_id              journal_id_ASTM
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2482,8 +2505,8 @@ save_citation.journal_id_CSD
 ;   
     _name.category_id            citation
     _name.object_id              journal_id_CSD
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      loop_ _description_example.case   '0070'
@@ -2502,8 +2525,8 @@ save_citation.journal_id_ISSN
 ;  
     _name.category_id            citation
     _name.object_id              journal_id_ISSN
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2520,11 +2543,13 @@ save_citation.journal_issue
 ; 
     _name.category_id            citation
     _name.object_id              journal_issue
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Index
-     loop_ _description_example.case  2
+    _enumeration.range           1:
+     loop_ 
+    _description_example.case    2
      save_
 
 
@@ -2539,11 +2564,13 @@ save_citation.journal_volume
 ;
     _name.category_id            citation
     _name.object_id              journal_volume
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Index
-     loop_ _description_example.case   174
+    _enumeration.range           1:
+     loop_ 
+    _description_example.case    174
      save_
 
 
@@ -2558,8 +2585,8 @@ save_citation.language
 ;
     _name.category_id            citation
     _name.object_id              language
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case   German
@@ -2573,7 +2600,7 @@ save_CITATION_AUTHOR
     _definition.id               CITATION_AUTHOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-11
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of items describing citation author(s) details.
@@ -2581,6 +2608,7 @@ save_CITATION_AUTHOR
     _name.category_id            PUBLICATION
     _name.object_id              CITATION_AUTHOR
     _category.key_id           '_citation_author.key'
+    _category.key_list        ['_citation_author.ordinal']
 
 
 save_citation_author.key
@@ -2594,8 +2622,9 @@ save_citation_author.key
     _name.category_id            citation_author
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -2620,8 +2649,8 @@ save_citation_author.ordinal
 ;
     _name.category_id            citation_author
     _name.object_id              ordinal
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2641,7 +2670,7 @@ save_citation_author.citation_id
     _name.object_id              citation_id
     _name.linked_item_id       '_citation.id'
     _type.purpose                Link
-    _type.source                 Assigned
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -2661,7 +2690,7 @@ save_citation_author.name
     _name.category_id            citation_author
     _name.object_id              name
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case   'Bleary, Percival R.'
@@ -2682,7 +2711,7 @@ save_CITATION_EDITOR
     _definition.id               CITATION_EDITOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-12-11
+    _definition.update           2013-09-08
     _description.text
 ;
      Category of items describing citation editor(s) details.
@@ -2690,6 +2719,7 @@ save_CITATION_EDITOR
     _name.category_id            PUBLICATION
     _name.object_id              CITATION_EDITOR
     _category.key_id           '_citation_editor.key'
+    _category.key_list        ['_citation_editor.id']
 
 
 save_citation_editor.key
@@ -2703,8 +2733,9 @@ save_citation_editor.key
     _name.category_id            citation_editor
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -2728,10 +2759,11 @@ save_citation_editor.id
 ;
     _name.category_id            citation_editor
     _name.object_id              id
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
 
 
@@ -2749,7 +2781,7 @@ save_citation_editor.citation_id
     _name.object_id              citation_id
     _name.linked_item_id       '_citation.id'
     _type.purpose                Link
-    _type.source                 Assigned
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -2770,7 +2802,7 @@ save_citation_editor.name
     _name.category_id            citation_editor
     _name.object_id              name
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case   'Bleary, Percival R.'
@@ -2813,7 +2845,7 @@ save_database.CSD_history
     _name.category_id            database
     _name.object_id              CSD_history
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2830,8 +2862,8 @@ save_database.journal_CSD
 ;
     _name.category_id            database
     _name.object_id              journal_CSD
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2849,8 +2881,8 @@ save_database.journal_ASTM
 ;    
     _name.category_id            database
     _name.object_id              journal_ASTM
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2865,7 +2897,9 @@ save_DATABASE_CODE
     _definition.update           2012-12-13
     _description.text
 ;
-     The CATEGORY of data items recording database deposition.
+     The CATEGORY of data items recording database deposition. These data items 
+     are assigned by database managers and should only appear in a CIF if they 
+     originate from that source.
 ;
     _name.category_id            DATABASE
     _name.object_id              CODE
@@ -2882,7 +2916,7 @@ save_database_code.CAS
 ;
     _name.category_id            code
     _name.object_id              CAS
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2900,7 +2934,7 @@ save_database_code.COD
 ;
     _name.category_id            code
     _name.object_id              COD
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2918,7 +2952,7 @@ save_database_code.CSD
 ;
     _name.category_id            code
     _name.object_id              CSD
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2936,7 +2970,7 @@ save_database_code.ICSD
 ;
     _name.category_id            code
     _name.object_id              ICSD
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2954,8 +2988,8 @@ save_database_code.MDF
 ;
     _name.category_id            code
     _name.object_id              MDF
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -2972,7 +3006,7 @@ save_database_code.NBS
 ;
     _name.category_id            code
     _name.object_id              NBS
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2990,7 +3024,7 @@ save_database_code.PDB
 ;
     _name.category_id            code
     _name.object_id              PDB
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -3008,7 +3042,7 @@ save_database_code.PDF
 ;
     _name.category_id            code
     _name.object_id              PDF
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -3019,7 +3053,7 @@ save_database_code.depnum_ccdc_archive
     _definition.id             '_database_code.depnum_ccdc_archive'
      loop_
     _alias.definition_id       '_database_code_depnum_ccdc_archive'
-    _definition.update           20113-01-22
+    _definition.update           2013-01-22
     _description.text
 ;
      Deposition numbers assigned by the Cambridge Crystallographic
@@ -3028,7 +3062,7 @@ save_database_code.depnum_ccdc_archive
 ;
     _name.category_id            code
     _name.object_id              depnum_ccdc_archive
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -3039,7 +3073,7 @@ save_database_code.depnum_ccdc_fiz
     _definition.id             '_database_code.depnum_ccdc_fiz'
      loop_
     _alias.definition_id       '_database_code_depnum_ccdc_fiz'
-    _definition.update           20113-01-22
+    _definition.update           2013-01-22
     _description.text
 ;
      Deposition numbers assigned by the Fachinformationszentrum
@@ -3048,7 +3082,7 @@ save_database_code.depnum_ccdc_fiz
 ;
     _name.category_id            code
     _name.object_id              depnum_ccdc_fiz
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -3068,7 +3102,7 @@ save_database_code.depnum_ccdc_journal
 ;   
     _name.category_id            code
     _name.object_id              depnum_ccdc_journal
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -3106,8 +3140,8 @@ save_audit.creation_date
 ;
     _name.category_id            audit
     _name.object_id              creation_date
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Date
      loop_ _description_example.case   1991-03-20
@@ -3126,7 +3160,7 @@ save_audit.update_record
     _name.category_id            audit
     _name.object_id              update_record
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case '1990-07-15 Updated by Co-editor'
@@ -3137,15 +3171,15 @@ save_audit.block_code
     _definition.id             '_audit.block_code'
      loop_
     _alias.definition_id       '_audit_block_code'
-    _definition.update           2012-11-29
+    _definition.update           2013-04-10
     _description.text
 ;
      A unique block_code identifier for each revision.
 ;
     _name.category_id            audit
     _name.object_id              block_code
-    _type.purpose                Describe
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      loop_ _description_example.case   TOZ_1991-03-20
@@ -3164,7 +3198,7 @@ save_audit.creation_method
     _name.category_id            audit
     _name.object_id              creation_method
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case  'spawned by the program QBEE'
@@ -3178,7 +3212,7 @@ save_AUDIT_AUTHOR
     _definition.id               AUDIT_AUTHOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-05-07
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used for author(s) details.
@@ -3186,6 +3220,7 @@ save_AUDIT_AUTHOR
     _name.category_id            AUDIT
     _name.object_id              AUTHOR
     _category.key_id           '_audit_author.key'
+    _category.key_list        ['_audit_author.name']
 
 
 save_audit_author.key
@@ -3199,8 +3234,9 @@ save_audit_author.key
     _name.category_id            audit_author
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -3228,8 +3264,8 @@ save_audit_author.name
 ;
     _name.category_id            author
     _name.object_id              name
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Describe
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case 
@@ -3257,7 +3293,7 @@ save_audit_author.address
     _name.category_id            author
     _name.object_id              address
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case 
@@ -3300,8 +3336,8 @@ save_audit_conform.dict_name
 ;
     _name.category_id            conform
     _name.object_id              dict_name
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3319,8 +3355,8 @@ save_audit_conform.dict_version
 ;
     _name.category_id            conform
     _name.object_id              dict_version
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -3338,8 +3374,8 @@ save_audit_conform.dict_location
 ;
     _name.category_id            conform
     _name.object_id              dict_location
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3354,7 +3390,7 @@ save_AUDIT_CONTACT_AUTHOR
     _definition.id               AUDIT_CONTACT_AUTHOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-05-07
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used for contact author(s) details.
@@ -3362,6 +3398,7 @@ save_AUDIT_CONTACT_AUTHOR
     _name.category_id            AUDIT
     _name.object_id              CONTACT_AUTHOR
     _category.key_id           '_audit_contact_author.key'
+    _category.key_list        ['_audit_contact_author.name']
 
 
 save_audit_contact_author.key
@@ -3375,8 +3412,9 @@ save_audit_contact_author.key
     _name.category_id            audit_contact_author
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -3404,8 +3442,8 @@ save_audit_contact_author.name
 ;
     _name.category_id            contact_author
     _name.object_id              name
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Describe
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ 
@@ -3428,7 +3466,7 @@ save_audit_contact_author.address
     _name.category_id            contact_author
     _name.object_id              address
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ 
@@ -3458,8 +3496,8 @@ save_audit_contact_author.email
 ;
     _name.category_id            contact_author
     _name.object_id              email
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ 
@@ -3484,8 +3522,8 @@ save_audit_contact_author.phone
 ;
     _name.category_id            contact_author
     _name.object_id              phone
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3511,8 +3549,8 @@ save_audit_contact_author.fax
 ;
     _name.category_id            contact_author
     _name.object_id              fax
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3530,7 +3568,7 @@ save_AUDIT_LINK
     _definition.id               AUDIT_LINK
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-05-07
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to record details about the
@@ -3539,6 +3577,7 @@ save_AUDIT_LINK
     _name.category_id            AUDIT
     _name.object_id              LINK
     _category.key_id           '_audit_link.key'
+    _category.key_list        ['_audit_link.block_code']
 
 
 save_audit_link.key
@@ -3552,8 +3591,9 @@ save_audit_link.key
     _name.category_id            audit_link
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -3570,7 +3610,7 @@ save_audit_link.block_code
     _definition.id             '_audit_link.block_code'
      loop_
     _alias.definition_id       '_audit_link_block_code'
-    _definition.update           2012-11-29
+    _definition.update           2013-04-18
     _description.text
 ;
      The value of _audit.block_code associated with a data block
@@ -3580,8 +3620,8 @@ save_audit_link.block_code
 ;
     _name.category_id            link
     _name.object_id              block_code
-    _type.purpose                Key
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Code
      save_
@@ -3600,7 +3640,7 @@ save_audit_link.block_description
     _name.category_id            link
     _name.object_id              block_description
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3638,7 +3678,7 @@ save_computing.diffrn_collection
     _name.category_id            computing
     _name.object_id              diffrn_collection
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case  'CAD-4 (Enraf-Nonius, 1989)'
@@ -3658,7 +3698,7 @@ save_computing.diffrn_reduction
     _name.category_id            computing
     _name.object_id              diffrn_reduction
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case 
@@ -3678,7 +3718,7 @@ save_computing.cell_refinement
     _name.category_id            computing
     _name.object_id              cell_refinement
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case 'CAD-4 (Enraf-Nonius, 1989)'
@@ -3697,7 +3737,7 @@ save_computing.structure_solution
     _name.category_id            computing
     _name.object_id              structure_solution
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case 'SHELXS86 (Sheldrick, 1990)'
@@ -3716,7 +3756,7 @@ save_computing.structure_refinement
     _name.category_id            computing
     _name.object_id              structure_refinement
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_ _description_example.case 'SHELXL93 (Sheldrick, 1993)'
@@ -3735,7 +3775,7 @@ save_computing.molecular_graphics
     _name.category_id            computing
     _name.object_id              molecular_graphics
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3753,7 +3793,7 @@ save_computing.publication_material
     _name.category_id            computing
     _name.object_id              publication_material
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3781,7 +3821,7 @@ save_DISPLAY_COLOUR
     _definition.id               DISPLAY_COLOUR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-05-07
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to enumerate the display
@@ -3790,6 +3830,7 @@ save_DISPLAY_COLOUR
     _name.category_id            DISPLAY        
     _name.object_id              COLOUR
     _category.key_id           '_display_colour.key'
+    _category.key_list        ['_display_colour.hue']
 
 
 save_display_colour.key
@@ -3800,12 +3841,12 @@ save_display_colour.key
      Value is a unique key to a set of DISPLAY_COLOUR items
      in a looped list.
 ;
-    _description.common         'Key to display colours'
     _name.category_id            colour
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -3825,11 +3866,10 @@ save_display_colour.hue
 ;
      Colour hue as an enumerated code.
 ;
-    _description.common         'DisplayHue'
     _name.category_id            colour
     _name.object_id              hue
     _type.purpose                State
-    _type.source                 Selected
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
     _import.get         [{"file":'templ_enum.cif',"save":'colour_RGB'}]
@@ -3844,11 +3884,10 @@ save_display_colour.RGB
 ;
      The red-green-blue intensities, bases 256, for each colour code.
 ;
-    _description.common         'DisplayColourRGB'
     _name.category_id            colour
     _name.object_id              RGB
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              List
     _type.contents               Integer
     _type.dimension              [3]
@@ -4020,3 +4059,35 @@ save_display_colour.blue
 ;
    Change _journal.data_validation_number to _journal.validation_number
 ;
+     1.4.10   2013-02-22
+;
+   Corrected object_id for publ_section.comment
+;
+     1.5.01   2013-03-08
+;
+   Changes arising from alerts issued by ALIGN.
+;
+     1.5.02   2013-04-11
+;
+   Added type.contents 'Implied' to all Key definitions
+   Removed desription.common from all defs; inconsistent invocations
+   Replace type.source state 'Assembled' with 'Related'
+   Replace type.source state 'Selected' with 'Assigned'
+;
+     1.5.03   2013-04-16
+;
+   Changed type.source 'Measured' to 'Recorded'
+;
+     1.5.04   2013-04-17
+;
+   Changed type.source 'Quantity' to 'Number' or 'Encode'
+;
+     1.5.05   2013-04-24
+;
+   Removed 'Pairs' from type.contents; replaced with "Real", "Code", etc.
+;
+    1.5.06   2013-09-08
+;
+    Add attribute category.key_list to all Loop categories.
+;
+

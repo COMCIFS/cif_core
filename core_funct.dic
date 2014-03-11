@@ -8,10 +8,10 @@ data_CRY_FUNC
  
     _dictionary.title            CRY_FUNC
     _dictionary.class            Function
-    _dictionary.version          1.3.07
-    _dictionary.date             2013-01-25
+    _dictionary.version          1.4.04
+    _dictionary.date             2013-04-24
     _dictionary.uri              www.iucr.org/cif/dic/com_func.dic
-    _dictionary.ddl_conformance  3.10.03
+    _dictionary.ddl_conformance  3.11.04
     _description.text
 ;
      This dictionary contains the dREL FUNCTIONS used in the
@@ -38,7 +38,7 @@ save_FUNCTION
 
 save_function.AtomType
     _definition.id              '_function.AtomType'
-    _definition.update           2012-10-16
+    _definition.update           2013-04-17
     _description.text
 ;
      The function   
@@ -48,8 +48,8 @@ save_function.AtomType
 ;
     _name.category_id            function
     _name.object_id              AtomType
-    _type.purpose                Quantity
-    _type.source                 Derived 
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single        
     _type.contents               Code
      loop_
@@ -85,7 +85,7 @@ save_function.Closest
 ;
     _name.category_id            function
     _name.object_id              Closest
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              List
     _type.contents               Matrix(Real,Real,Real)
@@ -109,7 +109,7 @@ save_function.Closest
   
 save_function.SeitzFromJones
     _definition.id              '_function.SeitzFromJones'
-    _definition.update           2011-12-01
+    _definition.update           2013-04-24
     _description.text
 ;
      The function   
@@ -120,7 +120,7 @@ save_function.SeitzFromJones
 ;
     _name.category_id            function
     _name.object_id              SeitzFromJones
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived 
     _type.container              Matrix
     _type.contents               Real
@@ -184,7 +184,7 @@ save_function.SymEquiv
 ;
     _name.category_id            function
     _name.object_id              SymEquiv
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Matrix      
     _type.contents               Real
@@ -217,10 +217,11 @@ save_function.SymKey
 ;
     _name.category_id            function
     _name.object_id              SymKey
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single        
     _type.contents               Index
+    _enumeration.range           1:192
      loop_
     _method.purpose
     _method.expression
@@ -231,7 +232,6 @@ save_function.SymKey
             If (s == '.')   n = 1
             Else            n = AtoI(s[0])
 
-##########       SymKey =  n - 1   # index from 0
                  SymKey =  n       # index from 1
      }
 ;
@@ -240,7 +240,7 @@ save_function.SymKey
   
 save_function.SymLat
     _definition.id              '_function.SymLat'
-    _definition.update           2011-12-01
+    _definition.update           2013-03-10
     _description.text
 ;
      The function   
@@ -251,7 +251,7 @@ save_function.SymLat
 ;
     _name.category_id            function
     _name.object_id              SymLat
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Matrix      
     _type.contents               Integer
@@ -263,7 +263,8 @@ save_function.SymLat
 ;
      Function SymLat( s :[Single, Symop])  {  # symop string
 
-            If (s[1] == ' ')  v = [ 5, 5, 5 ] 
+##########  If (s[1] == ' ')  v = [ 5, 5, 5 ] 
+            If (s[0] == ' ')  v = [ 5, 5, 5 ] 
             Else              v = [ AtoI(s[2]), AtoI(s[3]), AtoI(s[4]) ]
 
                   SymLat  =  v - 5
@@ -286,7 +287,7 @@ save_function.Symop
 ;
     _name.category_id            function
     _name.object_id              Symop
-    _type.purpose                Quantity
+    _type.purpose                Composite
     _type.source                 Derived 
     _type.container              Single        
     _type.contents               Symop
@@ -380,4 +381,23 @@ save_function.Symop
      1.3.07   2013-01-25
 ;
    Insert a leading underscore in the definition.id values.
+;
+     1.4.01   2013-03-08
+;
+   Changes arising from alerts issued by ALIGN.
+;
+     1.4.02   2013-03-10
+;
+   Made change to SynLat to be compatible with JsCifBrowser
+;
+     1.4.03   2013-04-16
+;
+   Changed type.source 'Measured' to 'Recorded'
+;
+     1.4.04   2013-04-24
+;
+   Changed type.source 'Quantity' to 'Number' or 'Encode'
+   Changed several 'Encode' to 'Composite'
+   Removed 'Pairs' from type.contents; replaced with "Real", "Code", etc.
+   Changed Float() to Real()
 ;

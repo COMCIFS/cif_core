@@ -1,4 +1,4 @@
-##############################################################################
+m#############################################################################
 #                                                                            #
 #                      CIF CORE STRUCTURE DICTIONARY                         #
 #                                                                            #
@@ -8,10 +8,10 @@ data_CORE_STRUC
  
     _dictionary.title            CORE_STRUC
     _dictionary.class            Instance
-    _dictionary.version          1.4.10 
-    _dictionary.date             2013-02-18
+    _dictionary.version          1.5.07 
+    _dictionary.date             2013-09-08
     _dictionary.uri              www.iucr.org/cif/dic/core_struc.dic
-    _dictionary.ddl_conformance  3.10.03
+    _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CoreStruc
     _description.text
 ;
@@ -46,7 +46,6 @@ save_ATOM
      The CATEGORY of data items used to describe atomic information
      used in crystallographic structure studies.
 ;
-    _description.common         'Atom'
     _name.category_id            STRUCTURE
     _name.object_id              ATOM
  
@@ -58,16 +57,16 @@ save_ATOM_SITE
     _definition.id               ATOM_SITE
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-20
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe atom site information
      used in crystallographic structure studies.
 ;
-    _description.common         'AtomSiteList'
     _name.category_id            ATOM
     _name.object_id              SITE
     _category.key_id           '_atom_site.key'
+    _category.key_list        ['_atom_site.label']
  
  
 save_atom_site.key
@@ -78,12 +77,12 @@ save_atom_site.key
      Value is a unique key to a set of ATOM_SITE items
      in a looped list.
 ;
-    _description.common         'Key to list of atomic sites'
     _name.category_id            site
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -107,7 +106,6 @@ save_atom_site.adp_type
 ;
      Code for type of atomic displacement parameters used for the site.
 ;
-    _description.common         'AtomSiteAdpType'
     _name.category_id            site
     _name.object_id              adp_type
     _type.purpose                State
@@ -125,6 +123,67 @@ save_atom_site.adp_type
                                  Bovl   'overall B'
     _enumeration.default         Uiso
      save_
+
+
+save_atom_site.tensor_beta
+    _definition.id             '_atom_site.tensor_beta'
+    _definition.update           2013-04-28
+    _description.text
+;
+     The symmetric anisotropic atomic displacement tensor beta[I,J]
+     appears in a structure factor expression as:
+ 
+     t = exp -[ beta11 h h + ............ 2 beta23 k l ]
+
+     It is related to the adp matrices U(IJ) and B(IJ) as follows:
+
+     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
+     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+;
+    _name.category_id            site
+    _name.object_id              tensor_beta
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Matrix
+    _type.contents               Real
+    _type.dimension              [3,3]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  atom_site
+
+     label = a.label
+           
+     If      (a.adp_type == 'uani')  {
+         Loop b as atom_site_aniso     {
+           If(label == b.label)           {
+
+               UIJ = b.matrix_U
+               Break
+     } } }
+
+     Else If (a.adp_type == 'bani')  {
+         Loop b as atom_site_aniso     {
+           If(label == b.label)           {
+
+              UIJ = b.matrix_B / (8 * Pi**2)
+              Break
+     } } }
+
+     Else                                    {
+         If (a.adp_type == 'uiso')  U  =  a.U_iso_or_equiv
+         Else                       U  =  a.B_iso_or_equiv / (8 * Pi**2)
+
+             UIJ = U * _cell_reciprocal.convert_Uiso_to_Uij
+     }
+
+              CUB = _cell_reciprocal.convert_Uij_to_betaij
+
+        _atom_site.tensor_beta =  CUB * UIJ * CUB
+;
+     save_
  
  
 save_atom_site.attached_hydrogens
@@ -138,11 +197,10 @@ save_atom_site.attached_hydrogens
      excluding any H atoms for which coordinates (measured or calculated)
      are given.
 ;
-    _description.common         'AtomSiteAttachedH'
     _name.category_id            site
     _name.object_id              attached_hydrogens
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:8
@@ -174,7 +232,6 @@ save_atom_site.B_equiv_geom_mean
      of B for reporting atomic displacement parameters. U, being
      directly proportional to B, is preferred.
 ;
-    _description.common         'AtomSiteBisoMean'
     _name.category_id            site
     _name.object_id              B_equiv_geom_mean
     _type.purpose                Measurand
@@ -182,7 +239,7 @@ save_atom_site.B_equiv_geom_mean
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  angstroms_squared
+    _units.code                  angstrom_squared
      save_
  
  
@@ -208,7 +265,6 @@ save_atom_site.B_iso_or_equiv
      of B for reporting atomic displacement parameters. U, being
      directly proportional to B, is preferred.
 ;
-    _description.common         'AtomSiteBisoEquiv'
     _name.category_id            site
     _name.object_id              B_iso_or_equiv
     _type.purpose                Measurand
@@ -216,7 +272,7 @@ save_atom_site.B_iso_or_equiv
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  angstroms_squared
+    _units.code                  angstrom_squared
      save_
  
  
@@ -230,12 +286,11 @@ save_atom_site.calc_attached_atom
      The _atom_site.label of the atom site to which the 'geometry-
      calculated' atom site is attached.
 ;
-    _description.common         'AtomSiteParentAtom'
     _name.category_id            site
     _name.object_id              calc_attached_atom
     _name.linked_item_id       '_atom_site.label'
     _type.purpose                Link
-    _type.source                 Assigned
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -252,7 +307,6 @@ save_atom_site.calc_flag
      determined from the intensities or calculated from the geometry
      of surrounding sites, or have been assigned dummy coordinates.
 ;
-    _description.common         'AtomSiteCalcStatus'
     _name.category_id            site
     _name.object_id              calc_flag
     _type.purpose                State
@@ -276,11 +330,10 @@ save_atom_site.Cartn_xyz
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
 ;
-    _description.common         'AtomSiteCartnXyz'
     _name.category_id            site
     _name.object_id              Cartn_xyz
     _type.purpose                Measurand
-    _type.source                 Assembled
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3]
@@ -336,12 +389,11 @@ save_atom_site.chemical_conn_number
      This number links an atom site to the chemical connectivity list.
      It must match a number specified by _chemical_conn_atom.number.
 ;
-    _description.common         'AtomSiteChemConnLink'
     _name.category_id            site
     _name.object_id              chemical_conn_number
     _name.linked_item_id       '_chemical_conn_atom.number'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Index
     _enumeration.range           1:
@@ -359,11 +411,10 @@ save_atom_site.constraints
      site during refinement. See also _atom_site.refinement_flags
      and _refine_ls.number_constraints.
 ;
-    _description.common         'AtomSiteConstraints'
     _name.category_id            site
     _name.object_id              constraints
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -382,11 +433,10 @@ save_atom_site.description
      A description of special aspects of this site. See also
      _atom_site.refinement_flags.
 ;
-    _description.common         'AtomSiteDetails'
     _name.category_id            site
     _name.object_id              description
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -408,11 +458,10 @@ save_atom_site.disorder_assembly
      needed if there is more than one cluster of disordered atoms
      showing independent local order.
 ;
-    _description.common         'AtomSiteDisorderCode'
     _name.category_id            site
     _name.object_id              disorder_assembly
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
@@ -440,10 +489,9 @@ save_atom_site.disorder_group
      different groups are not. A minus prefix (e.g. "-1") is used to
      indicate sites disordered about a special position.
 ;
-    _description.common         'AtomSiteDisorderGroup'
     _name.category_id            site
     _name.object_id              disorder_group
-    _type.purpose                Quantity
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -465,11 +513,10 @@ save_atom_site.fract_xyz
      Vector of atom site coordinates projected onto the crystal unit
      cell as fractions of the cell lengths.
 ;
-    _description.common         'AtomSiteFractXyz'
     _name.category_id            site
     _name.object_id              fract_xyz
     _type.purpose                Measurand
-    _type.source                 Assembled
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3]
@@ -520,7 +567,6 @@ save_atom_site.label
      loop_
     _alias.definition_id       '_atom_site_label'
     _import.get         [{"file":'templ_attr.cif',"save":'atom_site_label'}]
-    _description.common         'AtomSiteLabel'
     _name.category_id            site
     _name.object_id              label
      save_
@@ -610,7 +656,6 @@ save_atom_site.occupancy
      -3u =< x =< 1 + 3u. The _enumeration.range of 0.0:1.0 is thus
      correctly interpreted as meaning (0.0 - 3u) =< x =< (1.0 + 3u).
 ;
-    _description.common         'AtomSiteOccupancy'
     _name.category_id            site
     _name.object_id              occupancy
     _type.purpose                Measurand
@@ -619,6 +664,7 @@ save_atom_site.occupancy
     _type.contents               Real
     _enumeration.range           0.0:1.0
     _enumeration.default         1.0
+    _units.code                  none
      save_
  
  
@@ -626,13 +672,12 @@ save_atom_site.refinement_flags
     _definition.id             '_atom_site.refinement_flags'
      loop_
     _alias.definition_id       '_atom_site_refinement_flags'
-    _definition.update           2012-11-20
+    _definition.update           2013-03-08
     _description.text
 ;
      A concatenated series of single-letter codes which indicate the
      refinement restraints or constraints applied to this site.
 ;
-    _description.common         'AtomSiteRefineFlags'
     _name.category_id            site
     _name.object_id              refinement_flags
     _type.purpose                State
@@ -642,14 +687,15 @@ save_atom_site.refinement_flags
      loop_
     _enumeration_set.state
     _enumeration_set.detail 
-                   S  'special position constraint on site'
-                   G  'rigid group refinement of site'
-                   R  'riding-atom site attached to non-riding atom'
-                   D  'distance or angle restraint on site'
-                   T  'thermal displacement constraints'
-                   U  'Uiso or Uij restraint (rigid bond)'
-                   P  'partial occupancy constraint'
-                   .  'no refinement constraints'        
+                  'S'  'special position constraint on site'
+                  'G'  'rigid group refinement of site'
+                  'R'  'riding-atom site attached to non-riding atom'
+                  'D'  'distance or angle restraint on site'
+                  'T'  'thermal displacement constraints'
+                  'U'  'Uiso or Uij restraint (rigid bond)'
+                  'P'  'partial occupancy constraint'
+                  '.'  'no refinement constraints'        
+    _enumeration.default '.'
      save_
  
 
@@ -672,10 +718,11 @@ save_atom_site.refinement_flags_adp
      loop_
     _enumeration_set.state
     _enumeration_set.detail
-     .  'no constraints on atomic displacement parameters'
-     T  'special-position constraints on atomic displacement parameters'
-     U  'Uiso or Uij restraint (rigid bond)'
-     TU 'both constraints applied'
+    '.'  'no constraints on atomic displacement parameters'
+    'T'  'special-position constraints on atomic displacement parameters'
+    'U'  'Uiso or Uij restraint (rigid bond)'
+    'TU' 'both constraints applied'
+    _enumeration.default '.'
      save_
 
 
@@ -698,10 +745,11 @@ save_atom_site.refinement_flags_occupancy
      loop_
     _enumeration_set.state
     _enumeration_set.detail
-     .  'no constraints on atomic displacement parameters'
-     T  'special-position constraints on atomic displacement parameters'
-     U  'Uiso or Uij restraint (rigid bond)'
-     TU 'both constraints applied'
+    '.'  'no constraints on atomic displacement parameters'
+    'T'  'special-position constraints on atomic displacement parameters'
+    'U'  'Uiso or Uij restraint (rigid bond)'
+    'TU' 'both constraints applied'
+    _enumeration.default '.'
      save_
 
 
@@ -724,22 +772,23 @@ save_atom_site.refinement_flags_posn
      loop_
     _enumeration_set.state       
     _enumeration_set.detail      
-           . 'no constraints on  positional coordinates'
-           D 'distance or angle restraint on positional coordinates'
-           G 'rigid-group refinement of positional coordinates'
-           R 'riding-atom site attached to non-riding atom'
-           S 'special-position constraint on positional coordinates'
-           DG   'combination of the above constraints'
-           DR   'combination of the above constraints'
-           DS   'combination of the above constraints'
-           GR   'combination of the above constraints'
-           GS   'combination of the above constraints'
-           RS    'combination of the above constraints'
-           DGR  'combination of the above constraints'
-           DGS  'combination of the above constraints'
-           DRS  'combination of the above constraints'
-           GRS  'combination of the above constraints'
-           DGRS 'combination of the above constraints'
+       '.' 'no constraints on positional coordinates'
+       'D' 'distance or angle restraint on positional coordinates'
+       'G' 'rigid-group refinement of positional coordinates'
+       'R' 'riding-atom site attached to non-riding atom'
+       'S' 'special-position constraint on positional coordinates'
+       'DG'   'combination of the above constraints'
+       'DR'   'combination of the above constraints'
+       'DS'   'combination of the above constraints'
+       'GR'   'combination of the above constraints'
+       'GS'   'combination of the above constraints'
+       'RS'    'combination of the above constraints'
+       'DGR'  'combination of the above constraints'
+       'DGS'  'combination of the above constraints'
+       'DRS'  'combination of the above constraints'
+       'GRS'  'combination of the above constraints'
+       'DGRS' 'combination of the above constraints'
+    _enumeration.default '.'
      save_
 
  
@@ -754,11 +803,10 @@ save_atom_site.restraints
      this site during refinement. See also _atom_site.refinement_flags
      and _refine_ls.number_restraints.
 ;
-    _description.common         'AtomSiteRestraints'
     _name.category_id            site
     _name.object_id              restraints
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -771,7 +819,7 @@ save_atom_site.site_symmetry_multiplicity
      loop_
     _alias.definition_id       '_atom_site_site_symmetry_multiplicity'
                                '_atom_site_symmetry_multiplicity'
-    _definition.update           2012-11-20
+    _definition.update           2013-04-28
     _description.text
 ;
      The number of different sites that are generated by the
@@ -782,10 +830,9 @@ save_atom_site.site_symmetry_multiplicity
      position divided by the order of the site symmetry given in
      _atom_site.site_symmetry_order.
 ;
-    _description.common         'AtomSiteMultiplicity'
     _name.category_id            site
     _name.object_id              site_symmetry_multiplicity
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Index
@@ -797,7 +844,7 @@ save_atom_site.site_symmetry_multiplicity
 ;
      With  a  as  atom_site  
 
-        mul  =   1
+        mul  =   0
         xyz  =   a.fract_xyz
 
           Loop  s  as  symmetry_equiv  {
@@ -805,9 +852,9 @@ save_atom_site.site_symmetry_multiplicity
              sxyz  =   s.R * xyz + s.T
              diff  =   Mod( 99.5 + xyz - sxyz, 1.0) - 0.5
 
-             If ( Norm ( diff ) > 0.1 ) mul +=  1
+             If ( Norm ( diff ) < 0.1 ) mul +=  1
        } 
-        _atom_site.site_symmetry_multiplicity =  mul
+    _atom_site.site_symmetry_multiplicity =  _symmetry.multiplicity / mul
 ;
      save_
  
@@ -826,10 +873,9 @@ save_atom_site.site_symmetry_order
             ------------------------------------
             _atom_site.site_symmetry_multiplicity
 ;
-    _description.common         'AtomSiteMultiplicity'
     _name.category_id            site
     _name.object_id              site_symmetry_order
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Index
@@ -849,12 +895,11 @@ save_atom_site.type_symbol
      specification of this code is optional if component_0 of the
      _atom_site.label is used for this purpose. See _atom_type.symbol.
 ;
-    _description.common         'AtomSiteTypeSymbol'
     _name.category_id            site
     _name.object_id              type_symbol
     _name.linked_item_id       '_atom_type.symbol'
     _type.purpose                Link
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      loop_
@@ -884,7 +929,6 @@ save_atom_site.U_equiv_geom_mean
  
      U~n~ = the principal components of the orthogonalised U^ij^
 ;
-    _description.common         'AtomSiteUisoMean'
     _name.category_id            site
     _name.object_id              U_equiv_geom_mean
     _type.purpose                Measurand
@@ -892,7 +936,7 @@ save_atom_site.U_equiv_geom_mean
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  angstroms_squared
+    _units.code                  angstrom_squared
      save_
  
  
@@ -913,7 +957,6 @@ save_atom_site.U_iso_or_equiv
      a* = the reciprocal-space cell lengths
      Ref: Fischer, R. X. & Tillmanns, E. (1988). Acta Cryst. C44, 775-776.
 ;
-    _description.common         'AtomSiteUisoEquiv'
     _name.category_id            site
     _name.object_id              U_iso_or_equiv
     _type.purpose                Measurand
@@ -921,7 +964,7 @@ save_atom_site.U_iso_or_equiv
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  angstroms_squared
+    _units.code                  angstrom_squared
      save_
  
  
@@ -935,10 +978,9 @@ save_atom_site.Wyckoff_symbol
      The Wyckoff symbol (letter) as listed in the space-group section
      of International Tables for Crystallography, Vol. A (1987).
 ;
-    _description.common         'AtomSiteWyckoff'
     _name.category_id            site
     _name.object_id              Wyckoff_symbol
-    _type.purpose                Quantity
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -952,16 +994,16 @@ save_ATOM_SITE_ANISO
     _definition.id               ATOM_SITE_ANISO
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-20
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe the anisotropic
      thermal parameters of the atomic sites in a crystal structure. 
 ;
-    _description.common         'Anisotropic thermal parameters'
     _name.category_id            ATOM_SITE
     _name.object_id              ANISO       
     _category.key_id           '_atom_site_aniso.key'
+    _category.key_list        ['_atom_site_aniso.label']
  
  
 save_atom_site_aniso.key
@@ -972,12 +1014,12 @@ save_atom_site_aniso.key
      Value is a unique key to a set of ATOM_SITE_ANISO items
      in a looped list.
 ;
-    _description.common         'Key to list of atomic sites'
     _name.category_id            aniso
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -1002,11 +1044,10 @@ save_atom_site_aniso.label
      _atom_site_label of the associated atom in the atom coordinate
      list and conform with the same rules described in _atom_site.label.
 ;
-    _description.common         'AtomSiteAnisoLabel'
     _name.category_id            aniso
     _name.object_id              label
-    _type.purpose                Quantity 
-    _type.source                 Selected
+    _type.purpose                Encode 
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code 
      save_
@@ -1023,14 +1064,14 @@ save_atom_site_aniso.ratio
      Ratio of the maximum to minimum eigenvalues of the atomic
      displacement (thermal) ellipsoids.
 ;
-    _description.common         'AtomSiteAnisoRatio'
     _name.category_id            aniso
     _name.object_id              ratio
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           1.0:
+    _units.code                  none
      save_
  
  
@@ -1046,12 +1087,11 @@ save_atom_site_aniso.type_symbol
      the atom type data associated with this site and must match one of
      the _atom_type.symbol codes in this list.
 ;
-    _description.common         'AtomSiteAnisoTypeSymbol'
     _name.category_id            aniso
     _name.object_id              type_symbol
     _name.linked_item_id       '_atom_type.symbol'
     _type.purpose                Link
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      loop_
@@ -1064,58 +1104,6 @@ save_atom_site_aniso.type_symbol
      save_
  
  
-save_atom_site_aniso.matrix_beta
-    _definition.id             '_atom_site_aniso.matrix_beta'
-    _definition.update           2012-11-20
-    _description.text
-;
-     The symmetric anisotropic atomic displacement matrix beta(IJ)
-     appears in a structure factor expression as:
-  
-     t = exp -       ( beta11 h h + ............ 2 beta23 k l )
-
-     It is related to the adp matrices U(IJ) and B(IJ) as follows:
-
-     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* ) 
-     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* ) 
-;
-    _description.common         'AtomSiteAnisoBetaIJ'
-    _name.category_id            aniso
-    _name.object_id              matrix_beta
-    _type.purpose                Measurand
-    _type.source                 Derived 
-    _type.container              Matrix
-    _type.contents               Real
-    _type.dimension              [3,3]
-     loop_
-    _method.purpose     
-    _method.expression
-     Evaluation
-;
-     With  a  as  atom_site_aniso
-
-     If      (a.adp_type == 'uani')  {
-
-         C =   _cell_reciprocal.convert_U_to_beta
-         B =   C * _atom_site_aniso.matrix_U * C
-     }
-     Else If (a.adp_type == 'bani')  {   
-
-         C =   _cell_reciprocal.convert_U_to_beta / (2.828427 * Pi)
-         B =   C * _atom_site_aniso.matrix_B * C
-     }
-     Else                                    {
-         If (a.adp_type == 'uiso')  b  =  a.U_iso_or_equiv
-         Else                       b  =  a.B_iso_or_equiv / (8 * Pi**2)
-
-         C  =  _cell_reciprocal.convert_U_to_beta
-         B  =   C * Matrix([[b,0,0],[0,b,0],[0,0,b]]) * C
-     }
-     _atom_site_aniso.matrix_beta =  B
-;
-     save_
- 
-
 save_atom_site_aniso.matrix_B
     _definition.id             '_atom_site_aniso.matrix_B'
     _definition.update           2012-11-20
@@ -1123,11 +1111,10 @@ save_atom_site_aniso.matrix_B
 ;
      The symmetric anisotropic atomic displacement matrix B.
 ;
-    _description.common         'AtomSiteAnisoBIJ'
     _name.category_id            aniso
     _name.object_id              matrix_B
     _type.purpose                Measurand
-    _type.source                 Assembled
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3,3]
@@ -1224,11 +1211,10 @@ save_atom_site_aniso.matrix_U
 ;
      The symmetric anisotropic atomic displacement matrix U.
 ;
-    _description.common         'AtomSiteAnisoUIJ'
     _name.category_id            aniso
     _name.object_id              matrix_U
     _type.purpose                Measurand
-    _type.source                 Assembled
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3,3]
@@ -1359,7 +1345,6 @@ save_atom_sites.solution_primary
           edited by M. G. Rossmann and E. Arnold, ch. 16.1.
           Dordrecht: Kluwer Academic Publishers.
 ;
-    _description.common         'MethodologySolnPrimary'
     _name.category_id            sites
     _name.object_id              solution_primary
     _type.purpose                State
@@ -1406,7 +1391,6 @@ save_atom_sites.solution_secondary
           edited by M. G. Rossmann and E. Arnold, ch. 16.1. 
           Dordrecht: Kluwer Academic Publishers.
 ;
-    _description.common         'MethodologySolnSecondary'
     _name.category_id            sites
     _name.object_id              solution_secondary
     _type.purpose                State
@@ -1453,7 +1437,6 @@ save_atom_sites.solution_hydrogens
           edited by M. G. Rossmann and E. Arnold, ch. 16.1.
           Dordrecht: Kluwer Academic Publishers.
 ;
-    _description.common         'methodologySolnHatoms'
     _name.category_id            sites
     _name.object_id              solution_hydrogens
     _type.purpose                State
@@ -1492,7 +1475,7 @@ save_atom_sites.special_details
     _name.category_id            sites
     _name.object_id              special_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1529,11 +1512,10 @@ save_atom_sites_Cartn_transform.axes
      Cartesian orthogonal axes as applied in the transformation matrix
      _atom_sites_Cartn_transform.matrix.
 ;
-    _description.common         'AtomSitesCartnTransfAxes'
     _name.category_id            Cartn_transform
     _name.object_id              axes
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1559,7 +1541,6 @@ save_atom_sites_Cartn_transform.matrix
      assignments with cell vectors a,b,c aligned with orthogonal 
      axes X,Y,Z so that c||Z and b in plane YZ.
 ;
-    _description.common         'AtomSitesCartnTransfMatrix'
     _name.category_id            Cartn_transform
     _name.object_id              matrix
     _type.purpose                Measurand
@@ -1767,7 +1748,6 @@ save_atom_sites_Cartn_transform.vector
      The axial alignments of this transformation are described in 
      _atom_sites_Cartn_transform.axes.
 ;
-    _description.common         'AtomSitesCartnTransfVector'
     _name.category_id            atom_sites_Cartn_transform
     _name.object_id              vector
     _type.purpose                Measurand
@@ -1853,11 +1833,10 @@ save_atom_sites_fract_transform.axes
      Cartesian orthogonal axes as applied in the transformation matrix
      _atom_sites_fract_transform.matrix.
 ;
-    _description.common         'AtomSitesfractTransfAxes'
     _name.category_id            fract_transform
     _name.object_id              axes
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1883,7 +1862,6 @@ save_atom_sites_fract_transform.matrix
      assignments with cell vectors a,b,c aligned with orthogonal 
      axes X,Y,Z so that c||Z and b in plane YZ.
 ;
-    _description.common         'AtomSitesfractTransfMatrix'
     _name.category_id            fract_transform
     _name.object_id              matrix
     _type.purpose                Measurand
@@ -2014,7 +1992,6 @@ save_atom_sites_fract_transform.vector
      The axial alignments of this transformation are described in 
      _atom_sites_fract_transform.axes.
 ;
-    _description.common         'AtomSitesfractTransfVector'
     _name.category_id            atom_sites_fract_transform
     _name.object_id              vector
     _type.purpose                Measurand
@@ -2078,16 +2055,17 @@ save_ATOM_TYPE
     _definition.id               ATOM_TYPE
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2013-02-18
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe atomic type information
      used in crystallographic structure studies.
 ;
-    _description.common         'AtomTypeList'
     _name.category_id            ATOM           
     _name.object_id              TYPE
     _category.key_id           '_atom_type.key'
+    _category.key_list        ['_atom_type.symbol']
+
      loop_
     _method.purpose
     _method.expression
@@ -2114,12 +2092,12 @@ save_atom_type.key
      Value is a unique key to a set of ATOM_TYPE items
      in a looped list.
 ;
-    _description.common         'Key to list of atomic types'
     _name.category_id            type
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -2136,21 +2114,20 @@ save_atom_type.analytical_mass_percent
     _definition.id             '_atom_type.analytical_mass_percent'
      loop_
     _alias.definition_id       '_atom_type_analytical_mass_%'
-    _definition.update           2012-11-20
-    loop_
-    _alias.definition_id       '_atom_type.analytical_mass_%'
+                               '_atom_type.analytical_mass_%'
+    _definition.update           2013-04-11
     _description.text
 ;
      Mass percentage of this atom type derived from chemical analysis.
 ;
-    _description.common         'AtomTypeComposition%'
     _name.category_id            type
     _name.object_id              analytical_mass_percent
     _type.purpose                Measurand
-    _type.source                 Observed
+    _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:100.
+    _units.code                  none
      save_
  
  
@@ -2161,16 +2138,15 @@ save_atom_type.atomic_mass
 ;
      Mass of this atom type.
 ;
-    _description.common         'AtomTypeMass'
     _name.category_id            type
     _name.object_id              atomic_mass
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _import.get         [{"file":'templ_enum.cif',"save":'atomic_mass'}]
     _enumeration.def_index_id  '_atom_type.symbol'
-    _units.code                  daltons
+    _units.code                  dalton
      save_
  
  
@@ -2181,10 +2157,9 @@ save_atom_type.atomic_number
 ;
      Atomic number of this atom type.
 ;
-    _description.common         'AtomTypeNumber'
     _name.category_id            type
     _name.object_id              atomic_number
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index
@@ -2205,11 +2180,10 @@ save_atom_type.description
      a single atom  species. For disordered or nonstoichiometric
      structures it will describe a combination of atom species.
 ;
-    _description.common         'AtomTypeDetails'
     _name.category_id            type
     _name.object_id              description
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2226,11 +2200,10 @@ save_atom_type.display_colour
      possible colours are enumerated in the display_colour list
      category of items.
 ;
-    _description.common         'AtomTypeColour'
     _name.category_id            type
     _name.object_id              display_colour
     _type.purpose                State
-    _type.source                 Selected
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
     _import.get         [{"file":'templ_enum.cif',"save":'colour_rgb'},
@@ -2246,10 +2219,9 @@ save_atom_type.electron_count
 ;
      Number of electrons in this atom type.
 ;
-    _description.common         'AtomTypeElectrons'
     _name.category_id            type
     _name.object_id              electron_count
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index
@@ -2268,7 +2240,6 @@ save_atom_type.element_symbol
      from the ion-to-element enumeration_default list using the index
      value of atom_type.symbol.
 ;
-    _description.common         'AtomTypeElement'
     _name.category_id            type
     _name.object_id              element_symbol
     _type.purpose                State
@@ -2290,14 +2261,14 @@ save_atom_type.number_in_cell
 ;
      Total number of atoms of this atom type in the unit cell.
 ;
-    _description.common         'AtomTypeCellCount'
     _name.category_id            type
     _name.object_id              number_in_cell
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0:
+    _units.code                  none
      loop_
     _method.purpose     
     _method.expression
@@ -2327,10 +2298,9 @@ save_atom_type.oxidation_number
 ;
      Formal oxidation state of this atom type in the structure.
 ;
-    _description.common         'AtomTypeOxidation'
     _name.category_id            type
     _name.object_id              oxidation_number
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Integer
@@ -2348,10 +2318,9 @@ save_atom_type.radius_bond
 ;
      The effective intra-molecular bonding radius of this atom type.
 ;
-    _description.common         'AtomTypeBondRad'
     _name.category_id            type
     _name.object_id              radius_bond
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -2371,10 +2340,9 @@ save_atom_type.radius_contact
 ;
      The effective inter-molecular bonding radius of this atom type.
 ;
-    _description.common         'AtomTypeContactRad'
     _name.category_id            type
     _name.object_id              radius_contact
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -2403,10 +2371,9 @@ save_atom_type.symbol
      an underline or a blank, with the proviso that digits designate an
      oxidation state and must be followed by a + or - character.
 ;
-    _description.common         'AtomTypeSymbol'
     _name.category_id            type
     _name.object_id              symbol
-    _type.purpose                Quantity
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2423,7 +2390,7 @@ save_ATOM_TYPE_SCAT
     _definition.id               ATOM_TYPE_SCAT
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-20
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe atomic scattering
@@ -2432,6 +2399,7 @@ save_ATOM_TYPE_SCAT
     _name.category_id            ATOM_TYPE
     _name.object_id              SCAT 
     _category.key_id           '_atom_type_scat.key'
+    _category.key_list        ['_atom_type_scat.symbol']
  
  
 save_atom_type_scat.key
@@ -2442,12 +2410,12 @@ save_atom_type_scat.key
      Value is a unique key to a set of ATOM_TYPE_SCAT items in a 
      looped list. This list may be joined with the ATOM_TYPE list.
 ;
-    _description.common         'Key to atomic scattering list'
     _name.category_id            scat
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -2470,14 +2438,14 @@ save_atom_type_scat.Cromer_Mann_coeffs
      Ref: International Tables for Crystallography, Vol. C
              (1991) Table 6.1.1.4
 ;
-    _description.common         'AtomTypeCMCoeffs'
     _name.category_id            scat
     _name.object_id              Cromer_Mann_coeffs
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              List
     _type.contents               Real
     _type.dimension              [9]
+    _units.code                  none
      loop_
     _method.purpose     
     _method.expression
@@ -2601,6 +2569,38 @@ save_atom_type_scat.Cromer_Mann_c
     _name.object_id              Cromer_Mann_c
      save_
  
+
+save_atom_type_scat.dispersion
+    _definition.id             '_atom_type_scat.dispersion'
+    _definition.update           2013-04-28
+    _description.text
+;
+     The anomalous dispersion scattering factor in its complex form
+     for this atom type and radiation by _diffrn_radiation_wavelength.value
+;
+    _name.category_id            scat
+    _name.object_id              dispersion
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Complex
+    _enumeration.default         0.0
+    _units.code                  none
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With s as atom_type_scat
+
+             d = Complex( s.dispersion_real, s.dispersion_imag )
+
+        if(_reflns.apply_dispersion_to_Fcalc == 'no')   d = 0.
+
+                 _atom_type_scat.dispersion = d
+;
+     save_
+
  
 save_atom_type_scat.dispersion_imag
     _definition.id             '_atom_type_scat.dispersion_imag'
@@ -2613,14 +2613,14 @@ save_atom_type_scat.dispersion_imag
      The imaginary component of the anomalous dispersion scattering factors
      for this atom type and radiation by _diffrn_radiation_wavelength.value
 ;
-    _description.common         'AnomDispImag'
     _name.category_id            scat
     _name.object_id              dispersion_imag
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
+    _units.code                  none
      loop_
     _method.purpose     
     _method.expression
@@ -2628,8 +2628,8 @@ save_atom_type_scat.dispersion_imag
 ;
     With q as atom_type_scat
 
-     If ( _diffrn_radiation.type == 'Cu' ) a = q.dispersion_imag_cu
-     If ( _diffrn_radiation.type == 'Mo' ) a = q.dispersion_imag_mo
+     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_imag_cu
+     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_imag_mo
 
              _atom_type_scat.dispersion_imag = a
 ;
@@ -2644,15 +2644,15 @@ save_atom_type_scat.dispersion_imag_cu
      The imaginary component of the anomalous dispersion scattering factors
      for this atom type and Cu K alpha radiation
 ;
-    _description.common         'AnomDispImagCu'
     _name.category_id            scat
     _name.object_id              dispersion_imag_cu
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _import.get         [{"file":'templ_enum.cif',"save":'dispersion_imag_cu'}]
     _enumeration.def_index_id  '_atom_type.symbol'
+    _units.code                  none
      save_
  
  
@@ -2664,15 +2664,15 @@ save_atom_type_scat.dispersion_imag_mo
      The imaginary component of the anomalous dispersion scattering factors
      for this atom type and Mo K alpha radiation
 ;
-    _description.common         'AnomDispImagMo'
     _name.category_id            scat
     _name.object_id              dispersion_imag_mo
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _import.get         [{"file":'templ_enum.cif',"save":'dispersion_imag_mo'}]
     _enumeration.def_index_id  '_atom_type.symbol'
+    _units.code                  none
      save_
  
  
@@ -2687,13 +2687,13 @@ save_atom_type_scat.dispersion_real
      The real component of the anomalous dispersion scattering factors
      for this atom type and radiation by _diffrn_radiation_wavelength.value
 ;
-    _description.common         'AtomTypeAnomDispReal'
     _name.category_id            scat
     _name.object_id              dispersion_real
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _units.code                  none
      loop_
     _method.purpose     
     _method.expression
@@ -2701,8 +2701,8 @@ save_atom_type_scat.dispersion_real
 ;
     With q as atom_type_scat
 
-     If ( _diffrn_radiation.type == 'Cu' ) a = q.dispersion_real_cu
-     If ( _diffrn_radiation.type == 'Mo' ) a = q.dispersion_real_mo
+     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_real_cu
+     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_real_mo
 
              _atom_type_scat.dispersion_real = a
 ;
@@ -2718,15 +2718,15 @@ save_atom_type_scat.dispersion_real_cu
      The real component of the anomalous dispersion scattering factors
      for this atom type and Cu K alpha radiation
 ;
-    _description.common         'AnomDispRealCu'
     _name.category_id            scat
     _name.object_id              dispersion_real_cu
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _import.get         [{"file":'templ_enum.cif',"save":'dispersion_real_cu'}]
     _enumeration.def_index_id  '_atom_type.symbol'
+    _units.code                  none
      save_
  
  
@@ -2738,15 +2738,15 @@ save_atom_type_scat.dispersion_real_mo
      The real component of the anomalous dispersion scattering factors
      for this atom type and Mo K alpha radiation
 ;
-    _description.common         'AnomDispRealMo'
     _name.category_id            scat
     _name.object_id              dispersion_real_mo
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _import.get         [{"file":'templ_enum.cif',"save":'dispersion_real_mo'}]
     _enumeration.def_index_id  '_atom_type.symbol'
+    _units.code                  none
      save_
  
  
@@ -2760,11 +2760,10 @@ save_atom_type_scat.dispersion_source
      Reference to source of real and imaginary dispersion
      corrections for scattering factors used for this atom type.
 ;
-    _description.common         'AtomTypeAnomDispDetails'
     _name.category_id            scat
     _name.object_id              dispersion_source
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2782,14 +2781,14 @@ save_atom_type_scat.hi_ang_Fox_coeffs
      Ref: International Tables for Crystallography, Vol. C
              (1991) Table 6.1.1.5
 ;
-    _description.common         'AtomTypeFoxCoeffs'
     _name.category_id            scat
     _name.object_id              hi_ang_Fox_coeffs
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              List
     _type.contents               Real
     _type.dimension              [4]
+    _units.code                  none
      loop_
     _method.purpose     
     _method.expression
@@ -2849,10 +2848,9 @@ save_atom_type_scat.length_neutron
      The bound coherent scattering length for the atom type at the
      isotopic composition used for the diffraction experiment.
 ;
-    _description.common         'AtomTypeScatNeutronB'
     _name.category_id            scat
     _name.object_id              length_neutron
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -2871,11 +2869,10 @@ save_atom_type_scat.source
 ;
      Reference to source of scattering factors used for this atom type.
 ;
-    _description.common         'AtomTypeScatDetails'
     _name.category_id            scat
     _name.object_id              source
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2893,11 +2890,10 @@ save_atom_type_scat.symbol
      The identity of the atom specie(s) representing this atom type.
      See _atom_type.symbol for further details.
 ;
-    _description.common         'AtomTypeScatSymbol'
     _name.category_id            scat
     _name.object_id              symbol
     _name.linked_item_id       '_atom_type.symbol'
-    _type.purpose                Quantity
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2909,20 +2905,21 @@ save_atom_type_scat.versus_stol_list
      loop_
     _alias.definition_id       '_atom_type_scat_versus_stol_list'
                                '_atom_type.scat_versus_stol_list'
-    _definition.update           2013-01-21
+    _definition.update           2013-04-17
     _description.text
 ;
-     Table of scattering factors as a function of sin theta on lambda.
-     Table has the form ['<stol value as key>':'<scatfac>', ....]
-     in increments of 0.01, increasing from 0.0.
+     List of scattering factors as a function of sin theta on lambda.
+     List has the form ['<stol value>':'<scatfac>', ....] in 
+     increments of 0.01, increasing from 0.0.
 ;
-    _description.common         'AtomTypeScatTable'
     _name.category_id            scat
     _name.object_id              versus_stol_list
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned 
     _type.container              List 
-    _type.contents              List([Real,Real])
+    _type.contents               List(Real,Real)
+    _type.dimension              []
+    _units.code                  none
      save_
 
      save_    #------ close ATOM_TYPE_SCAT category
@@ -2956,11 +2953,10 @@ save_refine.special_details
 ;
      Details of the refinement not specified by other data items.
 ;
-    _description.common         'RefinementDetails'
     _name.category_id            refine
     _name.object_id              special_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -2994,13 +2990,13 @@ save_refine_diff.density_max
 ;
      Maximum density value in a difference Fourier map.
 ;
-    _description.common         'RefineDiffDensMax'
     _name.category_id            refine_diff
     _name.object_id              density_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           -100.:
      loop_
     _method.purpose
     _method.expression
@@ -3023,13 +3019,13 @@ save_refine_diff.density_min
 ;
      Miniumum density value in a difference Fourier map.
 ;
-    _description.common         'RefineDiffDensMin'
     _name.category_id            refine_diff
     _name.object_id              density_min
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           :100.
      loop_
     _method.purpose
     _method.expression
@@ -3057,13 +3053,13 @@ save_refine_diff.density_rms
      for assessing the significance of *_min and *_max values, 
      and also for defining suitable contour levels.
 ;
-    _description.common         'RefineDiffDensRms'
     _name.category_id            refine_diff
     _name.object_id              density_rms
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           -100.:100.
      loop_
     _method.purpose
     _method.expression
@@ -3104,11 +3100,10 @@ save_refine_ls.abs_structure_details
 ;
      Details on the absolute structure and how it was determined.
 ;
-    _description.common         'RefineAbsStructDetails'
     _name.category_id            refine_ls
     _name.object_id              abs_structure_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3132,7 +3127,6 @@ save_refine_ls.abs_structure_Flack
      meaning (0.0 - 3u) =< x =< (1.0 + 3u).
      Ref: Flack, H. D. (1983). Acta Cryst. A39, 876-881.
 ;
-    _description.common         'RefineAbsStructFlack'
     _name.category_id            refine_ls
     _name.object_id              abs_structure_Flack
     _type.purpose                Measurand
@@ -3140,6 +3134,7 @@ save_refine_ls.abs_structure_Flack
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
  
  
@@ -3158,7 +3153,6 @@ save_refine_ls.abs_structure_Rogers
      interpreted as meaning (-1.0 - 3u) =< \h =< (1.0 + 3u).
      Ref: Rogers, D. (1981). Acta Cryst. A37, 734-741.
 ;
-    _description.common         'RefineAbsStructRogers'
     _name.category_id            refine_ls
     _name.object_id              abs_structure_Rogers
     _type.purpose                Measurand
@@ -3166,6 +3160,7 @@ save_refine_ls.abs_structure_Rogers
     _type.container              Single
     _type.contents               Real
     _enumeration.range           -1.0:1.0
+    _units.code                  none
      save_
  
  
@@ -3180,10 +3175,9 @@ save_refine_ls.d_res_high
      Highest resolution for the reflections used in refinement.
      This corresponds to the smallest interpanar d value.
 ;
-    _description.common         'RefineResolutionHigh'
     _name.category_id            refine_ls
     _name.object_id              d_res_high
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
@@ -3203,10 +3197,9 @@ save_refine_ls.d_res_low
      Lowest resolution for the reflections used in refinement.
      This corresponds to the largest interpanar d value.
 ;
-    _description.common         'RefineResolutionLow'
     _name.category_id            refine_ls
     _name.object_id              d_res_low
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
@@ -3237,17 +3230,18 @@ save_refine_ls.extinction_coef
            Zachariasen, W. H. (1967). Acta Cryst. 23, 558-564.
            Larson, A. C. (1967). Acta Cryst. 23, 664-665.
 ;
-    _description.common         'RefineExtinctionCoeff'
     _name.category_id            refine_ls
     _name.object_id              extinction_coef
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  none
      loop_
     _description_example.case     
     _description_example.detail  
-            3472(52)    'Zachariasen coefficient r* = 0.347(5) E04'
+            3472(52)    'Zachariasen coefficient r* = 0.347(5)e+04'
      save_
  
  
@@ -3264,11 +3258,10 @@ save_refine_ls.extinction_expression
      information should be sufficient to reproduce the extinction-
      correction factors applied to the structure factors.
 ;
-    _description.common         'RefineExtinctionExpression'
     _name.category_id            refine_ls
     _name.object_id              extinction_expression
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3311,11 +3304,10 @@ save_refine_ls.extinction_method
            Zachariasen, W. H. (1967). Acta Cryst. 23, 558-564.
            Larson, A. C. (1967). Acta Cryst. 23, 664-665.
 ;
-    _description.common         'RefineExtinctionMethod'
     _name.category_id            refine_ls
     _name.object_id              extinction_method
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3337,7 +3329,7 @@ save_refine_ls.F_calc_details
     _name.category_id            refine_ls
     _name.object_id              F_calc_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3360,7 +3352,7 @@ save_refine_ls.F_calc_formula
     _name.category_id            refine_ls
     _name.object_id              F_calc_formula
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -3424,7 +3416,6 @@ save_refine_ls.goodness_of_fit_all
           Nparam = the number of refined parameters
           and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsGofAllReflns'
     _name.category_id            refine_ls
     _name.object_id              goodness_of_fit_all
     _type.purpose                Measurand
@@ -3432,6 +3423,7 @@ save_refine_ls.goodness_of_fit_all
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3465,7 +3457,6 @@ save_refine_ls.goodness_of_fit_gt
           Nparam = the number of refined parameters
           and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsGofGtReflns'
     _name.category_id            refine_ls
     _name.object_id              goodness_of_fit_gt
     _type.purpose                Measurand
@@ -3473,6 +3464,7 @@ save_refine_ls.goodness_of_fit_gt
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3502,7 +3494,6 @@ save_refine_ls.goodness_of_fit_ref
           Nparam = the number of refined parameters
           and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsGofRefineReflns'
     _name.category_id            refine_ls
     _name.object_id              goodness_of_fit_ref
     _type.purpose                Measurand
@@ -3510,6 +3501,7 @@ save_refine_ls.goodness_of_fit_ref
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3523,7 +3515,6 @@ save_refine_ls.hydrogen_treatment
 ;
      Code identifying how hydrogen atoms were treated in the refinement.
 ;
-    _description.common         'RefineLsHatomTreatment'
     _name.category_id            refine_ls
     _name.object_id              hydrogen_treatment
     _type.purpose                State
@@ -3582,7 +3573,6 @@ save_refine_ls.matrix_type
 ;
      Code identifying the matrix type used for least-squares derivatives.
 ;
-    _description.common         'RefineLsMatrixType'
     _name.category_id            refine_ls
     _name.object_id              matrix_type
     _type.purpose                State
@@ -3615,11 +3605,10 @@ save_refine_ls.number_constraints
      _atom_site.constraints and _atom_site.refinement_flags. A general
      description of constraints may appear in _refine.special_details.
 ;
-    _description.common         'RefineLsConstraintsCount'
     _name.category_id            refine_ls
     _name.object_id              number_constraints
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -3644,11 +3633,10 @@ save_refine_ls.number_parameters
      makes their direct contribution to this number, and to the 
      goodness-of-fit calculation, difficult to assess.
 ;
-    _description.common         'RefineLsParametersCount'
     _name.category_id            refine_ls
     _name.object_id              number_parameters
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -3665,11 +3653,10 @@ save_refine_ls.number_reflns
 ;
      Number of unique reflections used in the least-squares refinement.
 ;
-    _description.common         'RefineLsReflectionsCount'
     _name.category_id            refine_ls
     _name.object_id              number_reflns
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           1:
@@ -3690,11 +3677,10 @@ save_refine_ls.number_restraints
      _atom_site.constraints and _atom_site.refinement_flags. A description
      of refinement constraints may appear in _refine.special_details.
 ;
-    _description.common         'RefineLsConstraintsCount'
     _name.category_id            refine_ls
     _name.object_id              number_restraints
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -3721,14 +3707,14 @@ save_refine_ls.R_factor_all
                F(calc) = the calculated structure-factor amplitudes
                and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsResid(F)AllReflns'
     _name.category_id            refine_ls
     _name.object_id              R_factor_all
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3755,14 +3741,14 @@ save_refine_ls.R_factor_gt
                F(calc)    = the calculated structure-factor amplitudes
                and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsResid(F)GtReflns'
     _name.category_id            refine_ls
     _name.object_id              R_factor_gt
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3788,14 +3774,14 @@ save_refine_ls.R_Fsqd_factor
                F(calc)^2^    = squares of the calculated structure-factor
                and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsResid(Fsqd)GtReflns'
     _name.category_id            refine_ls
     _name.object_id              R_Fsqd_factor
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3820,14 +3806,14 @@ save_refine_ls.R_I_factor
                I(calc)    = the net calculated intensities
                and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsResid(I)GtReflns'
     _name.category_id            refine_ls
     _name.object_id              R_I_factor
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3869,7 +3855,6 @@ save_refine_ls.restrained_S_all
                sum     is taken over the specified reflections
                sum~r~  is taken over the restraints
 ;
-    _description.common         'RefineLsGofRestrainedAllReflns'
     _name.category_id            refine_ls
     _name.object_id              restrained_S_all
     _type.purpose                Measurand
@@ -3877,6 +3862,7 @@ save_refine_ls.restrained_S_all
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3919,7 +3905,6 @@ save_refine_ls.restrained_S_gt
                sum     is taken over the specified reflections
                sum~r~  is taken over the restraints
 ;
-    _description.common         'RefineLsGofRestrainedGtReflns'
     _name.category_id            refine_ls
     _name.object_id              restrained_S_gt
     _type.purpose                Measurand
@@ -3927,6 +3912,7 @@ save_refine_ls.restrained_S_gt
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3944,14 +3930,14 @@ save_refine_ls.shift_over_su_max
      to the final standard uncertainty (s.u., formerly described 
      as estimated standard deviation, e.s.d.).
 ;
-    _description.common         'RefineLsMaxShift/Su'
     _name.category_id            refine_ls
     _name.object_id              shift_over_su_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
 
@@ -3969,11 +3955,12 @@ save_refine_ls.shift_over_su_max_lt
 ;
     _name.category_id            refine_ls
     _name.object_id              shift_over_su_max_lt
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
 
  
@@ -3991,14 +3978,14 @@ save_refine_ls.shift_over_su_mean
      to the final standard uncertainty (s.u., formerly described 
      as estimated standard deviation, e.s.d.).
 ;
-    _description.common         'RefineLsMeanShift/Su'
     _name.category_id            refine_ls
     _name.object_id              shift_over_su_mean
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
 
@@ -4016,11 +4003,12 @@ save_refine_ls.shift_over_su_mean_lt
 ;   
     _name.category_id            refine_ls
     _name.object_id              shift_over_su_mean_lt
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
 
 
@@ -4034,7 +4022,6 @@ save_refine_ls.structure_factor_coef
 ;
      Structure-factor coefficient used in the least-squares process.
 ;
-    _description.common         'RefineLsStructFactorCoeff'
     _name.category_id            refine_ls
     _name.object_id              structure_factor_coef
     _type.purpose                State
@@ -4062,11 +4049,10 @@ save_refine_ls.weighting_details
      least-squares refinement. Used to describe the weighting when the
      value of _refine_ls.weighting_scheme is specified as 'calc'.
 ;
-    _description.common         'RefineLsWeightDetails'
     _name.category_id            refine_ls
     _name.object_id              weighting_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -4091,7 +4077,6 @@ save_refine_ls.weighting_scheme
      General description of the weighting scheme used in the least-squares.
      An enumerated code should be contained in this description.
 ;
-    _description.common         'RefineLsWeightCode'
     _name.category_id            refine_ls
     _name.object_id              weighting_scheme
     _type.purpose                State
@@ -4128,14 +4113,14 @@ save_refine_ls.wR_factor_all
        w       = the least-squares weight
        and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsWResidAllReflns'
     _name.category_id            refine_ls
     _name.object_id              wR_factor_all
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -4162,14 +4147,14 @@ save_refine_ls.wR_factor_gt
        w       = the least-squares weight
        and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsWResidGtReflns'
     _name.category_id            refine_ls
     _name.object_id              wR_factor_gt
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -4193,14 +4178,14 @@ save_refine_ls.wR_factor_ref
        w       = the least-squares weight
        and the sum is taken over the specified reflections
 ;
-    _description.common         'RefineLsWResidRefineReflns'
     _name.category_id            refine_ls
     _name.object_id              wR_factor_ref
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
 #----------------------------------------------------------------------------
@@ -4210,7 +4195,7 @@ save_REFINE_LS_CLASS
     _definition.id               REFINE_LS_CLASS
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-20
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to specify information about the
@@ -4219,6 +4204,7 @@ save_REFINE_LS_CLASS
     _name.category_id            REFINE_LS 
     _name.object_id              CLASS
     _category.key_id           '_refine_ls_class.key'
+    _category.key_list        ['_refine_ls_class.code']
  
  
 save_refine_ls_class.key
@@ -4229,12 +4215,12 @@ save_refine_ls_class.key
      Value is a unique key to a set of REFINE_LS_CLASS items
      in a looped list.
 ;
-    _description.common         'Key to ls refinement data'  
     _name.category_id            refine_ls_class
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
     loop_
     _method.purpose
     _method.expression
@@ -4256,12 +4242,11 @@ save_refine_ls_class.code
 ;
      Code identifying a certain reflection class.
 ;
-    _description.common         'LsShellCode'
     _name.category_id            refine_ls_class
     _name.object_id              code
     _name.linked_item_id       '_reflns_class.code'
     _type.purpose                Link
-    _type.source                 Selected 
+    _type.source                 Related 
     _type.container              Single
     _type.contents               Code
      loop_
@@ -4279,10 +4264,9 @@ save_refine_ls_class.d_res_high
      Highest resolution for the reflections in this class.
      This corresponds to the smallest interpanar d value.
 ;
-    _description.common         'LsShellResolHigh'
     _name.category_id            refine_ls_class
     _name.object_id              d_res_high
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
@@ -4301,10 +4285,9 @@ save_refine_ls_class.d_res_low
      Lowest resolution for the reflections in this class.
      This corresponds to the largest interpanar d value.
 ;
-    _description.common         'LsShellResolLow'
     _name.category_id            refine_ls_class
     _name.object_id              d_res_low
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
@@ -4323,14 +4306,14 @@ save_refine_ls_class.R_factor_all
      Residual factor for reflections in this class included in the 
      refinement.  See _refine_ls.R_factor_all definition for details.
 ;
-    _description.common         'LsShellResid(F)AllReflns'
     _name.category_id            refine_ls_class
     _name.object_id              R_factor_all
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -4346,14 +4329,14 @@ save_refine_ls_class.R_factor_gt
      significantly intense (see _reflns.threshold_expression) and 
      included in refinement. See _refine_ls.R_factor_gt for details.
 ;
-    _description.common         'LsShellResid(F)GtReflns'
     _name.category_id            refine_ls_class
     _name.object_id              R_factor_gt
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -4368,14 +4351,14 @@ save_refine_ls_class.R_Fsqd_factor
      significantly intense (see _reflns.threshold_expression) and 
      included in refinement. See _refine_ls.R_Fsqd_factor for details.
 ;
-    _description.common         'LsShellResid(Fsqd)GtReflns'
     _name.category_id            refine_ls_class
     _name.object_id              R_Fsqd_factor
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -4390,14 +4373,14 @@ save_refine_ls_class.R_I_factor
      significantly intense (see _reflns.threshold_expression) and 
      included in refinement. See _refine_ls.R_I_factor for details.
 ;
-    _description.common         'LsShellResid(I)GtReflns'
     _name.category_id            refine_ls_class
     _name.object_id              R_I_factor
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -4412,14 +4395,14 @@ save_refine_ls_class.wR_factor_all
      significantly intense (see _reflns.threshold_expression) and 
      included in refinement. See _refine_ls.wR_factor_all for details.
 ;
-    _description.common         'LsShellWResid(F)GtReflns'
     _name.category_id            refine_ls_class
     _name.object_id              wR_factor_all
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
 
      save_    #------ close REFINE_LS_CLASS category
@@ -4581,3 +4564,38 @@ save_refine_ls_class.wR_factor_all
 ;
   Added evaluation method for ATOM_TYPE in case type symbols are missing
 ;
+     1.5.01   2013-03-08
+;
+  Small changes arising from alerts issued by ALIGN.
+;
+     1.5.02   2013-04-11
+;
+   Added type.contents 'Implied' to all Key definitions
+   Removed desription.common from all defs; inconsistent invocations
+   Replace type.source state 'Observed' with 'Recorded'
+   Replace type.source state 'Assembled' with 'Related' or 'Derived'
+   Replace type.source state 'Selected' with 'Assigned'
+;
+     1.5.03   2013-04-16
+;
+   Changed type.source 'Measured' to 'Recorded'
+;
+     1.5.04   2013-04-17
+;
+   Changed type.source 'Quantity' to 'Number' or 'Encode'
+;
+     1.5.05   2013-04-24
+;
+   Removed 'Pairs' from type.contents; replaced with "Real", "Code", etc.
+;
+     1.5.06   2013-04-28
+;
+   Changed script for atom_type_scat.dispersion
+   Changed script for atom_site.matrix_beta
+   Changed script for atom_site.site_symmetry_multiplicity
+;
+    1.5.07   2013-09-08
+;
+    Add attribute category.key_list to all Loop categories.
+;
+

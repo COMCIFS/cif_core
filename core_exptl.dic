@@ -8,10 +8,10 @@ data_CORE_EXPTL
  
     _dictionary.title            CORE_EXPTL
     _dictionary.class            Instance
-    _dictionary.version          2.3.08 
-    _dictionary.date             2013-01-18
+    _dictionary.version          2.4.08 
+    _dictionary.date             2013-09-08
     _dictionary.uri              www.iucr.org/cif/dic/core_exptl.dic
-    _dictionary.ddl_conformance  3.10.03
+    _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CoreExptl
     _description.text
 ;
@@ -43,7 +43,7 @@ save_EXPERIMENTS
     _definition.id               EXPERIMENTS
     _definition.scope            Category
     _definition.class            Ref-loop  
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
     This category is designed specifically to facilitate studies 
@@ -62,6 +62,8 @@ save_EXPERIMENTS
     _name.category_id            EXPERIMENTAL
     _name.object_id              EXPERIMENTS
     _category.key_id           '_experiments.key'    
+    _category.key_list        ['_experiments.key']   
+
      loop_
     _description_example.case 
 ;
@@ -80,13 +82,12 @@ save_experiments.key
 ;
      Unique key to a set of save frames in a looped list.
 ;
-    _description.common         'Key to save frame' 
     _name.category_id            experiments
     _name.object_id              key
     _type.purpose                Key      
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Ref-table
-    _type.contents               Table
+    _type.contents               Name
      loop_
     _description_example.case  '${"frame":phase1}$' 
      save_
@@ -119,11 +120,10 @@ save_exptl.id
      Code identifying an experiment if there are multiple sets of
      experimental data. See _experiments.key.
 ;
-    _description.common         'Experiment Id'
     _name.category_id            exptl
     _name.object_id              id
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      save_
@@ -138,14 +138,14 @@ save_exptl.crystals_number
 ;
      Total number of crystals used in the measurement of intensities.
 ;
-    _description.common         'CrystalsCount'
     _name.category_id            exptl
     _name.object_id              crystals_number
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Count  
     _enumeration.range           1:
+    _enumeration.default         1
      save_
  
  
@@ -160,11 +160,10 @@ save_exptl.special_details
      Details of the experiment prior to intensity measurement.
      See also _exptl_crystal.preparation
 ;
-    _description.common         'SpecialExptlDetails'
     _name.category_id            exptl
     _name.object_id              special_details
     _type.purpose                Describe 
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -174,23 +173,24 @@ save_exptl.transmission_factor_max
     _definition.id             '_exptl.transmission_factor_max'
      loop_
     _alias.definition_id       '_exptl_transmission_factor_max'
-    _definition.update           2013-01-18
+    _definition.update           2013-04-11
     _description.text
 ;
      The calculated maximum value of the transmission factor for
      the specimen. Its value does not include the effects of
      absorption in the specimen mount. The presence of this
      item does not imply that the structure factors have been
-     corrected for absorption. The applied correction should be
-     given by _exptl_absorpt.correction_T_max.
+     corrected for absorption. For the applied correction see
+     _exptl_absorpt.correction_T_max.
 ;
     _name.category_id            exptl
     _name.object_id              transmission_factor_max
     _type.purpose                Measurand
-    _type.source                 Observed
+    _type.source                 Derived
     _type.container              Single
-    _type.contents               Realt
+    _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -198,23 +198,24 @@ save_exptl.transmission_factor_min
     _definition.id             '_exptl.transmission_factor_min'
      loop_
     _alias.definition_id       '_exptl_transmission_factor_min'
-    _definition.update           2013-01-18
+    _definition.update           2013-04-11
     _description.text
 ;
      The calculated minimum value of the transmission factor for
      the specimen. Its value does not include the effects of
      absorption in the specimen mount. The presence of this
      item does not imply that the structure factors have been 
-     corrected for absorption. The applied correction should be 
-     given by _exptl_absorpt.correction_T_min.
+     corrected for absorption. For the applied correction see
+     _exptl_absorpt.correction_T_max.
 ;
     _name.category_id            exptl
     _name.object_id              transmission_factor_min
     _type.purpose                Measurand
-    _type.source                 Observed
+    _type.source                 Derived 
     _type.container              Single
-    _type.contents               Realt
+    _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none 
      save_
 
 
@@ -224,7 +225,7 @@ save_EXPTL_CRYSTALS
     _definition.id               EXPTL_CRYSTALS
     _definition.scope            Category
     _definition.class            Ref-loop   
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
     This category is designed specifically to facilitate studies
@@ -243,6 +244,8 @@ save_EXPTL_CRYSTALS
     _name.category_id            EXPTL
     _name.object_id              CRYSTALS
     _category.key_id           '_exptl_crystals.key'
+    _category.key_list        ['_exptl_crystals.key']
+
      loop_
     _description_example.case
 ;
@@ -259,17 +262,16 @@ save_exptl_crystals.key
     _definition.update           2012-11-22
     _description.text
 ;
-     Unique key to a set of EXPTL_CRYSTAL items in a looped list.
+     Unique key code to a set of EXPTL_CRYSTAL items in a looped list.
 ;
-    _description.common         'ExptlCrystalKey'      
     _name.category_id            crystals
     _name.object_id              key
     _type.purpose                Key      
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Ref-table
-    _type.contents               Table
+    _type.contents               Code
      loop_
-    _description_example.case  '       ${"frame":1}$       '
+    _description_example.case  '       ${"frame":c1}$       '
      save_
 
 
@@ -300,11 +302,10 @@ save_exptl_crystal.id
      Code identifying a crystal if multiple crystals are used.
      See _exptl_crystals.key.
 ;
-    _description.common         'CrystalId'
     _name.category_id            crystal
     _name.object_id              id
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code 
      save_
@@ -320,11 +321,10 @@ save_exptl_crystal.colour
      Colour description of a crystal as a list of the allowed
      exptl_crystal_appearance states for general, intensity and hue.
 ;
-    _description.common         'CrystalColourList'
     _name.category_id            crystal
     _name.object_id              colour
-    _type.purpose                Quantity 
-    _type.source                 Assembled
+    _type.purpose                Composite
+    _type.source                 Derived
     _type.container              List
     _type.contents               Code
     _type.dimension              [3]
@@ -351,7 +351,6 @@ save_exptl_crystal.density_diffrn
 ;
      Crystal density calculated from crystal unit cell and atomic content.
 ;
-    _description.common         'CrystalDensityDiffrn'
     _name.category_id            crystal
     _name.object_id              density_diffrn
     _type.purpose                Measurand
@@ -359,7 +358,7 @@ save_exptl_crystal.density_diffrn
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  megagrams_per_metres_cubed
+    _units.code                  megagrams_per_metre_cubed
      loop_
     _method.purpose   
     _method.expression
@@ -379,15 +378,14 @@ save_exptl_crystal.density_meas
 ;
      Crystal density measured using standard chemical and physical methods.
 ;
-    _description.common         'CrystalDensityMeas'
     _name.category_id            crystal
     _name.object_id              density_meas
     _type.purpose                Measurand
-    _type.source                 Measured 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  megagrams_per_metres_cubed
+    _units.code                  megagrams_per_metre_cubed
      save_
  
 
@@ -407,11 +405,11 @@ save_exptl_crystal.density_meas_gt
     _name.category_id            crystal
     _name.object_id              density_meas_gt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  megagrams_per_metres_cubed
+    _units.code                  megagrams_per_metre_cubed
      save_
 
 
@@ -431,11 +429,11 @@ save_exptl_crystal.density_meas_lt
     _name.category_id            crystal
     _name.object_id              density_meas_lt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  megagrams_per_metres_cubed
+    _units.code                  megagrams_per_metre_cubed
      save_
 
  
@@ -448,14 +446,14 @@ save_exptl_crystal.density_meas_temp
 ;
      Temperature at which _exptl_crystal.density_meas was determined.
 ;
-    _description.common         'CrystalDensityTemperature'
     _name.category_id            crystal
     _name.object_id              density_meas_temp
     _type.purpose                Measurand
-    _type.source                 Measured 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _enumeration.default         293.
     _units.code                  kelvins
      save_
  
@@ -475,10 +473,11 @@ save_exptl_crystal.density_meas_temp_gt
     _name.category_id            crystal
     _name.object_id              density_meas_temp_gt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _enumeration.default         293.
     _units.code                  kelvins
      save_
 
@@ -498,10 +497,11 @@ save_exptl_crystal.density_meas_temp_lt
     _name.category_id            crystal
     _name.object_id              density_meas_temp_lt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _enumeration.default         293.
     _units.code                  kelvins
      save_
 
@@ -515,11 +515,10 @@ save_exptl_crystal.density_method
 ;
      Description of method used to measure _exptl_crystal.density_meas.
 ;
-    _description.common         'CrystalDensityMethod'
     _name.category_id            crystal
     _name.object_id              density_method
     _type.purpose                Describe 
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -537,11 +536,10 @@ save_exptl_crystal.description
      Description of the quality and habit of the crystal. The crystal
      dimensions should appear in the exptl_crystal_size category.
 ;
-    _description.common         'CrystalDescription'
     _name.category_id            crystal
     _name.object_id              description
     _type.purpose                Describe 
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -569,14 +567,22 @@ save_exptl_crystal.F_000
      nuclear scattering power in the unit cell. See
         http://reference.iucr.org/dictionary/F(000)
 ;
-    _description.common         'F(000)expected'
     _name.category_id            crystal
     _name.object_id              F_000
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+     loop_
+    _method.purpose
+    _method.expression
+     Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
      save_
  
  
@@ -590,11 +596,10 @@ save_exptl_crystal.preparation
      Details of crystal growth and preparation of the crystals
      (e.g.  mounting) prior to the intensity measurements.
 ;
-    _description.common         'CrystalPreparation'
     _name.category_id            crystal
     _name.object_id              preparation
     _type.purpose                Describe 
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -611,11 +616,10 @@ save_exptl_crystal.pressure_history
 ;
      Details concerning the pressure history of the crystals.
 ;
-    _description.common         'CrystalOriginPressure'
     _name.category_id            crystal
     _name.object_id              pressure_history
     _type.purpose                Describe 
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -636,7 +640,7 @@ save_exptl_crystal.recrystallization_method
     _name.category_id            crystal
     _name.object_id              recrystallization_method
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -653,9 +657,8 @@ save_exptl_crystal.size_length
 ;
     _name.category_id            crystal
     _name.object_id              size_length
-    _description.common         'CrystalNeedleLength'
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -674,9 +677,8 @@ save_exptl_crystal.size_max
 ;
     _name.category_id            crystal
     _name.object_id              size_max
-    _description.common         'CrystalSizeMax'
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Measurand 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -695,9 +697,8 @@ save_exptl_crystal.size_mid
 ;
     _name.category_id            crystal
     _name.object_id              size_mid
-    _description.common         'CrystalSizeMedial'
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Measurand 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -716,9 +717,8 @@ save_exptl_crystal.size_min
 ;
     _name.category_id            crystal
     _name.object_id              size_min
-    _description.common         'CrystalSizeMin'
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Measurand 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -737,9 +737,8 @@ save_exptl_crystal.size_rad
 ;
     _name.category_id            crystal
     _name.object_id              size_rad
-    _description.common         'CrystalRadius'
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Measurand 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -756,11 +755,10 @@ save_exptl_crystal.thermal_history
 ;
      Details concerning the thermal history of the crystals.
 ;
-    _description.common         'CrystalOriginThermal'
     _name.category_id            crystal
     _name.object_id              thermal_history
     _type.purpose                Describe 
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -773,7 +771,7 @@ save_EXPTL_CRYSTAL_FACE
     _definition.id               EXPTL_CRYSTAL_FACE
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items which specify the dimensions of the
@@ -782,6 +780,7 @@ save_EXPTL_CRYSTAL_FACE
     _name.category_id            EXPTL_CRYSTAL
     _name.object_id              FACE
     _category.key_id           '_exptl_crystal_face.key'
+    _category.key_list        ['_exptl_crystal_face.id']
  
 
 save_exptl_crystal_face.key
@@ -792,12 +791,12 @@ save_exptl_crystal_face.key
      Value is a unique key to a set of EXPTL_CRYSTAL items 
      in a looped list.
 ;
-    _description.common         'Crystal Faces Key' 
     _name.category_id            face
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -816,12 +815,11 @@ save_exptl_crystal_face.crystal_id
 ;
      Code identifying a crystal if multiple crystals are used.
 ;
-    _description.common         'CrystalFaceCrystalId'
     _name.category_id            face
     _name.object_id              crystal_id
     _name.linked_item_id       '_exptl_crystal.id'
     _type.purpose                Link 
-    _type.source                 Selected 
+    _type.source                 Related 
     _type.container              Single
     _type.contents               Code
      save_
@@ -831,7 +829,7 @@ save_exptl_crystal_face.diffr_chi
     _definition.id             '_exptl_crystal_face.diffr_chi'
      loop_
     _alias.definition_id       '_exptl_crystal_face_diffr_chi'
-    _import.get        [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get        [{"file":'templ_attr.cif',"save":'face_angle'}]
     _name.category_id            face
     _name.object_id              diffr_chi
      save_
@@ -841,7 +839,7 @@ save_exptl_crystal_face.diffr_kappa
     _definition.id             '_exptl_crystal_face.diffr_kappa'
      loop_
     _alias.definition_id       '_exptl_crystal_face_diffr_kappa'
-    _import.get        [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get        [{"file":'templ_attr.cif',"save":'face_angle'}]
     _name.category_id            face
     _name.object_id              diffr_kappa
      save_
@@ -851,7 +849,7 @@ save_exptl_crystal_face.diffr_phi
     _definition.id             '_exptl_crystal_face.diffr_phi'
      loop_
     _alias.definition_id       '_exptl_crystal_face_diffr_phi'
-    _import.get        [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get        [{"file":'templ_attr.cif',"save":'face_angle'}]
     _name.category_id            face
     _name.object_id              diffr_phi
      save_
@@ -861,7 +859,7 @@ save_exptl_crystal_face.diffr_psi
     _definition.id             '_exptl_crystal_face.diffr_psi'
      loop_
     _alias.definition_id       '_exptl_crystal_face_diffr_psi'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'face_angle'}]
     _name.category_id            face
     _name.object_id              diffr_psi
      save_
@@ -874,11 +872,10 @@ save_exptl_crystal_face.hkl
 ;
      Miller indices of the crystal face.
 ;
-    _description.common         'Crystal face hkl'
     _name.category_id            face
     _name.object_id              hkl
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
     _type.dimension              [3]
@@ -926,17 +923,16 @@ save_exptl_crystal_face.index_l
  
 save_exptl_crystal_face.id
     _definition.id             '_exptl_crystal_face.id'
-    _definition.update           2012-11-22
+    _definition.update           2013-04-18
     _description.text
 ;
      Identifier which combines the crystal id and the face indices 
-     as a list. This is the key item of the category.
+     as a list. This is normally the key item of the category.
 ;
-    _description.common         'CrystalFaceId&Index'
     _name.category_id            face
     _name.object_id              id
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Composite
+    _type.source                 Derived
     _type.container              List 
     _type.contents              'Code,Matrix(Index,Index,index)'
     _type.dimension              [1]
@@ -961,11 +957,10 @@ save_exptl_crystal_face.perp_dist
 ;
      Perpendicular distance of face to the centre of rotation of the crystal.
 ;
-    _description.common         'Crystal face perp distance'
     _name.category_id            face
     _name.object_id              perp_dist
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1000,11 +995,10 @@ save_exptl_crystal_appearance.general
 ;
      Appearance of the crystal as prescribed state codes.
 ;
-    _description.common         'CrystalColourAppearance'
     _name.category_id            appearance
     _name.object_id              general
     _type.purpose                State 
-    _type.source                 Observed
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
@@ -1013,8 +1007,8 @@ save_exptl_crystal_appearance.general
                                 'transparent' 
                                 'transluscent' 
                                 'opaque'
-                                ' '
-    _enumeration.default        ' '
+                                '.'
+    _enumeration.default        '.'
      save_
  
  
@@ -1027,19 +1021,18 @@ save_exptl_crystal_appearance.intensity
 ;
      Colour intensity of the crystal as prescribed state codes.
 ;
-    _description.common         'CrystalColourIntensity'
     _name.category_id            appearance
     _name.object_id              intensity
     _type.purpose                State 
-    _type.source                 Observed
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
     _enumeration_set.state  dark      light     intense     pale 
                             whitish   blackish  grayish    brownish
                             reddish   pinkish   orangish   yellowish      
-                            greenish  bluish    ' '
-    _enumeration.default        ' '
+                            greenish  bluish    '.'
+    _enumeration.default        '.'
      save_
  
  
@@ -1052,11 +1045,10 @@ save_exptl_crystal_appearance.hue
 ;
      Colour hue of the crystals as prescribed state codes.
 ;
-    _description.common         'CrystalHue'
     _name.category_id            appearance
     _name.object_id              hue
     _type.purpose                State 
-    _type.source                 Observed
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
     _import.get       [{"file":'templ_enum.cif',"save":'colour_RGB'}]
@@ -1096,11 +1088,10 @@ save_exptl_absorpt.coefficient_mu
      Absorption coefficient mu calculated from the atomic content of
      the cell, the density and the radiation wavelength.
 ;
-    _description.common         'AbsorbCoeffMu'
     _name.category_id            absorpt
     _name.object_id              coefficient_mu
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1119,17 +1110,20 @@ save_exptl_absorpt.correction_T_max
      Maximum transmission factor for the crystal and radiation applied
      to the measured intensities, it includes the correction for
      absorption by the specimen mount and diffractometer as well
-     as by the specimen itself. These factors are referred to as the 
-     absorption correction A or 1/A*.
+     as by the specimen itself. These values give the transmission (T)
+     factor by which measured intensities have been REDUCED due to 
+     absorption. Sometimes referred to as absorption correction A or 
+     1/A* (see "Crystal Structure Analysis for Chemists and Biologists"
+     by J.P. Glusker et al., Wiley)
 ;
-    _description.common         'AbsorbTmax'
     _name.category_id            absorpt
     _name.object_id              correction_T_max
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
  
  
@@ -1141,19 +1135,23 @@ save_exptl_absorpt.correction_T_min
     _definition.update           2012-11-22
     _description.text
 ;
-     Minimum transmission factor for the crystal and radiation applied 
+     Maximum transmission factor for the crystal and radiation applied
      to the measured intensities, it includes the correction for
      absorption by the specimen mount and diffractometer as well
-     as by the specimen itself. These factors are referred to as the 
+     as by the specimen itself. These values give the transmission (T)
+     factor by which measured intensities have been REDUCED due to
+     absorption. Sometimes referred to as absorption correction A ori
+     1/A* (see "Crystal Structure Analysis for Chemists and Biologists"
+     by J.P. Glusker et al., Wiley)
 ;
-    _description.common         'AbsorbTmin'
     _name.category_id            absorpt
     _name.object_id              correction_T_min
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
  
  
@@ -1169,7 +1167,6 @@ save_exptl_absorpt.correction_type
      The 'empirical' approach should NOT be used if more detailed 
      information on the crystal shape  is available.
 ;
-    _description.common         'AbsorbCorrectType'
     _name.category_id            absorpt
     _name.object_id              correction_type
     _type.purpose                State 
@@ -1205,11 +1202,10 @@ save_exptl_absorpt.process_details
      measured intensities. A literature reference should be supplied
      for psi-scan or multi-scan techniques.
 ;
-    _description.common         'AbsorbCorrectDetails'
     _name.category_id            absorpt
     _name.object_id              process_details
     _type.purpose                Describe 
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1249,15 +1245,14 @@ save_cell.atomic_mass
      from the atom sites present in the ATOM_TYPE list, rather than
      the ATOM_SITE lists of atoms in the refined model.
 ;
-    _description.common         'Cell Atomic Mass'
     _name.category_id            cell
     _name.object_id              atomic_mass
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real   
     _enumeration.range           0.:
-    _units.code                  daltons
+    _units.code                  dalton
      loop_
     _method.purpose   
     _method.expression
@@ -1285,10 +1280,9 @@ save_cell.formula_units_Z
      by _chemical_formula.structural, _chemical_formula.moiety or
      _chemical_formula.sum.
 ;
-    _description.common         'CellFormulaZ'
     _name.category_id            cell
     _name.object_id              formula_units_Z
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Count
@@ -1304,10 +1298,9 @@ save_cell.metric_tensor
      The direct space (covariant) metric tensor used to transform
      vectors and coordinates from real (direct) to reciprocal space.
 ;
-    _description.common         'CellMetricTensor'
     _name.category_id            cell
     _name.object_id              metric_tensor
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Matrix
     _type.contents               Real
@@ -1335,10 +1328,9 @@ save_cell.orthogonal_matrix
      Rollet's axial assignments with cell vectors a,b,c aligned
      with orthogonal axes X,Y,Z so that c||Z and b in plane YZ.
 ;
-    _description.common         'CellOthogMatrix'
     _name.category_id            cell
     _name.object_id              orthogonal_matrix
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Matrix
     _type.contents               Real
@@ -1370,11 +1362,10 @@ save_cell.special_details
      Description of special aspects of the cell choice, noting
      possible alternative settings.
 ;
-    _description.common         'CellDetails'
     _name.category_id            cell
     _name.object_id              special_details
     _type.purpose                Describe  
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -1384,12 +1375,11 @@ save_cell.volume
     _definition.id             '_cell.volume'
      loop_
     _alias.definition_id       '_cell_volume'
-    _definition.update           2012-11-22
+    _definition.update           2013-03-07
     _description.text
 ;
      Volume of the crystal unit cell.
 ;
-    _description.common         'CellVolume'
     _name.category_id            cell
     _name.object_id              volume
     _type.purpose                Measurand
@@ -1397,7 +1387,7 @@ save_cell.volume
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  angstroms_cubed
+    _units.code                  angstrom_cubed
      loop_
     _method.purpose   
     _method.expression
@@ -1406,17 +1396,6 @@ save_cell.volume
       With v  as  cell_vector
  
       _cell.volume =  v.a * ( v.b ^ v.c )
-;
-     Validation
-;
-   delVol = 0.0005
-   With c as cell
-   if (c.hasItem('volume') ) {
-       print c.volume.getValue(), c.volume.evaluate()
-     if(Abs(c.volume.getValue()-c.volume.evaluate()) > delVol ) {
-       Throw (_cell.volume, 'cellVolumeWarning');
-     }
-   }
 ;
      save_
  
@@ -1448,11 +1427,10 @@ save_cell_angle.alpha
 ;
      The angle between the cell axes _cell_length.b and _cell_length.c.
 ;
-    _description.common         'CellAngleAlpha'
     _name.category_id            angle
     _name.object_id              alpha
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:180.0
@@ -1471,11 +1449,10 @@ save_cell_angle.beta
 ;
      The angle between the cell axes _cell_length.a and _cell_length.c.
 ;
-    _description.common         'CellAngleBeta'
     _name.category_id            angle
     _name.object_id              beta
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:180.0
@@ -1494,11 +1471,10 @@ save_cell_angle.gamma
 ;
      The angle between the cell axes _cell_length.a and _cell_length.b.
 ;
-    _description.common         'CellAngleGamma'
     _name.category_id            angle
     _name.object_id              gamma
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:180.0
@@ -1536,13 +1512,13 @@ save_cell_length.a
 ;
      The length of the crystal unit cell along the x-axis.
 ;
-    _description.common         'CellLengthA'
     _name.category_id            length
     _name.object_id              a
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           1.:
     _units.code                  angstroms
      save_
  
@@ -1557,13 +1533,13 @@ save_cell_length.b
 ;
      The length of the crystal unit cell along the y-axis.
 ;
-    _description.common         'CellLengthB'
     _name.category_id            length
     _name.object_id              b
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           1.:
     _units.code                  angstroms
      save_
  
@@ -1578,13 +1554,13 @@ save_cell_length.c
 ;
      The length of the crystal unit cell along the z-axis.
 ;
-    _description.common         'CellLengthC'
     _name.category_id            length
     _name.object_id              c
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           1.:
     _units.code                  angstroms
      save_
 
@@ -1615,7 +1591,6 @@ save_cell_vector.a
 ;
      The cell vector along the x axis. 
 ;
-    _description.common         'CellVectorA'
     _name.category_id            vector
     _name.object_id              a
     _type.purpose                Measurand
@@ -1640,7 +1615,6 @@ save_cell_vector.b
 ;
      The cell vector along the y axis. 
 ;
-    _description.common         'CellVectorB'
     _name.category_id            vector
     _name.object_id              b
     _type.purpose                Measurand
@@ -1665,7 +1639,6 @@ save_cell_vector.c
 ;
      The cell vector along the z axis. 
 ;
-    _description.common         'CellVectorC'
     _name.category_id            vector
     _name.object_id              c
     _type.purpose                Measurand
@@ -1711,11 +1684,10 @@ save_cell_measurement.pressure
      The pressure at which the unit-cell parameters were measured
      (not the pressure used to synthesize the sample).
 ;
-    _description.common         'CellMeasPressure'
     _name.category_id            measurement
     _name.object_id              pressure
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1732,11 +1704,10 @@ save_cell_measurement.radiation
 ;
      Description of the radiation used to measure the unit-cell data.
 ;
-    _description.common         'CellMeasRadiation'
     _name.category_id            measurement
     _name.object_id              radiation
     _type.purpose                Describe 
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1754,13 +1725,13 @@ save_cell_measurement.reflns_used
      Total number of reflections used to determine the unit cell.
      The reflections may be specified as cell_measurement_refln items.
 ;
-    _description.common         'CellMeasReflnCount'
     _name.category_id            measurement
     _name.object_id              reflns_used
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Count
+    _enumeration.range           3:
      save_
  
  
@@ -1774,11 +1745,10 @@ save_cell_measurement.temperature
      The temperature at which the unit-cell parameters were measured
      (not the temperature of synthesis).
 ;
-    _description.common         'CellMeasTemperature'
     _name.category_id            measurement
     _name.object_id              temperature
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1796,11 +1766,10 @@ save_cell_measurement.theta_max
      Maximum theta scattering angle of reflections used to measure
      the crystal unit cell.
 ;
-    _description.common         'CellMeasThetaMax'
     _name.category_id            measurement
     _name.object_id              theta_max
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -1818,11 +1787,10 @@ save_cell_measurement.theta_min
      Minimum theta scattering angle of reflections used to measure
      the crystal unit cell.
 ;
-    _description.common         'CellMeasThetaMin'
     _name.category_id            measurement
     _name.object_id              theta_min
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -1841,10 +1809,9 @@ save_cell_measurement.wavelength
      If this is not specified, the wavelength is assumed to be the
      same as that given in _diffrn_radiation_wavelength.value
 ;
-    _description.common         'CellMeasWaveLength'
     _name.category_id            measurement
     _name.object_id              wavelength
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -1860,7 +1827,7 @@ save_CELL_MEASUREMENT_REFLN
     _definition.id               CELL_MEASUREMENT_REFLN
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe the reflection data
@@ -1869,6 +1836,9 @@ save_CELL_MEASUREMENT_REFLN
     _name.category_id            CELL_MEASUREMENT
     _name.object_id              REFLN
     _category.key_id           '_cell_measurement_refln.key'
+    _category.key_list        ['_cell_measurement_refln.index_h',
+                               '_cell_measurement_refln.index_k',
+                               '_cell_measurement_refln.index_l']
  
 
 save_cell_measurement_refln.key
@@ -1879,12 +1849,12 @@ save_cell_measurement_refln.key
      Value is a unique key to a set of CELL_MEASUREMENT_REFLN items 
      in a looped list.
 ;
-    _description.common         'Key to cell measurement reflections'
     _name.category_id            refln
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -1904,11 +1874,10 @@ save_cell_measurement_refln.hkl
 ;
      Miller indices of a reflection used to measure the unit cell.
 ;
-    _description.common         'CellMeasReflnHkl'
     _name.category_id            refln
     _name.object_id              hkl
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
     _type.dimension              [3]
@@ -1933,11 +1902,10 @@ save_cell_measurement_refln.theta
 ;
      Theta angle of reflection used to measure the crystal unit cell.
 ;
-    _description.common         'CellMeasReflnTheta'
     _name.category_id            refln
     _name.object_id              theta
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Measurand 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -1997,9 +1965,9 @@ save_CELL_RECIPROCAL
     _name.object_id              RECIPROCAL
  
  
-save_cell_reciprocal.convert_U_to_beta
-    _definition.id             '_cell_reciprocal.convert_U_to_beta'
-    _definition.update           2012-11-30
+save_cell_reciprocal.convert_Uij_to_betaij
+    _definition.id             '_cell_reciprocal.convert_Uij_to_betaij'
+    _definition.update           2013-04-28
     _description.text
 ;
      The reciprocal space matrix for converting the U(ij) matrix of
@@ -2016,9 +1984,8 @@ save_cell_reciprocal.convert_U_to_beta
 
     where C is conversion matrix defined here. 
 ;
-    _description.common         'CellRecipConvertUtoBeta'
     _name.category_id            reciprocal
-    _name.object_id              convert_U_to_beta
+    _name.object_id              convert_Uij_to_betaij
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Matrix
@@ -2031,10 +1998,45 @@ save_cell_reciprocal.convert_U_to_beta
 ;
     With r  as  cell_reciprocal_length
 
-    _cell_reciprocal.convert_U_to_beta = \
+    _cell_reciprocal.convert_Uij_to_betaij = \
                              1.4142 * Pi * Matrix([[ r.a, 0, 0 ],
                                                    [ 0, r.b, 0 ],
                                                    [ 0, 0, r.c ]])
+;
+     save_
+
+
+save_cell_reciprocal.convert_Uiso_to_Uij
+    _definition.id             '_cell_reciprocal.convert_Uiso_to_Uij'
+    _definition.update           2013-04-28
+    _description.text
+;
+     The reciprocal space matrix for converting the isotropic Uiso 
+     atomic displacement parameter to the anisotropic matrix Uij.       
+
+                       | 1            cos(gamma*)   cos(beta*)  |
+      U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
+                       | cos(beta*)   cos(alpha*)   1           |
+
+;
+    _name.category_id            reciprocal
+    _name.object_id              convert_Uiso_to_Uij
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Matrix
+    _type.contents               Real
+    _type.dimension              [3,3]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+    With r  as  cell_reciprocal_angle
+    
+    _cell_reciprocal.convert_Uiso_to_Uij = \
+                          [[ 1., Cosd(r.gamma), Cosd(r.beta)  ],
+                           [ Cosd(r.gamma), 1., Cosd(r.alpha) ],
+                           [ Cosd(r.beta), Cosd(r.alpha), 1.  ]]
 ;
      save_
 
@@ -2048,7 +2050,6 @@ save_cell_reciprocal.metric_tensor
      vectors and coordinates from reciprocal space to real (direct)
      space.
 ;
-    _description.common         'CellRecipMetricTensor'
     _name.category_id            reciprocal
     _name.object_id              metric_tensor
     _type.purpose                Measurand
@@ -2081,7 +2082,6 @@ save_cell_reciprocal.orthogonal_matrix
 
                      M h = p
 ;
-    _description.common         'HklOthogMatrix'
     _name.category_id            reciprocal
     _name.object_id              orthogonal_matrix
     _type.purpose                Measurand
@@ -2130,13 +2130,13 @@ save_cell_reciprocal_angle.alpha
      Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
           New York: John Wiley & Sons Inc.
 ;
-    _description.common         'CellRecipAngleAlpha'
     _name.category_id            angle
     _name.object_id              alpha
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:180.
     _units.code                  degrees
      loop_
     _method.purpose   
@@ -2162,13 +2162,13 @@ save_cell_reciprocal_angle.beta
      Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
           New York: John Wiley & Sons Inc.
 ;
-    _description.common         'CellRecipAngleBeta'
     _name.category_id            angle
     _name.object_id              beta
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:180.
     _units.code                  degrees
      loop_
     _method.purpose   
@@ -2194,13 +2194,13 @@ save_cell_reciprocal_angle.gamma
      Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
           New York: John Wiley & Sons Inc.
 ;
-    _description.common         'CellRecipAngleGamma'
     _name.category_id            angle
     _name.object_id              gamma
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:180.
     _units.code                  degrees
      loop_
     _method.purpose   
@@ -2243,13 +2243,13 @@ save_cell_reciprocal_length.a
 ;    
      Reciprocal of the _cell_length.a.
 ;
-    _description.common         'CellRecipLengthA'
     _name.category_id            length
     _name.object_id              a
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
     _units.code                  reciprocal_angstroms
      loop_
     _method.purpose   
@@ -2270,13 +2270,13 @@ save_cell_reciprocal_length.b
 ;    
      Reciprocal of the _cell_length.b.
 ;
-    _description.common         'CellRecipLengthB'
     _name.category_id            length
     _name.object_id              b
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
     _units.code                  reciprocal_angstroms
      loop_
     _method.purpose   
@@ -2297,13 +2297,13 @@ save_cell_reciprocal_length.c
 ;    
      Reciprocal of the _cell_length.c.
 ;
-    _description.common         'CellRecipLengthC'
     _name.category_id            length
     _name.object_id              c
     _type.purpose                Measurand
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
     _units.code                  reciprocal_angstroms
      loop_
     _method.purpose   
@@ -2341,7 +2341,6 @@ save_cell_reciprocal_vector.a
 ;    
      Reciprocal of the _cell_vector.a.
 ;
-    _description.common         'CellRecipVectorA'
     _name.category_id            vector
     _name.object_id              a
     _type.purpose                Measurand
@@ -2368,7 +2367,6 @@ save_cell_reciprocal_vector.b
 ;    
      Reciprocal of the _cell_vector.b.
 ;
-    _description.common         'CellRecipVectorB'
     _name.category_id            vector
     _name.object_id              b
     _type.purpose                Measurand
@@ -2395,7 +2393,6 @@ save_cell_reciprocal_vector.c
 ;    
      Reciprocal of the _cell_vector.c.
 ;
-    _description.common         'CellRecipVectorC'
     _name.category_id            vector
     _name.object_id              c
     _type.purpose                Measurand
@@ -2452,7 +2449,6 @@ save_chemical.absolute_configuration
           Flack, H. D. & Bernardinelli, G. (2000). J. Appl. Cryst.
                        33, 1143-1148. (http://www.iucr.org/paper?ks0021)
 ;
-    _description.common         'ChemAbsConfigCode'
     _name.category_id            chemical
     _name.object_id              absolute_configuration
     _type.purpose                State 
@@ -2487,7 +2483,8 @@ save_chemical.absolute_configuration
 ;       'unknown' No firm chemical or a-d evidence for an assignment 
          is available. An arbitrary choice of enantiomer has been made.
 ;
-     .  'inapplicable'
+    '.' 'inapplicable'
+    _enumeration.default       '.'     
      save_
  
  
@@ -2503,11 +2500,10 @@ save_chemical.compound_source
      the place of  discovery for minerals or the actual source of a
      natural product.
 ;
-    _description.common         'ChemCompoundSource'
     _name.category_id            chemical
     _name.object_id              compound_source
     _type.purpose                Describe 
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -2533,10 +2529,11 @@ save_chemical.enantioexcess_bulk
     _name.category_id            chemical
     _name.object_id              enantioexcess_bulk
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -2573,6 +2570,7 @@ save_chemical.enantioexcess_bulk_technique
      other
 ;    Enantioexcess determined by a technique not in this list.
 ;
+    _enumeration.default       OA      
      save_
 
 
@@ -2595,10 +2593,11 @@ save_chemical.enantioexcess_crystal
     _name.category_id            chemical
     _name.object_id              enantioexcess_crystal
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -2631,6 +2630,7 @@ save_chemical.enantioexcess_crystal_technique
      other                       
 ;    Enantioexcess determined by a technique not in this list.
 ;
+    _enumeration.default       CD      
      save_
 
 
@@ -2651,7 +2651,7 @@ save_chemical.identifier_inchi
 ;
     _name.category_id            chemical
     _name.object_id              identifier_inchi
-    _type.purpose                Describe
+    _type.purpose                Encode   
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -2675,7 +2675,7 @@ save_chemical.identifier_inchi_key
 ;
     _name.category_id            chemical
     _name.object_id              identifier_inchi_key
-    _type.purpose                Describe
+    _type.purpose                Encode 
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -2697,7 +2697,7 @@ save_chemical.identifier_inchi_version
 ;
     _name.category_id            chemical
     _name.object_id              identifier_inchi_version
-    _type.purpose                Describe
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -2714,11 +2714,10 @@ save_chemical.melting_point
 ;
      The temperature at which a crystalline solid changes to a liquid.
 ;
-    _description.common         'ChemMeltingPoint'
     _name.category_id            chemical
     _name.object_id              melting_point
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2739,7 +2738,7 @@ save_chemical.melting_point_gt
     _name.category_id            chemical
     _name.object_id              melting_point_gt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2760,7 +2759,7 @@ save_chemical.melting_point_lt
     _name.category_id            chemical
     _name.object_id              melting_point_lt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2777,10 +2776,9 @@ save_chemical.name_common
 ;
      Trivial name by which the compound is commonly known.
 ;
-    _description.common         'ChemCommonName'
     _name.category_id            chemical
     _name.object_id              name_common
-    _type.purpose                Quantity 
+    _type.purpose                Encode 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Text
@@ -2797,10 +2795,9 @@ save_chemical.name_mineral
      Mineral name accepted by the International Mineralogical Association.
      Use only for natural minerals.
 ;
-    _description.common         'ChemMineralName'
     _name.category_id            chemical
     _name.object_id              name_mineral
-    _type.purpose                Quantity 
+    _type.purpose                Encode 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Text
@@ -2817,10 +2814,9 @@ save_chemical.name_structure_type
      Commonly used structure-type name. Usually only applied to
      minerals or inorganic compounds.
 ;
-    _description.common         'ChemStructuralName'
     _name.category_id            chemical
     _name.object_id              name_structure_type
-    _type.purpose                Quantity 
+    _type.purpose                Encode 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Text
@@ -2836,10 +2832,9 @@ save_chemical.name_systematic
 ;
      IUPAC or Chemical Abstracts full name of compound.
 ;
-    _description.common         'ChemSystemName'
     _name.category_id            chemical
     _name.object_id              name_systematic
-    _type.purpose                Quantity 
+    _type.purpose                Encode 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Text
@@ -2869,11 +2864,10 @@ save_chemical.optical_rotation
                  dm and c is the value of CONC in g, and
             SOLV is the chemical formula of the solvent.
 ;
-    _description.common         'ChemOpticalRotDetails'
     _name.category_id            chemical
     _name.object_id              optical_rotation
     _type.purpose                Describe 
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2893,7 +2887,7 @@ save_chemical.properties_biological
     _name.category_id            chemical
     _name.object_id              properties_biological
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2927,7 +2921,7 @@ save_chemical.properties_physical
     _name.category_id            chemical
     _name.object_id              properties_physical
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2951,7 +2945,7 @@ save_chemical.temperature_decomposition
     _name.category_id            chemical
     _name.object_id              temperature_decomposition
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2972,7 +2966,7 @@ save_chemical.temperature_decomposition_gt
     _name.category_id            chemical
     _name.object_id              temperature_decomposition_gt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2993,7 +2987,7 @@ save_chemical.temperature_decomposition_lt
     _name.category_id            chemical
     _name.object_id              temperature_decomposition_lt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -3013,7 +3007,7 @@ save_chemical.temperature_sublimation
     _name.category_id            chemical
     _name.object_id              temperature_sublimation
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -3034,7 +3028,7 @@ save_chemical.temperature_sublimation_gt
     _name.category_id            chemical
     _name.object_id              temperature_sublimation_gt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -3055,7 +3049,7 @@ save_chemical.temperature_sublimation_lt
     _name.category_id            chemical
     _name.object_id              temperature_sublimation_lt
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -3069,7 +3063,7 @@ save_CHEMICAL_CONN_ATOM
     _definition.id               CHEMICAL_CONN_ATOM
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items which describe the 2D chemical structure of
@@ -3083,10 +3077,10 @@ save_CHEMICAL_CONN_ATOM
      a complete chemical entity.
  
 ;
-    _description.common         'Chemical Connectivity List'
     _name.object_id              CONN_ATOM
     _name.category_id            CHEMICAL
     _category.key_id           '_chemical_conn_atom.key'
+    _category.key_list        ['_chemical_conn_atom.number']
  
 
 save_chemical_conn_atom.key
@@ -3097,12 +3091,12 @@ save_chemical_conn_atom.key
      Value is a unique key to a set of CHEMICAL_CONN_ATOM items 
      in a looped list.
 ;
-    _description.common         'Chemical Connectivity List'
     _name.category_id            conn_atom
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -3124,10 +3118,9 @@ save_chemical_conn_atom.charge
      The net integer charge assigned to this atom. This is the
      formal charge assignment normally found in chemical diagrams.
 ;
-    _description.common         'ChemConnAtomCharge'
     _name.category_id            conn_atom
     _name.object_id              charge
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Integer
@@ -3146,14 +3139,14 @@ save_chemical_conn_atom.display_x
      Cartesian coordinate (x) of the atom site in a chemical diagram. The
      coordinate origin is at the lower left corner, the x axis is horizontal.
 ;
-    _description.common         'ChemConnDisplayX'
     _name.category_id            conn_atom
     _name.object_id              display_x
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
  
  
@@ -3167,14 +3160,14 @@ save_chemical_conn_atom.display_y
      Cartesian coordinate (y) of the atom site in a chemical diagram. The
      coordinate origin is at the lower left corner, the y axis is vertical.
 ;
-    _description.common         'ChemConnDisplayY'
     _name.category_id            conn_atom
     _name.object_id              display_y
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
  
  
@@ -3187,10 +3180,9 @@ save_chemical_conn_atom.NCA
 ;
      Total number of connected atoms excluding terminal hydrogen atoms.
 ;
-    _description.common         'ChemConnAtomNCA'
     _name.category_id            conn_atom
     _name.object_id              NCA
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Count
@@ -3211,11 +3203,10 @@ save_chemical_conn_atom.NH
      _atom_site.attached_hydrogens only if none of the hydrogen
      atoms appear in the atom_site list.
 ;
-    _description.common         'ChemConnAtomNH'
     _name.category_id            conn_atom
     _name.object_id              NH
-    _type.purpose                Quantity 
-    _type.source                 Observed 
+    _type.purpose                Number 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -3231,11 +3222,10 @@ save_chemical_conn_atom.number
 ;
      The chemical sequence number to be associated with this atom.
 ;
-    _description.common         'ChemConnAtomNumber'
     _name.category_id            conn_atom
     _name.object_id              number
-    _type.purpose                Quantity 
-    _type.source                 Selected 
+    _type.purpose                Number 
+    _type.source                 Assigned 
     _type.container              Single
     _type.contents               Index  
     _enumeration.range           1:
@@ -3251,12 +3241,11 @@ save_chemical_conn_atom.type_symbol
 ;
      A code identifying the atom type.
 ;
-    _description.common         'ChemConnAtomType'
     _name.category_id            conn_atom
     _name.object_id              type_symbol
     _name.linked_item_id       '_atom_type.symbol'
     _type.purpose                Link 
-    _type.source                 Assigned
+    _type.source                 Related 
     _type.container              Single
     _type.contents               Code        
      save_
@@ -3270,7 +3259,7 @@ save_CHEMICAL_CONN_BOND
     _definition.id               CHEMICAL_CONN_BOND
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items which specify the connections between
@@ -3282,10 +3271,11 @@ save_CHEMICAL_CONN_BOND
      relationships.
 
 ;
-    _description.common         'ChemConnBondList'
     _name.category_id            CHEMICAL
     _name.object_id              CONN_BOND
     _category.key_id           '_chemical_conn_bond.key'
+    _category.key_list        ['_chemical_conn_bond.atom_1',
+                               '_chemical_conn_bond.atom_2']
  
 
 save_chemical_conn_bond.key
@@ -3296,12 +3286,12 @@ save_chemical_conn_bond.key
      Value is a unique key to a set of CHEMICAL_CONN_BOND items 
      in a looped list.
 ;
-    _description.common         'Chemical Connectivity Bond List' 
     _name.category_id            conn_bond
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -3320,15 +3310,16 @@ save_chemical_conn_bond.atom_1
     _definition.update           2012-11-22
     _description.text
 ;
-     The first atom in a bond connecting two atom sites.
+     Index id of first atom in a bond connecting two atom sites.
 ;
     _name.category_id            conn_bond
     _name.object_id              atom_1
     _name.linked_item_id       '_chemical_conn_atom.number'
     _type.purpose                Link 
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
  
  
@@ -3339,15 +3330,16 @@ save_chemical_conn_bond.atom_2
     _definition.update           2012-11-22
     _description.text
 ;
-     The second atom in a bond connecting two atom sites.
+     Index id of second atom in a bond connecting two atom sites.
 ;
     _name.category_id            conn_bond
     _name.linked_item_id       '_chemical_conn_atom.number'
     _name.object_id              atom_2
     _type.purpose                Link 
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
  
  
@@ -3356,16 +3348,15 @@ save_chemical_conn_bond.id
     _definition.update           2012-11-22
     _description.text
 ;
-     Bond identifier composed of a list of two sequence numbers
+     Bond identifier composed of a list of two sequence indices
      specified as _chemical_conn_atom.number values.
 ;
-    _description.common         'ChemConnBondId'
     _name.category_id            conn_bond
     _name.object_id              id
-    _type.purpose                Quantity 
-    _type.source                 Assembled
+    _type.purpose                Number 
+    _type.source                 Derived
     _type.container              List 
-    _type.contents               Integer
+    _type.contents               Index 
     _type.dimension              [2]
      loop_
     _method.purpose   
@@ -3388,7 +3379,6 @@ save_chemical_conn_bond.type
 ;
      Code for the chemical bond type.
 ;
-    _description.common         'ChemConnBondType'
     _name.category_id            conn_bond
     _name.object_id              type
     _type.purpose                State 
@@ -3479,11 +3469,10 @@ save_chemical_formula.analytical
      Formula determined by standard chemical analysis including trace
      elements. Parentheses are used only for standard uncertainties (su's).
 ;
-    _description.common         'ChemFormulaAnalytical'
     _name.category_id            formula
     _name.object_id              analytical
-    _type.purpose                Describe 
-    _type.source                 Observed
+    _type.purpose                Encode 
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3507,10 +3496,9 @@ save_chemical_formula.iupac
      Ref: IUPAC (1990). Nomenclature of Inorganic Chemistry.
           Oxford: Blackwell Scientific Publications.
 ;
-    _description.common         'ChemFormulaIupac'
     _name.category_id            formula
     _name.object_id              iupac
-    _type.purpose                Describe 
+    _type.purpose                Encode 
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -3541,10 +3529,9 @@ save_chemical_formula.moiety
            count) by a space. Pre- or post-multipliers may be used for
            individual moieties.
 ;
-    _description.common         'ChemFormulaMoiety'
     _name.category_id            formula
     _name.object_id              moiety
-    _type.purpose                Describe 
+    _type.purpose                Encode 
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -3575,10 +3562,9 @@ save_chemical_formula.structural
      i.e. trace elements not included in atom-type and atom-site lists 
      should not be included (see also _chemical_formula.analytical).
 ;
-    _description.common         'ChemFormulaStructural'
     _name.category_id            formula
     _name.object_id              structural
-    _type.purpose                Describe 
+    _type.purpose                Encode 
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -3599,10 +3585,9 @@ save_chemical_formula.sum
      summed over the constituent elements, following the ordering given
      in rule 5 of the CATEGORY description. Parentheses normally not used.
 ;
-    _description.common         'ChemFormulaSum'
     _name.category_id            formula
     _name.object_id              sum
-    _type.purpose                Describe 
+    _type.purpose                Encode 
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -3622,15 +3607,14 @@ save_chemical_formula.weight
      *_iupac, *_moiety or *_sum and, together with the Z value and cell
      parameters yield the density given as _exptl_crystal.density_diffrn.
 ;
-    _description.common         'ChemFormulaWeight'
     _name.category_id            formula
     _name.object_id              weight
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           1.0:
-    _units.code                  daltons
+    _units.code                  dalton
      save_
  
  
@@ -3643,15 +3627,14 @@ save_chemical_formula.weight_meas
 ;
      Formula mass measured by a non-diffraction experiment.
 ;
-    _description.common         'ChemFormulaWeightMeas'
     _name.category_id            formula
     _name.object_id              weight_meas
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           1.0:
-    _units.code                  daltons
+    _units.code                  dalton
      save_
  
      save_     #------ close the CHEMICAL_FORMULA category
@@ -3665,7 +3648,7 @@ save_SPACE_GROUPS
     _definition.id               SPACE_GROUPS
     _definition.scope            Category
     _definition.class            Ref-loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      Contains all the data items that refer to the space group as a
@@ -3692,6 +3675,8 @@ save_SPACE_GROUPS
     _name.category_id            EXPTL
     _name.object_id              SPACE_GROUPS
     _category.key_id           '_space_groups.key'
+    _category.key_list        ['_space_groups.key']
+
      loop_
     _description_example.case
 ;
@@ -3708,14 +3693,14 @@ save_space_groups.key
     _definition.update           2012-11-22
     _description.text
 ;
-     Unique key to a set of SPACE_GROUP items in a looped list.
+     Unique key code to a set of SPACE_GROUP items in a looped list.
 ;
     _name.category_id            space_groups
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Ref-table
-    _type.contents               Table
+    _type.contents               Code
      loop_
     _description_example.case  '       ${"frame":"sg_set_1}$      '
      save_
@@ -3749,8 +3734,9 @@ save_space_group.id
 ;
     _name.category_id            space_group
     _name.object_id              id
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
     _type.contents               Code
      save_
 
@@ -3770,9 +3756,11 @@ save_space_group.IT_number
 ;
     _name.category_id            space_group
     _name.object_id              IT_number
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
     _type.contents               Integer
+    _enumeration.range           1:
      save_
 
 
@@ -3795,8 +3783,8 @@ save_space_group.name_Hall
 ;
     _name.category_id            space_group
     _name.object_id              name_Hall
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3808,10 +3796,10 @@ save_space_group.name_H_M_alt
     _definition.id             '_space_group.name_H_M_alt'
     loop_
     _alias.definition_id       '_space_group_name_H-M_alt'
-    _definition.update           2012-11-22
+    _definition.update           2013-03-09
     _description.text
 ;
-    _space_group_name_H-M_alt allows for any Hermann-Mauguin symbol
+    _space_group.name_H_M_alt allows for any Hermann-Mauguin symbol
      to be given. The way in which this item is used is determined
      by the user and in general is not intended to be interpreted by
      computer. It may, for example, be used to give one of the
@@ -3837,8 +3825,8 @@ save_space_group.name_H_M_alt
 ;
     _name.category_id            space_group
     _name.object_id              name_H_M_alt
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3847,7 +3835,9 @@ save_space_group.name_H_M_alt
           'P 1 21/m 1'                     'space group No. 10'
           'P 2/n 2/n 2/n (origin at -1)'   'space group No. 48 origin 2'
           'R -3 2/m'                       'space group No. 166 rhomb'
-;         loop_ _space_group_id _space_group_name_H-M_alt
+;         loop_ 
+         _space_group.id 
+         _space_group.name_H_M_alt
                            1    'C m c m'
                            2    'C 2/c 2/m 21/m'
                            3    'A m a m'
@@ -3864,7 +3854,7 @@ save_SPACE_GROUP_SYMOP
     _definition.id               SPACE_GROUP_SYMOP
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe symmetry equivalent sites
@@ -3873,6 +3863,7 @@ save_SPACE_GROUP_SYMOP
     _name.category_id            SPACE_GROUP
     _name.object_id              SYMOP
     _category.key_id           '_space_group_symop.key'
+    _category.key_list        ['_space_group_symop.id']
 
 
 save_space_group_symop.key
@@ -3886,8 +3877,9 @@ save_space_group_symop.key
     _name.category_id            symop
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -3914,10 +3906,11 @@ save_space_group_symop.id
 ;
     _name.category_id            symop
     _name.object_id              id
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index
+    _enumeration.range           1:
      save_
 
 save_space_group_symop.operation_xyz
@@ -3955,8 +3948,8 @@ save_space_group_symop.operation_xyz
 ;
     _name.category_id            symop
     _name.object_id              operation_xyz
-    _type.purpose                Describe
-    _type.source                 Assigned
+    _type.purpose                Encode
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3995,16 +3988,15 @@ save_symmetry.cell_setting
      loop_
     _alias.definition_id       '_symmetry_cell_setting'
                                '_space_group_crystal_system'
-    _definition.update           2012-11-22
+    _definition.update           2013-04-11
     _description.text
 ;
      Code for cell settings for this space-group symmetry.
 ;
-    _description.common         'SymmetryCellSetting'
     _name.category_id            symmetry
     _name.object_id              cell_setting
     _type.purpose                State 
-    _type.source                 Observed
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
@@ -4018,20 +4010,60 @@ save_symmetry.cell_setting
                                  cubic
     _enumeration.default         triclinic
      loop_
-    _method.purpose   
+    _method.purpose
     _method.expression
      Validation
 ;
-  With ca as cell_angle
-  if(_symmetry.cell_setting == "monoclinic") {
-    if(Abs(ca.alpha.getValue() - 90.0) > 0.01) {
-      Throw (_symmetry.cell_setting, 'cellSettingWarning1')
+    setting = _symmetry.cell_setting
+    a   = _cell_length.a
+    b   = _cell_length.b
+    c   = _cell_length.c
+    d   = 0.01
+    alp = _cell_angle.alpha
+    bet = _cell_angle.beta
+    gam = _cell_angle.gamma
+    warn_len = 'Possible mismatch between cell lengths and cell setting'
+    warn_ang = 'Possible mismatch between cell angles and cell setting'
+
+    If(setting == 'triclinic') {
+      If( Abs(a-b)<d || Abs(a-c)<d || Abs(b-c)<d )          Alert('B', warn_len)
+      If( Abs(alp-90)<d || Abs(bet-90)<d || Abs(gam-90)<d ) Alert('B', warn_ang)
     }
-    if(Abs(ca.alpha.getValue() - ca.gamma.getValue()) > 0.01) {
-      Throw (_symmetry.cell_setting, 'cellSettingWarning2')
+    Else If(setting == 'monoclinic') {
+      If(( Abs(a-b)<d && Abs(a-c)<d ) ||
+         ( Abs(a-b)<d && Abs(b-c)<d ) ||
+         ( Abs(a-c)<d && Abs(b-c)<d ))                      Alert('B', warn_len)
+      If( Abs(alp-90)<d && Abs(bet-90)<d && Abs(gam-90)<d ) Alert('B', warn_ang)
+      If(( Abs(alp-90)>d && Abs(bet-90)>d ) ||
+         ( Abs(alp-90)>d && Abs(gam-90)>d ) ||
+         ( Abs(bet-90)>d && Abs(gam-90)>d ) )               Throw( warn_ang)
     }
-  }
+    Else If(setting == 'orthorhombic') {
+      If( Abs(a-b)<d || Abs(a-c)<d || Abs(b-c)<d )          Alert('B',warn_len)
+      If( Abs(alp-90)>d || Abs(bet-90)>d || Abs(gam-90)>d ) Throw( warn_ang)
+    }
+    Else If(setting == 'tetragonal') {
+      If( Abs(a-b)<d && Abs(a-c)<d && Abs(b-c)<d )          Alert('B',warn_len)
+      If( Abs(a-b)>d && Abs(a-c)>d )                        Throw( warn_len)
+      If( Abs(alp-90)>d || Abs(bet-90)>d || Abs(gam-90)>d ) Throw( warn_ang)
+    }
+    Else If(setting == 'trigonal' || setting == 'hexagonal') {
+      If( Abs(a-b)<d && Abs(a-c)<d && Abs(b-c)<d )          Alert('B', warn_len)
+      If( Abs(a-b)>d && Abs(a-c)>d )                        Throw( warn_len)
+      If( Abs(alp-90)<d && Abs(bet-90)<d && Abs(gam-90)<d ) Throw( warn_ang)
+      If( Abs(gam-120)>d || Abs(alp-90)>d || Abs(bet-90)>d) Throw( warn_ang)
+    }
+    Else If(setting == 'rhombohedral') {
+      If( Abs(a-b)>d || Abs(a-c)>d || Abs(b-c)>d )          Throw( warn_len)
+      If( Abs(alp-90)<d || Abs(bet-90)<d || Abs(gam-90)<d ) Alert('B', warn_ang)
+      If( Abs(alp-bet)>d || Abs(alp-gam)>d || Abs(bet-gam)>d) Throw( warn_ang)
+    }
+    Else If(setting == 'cubic') {
+      If( Abs(a-b)>d || Abs(a-c)>d || Abs(b-c)>d )          Throw( warn_len)
+      If( Abs(alp-90)>d || Abs(bet-90)>d || Abs(gam-90)>d ) Throw( warn_ang)
+    }
 ;
+
      save_
  
  
@@ -4044,10 +4076,9 @@ save_symmetry.Int_Tables_number
 ;
      Space-group number from International Tables for Cryst., Vol. A.
 ;
-    _description.common         'SymmetryIntTabNumber'
     _name.category_id            symmetry
     _name.object_id              Int_Tables_number
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Index
@@ -4062,10 +4093,9 @@ save_symmetry.multiplicity
 ;
      Number of unique symmetry elements in the space group.
 ;
-    _description.common         'SymmetryMultiplicity'
     _name.category_id            symmetry
     _name.object_id              multiplicity
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Count
@@ -4096,11 +4126,10 @@ save_symmetry.space_group_name_Hall
      components of the symbol.
      Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525.
 ;
-    _description.common         'SpaceGroupSymbolHall'
     _name.category_id            symmetry
     _name.object_id              space_group_name_Hall
-    _type.purpose                Describe 
-    _type.source                 Assigned 
+    _type.purpose                Encode 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -4108,11 +4137,12 @@ save_symmetry.space_group_name_Hall
      save_
  
  
-save_symmetry.space_group_name_H-M
-    _definition.id             '_symmetry.space_group_name_H-M'
+save_symmetry.space_group_name_H_M
+    _definition.id             '_symmetry.space_group_name_H_M'
      loop_
     _alias.definition_id       '_symmetry_space_group_name_H-M'
-    _definition.update           2012-11-29
+                               '_symmetry.space_group_name_H-M'
+    _definition.update           2013-04-07
     _description.text
 ;
      Hermann-Mauguin space-group symbol. Note that the H-M symbol does
@@ -4125,11 +4155,10 @@ save_symmetry.space_group_name_H-M
      or *_Hall data items as well. Leave spaces between symbols
      referring to different axes.
 ;
-    _description.common         'SpaceGroupSymbolH-M'
     _name.category_id            symmetry
-    _name.object_id              space_group_name_H-M
-    _type.purpose                Describe 
-    _type.source                 Assigned 
+    _name.object_id              space_group_name_H_M
+    _type.purpose                Encode 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -4145,7 +4174,7 @@ save_SYMMETRY_EQUIV
     _definition.id               SYMMETRY_EQUIV
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-22
+    _definition.update           2013-09-08
     _description.text
 ;
      The CATEGORY of data items used to describe symmetry equivalent sites
@@ -4154,6 +4183,7 @@ save_SYMMETRY_EQUIV
     _name.category_id            SYMMETRY
     _name.object_id              EQUIV
     _category.key_id           '_symmetry_equiv.key'
+    _category.key_list        ['_symmetry_equiv.pos_site_id']
  
 
 save_symmetry_equiv.key
@@ -4164,12 +4194,12 @@ save_symmetry_equiv.key
      Value is a unique key to a set of SYMMETRY_EQUIV items 
      in a looped list.
 ;
-    _description.common         'Symmetry Equivalent Position List' 
     _name.category_id            equiv
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -4195,11 +4225,10 @@ save_symmetry_equiv.pos_as_xyz
      be entered, including those for lattice centring and a centre of
      symmetry, if present.
 ;
-    _description.common         'SymmetryEquivPosXyz'
     _name.category_id            equiv
     _name.object_id              pos_as_xyz
-    _type.purpose                Describe  
-    _type.source                 Assigned 
+    _type.purpose                Encode  
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -4219,13 +4248,13 @@ save_symmetry_equiv.pos_site_id
      list, and should be identified with the code 'n' in the geometry
      symmetry codes of the form 'n_klm'.
 ;
-    _description.common         'SymmetryEquivPosNumber'
     _name.category_id            equiv
     _name.object_id              pos_site_id
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index  
+    _enumeration.range           1:
     loop_
    _method.purpose
    _method.expression
@@ -4247,11 +4276,10 @@ save_symmetry_equiv.R
               R  =  |  r21  r22  r23  |
                     |  r31  r32  r33  |
 ;
-    _description.common         'SymmetryRotMatrix'
     _name.category_id            equiv
     _name.object_id              R
-    _type.purpose                Quantity 
-    _type.source                 Assembled
+    _type.purpose                Number 
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3,3]
@@ -4281,10 +4309,9 @@ save_symmetry_equiv.RT
               RT  =  |  r12  r22  r32  |
                      |  r13  r23  r33  |
 ;
-    _description.common         'SymmetryRotMatrix'
     _name.category_id            equiv
     _name.object_id              RT
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived   
     _type.container              Matrix
     _type.contents               Real
@@ -4312,10 +4339,9 @@ save_symmetry_equiv.Seitz_matrix
        | 0  1 |     |  r31  r32  r33  t3  |
                     |   0    0    0    1  |
 ;
-    _description.common         'SymmetrySeitzMatrix'
     _name.category_id            equiv
     _name.object_id              Seitz_matrix
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived  
     _type.container              Matrix
     _type.contents               Real
@@ -4337,11 +4363,10 @@ save_symmetry_equiv.T
 ;
      A vector containing the symmetry translation operations of a space group.
 ;
-    _description.common         'SymmetryTranslVector'
     _name.category_id            equiv
     _name.object_id              T
-    _type.purpose                Quantity 
-    _type.source                 Assembled
+    _type.purpose                Number 
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3]
@@ -4575,4 +4600,41 @@ save_symmetry_equiv.T
    Add chemical.enantioexcess_bulk, chemical.enantioexcess_bulk_technique
    Add chemical.enantioexcess_crystal_technique
    Add chemical.identifier_inchi and related items.
+;
+     2.4.01   2013-03-08
+;
+   Changes arising from alerts issued by ALIGN.
+;
+     2.4.02   2013-04-07
+;
+   Added alias symmetry.space_group_name_H-M to symmetry.space_group_name_H_M.
+;
+     2.4.03   2013-04-11
+;
+   Added type.contents 'Implied' to all Key definitions
+   Removed desription.common from all defs; inconsistent invocations
+   Replace type.source state 'Observed' with 'Recorded'
+   Replace type.source state 'Selected' with 'Assigned'
+;
+     2.4.04   2013-04-16
+;
+   Changed type.source 'Measured' to 'Recorded'
+;
+     2.4.05   2013-04-17
+;
+   Changed type.source 'Quantity' to 'Number' or 'Encode'
+   Changed several 'Encode' to 'Composite'
+;
+     2.4.06   2013-04-24
+;
+   Removed 'Pairs' from type.contents; replaced with "Real", "Code", etc.
+;
+     2.4.07   2013-04-28
+;
+   Changed _cell_reciprocal.convert_U_to_beta to .convert_Uij_to_betaij
+   Added _cell_reciprocal.convert_Uiso_to_Uij
+;
+    2.4.08   2013-09-08
+;
+    Add attribute category.key_list to all Loop categories.
 ;

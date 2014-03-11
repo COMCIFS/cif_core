@@ -8,10 +8,10 @@ data_COM_VAL
  
     _dictionary.title            COM_VAL
     _dictionary.class            Template
-    _dictionary.version          1.3.05 
-    _dictionary.date             2012-10-16
+    _dictionary.version          1.4.02 
+    _dictionary.date             2013-04-17
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
-    _dictionary.ddl_conformance  3.10.02
+    _dictionary.ddl_conformance  3.11.04
     _description.text
 ;
      This dictionary contains commonly used enumeration value sets that
@@ -24,56 +24,56 @@ save_colour_RGB
     loop_
         _enumeration_set.state
         _enumeration_set.detail
-     black                            [ 000, 000, 000 ]
-     white                            [ 255, 255, 255 ]
-     grey                             [ 192, 192, 192 ]
-     grey_light                       [ 211, 211, 211 ]
-     grey_slate                       [ 112, 128, 144 ]
-     blue                             [ 000, 000, 255 ]
-     blue_light                       [ 176, 224, 230 ]
-     blue_medium                      [ 000, 000, 205 ]
-     blue_dark                        [ 025, 025, 112 ]
-     blue_navy                        [ 000, 000, 128 ]
-     blue_royal                       [ 065, 105, 225 ]
-     blue_sky                         [ 135, 206, 235 ]
-     blue_steel                       [ 070, 130, 180 ]
-     turquoise                        [ 064, 224, 208 ]
-     cyan                             [ 000, 255, 255 ]
-     cyan_light                       [ 224, 255, 255 ]
-     green                            [ 000, 255, 000 ]
-     green_light                      [ 152, 251, 152 ]
-     green_dark                       [ 000, 100, 000 ]
-     green_sea                        [ 046, 139, 087 ]
-     green_lime                       [ 050, 205, 050 ]
-     green_olive                      [ 107, 142, 035 ]
-     green_khaki                      [ 240, 230, 140 ]
-     yellow                           [ 255, 255, 000 ]
-     yellow_light                     [ 255, 255, 224 ]
-     yellow_gold                      [ 255, 215, 000 ]
-     brown                            [ 165, 042, 042 ]
-     brown_sienna                     [ 160, 082, 045 ]
-     brown_beige                      [ 245, 245, 220 ]
-     brown_tan                        [ 210, 180, 140 ]
-     salmon                           [ 250, 128, 114 ]
-     salmon_light                     [ 255, 160, 122 ]
-     salmon_dark                      [ 233, 150, 122 ]
-     orange                           [ 255, 165, 000 ]
-     orange_dark                      [ 255, 140, 000 ]
-     red                              [ 255, 000, 000 ]
-     red_coral                        [ 255, 127, 080 ]
-     red_tomato                       [ 255, 099, 071 ]
-     red_orange                       [ 255, 069, 000 ]
-     red_violet                       [ 219, 112, 147 ]
-     red_maroon                       [ 176, 048, 096 ]
-     pink                             [ 255, 192, 203 ]
-     pink_light                       [ 255, 182, 193 ]
-     pink_deep                        [ 255, 020, 147 ]
-     pink_hot                         [ 255, 105, 180 ]
-     violet                           [ 238, 130, 238 ]
-     violet_red                       [ 208, 032, 144 ]
-     violet_magenta                   [ 255, 000, 255 ]
-     violet_dark                      [ 148, 000, 211 ]
-     violet_blue                      [ 138, 043, 226 ]
+     black                            '[ 000, 000, 000 ]'
+     white                            '[ 255, 255, 255 ]'
+     grey                             '[ 192, 192, 192 ]'
+     grey_light                       '[ 211, 211, 211 ]'
+     grey_slate                       '[ 112, 128, 144 ]'
+     blue                             '[ 000, 000, 255 ]'
+     blue_light                       '[ 176, 224, 230 ]'
+     blue_medium                      '[ 000, 000, 205 ]'
+     blue_dark                        '[ 025, 025, 112 ]'
+     blue_navy                        '[ 000, 000, 128 ]'
+     blue_royal                       '[ 065, 105, 225 ]'
+     blue_sky                         '[ 135, 206, 235 ]'
+     blue_steel                       '[ 070, 130, 180 ]'
+     turquoise                        '[ 064, 224, 208 ]'
+     cyan                             '[ 000, 255, 255 ]'
+     cyan_light                       '[ 224, 255, 255 ]'
+     green                            '[ 000, 255, 000 ]'
+     green_light                      '[ 152, 251, 152 ]'
+     green_dark                       '[ 000, 100, 000 ]'
+     green_sea                        '[ 046, 139, 087 ]'
+     green_lime                       '[ 050, 205, 050 ]'
+     green_olive                      '[ 107, 142, 035 ]'
+     green_khaki                      '[ 240, 230, 140 ]'
+     yellow                           '[ 255, 255, 000 ]'
+     yellow_light                     '[ 255, 255, 224 ]'
+     yellow_gold                      '[ 255, 215, 000 ]'
+     brown                            '[ 165, 042, 042 ]'
+     brown_sienna                     '[ 160, 082, 045 ]'
+     brown_beige                      '[ 245, 245, 220 ]'
+     brown_tan                        '[ 210, 180, 140 ]'
+     salmon                           '[ 250, 128, 114 ]'
+     salmon_light                     '[ 255, 160, 122 ]'
+     salmon_dark                      '[ 233, 150, 122 ]'
+     orange                           '[ 255, 165, 000 ]'
+     orange_dark                      '[ 255, 140, 000 ]'
+     red                              '[ 255, 000, 000 ]'
+     red_coral                        '[ 255, 127, 080 ]'
+     red_tomato                       '[ 255, 099, 071 ]'
+     red_orange                       '[ 255, 069, 000 ]'
+     red_violet                       '[ 219, 112, 147 ]'
+     red_maroon                       '[ 176, 048, 096 ]'
+     pink                             '[ 255, 192, 203 ]'
+     pink_light                       '[ 255, 182, 193 ]'
+     pink_deep                        '[ 255, 020, 147 ]'
+     pink_hot                         '[ 255, 105, 180 ]'
+     violet                           '[ 238, 130, 238 ]'
+     violet_red                       '[ 208, 032, 144 ]'
+     violet_magenta                   '[ 255, 000, 255 ]'
+     violet_dark                      '[ 148, 000, 211 ]'
+     violet_blue                      '[ 138, 043, 226 ]'
      save_
 
 
@@ -202,6 +202,10 @@ save_units_code
          _enumeration_set.state
          _enumeration_set.detail
 
+   'none' "dimensionless - e.g. a ratio, factor, weight or scale"
+
+   'coulomb' "electronic charge in Coulombs"
+
    'centimetres'  "length    'centimetres (meters * 10^( -2))'"
    'millimetres'  "length    'millimetres (meters * 10^( -3))'"
    'nanometres'   "length    'nanometres  (meters * 10^( -9))'"
@@ -228,6 +232,8 @@ save_units_code
    "length_squared '8pi^2 * angstroms squared (meters * 10^(-10))^2'"
    'picometre_squared'    
    "length_squared 'picometres squared (meters * 10^(-12))^2'"
+   'femtometre_squared'    
+   "length_squared 'femtometres squared (meters * 10^(-12))^2'"
 
    'nanometre_cubed'       
    "length_cubed 'nanometres cubed (meters * 10^( -9))^3'"
@@ -235,6 +241,10 @@ save_units_code
    "length_cubed 'angstroms cubed  (meters * 10^(-10))^3'"
    'picometre_cubed'       
    "length_cubed 'picometres cubed (meters * 10^(-12))^3'"
+
+   'grams_per_centimetre_cubed' "density 'grams per cubic centimetre'" 
+   'kilograms_per_metre_cubed' "density 'kilograms per cubic metre'" 
+   'megagrams_per_metre_cubed' "density 'megagrams per cubic metre'" 
 
    'kilopascals'      "pressure      'kilopascals'"
    'gigapascals'      "pressure      'gigapascals'"
@@ -262,11 +272,17 @@ save_units_code
    'electrons_per_picometre_cubed'     
    "electron-density 'electrons per picometres cubed (meters * 10^(-12))^3'"
 
+   'dalton'      "standard atomic mass unit"
+ 
+   'pixel_per_millimetre'  "area resolution unit"
+
    'kilowatts'     "power       'kilowatts'"
    'milliamperes'  "current     'milliamperes'"
    'kilovolts'     "emf         'kilovolts'"
 
-   'arbitrary'    "arbitary    'arbitrary system of units'"
+   'volt_squared'     "emf         'volts squared'"
+
+   'arbitrary'    "arbitrary    'arbitrary system of units'"
 
     save_
 
@@ -1528,4 +1544,12 @@ save_colour_hue
 ;
   Change all element symbols in the ion-to-elemnt default list to Upper
   and lower case characters (from all upper).
+;
+      1.4.01  2013-03-08
+;
+  Changes arising from alerts issued by ALIGN.
+;
+      1.4.02  2013-04-16
+;
+   Changed type.source 'Measured' to 'Recorded'
 ;

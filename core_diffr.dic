@@ -8,10 +8,10 @@ data_CORE_DIFFR
  
     _dictionary.title            CORE_DIFFR
     _dictionary.class            Instance
-    _dictionary.version          1.5.10 
-    _dictionary.date             2013-02-21 
+    _dictionary.version          1.6.08 
+    _dictionary.date             2013-09-08 
     _dictionary.uri              www.iucr.org/cif/dic/core_diffr.dic
-    _dictionary.ddl_conformance  3.10.04
+    _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CoreDiffr
     _description.text
 ;
@@ -61,7 +61,7 @@ save_diffrn.ambient_environment
     _name.category_id            diffrn
     _name.object_id              ambient_environment
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -78,11 +78,10 @@ save_diffrn.ambient_pressure
 ;
      Mean hydrostatic  pressure at which intensities were measured.
 ;
-    _description.common         'AmbientPressure'
     _name.category_id            diffrn
     _name.object_id              ambient_pressure
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -104,8 +103,8 @@ save_diffrn.ambient_pressure_gt
 ;
     _name.category_id            diffrn
     _name.object_id              ambient_pressure_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -127,8 +126,8 @@ save_diffrn.ambient_pressure_lt
 ;   
     _name.category_id            diffrn
     _name.object_id              ambient_pressure_lt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -147,11 +146,10 @@ save_diffrn.ambient_temperature
 ;
      Mean temperature at which intensities were measured.
 ;
-    _description.common         'AmbientTemperature'
     _name.category_id            diffrn
     _name.object_id              ambient_temperature
-    _type.purpose                Quantity 
-    _type.source                 Observed
+    _type.purpose                Number 
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -173,8 +171,8 @@ save_diffrn.ambient_temperature_gt
 ;
     _name.category_id            diffrn
     _name.object_id              ambient_temperature_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -196,8 +194,8 @@ save_diffrn.ambient_temperature_lt
 ;
     _name.category_id            diffrn
     _name.object_id              ambient_temperature_lt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -214,11 +212,10 @@ save_diffrn.crystal_treatment
      Remarks about how the crystal was treated prior to intensity measurement.
      Particularly relevant when intensities were measured at low temperature.
 ;
-    _description.common         'CrystalTreatment'
     _name.category_id            diffrn
     _name.object_id              crystal_treatment
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -238,14 +235,14 @@ save_diffrn.measured_fraction_theta_full
      Fraction of unique (symmetry-independent) reflections measured
      out to _diffrn_reflns.theta_full.
 ;
-    _description.common         'DiffrnCompletionThetaFull'
     _name.category_id            diffrn
     _name.object_id              measured_fraction_theta_full
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -259,14 +256,14 @@ save_diffrn.measured_fraction_theta_max
      Fraction of unique (symmetry-independent) reflections measured
      out to _diffrn_reflns.theta_max.
 ;
-    _description.common         'DiffrnCompletionThetaMax'
     _name.category_id            diffrn
     _name.object_id              measured_fraction_theta_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -282,11 +279,10 @@ save_diffrn.special_details
      Special details of the diffraction measurement process. Should include
      information about source instability, crystal motion, degradation, etc.
 ;
-    _description.common         'DiffrnMeasDetails'
     _name.category_id            diffrn
     _name.object_id              special_details
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -305,14 +301,13 @@ save_diffrn.symmetry_description
     _definition.update           2012-11-26 
     _description.text
 ;
-     Observed diffraction point symmetry, systematic absences and possible
+     Recorded diffraction point symmetry, systematic absences and possible
      space group(s) or superspace group(s) compatible with these.
 ;
-    _description.common         'DiffrnSymmetryDetails'
     _name.category_id            diffrn
     _name.object_id              symmetry_description
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -321,10 +316,10 @@ save_diffrn.symmetry_description
  
 save_DIFFRN_ATTENUATOR
  
-    _definition.id               diffrn_attenuator
+    _definition.id               DIFFRN_ATTENUATOR
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the attenuators used in the
@@ -333,6 +328,7 @@ save_DIFFRN_ATTENUATOR
     _name.category_id            DIFFRN
     _name.object_id              ATTENUATOR
     _category.key_id           '_diffrn_attenuator.key'
+    _category.key_list        ['_diffrn_attenuator.code']
 
 
 save_diffrn_attenuator.key
@@ -343,12 +339,12 @@ save_diffrn_attenuator.key
      Value is a unique key to a set of DIFFRN_ATTENUATOR items
      in a looped list.
 ;
-    _description.common         'Key to beam attenuator values'
     _name.category_id            attenuator
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -371,11 +367,10 @@ save_diffrn_attenuator.code
      Code identifying a particular attenuator setting; referenced by the
      _diffrn_refln.attenuator_code which is stored with the intensities.
 ;
-    _description.common         'DiffrnAttenuatorCode'
     _name.category_id            attenuator
     _name.object_id              code
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      save_
@@ -390,11 +385,10 @@ save_diffrn_attenuator.material
 ;
      Description of the material from which the attenuator is made.
 ;
-    _description.common         'DiffrnAttenuator'
     _name.category_id            attenuator
     _name.object_id              material
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -410,14 +404,14 @@ save_diffrn_attenuator.scale
      The scale factor applied to a measured intensity if it is reduced by
      an attenuator identified by _diffrn_attenuator.code.
 ;
-    _description.common         'DiffrnAttenuatorScale'
     _name.category_id            attenuator
     _name.object_id              scale
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _enumeration.range           1.0:
+    _units.code                  none
      save_
 
      save_     #------ close DIFFRN_ATTENUATOR category
@@ -427,7 +421,7 @@ save_diffrn_attenuator.scale
  
 save_DIFFRN_DETECTOR
  
-    _definition.id               diffrn_detector
+    _definition.id               DIFFRN_DETECTOR
     _definition.scope            Category
     _definition.class            Set
     _definition.update           2012-11-26 
@@ -451,11 +445,10 @@ save_diffrn_detector.description
 ;
      Description of the type of diffraction radiation detector.
 ;
-    _description.common         'DetectorClass'
     _name.category_id            detector
     _name.object_id              description
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -475,15 +468,14 @@ save_diffrn_detector.area_resol_mean
 ;
      The resolution limit of an area diffraction radiation detector.
 ;
-    _description.common         'DetectorResolLimit'
     _name.category_id            detector
     _name.object_id              area_resol_mean
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  pixels_per_millimetre
+    _units.code                  pixel_per_millimetre
      save_
  
  
@@ -496,11 +488,10 @@ save_diffrn_detector.details
 ;
      Description of special aspects of the radiation detector.
 ;
-    _description.common         'DetectorDetails'
     _name.category_id            detector
     _name.object_id              details
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -517,10 +508,9 @@ save_diffrn_detector.dtime
 ;
      The maximum time between two detector signals that cannot be resolved.
 ;
-    _description.common         'DetectorDeadTime'
     _name.category_id            detector
     _name.object_id              dtime
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -539,11 +529,10 @@ save_diffrn_detector.make
 ;
      The make, model or name of the diffraction radiation detector.
 ;
-    _description.common         'DetectorMake'
     _name.category_id            detector
     _name.object_id              make
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -578,11 +567,10 @@ save_diffrn_measurement.details
 ;
      Description of special aspects of the diffraction measurement.
 ;
-    _description.common         'DiffrnMeasDetails'
     _name.category_id            measurement
     _name.object_id              details
     _type.purpose                Describe
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -601,11 +589,10 @@ save_diffrn_measurement.device_class
 ;
      Type of goniometer device used to mount and orient the specimen.
 ;
-    _description.common         'DiffrnMeasDeviceClass'
     _name.category_id            measurement
     _name.object_id              device_class
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -627,11 +614,10 @@ save_diffrn_measurement.device_details
 ;
      Details of the goniometer device used in the diffraction experiment.
 ;
-    _description.common         'DiffrnMeasDeviceDetails'
     _name.category_id            measurement
     _name.object_id              device_details
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -648,16 +634,15 @@ save_diffrn_measurement.device_make
     _alias.definition_id       '_diffrn_measurement_device_type'
                                '_diffrn.measurement_device_make'
                                '_diffrn_measurement_device.type'
-    _definition.update           2012-11-26 
+    _definition.update           2013-03-07 
     _description.text
 ;
      The make, model or name of the goniometer device used.
 ;
-    _description.common         'DiffrnMeasDeviceMake'
     _name.category_id            measurement
     _name.object_id              device_make
-    _type.purpose                Observed
-    _type.source                 Assigned 
+    _type.purpose                Describe
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -673,11 +658,10 @@ save_diffrn_measurement.method
 ;
      Description of scan method used to measure diffraction intensities.
 ;
-    _description.common         'DiffrnMeasMethod'
     _name.category_id            measurement
     _name.object_id              method
     _type.purpose                Describe
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -695,11 +679,10 @@ save_diffrn_measurement.specimen_support
 ;
      Mounting method for the crystal specimum during data collection.
 ;
-    _description.common         'DiffrnSpecimumMount'
     _name.category_id            measurement
     _name.object_id              specimen_support
     _type.purpose                Describe
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -756,11 +739,10 @@ save_diffrn_orient_matrix.type
      Description of orientation matrix and how it should be applied to define
      the orientation of the crystal with respect to the diffractometer axes.
 ;
-    _description.common         'DiffrnOrientMatrixType'
     _name.category_id            matrix
     _name.object_id              type
     _type.purpose                Describe
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -774,11 +756,10 @@ save_diffrn_orient_matrix.UBIJ
      The 3x3 matrix specifying the orientation of the crystal with
      respect to the diffractometer axes.
 ;
-    _description.common         'DiffrnOrientMatrix'
     _name.category_id            matrix
     _name.object_id              UBIJ   
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3,3]
@@ -904,7 +885,7 @@ save_DIFFRN_ORIENT_REFLN
     _definition.id               DIFFRN_ORIENT_REFLN
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the reflections used to
@@ -914,6 +895,9 @@ save_DIFFRN_ORIENT_REFLN
     _name.category_id            DIFFRN_ORIENT
     _name.object_id              REFLN 
     _category.key_id           '_diffrn_orient_refln.key'
+    _category.key_list        ['_diffrn_orient_refln.index_h',
+                               '_diffrn_orient_refln.index_k',
+                               '_diffrn_orient_refln.index_l']
 
 
 save_diffrn_orient_refln.key
@@ -924,12 +908,12 @@ save_diffrn_orient_refln.key
      Value is a unique key to a set of DIFFRN_ORIENT_REFLN items
      in a looped list.
 ;
-    _description.common         'Key to orientation reflections'
     _name.category_id            refln
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -946,7 +930,7 @@ save_diffrn_orient_refln.angle_chi
     _definition.id             '_diffrn_orient_refln.angle_chi'
      loop_
     _alias.definition_id       '_diffrn_orient_refln_angle_chi'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'orient_angle'}]
     _name.category_id            refln
     _name.object_id              angle_chi
      save_
@@ -956,7 +940,7 @@ save_diffrn_orient_refln.angle_kappa
     _definition.id             '_diffrn_orient_refln.angle_kappa'
      loop_
     _alias.definition_id       '_diffrn_orient_refln_angle_kappa'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'orient_angle'}]
     _name.category_id            refln
     _name.object_id              angle_kappa
      save_
@@ -966,7 +950,7 @@ save_diffrn_orient_refln.angle_omega
     _definition.id             '_diffrn_orient_refln.angle_omega'
      loop_
     _alias.definition_id       '_diffrn_orient_refln_angle_omega'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'orient_angle'}]
     _name.category_id            refln
     _name.object_id              angle_omega
      save_
@@ -976,7 +960,7 @@ save_diffrn_orient_refln.angle_phi
     _definition.id             '_diffrn_orient_refln.angle_phi'
      loop_
     _alias.definition_id       '_diffrn_orient_refln_angle_phi'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'orient_angle'}]
     _name.category_id            refln
     _name.object_id              angle_phi
      save_
@@ -986,7 +970,7 @@ save_diffrn_orient_refln.angle_psi
     _definition.id             '_diffrn_orient_refln.angle_psi'
      loop_
     _alias.definition_id       '_diffrn_orient_refln_angle_psi'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'orient_angle'}]
     _name.category_id            refln
     _name.object_id              angle_psi
      save_
@@ -996,7 +980,7 @@ save_diffrn_orient_refln.angle_theta
     _definition.id             '_diffrn_orient_refln.angle_theta'
      loop_
     _alias.definition_id       '_diffrn_orient_refln_angle_theta'
-    _import.get         [{"file":'templ_attr.cif',"save":'diffr_angle'}]
+    _import.get         [{"file":'templ_attr.cif',"save":'orient_angle'}]
     _name.category_id            refln
     _name.object_id              angle_theta
      save_
@@ -1009,11 +993,10 @@ save_diffrn_orient_refln.hkl
 ;
      Miller indices of a reflection used to define the orientation matrix.
 ;
-    _description.common         'DiffrnOrientReflnHkl'
     _name.category_id            refln
     _name.object_id              hkl
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
     _type.dimension              [3]
@@ -1092,11 +1075,10 @@ save_diffrn_radiation.collimation
 ;
      Description of the collimation or focusing applied to the radiation.
 ;
-    _description.common         'RadCollimator'
     _name.category_id            radiation
     _name.object_id              collimation
     _type.purpose                Describe
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1115,10 +1097,9 @@ save_diffrn_radiation.filter_edge
 ;
      Absorption edge of the radiation filter used.
 ;
-    _description.common         'RadFilter'
     _name.category_id            radiation
     _name.object_id              filter_edge
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -1136,11 +1117,10 @@ save_diffrn_radiation.inhomogeneity
 ;
      Half-width of the incident beam perpendicular to the diffraction plane.
 ;
-    _description.common         'RadHalfWidth'
     _name.category_id            radiation
     _name.object_id              inhomogeneity
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1159,11 +1139,10 @@ save_diffrn_radiation.monochromator
      If a monochromator crystal is used the material and the indices of
      the Bragg reflection are specified.
 ;
-    _description.common         'RadMonochromator'
     _name.category_id            radiation
     _name.object_id              monochromator
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -1182,10 +1161,9 @@ save_diffrn_radiation.polarisn_norm
      The angle, as viewed from the specimen, between the perpendicular
      component of the polarisation and the diffraction plane.
 ;
-    _description.common         'RadPolarizNorm'
     _name.category_id            radiation
     _name.object_id              polarisn_norm
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -1208,14 +1186,14 @@ save_diffrn_radiation.polarisn_ratio
      the diffraction plane of the sample (i.e. the plane containing the
      incident and reflected beams).
 ;
-    _description.common         'RadPolarizRatio'
     _name.category_id            radiation
     _name.object_id              polarisn_ratio
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -1229,7 +1207,6 @@ save_diffrn_radiation.probe
      Enumerated code for the nature of radiation used (i.e. name of 
      subatomic particle or region of the electromagnetic spectrum).
 ;
-    _description.common         'RadDescription'
     _name.category_id            radiation
     _name.object_id              probe
     _type.purpose                State
@@ -1246,25 +1223,20 @@ save_diffrn_radiation.type
     _definition.id             '_diffrn_radiation.type'
      loop_
     _alias.definition_id       '_diffrn_radiation_type'
-    _definition.update           2012-11-26 
+    _definition.update           2013-03-23 
     _description.text
 ;
-     Enumerated code for the radiation source or energy spectrum.
+     Details of the radiation source or energy spectrum.
 ;
-    _description.common         'RadType'
     _name.category_id            radiation
     _name.object_id              type
-    _type.purpose                State
-    _type.source                 Assigned
+    _type.purpose                Describe
+    _type.source                 Recorded
     _type.container              Single
-    _type.contents               Code
-     loop_ _enumeration_set.state
-           _enumeration_set.detail
-                     Cu    'Copper tube'
-                     Mo    'Molybdinum tube'
-                     Ag    'Silver tube'
-                     white 'unfiltered radiation'
-                     synch 'synchrotron radiation'
+    _type.contents               Text
+     loop_ _description_example.case             'Mo K\a'
+                                 'Cu K\a'        'Cu K\a~1~'
+                                 'Cu K-L~2,3~'   white-beam
      save_
  
  
@@ -1277,7 +1249,6 @@ save_diffrn_radiation.xray_symbol
 ;
      IUPAC symbol for the X-ray wavelength for probe radiation.
 ;
-    _description.common         'RadXraySymbol'
     _name.category_id            radiation
     _name.object_id              xray_symbol
     _type.purpose                State
@@ -1293,14 +1264,15 @@ save_diffrn_radiation.xray_symbol
     _enumeration.default         K-L~3~
      save_
  
-#----------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------
  
 save_DIFFRN_RADIATION_WAVELENGTH
  
     _definition.id               DIFFRN_RADIATION_WAVELENGTH
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the wavelength of the
@@ -1311,6 +1283,7 @@ save_DIFFRN_RADIATION_WAVELENGTH
     _name.category_id            DIFFRN_RADIATION
     _name.object_id              WAVELENGTH
     _category.key_id           '_diffrn_radiation_wavelength.key'
+    _category.key_list        ['_diffrn_radiation_wavelength.id']
 
 
 save_diffrn_radiation_wavelength.key
@@ -1321,12 +1294,12 @@ save_diffrn_radiation_wavelength.key
      Value is a unique key to a set of DIFFRN_RADIATION_WAVELENGTH items
      in a looped list.
 ;
-    _description.common         'Key to radiation wavelengths'
     _name.category_id            wavelength
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -1349,10 +1322,9 @@ save_diffrn_radiation_wavelength.value
 ;
      Wavelength of radiation used in diffraction measurements.
 ;
-    _description.common         'RadWaveLength'
     _name.category_id            wavelength
     _name.object_id              value
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -1372,11 +1344,10 @@ save_diffrn_radiation_wavelength.id
      Code identifying a radiation used in the diffraction measurements.
      This is linked to _diffrn_refln.wavelength_id and _refln.wavelength_id
 ;
-    _description.common         'RadWaveLengthId'
     _name.category_id            wavelength
     _name.object_id              id
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_ _description_example.case    "x2"
@@ -1398,7 +1369,7 @@ save_diffrn_radiation_wavelength.details
     _name.category_id            wavelength
     _name.object_id              details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -1422,14 +1393,13 @@ save_diffrn_radiation_wavelength.determination
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
-     loop_ _enumeration_set.state
-           _enumeration_set.detail
-
-       fundamental 'Fundamental property of matter e.g. MoK\alpha'
-
-       estimated   'Estimated  e.g. from monochromator angle or time of flight'
-
-       refined     'Refined using a standard crystal with known cell parameters'
+     loop_ 
+    _enumeration_set.state
+    _enumeration_set.detail
+     fundamental 'Fundamental property of matter e.g. MoK\alpha'
+     estimated   'Estimated  e.g. from monochromator angle or time of flight'
+     refined     'Refined using a standard crystal with known cell parameters'
+    _enumeration.default    fundamental
      save_
 
  
@@ -1442,15 +1412,15 @@ save_diffrn_radiation_wavelength.wt
 ;
      Relative intensity of a radiation used in the diffraction measurements.
 ;
-    _description.common         'RadWaveLengthWeight'
     _name.category_id            wavelength
     _name.object_id              wt
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
     _enumeration.default         1.0
+    _units.code                  none
      save_
 
      save_     #------ close DIFFRN_RADIATION_WAVELENGTH category
@@ -1466,7 +1436,7 @@ save_DIFFRN_REFLN
     _definition.id               DIFFRN_REFLN
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the reflection measurements,
@@ -1475,6 +1445,9 @@ save_DIFFRN_REFLN
     _name.category_id            DIFFRN
     _name.object_id              REFLN
     _category.key_id           '_diffrn_refln.key'
+    _category.key_list        ['_diffrn_refln.index_h',
+                               '_diffrn_refln.index_k',
+                               '_diffrn_refln.index_l']
 
 
 save_diffrn_refln.key
@@ -1485,12 +1458,12 @@ save_diffrn_refln.key
      Value is a unique key to a set of DIFFRN_REFLN items
      in a looped list.
 ;
-    _description.common         'Key to measured reflection data'
     _name.category_id            refln
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -1572,12 +1545,11 @@ save_diffrn_refln.attenuator_code
 ;
      Code identifying any attenuator setting for this reflection.
 ;
-    _description.common         'DiffrnReflnAttenCode'
     _name.category_id            refln
     _name.object_id              attenuator_code
     _name.linked_item_id       '_diffrn_attenuator.code'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -1592,12 +1564,11 @@ save_diffrn_refln.class_code
 ;
      Code for reflection class, if assigned. e.g. modulated structures
 ;
-    _description.common         'DiffrnReflnClass'
     _name.category_id            refln
     _name.object_id              class_code
     _name.linked_item_id       '_diffrn_reflns_class.code'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -1610,7 +1581,6 @@ save_diffrn_refln.counts_bg_1
     _import.get         [{"file":'templ_attr.cif',"save":'diffr_counts'}]
     _name.category_id            refln
     _name.object_id              counts_bg_1
-    _description.common         'DiffrnReflnCountsBg1'
      save_
  
  
@@ -1621,7 +1591,6 @@ save_diffrn_refln.counts_bg_2
     _import.get         [{"file":'templ_attr.cif',"save":'diffr_counts'}]
     _name.category_id            refln
     _name.object_id              counts_bg_2
-    _description.common         'DiffrnReflnCountsBg2'
      save_
  
  
@@ -1632,7 +1601,6 @@ save_diffrn_refln.counts_net
     _import.get         [{"file":'templ_attr.cif',"save":'diffr_counts'}]
     _name.category_id            refln
     _name.object_id              counts_net
-    _description.common         'DiffrnReflnCountsNet'
      save_
  
  
@@ -1643,7 +1611,6 @@ save_diffrn_refln.counts_peak
     _import.get         [{"file":'templ_attr.cif',"save":'diffr_counts'}]
     _name.category_id            refln
     _name.object_id              counts_peak
-    _description.common         'DiffrnReflnCountsPeak'
      save_
  
  
@@ -1654,7 +1621,6 @@ save_diffrn_refln.counts_total
     _import.get         [{"file":'templ_attr.cif',"save":'diffr_counts'}]
     _name.category_id            refln
     _name.object_id              counts_total
-    _description.common         'DiffrnReflnCountsTotal'
      save_
  
  
@@ -1667,12 +1633,11 @@ save_diffrn_refln.crystal_id
 ;
      Code identifying each crystal if multiple crystals are used.
 ;
-    _description.common         'DiffrnReflnCrystalId'
     _name.category_id            refln
     _name.object_id              crystal_id
     _name.linked_item_id       '_exptl_crystal.id'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -1687,11 +1652,10 @@ save_diffrn_refln.detect_slit_horiz
 ;
      Total slit aperture angle in the diffraction plane.
 ;
-    _description.common         'DiffrnReflnDetectSlitHoriz'
     _name.category_id            refln
     _name.object_id              detect_slit_horiz
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -1708,11 +1672,10 @@ save_diffrn_refln.detect_slit_vert
 ;
      Total slit aperture angle perpendicular to the diffraction plane.
 ;
-    _description.common         'DiffrnReflnDetectSlitVert'
     _name.category_id            refln
     _name.object_id              detect_slit_vert
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -1729,11 +1692,10 @@ save_diffrn_refln.elapsed_time
 ;
      Elapsed time from the start to the end of the intensity measurement.
 ;
-    _description.common         'DiffrnReflnElapseTime'
     _name.category_id            refln
     _name.object_id              elapsed_time
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1750,11 +1712,10 @@ save_diffrn_refln.hkl
      _refln.hkl values if a transformation of the original measured
      cell has taken place.
 ;
-    _description.common         'DiffrnReflnHkl'
     _name.category_id            refln
     _name.object_id              hkl
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
     _type.dimension              [3]
@@ -1810,13 +1771,14 @@ save_diffrn_refln.intensity_net
      Net intensity calculated from the diffraction counts after the
      attenuator and standard scales have been applied.
 ;
-    _description.common         'DiffrnReflnInet'
     _name.category_id            refln
     _name.object_id              intensity_net
     _type.purpose                Measurand
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0:       
+    _units.code                  none
      save_
  
 
@@ -1835,9 +1797,11 @@ save_diffrn_refln.intensity_net_su
     _name.category_id            refln
     _name.object_id              intensity_net_su
     _type.purpose                SU
-    _type.source                 Measured
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0:       
+    _units.code                  none
      save_
 
  
@@ -1850,12 +1814,11 @@ save_diffrn_refln.scale_group_code
 ;
      Code identifying the scale applying to this reflection.
 ;
-    _description.common         'DiffrnReflnScaleGroup'
     _name.category_id            refln
     _name.object_id              scale_group_code
     _name.linked_item_id       '_diffrn_scale_group.code'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -1871,7 +1834,6 @@ save_diffrn_refln.scan_mode
      Code identifying the mode of scanning with a diffractometer.
      See also  _diffrn_refln.scan_width and _diffrn_refln.scan_mode_backgd.
 ;
-    _description.common         'DiffrnReflnScanMode'
     _name.category_id            refln
     _name.object_id              scan_mode
     _type.purpose                State
@@ -1896,7 +1858,6 @@ save_diffrn_refln.scan_mode_backgd
 ;
      Code identifying mode of scanning to measure the background intensity.
 ;
-    _description.common         'DiffrnReflnScanModeBgd'
     _name.category_id            refln
     _name.object_id              scan_mode_backgd
     _type.purpose                State
@@ -1915,20 +1876,19 @@ save_diffrn_refln.scan_rate
     _definition.id             '_diffrn_refln.scan_rate'
      loop_
     _alias.definition_id       '_diffrn_refln_scan_rate'
-    _definition.update           2012-11-26 
+    _definition.update           2013-03-07 
     _description.text
 ;
      Angular rate of scanning a reflection to measure the intensity.
 ;
-    _description.common         'DiffrnReflnScanRate'
     _name.category_id            refln
     _name.object_id              scan_rate
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                  degrees_per_minute
+    _units.code                  degree_per_minute
      save_
  
  
@@ -1941,11 +1901,10 @@ save_diffrn_refln.scan_time_backgd
 ;
      Time spent measuring background counts.
 ;
-    _description.common         'DiffrnReflnScanTimeBgd'
     _name.category_id            refln
     _name.object_id              scan_time_backgd
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1962,11 +1921,10 @@ save_diffrn_refln.scan_width
 ;
      Angular scan width when measuring the peak intensity.
 ;
-    _description.common         'DiffrnReflnScanWidth'
     _name.category_id            refln
     _name.object_id              scan_width
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -1984,11 +1942,10 @@ save_diffrn_refln.sin_theta_over_lambda
 ;
      (sin theta)/lambda value for this reflection.
 ;
-    _description.common         'DiffrnReflnSinTheta/Lambda'
     _name.category_id            refln
     _name.object_id              sin_theta_over_lambda
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2007,12 +1964,11 @@ save_diffrn_refln.standard_code
      Must match a _diffrn_standard_refln.code values OR set to '.' if
      it was not used as a intensity standard.
 ;
-    _description.common         'DiffrnReflnStandCode'
     _name.category_id            refln
     _name.object_id              standard_code
     _name.linked_item_id       '_diffrn_standard_refln.code'
     _type.purpose                Link
-    _type.source                 Assigned
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -2027,10 +1983,9 @@ save_diffrn_refln.wavelength
 ;
      Mean wavelength of radiation used to measure this intensity.
 ;
-    _description.common         'DiffrnReflnWaveLength'
     _name.category_id            refln
     _name.object_id              wavelength
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -2048,12 +2003,11 @@ save_diffrn_refln.wavelength_id
 ;
      Code identifying the wavelength in the diffrn_radiation_wavelength list.
 ;
-    _description.common         'DiffrnReflnRadId'
     _name.category_id            refln
     _name.object_id              wavelength_id
     _name.linked_item_id       '_diffrn_radiation_wavelength.id'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -2091,14 +2045,14 @@ save_diffrn_reflns.av_R_equivalents
      av|del(I)| term is the average absolute difference between av(I) and
      the individual symmetry-equivalent intensities.
 ;
-    _description.common         'DiffrnResid(EquivI)'
     _name.category_id            reflns
     _name.object_id              av_R_equivalents
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -2111,16 +2065,16 @@ save_diffrn_reflns.av_sunetI_over_netI
     _definition.update           2012-11-26 
     _description.text
 ;
-     Measured [sum |su(netI)| / sum |netI|] for all measured reflections.
+     Recorded [sum |su(netI)| / sum |netI|] for all measured reflections.
 ;
-    _description.common         'DiffrnRatio(sigI/netI)'
     _name.category_id            reflns
     _name.object_id              av_sunetI_over_netI
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
 
@@ -2143,11 +2097,12 @@ save_diffrn_reflns.Laue_measured_fraction_full
 ;
     _name.category_id            reflns
     _name.object_id              Laue_measured_fraction_full
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.95:1.0
+    _units.code                  none
      save_
 
 
@@ -2167,11 +2122,12 @@ save_diffrn_reflns.Laue_measured_fraction_max
 ;
     _name.category_id            reflns
     _name.object_id              Laue_measured_fraction_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -2194,11 +2150,12 @@ save_diffrn_reflns.point_measured_fraction_full
 ;
     _name.category_id            reflns
     _name.object_id              point_measured_fraction_full
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.95:1.0
+    _units.code                  none
      save_
 
 
@@ -2218,11 +2175,12 @@ save_diffrn_reflns.point_measured_fraction_max
 ;
     _name.category_id            reflns
     _name.object_id              point_measured_fraction_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.95:1.0
+    _units.code                  none
      save_
 
 
@@ -2235,7 +2193,7 @@ save_diffrn_reflns.limit_max
 ;
     _name.category_id            reflns
     _name.object_id              limit_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Matrix
     _type.contents               Real
@@ -2261,7 +2219,7 @@ save_diffrn_reflns.limit_min
 ;
     _name.category_id            reflns
     _name.object_id              limit_min
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Matrix
     _type.contents               Real
@@ -2349,10 +2307,9 @@ save_diffrn_reflns.number
      classed as systematically absent arising from translational symmetry
      in the crystal unit cell.
 ;
-    _description.common         'DiffrnReflnsCount'
     _name.category_id            reflns
     _name.object_id              number
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Count
@@ -2369,11 +2326,10 @@ save_diffrn_reflns.reduction_process
 ;
      How intensities were reduced to structure-factor magnitudes.
 ;
-    _description.common         'DiffrnReflnsReductionDetails'
     _name.category_id            reflns
     _name.object_id              reduction_process
     _type.purpose                Describe
-    _type.source                 Assigned 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2392,11 +2348,10 @@ save_diffrn_reflns.theta_full
      complete.  The fraction of unique reflections measured out to 
      this angle is given by _diffrn.measured_fraction_theta_full.
 ;
-    _description.common         'DiffrnThetaFull'
     _name.category_id            reflns
     _name.object_id              theta_full
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -2413,11 +2368,10 @@ save_diffrn_reflns.theta_max
 ;
      Maximum theta angle of the measured reflections.
 ;
-    _description.common         'DiffrnThetaMax'
     _name.category_id            reflns
     _name.object_id              theta_max
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -2434,11 +2388,10 @@ save_diffrn_reflns.theta_min
 ;
      Minimum theta angle of the measured reflections.
 ;
-    _description.common         'DiffrnThetaMin'
     _name.category_id            reflns
     _name.object_id              theta_min
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:90.0
@@ -2459,12 +2412,12 @@ save_diffrn_reflns.resolution_full
 ;
     _name.category_id            reflns
     _name.object_id              resolution_full
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                 'reciprocal_angstroms'
+    _units.code                  reciprocal_angstroms
      save_
 
 
@@ -2472,7 +2425,7 @@ save_diffrn_reflns.resolution_max
     _definition.id             '_diffrn_reflns.resolution_max'
      loop_
     _alias.definition_id       '_diffrn_reflns_resolution_max'
-    _definition.update           2012-11-26
+    _definition.update           2013-02-22
     _description.text
 ;
      Maximum resolution of the measured diffraction pattern.
@@ -2480,13 +2433,13 @@ save_diffrn_reflns.resolution_max
      is given by _diffrn.measured_fraction_theta_max.
 ;
     _name.category_id            reflns
-    _name.object_id              resolution_full
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _name.object_id              resolution_max
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
-    _units.code                 'reciprocal_angstroms'
+    _units.code                  reciprocal_angstroms 
      save_
 
  
@@ -2522,11 +2475,10 @@ save_diffrn_reflns_transf_matrix.TIJ
              (h k l) diffraction  |21 22 23|  =  (h' k' l')
                                   |31 32 33|
 ;
-    _description.common         'DiffrnReflnsTransformMatrix'
     _name.category_id            transf_matrix
     _name.object_id              TIJ               
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3,3]
@@ -2551,7 +2503,7 @@ save_diffrn_reflns_transf_matrix.11
                                '_diffrn_reflns.transf_matrix[1][1]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              11
+    _name.object_id              '11'
      save_
  
  
@@ -2562,7 +2514,7 @@ save_diffrn_reflns_transf_matrix.12
                                '_diffrn_reflns.transf_matrix[1][2]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              12
+    _name.object_id              '12'
      save_
  
  
@@ -2573,7 +2525,7 @@ save_diffrn_reflns_transf_matrix.13
                                '_diffrn_reflns.transf_matrix[1][3]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              13
+    _name.object_id              '13'
      save_
  
  
@@ -2584,7 +2536,7 @@ save_diffrn_reflns_transf_matrix.21
                                '_diffrn_reflns.transf_matrix[2][1]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              21
+    _name.object_id              '21'
      save_
  
  
@@ -2595,7 +2547,7 @@ save_diffrn_reflns_transf_matrix.22
                                '_diffrn_reflns.transf_matrix[2][2]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              22
+    _name.object_id              '22'
      save_
  
  
@@ -2606,7 +2558,7 @@ save_diffrn_reflns_transf_matrix.23
                                '_diffrn_reflns.transf_matrix[2][3]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              23
+    _name.object_id              '23'
      save_
  
  
@@ -2617,7 +2569,7 @@ save_diffrn_reflns_transf_matrix.31
                                '_diffrn_reflns.transf_matrix[3][1]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              31
+    _name.object_id              '31'
      save_
  
  
@@ -2628,7 +2580,7 @@ save_diffrn_reflns_transf_matrix.32
                                '_diffrn_reflns.transf_matrix[3][2]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              32
+    _name.object_id              '32'
      save_
  
  
@@ -2639,7 +2591,7 @@ save_diffrn_reflns_transf_matrix.33
                                '_diffrn_reflns.transf_matrix[3][3]'
     _import.get         [{"file":'templ_attr.cif',"save":'transf_matrix'}]
     _name.category_id            transf_matrix
-    _name.object_id              33
+    _name.object_id              '33'
      save_
 
      save_     #------ close DIFFRN_REFLNS_TRANS_MATRIX category
@@ -2653,7 +2605,7 @@ save_DIFFRN_REFLNS_CLASS
     _definition.id               DIFFRN_REFLNS_CLASS
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify different classes of
@@ -2663,6 +2615,7 @@ save_DIFFRN_REFLNS_CLASS
     _name.category_id            DIFFRN_REFLNS
     _name.object_id              CLASS
     _category.key_id           '_diffrn_reflns_class.key'
+    _category.key_list        ['_diffrn_reflns_class.code']
 
 
 save_diffrn_reflns_class.key
@@ -2673,12 +2626,12 @@ save_diffrn_reflns_class.key
      Value is a unique key to a set of DIFFRN_REFLNS_CLASS items
      in a looped list.
 ;
-    _description.common         'Key to class of measured refns'
     _name.category_id            class
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -2703,14 +2656,14 @@ save_diffrn_reflns_class.av_R_eq
      The av|del(I)| term is the average absolute difference 
      between av(I) and the individual intensities.
 ;
-    _description.common         'DiffrnShellResid(I)'
     _name.category_id            class
     _name.object_id              av_R_eq
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -2723,16 +2676,16 @@ save_diffrn_reflns_class.av_suI_over_I
     _definition.update           2012-11-26 
     _description.text
 ;
-     Measured [sum|su(net I)|/sum|net I|] in a reflection class.
+     Recorded [sum|su(net I)|/sum|net I|] in a reflection class.
 ;
-    _description.common         'DiffrnShellRatio(suI/netI)'
     _name.category_id            class
     _name.object_id              av_suI_over_I
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -2745,11 +2698,10 @@ save_diffrn_reflns_class.code
 ;
      Code identifying a reflection class.
 ;
-    _description.common         'DiffrnShellCode'
     _name.category_id            class
     _name.object_id              code
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
@@ -2766,11 +2718,10 @@ save_diffrn_reflns_class.description
 ;
      Description of a reflection class.
 ;
-    _description.common         'DiffrnShellDetails'
     _name.category_id            class
     _name.object_id              description
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -2787,10 +2738,9 @@ save_diffrn_reflns_class.d_res_high
 ;
      Highest resolution in reflection class i.e. smallest d value in class.
 ;
-    _description.common         'DiffrnShellResolHi'
     _name.category_id            class
     _name.object_id              d_res_high
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -2808,10 +2758,9 @@ save_diffrn_reflns_class.d_res_low
 ;
      Lowest resolution in reflection class i.e. largest d value in class.
 ;
-    _description.common         'DiffrnShellResolLo'
     _name.category_id            class
     _name.object_id              d_res_low
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -2830,10 +2779,9 @@ save_diffrn_reflns_class.number
      Number of measured intensities for a reflection class, excluding
      the systematic absences arising from centring translations.
 ;
-    _description.common         'DiffrnShellNumber'
     _name.category_id            class
     _name.object_id              number
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Count
@@ -2852,16 +2800,16 @@ save_DIFFRN_SCALE_GROUP
     _definition.id               DIFFRN_SCALE_GROUP
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the groups of reflections in
      the raw measured diffraction data with different relative scales.
 ;
-    _description.common         'ScaleGroupList'
     _name.category_id            DIFFRN
     _name.object_id              SCALE_GROUP
     _category.key_id           '_diffrn_scale_group.key'
+    _category.key_list        ['_diffrn_scale_group.code']
 
 
 save_diffrn_scale_group.key
@@ -2872,12 +2820,12 @@ save_diffrn_scale_group.key
      Value is a unique key to a set of DIFFRN_SCALE_GROUP items
      in a looped list.
 ;
-    _description.common         'Key to intensity scaling groups'
     _name.category_id            scale_group
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -2902,12 +2850,11 @@ save_diffrn_scale_group.code
      _diffrn_refln.scale_group_code in the diffrn_refln list.
 
 ;
-    _description.common         'ScaleGroupCode'
     _name.category_id            scale_group
     _name.object_id              code
     _name.linked_item_id        '_diffrn_refln.scale_group_code'
-    _type.purpose                Quantity
-    _type.source                 Selected 
+    _type.purpose                Encode
+    _type.source                 Assigned 
     _type.container              Single
     _type.contents               Code
      loop_
@@ -2925,7 +2872,6 @@ save_diffrn_scale_group.I_net
      Scale for a specific measurement group of eflections. Is multiplied
      with the net intensity to place all intensities on a common scale.
 ;
-    _description.common         'ScaleGroupInet'
     _name.category_id            scale_group
     _name.object_id              I_net
     _type.purpose                Measurand
@@ -2933,6 +2879,7 @@ save_diffrn_scale_group.I_net
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
 
      save_     #------ close DIFFRN_SCALE_GROUP category
@@ -2959,12 +2906,11 @@ save_diffrn_source.device
      loop_
     _alias.definition_id       '_diffrn_source'
                                '_diffrn_radiation_source'
-    _definition.update           2012-11-26 
+    _definition.update           2013-08-09 
     _description.text
 ;
      Enumerated code for the device providing the source of radiation.
 ;
-    _description.common         'RadSourceDevice'
     _name.category_id            source
     _name.object_id              device
     _type.purpose                State
@@ -2972,12 +2918,15 @@ save_diffrn_source.device
     _type.container              Single
     _type.contents               Code
      loop_
-    _description_example.case   'sealed X-ray tube'
-                                'nuclear reactor'
-                                'spallation source'
-                                'electron microscope'
-                                'rotating-anode X-ray tube'
-                                'synchrotron'
+    _enumeration_set.state      
+    _enumeration_set.detail      
+                 tube           'sealed X-ray tube'
+                 nuclear        'nuclear reactor'
+                 spallation     'spallation source'
+                 elect-micro    'electron microscope'
+                 rot_anode      'rotating-anode X-ray tube'
+                 synch          'synchrotron'
+    _enumeration.default     tube      
      save_
  
  
@@ -2990,10 +2939,9 @@ save_diffrn_source.current
 ;
      Generator current at which the radiation source device was operated.
 ;
-    _description.common         'RadSourceCurrent'
     _name.category_id            source
     _name.object_id              current
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -3011,11 +2959,10 @@ save_diffrn_source.details
 ;
      General description of the radiation source device.
 ;
-    _description.common         'RadSourceDetails'
     _name.category_id            source
     _name.object_id              details
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      save_
@@ -3029,10 +2976,9 @@ save_diffrn_source.power
     _description.text
 ;    Generator power at which the radiation source device was operated.
 ;
-    _description.common         'RadSourcePower'
     _name.category_id            source
     _name.object_id              power
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -3050,11 +2996,10 @@ save_diffrn_source.size
 ;
      Description of the collimated source beam as viewed from the sample.
 ;
-    _description.common         'RadSourceSize'
     _name.category_id            source
     _name.object_id              size
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3063,11 +3008,11 @@ save_diffrn_source.size
      save_
  
 
-save_diffrn_source.take-off_angle
-    _definition.id             '_diffrn_source.take-off_angle'
+save_diffrn_source.take_off_angle
+    _definition.id             '_diffrn_source.take_off_angle'
      loop_
     _alias.definition_id       '_diffrn_source_take-off_angle'
-    _definition.update           2012-11-26
+    _definition.update           2013-02-22
     _description.text
 ;
      The complement of the angle in degrees between the normal
@@ -3076,7 +3021,7 @@ save_diffrn_source.take-off_angle
 ;
     _name.category_id            source
     _name.object_id              take_off_angle
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -3095,7 +3040,6 @@ save_diffrn_source.target
      Chemical element symbol for the radiation source target (usually
      the anode). This can be used also for spallation sources.
 ;
-    _description.common         'RadTargetElement'
     _name.category_id            source
     _name.object_id              target
     _type.purpose                State
@@ -3118,11 +3062,10 @@ save_diffrn_source.make
 ;
      Description of the make, model or name of the source device.
 ;
-    _description.common         'RadDeviceMake'
     _name.category_id            source
     _name.object_id              make
     _type.purpose                Describe
-    _type.source                 Observed 
+    _type.source                 Recorded 
     _type.container              Single
     _type.contents               Text
      loop_
@@ -3139,10 +3082,9 @@ save_diffrn_source.voltage
 ;
      Generator voltage at which the radiation source device was operated.
 ;
-    _description.common         'RadSourceVoltage'
     _name.category_id            source
     _name.object_id              voltage
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -3176,7 +3118,7 @@ save_diffrn_standard.decay_percent
     _alias.definition_id       '_diffrn_standards_decay_%'
                                '_diffrn_standards.decay_%'
                                '_diffrn_standards_decay_percent'
-    _definition.update           2013-01-23 
+    _definition.update           2013-03-07 
     _description.text
 ;
      The percentage decrease in the mean of the intensities for the 
@@ -3190,7 +3132,6 @@ save_diffrn_standard.decay_percent
      uncertainties is considered possible.  Thus 0.0(1) would indicate 
      a decay of less than 0.3% or an enhancement of less than 0.3%.
 ;
-    _description.common         'DiffrnStandDecay%'
     _name.category_id            standard
     _name.object_id              decay_percent
     _type.purpose                Measurand
@@ -3198,11 +3139,12 @@ save_diffrn_standard.decay_percent
     _type.container              Single
     _type.contents               Real
     _enumeration.range           :100
+    _units.code                  none
     loop_ _description_example.case
           _description_example.detail
-        0.5(1)     'represents a decay between 0.2% and 0.8%'
-         -1(1)     'change in standards between 2% decay and 4% rise'
-        0.0(2)     'change in standards between 0.6% decay and 0.6% rise.
+        0.5(1)   'represents a decay between 0.2% and 0.8%'
+         -1(1)   'change in standards between 2% decay and 4% rise'
+        0.0(2)   'change in standards between 0.6% decay and 0.6% rise.'
      save_
  
  
@@ -3216,10 +3158,9 @@ save_diffrn_standard.interval_count
 ;
      Reflection count between the standard reflection measurements.
 ;
-    _description.common         'DiffrnStandIntCount'
     _name.category_id            standard
     _name.object_id              interval_count
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Count
@@ -3236,10 +3177,9 @@ save_diffrn_standard.interval_time
 ;
      Time between the standard reflection measurements.
 ;
-    _description.common         'DiffrnStandIntTime'
     _name.category_id            standard
     _name.object_id              interval_time
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -3257,10 +3197,9 @@ save_diffrn_standard.number
 ;
      Number of unique standard reflections used in measurements.
 ;
-    _description.common         'DiffrnStandCount'
     _name.category_id            standard
     _name.object_id              number
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Count   
@@ -3280,7 +3219,6 @@ save_diffrn_standard.scale_su_average
      The average standard uncertainty of the individual standard scales
      applied to the intensity data.
 ;
-    _description.common         'DiffrnStandScaleSu'
     _name.category_id            standard
     _name.object_id              scale_su_average
     _type.purpose                Measurand
@@ -3288,6 +3226,7 @@ save_diffrn_standard.scale_su_average
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -3298,17 +3237,19 @@ save_DIFFRN_STANDARD_REFLN
     _definition.id               DIFFRN_STANDARD_REFLN
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the "standard" reflections
      measured repeatedly to monitor variations in intensity due to source
      flux, environment conditions or crystal quality.
 ;
-    _description.common         'StandReflnList'
     _name.category_id            DIFFRN_STANDARD
     _name.object_id              REFLN
     _category.key_id           '_diffrn_standard_refln.key'
+    _category.key_list        ['_diffrn_standard_refln.index_h',
+                               '_diffrn_standard_refln.index_k',
+                               '_diffrn_standard_refln.index_l']
 
 
 save_diffrn_standard_refln.key
@@ -3319,12 +3260,12 @@ save_diffrn_standard_refln.key
      Value is a unique key to a set of DIFFRN_STANDARD_REFLN items
      in a looped list.
 ;
-    _description.common         'Key to standard reflections list'
     _name.category_id            refln
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -3349,12 +3290,11 @@ save_diffrn_standard_refln.code
      intensity variations or crystal degradation or movement during
      data collection.
 ;
-    _description.common         'StandReflnCode'
     _name.category_id            refln
     _name.object_id              code
     _name.linked_item_id        '_diffrn_refln.standard_code'
-    _type.purpose                Quantity 
-    _type.source                 Selected
+    _type.purpose                Encode 
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
@@ -3369,11 +3309,10 @@ save_diffrn_standard_refln.hkl
 ;
      Miller indices of a standard reflection.
 ;
-    _description.common         'StandReflnHkl'
     _name.category_id            refln
     _name.object_id              hkl
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
     _type.dimension              [3]
@@ -3431,16 +3370,18 @@ save_REFLN
     _definition.id               REFLN
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items used to describe the reflection data
      used in the refinement of a crystallographic structure model.
 ;
-    _description.common         'ReflnList'
     _name.category_id            DIFFRACTION
     _name.object_id              REFLN
     _category.key_id           '_refln.key'
+    _category.key_list        ['_refln.index_h',
+                               '_refln.index_k',
+                               '_refln.index_l']
 
 
 save_refln.key
@@ -3451,12 +3392,12 @@ save_refln.key
      Value is a unique key to a set of REFLN items
      in a looped list.
 ;
-    _description.common         'Key to refinement reflection list'
     _name.category_id            refln
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -3468,32 +3409,38 @@ save_refln.key
 ;
      save_
  
- 
+
 save_refln.A_calc
     _definition.id             '_refln.A_calc'
      loop_
     _alias.definition_id       '_refln_A_calc'
-    _definition.update           2012-11-26 
+    _definition.update           2012-11-26
     _description.text
 ;
      The calculated real structure-factor component A =|Fcalc|cos(phase)
 ;
-    _description.common         'ReflnCalcA'
     _name.category_id            refln
     _name.object_id              A_calc
     _type.purpose                Measurand
-    _type.source                 Derived 
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
-    _method.purpose    
+    _method.purpose
     _method.expression
+     Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
      Evaluation
 ;
     _refln.A_calc =  Real ( _refln.F_complex )
 ;
      save_
- 
+
  
 save_refln.A_meas
     _definition.id             '_refln.A_meas'
@@ -3504,41 +3451,56 @@ save_refln.A_meas
 ;
      The measured real structure-factor component A =|Fmeas|cos(phase)
 ;
-    _description.common         'ReflnMeasA'
     _name.category_id            refln
     _name.object_id              A_meas
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
+     loop_
+    _method.purpose    
+    _method.expression
+     Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
      save_
  
- 
+
 save_refln.B_calc
     _definition.id             '_refln.B_calc'
      loop_
     _alias.definition_id       '_refln_B_calc'
-    _definition.update           2012-11-26 
+    _definition.update           2012-11-26
     _description.text
 ;
      The calculated imaginary structure-factor component B =|Fcalc|sin(phase)
 ;
-    _description.common         'ReflnCalcB'
     _name.category_id            refln
     _name.object_id              B_calc
     _type.purpose                Measurand
-    _type.source                 Derived 
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
-    _method.purpose    
+    _method.purpose
     _method.expression
+     Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
      Evaluation
 ;
     _refln.B_calc =  Imag ( _refln.F_complex )
 ;
      save_
- 
+
  
 save_refln.B_meas
     _definition.id             '_refln.B_meas'
@@ -3549,13 +3511,22 @@ save_refln.B_meas
 ;
      The measured imaginary structure-factor component B =|Fmeas|sin(phase)
 ;
-    _description.common         'ReflnMeasB'
     _name.category_id            refln
     _name.object_id              B_meas
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
+     loop_
+    _method.purpose    
+    _method.expression
+     Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
      save_
  
  
@@ -3575,12 +3546,11 @@ save_refln.class_code
      the corresponding diffraction vector in the basis defined
      for the reciprocal lattice.
 ;
-    _description.common         'ReflnClassCode'
     _name.category_id            refln
     _name.object_id              class_code
     _name.linked_item_id       '_reflns_class.code'
     _type.purpose                Link
-    _type.source                 Selected 
+    _type.source                 Related 
     _type.container              Single
     _type.contents               Code
      save_
@@ -3596,12 +3566,11 @@ save_refln.crystal_id
      Code identifying each crystal if multiple crystals are used. Is
      used to link with crystals identified by _exptl_crystal.id.
 ;
-    _description.common         'ReflnCrystalId'
     _name.category_id            refln
     _name.object_id              crystal_id
     _name.linked_item_id       '_exptl_crystal.id'
     _type.purpose                Link
-    _type.source                 Selected 
+    _type.source                 Related 
     _type.container              Single
     _type.contents               Code
      save_
@@ -3617,10 +3586,9 @@ save_refln.d_spacing
      The distance in angstroms between lattice planes in the crystal
      with the indices _refln.hkl for this reflection.
 ;
-    _description.common         'ReflnDspacing'
     _name.category_id            refln
     _name.object_id              d_spacing
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived  
     _type.container              Single
     _type.contents               Real
@@ -3635,7 +3603,7 @@ save_refln.d_spacing
 ;
      save_
  
- 
+
 save_refln.F_calc
     _definition.id             '_refln.F_calc'
      loop_
@@ -3646,13 +3614,13 @@ save_refln.F_calc
      The structure factor amplitude for the reflection calculated from
      the atom site data.
 ;
-    _description.common         'ReflnCalcF'
     _name.category_id            refln
     _name.object_id              F_calc
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
     _method.purpose    
     _method.expression
@@ -3668,26 +3636,26 @@ save_refln.F_calc
 ;
      save_
  
- 
+
 save_refln.F_complex
     _definition.id             '_refln.F_complex'
      loop_
     _alias.definition_id       '_refln_F_complex'
-    _definition.update           2013-02-18 
+    _definition.update           2013-04-23
     _description.text
 ;
      The structure factor vector for the reflection calculated from
      the atom site data.
 ;
-    _description.common         'ReflnComplexF'
     _name.category_id            refln
     _name.object_id              F_complex
     _type.purpose                Measurand
-    _type.source                 Derived 
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Complex
+    _enumeration.default         0.
      loop_
-    _method.purpose         
+    _method.purpose
     _method.expression
      Definition
 ;
@@ -3695,28 +3663,29 @@ save_refln.F_complex
     Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
     Else                                            _units.code =  "electrons"
 ;
-     Evaluation           
+     Evaluation
 ;
    With r  as  refln
 
       fc  =   Complex (0., 0.)
       h   =   r.hkl
- 
+
    Loop a  as  atom_site  {
 
-          f  =   ( r.form_factor_table [a.type_symbol] * 
-                           a.site_symmetry_multiplicity * a.occupancy )
+          f  =   a.site_symmetry_multiplicity * a.occupancy *
+                 ( r.form_factor_table [a.type_symbol]      +
+                        _atom_type_scat[a.type_symbol].dispersion  )
 
       Loop s  as  symmetry_equiv  {
 
-          t   =  Exp(-h * s.R * a.matrix_beta * s.RT * h)
-              
+          t   =  Exp(-h * s.R * a.tensor_beta * s.RT * h)
+
           fc +=  f * t * ExpImag(TwoPi *( h *( s.R * a.fract_xyz + s.T)))
    }  }
           _refln.F_complex  =   fc / _symmetry.multiplicity
 ;
      save_
- 
+
  
 save_refln.F_meas
     _definition.id             '_refln.F_meas'
@@ -3728,13 +3697,13 @@ save_refln.F_meas
      The structure factor amplitude for the reflection derived from the
      measured intensities.
 ;
-    _description.common         'ReflnMeasF'
     _name.category_id            refln
     _name.object_id              F_meas
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
     _method.purpose           
     _method.expression
@@ -3744,10 +3713,10 @@ save_refln.F_meas
     Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
     Else                                            _units.code =  "electrons"
 ;
-     Evaluation
-;
-                _refln.F_meas  =   Sqrt ( _refln.F_squared_meas )
-;
+#     Evaluation
+#;
+#                _refln.F_meas  =   Sqrt ( _refln.F_squared_meas )
+#;
      save_
  
  
@@ -3762,7 +3731,6 @@ save_refln.F_meas_su
 ;
      The standard uncertainty of the measured structure factor amplitude.
 ;
-    _description.common         'ReflnMeasFsu'
     _name.category_id            refln
     _name.object_id              F_meas_su
     _name.linked_item_id       '_refln.F_meas'
@@ -3770,6 +3738,7 @@ save_refln.F_meas_su
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
     _method.purpose          
     _method.expression
@@ -3779,10 +3748,10 @@ save_refln.F_meas_su
     Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
     Else                                            _units.code =  "electrons"
 ;
-     Evaluation
-;
-                _refln.F_meas_su  =   _refln.F_squared_meas_su / 2
-;
+#     Evaluation
+#;
+#                _refln.F_meas_su  =   _refln.F_squared_meas_su / 2
+#;
      save_
  
  
@@ -3796,29 +3765,28 @@ save_refln.F_squared_calc
      The structure factor amplitude squared for the reflection calculated from
      the atom site data.
 ;
-    _description.common         'ReflnCalcFsqd'
     _name.category_id            refln
     _name.object_id              F_squared_calc
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
     _method.purpose      
     _method.expression
      Definition
 ;
     If      (_diffrn_radiation.probe == "neutron")  
-                                         _units.code =  "femtometres_squared"
+                                         _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")  
-                                         _units.code =  "volts_squared"
-    Else                                 _units.code =  "electrons_squared"
-   
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
 ;
-     Evaluation
-;
-                _refln.F_squared_calc  =    _refln.F_calc **2
-;
+#     Evaluation
+#;
+#                _refln.F_squared_calc  =    _refln.F_calc **2
+#;
      save_
  
  
@@ -3832,29 +3800,28 @@ save_refln.F_squared_meas
      The structure factor amplitude for the reflection derived from the
      measured intensities.
 ;
-    _description.common         'ReflnMeasFsqd'
     _name.category_id            refln
     _name.object_id              F_squared_meas
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
     _method.purpose         
     _method.expression
      Definition
 ;
     If      (_diffrn_radiation.probe == "neutron")  
-                                         _units.code =  "femtometres_squared"
+                                         _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")  
-                                         _units.code =  "volts_squared"
-    Else                                 _units.code =  "electrons_squared"
-   
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
 ;
-     Evaluation
-;
-                _refln.F_squared_meas  =   _refln.F_meas **2
-;
+#     Evaluation
+#;
+#                _refln.F_squared_meas  =   _refln.F_meas **2
+#;
      save_
  
  
@@ -3876,40 +3843,41 @@ save_refln.F_squared_meas_su
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.
      loop_
     _method.purpose    
     _method.expression           
      Definition
 ;
     If      (_diffrn_radiation.probe == "neutron")  
-                                         _units.code =  "femtometres_squared"
+                                         _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")  
-                                         _units.code =  "volts_squared"
-    Else                                 _units.code =  "electrons_squared"
-   
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
 ;
-     Evaluation
-;
-                _refln.F_squared_meas_su  =   2. * _refln.F_meas_su
-;
+#     Evaluation
+#;
+#                _refln.F_squared_meas_su  =   2. * _refln.F_meas_su
+#;
      save_
  
  
 save_refln.form_factor_table
     _definition.id             '_refln.form_factor_table'
-    _definition.update           2012-11-26 
+    _definition.update           2013-04-23 
     _description.text
 ;
      Atomic scattering factor table for the scattering angle
      of this diffraction vector and atom types in structure.
 ;
-    _description.common         'ReflnFormFactorTable'
     _name.category_id            refln
     _name.object_id              form_factor_table
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived 
     _type.container              Table
     _type.contents               Real
+    _type.dimension              []
+    _units.code                  none
      loop_
     _method.purpose    
     _method.expression
@@ -3952,15 +3920,13 @@ save_refln.include_status
      loop_
     _alias.definition_id       '_refln_include_status'
                                '_refln_observed_status'
-    _definition.update           2012-11-26 
-    loop_
-    _alias.definition_id       '_refln.observed_status'
+                               '_refln.observed_status'
+    _definition.update           2013-03-07 
     _description.text
 ;
      Code indicating how the reflection was included in the refinement
      and R-factor calculations.
 ;
-    _description.common         'ReflnRefineInclusion'
     _name.category_id            refln
     _name.object_id              include_status
     _type.purpose                State
@@ -3970,12 +3936,12 @@ save_refln.include_status
      loop_
     _enumeration_set.state
     _enumeration_set.detail
-     o  ' ob : within  _reflns.threshold_expression; within d-res limits'
-     <  ' lt : without _reflns.threshold_expression; within d-res limits'
-     -  ' sa : systematically absent reflection due to symmetry'
-     x  ' du : deemed unreliable measurement -- not used'
-     h  ' hd : above _refine_ls.d_res_high'
-     l  ' ld : below _refine_ls.d_res_low'
+    'o' 'ob : within  _reflns.threshold_expression; within d-res limits'
+    '<' 'lt : without _reflns.threshold_expression; within d-res limits'
+    '-' 'sa : systematically absent reflection due to symmetry'
+    'x' 'du : deemed unreliable measurement -- not used'
+    'h' 'hd : above _refine_ls.d_res_high'
+    'l' 'ld : below _refine_ls.d_res_low'
     _enumeration.default         o
      save_
  
@@ -3987,11 +3953,10 @@ save_refln.hkl
 ;
      The Miller indices as a reciprocal space vector.
 ;
-    _description.common         'ReflnHkl'
     _name.category_id            refln
     _name.object_id              hkl
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
     _type.dimension              [3]
@@ -4046,13 +4011,14 @@ save_refln.intensity_calc
 ;
      The intensity of the reflection calculated from the atom site data.
 ;
-    _description.common         'ReflnCalcI'
     _name.category_id            refln
     _name.object_id              intensity_calc
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  none
      loop_
     _method.purpose    
     _method.expression
@@ -4067,18 +4033,19 @@ save_refln.intensity_meas
     _definition.id             '_refln.intensity_meas'
      loop_
     _alias.definition_id       '_refln_intensity_meas'
-    _definition.update           2012-11-26 
+    _definition.update           2013-04-11 
     _description.text
 ;
      The intensity of the reflection derived from the diffraction measurements.
 ;
-    _description.common         'ReflnMeasI'
     _name.category_id            refln
     _name.object_id              intensity_meas
     _type.purpose                Measurand
-    _type.source                 Observed
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  none
      save_
  
 
@@ -4099,6 +4066,8 @@ save_refln.intensity_meas_su
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  none
      save_
 
  
@@ -4113,13 +4082,14 @@ save_refln.Lp_factor
      used to measure the diffraction intensity. This is applied to
      convert the net intensity into the measured F squared.
 ;
-    _description.common         'ReflnLpFactor'
     _name.category_id            refln
     _name.object_id              Lp_factor
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  none
      save_
  
  
@@ -4132,41 +4102,42 @@ save_refln.mean_path_length_tbar
 ;
      Mean path length through the crystal for this diffraction vector.
 ;
-    _description.common         'ReflnMeanPathLength'
     _name.category_id            refln
     _name.object_id              mean_path_length_tbar
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
     _units.code                  millimetres
      save_
  
- 
+
 save_refln.phase_calc
     _definition.id             '_refln.phase_calc'
      loop_
     _alias.definition_id       '_refln_phase_calc'
-    _definition.update           2012-11-26 
+    _definition.update           2013-04-27 
     _description.text
 ;
      The phase of the calculated structure-factor.
 ;
-    _description.common         'ReflnCalcPhase'
     _name.category_id            refln
     _name.object_id              phase_calc
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:360.
     _units.code                  degrees
      loop_
     _method.purpose    
     _method.expression
      Evaluation
 ;
-    _refln.phase_calc =  Atan2d ( _refln.B_calc, _refln.A_calc )
+    phase  = Atan2d ( _refln.B_calc, _refln.A_calc )
+      If(phase < 0.) _refln.phase_calc = phase + 360.
+      Else           _refln.phase_calc = phase
 ;
      save_
  
@@ -4182,13 +4153,13 @@ save_refln.phase_meas
      the atom site data if available or from the phase solution process
      prior to determination of the structure.
 ;
-    _description.common         'ReflnMeasPhase'
     _name.category_id            refln
     _name.object_id              phase_meas
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0.:360.
     _units.code                  degrees
      save_
  
@@ -4202,7 +4173,6 @@ save_refln.refinement_status
 ;
      Status code of reflection in the structure refinement process.
 ;
-    _description.common         'ReflnRefineStatus'
     _name.category_id            refln
     _name.object_id              refinement_status
     _type.purpose                State
@@ -4228,12 +4198,11 @@ save_refln.scale_group_code
      Code identifying the scale (if there is more than one scale) used
      convert the measured structure factor to a common absolute value.
 ;
-    _description.common         'ReflnScaleCode'
     _name.category_id            refln
     _name.object_id              scale_group_code
     _name.linked_item_id       '_reflns_scale.group_code'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -4245,15 +4214,14 @@ save_refln.sin_theta_over_lambda
     _alias.definition_id       '_refln_sint/lambda'
                                '_refln_sin_theta_over_lambda'
                                '_refln.sint_over_lambda'
-    _definition.update           2012-11-26 
+    _definition.update           2013-03-07 
     _description.text
 ;
      The (sin theta)/lambda value for this reflection.
 ;
-    _description.common         'ReflnSinTheta/Lambda'
     _name.category_id            refln
     _name.object_id              sin_theta_over_lambda
-    _type.purpose                Quanity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
@@ -4284,10 +4252,9 @@ save_refln.symmetry_epsilon
      times the reflection indices are generated identically from the
      space-group symmetry operations.
 ;
-    _description.common         'ReflnSymmetryEpsilon'
     _name.category_id            refln
     _name.object_id              symmetry_epsilon
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index
@@ -4308,10 +4275,9 @@ save_refln.symmetry_multiplicity
      symmetry-equivalent reflections are available in International
      Tables for Crystallography, Volume A (1987), section 10.2.
 ;
-    _description.common         'ReflnSymmetryMultiplicity'
     _name.category_id            refln
     _name.object_id              symmetry_multiplicity
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Index
@@ -4330,10 +4296,9 @@ save_refln.wavelength
      this reflection. This is an important parameter for data
      collected using energy-dispersive detectors or the Laue method.
 ;
-    _description.common         'ReflnWavelength'
     _name.category_id            refln
     _name.object_id              wavelength
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -4351,12 +4316,11 @@ save_refln.wavelength_id
 ;
      Code identifying the wavelength in DIFFRN_RADIATION_WAVELENGTH list.
 ;
-    _description.common         'ReflnWavelengthId'
     _name.category_id            refln
     _name.object_id              wavelength_id
     _name.linked_item_id       '_diffrn_radiation_wavelength.id'
     _type.purpose                Link
-    _type.source                 Selected
+    _type.source                 Related
     _type.container              Single
     _type.contents               Code
      save_
@@ -4384,6 +4348,30 @@ save_REFLNS
     _name.category_id            DIFFRACTION
     _name.object_id              REFLNS
  
+
+save_reflns.apply_dispersion_to_Fcalc
+    _definition.id             '_reflns.apply_dispersion_to_Fcalc'
+    _definition.update           2013-04-28
+    _description.text
+;
+     Yes or No flag on whether the anomalous dispersion scattering
+     components will be applied in the F_complex calculation.
+     See _refln.F_complex
+;
+    _name.category_id            reflns
+    _name.object_id              apply_dispersion_to_Fcalc
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+                                 Yes  'Apply dispersion'
+                                 No   'Do not apply dispersion'
+    _enumeration.default         Yes
+     save_
+
  
 save_reflns.d_resolution_high
     _definition.id             '_reflns.d_resolution_high'
@@ -4395,10 +4383,9 @@ save_reflns.d_resolution_high
      Highest resolution for the final REFLN data set.
      This corresponds to the smallest interpanar d value.
 ;
-    _description.common         'ReflnsResolHigh'
     _name.category_id            reflns             
     _name.object_id              d_resolution_high
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
@@ -4417,10 +4404,9 @@ save_reflns.d_resolution_low
      Lowest resolution for the final REFLN data set.
      This corresponds to the largest interpanar d value.
 ;
-    _description.common         'ReflnsResolLow'
     _name.category_id            reflns
     _name.object_id              d_resolution_low
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived 
     _type.container              Single
     _type.contents               Real
@@ -4468,14 +4454,14 @@ save_reflns.Friedel_coverage
            two equivalent octants h >= 0, k, l >= 0 will lead to
            a zero value for @reflns_Friedel_coverage.
 ;
-    _description.common         'ReflnsFriedelCoverage'
     _name.category_id            reflns
     _name.object_id              Friedel_coverage
-    _type.purpose                Quantity 
-    _type.source                 Observed
+    _type.purpose                Number 
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
  
 
@@ -4497,11 +4483,12 @@ save_reflns.Friedel_fraction_full
 ;
     _name.category_id            reflns
     _name.object_id              Friedel_fraction_full
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -4523,11 +4510,12 @@ save_reflns.Friedel_fraction_max
 ;
     _name.category_id            reflns
     _name.object_id              Friedel_fraction_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
+    _units.code                  none
      save_
 
 
@@ -4540,11 +4528,12 @@ save_reflns.limit_max
 ;
     _name.category_id            reflns
     _name.object_id              limit_max
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              [3]
+    _units.code                  none
      loop_
     _method.purpose
     _method.expression
@@ -4566,10 +4555,11 @@ save_reflns.limit_min
 ;
     _name.category_id            reflns
     _name.object_id              limit_min
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Matrix
     _type.contents               Real
+    _units.code                  none
     _type.dimension              [3]
      loop_
     _method.purpose
@@ -4659,11 +4649,10 @@ save_reflns.number_gt
      under the Laue symmetry but inequivalent under the crystal class),
      depending to the nature of the structure and the procedures used.
 ;
-    _description.common         'ReflnsGtCount'
     _name.category_id            reflns
     _name.object_id              number_gt
-    _type.purpose                Quantity 
-    _type.source                 Observed
+    _type.purpose                Number 
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -4684,11 +4673,10 @@ save_reflns.number_total
      under the Laue symmetry but inequivalent under the crystal class),
      depending to the nature of the structure and the procedures used.
 ;
-    _description.common         'ReflnsTotalCount'
     _name.category_id            reflns
     _name.object_id              number_total
-    _type.purpose                Quantity 
-    _type.source                 Observed
+    _type.purpose                Number 
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -4707,11 +4695,10 @@ save_reflns.special_details
      given in other data items. Should include details about the averaging
      of symmetry-equivalent reflections including Friedel pairs.
 ;
-    _description.common         'ReflnsSpecialDetails'
     _name.category_id            reflns
     _name.object_id              special_details
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      save_
@@ -4730,11 +4717,10 @@ save_reflns.threshold_expression
      "significant intensity". This criterion is usually expressed in terms
      of a u(I) or u(F) threshold. "u" is the standard uncertainty.
 ;
-    _description.common         'ReflnsThesholdExpression'
     _name.category_id            reflns
     _name.object_id              threshold_expression
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -4747,10 +4733,10 @@ save_reflns.threshold_expression
 
 save_REFLNS_CLASS
  
-    _definition.id               reflns_class
+    _definition.id               REFLNS_CLASS
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the properties of reflections
@@ -4759,6 +4745,7 @@ save_REFLNS_CLASS
     _name.category_id            REFLNS
     _name.object_id              CLASS 
     _category.key_id           '_reflns_class.key'
+    _category.key_list        ['_reflns_class.code']
 
 
 save_reflns_class.key
@@ -4769,12 +4756,12 @@ save_reflns_class.key
      Value is a unique key to a set of REFLNS_CLASS items
      in a looped list.
 ;
-    _description.common         'Key to reflection classes'
     _name.category_id            class
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -4796,11 +4783,10 @@ save_reflns_class.code
 ;
      Code identifying a reflection class.
 ;
-    _description.common         'ReflnsClassCode'
     _name.category_id            class
     _name.object_id              code
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      loop_
@@ -4817,11 +4803,10 @@ save_reflns_class.description
 ;
      Description of a reflection class.
 ;
-    _description.common         'ReflnsClassDetails'
     _name.category_id            class
     _name.object_id              description
     _type.purpose                Describe
-    _type.source                 Assigned
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
      loop_
@@ -4839,10 +4824,9 @@ save_reflns_class.d_res_high
      Highest resolution for the reflections in this class.
      This corresponds to the smallest interpanar d value.
 ;
-    _description.common         'ReflnsClassResolHigh'
     _name.category_id            class
     _name.object_id              d_res_high
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -4861,10 +4845,9 @@ save_reflns_class.d_res_low
      Lowest resolution for the reflections in this class.
      This corresponds to the largest interpanar d value.
 ;
-    _description.common         'ReflnsClassResolLow'
     _name.category_id            class
     _name.object_id              d_res_low
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Assigned 
     _type.container              Single
     _type.contents               Real
@@ -4887,11 +4870,10 @@ save_reflns_class.number_gt
      under the Laue symmetry but inequivalent under the crystal class),
      depending to the nature of the structure and the procedures used.
 ;
-    _description.common         'ReflnsClassGtCount'
     _name.category_id            class
     _name.object_id              number_gt
-    _type.purpose                Quantity 
-    _type.source                 Observed
+    _type.purpose                Number 
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -4910,11 +4892,10 @@ save_reflns_class.number_total
      under the Laue symmetry but inequivalent under the crystal class),
      depending to the nature of the structure and the procedures used.
 ;
-    _description.common         'ReflnsClassTotalCount'
     _name.category_id            class
     _name.object_id              number_total
-    _type.purpose                Quantity 
-    _type.source                 Observed
+    _type.purpose                Number 
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -4939,14 +4920,14 @@ save_reflns_class.R_factor_all
 
                and the sum is taken over the specified reflections
 ;
-    _description.common         'ReflnsClassR(F)All'
     _name.category_id            class
     _name.object_id              R_factor_all
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none	
      save_
  
  
@@ -4971,14 +4952,14 @@ save_reflns_class.R_factor_gt
 
                and the sum is taken over the specified reflections
 ;
-    _description.common         'ReflnsClassR(F)Gt'
     _name.category_id            class
     _name.object_id              R_factor_gt
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5002,14 +4983,14 @@ save_reflns_class.R_Fsqd_factor
 
                and the sum is taken over the specified reflections
 ;
-    _description.common         'ReflnsClassR(Fsqd)Gt'
     _name.category_id            class
     _name.object_id              R_Fsqd_factor
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5033,14 +5014,14 @@ save_reflns_class.R_I_factor
 
                and the sum is taken over the specified reflections
 ;
-    _description.common         'ReflnsClassR(I)Gt'
     _name.category_id            class
     _name.object_id              R_I_factor
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5068,14 +5049,14 @@ save_reflns_class.wR_factor_all
 
      and the sum is taken over the reflections of this class.
 ;
-    _description.common         'ReflnsClassWR(F)All'
     _name.category_id            class
     _name.object_id              wR_factor_all
-    _type.purpose                Quantity 
+    _type.purpose                Number 
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
 
      save_     #------ close REFLNS_CLASS category
@@ -5087,7 +5068,7 @@ save_REFLNS_SCALE
     _definition.id               REFLNS_SCALE
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the scales needed to place
@@ -5096,6 +5077,7 @@ save_REFLNS_SCALE
     _name.category_id            REFLNS
     _name.object_id              SCALE 
     _category.key_id           '_reflns_scale.key'
+    _category.key_list        ['_reflns_scale.group_code']
 
 
 save_reflns_scale.key
@@ -5106,12 +5088,12 @@ save_reflns_scale.key
      Value is a unique key to a set of REFLNS_SCALE items
      in a looped list.
 ;
-    _description.common         'Key to reflection scale groups'
     _name.category_id            scale
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -5134,11 +5116,10 @@ save_reflns_scale.group_code
      Code identifying a reflection scale group. These names need not
      correspond to _diffrn_scale_group.code names.
 ;
-    _description.common         'ReflnsScaleCode'
     _name.category_id            scale
     _name.object_id              group_code
-    _type.purpose                Quantity
-    _type.source                 Selected
+    _type.purpose                Encode
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
      save_
@@ -5153,7 +5134,6 @@ save_reflns_scale.meas_F
 ;
      Structure factor scale for this scale group.
 ;
-    _description.common         'ReflnsScaleMeasF'
     _name.category_id            scale
     _name.object_id              meas_F
     _type.purpose                Measurand
@@ -5161,6 +5141,7 @@ save_reflns_scale.meas_F
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5173,7 +5154,6 @@ save_reflns_scale.meas_F_squared
 ;
      Structure factor squared scale for this scale group.
 ;
-    _description.common         'ReflnsScaleMeasFsqd'
     _name.category_id            scale
     _name.object_id              meas_F_squared
     _type.purpose                Measurand
@@ -5181,6 +5161,7 @@ save_reflns_scale.meas_F_squared
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5193,7 +5174,6 @@ save_reflns_scale.meas_intensity
 ;
      Net intensity scale for this scale group.
 ;
-    _description.common         'ReflnsScaleMeasI'
     _name.category_id            scale
     _name.object_id              meas_intensity
     _type.purpose                Measurand
@@ -5201,6 +5181,7 @@ save_reflns_scale.meas_intensity
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
+    _units.code                  none
      save_
 
      save_     #------ close REFLNS_SCALE category
@@ -5212,7 +5193,7 @@ save_REFLNS_SHELL
     _definition.id               REFLNS_SHELL
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2012-11-26 
+    _definition.update           2013-09-08 
     _description.text
 ;
      The CATEGORY of data items which specify the information about
@@ -5221,6 +5202,8 @@ save_REFLNS_SHELL
     _name.category_id            REFLNS
     _name.object_id              SHELL 
     _category.key_id           '_reflns_shell.key'
+    _category.key_list        ['_reflns_shell.d_res_low',
+                               '_reflns_shell.d_res_high']
 
 
 save_reflns_shell.key
@@ -5231,12 +5214,12 @@ save_reflns_shell.key
      Value is a unique key to a set of REFLNS_SHELL items
      in a looped list.
 ;
-    _description.common         'Key to reflection shells' 
     _name.category_id            shell
     _name.object_id              key
     _type.purpose                Key
-    _type.source                 Assembled
+    _type.source                 Related
     _type.container              Single
+    _type.contents               Implied
      loop_
     _method.purpose
     _method.expression
@@ -5258,14 +5241,14 @@ save_reflns_shell.d_res_limits
      the list of lowest and highest values. This is the 
      category key.
 ;
-    _description.common         'ReflnsShellResolLimits'
     _name.category_id            shell
     _name.object_id              d_res_limits
-    _type.purpose                Quantity
-    _type.source                 Assembled
+    _type.purpose                Number
+    _type.source                 Derived
     _type.container              List
     _type.contents               Real
     _type.dimension              [2] 
+    _units.code                  angstroms
      loop_
     _method.purpose    
     _method.expression
@@ -5288,10 +5271,9 @@ save_reflns_shell.d_res_high
      Highest resolution for the reflections in this shell.
      This corresponds to the smallest interpanar d value.
 ;
-    _description.common         'ReflnsShellResolHigh'
     _name.category_id            shell
     _name.object_id              d_res_high
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -5311,10 +5293,9 @@ save_reflns_shell.d_res_low
      Lowest resolution for the reflections in this shell.
      This corresponds to the largest interpanar d value.
 ;
-    _description.common         'ReflnsShellResolLow'
     _name.category_id            shell
     _name.object_id              d_res_low
-    _type.purpose                Quantity
+    _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
@@ -5335,13 +5316,14 @@ save_reflns_shell.meanI_over_suI_all
      Ratio of the mean intensity in a shell to the mean standard uncertainty
      of the intensities in the shell.
 ;
-    _description.common         'ReflnsShellMean(I/suI)All'
     _name.category_id            shell
     _name.object_id              meanI_over_suI_all
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  none
      save_
  
  
@@ -5359,13 +5341,14 @@ save_reflns_shell.meanI_over_suI_gt
      _reflns.threshold_expression) in this shell to the mean standard
      uncertainty of the intensities in the shell.
 ;
-    _description.common         'ReflnsShellMean(I/suI)Gt'
     _name.category_id            shell
     _name.object_id              meanI_over_suI_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  none
      save_
  
  
@@ -5378,11 +5361,10 @@ save_reflns_shell.number_measured_all
 ;
      Total count of reflections measured for this resolution shell.
 ;
-    _description.common         'ReflnsShellCountAll'
     _name.category_id            shell
     _name.object_id              number_measured_all
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -5401,11 +5383,10 @@ save_reflns_shell.number_measured_gt
      Number of reflections measured for this resolution shell which are
      significantly intense (see _reflns.threshold_expression).
 ;
-    _description.common         'ReflnsShellCountGt'
     _name.category_id            shell
     _name.object_id              number_measured_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -5422,13 +5403,13 @@ save_reflns_shell.number_possible
 ;
      Count of symmetry-unique reflections possible in this reflection shell.
 ;
-    _description.common         'ReflnsShellUniqueCountEst'
     _name.category_id            shell
     _name.object_id              number_possible
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
+    _enumeration.range           0: 
      save_
  
  
@@ -5441,11 +5422,10 @@ save_reflns_shell.number_unique_all
 ;
      Count of symmetry-unique reflections present in this reflection shell.
 ;
-    _description.common         'ReflnsShellUniqueCountAll'
     _name.category_id            shell
     _name.object_id              number_unique_all
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -5464,11 +5444,10 @@ save_reflns_shell.number_unique_gt
      Number of symmetry-unique reflections present in this reflection shell
      which are significantly intense (see _reflns.threshold_expression).
 ;
-    _description.common         'ReflnsShellUniqueCountGt'
     _name.category_id            shell
     _name.object_id              number_unique_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Count
     _enumeration.range           0:
@@ -5484,14 +5463,14 @@ save_reflns_shell.percent_possible_all
 ;
      Percentage of reflections present in this shell over that possible.
 ;
-    _description.common         'ReflnsShellCoverageAll'
     _name.category_id            shell
     _name.object_id              percent_possible_all
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:100.0
+    _units.code                  none
      save_
  
  
@@ -5507,14 +5486,14 @@ save_reflns_shell.percent_possible_gt
      Percentage of reflections present in this shell which are significantly
      intense (see _reflns.threshold_expression), over that possible.
 ;
-    _description.common         'ReflnsShellCoverageGt'
     _name.category_id            shell
     _name.object_id              percent_possible_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:100.0
+    _units.code                  none
      save_
  
  
@@ -5538,14 +5517,14 @@ save_reflns_shell.Rmerge_F_all
          sum~i~ is taken over all reflections
          sum~j~ is taken over all observations of each reflection.
 ;
-    _description.common         'ReflnsShellMergeR(F)All'
     _name.category_id            shell
     _name.object_id              Rmerge_F_all
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           0.0
+    _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5562,14 +5541,14 @@ save_reflns_shell.Rmerge_F_gt
      (see _reflns.threshold_expression). The residual merge expression is
      shown in the _reflns_shell.Rmerge_F_all definition.
 ;
-    _description.common         'ReflnsShellMergeR(F)Gt'
     _name.category_id            shell
     _name.object_id              Rmerge_F_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           0.0
+    _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5593,14 +5572,14 @@ save_reflns_shell.Rmerge_I_all
          sum~i~ is taken over all reflections
          sum~j~ is taken over all observations of each reflection.
 ;
-    _description.common         'ReflnsShellMergeR(I)All'
     _name.category_id            shell
     _name.object_id              Rmerge_I_all
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           0.0
+    _enumeration.range           0.0:
+    _units.code                  none
      save_
  
  
@@ -5617,14 +5596,14 @@ save_reflns_shell.Rmerge_I_gt
      (see _reflns.threshold_expression). The residual merge expression is
      shown in the _reflns_shell.Rmerge_I_all definition.
 ;
-    _description.common         'ReflnsShellMergeR(I)Gt'
     _name.category_id            shell
     _name.object_id              Rmerge_I_gt
-    _type.purpose                Quantity
-    _type.source                 Observed
+    _type.purpose                Number
+    _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           0.0
+    _enumeration.range           0.0:
+    _units.code                  none
      save_
 
      save_     #------ close REFLNS_SHELL category
@@ -5777,4 +5756,46 @@ save_reflns_shell.Rmerge_I_gt
     1.5.10   2013-02-21
 ;
   Removed {} from conditional single-line statements in methods
+;
+    1.5.11   2013-02-22
+;
+  Corrected object_id for diffrn_reflns.resolution_max and
+  diffrn_source.take_off_angle
+;
+    1.6.01   2013-03-08
+;
+  Changes arising from alerts issued by ALIGN.
+;
+    1.6.02   2013-03-23
+;
+  Change the diffrn_radiation.type to type.contents 'Text'.
+;
+    1.6.03   2013-04-11
+;
+   Added type.contents 'Implied' to all Key definitions
+   Removed desription.common from all defs; inconsistent invocations
+   Replace type.cource state 'Observed' with 'Recorded'
+   Replace type.source state 'Assembled' with 'Related'
+   Replace type.source state 'Selected' with 'Assigned'
+;
+    1.6.04   2013-04-16
+;
+   Changed type.source 'Measured' to 'Recorded'
+;
+    1.6.05   2013-04-17
+;
+   Changed type.source 'Quantity' to 'Number' or 'Encode'
+;
+    1.6.06   2013-04-24
+;
+   Removed 'Pairs' from type.contents; replaced with "Real", "Code", etc.
+   Hashed out Eval scripts for F_meas_su and F_squared_meas_su; recursive
+;
+    1.6.07   2013-04-28
+;
+    Add definition reflns.apply_dispersion_to_Fcalc Yes/No
+;
+    1.6.08   2013-09-08
+;
+    Add attribute category.key_list to all Loop categories.
 ;
