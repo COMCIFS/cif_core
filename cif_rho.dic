@@ -1,0 +1,1383 @@
+######################################################################
+#                                                                    #
+#         CIF Dictionary for the Multipole Model of                  #
+#           aspherical atomic density distributions                  #
+#                                                                    #
+#            Converted from DDL1 to DDLm 20 June 2014                #
+#                                                                    #
+######################################################################
+
+data_CIF_RHO
+
+    _dictionary.title            cif_rho
+    _dictionary.class            Instance
+    _dictionary.version          2.00.01
+    _dictionary.date             2014-06-20
+    _dictionary.uri              www.iucr.org/cif/dic/cif_rho.dic
+    _dictionary.ddl_conformance  3.11.04
+    _dictionary.namespace        CifRho
+    _description.text
+;
+    The CIF_RHO dictionary records the definitions of data items specifying
+    the Multipole Model of aspherical atomic density distributions
+    used with in the Crystallographic Information Framework (CIF).
+;
+
+#===============================================================================
+
+save_RHO_GROUP
+    _definition.id               RHO_GROUP
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2014-06-20
+    _description.text
+;
+      Groups all of the categories of definitions in the study of
+      multipole modeling of aspherical atomic density distributions
+;
+    _name.category_id           CIF_RHO
+    _name.object_id             RHO_GROUP
+
+
+#===========================================================================
+
+save_ATOM_SITE
+
+    _definition.id               ATOM_SITE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2013-09-08
+    _description.text
+;
+     The CATEGORY of data items used to describe atom site information
+     used in crystallographic structure studies.
+;
+    _name.category_id            RHO_GROUP
+    _name.object_id              ATOM_SITE
+    _category.key_list        ['_atom_site.label']
+
+
+save_atom_site.label
+    _definition.id             '_atom_site.label'
+    _import.get     [{"file":'core_dic',"save":'_atom_site.label'}]
+     save_
+
+
+save_atom_site.fract_xyz
+    _definition.id             '_atom_site.fract_xyz'
+    _import.get     [{"file":'core_dic',"save":'_atom_site.fract_xyz'}]
+     save_
+
+
+save_atom_site.fract_x
+    _definition.id             '_atom_site.fract_x'
+    _import.get     [{"file":'core_dic',"save":'_atom_site.fract_x'}]
+     save_
+
+
+save_atom_site.fract_y
+    _definition.id             '_atom_site.fract_y'
+    _import.get     [{"file":'core_dic',"save":'_atom_site.fract_y'}]
+     save_
+
+
+save_atom_site.fract_z
+    _definition.id             '_atom_site.fract_z'
+    _import.get     [{"file":'core_dic',"save":'_atom_site.fract_z'}]
+     save_
+
+
+save_atom_site.occupancy
+    _definition.id             '_atom_site.occupancy'
+    _import.get     [{"file":'core_dic',"save":'_atom_site.occupancy'}]
+     save_
+
+     save_     #------ close ATOM_SITE category
+
+
+#===========================================================================
+
+save_ATOM_LOCAL_AXES
+    _definition.id               ATOM_LOCAL_AXES
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-20
+    _description.text
+;
+      This category allows the definition of local axes around each
+      atom in terms of vectors between neighbouring atoms.
+      High-resolution X-ray diffraction methods enable the
+      determination of the electron density distribution in crystal
+      lattices and molecules, which in turn allows for a
+      characterization of chemical interactions (Coppens, 1997;
+      Koritsanszky & Coppens, 2001). This is accomplished by the
+      construction of a mathematical model of the charge density
+      in a crystal and then by fitting the parameters of such a
+      model to the experimental pattern of diffracted X-rays. The
+      model on which this dictionary is based is the so-called
+      multipole formalism proposed by Hansen & Coppens (1978). In
+      this model, the electron density in a crystal is described
+      by a sum of aspherical "pseudoatoms" where the pseudoatom
+      density has the form defined in the atom_rho_multipole_* items.
+      Each pseudoatom density consists of terms representing the
+      core density, the spherical part of the valence density and
+      the deviation of the valence density from sphericity. The
+      continuous electron density in the crystal is then modelled
+      as a sum of atom-centred charge distributions. Once the
+      experimental electron density has been established, the
+      "atoms in molecules" theory of Bader (1990) provides tools for
+      the interpretation of the density distribution in terms of its
+      topological properties.
+      Ref:  Bader, R. F. W. (1990). Atoms in molecules: a quantum
+              theory. Oxford University Press.
+            Coppens, P. (1997). X-ray charge densities and chemical
+              bonding. Oxford University Press.
+            Hansen, N. K. & Coppens, P.  (1978). Acta Cryst. A34,
+              909-921.
+            Koritsanszky, T. S. & Coppens, P. (2001). Chem. Rev. 101,
+              1583-1621.
+;
+    _name.category_id           RHO_GROUP
+    _name.object_id             ATOM_LOCAL_AXES
+    _category.key_list       ['_atom_local_axes.atom_label']
+
+
+save_atom_local_axes.atom_label
+    _definition.id             '_atom_local_axes.atom_label'
+     loop_
+    _alias.definition_id       '_atom_local_axes_atom_label'
+    _definition.update           2014-06-20
+    _description.text
+;
+      This item is used to identify an atom for which a local axis
+      system is to be defined.  Its value must be identical to one
+      of the values given in the atom_site_label list.
+;
+    _name.category_id            atom_local_axes
+    _name.object_id              atom_label
+    _name.linked_item_id       '_atom_site.label'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Code
+     save_
+
+ 
+save_atom_local_axes.atom0
+    _definition.id             '_atom_local_axes.atom0'
+     loop_
+    _alias.definition_id       '_atom_local_axes_atom0'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies 'atom0' in the definition of a local axis frame.
+      The definition employs three atom-site labels, 'atom0', 'atom1'
+      and 'atom2', and two axis labels, 'ax1' and 'ax2', having values
+      '+/-X', '+/-Y' or '+/-Z'. For the atom defined by
+      '_atom_local_axes_atom_label', whose nuclear position is taken
+      as the origin, local axis 'ax1' is the vector from the origin to
+      atom0, axis 'ax2' is perpendicular to 'ax1' and lies in the
+      plane of 'ax1' and a vector
+      passing through the origin parallel to the vector atom1 -> atom2
+      (its positive direction making an acute angle with the vector
+      parallel to atom1 -> atom2), and a right-handed orthonormal
+      vector triplet is formed from the vector product of these two
+      vectors. In most cases, atom1 will be the same as the atom
+      specified by atom_local_axes_atom_label. One or more 'dummy'
+      atoms (with arbitrary labels) may be used in the vector
+      definitions, specified with zero occupancy in the atom_site_
+      description.  The values of *_atom0, *_atom1 and *_atom2 must
+      be identical to values given in the atom_site_label list.
+;
+    _name.category_id            atom_local_axes
+    _name.object_id              atom0
+    _name.linked_item_id       '_atom_site.label'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_atom_local_axes.atom1
+    _definition.id             '_atom_local_axes.atom1'
+     loop_
+    _alias.definition_id       '_atom_local_axes_atom1'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies 'atom1' in the definition of a local axis frame.
+      See definition atom_local_axes.atom0 for description.
+;
+    _name.category_id            atom_local_axes
+    _name.object_id              atom1
+    _name.linked_item_id       '_atom_site.label'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_atom_local_axes.atom2
+    _definition.id             '_atom_local_axes.atom2'
+     loop_
+    _alias.definition_id       '_atom_local_axes_atom2'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies 'atom2' in the definition of a local axis frame.
+      See definition atom_local_axes.atom0 for description.
+;
+    _name.category_id            atom_local_axes
+    _name.object_id              atom2
+    _name.linked_item_id       '_atom_site.label'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_atom_local_axes.ax1
+    _definition.id             '_atom_local_axes.ax1'
+     loop_
+    _alias.definition_id       '_atom_local_axes_ax1'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies 'ax1' in the definition of a local axis frame.
+      The definition employs three atom-site labels, 'atom0', 'atom1'
+      and 'atom2', and two axis labels, 'ax1' and 'ax2', having values
+      '+/-X', '+/-Y' or '+/-Z'. For the atom defined by
+      '_atom_local_axes_atom_label', whose nuclear position is taken
+      as the origin, local axis 'ax1' is the vector from the origin to
+      atom0, axis 'ax2' is perpendicular to 'ax1' and lies in the
+      plane of 'ax1' and a vector
+      passing through the origin parallel to the vector atom1 -> atom2
+      (its positive direction making an acute angle with the vector
+      parallel to atom1 -> atom2), and a right-handed orthonormal
+      vector triplet is formed from the vector product of these two
+      vectors. In most cases, atom1 will be the same as the atom
+      specified by atom_local_axes_atom_label. One or more 'dummy'
+      atoms (with arbitrary labels) may be used in the vector
+      definitions, specified with zero occupancy in the atom_site_
+      description.  The values of *_atom0, *_atom1 and *_atom2 must
+      be identical to values given in the atom_site_label list.
+;
+    _name.category_id            atom_local_axes
+    _name.object_id              ax1
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     loop_                                    
+    _enumeration_set.state                    
+     x  X  y  Y  z  Z  +x  +X  +y  +Y  +z  +Z  -x  -X  -y  -Y  -z  -Z  
+     save_
+ 
+ 
+save_atom_local_axes.ax2
+    _definition.id             '_atom_local_axes.ax2'
+     loop_
+    _alias.definition_id       '_atom_local_axes_ax2'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies 'ax2' in the definition of a local axis frame.
+      See definition of atom_local_axes.ax1 for description.
+;
+    _name.category_id            atom_local_axes
+    _name.object_id              ax2
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     loop_
+    _enumeration_set.state
+     x  X  y  Y  z  Z  +x  +X  +y  +Y  +z  +Z  -x  -X  -y  -Y  -z  -Z 
+     save_
+
+     save_     #------ close ATOM_LOCAL_AXES category
+ 
+
+#===============================================================================
+ 
+save_ATOM_RHO_MULTIPOLE
+    _definition.id               ATOM_RHO_MULTIPOLE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This category contains information about the multipole
+      coefficients used to describe the electron density.
+      High-resolution X-ray diffraction methods enable the
+      determination of the electron density distribution in
+      crystal lattices and molecules, which in turn allows for a
+      characterization of chemical interactions (Coppens, 1997;
+      Koritsanszky & Coppens, 2001). This is accomplished by
+      the construction of a mathematical model of the charge
+      density in a crystal and then by fitting the parameters of
+      such a model to the experimental pattern of diffracted
+      X-rays. The model on which this dictionary is based
+      is the so-called multipole formalism proposed by Hansen
+      & Coppens (1978). In this model, the electron density in
+      a crystal is described by a sum of aspherical "pseudoatoms"
+      where the pseudoatom density has the form defined in the
+      atom_rho_multipole_* items. Each pseudoatom density
+      consists of terms representing the core density, the spherical
+      part of the valence density and the deviation of the valence
+      density from sphericity. The continuous electron density in the
+      crystal is then modelled as a sum of atom-centred charge
+      distributions. Once the experimental electron density has been
+      established, the "atoms in molecules" theory of Bader (1990)
+      provides tools for the interpretation of the density
+      distribution in terms of its topological properties.
+
+      Ref:  Bader, R. F. W. (1990). Atoms in molecules: a quantum
+              theory. Oxford University Press.
+            Coppens, P. (1997). X-ray charge densities and chemical
+              bonding. Oxford University Press.
+            Hansen, N. K. & Coppens, P.  (1978). Acta Cryst. A34, 909-921.
+            Koritsanszky, T. S. & Coppens, P. (2001). Chem. Rev. 101, 1583-1621.
+;
+    _name.category_id           RHO_GROUP
+    _name.object_id             ATOM_RHO_MULTIPOLE
+    _category.key_list       ['_atom_rho_multipole.atom_label']
+ 
+ 
+save_atom_rho_multipole.atom_label
+    _definition.id             '_atom_rho_multipole.atom_label'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_atom_label'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This item is used to identify the atom whose electron density is
+      described with an atom in the ATOM_SITE category. Its value
+      must be identical to one of the values in the atom_site_label
+      list.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              atom_label
+    _name.linked_item_id       '_atom_site.label'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+
+save_atom_rho_multipole.core_source
+    _definition.id             '_atom_rho_multipole.core_source'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_core_source'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This item gives the source of the orbital exponents and
+      expansion coefficients used to obtain the spherical core
+      density of the atom defined in atom_rho_multipole_atom_label.
+      Alternatively, the core density may be obtained as described
+      in the atom_rho_multipole.scat_core item.
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              core_source
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     loop_
+    _description_example.case     
+;
+     Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data Tables,
+     14, 177-478.
+;
+     save_
+ 
+ 
+save_atom_rho_multipole.configuration
+    _definition.id             '_atom_rho_multipole.configuration'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_configuration'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This item defines the electronic configuration of the atom
+      given in atom_rho_multipole.atom_label as free text.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              configuration
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+
+ 
+save_atom_rho_multipole.radial_function_type
+    _definition.id             '_atom_rho_multipole.radial_function_type'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_function_type'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies the function R(kappa'(l),l,r) used for the radial
+      dependence of the valence electron density in the multipole
+      formalism described by Hansen & Coppens [1978, equation (2)]
+      which gives the electron density at position vector r with
+      respect to the nucleus of the atom specified in
+      atom_rho_multipole_atom_label as:
+
+      rho(r) = Pc*rho_core(r) + Pv*k^3^*rho_valence(kappa*r)
+              + sum{kappa'(l)^3^*R(kappa'(l),l,r)\}\
+                *sum{P(l,m)*d(l,m,theta,phi)\}\
+      where:
+        Pc     = atom_rho_multipole_coeff.Pc
+        Pv     = atom_rho_multipole_coeff.Pv
+        P(0,0) = atom_rho_multipole_coeff.P00
+        Pc + Pv + P(0,0) = Z (the atomic number) for a neutral atom
+
+        kappa     = atom_rho_multipole_kappa.base,
+        kappa'(l) = atom_rho_multipole_kappa.prime[l],
+        P(l,m)    = atom_rho_multipole_coeff.P[lm],
+
+        d(l,m,theta,phi) is the spherical harmonic of order l,m at the
+        position (theta, phi) with respect to spherical coordinates
+        centred on the atom.
+
+        The summations are performed over the index ranges
+        0 <= l <= lmax, -l <= m <= l respectively, where lmax is
+        the highest order of multipole applied.
+
+        The spherical coordinates are related to the local Cartesian
+        axes defined in category ATOM_LOCAL_AXES, z is the polar axis
+        from which the angle theta is measured and the angle phi is
+        measured from the x axis in the xy plane with the y axis
+        having a value of phi = +90 degrees.
+
+        rho_core(r) and rho_valence(kappa*r) are the spherical core and
+        valence densities, respectively. They are obtained from
+        atomic orbital analytic wavefunctions such as those tabulated
+        by Clementi & Roetti (1974). They are also the Fourier
+        transforms of the X-ray scattering factors given in
+        atom_rho_multipole.scat_core and
+        atom_rho_multipole.scat_valence.
+
+     This item need not be given if a Slater function is used.  The
+     parameters of the Slater function should be given using the
+     atom_rho_multipole_radial_slater.* items.
+
+     Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Hansen, N. K. & Coppens, P.  (1978).
+              Acta Cryst. A34, 909-921.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              radial_function_type
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_atom_rho_multipole.scat_core
+    _definition.id             '_atom_rho_multipole.scat_core'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_scat_core'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This item gives the scattering factor for the core electrons
+      of the atom  specified in atom_rho_multipole.atom_label as a
+      function of sin(theta)/lambda. The text should contain only a
+      table of two columns, the first giving the value of
+      sin(theta)/lambda, the second giving the X-ray scattering factor
+      at this point in reciprocal space.
+
+      The atomic core scattering factors are used in least-squares
+      fitting of the items in atom_rho_multipole_coeff.* and
+      atom_rho_multipole_kappa.* to experimental X-ray structure
+      factors [see for example Coppens (1997)]. This item enables
+      them to be supplied in the form of a numerical table. Normally
+      they originate from atomic orbital analytic wavefunctions
+      such as those tabulated by Clementi & Roetti (1974).
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Coppens, P. (1997). X-ray charge densities and
+              chemical bonding. Oxford University Press.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              scat_core
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+
+save_atom_rho_multipole.scat_core_table
+    _definition.id             '_atom_rho_multipole.scat_core_table'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_scat_core_table'
+    _definition.update           2014-06-20
+    _description.text
+;
+      This table gives the scattering factor for the core electrons
+      of the atom  specified in atom_rho_multipole.atom_label as a
+      function of sin(theta)/lambda. The table contains the st/l
+      value as the key and the scattering factor as the value. E.g.
+      {"0.00":"15.65","0.05":"15.32",.....etc }
+
+      The atomic core scattering factors are used in least-squares
+      fitting of the items in atom_rho_multipole_coeff.* and
+      atom_rho_multipole_kappa.* to experimental X-ray structure
+      factors [see for example Coppens (1997)]. This item enables
+      them to be supplied in the form of a numerical table. Normally
+      they originate from atomic orbital analytic wavefunctions
+      such as those tabulated by Clementi & Roetti (1974).
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Coppens, P. (1997). X-ray charge densities and
+              chemical bonding. Oxford University Press.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              scat_core_table
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Table
+    _type.contents               Real
+    _type.dimension              []
+     save_
+
+ 
+save_atom_rho_multipole.scat_valence
+    _definition.id             '_atom_rho_multipole.scat_valence'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_scat_valence'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This item gives the scattering factor for the valence electrons
+      of the atom specified in atom_rho_multipole.atom_label as a
+      function of sin(theta)/lambda. The text should contain only a
+      table of two columns, the first giving the value of
+      sin(theta)/lambda, the second giving the X-ray scattering factor
+      at this point in reciprocal space.
+
+      The atomic valence scattering factors are used in least-squares
+      fitting of the items in atom_rho_multipole_coeff.* and
+      atom_rho_multipole_kappa.* to experimental X-ray structure
+      factors [see for example Coppens (1997)]. This item enables
+      them to be supplied in the form of a numerical table. Normally
+      they originate from atomic orbital analytic wavefunctions
+      such as those tabulated by Clementi & Roetti (1974).
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Coppens, P. (1997). X-ray charge densities and
+              chemical bonding. Oxford University Press.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              scat_valence
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+
+save_atom_rho_multipole.scat_valence_table
+    _definition.id             '_atom_rho_multipole.scat_valence_table'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_scat_valence_table'
+    _definition.update           2014-06-20
+    _description.text
+;
+      This table gives the scattering factor for the valence electrons
+      of the atom  specified in atom_rho_multipole.atom_label as a
+      function of sin(theta)/lambda. The table contains the st/l
+      value as the key and the scattering factor as the value. E.g.
+      {"0.00":"15.65","0.05":"15.32",.....etc }
+
+      The atomic valence scattering factors are used in least-squares
+      fitting of the items in atom_rho_multipole_coeff.* and
+      atom_rho_multipole_kappa.* to experimental X-ray structure
+      factors [see for example Coppens (1997)]. This item enables
+      them to be supplied in the form of a numerical table. Normally
+      they originate from atomic orbital analytic wavefunctions
+      such as those tabulated by Clementi & Roetti (1974).
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Coppens, P. (1997). X-ray charge densities and
+              chemical bonding. Oxford University Press.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              scat_valence_table
+    _type.purpose                Number 
+    _type.source                 Assigned
+    _type.container              Table
+    _type.contents               Real
+    _type.dimension              []
+     save_
+
+ 
+save_atom_rho_multipole.valence_source
+    _definition.id             '_atom_rho_multipole.valence_source'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_valence_source'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      This item gives the source of the orbital exponents and
+      expansion coefficients used to obtain the spherical valence
+      density of the atom defined in atom_rho_multipole.atom_label.
+      Alternatively the valence density may be obtained as described
+      in the atom_rho_multipole_scat_valence item.
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+;
+    _name.category_id            atom_rho_multipole
+    _name.object_id              valence_source
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     loop_
+    _description_example.case     
+;
+            Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+;
+     save_
+
+#-----------------------------------------------------------------------
+
+save_ATOM_RHO_MULTIPOLE_COEFF
+    _definition.id               ATOM_RHO_MULTIPOLE_COEFF
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2014-06-20
+    _description.text
+;
+     Category defining multipole population coefficients P(l,m).
+;
+    _name.category_id           ATOM_RHO_MULTIPOLE
+    _name.object_id             ATOM_RHO_MULTIPOLE_COEFF
+
+ 
+save_atom_rho_multipole_coeff.list
+    _definition.id             '_atom_rho_multipole_coeff.list'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_list'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Specifies the multipole population coefficients P(l,m) for
+      the atom identified in atom_rho_multipole_atom_label.  The
+      multipoles are defined with respect to the local axes specified
+      in the ATOM_LOCAL_AXES category.  The coefficients refer to the
+      multipole formalism described by Hansen & Coppens [1978,
+      equation (2)] which gives the electron density at position
+      vector r with respect to an atomic nucleus as
+
+      rho(r) = Pc*rho_core(r) + Pv*k^3^*rho_valence(kappa*r)
+              + sum{kappa'(l)^3^*R(kappa'(l),l,r)\}\
+                *sum{P(l,m)*d(l,m,theta,phi)\}\
+      where:
+        Pc     = atom_rho_multipole_coeff_Pc
+        Pv     = atom_rho_multipole_coeff_Pv
+        P(0,0) = atom_rho_multipole_coeff_P00
+        Pc + Pv + P(0,0) = Z (the atomic number) for a neutral atom
+
+        kappa     = atom_rho_multipole_kappa.base,
+        kappa'(l) = atom_rho_multipole_kappa.prime[l],
+
+        d(l,m,theta,phi) is the spherical harmonic of order l,m at the
+        position (theta, phi) with respect to spherical coordinates
+        centred on the atom.
+
+        The summations are performed over the index ranges
+        0 <= l <= lmax, -l <= m <= l, respectively, where lmax is
+        the highest order of multipole applied.
+
+        The spherical coordinates are related to the local Cartesian
+        axes defined in category ATOM_LOCAL_AXES, z is the polar axis
+        from which the angle theta is measured, and the angle phi is
+        measured from the x axis in the xy plane with the y axis
+        having a value of phi = +90 degrees.
+
+        R(kappa'(l),l,r) is defined in the atom_rho_multipole_radial_*
+        items.
+
+        rho_core(r) and rho_valence(kappa*r) are the spherical core
+        and valence densities, respectively. They are obtained from
+        atomic orbital analytic wavefunctions such as those tabulated
+        by Clementi & Roetti (1974). They are also the Fourier
+        transforms of the X-ray scattering factors given in
+        atom_rho_multipole_scat_core and
+        atom_rho_multipole_scat_valence.
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Hansen, N. K. & Coppens, P.  (1978).
+              Acta Cryst. A34, 909-921.
+;
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              list
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              List   
+    _type.contents               Real
+    _type.dimension              [27]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With r as atom_rho_multipole_coeff
+
+     atom_rho_multipole_coeff.list = [ r.Pv, r.Pc, r.P00, 
+      r.P10, r.P11, r.P1_1,
+      r.P20, r.P21, r.P2_1, r.P22, r.P2_2,
+      r,P30, r.P31, r.P3-1, r.P32, r.P3_2, r.P33, r.P3_3, 
+      r,P40, r.P41, r.P4-1, r.P42, r.P4_2, r.P43, r.P4_3, r.P44, r.P4_4]
+;
+     save_
+
+
+save_atom_rho_multipole_coeff.Pc
+    _definition.id             '_atom_rho_multipole_coeff.Pc'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_Pc'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}] 
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              Pc
+     save_
+
+
+save_atom_rho_multipole_coeff.Pv
+    _definition.id             '_atom_rho_multipole_coeff.Pv'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_Pv'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              Pv
+     save_
+
+
+save_atom_rho_multipole_coeff.P00
+    _definition.id             '_atom_rho_multipole_coeff.P00'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P00'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P00
+     save_
+
+
+save_atom_rho_multipole_coeff.P10
+    _definition.id             '_atom_rho_multipole_coeff.P10'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P10'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P10
+     save_
+
+
+save_atom_rho_multipole_coeff.P11
+    _definition.id             '_atom_rho_multipole_coeff.P11'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P11'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P11
+     save_
+
+
+save_atom_rho_multipole_coeff.P1_1
+    _definition.id             '_atom_rho_multipole_coeff.P1_1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P1_1'
+                               '_atom_rho_multipole_coeff_P1-1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P1_1
+     save_
+
+
+save_atom_rho_multipole_coeff.P20
+    _definition.id             '_atom_rho_multipole_coeff.P20'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P20'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P20
+     save_
+
+
+save_atom_rho_multipole_coeff.P21
+    _definition.id             '_atom_rho_multipole_coeff.P21'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P21'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P21
+     save_
+
+
+save_atom_rho_multipole_coeff.P2_1
+    _definition.id             '_atom_rho_multipole_coeff.P2_1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P2_1'
+                               '_atom_rho_multipole_coeff_P2-1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P2_1
+     save_
+
+
+save_atom_rho_multipole_coeff.P22
+    _definition.id             '_atom_rho_multipole_coeff.P22'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P22'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P22
+     save_
+
+
+save_atom_rho_multipole_coeff.P2_2
+    _definition.id             '_atom_rho_multipole_coeff.P2_2'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P2_2'
+                               '_atom_rho_multipole_coeff_P2-2'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P2_2
+     save_
+
+
+save_atom_rho_multipole_coeff.P30
+    _definition.id             '_atom_rho_multipole_coeff.P30'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P30'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P30
+     save_
+
+
+save_atom_rho_multipole_coeff.P31
+    _definition.id             '_atom_rho_multipole_coeff.P31'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P31'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P31
+     save_
+
+
+save_atom_rho_multipole_coeff.P3_1
+    _definition.id             '_atom_rho_multipole_coeff.P3_1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P3_1'
+                               '_atom_rho_multipole_coeff_P3-1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P3_1
+     save_
+
+
+save_atom_rho_multipole_coeff.P32
+    _definition.id             '_atom_rho_multipole_coeff.P32'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P32'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P32
+     save_
+
+
+save_atom_rho_multipole_coeff.P3_2
+    _definition.id             '_atom_rho_multipole_coeff.P3_2'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P3_2'
+                               '_atom_rho_multipole_coeff_P3-2'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P3_2
+     save_
+
+
+save_atom_rho_multipole_coeff.P33
+    _definition.id             '_atom_rho_multipole_coeff.P33'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P33'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P33
+     save_
+
+
+save_atom_rho_multipole_coeff.P3_3
+    _definition.id             '_atom_rho_multipole_coeff.P3_3'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P3_3'
+                               '_atom_rho_multipole_coeff_P3-3'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P3_3
+     save_
+
+
+save_atom_rho_multipole_coeff.P40
+    _definition.id             '_atom_rho_multipole_coeff.P40'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P40'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P40
+     save_
+
+
+save_atom_rho_multipole_coeff.P41
+    _definition.id             '_atom_rho_multipole_coeff.P41'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P41'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P41
+     save_
+
+
+save_atom_rho_multipole_coeff.P4_1
+    _definition.id             '_atom_rho_multipole_coeff.P4_1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P4_1'
+                               '_atom_rho_multipole_coeff_P4-1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P4_1
+     save_
+
+
+save_atom_rho_multipole_coeff.P42
+    _definition.id             '_atom_rho_multipole_coeff.P42'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P42'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P42
+     save_
+
+
+save_atom_rho_multipole_coeff.P4_2
+    _definition.id             '_atom_rho_multipole_coeff.P4_2'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P4_2'
+                               '_atom_rho_multipole_coeff_P4-2'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P4_2
+     save_
+
+
+save_atom_rho_multipole_coeff.P43
+    _definition.id             '_atom_rho_multipole_coeff.P43'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P43'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P43
+     save_
+
+
+save_atom_rho_multipole_coeff.P4_3
+    _definition.id             '_atom_rho_multipole_coeff.P4_3'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P4_3'
+                               '_atom_rho_multipole_coeff_P4-3'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P4_3
+     save_
+
+
+save_atom_rho_multipole_coeff.P44
+    _definition.id             '_atom_rho_multipole_coeff.P44'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P44'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P44
+     save_
+
+
+save_atom_rho_multipole_coeff.P4_4
+    _definition.id             '_atom_rho_multipole_coeff.P4_4'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_coeff_P4_4'
+                               '_atom_rho_multipole_coeff_P4-4'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_coeff'}]
+    _name.category_id            atom_rho_multipole_coeff
+    _name.object_id              P4_4
+     save_
+
+     save_     #------ close ATOM_RHO_MULTIPOLE_COEFF category
+ 
+#--------------------------------------------------------------------------
+
+save_ATOM_RHO_MULTIPOLE_KAPPA
+    _definition.id               ATOM_RHO_MULTIPOLE_KAPPA
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2014-06-20
+    _description.text
+;
+     Category defining radial function expansion-contraction coefficients
+;
+    _name.category_id           ATOM_RHO_MULTIPOLE
+    _name.object_id             ATOM_RHO_MULTIPOLE_KAPPA
+
+ 
+save_atom_rho_multipole_kappa.list
+    _definition.id             '_atom_rho_multipole_kappa.list'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa_list'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      Gives the radial function expansion-contraction coefficients
+      (kappa    = atom_rho_multipole_kappa.base and
+      kappa'(l) = atom_rho_multipole_kappa.prime[l])
+      for the atom specified in atom_rho_multipole.atom_label.
+
+      The coefficients refer to the  multipole formalism described by
+      Hansen & Coppens [1978, equation (2)] which gives the electron
+      density at position vector r with respect to an atomic
+      nucleus as:
+
+      rho(r) = Pc*rho_core(r) + Pv*kappa^3^*rho_valence(kappa*r)
+               + sum{kappa'(l)^3^*R(kappa'(l),l,r)\}\
+                 *sum{P(l,m)*d(l,m,theta,phi)\}\
+      where:
+        Pc     = atom_rho_multipole_coeff.Pc
+        Pv     = atom_rho_multipole_coeff.Pv
+        P(0,0) = atom_rho_multipole_coeff.P00
+        Pc + Pv + P(0,0) = Z (the atomic number) for a neutral atom
+        P(l,m) = atom_rho_multipole_coeff_P[lm],
+
+        d(l,m,theta,phi) is the spherical harmonic of order l,m at the
+        position (theta, phi) with respect to spherical coordinates
+        centred on the atom. The spherical coordinates are related
+        to the local Cartesian axes defined in category
+        ATOM_LOCAL_AXES, z is the polar axis from which the angle
+        theta is measured, and the angle phi is measured from the
+        x axis in the xy plane with the y axis having a value of
+        phi = +90 degrees.
+
+        R(kappa'(l),l,r) is defined in the atom_rho_multipole_radial_*
+        items.
+
+        rho_core(r) and rho_valence(kappa*r) are the spherical core and
+        valence densities, respectively. They are obtained from
+        atomic orbital analytic wavefunctions such as those tabulated
+        by Clementi & Roetti (1974). They are also the Fourier
+        transforms of the X-ray scattering factors given in
+        atom_rho_multipole.scat_core and
+        atom_rho_multipole.scat_valence.
+
+        The order, l, of kappa' refers to the order of the multipole
+        function, 0 <= l <= 4.  The values of kappa' are normally
+        constrained to be equal.
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Hansen, N. K. & Coppens, P.  (1978).
+              Acta Cryst. A34, 909-921.
+;
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              list
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               Real
+    _type.dimension              [6] 
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With k  as  atom_rho_multipole_kappa
+
+     atom_rho_multipole_kappa.list = [ k.base,
+                     k.prime0, k.prime1, k.prime2, k.prime3, k.prime4]
+;
+     save_
+ 
+
+save_atom_rho_multipole_kappa.base
+    _definition.id             '_atom_rho_multipole_kappa.base'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_kappa'}]
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              base
+     save_
+
+
+save_atom_rho_multipole_kappa.prime0
+    _definition.id             '_atom_rho_multipole_kappa.prime0'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa_prime0'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_kappa'}]
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              prime0
+     save_
+
+
+save_atom_rho_multipole_kappa.prime1
+    _definition.id             '_atom_rho_multipole_kappa.prime1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa_prime1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_kappa'}]
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              prime1
+     save_
+
+
+save_atom_rho_multipole_kappa.prime2
+    _definition.id             '_atom_rho_multipole_kappa.prime2'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa_prime2'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_kappa'}]
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              prime2
+     save_
+
+
+save_atom_rho_multipole_kappa.prime3
+    _definition.id             '_atom_rho_multipole_kappa.prime3'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa_prime3'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_kappa'}]
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              prime3
+     save_
+
+
+save_atom_rho_multipole_kappa.prime4
+    _definition.id             '_atom_rho_multipole_kappa.prime4'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_kappa_prime4'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_kappa'}]
+    _name.category_id            atom_rho_multipole_kappa
+    _name.object_id              prime4
+     save_
+
+     save_     #------ close ATOM_RHO_MULTIPOLE_KAPPA category
+
+#--------------------------------------------------------------------------
+
+save_ATOM_RHO_MULTIPOLE_RADIAL_SLATER
+    _definition.id               ATOM_RHO_MULTIPOLE_RADIAL_SLATER
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2014-06-20
+    _description.text
+;
+     Category defining multipole population coefficients P(l,m).
+;
+    _name.category_id           ATOM_RHO_MULTIPOLE
+    _name.object_id             ATOM_RHO_MULTIPOLE_RADIAL_SLATER
+
+ 
+save_atom_rho_multipole_radial_slater.list
+    _definition.id             '_atom_rho_multipole_radial_slater.list'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_list'
+    _definition.update           2014-06-20
+    _description.text             
+;
+      These items are used when the radial dependence of the valence
+      electron  density, R(kappa'(l),l,r), of the atom specified in
+      atom_rho_multipole.atom_label is expressed as a Slater-type
+      function [Hansen & Coppens (1978), equation (3)]:
+
+      R(kappa'(l),l,r) = [{zeta(l)\}^\{n(l)+3\}^/\{n(l)+2\}!]\
+                          *(kappa'(l)*r)^n(l)^
+                          *exp(-kappa'(l)*zeta(l)*r)
+
+      where:
+        kappa'(l)  = atom_rho_multipole_kappa.prime[l]
+        n(l)       = atom_rho_multipole_radial_slater.n[l]
+        zeta(l)i   = atom_rho_multipole_radial_slater.zeta[l]
+
+      R(kappa'(l),l,r) appears in the multipole formalism described by
+      Hansen & Coppens [1978, equation (2)] which gives the
+      electron density at position vector r with respect to an
+      atomic nucleus as:
+
+      rho(r) = Pc*rho_core(r) + Pv*kappa^3^*rho_valence(kappa*r)
+              + sum{k'(l)^3^*R(kappa'(l),l,r)\}\
+                *sum{P(l,m)*d(l,m,theta,phi)\}\
+
+      where:
+        Pc     = atom_rho_multipole_coeff.Pc
+        Pv     = atom_rho_multipole_coeff.Pv
+        P(0,0) = atom_rho_multipole_coeff.P00
+        Pc + Pv + P(0,0) = Z (the atomic number) for a neutral atom
+
+        kappa      = atom_rho_multipole_kappa.base,
+        kappa'(l)  = atom_rho_multipole_kappa.prime[l],
+        P(l,m)     = atom_rho_multipole_coeff.P[lm],
+
+        d(l,m,theta,phi) is the spherical harmonic of order l,m at the
+        position (theta, phi) with respect to spherical coordinates
+        centred on the atom.
+
+        The summations are performed over the index ranges
+        0 <= l <= lmax, -l <= m <= l respectively, where lmax is
+        the highest order of multipole applied.
+
+        The spherical coordinates are related to the local Cartesian
+        axes defined in category ATOM_LOCAL_AXES, z is the polar axis
+        from which the angle theta is measured, and the angle phi is
+        measured from the x axis in the xy plane with the y axis
+        having a value of phi = +90 degrees.
+
+        rho_core(r) and rho_valence(kappa*r) are the spherical core and
+        valence densities, respectively. They are obtained from
+        atomic orbital analytic wavefunctions such as those tabulated
+        by Clementi & Roetti (1974). They are also the Fourier
+        transforms of the X-ray scattering factors given in
+        atom_rho_multipole.scat_core and
+        atom_rho_multipole.scat_valence.
+
+      Ref:  Clementi, E. & Roetti, C. (1974). At. Data Nucl. Data
+              Tables, 14, 177-478.
+            Hansen, N. K. & Coppens, P.  (1978).
+              Acta Cryst. A34, 909-921.
+;
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              list
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               Real
+    _type.dimension              [10]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With s  as  atom_rho_multipole_radial_slater
+
+     atom_rho_multipole_radial_slater.list = [ s.n0, s.zeta0,
+                                               s.n1, s.zeta1,
+                                               s.n2, s.zeta2,
+                                               s.n3, s.zeta3]
+;
+     save_
+ 
+
+save_atom_rho_multipole_radial_slater.n0
+    _definition.id             '_atom_rho_multipole_radial_slater.n0'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_n0'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              n0
+     save_
+
+
+save_atom_rho_multipole_radial_slater.n1
+    _definition.id             '_atom_rho_multipole_radial_slater.n1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_n1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              n1
+     save_
+
+
+save_atom_rho_multipole_radial_slater.n2
+    _definition.id             '_atom_rho_multipole_radial_slater.n2'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_n2'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              n2
+     save_
+
+
+save_atom_rho_multipole_radial_slater.n3
+    _definition.id             '_atom_rho_multipole_radial_slater.n3'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_n3'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              n3
+     save_
+
+
+save_atom_rho_multipole_radial_slater.zeta0
+    _definition.id             '_atom_rho_multipole_radial_slater.zeta0'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_zeta0'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              zeta0
+     save_
+
+
+save_atom_rho_multipole_radial_slater.zeta1
+    _definition.id             '_atom_rho_multipole_radial_slater.zeta1'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_zeta1'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              zeta1
+     save_
+
+
+save_atom_rho_multipole_radial_slater.zeta2
+    _definition.id             '_atom_rho_multipole_radial_slater.zeta2'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_zeta2'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              zeta2
+     save_
+
+
+save_atom_rho_multipole_radial_slater.zeta3
+    _definition.id             '_atom_rho_multipole_radial_slater.zeta3'
+     loop_
+    _alias.definition_id       '_atom_rho_multipole_radial_slater_zeta3'
+    _import.get    [{"file":'templ_attr.cif',"save":'rho_slater'}]
+    _name.category_id            atom_rho_multipole_radial_slater
+    _name.object_id              zeta3
+     save_
+
+     save_     #------ close ATOM_RHO_MULTIPOLE_RADIAL_SLATER category
+
+#---------------------------------------------------------------------------
+
+     save_     #------ close ATOM_RHO_MULTIPOLE category
+
+     save_     #------ close RHO_GROUP category
+
+#---- eof---- eof---- eof---- eof---- eof---- eof---- eof---- eof---- eof-
+

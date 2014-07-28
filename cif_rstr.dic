@@ -1,0 +1,2938 @@
+################################################################################
+#                                                                              #
+#             CIF RESTRAINTS AND CONSTRAINTS DICTIONARY VERSION                #
+#             -------------------------------------------------                #
+#                                                                              #
+#   This dictionary contains the names and definitions proposed for reporting  #
+#   restraints and constraints in the Core CIF dictionary                      #
+#                                                                              #
+#            Converted from a DDL1 dictionary to DDLM 29 June 2014             #
+#                                                                              #
+################################################################################
+
+data_CIF_RSTR
+
+    _dictionary.title            CIF_RSTR
+    _dictionary.class            Instance
+    _dictionary.version          3.00.01
+    _dictionary.date             2014-06-29
+    _dictionary.uri              www.iucr.org/cif/dic/cif_rstr.dic
+    _dictionary.ddl_conformance  3.11.04
+    _dictionary.namespace        CifRstr
+    _description.text
+;
+    The CIF_RSTR dictionary records all the data items defined
+    and used restrain and constrain structural modelling parameters
+    in crystallographic studies.
+;
+
+
+save_CIF_RSTR
+    _definition.id               CIF_RSTR
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2014-06-29
+    _description.text
+;
+     The CIF_RSTR group contains the definitions of data items that
+     are used to restrain and constrain crystallographic parameters.
+;
+    _name.category_id            CIF_DIC
+    _name.object_id              CIF_RSTR
+
+ 
+#===============================================================================
+ 
+save_RESTR
+    _definition.id               RESTR
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2014-06-29
+    _description.text             
+;
+      This category is for describing restraints that cannot be
+      described elsewhere.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR
+ 
+ 
+save_restr.special_details
+    _definition.id             '_restr.special_details'
+     loop_
+    _alias.definition_id       '_restr_special_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Text describing any restraint or constraint that cannot be
+      described using any of the the other restraint items.
+      See also _atom_site_restraints.
+;
+    _name.category_id            restr
+    _name.object_id              special_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+
+     save_   #------ close of RESTR category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_ANGLE
+    _definition.id               RESTR_ANGLE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category define angles that were restrained
+      in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_ANGLE
+    _category.key_id          '_restr_angle.id'
+    _category.key_list       ['_restr_angle.atom_site_label_1',
+                              '_restr_angle.site_symmetry_1',
+                              '_restr_angle.atom_site_label_2',
+                              '_restr_angle.site_symmetry_2',
+                              '_restr_angle.atom_site_label_3',
+                              '_restr_angle.site_symmetry_3']
+ 
+
+save_restr_angle.id
+    _definition.id             '_restr_angle.id'
+     loop_
+    _alias.definition_id       '_restr_angle.id'
+    _definition.update           2014-06-29
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     three atom sites which identify the angle. The second label-symop
+     pair in the list identifies the site at the apex of the angle.
+;
+    _name.category_id            restr_angle
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [3]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_angle
+
+        _restr_angle.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                            [ a.atom_site_label_2, a.site_symmetry_2 ],
+                            [ a.atom_site_label_3, a.site_symmetry_3 ]]
+;
+     save_
+
+
+save_restr_angle.atom_site_label_1
+    _definition.id             '_restr_angle.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_angle_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_angle
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_angle.atom_site_label_2
+    _definition.id             '_restr_angle.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_angle_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_angle
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_angle.atom_site_label_3
+    _definition.id             '_restr_angle.atom_site_label_3'
+     loop_
+    _alias.definition_id       '_restr_angle_atom_site_label_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_angle
+    _name.object_id              atom_site_label_3
+     save_
+
+
+save_restr_angle.site_symmetry_1
+    _definition.id             '_restr_angle.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_angle_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_angle
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_angle.site_symmetry_2
+    _definition.id             '_restr_angle.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_angle_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_angle
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_angle.site_symmetry_3
+    _definition.id             '_restr_angle.site_symmetry_3'
+     loop_
+    _alias.definition_id       '_restr_angle_site_symmetry_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_angle
+    _name.object_id              site_symmetry_3
+     save_
+
+ 
+save_restr_angle.details
+    _definition.id             '_restr_angle.details'
+     loop_
+    _alias.definition_id       '_restr_angle_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A free-text description of the restraint.
+;
+    _name.category_id            restr_angle
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_angle.diff
+    _definition.id             '_restr_angle.diff'
+     loop_
+    _alias.definition_id       '_restr_angle_diff'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The difference between the target and the refined angle.
+;
+    _name.category_id            restr_angle
+    _name.object_id              diff
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  degrees
+     save_
+ 
+ 
+save_restr_angle.target
+    _definition.id             '_restr_angle.target'
+     loop_
+    _alias.definition_id       '_restr_angle_target'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The expectation angle defined by the three atoms.
+      This is the target angle for the restrained refinement.
+;
+    _name.category_id            restr_angle
+    _name.object_id              target
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:180
+    _units.code                  degrees
+     save_
+ 
+ 
+save_restr_angle.target_weight_param
+    _definition.id             '_restr_angle.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_angle_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Weighting parameter = sqrt(1/weight).
+      It is the expectation value of the difference between
+      the refined value and the target.
+      If this parameter is set to zero, the angle will be constrained
+      to refine to the target value.
+      If this item is absent, its value will be taken as zero
+      and the distance will be constrained.
+;
+    _name.category_id            restr_angle
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:180
+    _enumeration.default         0
+     save_
+ 
+     save_    #----------- close of RSTR_ANGLE category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_DISTANCE
+    _definition.id               RESTR_DISTANCE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      This category describes restraints applied to
+      distances during the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_DISTANCE
+    _category.key_id          '_restr_distance.id'
+    _category.key_list       ['_restr_distance.atom_site_label_1',
+                              '_restr_distance.site_symmetry_1',
+                              '_restr_distance.atom_site_label_2',
+                              '_restr_distance.site_symmetry_2']
+
+
+save_restr_distance.id
+    _definition.id             '_restr_distance.id'
+     loop_
+    _alias.definition_id       '_restr_distance.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond distance in terms of the atom site labels and
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _name.category_id            restr_distance
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_distance
+
+      _restr_distance.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                             [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+
+
+save_restr_distance.atom_site_label_1
+    _definition.id             '_restr_distance.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_distance_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_distance
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_distance.atom_site_label_2
+    _definition.id             '_restr_distance.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_distance_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_distance
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_distance.site_symmetry_1
+    _definition.id             '_restr_distance.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_distance_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_distance
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_distance.site_symmetry_2
+    _definition.id             '_restr_distance.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_distance_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_distance
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_distance.details
+    _definition.id             '_restr_distance.details'
+     loop_
+    _alias.definition_id       '_restr_distance_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A free-text description of the restraint.
+;
+    _name.category_id            restr_distance
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_distance.diff
+    _definition.id             '_restr_distance.diff'
+     loop_
+    _alias.definition_id       '_restr_distance_diff'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The difference between the target and the refined distance.
+;
+    _name.category_id            restr_distance
+    _name.object_id              diff
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms
+     save_
+ 
+
+save_restr_distance.target
+    _definition.id             '_restr_distance.target'
+     loop_
+    _alias.definition_id       '_restr_distance_target'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The expectation distance between the two atoms.
+      This is the target distance for the restrained refinement.
+;
+    _name.category_id            restr_distance
+    _name.object_id              target
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_distance.target_weight_param
+    _definition.id             '_restr_distance.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_distance_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Weighting parameter = sqrt(1/weight).
+      It is the expectation value of the difference between
+      the refined value and the target.
+      If this parameter is set to zero, the distance will be
+      constrained to refine to the target value.
+      If this item is absent, its value will be taken as zero
+      and the distance will be constrained.
+;
+    _name.category_id            restr_distance
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0
+    _units.code                  angstroms
+     save_
+ 
+     save_    #----------- close of RSTR_DISTANCE category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_DISTANCE_MIN
+    _definition.id               RESTR_DISTANCE_MIN
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category offer power-law and exponential
+      expressions for a function designed to prevent two atoms
+      occupying the same location.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_DISTANCE_MIN
+    _category.key_id          '_restr_distance_min.id'
+    _category.key_list       ['_restr_distance_min.atom_site_label_1',
+                              '_restr_distance_min.site_symmetry_1',
+                              '_restr_distance_min.atom_site_label_2',
+                              '_restr_distance_min.site_symmetry_2']
+ 
+save_restr_distance_min.id
+    _definition.id             '_restr_distance_min.id'
+     loop_
+    _alias.definition_id       '_restr_distance_min.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond distance_min in terms of the atom site labels and
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_distance_min
+
+    _restr_distance_min.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                               [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+
+
+save_restr_distance_min.atom_site_label_1
+    _definition.id             '_restr_distance_min.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_distance_min_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_distance_min
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_distance_min.atom_site_label_2
+    _definition.id             '_restr_distance_min.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_distance_min_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_distance_min
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_distance_min.site_symmetry_1
+    _definition.id             '_restr_distance_min.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_distance_min_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_distance_min
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_distance_min.site_symmetry_2
+    _definition.id             '_restr_distance_min.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_distance_min_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_distance_min
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_distance_min.A
+    _definition.id             '_restr_distance_min.A'
+     loop_
+    _alias.definition_id       '_restr_distance_min_A'
+    _definition.update           2014-06-29
+    _description.text
+;
+      The weight associated with the difference between the
+      refined distance D and the prescribed minimum distance
+      (B or F) is given by the expression
+
+      w = A*(B/D)^C^ + E*exp((D-F)/G)
+
+      A and E are dimensionless weighting parameters.
+      Either function could be used alone by setting A or E to zero.
+      The default values of A and E are zero.
+
+      If A=0, B and C are undefined; if E=0, F and G are undefined.
+
+      A hard-sphere contact can be generated by setting E=1,
+      F=prescribed minimum distance and G=0.  In this case G
+      (combined with a non-zero E) should be treated as a flag
+      indicating a hard-sphere interaction with a target distance
+      of F so as to avoid division by zero.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              A
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+     save_
+
+
+ 
+save_restr_distance_min.B
+    _definition.id             '_restr_distance_min.B'
+     loop_
+    _alias.definition_id       '_restr_distance_min_B'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      See _restr_distance_min.A for description.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              B
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_distance_min.C
+    _definition.id             '_restr_distance_min.C'
+     loop_
+    _alias.definition_id       '_restr_distance_min_C'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      See _restr_distance_min.A for description.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              C
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+     save_
+ 
+
+save_restr_distance_min.E
+    _definition.id             '_restr_distance_min.E'
+     loop_
+    _alias.definition_id       '_restr_distance_min_E'
+    _definition.update           2014-06-29
+    _description.text
+;
+      See _restr_distance_min.A for description.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              E
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+     save_
+
+
+save_restr_distance_min.F
+    _definition.id             '_restr_distance_min.F'
+     loop_
+    _alias.definition_id       '_restr_distance_min_F'
+    _definition.update           2014-06-29
+    _description.text
+;
+      See _restr_distance_min.A for description.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              F
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms
+     save_
+
+
+save_restr_distance_min.G
+    _definition.id             '_restr_distance_min.G'
+     loop_
+    _alias.definition_id       '_restr_distance_min_G'
+    _definition.update           2014-06-29
+    _description.text
+;
+      See _restr_distance_min.A for description.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              G
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms
+     save_
+
+
+save_restr_distance_min.details
+    _definition.id             '_restr_distance_min.details'
+     loop_
+    _alias.definition_id       '_restr_distance_min_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description of the restraint giving details not
+      given elsewhere.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_distance_min.difference
+    _definition.id             '_restr_distance_min.difference'
+     loop_
+    _alias.definition_id       '_restr_distance_min_difference'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The difference in angstroms between the refined distance
+      of approach of the two atoms and the target distance B or F:
+
+      difference = D - B or D - F
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              difference
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_distance_min.distance
+    _definition.id             '_restr_distance_min.distance'
+     loop_
+    _alias.definition_id       '_restr_distance_min_distance'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The refined distance, D, between the two atoms.
+;
+    _name.category_id            restr_distance_min
+    _name.object_id              distance
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+
+     save_    #----------- close of RESTR_DISTANCE_MIN category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_EQUAL_ANGLE
+    _definition.id               RESTR_EQUAL_ANGLE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category list the atoms defining the angles
+      that are restrained to be equal in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_EQUAL_ANGLE
+    _category.key_id          '_restr_equal_angle.id'
+    _category.key_list       ['_restr_equal_angle.atom_site_label_1',
+                              '_restr_equal_angle.site_symmetry_1',
+                              '_restr_equal_angle.atom_site_label_2',
+                              '_restr_equal_angle.site_symmetry_2',
+                              '_restr_equal_angle.atom_site_label_3',
+                              '_restr_equal_angle.site_symmetry_3']
+
+
+save_restr_equal_angle.id
+    _definition.id             '_restr_equal_angle.id'
+     loop_
+    _alias.definition_id       '_restr_equal_angle.id'
+    _definition.update           2014-06-29
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     three atom sites which identify the equal_angle. The second label-symop
+     pair in the list identifies the site at the apex of the equal_angle.
+;
+    _name.category_id            restr_equal_angle
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [3]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_equal_angle
+
+    _restr_equal_angle.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                              [ a.atom_site_label_2, a.site_symmetry_2 ],
+                              [ a.atom_site_label_3, a.site_symmetry_3 ]]
+;
+     save_
+
+save_restr_equal_angle.atom_site_label_1
+    _definition.id             '_restr_equal_angle.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_angle
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_equal_angle.atom_site_label_2
+    _definition.id             '_restr_equal_angle.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_angle
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_equal_angle.atom_site_label_3
+    _definition.id             '_restr_equal_angle.atom_site_label_3'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_atom_site_label_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_angle
+    _name.object_id              atom_site_label_3
+     save_
+
+
+save_restr_equal_angle.site_symmetry_1
+    _definition.id             '_restr_equal_angle.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_angle
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_equal_angle.site_symmetry_2
+    _definition.id             '_restr_equal_angle.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_angle
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_equal_angle.site_symmetry_3
+    _definition.id             '_restr_equal_angle.site_symmetry_3'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_site_symmetry_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_angle
+    _name.object_id              site_symmetry_3
+     save_
+
+ 
+save_restr_equal_angle.class_id
+    _definition.id             '_restr_equal_angle.class_id'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string identifying the class of equal angles
+      to which this angle belongs.
+;
+    _name.category_id            restr_equal_angle
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_equal_angle.details
+    _definition.id             '_restr_equal_angle.details'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of an angle in
+      a class of angles that are restrained to be equal.
+;
+    _name.category_id            restr_equal_angle
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+     save_    #----------- close of RESTR_EQUAL_ANGLE category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_EQUAL_ANGLE_CLASS
+    _definition.id               RESTR_EQUAL_ANGLE_CLASS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category give details of the target angles
+      for each class of angles that are restrained to be equal
+      in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_EQUAL_ANGLE_CLASS
+    _category.key_id          '_restr_equal_angle_class.class_id' 
+    _category.key_list       ['_restr_equal_angle_class.class_id']
+ 
+ 
+save_restr_equal_angle_class.average
+    _definition.id             '_restr_equal_angle_class.average'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_average'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The average angle in the class of angles restrained to
+      be the same after refinement.
+;
+    _name.category_id            restr_equal_angle_class
+    _name.object_id              average
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  degrees
+     save_
+ 
+
+save_restr_equal_angle_class.average_su
+    _definition.id             '_restr_equal_angle_class.average_su'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_esd'
+    _definition.update           2014-06-29
+    _description.text
+;
+      The actual estimated standard deviation of the angles in the
+      class from their average after refinement.
+      This number is expected to be similar to the value set for
+      _restr_equal_angle_class.target_weight_param.
+;
+    _name.category_id            restr_equal_angle_class
+    _name.object_id              average_su
+    _type.purpose                SU
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  degrees
+     save_
+
+ 
+save_restr_equal_angle_class.class_id
+    _definition.id             '_restr_equal_angle_class.class_id'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string that identifies the class of angles
+      whose properties are described.
+;
+    _name.category_id            restr_equal_angle_class
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_equal_angle_class.detail
+    _definition.id             '_restr_equal_angle_class.detail'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_detail'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of the class of angles that
+      are restrained to be equal.
+;
+    _name.category_id            restr_equal_angle_class
+    _name.object_id              detail
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_equal_angle_class.diff_max
+    _definition.id             '_restr_equal_angle_class.diff_max'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_diff_max'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The maximum deviation of an angle in the class from the
+      class average after refinement.
+;
+    _name.category_id            restr_equal_angle_class
+    _name.object_id              diff_max
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  degrees
+     save_
+ 
+ 
+save_restr_equal_angle_class.target_weight_param
+    _definition.id             '_restr_equal_angle_class.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The weighting parameter = sqrt(1/weight).
+      The expectation value of the estimated standard deviation of
+      the angles in the class from their average after refinement.
+      This value determines the weight assigned to the restraint.
+      If it is zero the angles are constrained to be equal.
+      The default value is zero.
+;
+    _name.category_id            restr_equal_angle_class
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+     save_
+ 
+     save_     #--------- close the RESTR_EQUAL_ANGLE_CLASS category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_EQUAL_DISTANCE
+    _definition.id               RESTR_EQUAL_DISTANCE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category list the atoms defining the distances
+      that are restrained to be equal in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_EQUAL_DISTANCE
+    _category.key_id          '_restr_equal_distance.id'
+    _category.key_list       ['_restr_equal_distance.atom_site_label_1',
+                              '_restr_equal_distance.site_symmetry_1',
+                              '_restr_equal_distance.atom_site_label_2',
+                              '_restr_equal_distance.site_symmetry_2']
+
+save_restr_equal_distance.id
+    _definition.id             '_restr_equal_distance.id'
+     loop_
+    _alias.definition_id       '_restr_equal_distance.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond equal_distance in terms of the atom site labels and
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _name.category_id            restr_equal_distance
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_equal_distance
+
+    _restr_equal_distance.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                                 [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+ 
+
+save_restr_equal_distance.atom_site_label_1
+    _definition.id             '_restr_equal_distance.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_distance
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_equal_distance.atom_site_label_2
+    _definition.id             '_restr_equal_distance.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_distance
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_equal_distance.site_symmetry_1
+    _definition.id             '_restr_equal_distance.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_distance
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_equal_distance.site_symmetry_2
+    _definition.id             '_restr_equal_distance.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_distance
+    _name.object_id              site_symmetry_2
+     save_
+
+ 
+save_restr_equal_distance.class_id
+    _definition.id             '_restr_equal_distance.class_id'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string identifying the class of equal distances
+      to which this distance belongs.
+;
+    _name.category_id            restr_equal_distance
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_equal_distance.details
+    _definition.id             '_restr_equal_distance.details'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of a distance in
+      a class of distances that are restrained to be equal.
+;
+    _name.category_id            restr_equal_distance
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+     save_     #--------- close the RESTR_EQUAL_DISTANCE category 
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_EQUAL_DISTANCE_CLASS
+    _definition.id               RESTR_EQUAL_DISTANCE_CLASS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category give details of the target distances
+      for each class of distances that are restrained to be equal
+      in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_EQUAL_DISTANCE_CLASS
+    _category.key_id          '_restr_equal_distance_class.class_id' 
+    _category.key_list       ['_restr_equal_distance_class.class_id']
+ 
+ 
+save_restr_equal_distance_class.average
+    _definition.id             '_restr_equal_distance_class.average'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_average'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The average distance in the class of distances restrained to
+      be the same after refinement.
+;
+    _name.category_id            restr_equal_distance_class
+    _name.object_id              average
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+ 
+
+save_restr_equal_distance_class.average_su
+    _definition.id             '_restr_equal_distance_class.average_su'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_esd'
+    _definition.update           2014-06-29
+    _description.text
+;
+      The actual estimated standard deviation of the distances in the
+      class from their average after refinement.
+      This number is expected to be similar to the value set for
+      _restr_equal_distance_class.target_weight_param.
+;
+    _name.category_id            restr_equal_distance_class
+    _name.object_id              average_su
+    _type.purpose                SU
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+
+ 
+save_restr_equal_distance_class.class_id
+    _definition.id             '_restr_equal_distance_class.class_id'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string that identifies the class of distances
+      whose properties are described.
+;
+    _name.category_id            restr_equal_distance_class
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_equal_distance_class.details
+    _definition.id             '_restr_equal_distance_class.details'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of the class of distances that
+      are restrained to be equal.
+;
+    _name.category_id            restr_equal_distance_class
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_equal_distance_class.diff_max
+    _definition.id             '_restr_equal_distance_class.diff_max'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_diff_max'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The maximum deviation of a distance in the class from the
+      class average after refinement.
+;
+    _name.category_id            restr_equal_distance_class
+    _name.object_id              diff_max
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_equal_distance_class.target_weight_param
+    _definition.id             '_restr_equal_distance_class.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_equal_distance_class_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The weighting parameter = sqrt(1/weight).
+      The expectation value of the estimated standard deviation of the
+      distances in the class from their average after refinement.
+      This value determines the weight assigned to the restraint.
+      If it is zero the distances are constrained to be equal.
+      The default value is zero.
+;
+    _name.category_id            restr_equal_distance_class
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+    _units.code                  angstroms
+     save_
+ 
+     save_     #--------- close the RESTR_EQUAL_DISTANCE_CLASS category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_EQUAL_TORSION
+    _definition.id               RESTR_EQUAL_TORSION
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category list the atoms defining the
+      torsion angles that are restrained to be equal in
+      the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_EQUAL_TORSION
+    _category.key_id          '_restr_equal_torsion.id'
+    _category.key_list       ['_restr_equal_torsion.atom_site_label_1',
+                              '_restr_equal_torsion.site_symmetry_1',
+                              '_restr_equal_torsion.atom_site_label_2',
+                              '_restr_equal_torsion.site_symmetry_2',
+                              '_restr_equal_torsion.atom_site_label_3',
+                              '_restr_equal_torsion.site_symmetry_3',
+                              '_restr_equal_torsion.atom_site_label_4',
+                              '_restr_equal_torsion.site_symmetry_4']
+
+
+save_restr_equal_torsion.id
+    _definition.id             '_restr_equal_torsion.id'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion.id'
+    _definition.update           2014-06-29
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     four atom sites which define the torsion angle.
+;
+    _name.category_id            restr_equal_torsion
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [4]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_equal_torsion
+
+    _restr_equal_torsion.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                                [ a.atom_site_label_2, a.site_symmetry_2 ],
+                                [ a.atom_site_label_3, a.site_symmetry_3 ],
+                                [ a.atom_site_label_4, a.site_symmetry_4 ]]
+;
+     save_
+ 
+
+save_restr_equal_torsion.atom_site_label_1
+    _definition.id             '_restr_equal_torsion.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_equal_torsion.atom_site_label_2
+    _definition.id             '_restr_equal_torsion.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_equal_torsion.atom_site_label_3
+    _definition.id             '_restr_equal_torsion.atom_site_label_3'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_atom_site_label_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              atom_site_label_3
+     save_
+
+
+save_restr_equal_torsion.atom_site_label_4
+    _definition.id             '_restr_equal_torsion.atom_site_label_4'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_atom_site_label_4'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              atom_site_label_4
+     save_
+
+
+save_restr_equal_torsion.site_symmetry_1
+    _definition.id             '_restr_equal_torsion.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_equal_torsion.site_symmetry_2
+    _definition.id             '_restr_equal_torsion.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_equal_torsion.site_symmetry_3
+    _definition.id             '_restr_equal_torsion.site_symmetry_3'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_site_symmetry_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              site_symmetry_3
+     save_
+
+
+save_restr_equal_torsion.site_symmetry_4
+    _definition.id             '_restr_equal_torsion.site_symmetry_4'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_site_symmetry_4'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_equal_torsion
+    _name.object_id              site_symmetry_4
+     save_
+
+ 
+save_restr_equal_torsion.class_id
+    _definition.id             '_restr_equal_torsion.class_id'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string identifying the class of equal torsion
+      angles to which this torsion angle belongs.
+;
+    _name.category_id            restr_equal_torsion
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_equal_torsion.details
+    _definition.id             '_restr_equal_torsion.details'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of a torsion angle in
+      a class of torsion angles that are restrained to be equal.
+;
+    _name.category_id            restr_equal_torsion
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+     save_     #--------- close the RESTR_EQUAL_TORSION category 
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_EQUAL_TORSION_CLASS
+    _definition.id               RESTR_EQUAL_TORSION_CLASS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category give details of the target torsion
+      angles for each class of torsion angles that are restrained
+      to be equal in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_EQUAL_TORSION_CLASS
+    _category.key_id          '_restr_equal_torsion_class.class_id' 
+    _category.key_list       ['_restr_equal_torsion_class.class_id']
+ 
+ 
+save_restr_equal_torsion_class.average
+    _definition.id             '_restr_equal_torsion_class.average'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_average'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The average torsion angle in the class of torsion angles
+      restrained to be the same after refinement.
+;
+    _name.category_id            restr_equal_torsion_class
+    _name.object_id              average
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstroms
+    _enumeration.range           0:
+     save_
+ 
+
+save_restr_equal_torsion_class.average_su
+    _definition.id             '_restr_equal_torsion_class.average_su'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_esd'
+    _definition.update           2014-06-29
+    _description.text
+;
+      The actual estimated standard deviation of the distances in the
+      class from their average after refinement.
+      This number is expected to be similar to the value set for
+      _restr_equal_torsion_class.target_weight_param.
+;
+    _name.category_id            restr_equal_torsion_class
+    _name.object_id              average_su
+    _type.purpose                SU
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+
+ 
+save_restr_equal_torsion_class.class_id
+    _definition.id             '_restr_equal_torsion_class.class_id'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string that identifies the class of torsion
+      angles whose properties are described.
+;
+    _name.category_id            restr_equal_torsion_class
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_equal_torsion_class.details
+    _definition.id             '_restr_equal_torsion_class.details'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of the class of torsion
+      angles that are restrained to be equal.
+;
+    _name.category_id            restr_equal_torsion_class
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_equal_torsion_class.diff_max
+    _definition.id             '_restr_equal_torsion_class.diff_max'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_diff_max'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The maximum deviation of a torsion angle in the class
+      from the class average after refinement.
+;
+    _name.category_id            restr_equal_torsion_class
+    _name.object_id              diff_max
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_equal_torsion_class.target_weight_param
+    _definition.id             '_restr_equal_torsion_class.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_equal_torsion_class_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The weighting parameter = sqrt(1/weight).  This is the 
+      expectation value of the estimated standard deviation 
+      (given in _restr_equal_torsion_class.average_su)
+      of the torsion angles in the class from their
+      average after refinement.
+      This value determines the weight assigned to the target.
+      If it is zero the torsion angles are constrained to be equal.
+      The default value is zero.
+;
+    _name.category_id            restr_equal_torsion_class
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+    _units.code                  angstroms
+     save_
+ 
+     save_     #--------- close the RESTR_EQUAL_TORSION_CLASS category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_PARAMETER
+    _definition.id               RESTR_PARAMETER
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      This restraint, which will normally be used to restrain
+      the total occupancy of an atom site, can be used to
+      restrain the value of
+      SUM(over the specified atoms){\PARAMETER*COEFFICIENT\}
+      where PARAMETER will usually be the value of the
+      occupancy (but other allowed quantities such as x, y
+      and z can be specified in the enumeration) and
+      COEFFICIENT is a user-defined number with a default
+      value of 1.0. The restraint requires two loops; the
+      first defines the atoms in each sum (class) and the
+      second describes the properties of the class.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_PARAMETER
+    _category.key_id          '_restr_parameter.id' 
+    _category.key_list       ['_restr_parameter.id']
+ 
+ 
+save_restr_parameter.atom_coefficient
+    _definition.id             '_restr_parameter.atom_coefficient'
+     loop_
+    _alias.definition_id       '_restr_parameter_atom_coefficient'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A parameter that scales the quantity being restrained.
+      It can be used to convert a constraint on occupancy to
+      a constraint on ionic charge.
+;
+    _name.category_id            restr_parameter
+    _name.object_id              atom_coefficient
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         1.
+     save_
+ 
+ 
+save_restr_parameter.atom_site_label
+    _definition.id             '_restr_parameter_atom.site_label'
+     loop_
+    _alias.definition_id       '_restr_parameter_atom_site_label'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The atom-site label for an atom in this class.
+;
+    _name.category_id            restr_parameter
+    _name.object_id              atom_site_label
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_parameter.class_id
+    _definition.id             '_restr_parameter.class_id'
+     loop_
+    _alias.definition_id       '_restr_parameter_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The identifier of the class of restraint applied to the atoms.
+;
+    _name.category_id            restr_parameter
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_parameter.id
+    _definition.id             '_restr_parameter.id'
+     loop_
+    _alias.definition_id       '_restr_parameter_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A unique identifier for each line in a loop.
+;
+    _name.category_id            restr_parameter
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+     save_     #--------- close the RESTR_PARAMETER category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_PARAMETER_CLASS
+    _definition.id               RESTR_PARAMETER_CLASS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      This restraint, which will normally be used to restrain
+      the total occupancy of an atom site, can be used to
+      restrain the value of
+      SUM(over the specified atoms){\PARAMETER*COEFFICIENT\}
+      where PARAMETER will usually be the value of the occupancy
+      (but other allowed quantities such as x, y and z can be
+      specified in the enumeration) and COEFFICIENT is a user-defined
+      number with a default value of 1.0.
+      The restraint requires two loops, the first defines the
+      atoms in each sum (class) and the second describes the
+      properties of the class.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_PARAMETER_CLASS
+    _category.key_id          '_restr_parameter_class.class_id' 
+    _category.key_list       ['_restr_parameter_class.class_id']
+ 
+ 
+save_restr_parameter_class.class_id
+    _definition.id             '_restr_parameter_class.class_id'
+     loop_
+    _alias.definition_id       '_restr_parameter_class_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The class ID of the restraint described in this category.
+;
+    _name.category_id            restr_parameter_class
+    _name.object_id              class_id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_parameter_class.details
+    _definition.id             '_restr_parameter_class.details'
+     loop_
+    _alias.definition_id       '_restr_parameter_class_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description of the restraint.
+;
+    _name.category_id            restr_parameter_class
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_parameter_class.parameter_type
+    _definition.id             '_restr_parameter_class.parameter_type'
+     loop_
+    _alias.definition_id       '_restr_parameter_class_parameter_type'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A flag that indicates the nature of the restrained value.
+;
+    _name.category_id            restr_parameter_class
+    _name.object_id              parameter_type
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     loop_                                           
+    _enumeration_set.state                           
+    _enumeration_set.detail                          
+         'occupancy'   'atom_site.occupancy'  
+         'position_x'  'atom_site.fract_x'  
+         'position_y'  'atom_site.fract_y'  
+         'position_z'  'atom_site.fract_z'  
+     save_
+ 
+ 
+save_restr_parameter_class.target
+    _definition.id             '_restr_parameter_class.target'
+     loop_
+    _alias.definition_id       '_restr_parameter_class_target'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The target value for the sum of values of the appropriate
+      parameter type multiplied by the _*.target_weight_param.
+;
+    _name.category_id            restr_parameter_class
+    _name.object_id              target
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+     save_
+ 
+ 
+save_restr_parameter_class.target_weight_param
+    _definition.id             '_restr_parameter_class.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_parameter_class_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Weighting parameter = sqrt(1/weight).
+      It is the expectation value of the difference between
+      the refined value of the sum(parameter*coefficient)
+      and the _*_target.
+      If this parameter is set to zero, the sum will be constrained
+      to refine to the target value.
+      If this item is absent, its value will be taken as zero
+      and the distance will be constrained.
+;
+    _name.category_id            restr_parameter_class
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0
+     save_
+ 
+     save_     #--------- close the RESTR_PARAMETER_CLASS category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_PLANE
+    _definition.id               RESTR_PLANE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category define the atoms that make up
+      each class of plane.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_PLANE
+    _category.key_id          '_restr_plane.id' 
+    _category.key_list       ['_restr_plane.id']
+ 
+ 
+save_restr_plane.atom_site_label
+    _definition.id             '_restr_plane.atom_site_label'
+     loop_
+    _alias.definition_id       '_restr_plane_atom_site_label'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      An atom-site label of one of the atoms that form the plane.
+;
+    _name.category_id            restr_plane
+    _name.object_id              atom_site_label
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_plane.class_id
+    _definition.id             '_restr_plane.class_id'
+     loop_
+    _alias.definition_id       '_restr_plane_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string that identifies the plane
+      to which this atom is constrained.
+;
+    _name.category_id            restr_plane
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_plane.details
+    _definition.id             '_restr_plane.details'
+     loop_
+    _alias.definition_id       '_restr_plane_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text string giving details not described elsewhere.
+;
+    _name.category_id            restr_plane
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_plane.displacement
+    _definition.id             '_restr_plane.displacement'
+     loop_
+    _alias.definition_id       '_restr_plane_displacement'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The distance between this atom and the best plane through
+      all the atoms.
+;
+    _name.category_id            restr_plane
+    _name.object_id              displacement
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_plane.id
+    _definition.id             '_restr_plane.id'
+     loop_
+    _alias.definition_id       '_restr_plane_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A unique identifier for each line in the list.
+;
+    _name.category_id            restr_plane
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_plane.site_symmetry
+    _definition.id             '_restr_plane.site_symmetry'
+     loop_
+    _alias.definition_id       '_restr_plane_site_symmetry'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The site symmetry of the atom that helps to define the plane
+      to which it is restrained.
+;
+    _name.category_id            restr_plane
+    _name.object_id              site_symmetry
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Symop
+     save_
+ 
+ 
+save_restr_plane.target_weight_param
+    _definition.id             '_restr_plane.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_plane_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The weighting parameter = sqrt(1/weight).
+      The expectation value of the distance in angstroms
+      between this atom and the best plane through all
+      the atoms of the class.
+;
+    _name.category_id            restr_plane
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0.0
+    _units.code                  angstroms
+     save_
+ 
+     save_     #--------- close the RESTR_PLANE category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_PLANE_CLASS
+    _definition.id               RESTR_PLANE_CLASS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category describe the properties of
+      the different groups of atoms that are restrained
+      to form a plane.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_PLANE_CLASS
+    _category.key_id          '_restr_plane_class.class_id' 
+    _category.key_list       ['_restr_plane_class.class_id']
+ 
+ 
+save_restr_plane_class.class_id
+    _definition.id             '_restr_plane_class.class_id'
+     loop_
+    _alias.definition_id       '_restr_plane_class_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+     Class identifier for the plane whose properties are described.
+;
+    _name.category_id            restr_plane_class
+    _name.object_id              class_id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_plane_class.details
+    _definition.id             '_restr_plane_class.details'
+     loop_
+    _alias.definition_id       '_restr_plane_class_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+     Text describing any special features of the restraint.
+;
+    _name.category_id            restr_plane_class
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_plane_class.displacement_su
+    _definition.id             '_restr_plane_class.displacement_su'
+     loop_
+    _alias.definition_id       '_restr_plane_class_displacement_esd'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The observed standard uncertainty of atoms in this plane.
+;
+    _name.category_id            restr_plane_class
+    _name.object_id              displacement_su
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_plane_class.displacement_max
+    _definition.id             '_restr_plane_class.displacement_max'
+     loop_
+    _alias.definition_id       '_restr_plane_class_displacement_max'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The distance in angstroms from the plane to the atom furthest
+      removed from the plane.
+;
+    _name.category_id            restr_plane_class
+    _name.object_id              displacement_max
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _units.code                  angstroms
+     save_
+ 
+ 
+save_restr_plane_class.displacement_max_atom_site_label
+    _definition.id       '_restr_plane_class.displacement_max_atom_site_label'
+     loop_
+    _alias.definition_id '_restr_plane_class_displacement_max_atom_site_label'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The atom-site label of the atom that lies furthest
+      from the plane defined by this class.
+;
+    _name.category_id            restr_plane_class
+    _name.object_id              displacement_max_atom_site_label
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_plane_class.displacement_max_site_symmetry
+    _definition.id        '_restr_plane_class.displacement_max_site_symmetry'
+     loop_
+    _alias.definition_id  '_restr_plane_class_displacement_max_site_symmetry'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The site symmetry of the atom lying furthest from the plane
+      to which it is restrained.
+;
+    _name.category_id            restr_plane_class
+    _name.object_id              displacement_max_site_symmetry
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Symop
+     save_
+ 
+     save_     #--------- close the RESTR_PLANE_CLASS category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_RIGID_BODY
+    _definition.id               RESTR_RIGID_BODY
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category list the atoms defining one or
+      more bodies that are constrained to be rigid in the final
+      refinement.  This is done by listing the atom-site label
+      and symmetry operation for each atom in each rigid body.
+
+      Since rigid bodies are only constrained, not restrained,
+      the rigid body is adequately defined by the refined coordinate
+      in the atom_site list. A second category,
+      RESTR_RIGID_BODY_CLASS, permits a description
+      of each rigid body to be given in a *_details item.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_RIGID_BODY
+    _category.key_id          '_restr_rigid_body.id'
+    _category.key_list       ['_restr_rigid_body.id']
+ 
+ 
+save_restr_rigid_body.id
+    _definition.id             '_restr_rigid_body.id'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A unique identifier for each atom in the list of atoms in the
+      RESTR_RIGID_BODY category.
+;
+    _name.category_id            restr_rigid_body
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_rigid_body.class_id
+    _definition.id             '_restr_rigid_body.class_id'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string identifying a rigid body.
+;
+    _name.category_id            restr_rigid_body
+    _name.object_id              class_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_rigid_body.atom_site_label
+    _definition.id             '_restr_rigid_body.atom_site_label'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_atom_site_label'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The atom-site labels of an atom in a rigid body.
+;
+    _name.category_id            restr_rigid_body
+    _name.object_id              atom_site_label
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_rigid_body.site_symmetry
+    _definition.id             '_restr_rigid_body.site_symmetry'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_site_symmetry'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The site symmetry of an atom in a rigid body.
+;
+    _name.category_id            restr_rigid_body
+    _name.object_id              site_symmetry
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Symop
+     save_
+ 
+ 
+save_restr_rigid_body.details
+    _definition.id             '_restr_rigid_body.details'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of a rigid body in
+      a class of rigid bodies that are constrained to be equal.
+;
+    _name.category_id            restr_rigid_body
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+     save_     #--------- close the RESTR_RIGID_BODY category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_RIGID_BODY_CLASS
+    _definition.id               RESTR_RIGID_BODY_CLASS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category give details of the different rigid
+      bodies as defined by _restr_rigid_body.class_id
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_RIGID_BODY_CLASS
+    _category.key_id          '_restr_rigid_body_class.class_id' 
+    _category.key_list       ['_restr_rigid_body_class.class_id']
+ 
+ 
+save_restr_rigid_body_class.class_id
+    _definition.id             '_restr_rigid_body_class.class_id'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_class_class_id'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A character string that identifies the rigid body.
+      It must match one of the values of _restr_rigid_body.class_id.
+;
+    _name.category_id            restr_rigid_body_class
+    _name.object_id              class_id
+    _name.linked_item_id       '_restr_rigid_body.class_id'
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_rigid_body_class.details
+    _definition.id             '_restr_rigid_body_class.details'
+     loop_
+    _alias.definition_id       '_restr_rigid_body_class_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A text description giving details of a rigid body.
+;
+    _name.category_id            restr_rigid_body_class
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+     save_     #--------- close the RESTR_RIGID_BODY_CLASS category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_TORSION
+    _definition.id               RESTR_TORSION
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Items in this category define torsion angles that were
+      restrained in the final refinement.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_TORSION
+    _category.key_id          '_restr_torsion.id'
+    _category.key_list       ['_restr_torsion.atom_site_label_1',
+                              '_restr_torsion.site_symmetry_1',
+                              '_restr_torsion.atom_site_label_2',
+                              '_restr_torsion.site_symmetry_2',
+                              '_restr_torsion.atom_site_label_3',
+                              '_restr_torsion.site_symmetry_3',
+                              '_restr_torsion.atom_site_label_4',
+                              '_restr_torsion.site_symmetry_4']
+
+
+save_restr_torsion.id
+    _definition.id             '_restr_torsion.id'
+     loop_
+    _alias.definition_id       '_restr_torsion.id'
+    _definition.update           2014-06-29
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     four atom sites which define the torsion angle.
+;
+    _name.category_id            restr_torsion
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [4]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_torsion
+
+    _restr_torsion.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                          [ a.atom_site_label_2, a.site_symmetry_2 ],
+                          [ a.atom_site_label_3, a.site_symmetry_3 ],
+                          [ a.atom_site_label_4, a.site_symmetry_4 ]]
+;
+     save_
+
+ 
+save_restr_torsion.angle_target
+    _definition.id             '_restr_torsion.angle_target'
+     loop_
+    _alias.definition_id       '_restr_torsion_angle_target'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The angle in degrees to which the torsion angle is restrained.
+      The torsion angle is the dihedral angle between the plane defined
+      by atoms 1, 2 and 3, and the plane defined by atoms 2, 3 and 4.
+;
+    _name.category_id            restr_torsion
+    _name.object_id              angle_target
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180:180
+    _units.code                  degrees
+     save_
+ 
+
+save_restr_torsion.atom_site_label_1
+    _definition.id             '_restr_torsion.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_torsion_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_torsion
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_torsion.atom_site_label_2
+    _definition.id             '_restr_torsion.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_torsion_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_torsion
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_torsion.atom_site_label_3
+    _definition.id             '_restr_torsion.atom_site_label_3'
+     loop_
+    _alias.definition_id       '_restr_torsion_atom_site_label_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_torsion
+    _name.object_id              atom_site_label_3
+     save_
+
+
+save_restr_torsion.atom_site_label_4
+    _definition.id             '_restr_torsion.atom_site_label_4'
+     loop_
+    _alias.definition_id       '_restr_torsion_atom_site_label_4'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_torsion
+    _name.object_id              atom_site_label_4
+     save_
+
+
+save_restr_torsion.site_symmetry_1
+    _definition.id             '_restr_torsion.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_torsion_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_torsion
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_torsion.site_symmetry_2
+    _definition.id             '_restr_torsion.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_torsion_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_torsion
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_torsion.site_symmetry_3
+    _definition.id             '_restr_torsion.site_symmetry_3'
+     loop_
+    _alias.definition_id       '_restr_torsion_site_symmetry_3'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_torsion
+    _name.object_id              site_symmetry_3
+     save_
+
+
+save_restr_torsion.site_symmetry_4
+    _definition.id             '_restr_torsion.site_symmetry_4'
+     loop_
+    _alias.definition_id       '_restr_torsion_site_symmetry_4'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_torsion
+    _name.object_id              site_symmetry_4
+     save_
+
+ 
+save_restr_torsion.details
+    _definition.id             '_restr_torsion.details'
+     loop_
+    _alias.definition_id       '_restr_torsion_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      A free-text description of the restraint.
+;
+    _name.category_id            restr_torsion
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_torsion.diff
+    _definition.id             '_restr_torsion.diff'
+     loop_
+    _alias.definition_id       '_restr_torsion_diff'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The difference between the target and the refined torsion angle.
+;
+    _name.category_id            restr_torsion
+    _name.object_id              diff
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  degrees
+     save_
+ 
+ 
+save_restr_torsion.weight_param
+    _definition.id             '_restr_torsion.weight_param'
+     loop_
+    _alias.definition_id       '_restr_torsion_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Weighting parameter = sqrt(1/weight).
+      It is the expectation value of the difference between
+      the refined value and the target.
+      If this parameter is set to zero, the angle will be constrained
+      to refine to the target value.
+      If this item is absent, its value will be taken as zero
+      and the angle will be constrained.
+;
+    _name.category_id            restr_torsion
+    _name.object_id              weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+     save_
+ 
+     save_     #--------- close the RESTR_TORSION category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_U_ISO
+    _definition.id               RESTR_U_ISO
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      This restraint attempts to make an anisotropic
+      atomic displacement isotropic within the range of the
+      weighting parameter.  It corresponds to SHELX ISO.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_U_ISO
+    _category.key_id          '_restr_U_iso.atom_site_label'
+    _category.key_list       ['_restr_U_iso.atom_site_label']
+ 
+ 
+save_restr_U_iso.atom_site_label
+    _definition.id             '_restr_U_iso.atom_site_label'
+     loop_
+    _alias.definition_id       '_restr_U_iso_atom_site_label'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Label of the atom whose atomic displacement parameters
+      are restrained.
+;
+    _name.category_id            restr_U_iso
+    _name.object_id              atom_site_label
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+     save_
+ 
+ 
+save_restr_U_iso.weight_param
+    _definition.id             '_restr_U_iso.weight_param'
+     loop_
+    _alias.definition_id       '_restr_U_iso_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The expectation value of the difference between
+      the refined and the isotropic equivalent of the
+      anisotropic atomic displacement parameters.
+      The default value of zero indicates a constraint.
+;
+    _name.category_id            restr_U_iso
+    _name.object_id              weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+    _units.code                  reciprocal_angstrom_squared
+     save_
+ 
+     save_    #-------- close the RESTR_U_ISO category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_U_RIGID
+    _definition.id               RESTR_U_RIGID
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The items in this category restrains the anisotropic
+      displacement parameters of two atoms to be equal
+      within a certain *_target_weight_param along the
+      direction of the vector joining the atoms.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_U_RIGID
+    _category.key_id          '_restr_U_rigid.id'
+    _category.key_list       ['_restr_U_rigid.atom_site_label_1',
+                              '_restr_U_rigid.site_symmetry_1',
+                              '_restr_U_rigid.atom_site_label_2',
+                              '_restr_U_rigid.site_symmetry_2']
+
+save_restr_U_rigid.id
+    _definition.id             '_restr_U_rigid.id'
+     loop_
+    _alias.definition_id       '_restr_U_rigid.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond U_rigid in terms of the atom site labels and
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _name.category_id            restr_U_rigid
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_U_rigid
+
+    _restr_U_rigid.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                          [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+
+
+save_restr_U_rigid.atom_site_label_1
+    _definition.id             '_restr_U_rigid.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_U_rigid
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_U_rigid.atom_site_label_2
+    _definition.id             '_restr_U_rigid.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_U_rigid
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_U_rigid.site_symmetry_1
+    _definition.id             '_restr_U_rigid.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_U_rigid
+    _name.object_id              site_symmetry_1
+     save_
+      
+
+save_restr_U_rigid.site_symmetry_2
+    _definition.id             '_restr_U_rigid.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_U_rigid
+    _name.object_id              site_symmetry_2
+     save_
+
+ 
+save_restr_U_rigid.details
+    _definition.id             '_restr_U_rigid.details'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_details'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      Free-text information about the rigid-bond restraint.
+;
+    _name.category_id            restr_U_rigid
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+     save_
+ 
+ 
+save_restr_U_rigid.diff
+    _definition.id             '_restr_U_rigid.diff'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_diff'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The difference between the components along the bond direction
+      of the atomic displacement parameters, U, of the two atoms.
+;
+    _name.category_id            restr_U_rigid
+    _name.object_id              diff
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  angstrom_squared
+     save_
+ 
+ 
+save_restr_U_rigid.target_weight_param
+    _definition.id             '_restr_U_rigid.target_weight_param'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_target_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+     The weighting parameter = sqrt(1/weight).
+     The expectation value of the difference between the components
+     of the atomic displacement parameter, U,
+     along the bond direction of the two atoms that define the bond.
+     This number is used to assign a weight during refinement.
+     A value of zero causes the restraint to become a constraint.
+     This item has a default value of zero.
+;
+    _name.category_id            restr_U_rigid
+    _name.object_id              target_weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               real
+    _enumeration.default         0
+    _units.code                  angstrom_squared
+     save_
+ 
+ 
+save_restr_U_rigid.U_parallel
+    _definition.id             '_restr_U_rigid.U_parallel'
+     loop_
+    _alias.definition_id       '_restr_U_rigid_U_parallel'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The average value of the components parallel to the bond
+      of the atomic displacement parameters of the two atoms
+      that define the bond.
+;
+    _name.category_id            restr_U_rigid
+    _name.object_id              U_parallel
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0
+    _units.code                  angstrom_squared
+     save_
+ 
+     save_    #-------- close the RESTR_U_RIGID category
+ 
+#-------------------------------------------------------------------------------
+ 
+save_RESTR_U_SIMILAR
+    _definition.id               RESTR_U_SIMILAR
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-06-29
+    _description.text             
+;
+      This category forces the atomic displacement ellipsoids
+      of atom 2 to be equal to that of atom 1 within the range
+      of the weighting parameter.
+      This is the same as SHELX SIMU.
+;
+    _name.category_id           CIF_RSTR
+    _name.object_id             RESTR_U_SIMILAR
+    _category.key_id          '_restr_U_similar.id'
+    _category.key_list       ['_restr_U_similar.atom_site_label_1',
+                              '_restr_U_similar.site_symmetry_1',
+                              '_restr_U_similar.atom_site_label_2',
+                              '_restr_U_similar.site_symmetry_2']
+
+
+save_restr_U_similar.id
+    _definition.id             '_restr_U_similar.id'
+     loop_
+    _alias.definition_id       '_restr_U_similar.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond U_similar in terms of the atom site labels and
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _name.category_id            restr_U_similar
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents              'List(Code,Symop)'
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  restr_U_similar
+
+    _restr_U_similar.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                            [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+ 
+
+save_restr_U_similar.atom_site_label_1
+    _definition.id             '_restr_U_similar.atom_site_label_1'
+     loop_
+    _alias.definition_id       '_restr_U_similar_atom_site_label_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_U_similar
+    _name.object_id              atom_site_label_1
+     save_
+
+
+save_restr_U_similar.atom_site_label_2
+    _definition.id             '_restr_U_similar.atom_site_label_2'
+     loop_
+    _alias.definition_id       '_restr_U_similar_atom_site_label_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'restr_label'}]
+    _name.category_id            restr_U_similar
+    _name.object_id              atom_site_label_2
+     save_
+
+
+save_restr_U_similar.site_symmetry_1
+    _definition.id             '_restr_U_similar.site_symmetry_1'
+     loop_
+    _alias.definition_id       '_restr_U_similar_site_symmetry_1'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_U_similar
+    _name.object_id              site_symmetry_1
+     save_
+
+
+save_restr_U_similar.site_symmetry_2
+    _definition.id             '_restr_U_similar.site_symmetry_2'
+     loop_
+    _alias.definition_id       '_restr_U_similar_site_symmetry_2'
+    _import.get    [{"file":'templ_attr.cif',"save":'site_symmetry'}]
+    _name.category_id            restr_U_similar
+    _name.object_id              site_symmetry_2
+     save_
+
+
+save_restr_U_similar.weight_param
+    _definition.id             '_restr_U_similar.weight_param'
+     loop_
+    _alias.definition_id       '_restr_U_similar_weight_param'
+    _definition.update           2014-06-29
+    _description.text             
+;
+      The expectation value of the difference between the
+      anisotropic atomic displacement parameters
+      of the two atoms.
+      The default value of zero represents a constraint.
+;
+    _name.category_id            restr_U_similar
+    _name.object_id              weight_param
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:
+    _enumeration.default         0
+    _units.code                  reciprocal_angstrom_squared
+     save_
+ 
+     save_    #-------- close the RESTR_U_SIMILAR category
+
+     save_    #-------- close the CIF_RSTR category
+
+#----- eof ----- eof ----- eof ----- eof ----- eof ----- eof ----- eof 
