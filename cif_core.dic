@@ -485,8 +485,9 @@ save_exptl_crystal.density_meas_su
 ;
     _name.category_id            exptl_crystal
     _name.object_id              density_meas_su
+    _name.linked_item_id       '_exptl_crystal.density_meas'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -580,8 +581,9 @@ save_exptl_crystal.density_meas_temp_su
 ;
     _name.category_id            exptl_crystal
     _name.object_id              density_meas_temp_su
+    _name.linked_item_id       '_exptl_crystal.density_meas_temp'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1595,8 +1597,9 @@ save_cell.volume_su
 ;
     _name.category_id            cell
     _name.object_id              volume_su
+    _name.linked_item_id       '_cell.volume'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -1667,6 +1670,7 @@ save_cell_angle.alpha_su
     _import.get       [{"file":'templ_attr.cif',"save":'cell_angle_su'}]
     _name.category_id            cell_angle
     _name.object_id              alpha_su
+    _name.linked_item_id       '_cell_angle.alpha'
      save_
  
  
@@ -1679,6 +1683,7 @@ save_cell_angle.beta_su
     _import.get       [{"file":'templ_attr.cif',"save":'cell_angle_su'}]
     _name.category_id            cell_angle
     _name.object_id              beta_su
+    _name.linked_item_id       '_cell_angle.beta'
      save_
  
  
@@ -1691,6 +1696,7 @@ save_cell_angle.gamma_su
     _import.get       [{"file":'templ_attr.cif',"save":'cell_angle_su'}]
     _name.category_id            cell_angle
     _name.object_id              gamma_su
+    _name.linked_item_id       '_cell_angle.gamma'
      save_
  
      save_     #-------- close of CELL_ANGLE category
@@ -1758,6 +1764,7 @@ save_cell_length.a_su
     _import.get       [{"file":'templ_attr.cif',"save":'cell_length_su'}]
     _name.category_id            cell_length
     _name.object_id              a_su
+    _name.linked_item_id       '_cell_length.a'    
      save_
  
  
@@ -1770,6 +1777,7 @@ save_cell_length.b_su
     _import.get       [{"file":'templ_attr.cif',"save":'cell_length_su'}]
     _name.category_id            cell_length
     _name.object_id              b_su
+    _name.linked_item_id       '_cell_length.b'    
      save_
  
  
@@ -1782,6 +1790,7 @@ save_cell_length.c_su
     _import.get       [{"file":'templ_attr.cif',"save":'cell_length_su'}]
     _name.category_id            cell_length
     _name.object_id              c_su
+    _name.linked_item_id       '_cell_length.c'    
      save_
  
  
@@ -1937,8 +1946,9 @@ save_cell_measurement.pressure_su
 ;
     _name.category_id            cell_measurement
     _name.object_id              pressure_su
+    _name.linked_item_id       '_cell_measurement.pressure'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2026,8 +2036,9 @@ save_cell_measurement.temperature_su
 ;
     _name.category_id            cell_measurement
     _name.object_id              temperature_su
+    _name.linked_item_id       '_cell_measurement.temperature'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -2465,8 +2476,9 @@ save_cell_reciprocal_angle.alpha_su
 ;
     _name.category_id            cell_reciprocal_angle
     _name.object_id              alpha_su
+    _name.linked_item_id       '_cell_reciprocal_angle.alpha'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:180.
@@ -2522,8 +2534,9 @@ save_cell_reciprocal_angle.beta_su
 ;
     _name.category_id            cell_reciprocal_angle
     _name.object_id              beta_su
+    _name.linked_item_id       '_cell_reciprocal_angle.beta'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:180.
@@ -2650,8 +2663,9 @@ save_cell_reciprocal_length.a_su
 ;
     _name.category_id            cell_reciprocal_length
     _name.object_id              a_su
+    _name.linked_item_id       '_cell_reciprocal_length.a'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -2701,8 +2715,9 @@ save_cell_reciprocal_length.b_su
 ;
     _name.category_id            cell_reciprocal_length
     _name.object_id              b_su
+    _name.linked_item_id       '_cell_reciprocal_length.b'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -3440,8 +3455,9 @@ save_chemical.temperature_decomposition_su
 ;
     _name.category_id            chemical
     _name.object_id              temperature_decomposition_su
+    _name.linked_item_id       '_chemical.temperature_decomposition'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -3528,8 +3544,9 @@ save_chemical.temperature_sublimation_su
 ;
     _name.category_id            chemical
     _name.object_id              temperature_sublimation_su
+    _name.linked_item_id       '_chemical.temperature_sublimation'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -5255,8 +5272,9 @@ save_diffrn.ambient_temperature_su
 ;
     _name.category_id            diffrn
     _name.object_id              ambient_temperature_su
+    _name.linked_item_id       '_diffrn.ambient_temperature'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -7046,8 +7064,9 @@ save_diffrn_refln.intensity_net_su
 ;
     _name.category_id            diffrn_refln
     _name.object_id              intensity_net_su
+    _name.linked_item_id       '_diffrn_refln.intensity_net'
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0:
@@ -9087,7 +9106,7 @@ save_refln.F_meas_su
     _name.object_id              F_meas_su
     _name.linked_item_id       '_refln.F_meas'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.
@@ -9195,7 +9214,7 @@ save_refln.F_squared_meas_su
     _name.object_id              F_squared_meas_su
     _name.linked_item_id       '_refln.F_squared_meas'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.
@@ -9458,7 +9477,7 @@ save_refln.intensity_meas_su
     _name.object_id              intensity_meas_su
     _name.linked_item_id       '_refln.intensity_meas'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -11330,8 +11349,9 @@ save_atom_site.B_equiv_geom_mean_su
 ;
     _name.category_id            atom_site
     _name.object_id              B_equiv_geom_mean_su
+    _name.linked_item_id       '_atom_site.B_equiv_geom_mean'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -11389,8 +11409,9 @@ save_atom_site.B_iso_or_equiv_su
 ;
     _name.category_id            atom_site
     _name.object_id              B_iso_or_equiv_su
+    _name.linked_item_id       '_atom_site.B_iso_or_equiv'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -11517,6 +11538,7 @@ save_atom_site.Cartn_x_su
     _import.get         [{"file":'templ_attr.cif',"save":'Cartn_coord_su'}]
     _name.category_id            atom_site
     _name.object_id              Cartn_x_su
+    _name.linked_item_id       '_atom_site.Cartn_x'
      save_
  
  
@@ -11529,6 +11551,7 @@ save_atom_site.Cartn_y_su
     _import.get         [{"file":'templ_attr.cif',"save":'Cartn_coord_su'}]
     _name.category_id            atom_site
     _name.object_id              Cartn_y_su
+    _name.linked_item_id       '_atom_site.Cartn_y'
      save_
  
  
@@ -11541,6 +11564,7 @@ save_atom_site.Cartn_z_su
     _import.get         [{"file":'templ_attr.cif',"save":'Cartn_coord_su'}]
     _name.category_id            atom_site
     _name.object_id              Cartn_z_su
+    _name.linked_item_id       '_atom_site.Cartn_z'
      save_
  
  
@@ -11746,6 +11770,7 @@ save_atom_site.fract_x_su
     _import.get         [{"file":'templ_attr.cif',"save":'fract_coord_su'}]
     _name.category_id            atom_site
     _name.object_id              fract_x_su
+    _name.linked_item_id       '_atom_site.fract_x'
      save_
  
  
@@ -11758,6 +11783,7 @@ save_atom_site.fract_y_su
     _import.get         [{"file":'templ_attr.cif',"save":'fract_coord_su'}]
     _name.category_id            atom_site
     _name.object_id              fract_y_su
+    _name.linked_item_id       '_atom_site.fract_y'
      save_
  
  
@@ -11770,6 +11796,7 @@ save_atom_site.fract_z_su
     _import.get         [{"file":'templ_attr.cif',"save":'fract_coord_su'}]
     _name.category_id            atom_site
     _name.object_id              fract_z_su
+    _name.linked_item_id       '_atom_site.fract_z'
      save_
  
  
@@ -11903,8 +11930,9 @@ save_atom_site.occupancy_su
 ;
     _name.category_id            atom_site
     _name.object_id              occupancy_su
+    _name.linked_item_id       '_atom_site.occupancy'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:1.0
@@ -12208,8 +12236,9 @@ save_atom_site.U_equiv_geom_mean_su
 ;
     _name.category_id            atom_site
     _name.object_id              U_equiv_geom_mean_su
+    _name.linked_item_id       '_atom_site.U_equiv_geom_mean'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -12259,8 +12288,9 @@ save_atom_site.U_iso_or_equiv_su
 ;
     _name.category_id            atom_site
     _name.object_id              U_iso_or_equiv
+    _name.linked_item_id       '_atom_site.U_iso_or_equiv'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -12530,6 +12560,7 @@ save_atom_site_aniso.B_11_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_BIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              B_11_su
+    _name.linked_item_id       '_atom_site_aniso.B_11'
      save_
  
  
@@ -12543,6 +12574,7 @@ save_atom_site_aniso.B_12_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_BIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              B_12_su
+    _name.linked_item_id       '_atom_site_aniso.B_12'
      save_
  
  
@@ -12556,6 +12588,7 @@ save_atom_site_aniso.B_13_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_BIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              B_13_su
+    _name.linked_item_id       '_atom_site_aniso.B_13'
      save_
  
  
@@ -12569,6 +12602,7 @@ save_atom_site_aniso.B_22_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_BIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              B_22_su
+    _name.linked_item_id       '_atom_site_aniso.B_22'
      save_
  
  
@@ -12582,6 +12616,7 @@ save_atom_site_aniso.B_23_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_BIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              B_23_su
+    _name.linked_item_id       '_atom_site_aniso.B_23'
      save_
  
  
@@ -12595,6 +12630,7 @@ save_atom_site_aniso.B_33_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_BIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              B_33_su
+    _name.linked_item_id       '_atom_site_aniso.B_33'
      save_
  
 save_atom_site_aniso.matrix_U
@@ -12715,6 +12751,7 @@ save_atom_site_aniso.U_11_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_UIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              U_11_su
+    _name.linked_item_id       '_atom_site_aniso.U_11'
      save_
  
  
@@ -12728,6 +12765,7 @@ save_atom_site_aniso.U_12_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_UIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              U_12_su
+    _name.linked_item_id       '_atom_site_aniso.U_12'
      save_
  
  
@@ -12741,6 +12779,7 @@ save_atom_site_aniso.U_13_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_UIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              U_13_su
+    _name.linked_item_id       '_atom_site_aniso.U_13'
      save_
  
  
@@ -12754,6 +12793,7 @@ save_atom_site_aniso.U_22_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_UIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              U_22_su
+    _name.linked_item_id       '_atom_site_aniso.U_22'
      save_
  
  
@@ -12767,6 +12807,7 @@ save_atom_site_aniso.U_23_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_UIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              U_23_su
+    _name.linked_item_id       '_atom_site_aniso.U_23'
      save_
  
  
@@ -12780,6 +12821,7 @@ save_atom_site_aniso.U_33_su
     _import.get         [{"file":'templ_attr.cif',"save":'aniso_UIJ_su'}]
     _name.category_id            atom_site_aniso
     _name.object_id              U_33_su
+    _name.linked_item_id       '_atom_site_aniso.U_33'
      save_
  
  
@@ -14605,8 +14647,9 @@ save_refine_diff.density_max_su
 ;
     _name.category_id            refine_diff
     _name.object_id              density_max_su
+    _name.linked_item_id       '_refine_diff.density_max'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     save_
@@ -14656,8 +14699,9 @@ save_refine_diff.density_min_su
 ;
     _name.category_id            refine_diff
     _name.object_id              density_min_su
+    _name.linked_item_id       '_refine_diff.density_min'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     save_
@@ -14712,8 +14756,9 @@ save_refine_diff.density_rms_su
 ;
     _name.category_id            refine_diff
     _name.object_id              density_rms_su
+    _name.linked_item_id       '_refine_diff.density_rms'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     save_
@@ -14801,8 +14846,9 @@ save_refine_ls.abs_structure_Flack_su
 ;
     _name.category_id            refine_ls
     _name.object_id              abs_structure_Flack_su
+    _name.linked_item_id       '_refine_ls.abs_structure_Flack'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     save_
@@ -14849,8 +14895,9 @@ save_refine_ls.abs_structure_Rogers_su
 ;
     _name.category_id            refine_ls
     _name.object_id              abs_structure_Rogers_su
+    _name.linked_item_id       '_refine_ls.abs_structure_Rogers'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     save_
@@ -14953,8 +15000,9 @@ save_refine_ls.extinction_coef_su
 ;
     _name.category_id            refine_ls
     _name.object_id              extinction_coef_su
+    _name.linked_item_id       '_refine_ls.extinction_coef'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -15164,8 +15212,9 @@ save_refine_ls.goodness_of_fit_all_su
 ;
     _name.category_id            refine_ls
     _name.object_id              goodness_of_fit_all_su
+    _name.linked_item_id       '_refine_ls.goodness_of_fit_all'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -15231,8 +15280,9 @@ save_refine_ls.goodness_of_fit_gt_su
 ;
     _name.category_id            refine_ls
     _name.object_id              goodness_of_fit_gt_su
+    _name.linked_item_id       '_refine_ls.goodness_of_fit_gt'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -17170,8 +17220,9 @@ save_geom_angle.value_su
 ;
     _name.category_id            geom_angle
     _name.object_id              value_su
+    _name.linked_item_id       '_geom_angle.value'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _units.code                  degrees
@@ -17332,8 +17383,9 @@ save_geom_bond.distance_su
 ;
     _name.category_id            geom_bond
     _name.object_id              distance_su
+    _name.linked_item_id       '_geom_bond.distance'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -17632,8 +17684,9 @@ save_geom_contact.distance_su
 ;
     _name.category_id            geom_contact
     _name.object_id              distance_su
+    _name.linked_item_id       '_geom_contact.distance'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.:
@@ -17829,8 +17882,9 @@ save_geom_hbond.angle_DHA_su
 ;
     _name.category_id            geom_hbond
     _name.object_id              angle_DHA_su
+    _name.linked_item_id       '_geom_hbond.angle_DHA'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           -180.:180.
@@ -17925,8 +17979,9 @@ save_geom_hbond.distance_DH_su
 ;
     _name.category_id            geom_hbond
     _name.object_id              distance_DH_su
+    _name.linked_item_id       '_geom_hbond.distance_DH'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -17986,8 +18041,9 @@ save_geom_hbond.distance_HA_su
 ;
     _name.category_id            geom_hbond
     _name.object_id              distance_HA_su
+    _name.linked_item_id       '_geom_hbond.distance_HA'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -18047,8 +18103,9 @@ save_geom_hbond.distance_DA_su
 ;
     _name.category_id            geom_hbond
     _name.object_id              distance_DA_su
+    _name.linked_item_id       '_geom_hbond.distance_DA'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:
@@ -18423,8 +18480,9 @@ save_geom_torsion.angle_su
 ;
     _name.category_id            geom_torsion
     _name.object_id              angle_su
+    _name.linked_item_id       '_geom_torsion.angle'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _units.code                  degrees
