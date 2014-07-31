@@ -1,0 +1,1382 @@
+
+########################
+## DICTIONARY_HISTORY ##
+########################
+
+
+##############################################################################
+#                                                                            #
+#                       Image CIF Dictionary (imgCIF)                        #
+#             and Crystallographic Binary File Dictionary (CBF)              #
+#            Extending the Macromolecular CIF Dictionary (mmCIF)             #
+#                                                                            #
+#                             Version 1.7.11                                 #
+#                              of 2014-07-05                                 #
+#    ###################################################################     #
+#    # *** WARNING *** THIS IS A DRAFT FOR DISCUSSSION *** WARNING *** #     #
+#    #                 SUBJECT TO CHANGE WITHOUT NOTICE                #     #
+#    #       SEND COMMENTS TO imgcif-l@iucr.org CITING THE VERSION     #     #
+#    ###################################################################     #
+#                  This draft edited by H. J. Bernstein                      #
+#                                                                            #
+#     by Andrew P. Hammersley, Herbert J. Bernstein and John D. Westbrook    #
+#                                                                            #
+# This dictionary was adapted from format discussed at the imgCIF Workshop,  #
+# held at BNL Oct 1997 and the Crystallographic Binary File Format Draft     #
+# Proposal by Andrew Hammersley.  The first DDL 2.1 Version was created by   #
+# John Westbrook.  This version was drafted by Herbert J. Bernstein and      #
+# incorporates comments by I. David Brown, John Westbrook, Brian McMahon,    #
+# Bob Sweet, Paul Ellis, Harry Powell, Wilfred Li, Gotzon Madariaga,         #
+# Frances C. Bernstein, Chris Nielsen, Nicola Ashcroft and others.           #
+##############################################################################
+
+##############################################################################
+#    CONTENTS
+#
+#        CATEGORY_GROUP_LIST
+#        SUB_CATEGORY
+#
+#        category  ARRAY_DATA
+#
+#                  _array_data.array_id
+#                  _array_data.binary_id
+#                  _array_data.data
+#                  _array_data.header_contents
+#                  _array_data.header_convention
+#                  _array_data.variant
+#
+#        category  ARRAY_ELEMENT_SIZE
+#
+#                  _array_element_size.array_id
+#                  _array_element_size.index
+#                  _array_element_size.size
+#                  _array_element_size.variant
+#
+#        category  ARRAY_INTENSITIES
+#
+#                  _array_intensities.array_id
+#                  _array_intensities.binary_id
+#                  _array_intensities.details
+#                  _array_intensities.gain
+#                  _array_intensities.gain_esd
+#                  _array_intensities.linearity
+#                  _array_intensities.offset
+#                  _array_intensities.scaling
+#                  _array_intensities.overload
+#                  _array_intensities.undefined_value
+#                  _array_intensities.pixel_fast_bin_size
+#                  _array_intensities.pixel_slow_bin_size
+#                  _array_intensities.pixel_binning_method
+#                  _array_intensities.variant
+#
+#        category  ARRAY_STRUCTURE
+#
+#                  _array_structure.byte_order
+#                  _array_structure.compression_type
+#                  _array_structure.compression_type_flag
+#                  _array_structure.encoding_type
+#                  _array_structure.id
+#                  _array_structure.variant
+#
+#        category  ARRAY_STRUCTURE_LIST
+#
+#                  _array_structure_list.axis_set_id
+#                  _array_structure_list.array_id
+#                  _array_structure_list.array_section_id
+#                  _array_structure_list.dimension
+#                  _array_structure_list.direction
+#                  _array_structure_list.index
+#                  _array_structure_list.precedence
+#                  _array_structure_list.variant
+#
+#        category  ARRAY_STRUCTURE_LIST_SECTION
+#
+#                  _array_structure_list_section.array_id
+#                  _array_structure_list_section.id
+#                  _array_structure_list_section.index
+#                  _array_structure_list_section.end
+#                  _array_structure_list_section.start
+#                  _array_structure_list_section.stride
+#                  _array_structure_list_section.variant
+#
+#        category  ARRAY_STRUCTURE_LIST_AXIS
+#
+#                  _array_structure_list_axis.axis_id
+#                  _array_structure_list_axis.axis_set_id
+#                  _array_structure_list_axis.angle
+#                  _array_structure_list_axis.angle_increment
+#                  _array_structure_list_axis.displacement
+#                  _array_structure_list_axis.fract_displacement
+#                  _array_structure_list_axis.displacement_increment
+#                  _array_structure_list_axis.fract_displacement_increment
+#                  _array_structure_list_axis.angular_pitch
+#                  _array_structure_list_axis.radial_pitch
+#                  _array_structure_list_axis.reference_angle
+#                  _array_structure_list_axis.reference_displacement
+#                  _array_structure_list_axis.variant
+#
+#        category  AXIS
+#
+#                  _axis.depends_on
+#                  _axis.equipment
+#                  _axis.equipment_component
+#                  _axis.id
+#                  _axis.offset[1]
+#                  _axis.offset[2]
+#                  _axis.offset[3]
+#                  _axis.rotation
+#                  _axis.rotation_axis
+#                  _axis.type
+#                  _axis.system
+#                  _axis.vector[1]
+#                  _axis.vector[2]
+#                  _axis.vector[3]
+#                  _axis.variant
+#
+#        category  DIFFRN_DATA_FRAME
+#
+#                  _diffrn_data_frame.array_id
+#                  _diffrn_data_frame.array_section_id
+#                  _diffrn_data_frame.binary_id
+#                  _diffrn_data_frame.center_fast
+#                  _diffrn_data_frame.center_slow
+#                  _diffrn_data_frame.center_units
+#                  _diffrn_data_frame.detector_element_id
+#                  _diffrn_data_frame.id
+#                  _diffrn_data_frame.details
+#                  _diffrn_data_frame.variant
+#
+#        category  DIFFRN_DETECTOR
+#
+#                  _diffrn_detector.details
+#                  _diffrn_detector.detector
+#                  _diffrn_detector.diffrn_id
+#                  _diffrn_detector.dtime
+#                  _diffrn_detector.gain_setting
+#                  _diffrn_detector.id
+#                  _diffrn_detector.layer_thickness
+#                  _diffrn_detector.number_of_axes
+#                  _diffrn_detector.type
+#                  _diffrn_detector.variant
+#
+#        category  DIFFRN_DETECTOR_AXIS
+#
+#                  _diffrn_detector_axis.axis_id
+#                  _diffrn_detector_axis.detector_id
+#                  _diffrn_detector_axis.variant
+#
+#        category  DIFFRN_DETECTOR_ELEMENT
+#
+#                  _diffrn_detector_element.id
+#                  _diffrn_detector_element.detector_id
+#                  _diffrn_detector_element.reference_center_fast
+#                  _diffrn_detector_element.reference_center_slow
+#                  _diffrn_detector_element.reference_center_units
+#                  _diffrn_detector_element.variant
+#
+#        category  DIFFRN_MEASUREMENT
+#
+#                  _diffrn_measurement.diffrn_id
+#                  _diffrn_measurement.details
+#                  _diffrn_measurement.device
+#                  _diffrn_measurement.device_details
+#                  _diffrn_measurement.device_type
+#                  _diffrn_measurement.id
+#                  _diffrn_measurement.method
+#                  _diffrn_measurement.number_of_axes
+#                  _diffrn_measurement.sample_detector_distance
+#                  _diffrn_measurement.sample_detector_voffset
+#                  _diffrn_measurement.specimen_support
+#                  _diffrn_measurement.variant
+#
+#        category  DIFFRN_MEASUREMENT_AXIS
+#
+#                  _diffrn_measurement_axis.axis_id
+#                  _diffrn_measurement_axis.measurement_device
+#                  _diffrn_measurement_axis.measurement_id
+#                  _diffrn_measurement_axis.variant
+#
+#        category  DIFFRN_RADIATION
+#
+#                  _diffrn_radiation.collimation
+#                  _diffrn_radiation.diffrn_id
+#                  _diffrn_radiation.div_x_source
+#                  _diffrn_radiation.div_y_source
+#                  _diffrn_radiation.div_x_y_source
+#                  _diffrn_radiation.filter_edge
+#                  _diffrn_radiation.inhomogeneity
+#                  _diffrn_radiation.monochromator
+#                  _diffrn_radiation.polarisn_norm
+#                  _diffrn_radiation.polarisn_ratio
+#                  _diffrn_radiation.polarizn_source_norm
+#                  _diffrn_radiation.polarizn_source_ratio
+#                  _diffrn_radiation.polarizn_Stokes_I
+#                  _diffrn_radiation.polarizn_Stokes_Q
+#                  _diffrn_radiation.polarizn_Stokes_U
+#                  _diffrn_radiation.polarizn_Stokes_V
+#                  _diffrn_radiation.polarisn_norm_esd
+#                  _diffrn_radiation.polarisn_ratio_esd
+#                  _diffrn_radiation.polarizn_source_norm_esd
+#                  _diffrn_radiation.polarizn_source_ratio_esd
+#                  _diffrn_radiation.polarizn_Stokes_I_esd
+#                  _diffrn_radiation.polarizn_Stokes_Q_esd
+#                  _diffrn_radiation.polarizn_Stokes_U_esd
+#                  _diffrn_radiation.polarizn_Stokes_V_esd
+#                  _diffrn_radiation.probe
+#                  _diffrn_radiation.type
+#                  _diffrn_radiation.xray_symbol
+#                  _diffrn_radiation.wavelength_id
+#                  _diffrn_radiation.variant
+#
+#        category  DIFFRN_REFLN
+#
+#                  _diffrn_refln.frame_id
+#                  _diffrn_refln.variant
+#
+#        category  DIFFRN_SCAN
+#
+#                  _diffrn_scan.id
+#                  _diffrn_scan.date_end
+#                  _diffrn_scan.date_start
+#                  _diffrn_scan.integration_time
+#                  _diffrn_scan.frame_id_start
+#                  _diffrn_scan.frame_id_end
+#                  _diffrn_scan.frames
+#                  _diffrn_scan.time_period
+#                  _diffrn_scan.time_rstrt_incr
+#                  _diffrn_scan.variant
+#
+#        category  DIFFRN_SCAN_AXIS
+#
+#                  _diffrn_scan_axis.axis_id
+#                  _diffrn_scan_axis.angle_start
+#                  _diffrn_scan_axis.angle_range
+#                  _diffrn_scan_axis.angle_increment
+#                  _diffrn_scan_axis.angle_rstrt_incr
+#                  _diffrn_scan_axis.displacement_start
+#                  _diffrn_scan_axis.displacement_range
+#                  _diffrn_scan_axis.displacement_increment
+#                  _diffrn_scan_axis.displacement_rstrt_incr
+#                  _diffrn_scan_axis.reference_angle
+#                  _diffrn_scan_axis.reference_displacement
+#                  _diffrn_scan_axis.scan_id
+#                  _diffrn_scan_axis.variant
+#
+#        category  DIFFRN_SCAN_FRAME
+#
+#                  _diffrn_scan_frame.date
+#                  _diffrn_scan_frame.frame_id
+#                  _diffrn_scan_frame.frame_number
+#                  _diffrn_scan_frame.integration_time
+#                  _diffrn_scan_frame.polarizn_Stokes_I
+#                  _diffrn_scan_frame.polarizn_Stokes_Q
+#                  _diffrn_scan_frame.polarizn_Stokes_U
+#                  _diffrn_scan_frame.polarizn_Stokes_V
+#                  _diffrn_scan_frame.polarizn_Stokes_I_esd
+#                  _diffrn_scan_frame.polarizn_Stokes_Q_esd
+#                  _diffrn_scan_frame.polarizn_Stokes_U_esd
+#                  _diffrn_scan_frame.polarizn_Stokes_V_esd
+#                  _diffrn_scan_frame.scan_id
+#                  _diffrn_scan_frame.time_period
+#                  _diffrn_scan_frame.time_rstrt_incr
+#                  _diffrn_scan_frame.variant
+#
+#        category  DIFFRN_SCAN_FRAME_AXIS
+#
+#                  _diffrn_scan_frame_axis.axis_id
+#                  _diffrn_scan_frame_axis.angle
+#                  _diffrn_scan_frame_axis.angle_increment
+#                  _diffrn_scan_frame_axis.angle_rstrt_incr
+#                  _diffrn_scan_frame_axis.displacement
+#                  _diffrn_scan_frame_axis.displacement_increment
+#                  _diffrn_scan_frame_axis.displacement_rstrt_incr
+#                  _diffrn_scan_frame_axis.reference_angle
+#                  _diffrn_scan_frame_axis.reference_displacement
+#                  _diffrn_scan_frame_axis.frame_id
+#                  _diffrn_scan_frame_axis.variant
+#
+#        category  DIFFRN_SCAN_FRAME_MONITOR
+#
+#                  _diffrn_scan_frame_monitor.id
+#                  _diffrn_scan_frame_monitor.detector_id
+#                  _diffrn_scan_frame_monitor.scan_id
+#                  _diffrn_scan_frame_monitor.frame_id
+#                  _diffrn_scan_frame_monitor.integration_time
+#                  _diffrn_scan_frame_monitor.monitor_value
+#                  _diffrn_scan_frame_monitor.variant
+#
+#        category  MAP
+#
+#                  _map.details
+#                  _map.diffrn_id
+#                  _map.entry_id
+#                  _map.id
+#                  _map.variant
+#
+#       category   MAP_SEGMENT
+#
+#                  _map_segment.array_id
+#                  _map_segment.array_section_id
+#                  _map_segment.binary_id
+#                  _map_segment.mask_array_id
+#                  _map_segment.mask_array_section_id
+#                  _map_segment.mask_binary_id
+#                  _map_segment.id
+#                  _map_segment.map_id
+#                  _map_segment.details
+#                  _map_segment.variant
+#
+#       category   VARIANT
+#
+#                  _variant.details
+#                  _variant.diffrn_id
+#                  _variant.entry_id
+#                  _variant.role
+#                  _variant.timestamp
+#                  _variant.variant
+#                  _variant.variant_of
+#
+#       ***DEPRECATED*** data items
+#
+#                  _diffrn_detector_axis.id
+#                  _diffrn_detector_element.center[1]
+#                  _diffrn_detector_element.center[2]
+#                  _diffrn_measurement_axis.id
+#
+#       ***DEPRECATED*** category  DIFFRN_FRAME_DATA
+#
+#                  _diffrn_frame_data.array_id
+#                  _diffrn_frame_data.binary_id
+#                  _diffrn_frame_data.detector_element_id
+#                  _diffrn_frame_data.id
+#                  _diffrn_frame_data.details
+#
+#
+#        ITEM_TYPE_LIST
+#        ITEM_UNITS_LIST
+#        DICTIONARY_HISTORY
+#
+##############################################################################
+
+
++--------------------------------------------------------------------------------------------------------------------+
+|ARRAY_DATA_GROUP|Categories that describe array data.                                                               |
+|                |---------------------------------------------------------------------------------------------------|
+|                |+-------------------------------------------------------------------------------------------------+|
+|                || ARRAY_DATA               | Data items in the ARRAY_DATA category are the containers for the     ||
+|                ||                          | array data items described in the category ARRAY_STRUCTURE.          ||
+|                ||                          |                                                                      ||
+|                ||                          | It is recognized that the data in this category needs to be used in  ||
+|                ||                          | two distinct ways. During a data collection the lack of ancillary    ||
+|                ||                          | data and timing constraints in processing data may dictate the need  ||
+|                ||                          | to make a 'miniCBF' nothing more than an essential minimum of        ||
+|                ||                          | information to record the results of the data collection. In that    ||
+|                ||                          | case it is proper to use the ARRAY_DATA category as a container for  ||
+|                ||                          | just a single image and a compacted, beam-line dependent list of     ||
+|                ||                          | data collection parameter values. In such a case, only the tags      ||
+|                ||                          | '_array_data.header_convention', '_array_data.header_contents' and   ||
+|                ||                          | '_array_data.data' need be populated.                                ||
+|                ||                          |                                                                      ||
+|                ||                          | For full processing and archiving, most of the tags in this          ||
+|                ||                          | dictionary will need to be populated.                                ||
+|                ||--------------------------+----------------------------------------------------------------------||
+|                || ARRAY_ELEMENT_SIZE       | Data items in the ARRAY_ELEMENT_SIZE category record the physical    ||
+|                ||                          | size of array elements along each array dimension.                   ||
+|                ||--------------------------+----------------------------------------------------------------------||
+|                || ARRAY_INTENSITIES        | Data items in the ARRAY_INTENSITIES category record the information  ||
+|                ||                          | required to recover the intensity data from the set of data values   ||
+|                ||                          | stored in the ARRAY_DATA category.                                   ||
+|                ||                          |                                                                      ||
+|                ||                          | The detector may have a complex relationship between the raw         ||
+|                ||                          | intensity values and the number of incident photons. In most cases,  ||
+|                ||                          | the number stored in the final array will have a simple linear       ||
+|                ||                          | relationship to the actual number of incident photons, given by      ||
+|                ||                          | _array_intensities.gain. If raw, uncorrected values are presented    ||
+|                ||                          | (e.g. for calibration experiments), the value of                     ||
+|                ||                          | _array_intensities.linearity will be 'raw' and                       ||
+|                ||                          | _array_intensities.gain will not be used.                            ||
+|                ||--------------------------+----------------------------------------------------------------------||
+|                || ARRAY_STRUCTURE          | Data items in the ARRAY_STRUCTURE category record the organization   ||
+|                ||                          | and encoding of array data that may be stored in the ARRAY_DATA      ||
+|                ||                          | category.                                                            ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | ARRAY_STRUCTURE_LIST         | Data items in the ARRAY_STRUCTURE_LIST category record   | ||
+|                || |   |                              | the size and organization of each array dimension.       | ||
+|                || |   |                              |                                                          | ||
+|                || |   |                              | The relationship to physical axes may be given.          | ||
+|                || |   |-----------------------------------------------------------------------------------------| ||
+|                || |   | +-------------------------------------------------------------------------------------+ | ||
+|                || |   | |   | ARRAY_STRUCTURE_LIST_SECTION | Data items in the ARRAY_STRUCTURE_LIST_SECTION   | | ||
+|                || |   | |   |                              | category identify the dimension-by-dimension     | | ||
+|                || |   | |   |                              | start, end and stride of each section of an      | | ||
+|                || |   | |   |                              | array that is to be referenced.                  | | ||
+|                || |   | |   |                              |                                                  | | ||
+|                || |   | |   |                              | For any array of array_id, ARRAYID, array        | | ||
+|                || |   | |   |                              | section ids of the form                          | | ||
+|                || |   | |   |                              | ARRAYID(start1:end1:stride1,start2:end2:stride2, | | ||
+|                || |   | |   |                              | ...)                                             | | ||
+|                || |   | |   |                              | are defined by default.                          | | ||
+|                || |   | |   |------------------------------+--------------------------------------------------| | ||
+|                || |   | |   | ARRAY_STRUCTURE_LIST_AXIS    | Data items in the ARRAY_STRUCTURE_LIST_AXIS      | | ||
+|                || |   | |   |                              | category describe the physical settings of sets  | | ||
+|                || |   | |   |                              | of axes for the centres of pixels that           | | ||
+|                || |   | |   |                              | correspond to data points described in the       | | ||
+|                || |   | |   |                              | ARRAY_STRUCTURE_LIST category.                   | | ||
+|                || |   | |   |                              |                                                  | | ||
+|                || |   | |   |                              | In the simplest cases, the physical increments   | | ||
+|                || |   | |   |                              | of a single axis correspond to the increments of | | ||
+|                || |   | |   |                              | a single array index. More complex               | | ||
+|                || |   | |   |                              | organizations, e.g. spiral scans, may require    | | ||
+|                || |   | |   |                              | coupled motions along multiple axes.             | | ||
+|                || |   | |   |                              |                                                  | | ||
+|                || |   | |   |                              | Note that a spiral scan uses two coupled axes:   | | ||
+|                || |   | |   |                              | one for the angular direction and one for the    | | ||
+|                || |   | |   |                              | radial direction. This differs from a            | | ||
+|                || |   | |   |                              | cylindrical scan for which the two axes are not  | | ||
+|                || |   | |   |                              | coupled into one set.                            | | ||
+|                || |   | +-------------------------------------------------------------------------------------+ | ||
+|                || |   |-----------------------------------------------------------------------------------------| ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                |+-------------------------------------------------------------------------------------------------+|
+|----------------+---------------------------------------------------------------------------------------------------|
+|AXIS_GROUP      |Categories that describe axes.                                                                     |
+|                |---------------------------------------------------------------------------------------------------|
+|                |+-------------------------------------------------------------------------------------------------+|
+|                || AXIS | Data items in the AXIS category record the information required to describe the various  ||
+|                ||      | goniometer, detector, source and other axes needed to specify a data collection or the   ||
+|                ||      | axes defining the coordinate system of an image.                                         ||
+|                ||      |                                                                                          ||
+|                ||      | The location of each axis is specified by two vectors: the axis itself, given by a unit  ||
+|                ||      | vector in the direction of the axis, and an offset to the base of the unit vector.       ||
+|                ||      |                                                                                          ||
+|                ||      | The vectors defining an axis are referenced to an appropriate coordinate system. The     ||
+|                ||      | axis vector, itself, is a dimensionless unit vector. Where meaningful, the offset vector ||
+|                ||      | is given in millimetres. In coordinate systems not measured in metres, the offset is not ||
+|                ||      | specified and is taken as zero.                                                          ||
+|                ||      |                                                                                          ||
+|                ||      | The available coordinate systems are:                                                    ||
+|                ||      |                                                                                          ||
+|                ||      | The imgCIF standard laboratory coordinate system                                         ||
+|                ||      | The direct lattice (fractional atomic coordinates)                                       ||
+|                ||      | The orthogonal Cartesian coordinate system (real space)                                  ||
+|                ||      | The reciprocal lattice                                                                   ||
+|                ||      | An abstract orthogonal Cartesian coordinate frame                                        ||
+|                |+-------------------------------------------------------------------------------------------------+|
+|----------------+---------------------------------------------------------------------------------------------------|
+|DIFFRN_GROUP    |Categories that describe details of the diffraction experiment.                                    |
+|                |---------------------------------------------------------------------------------------------------|
+|                |+-------------------------------------------------------------------------------------------------+|
+|                || DIFFRN_DATA_FRAME          | Data items in the DIFFRN_DATA_FRAME category record the details    ||
+|                ||                            | about each frame of data.                                          ||
+|                ||                            |                                                                    ||
+|                ||                            | The items in this category were previously in a DIFFRN_FRAME_DATA  ||
+|                ||                            | category, which is now deprecated. The items from the old category ||
+|                ||                            | are provided as aliases but should not be used for new work.       ||
+|                ||----------------------------+--------------------------------------------------------------------||
+|                || DIFFRN_DETECTOR            | Data items in the DIFFRN_DETECTOR category describe the detector   ||
+|                ||                            | used to measure the scattered radiation, including any analyser    ||
+|                ||                            | and post-sample collimation.                                       ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | DIFFRN_DETECTOR_AXIS | Data items in the DIFFRN_DETECTOR_AXIS category associate axes   | ||
+|                || |   |                      | with detectors.                                                  | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | DIFFRN_DETECTOR_ELEMENT | Data items in the DIFFRN_DETECTOR_ELEMENT category record the | ||
+|                || |   |                         | details about spatial layout and other characteristics of     | ||
+|                || |   |                         | each element of a detector which may have multiple elements.  | ||
+|                || |   |                         |                                                               | ||
+|                || |   |                         | In most cases, giving more detailed information in            | ||
+|                || |   |                         | ARRAY_STRUCTURE_LIST and ARRAY_STRUCTURE_LIST_AXIS is         | ||
+|                || |   |                         | preferable to simply providing the centre of the detector     | ||
+|                || |   |                         | element.                                                      | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || DIFFRN_MEASUREMENT         | Data items in the DIFFRN_MEASUREMENT category record details about ||
+|                ||                            | the device used to orient and/or position the crystal during data  ||
+|                ||                            | measurement and the manner in which the diffraction data were      ||
+|                ||                            | measured.                                                          ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | DIFFRN_MEASUREMENT_AXIS | Data items in the DIFFRN_MEASUREMENT_AXIS category associate  | ||
+|                || |   |                         | axes with goniometers.                                        | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || DIFFRN_RADIATION           | Data items in the DIFFRN_RADIATION category describe the radiation ||
+|                ||                            | used for measuring diffraction intensities, its collimation and    ||
+|                ||                            | monochromatization before the sample.                              ||
+|                ||                            |                                                                    ||
+|                ||                            | Post-sample treatment of the beam is described by data items in    ||
+|                ||                            | the DIFFRN_DETECTOR category.                                      ||
+|                ||----------------------------+--------------------------------------------------------------------||
+|                || DIFFRN_REFLN               | This category redefinition has been added to extend the key of the ||
+|                ||                            | standard DIFFRN_REFLN category.                                    ||
+|                ||                            |                                                                    ||
+|                ||                            | Data items in the DIFFRN_REFLN category record details about the   ||
+|                ||                            | intensities in the diffraction data set identified by              ||
+|                ||                            | _diffrn_refln.diffrn_id.                                           ||
+|                ||                            |                                                                    ||
+|                ||                            | The DIFFRN_REFLN data items refer to individual intensity          ||
+|                ||                            | measurements and must be included in looped lists.                 ||
+|                ||                            |                                                                    ||
+|                ||                            | The DIFFRN_REFLNS data items specify the parameters that apply to  ||
+|                ||                            | all intensity measurements in the particular diffraction data set  ||
+|                ||                            | identified by _diffrn_reflns.diffrn_id and _diffrn_refln.frame_id  ||
+|                ||----------------------------+--------------------------------------------------------------------||
+|                || DIFFRN_SCAN                | Data items in the DIFFRN_SCAN category describe the parameters of  ||
+|                ||                            | one or more scans, relating axis positions to frames.              ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | DIFFRN_SCAN_AXIS | Data items in the DIFFRN_SCAN_AXIS category describe the settings of | ||
+|                || |   |                  | axes for particular scans. Unspecified axes are assumed to be at     | ||
+|                || |   |                  | their zero points.                                                   | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | DIFFRN_SCAN_FRAME | Data items in the DIFFRN_SCAN_FRAME category describe the           | ||
+|                || |   |                   | relationships of particular frames to scans.                        | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | +-------------------------------------------------------------------------------------+ | ||
+|                || |   | |   | DIFFRN_SCAN_FRAME_AXIS | Data items in the DIFFRN_SCAN_FRAME_AXIS category      | | ||
+|                || |   | |   |                        | describe the settings of axes for particular frames.   | | ||
+|                || |   | |   |                        | Unspecified axes are assumed to be at their zero       | | ||
+|                || |   | |   |                        | points. If, for any given frame, nonzero values apply  | | ||
+|                || |   | |   |                        | for any of the data items in this category, those      | | ||
+|                || |   | |   |                        | values should be given explicitly in this category and | | ||
+|                || |   | |   |                        | not simply inferred from values in DIFFRN_SCAN_AXIS.   | | ||
+|                || |   | +-------------------------------------------------------------------------------------+ | ||
+|                || |---+-----------------------------------------------------------------------------------------| ||
+|                || |   | +-------------------------------------------------------------------------------------+ | ||
+|                || |   | |   | DIFFRN_SCAN_FRAME_MONITOR | Data items in the DIFFRN_SCAN_FRAME_MONITOR         | | ||
+|                || |   | |   |                           | category record the values and details about each   | | ||
+|                || |   | |   |                           | monitor for each frame of data during a scan.       | | ||
+|                || |   | |   |                           |                                                     | | ||
+|                || |   | |   |                           | Each monitor value is uniquely identified by the    | | ||
+|                || |   | |   |                           | combination of the scan_id given by                 | | ||
+|                || |   | |   |                           | _diffrn_scan_frame.scan_id the frame_id given by    | | ||
+|                || |   | |   |                           | _diffrn_scan_frame_monitor.frame_id, the monitor's  | | ||
+|                || |   | |   |                           | detector_id given by                                | | ||
+|                || |   | |   |                           | _diffrn_scan_frame_monitor.detector_id, and a       | | ||
+|                || |   | |   |                           | 1-based ordinal given by                            | | ||
+|                || |   | |   |                           | _diffrn_scan_frame_monitor.id.                      | | ||
+|                || |   | |   |                           |                                                     | | ||
+|                || |   | |   |                           | If there is only one frame for the scan, the value  | | ||
+|                || |   | |   |                           | of _diffrn_scan_frame_monitor.frame_id may be       | | ||
+|                || |   | |   |                           | omitted.                                            | | ||
+|                || |   | |   |                           |                                                     | | ||
+|                || |   | |   |                           | A single frame may have more than one monitor       | | ||
+|                || |   | |   |                           | value, and each monitor value may be the result of  | | ||
+|                || |   | |   |                           | integration over the entire frame integration time  | | ||
+|                || |   | |   |                           | given by the value of                               | | ||
+|                || |   | |   |                           | _diffrn_scan_frame.integration_time or many monitor | | ||
+|                || |   | |   |                           | values may be reported over shorter times given by  | | ||
+|                || |   | |   |                           | the value of                                        | | ||
+|                || |   | |   |                           | _diffrn_scan_frame_monitor.integration_time. If     | | ||
+|                || |   | |   |                           | only one monitor value for a given monitor is       | | ||
+|                || |   | |   |                           | collected during the integration time of the frame, | | ||
+|                || |   | |   |                           | the value of _diffrn_scan_frame_monitor.id may be   | | ||
+|                || |   | |   |                           | omitted.                                            | | ||
+|                || |   | +-------------------------------------------------------------------------------------+ | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                |+-------------------------------------------------------------------------------------------------+|
+|----------------+---------------------------------------------------------------------------------------------------|
+|MAP_GROUP       |Categories that describe maps.                                                                     |
+|                |---------------------------------------------------------------------------------------------------|
+|                |+-------------------------------------------------------------------------------------------------+|
+|                || MAP     | Data items in the MAP category record the details of a maps. maps record values of    ||
+|                ||         | parameters, such as density, that are functions of position within a cell or are      ||
+|                ||         | functions of orthogonal coordinates in three space.                                   ||
+|                ||         |                                                                                       ||
+|                ||         | A map may is composed of one or more map segments specified in the MAP_SEGMENT        ||
+|                ||         | category.                                                                             ||
+|                ||         |                                                                                       ||
+|                ||         | Examples are given in the MAP_SEGMENT category.                                       ||
+|                ||-------------------------------------------------------------------------------------------------||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                || |   | MAP_SEGMENT | Data items in the MAP_SEGMENT category record the details about each      | ||
+|                || |   |             | segment (section or brick) of a map.                                      | ||
+|                || +---------------------------------------------------------------------------------------------+ ||
+|                |+-------------------------------------------------------------------------------------------------+|
+|----------------+---------------------------------------------------------------------------------------------------|
+|VARIANT_GROUP   |Categories that describe variants                                                                  |
+|                |---------------------------------------------------------------------------------------------------|
+|                |+-------------------------------------------------------------------------------------------------+|
+|                || VARIANT | Data items in the VARIANT category record the details about sets of variants of data  ||
+|                ||         | items.                                                                                ||
+|                ||         |                                                                                       ||
+|                ||         | There is sometimes a need to allow for multiple versions of the same data items in    ||
+|                ||         | order to allow for refinements and corrections to earlier assumptions, observations   ||
+|                ||         | and calculations. In order to allow data sets to contain more than one variant of the ||
+|                ||         | same information, an optional ...variant data item as a pointer to _variant.variant   ||
+|                ||         | has been added to the key of every category, as an implicit data item with a null     ||
+|                ||         | (empty) default value.                                                                ||
+|                ||         |                                                                                       ||
+|                ||         | All rows in a category with the same variant value are considered to be related to    ||
+|                ||         | one another and to all rows in other categories with the same variant value. For a    ||
+|                ||         | given variant, all such rows are also considered to be related to all rows with a     ||
+|                ||         | null variant value, except that a row with a null variant value is for which all      ||
+|                ||         | other components of its key are identical to those entries in another row with a      ||
+|                ||         | non-null variant value is not related the the rows with that non-null variant value.  ||
+|                ||         | This behavior is similar to the convention for identifying alternate conformers in an ||
+|                ||         | atom list.                                                                            ||
+|                ||         |                                                                                       ||
+|                ||         | An optional role may be specified for a variant as the value of _variant.role.        ||
+|                ||         | Possible roles are null, "preferred", "raw data", "unsuccessful trial".               ||
+|                ||         |                                                                                       ||
+|                ||         | variants may carry an optional timestamp as the value of _variant.timestamp.          ||
+|                ||         |                                                                                       ||
+|                ||         | variants may be related to other variants from which they were derived by the value   ||
+|                ||         | of _variant.variant_of                                                                ||
+|                ||         |                                                                                       ||
+|                ||         | Further details about the variant may be specified as the value of _variant.details.  ||
+|                ||         |                                                                                       ||
+|                ||         | In order to allow variant information from multiple datasets to be combined,          ||
+|                ||         | _variant.diffrn_id and/or _variant.entry_id may be used.                              ||
+|                |+-------------------------------------------------------------------------------------------------+|
++--------------------------------------------------------------------------------------------------------------------+
+
+
+;
+
+
+    _dictionary.title           cif_img.dic
+    _dictionary.version         1.7.11
+    _dictionary.datablock_id    cif_img.dic
+
+
+
+#########################
+## CATEGORY_GROUP_LIST ##
+#########################
+
+     loop_
+    _category_group_list.id
+    _category_group_list.parent_id
+    _category_group_list.description
+             'inclusive_group'   .
+;             Categories that belong to the dictionary extension.
+;
+             'array_data_group'
+             'inclusive_group'
+;             Categories that describe array data.
+;
+             'axis_group'
+             'inclusive_group'
+;             Categories that describe axes.
+;
+             'diffrn_group'
+             'inclusive_group'
+;            Categories that describe details of the diffraction experiment.
+;
+             'map_group'
+             'inclusive_group'
+;            Categories that describe details of map data.
+;
+             'variant_group'
+             'inclusive_group'
+;            Categories that describe details of map data.
+;
+
+
+##################
+## SUB_CATEGORY ##
+##################
+
+     loop_
+    _sub_category.id
+    _sub_category.description
+              'matrix'
+;              The collection of elements of a matrix.
+;
+              'vector'
+;              The collection of elements of a vector.
+;
+
+
+########################
+## DICTIONARY_HISTORY ##
+########################
+
+     loop_
+    _dictionary_history.version
+    _dictionary_history.update
+    _dictionary_history.revision
+   
+    1.7.11   2014-07-05
+   
+;   Changes for CBFlib 0.9.6 release (HJB)
+   
+    + Remove _array_structure_list.array_section_id
+    + Revisions to _category.NX_mapping_details in most categories for
+    array sections.
+    + Change to uniform use of entry:NXentry
+    + Change to uniform use of identification of NXdetector by detector
+    element
+    + Change to uniform use of data_ARRAYID_BINARYID
+    + Add _array_structure_list.array_section_id
+    + Add _map_segment.mask_array_section_id
+   
+;
+
+
+    1.7.10   2014-04-25
+   
+;  Additions of esd's to polarization tags.  Change to NeXus mapping to use
+   NXtransformations instead of NXpoise (HJB)
+   
+    + Add _diffrn_radiation.polarisn_norm_esd,
+    _diffrn_radiation.polarisn_ratio_esd,
+    _diffrn_radiation.polarizn_source_norm_esd,
+    _diffrn_radiation.polarizn_source_ratio_esd,
+    _diffrn_radiation.polarizn_Stokes_I_esd,
+    _diffrn_radiation.polarizn_Stokes_Q_esd,
+    _diffrn_radiation.polarizn_Stokes_U_esd,
+    _diffrn_radiation.polarizn_Stokes_V_esd,
+    _diffrn_scan_frame.polarizn_Stokes_I_esd,
+    _diffrn_scan_frame.polarizn_Stokes_Q_esd,
+    _diffrn_scan_frame.polarizn_Stokes_U_esd,
+    _diffrn_scan_frame.polarizn_Stokes_V_esd.
+    + Change NeXus mapping for ARRAY_STRUCTURE_LIST
+    ARRAY_STRUCTURE_LIST_AXIS, AXIS,
+    DIFFRN_DETECTOR_AXIS, DIFFRN_MEASUREMENT_AXIS,
+    DIFFRN_SCAN_FRAME_AXIS.
+   
+;
+   
+    1.7.9   2014-04-05
+   
+;  Corrections to Stokes parameter description. (HJB)
+   
+    + Clarify the meaning of _diffrn_radiation.polarizn_Stokes_I
+    and _diffrn_scan_frame.polarizn_Stokes_I to explicitly include non-polarized
+        component.
+
+    + Provide missing factor of 2 in _diffrn_radiation.polarizn_Stokes_V
+    description and _diffrn_scan_frame.polarizn_Stokes_V description.
+   
+;
+
+   
+    1.7.8   2014-02-22
+   
+;  Minor changes to NeXus mapping. (HJB)
+   
+       + Conform NeXus mapping of DIFFRN_DETECTOR to neXus
+       NXdetector base class terminology
+   
+       + Add _diffrn_detector.gain_setting to handle
+       the reverse mapping fron NeXus of the equivalent field in NXdetector.
+;
+   
+    1.7.7   2014-02-22
+   
+;  Major changes to NeXus mapping to conform to JS functional
+    mapping prototype, add Stoke parameter tags for polarization
+    and beam intensity, and add an new tag for FEL axes (HJB)
+   
+       + Add
+       _axis.equipment_component,
+       _diffrn_radiation.polarizn_Stokes_I,
+       _diffrn_radiation.polarizn_Stokes_Q,
+       _diffrn_radiation.polarizn_Stokes_U,
+       _diffrn_radiation.polarizn_Stokes_V,
+       _diffrn_scan_frame.polarizn_Stokes_I,
+       _diffrn_scan_frame.polarizn_Stokes_Q,
+       _diffrn_scan_frame.polarizn_Stokes_U,
+       _diffrn_scan_frame.polarizn_Stokes_V.
+       + Remove erroneous type code from _diffrn_scan_frame_monitor.value.
+       + Update dictionary version
+;
+   
+
+   
+    1.7.6   2013-10-29
+   
+;  To avoid a conflict with PDB software, remove the null value
+    enumeration for _variant.role (HJB)
+   
+;
+
+   
+    1.7.5   2013-10-27
+   
+;  At request of JW for the PDB move _category.NX_mapping_details
+   to be adjacent to other category tags. (HJB)
+   
+;
+
+    1.7.4   2013-10-23
+   
+;  Minor cleanup and rmeove spurious tag
+   
+    +  remove spurious _array_structure_list_section.array_set_id
+    references. (JS)
+    +  Change case of category names to conform to PDB conventions. (JW)
+   
+;
+
+   
+    1.7.3   2013-10-15
+   
+;  Major cleanup of dictionary typos, misplaced loops, etc
+       by John Westbrook
+   
+    +  Change _item.mandatory_code of all *.variant to implicit
+    +  Add _diffrn_refln.id and _diffrn_refln.diffrn_id
+    +  Correct many _item.name values that were wrong or missing
+       quote marks
+   
+;
+
+
+   
+    1.7.2   2013-10-07
+   
+;  Add FEL detector positioning tags and change back to NXgoniometer
+   
+    +  Add
+       _axis.rotation_axis and
+       _axis.rotation and
+    +  Change NXsample back to NXgoniometer
+   
+;
+
+    1.7.1   2013-08-10
+   
+;  Minor cleanup (HJB)
+   
+    +  Correction to description of
+         _diffrn_data_frame.array_section_id
+    +  Change NXgoniometer to NXsample
+    +  Fix typos in NeXus mappings
+   
+;
+   
+    1.7     2013-06-18
+   
+;  Additions to start merge of CBF, HDF5 and NeXus (HJB)
+   
+    +  Define new ARRAY_STRUCTURE_LIST_SECTION category
+    +  Add new _category.NX_mapping_details DDL tag to carry
+       details on NeXus category mappings.
+    +  Define new tags _array_structure_list_section.array_id,
+       _array_structure_list_section.id,
+       _array_structure_list_section.index,
+       _array_structure_list_section.end,
+       _array_structure_list_section.start,
+       _array_structure_list_section.stride,
+       _array_structure_list_section.variant,
+       _diffrn_data_frame.array_section_id,
+       _diffrn_detector.layer_thickness,
+       _map_segment.array_section_id,
+       _map_segment.mask_array_section_id
+
+;
+   
+    1.6.4   2011-07-02
+  
+;  Corrections to support DLS Dectris header as per G. Winter (HJB)
+
+    +  Define new tags _diffrn_scan.time_period,
+       _diffrn_scan.time_rstrt_incr,
+       _diffrn_scan_frame.time_period,
+       _diffrn_scan_frame.time_rstrt_incr
+    +  fix bad category name in loop in _diffrn_detector.id
+    +  remove stray text field terminator at line 4642
+    +  fix unquoted tag as a value in _diffrn_scan_frame_monitor.id
+    +  make formerly mandatory and implicit deprecated items non-mandatory
+
+;
+
+   1.6.3   2010-08-26
+  
+;  Cummulative corrections from 1.6.0, 1, 2 drafts (HJB)
+
+    +  Move descriptive dictionary comments into
+    _datablock.description with catgeory tree described
+    +  add default _array_data.array_id value of 1
+    +  add option of CBF_BACKGROUND_OFFSET_DELTA compression
+    +  add VARIANT category and tags
+    +  add DIFFRN_SCAN_FRAME_MONITOR category
+
+;
+
+   1.5.4   2007-07-28
+
+;  Typographics corrections (HJB)
+
+     + Corrected embedded degree characters to \%
+     + Corrected embedded Aring to \%A
+     + Added trailing ^ for a power
+     + Removed 2 cases of a space after an underscore
+       in tag name.
+;
+ 
+   1.5.3   2007-07-08
+  
+;  Changes to support SLS miniCBF and suggestions
+   from the 24 May 07 BNL imgCIF workshop (HJB)
+
+     + Added new data items
+       '_array_data.header_contents',
+       '_array_data.header_convention',
+       '_diffrn_data_frame.center_fast',
+       '_diffrn_data_frame.center_slow',
+       '_diffrn_data_frame.center_units',
+       '_diffrn_measurement.sample_detector_distance',
+       '_diffrn_measurement.sample_detector_voffset
+     + Deprecated data items
+       '_diffrn_detector_element.center[1]',
+       '_diffrn_detector_element.center[2]'
+     + Added comments and example on miniCBF
+     + Changed all array_id data items to implicit
+;
+  
+   1.5.2   2007-05-06
+  
+;  Further clarifications of the coordinate system. (HJB)
+;
+
+   1.5.1   2007-04-26
+  
+;  Improve defintion of X-axis to cover the case of no goniometer
+   and clean up more line folds (HJB)
+;
+
+   1.5     2007-07-25
+  
+;  This is a cummulative list of the changes proposed since the
+   imgCIF workshop in Hawaii in July 2006.  It is the result
+   of contributions by H. J. Bernstein, A. Hammersley,
+   J. Wright and W. Kabsch.
+  
+   2007-02-19 Consolidated changes (edited by HJB)
+     + Added new data items
+       '_array_structure.compression_type_flag',
+       '_array_structure_list_axis.fract_displacement',
+       '_array_structure_list_axis.displacement_increment',
+       '_array_structure_list_axis.reference_angle',
+       '_array_structure_list_axis.reference_displacement',
+       '_axis.system',
+       '_diffrn_detector_element.reference_center_fast',
+       '_diffrn_detector_element.reference_center_slow',
+       '_diffrn_scan_axis.reference_angle',
+       '_diffrn_scan_axis.reference_displacement',
+       '_map.details', '_map.diffrn_id',
+       '_map.entry_id', '_map.id',
+       '_map_segment.array_id', '_map_segment.binary_id',
+       '_map_segment.mask_array_id', '_map_segment.mask_binary_id',
+       '_map_segment.id', '_map_segment.map_id',
+       '_map_segment.details.
+     + Change type of
+       '_array_structure.byte_order' and
+       '_array_structure.compression_type'
+       to ucode to make these values case-insensitive
+     + Add values 'packed_v2' and 'byte_offset' to enumeration of values for
+       '_array_structure.compression_type'
+     + Add to definitions for the binary data type to handle new compression
+       types, maps, and a variety of new axis types.
+    2007-07-25 Cleanup of typos for formal release (HJB)
+     + Corrected text fields for reference_ tag descriptions that
+       were off by one column
+     + Fix typos in comments listing fract_ tags
+     + Changed name of release from 1.5_DRAFT to 1.5
+     + Fix unclosed text fields in various map definitions
+     
+;
+
+   1.4     2006-07-04
+
+;  This is a change to reintegrate all changes made in the course of
+   publication of ITVG, by the RCSB from April 2005 through
+   August 2008 and changes for the 2006 imgCIF workshop in
+   Hawaii.
+
+   2006-07-04 Consolidated changes for the 2006 imgCIF workshop (edited by HJB)
+     + Correct type of '_array_structure_list.direction' from 'int' to 'code'.
+     + Added new data items suggested by CN
+       '_diffrn_data_frame.details'
+       '_array_intensities.pixel_fast_bin_size',
+       '_array_intensities.pixel_slow_bin_size and
+       '_array_intensities.pixel_binning_method
+     + Added deprecated item for completeness
+       '_diffrn_frame_data.details'
+     + Added entry for missing item in contents list
+       '_array_structure_list_axis.displacement'
+     + Added new MIME type X-BASE32K based on work by VL, KM, GD, HJB
+     + Correct description of MIME boundary delimiter to start in
+       column 1.
+     + General cleanup of text fields to conform to changes for ITVG
+       by removing empty lines at start and finish of text field.
+     + Amend example for ARRAY_INTENSITIES to include binning.
+     + Add local copy of type specification (as 'code') for all children
+       of '_diffrn.id'.
+     + For consistency, change all references to 'pi' to '\p' and all
+       references to 'Angstroms' to '\%Angstroms'.
+     + Clean up all powers to use IUCr convention of '^power^', as in
+       '10^3^' for '10**3'.
+     + Update 'yyyy-mm-dd' type regex to allow truncation from the right
+       and improve comments to explain handling of related mmCIF
+       'yyyy-mm-dd:hh:mm' type, and use of 'Z' for GMT time zone.
+
+   2005-03-08 and
+   2004-08-08 fixed cases where _item_units.code  used
+              instead of _item_type.code (JDW)
+   2004-04-15 fixed item ordering in
+               _diffrn_measurement_axis.measurement_id
+               added sub_category 'vector' (JDW)
+;
+
+   1.3.2   2005-06-25
+
+;  2005-06-25 ITEM_TYPE_LIST: code, ucode, line, uline regexps updated
+              to those of current mmCIF; float modified by allowing integers
+              terminated by a point as valid. The 'time' part of
+              yyyy-mm-dd types made optional in the regexp. (BM)
+
+   2005-06-17 Minor corrections as for proofs for IT G Chapter 4.6
+   (NJA)
+
+   2005-02-21  Minor corrections to spelling and punctuation
+   (NJA)
+
+   2005-01-08 Changes as per Nicola Ashcroft.
+   + Updated example 1 for DIFFRN_MEASUREMENT to agree with mmCIF.
+   + Spelled out "micrometres" for "um" and "millimetres" for "mm".
+   + Removed phrase "which may be stored" from ARRAY_STRUCTURE
+     description.
+   + Removed unused 'byte-offsets' compressions and updated
+     cites to ITVG for '_array_structure.compression_type'.
+   (HJB)
+;
+
+   1.3.1   2003-08-13
+;
+   Changes as per Frances C. Bernstein.
+   + Identify initials.
+   + Adopt British spelling for centre in text.
+   + Set \p and \%Angstrom and powers.
+   + Clean up commas and unclear wordings.
+   + Clean up tenses in history.
+   Changes as per Gotzon Madariaga.
+   + Fix the ARRAY_DATA example to align '_array_data.binary_id'
+   and X-Binary-ID.
+   + Add a range to '_array_intensities.gain_esd'.
+   + In the example of DIFFRN_DETECTOR_ELEMENT,
+   '_diffrn_detector_element.id' and
+   '_diffrn_detector_element.detector_id' interchanged.
+   + Fix typos for direction, detector and axes.
+   + Clarify description of polarisation.
+   + Clarify axes in '_diffrn_detector_element.center[1]'
+    '_diffrn_detector_element.center[2]'.
+   + Add local item types for items that are pointers.
+   (HJB)
+;
+
+
+   1.3.0   2003-07-24
+;
+   Changes as per Brian McMahon.
+   + Consistently quote tags embedded in text.
+   + Clean up introductory comments.
+   + Adjust line lengths to fit in 80 character window.
+   + Fix several descriptions in AXIS category which
+     referred to '_axis.type' instead of the current item.
+   + Fix erroneous use of deprecated item
+     '_diffrn_detector_axis.id' in examples for
+     DIFFRN_SCAN_AXIS.
+   + Add deprecated items '_diffrn_detector_axis.id'
+     and '_diffrn_measurement_axis.id'.
+   (HJB)
+;
+
+
+   1.2.4   2003-07-14
+;
+   Changes as per I. David Brown.
+   + Enhance descriptions in DIFFRN_SCAN_AXIS to make them less
+     dependent on the descriptions in DIFFRN_SCAN_FRAME_AXIS.
+   + Provide a copy of the deprecated DIFFRN_FRAME_DATA
+     category for completeness.
+   (HJB)
+;
+
+
+   1.2.3   2003-07-03
+;
+   Cleanup to conform to ITVG.
+   + Correct sign error in ..._cubed units.
+   + Correct '_diffrn_radiation.polarisn_norm' range.
+   (HJB)
+;
+
+
+   1.2.2   2003-03-10
+;
+   Correction of typos in various DIFFRN_SCAN_AXIS descriptions.
+   (HJB)
+;
+
+
+   1.2.1   2003-02-22
+;
+   Correction of ATOM_ for ARRAY_ typos in various descriptions.
+   (HJB)
+;
+
+
+   1.2     2003-02-07
+;
+   Corrections to encodings (remove extraneous hyphens) remove
+   extraneous underscore in '_array_structure.encoding_type'
+   enumeration.  Correct typos in items units list.  (HJB)
+;
+
+
+   1.1.3   2001-04-19
+;
+   Another typo corrections by Wilfred Li, and cleanup by HJB.
+;
+
+
+   1.1.2   2001-03-06
+;
+   Several typo corrections by Wilfred Li.
+;
+
+
+   1.1.1   2001-02-16
+;
+   Several typo corrections by JW.
+;
+
+
+   1.1     2001-02-06
+;
+   Draft resulting from discussions on header for use at NSLS.  (HJB)
+
+   + Change DIFFRN_FRAME_DATA to DIFFRN_DATA_FRAME.
+
+   + Change '_diffrn_detector_axis.id' to '_diffrn_detector_axis.detector_id'.
+
+   + Add '_diffrn_measurement_axis.measurement_device' and change
+     '_diffrn_measurement_axis.id' to
+     '_diffrn_measurement_axis.measurement_id'.
+
+   + Add '_diffrn_radiation.div_x_source', '_diffrn_radiation.div_y_source',
+    '_diffrn_radiation.div_x_y_source',
+    '_diffrn_radiation.polarizn_source_norm',
+   '_diffrn_radiation.polarizn_source_ratio', '_diffrn_scan.date_end',
+   '_diffrn_scan.date_start', '_diffrn_scan_axis.angle_rstrt_incr',
+   '_diffrn_scan_axis.displacement_rstrt_incr',
+   '_diffrn_scan_frame_axis.angle_increment',
+   '_diffrn_scan_frame_axis.angle_rstrt_incr',
+   '_diffrn_scan_frame_axis.displacement',
+   '_diffrn_scan_frame_axis.displacement_increment',and
+   '_diffrn_scan_frame_axis.displacement_rstrt_incr'.
+
+   + Add '_diffrn_measurement.device' to category key.
+
+   + Update yyyy-mm-dd to allow optional time with fractional seconds
+     for time stamps.
+
+   + Fix typos caught by RS.
+
+   + Add ARRAY_STRUCTURE_LIST_AXIS category, and use concept of axis sets to
+     allow for coupled axes, as in spiral scans.
+
+   + Add examples for fairly complete headers thanks to R. Sweet and P.
+     Ellis.
+;
+
+
+   1.0     2000-12-21
+;
+   Release version - few typos and tidying up.  (BM & HJB)
+
+   + Move ITEM_TYPE_LIST, ITEM_UNITS_LIST and DICTIONARY_HISTORY to end
+   of dictionary.
+
+   + Alphabetize dictionary.
+;
+
+
+   0.7.1   2000-09-29
+;
+   Cleanup fixes.  (JW)
+
+   + Correct spelling of DIFFRN_MEASUREMENT_AXIS in '_axis.id'
+
+   + Correct ordering of uses of '_item.mandatory_code' and
+   '_item_default.value'.
+;
+
+
+   0.7.0   2000-09-09
+;
+   Respond to comments by I. David Brown.  (HJB)
+
+   + Add further comments on '\n' and '\t'.
+
+   + Update ITEM_UNITS_LIST by taking section from mmCIF dictionary
+     and adding metres.  Change 'meter' to 'metre' throughout.
+
+   + Add missing enumerations to '_array_structure.compression_type'
+     and make 'none' the default.
+
+   + Remove parent-child relationship between
+     '_array_structure_list.index' and '_array_structure_list.precedence'.
+
+   + Improve alphabetization.
+
+   + Fix '_array_intensities.gain_esd' related function.
+
+   + Improve comments in AXIS.
+
+   + Fix DIFFRN_FRAME_DATA example.
+
+   + Remove erroneous DIFFRN_MEASUREMENT example.
+
+   + Add '_diffrn_measurement_axis.id' to the category key.
+;
+
+
+   0.6.0   1999-01-14
+;
+   Remove redundant information for ENC_NONE data.  (HJB)
+
+   + After the D5 remove binary section identifier, size and
+     compression type.
+
+   + Add Control-L to header.
+;
+
+
+   0.5.1   1999-01-03
+;
+   Cleanup of typos and syntax errors.  (HJB)
+
+   + Cleanup example details for DIFFRN_SCAN category.
+
+   + Add missing quote marks for '_diffrn_scan.id' definition.
+;
+
+
+   0.5   1999-01-01
+;
+   Modifications for axis definitions and reduction of binary header.  (HJB)
+
+   + Restore '_diffrn_detector.diffrn_id' to DIFFRN_DETECTOR KEY.
+
+   + Add AXIS category.
+
+   + Bring in complete DIFFRN_DETECTOR and DIFFRN_MEASUREMENT categories
+     from cif_mm.dic for clarity.
+
+   + Change '_array_structure.encoding_type' from type code to uline and
+     added X-Binary-Element-Type to MIME header.
+
+   + Add detector beam centre '_diffrn_detector_element.center[1]' and
+     '_diffrn_detector_element.center[2]'.
+
+   + Correct item name of '_diffrn_refln.frame_id'.
+
+   + Replace reference to '_array_intensities.undefined' by
+     '_array_intensities.undefined_value'.
+
+   + Replace references to '_array_intensity.scaling' with
+     '_array_intensities.scaling'.
+
+   + Add DIFFRN_SCAN... categories.
+;
+
+
+   0.4   1998-08-11
+;
+   Modifications to the 0.3 imgCIF draft.  (HJB)
+
+   + Reflow comment lines over 80 characters and corrected typos.
+
+   + Update examples and descriptions of MIME encoded data.
+
+   + Change name to cbfext98.dic.
+;
+
+
+   0.3   1998-07-04
+;
+   Modifications for imgCIF.  (HJB)
+
+   + Add binary type, which is a text field containing a variant on
+     MIME encoded data.
+
+   + Change type of '_array_data.data' to binary and specify internal
+     structure of raw binary data.
+
+   + Add '_array_data.binary_id', and make
+     '_diffrn_frame_data.binary_id' and '_array_intensities.binary_id'
+     into pointers to this item.
+;
+
+
+   0.2   1997-12-02
+;
+   Modifications to the CBF draft.  (JW)
+
+   + Add category hierarchy for describing frame data developed from
+     discussions at the BNL imgCIF Workshop Oct 1997.   The following
+     changes are made in implementing the workshop draft.  Category
+     DIFFRN_array_data is renamed to DIFFRN_FRAME_DATA.  Category
+     DIFFRN_FRAME_TYPE is renamed to DIFFRN_DETECTOR_ELEMENT.   The
+     parent item for '_diffrn_frame_data.array_id' is changed from
+     '_array_structure_list.array_id' to '_array_structure.id'. Item
+     '_diffrn_detector.array_id' is deleted.
+   + Add data item '_diffrn_frame_data.binary_id' to identify data
+     groups within a binary section.  The formal identification of the
+     binary section is still fuzzy.
+;
+
+
+   0.1   1997-01-24
+;
+   First draft of this dictionary in DDL 2.1 compliant format by John
+   Westbrook (JW).  This version is adapted from the Crystallographic
+   Binary File (CBF) Format Draft Proposal provided by Andy Hammersley
+   (AH).
+
+   Modifications to the CBF draft.  (JW)
+
+   + In this version the array description has been cast in the categories
+     ARRAY_STRUCTURE and ARRAY_STRUCTURE_LIST.  These categories
+     have been generalized to describe array data  of arbitrary dimension.
+
+   + Array data in this description are contained in the category
+     ARRAY_DATA.  This departs from the CBF notion of data existing
+     in some special comment. In this description, data are handled as an
+     ordinary data item encapsulated in a character data type.   Although
+     data this manner deviates from CIF conventions, it does not violate
+     any DDL 2.1 rules.  DDL 2.1 regular expressions can be used to define
+     the binary representation which will permit some level of data
+     validation.  In this version, the placeholder type code "any" has
+     been used. This translates to a regular expression which will match
+     any pattern.
+
+     It should be noted that DDL 2.1 already supports array data objects
+     although these have not been used in the current mmCIF dictionary.
+     It may be possible to use the DDL 2.1 ITEM_STRUCTURE and
+     ITEM_STRUCTURE_LIST categories to provide the information that is
+     carried in by the ARRAY_STRUCTURE and ARRAY_STRUCTURE_LIST.  By
+     moving the array structure to the DDL level it would be possible to
+     define an array type as well as a regular expression defining the
+     data format.
+
+   + Multiple array sections can be properly handled within a single
+     datablock.
+;
+
+
+#-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof

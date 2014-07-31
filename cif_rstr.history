@@ -1,0 +1,116 @@
+##############################################################################
+#                                                                            #
+#           CIF RESTRAINTS AND CONSTRAINTS DICTIONARY VERSION 1.0            #
+#           -----------------------------------------------------            #
+#                                                                            #
+# This dictionary contains the names and definitions proposed for reporting  #
+# restraints and constraints in the Core CIF dictionary                      #
+#                                                                            #
+# Copyright 2011 International Union of Crystallography                      #
+##############################################################################
+
+##############################################################################
+#                                                                            #
+# Some notes on the philosophy followed in this dictionary                   #
+# --------------------------------------------------------                   #
+# The items in this dictionary are designed for reporting the restraints     #
+# and constraints applied during the final refinement of a structure.        #
+# They are not intended, nor are they suitable, for use as instructions      #
+# to a refinement program.                                                   #
+#                                                                            #
+# A RESTRAINT is a condition used in the refinement of a crystal structure   #
+# that requires one or more of the parameters of the refinement to lie       #
+# within a certain range.                                                    #
+#                                                                            #
+# A CONSTRAINT is a condition used in the refinement of a crystal structure  #
+# that requires one or more parameters of the refinement to have a           #
+# specific value or be exactly equal to another refined parameter.           #
+#                                                                            #
+# The range of values allowed in a restraint is given in this dictionary     #
+# by a target value and a weighting parameter, the latter being the          #
+# expectation value of the difference between the refined value and          #
+# the target. Constraints are indicated by setting the weighting             #
+# parameter to zero.                                                         #
+#                                                                            #
+# Restraints and constraints are handled in many different ways in different #
+# programs.  The actual parameters restrained are determined by the way the  #
+# restraint is expressed within the program, and different programs          #
+# express the same restraint in different ways.  In this dictionary the      #
+# restraints are expressed in a way that is most natural to the description  #
+# of the crystal structure, which means that the parameters given here       #
+# may not correspond to the parameters that were actually restrained.        #
+# For example, the rigid-body constraint is expressed here by listing the    #
+# atoms in the rigid body. Distances and angles between them are constant.   #
+# For a rigid body the target parameters are the same as the refined         #
+# parameters, allowing the target geometry of the rigid body to be found     #
+# from the reported atomic coordinates.  However, in order to apply          #
+# this constraint in a refinement, either the coordinates of the atoms       #
+# in some arbitrary coordinate system or a sufficient number of geometric    #
+# parameters of the body must be specified. Since all these methods          #
+# preserve the rigid body intact, it is only the result that needs to be     #
+# reported, not the details of the method used. In this way the description  #
+# of restraints and constraints has been kept as simple as possible.         #
+#                                                                            #
+# The restraints and constraints used are many and varied, and not all       #
+# can be given in the forms listed in this dictionary.                       #
+# For this reason a general item _restr_special_details has been             #
+# provided so that a text description can be given for                       #
+# a restraint or constraint that cannot be reported in any other way.        #
+#                                                                            #
+# Attention is drawn to existing items in the core dictionary that flag      #
+# whether items have been restrained or constrained:                         #
+#   _atom_site_refinement_flags_adp                                          #
+#   _atom_site_refinement_flags_occupation                                   #
+#   _atom_site_refinement_flags_posn                                         #
+#   _atom_site_restraints                                                    #
+#                                                                            #
+##############################################################################
+
+data_on_this_dictionary
+    _dictionary_name            cif_core_restraints.dic
+    _dictionary_version         1.0
+    _dictionary_update          2011-03-09
+    _dictionary_history
+;
+   2009-18-10  Following consultations between the user community and
+               I. David Brown and Ilia Guzei, IDB started preparing this
+               dictionary using DDL1 by creating items
+               required by distance and angle restraints.
+
+   2009-12-09  IDB Completed first draft.
+
+   2010-01-13  IDB Corrected minor errors detected by IG prior to DMG review.
+
+   2010-01-14  IDB: Run through vcif by Brian McMahon and corrections made.
+               esd replaced by su in _type_conditions.
+
+   2010-06-03  IDB: U_ISO, U_SIMIILAR.
+
+   2010-09-15  IDB: The revised rigid body description is added.
+
+   2010-10-15  IDB: Corrections from H. Bernstein made.
+   
+   2010-12-09  NJA: minor editing.
+   
+   2011-01-24  BMcM: minor editing incorporating authors' final revisions.
+   
+   2011-03-09  BMcM: released
+;
+
+# This dictionary describes 14 restraints some of which are also constraints.
+#
+# 1.  Other restraint or constraint
+# 2.  Angle
+# 3.  Distance
+# 4.  Minimum approach of two atoms
+# 5.  Angles restrained to be equal
+# 6.  Distances restrained to be equal
+# 7.  Torsion angles restrained to be equal
+# 8.  Restrained parameter
+# 9.  Rigid body
+# 10. Atoms lie on a plane
+# 11. Torsion angle
+# 12. Isotropic atom
+# 13. Rigid bond
+# 14. Similar atomic displacement parameters
+

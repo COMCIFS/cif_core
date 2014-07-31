@@ -19,8 +19,8 @@ data_CIF_TWIN
 
     _dictionary.title           CIF_TWIN
     _dictionary.class           Instance
-    _dictionary.version         3.0.01
-    _dictionary.date            2014-06-12
+    _dictionary.version         3.0.02
+    _dictionary.date            2014-07-30
     _dictionary.uri             www.iucr.org/cif/dic/cif_twin.dic
     _dictionary.ddl_conformance 3.11.04
     _dictionary.namespace       TwinCrys
@@ -608,21 +608,23 @@ save_twin_refln.F_squared_meas
      save_
  
  
-save_twin_refln.F_squared_sigma
-    _definition.id             '_twin_refln.F_squared_sigma'
+save_twin_refln.F_squared_meas_sigma
+    _definition.id             '_twin_refln.F_squared_meas_sigma'
      loop_
-    _alias.definition_id       '_twin_refln_F_squared_sigma'
+    _alias.definition_id       '_twin_refln_F_squared_meas_sigma'
+                               '_twin_refln_F_squared_sigma'
                                '_twin_refln.F_squared_sigma'
-                               '_twin_refln.F_squared_su'
-    _definition.update           2014-06-20
+                               '_twin_refln.F_squared_meas_su'
+    _definition.update           2014-07-30
     _description.text             
 ;
      Standard uncertainty of _twin_refln_F_squared_meas
 ;
     _name.category_id            twin_refln
-    _name.object_id              F_squared_su
+    _name.object_id              F_squared_meas_su
+    _name.linked_item_id       '_twin_refln.F_squared_meas'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
      save_

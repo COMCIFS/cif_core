@@ -14,8 +14,8 @@ data_CIF_RSTR
 
     _dictionary.title            CIF_RSTR
     _dictionary.class            Instance
-    _dictionary.version          3.00.01
-    _dictionary.date             2014-06-29
+    _dictionary.version          3.00.02
+    _dictionary.date             2014-07-30
     _dictionary.uri              www.iucr.org/cif/dic/cif_rstr.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifRstr
@@ -936,7 +936,7 @@ save_restr_equal_angle_class.average_su
     _definition.id             '_restr_equal_angle_class.average_su'
      loop_
     _alias.definition_id       '_restr_equal_angle_class_esd'
-    _definition.update           2014-06-29
+    _definition.update           2014-07-30
     _description.text
 ;
       The actual estimated standard deviation of the angles in the
@@ -946,8 +946,9 @@ save_restr_equal_angle_class.average_su
 ;
     _name.category_id            restr_equal_angle_class
     _name.object_id              average_su
+    _name.linked_item_id       '_restr_equal_angle_class.average'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0:
@@ -1213,7 +1214,7 @@ save_restr_equal_distance_class.average_su
     _definition.id             '_restr_equal_distance_class.average_su'
      loop_
     _alias.definition_id       '_restr_equal_distance_class_esd'
-    _definition.update           2014-06-29
+    _definition.update           2014-07-30
     _description.text
 ;
       The actual estimated standard deviation of the distances in the
@@ -1223,8 +1224,9 @@ save_restr_equal_distance_class.average_su
 ;
     _name.category_id            restr_equal_distance_class
     _name.object_id              average_su
+    _name.linked_item_id       '_restr_equal_distance_class.average'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0:
@@ -1539,7 +1541,7 @@ save_restr_equal_torsion_class.average_su
     _definition.id             '_restr_equal_torsion_class.average_su'
      loop_
     _alias.definition_id       '_restr_equal_torsion_class_esd'
-    _definition.update           2014-06-29
+    _definition.update           2014-07-30
     _description.text
 ;
       The actual estimated standard deviation of the distances in the
@@ -1549,8 +1551,9 @@ save_restr_equal_torsion_class.average_su
 ;
     _name.category_id            restr_equal_torsion_class
     _name.object_id              average_su
+    _name.linked_item_id       '_restr_equal_torsion_class.average'
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0:
@@ -2094,18 +2097,18 @@ save_restr_plane_class.details
      save_
  
  
-save_restr_plane_class.displacement_su
-    _definition.id             '_restr_plane_class.displacement_su'
+save_restr_plane_class.displacement_avsu
+    _definition.id             '_restr_plane_class.displacement_avsu'
      loop_
     _alias.definition_id       '_restr_plane_class_displacement_esd'
-    _definition.update           2014-06-29
+    _definition.update           2014-07-30
     _description.text             
 ;
-      The observed standard uncertainty of atoms in this plane.
+      The average standard uncertainty of atoms in this plane.
 ;
     _name.category_id            restr_plane_class
-    _name.object_id              displacement_su
-    _type.purpose                Number
+    _name.object_id              displacement_avsu
+    _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real

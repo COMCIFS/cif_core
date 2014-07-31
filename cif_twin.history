@@ -1,0 +1,95 @@
+##############################################################################
+#                                                                            #
+#              History of CIF Twinning Definition Revisions                  #
+#                                                                            #
+# This dictionary contains names and definitions of twinning data items      #
+# recognized by the International Union of Crystallography for the exchange  #
+# of data between laboratories and submissions to journals and databases.    #
+#                                                                            #
+# The STAR/DDL dictionary to which this dictionary conforms                  #
+# is available as the file "ddl_core.dic"                                    #
+# located at URL ftp://ftp.iucr.org/pub/cifdics/ddl_core_1.4.1.dic           #
+#                                                                            #
+##############################################################################
+
+     loop_
+    _dictionary_audit.version
+    _dictionary_audit.date
+    _dictionary_audit.revision
+
+
+    1.0      2014-02-14
+;
+    2012-07-25 Created from Victor Young's draft text. JRH
+    2012-08-20 Added category definitions and corrected _list for 
+               _twin_lattice_type. JRH
+    2012-08-21 cosmetic changes such as arranging the items 
+               alphabetically and added queries for VY. I.D.Brown
+    2012-08-28 Inserted changes from V. Young as per I.D. Brown's
+               comments; removed _example_detail for twin category; corrected
+               _list_reference for _refln_ category; added explanation for
+               _refln_F_squared_ . JRH
+    2012-08-31 Added _twin_special_details with example from VY. JRH
+    2013-01-17 Corrected equation defining F_calc. JRH
+    2013-01-18 Moved _refln_ items into separate _twin_refln category and
+               rewrote definitions for clarity.
+    2013-03-13 Added missing _twin_refln_index_ . JRH
+    2013-03-25 IDB: Added enumeration range to 
+               _twin_individual__mass_fraction_refined and rewrote 
+               the definition 
+               Rewrote the definition of _twin_individual_twin_matrix
+               Raised queries about what the _twin_refln category 
+               is actually recording.
+    2013-05-09 JRH: corrected _twin_refln_F_calc equation; added
+               _list_reference to _twin_refln_h, *_k, *_l definition;
+               fiddled with _twin_individual_twin_id definition text
+    2013-06-26 JRH,VY: added further example to TWIN category
+    2013-06-26 some syntax and formatting errors corrected (BM)
+    2013-06-27 IDB Changed  _twin_refln_observed_status to  
+               _twin_refln_include_status
+               Added the twin_contibution category
+               Reworked the twin_refln category to change the list reference
+                to _twin_refln_datum_id (name changed from _*_datum_index
+               Made some improvements to the definitions.
+               Converted space group symbols to CIF conventions
+               Arranged items in alphabetic order to conform 
+                to other dictonaries.
+    2013-07-11 JRH edited examples to reflect proposed changes from IDB
+    2013-07-29 VGY modified examples to comply with IDB's suggested changes 
+               (see below). These are within comments, but not yet integrated
+               into the text of the document. Added nmt for non-merohedral
+               twin into data_twin_lattice_type. Somehow this was removed.
+    2013-08-16 VGY made corrections as directed by JH in examples 2 and 3. 
+               Removed work for these examples from commented text and 
+               integrated into document. Updated example 1 to include explicit 
+               _twin_contribution items for individual 2.
+    2013-09-02 JRH edited in latest examples from VGY after email discussion
+    2013-09-03 JRH: move lattice_twin_type into twin_individual category; add
+               'ref' lattice twin type. Changed _twin_contribution_twin_id to
+               _twin_contribution_individual_id
+    2013-09-03 VGY: improve example to include single-contributor reflections 
+               coming from different individuals.
+    2013-09-13 IDB: Changed _refln_twin to _twin_refln, 
+               improved wording of some definitions, corrected syntax errors, 
+               added _twin_refln_include_status, 
+               removed '_mandatory yes' from _twin_refln_index_
+               Rearranged the order of items in some examples to put the 
+               list reference first.
+    2013-11-13 IDB: Following comments from Tony Linden and George Sheldrick 
+               an alternative version of twin_refln is proposed.  
+               If this is adopted _twin_contribution would be dropped.
+    2013-12-04 IDB: The alternative twin_refln is adopted and 
+               twin_contribution is deleted.
+    2012-12-04 Minor spelling corrections,removal of old twin_contribution
+               material and example clarification added. VGY
+    2012-12-05 IDB: Made changes in the description of the example 
+               under the twin category to reflect the deletion 
+               of the twin_contribution category.
+               Removed '_twin_contribution_individual_id' from
+               _link_list_child in the definition of _twin_individual_id.
+               Modified the description of the twin_refln category 
+               to reflect the merging of twin_contribution with twin_refln.
+               Added r to enumeration list of _twin_refln_include_status.
+   2014-02-14  BMcM and NJA: minor editing for clean release version
+;
+

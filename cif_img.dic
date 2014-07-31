@@ -13,8 +13,8 @@ data_CIF_IMG
 
     _dictionary.title            CIF_IMG
     _dictionary.class            Instance
-    _dictionary.version          3.00.01
-    _dictionary.date             2014-07-07
+    _dictionary.version          3.00.02
+    _dictionary.date             2014-07-30
     _dictionary.uri              www.iucr.org/cif/dic/cif_img.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifImag
@@ -648,15 +648,16 @@ save_array_intensities.gain_esd
     _definition.id             '_array_intensities.gain_esd'
      loop_
     _alias.definition_id       '_array_intensities.gain_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
    The standard uncertainty (esd) of detector 'gain'.
 ;
     _name.category_id           array_intensities
     _name.object_id             gain_su
+    _name.linked_item_id      '_array_intensities.gain'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
     _units.code                 counts_per_photon
@@ -3681,7 +3682,7 @@ save_diffrn_radiation.polarisn_norm_esd
     _definition.id             '_diffrn_radiation.polarisn_norm_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarisn_norm_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) of _diffrn_radiation.polarisn_norm,
@@ -3691,8 +3692,9 @@ save_diffrn_radiation.polarisn_norm_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarisn_norm_su
+    _name.linked_item_id      '_diffrn_radiation.polarisn_norm'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
     _units.code                 degrees
@@ -3710,7 +3712,7 @@ save_diffrn_radiation.polarisn_ratio_esd
      loop_
     _alias.definition_id       '_diffrn_radiation.polarisn_ratio_su'
                                '_diffrn_radiation_polarisn_ratio_esd'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) of _diffrn_radiation.polarisn_ratio,
@@ -3718,8 +3720,9 @@ save_diffrn_radiation.polarisn_ratio_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarisn_ratio_esd
+    _name.linked_item_id      '_diffrn_radiation.polarisn_ratio'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -3761,7 +3764,7 @@ save_diffrn_radiation.polarizn_source_norm_esd
     _definition.id             '_diffrn_radiation.polarizn_source_norm_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarizn_source_norm_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) of _diffrn_radiation.polarizn_source_norm,
@@ -3771,8 +3774,9 @@ save_diffrn_radiation.polarizn_source_norm_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarizn_source_norm_su
+    _name.linked_item_id      '_diffrn_radiation.polarizn_source_norm'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
     _units.code                 degrees
@@ -3829,7 +3833,7 @@ save_diffrn_radiation.polarizn_source_ratio_esd
     _definition.id             '_diffrn_radiation.polarizn_source_ratio_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarizn_source_ratio_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      Standard uncertainty (esd)of _diffrn_radiation.polarizn_source_ratio,
@@ -3841,8 +3845,9 @@ save_diffrn_radiation.polarizn_source_ratio_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarizn_source_ratio_su
+    _name.linked_item_id      '_diffrn_radiation.polarizn_source_ratio'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -3887,7 +3892,7 @@ save_diffrn_radiation.polarizn_Stokes_I_esd
     _definition.id             '_diffrn_radiation.polarizn_Stokes_I_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarizn_Stokes_I_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd)i of _diffrn_radiation.polarizn_Stokes_I,
@@ -3900,8 +3905,9 @@ save_diffrn_radiation.polarizn_Stokes_I_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarizn_Stokes_I_su
+    _name.linked_item_id      '_diffrn_radiation.polarizn_Stokes_I'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -3945,7 +3951,7 @@ save_diffrn_radiation.polarizn_Stokes_Q_esd
     _definition.id             '_diffrn_radiation.polarizn_Stokes_Q_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarizn_Stokes_Q_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) of _diffrn_radiation.polarizn_Stokes_Q,
@@ -3960,8 +3966,9 @@ save_diffrn_radiation.polarizn_Stokes_Q_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarizn_Stokes_Q_su
+    _name.linked_item_id      '_diffrn_radiation.polarizn_Stokes_Q'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -4005,7 +4012,7 @@ save_diffrn_radiation.polarizn_Stokes_U_esd
     _definition.id             '_diffrn_radiation.polarizn_Stokes_U_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarizn_Stokes_U_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) _diffrn_radiation.polarizn_Stokes_U,
@@ -4020,8 +4027,9 @@ save_diffrn_radiation.polarizn_Stokes_U_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarizn_Stokes_U_su
+    _name.linked_item_id      '_diffrn_radiation.polarizn_Stokes_U'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -4066,7 +4074,7 @@ save_diffrn_radiation.polarizn_Stokes_V_esd
     _definition.id             '_diffrn_radiation.polarizn_Stokes_V_esd'
      loop_
     _alias.definition_id       '_diffrn_radiation.polarizn_Stokes_V_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      Standard uncertainty (esd) _diffrn_radiation.polarizn_Stokes_V,
@@ -4082,8 +4090,9 @@ save_diffrn_radiation.polarizn_Stokes_V_esd
 ;
     _name.category_id           diffrn_radiation
     _name.object_id             polarizn_Stokes_V_su
+    _name.linked_item_id      '_diffrn_radiation.polarizn_Stokes_V'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -4917,7 +4926,7 @@ save_diffrn_scan_frame.polarizn_Stokes_I_esd
     _definition.id             '_diffrn_scan_frame.polarizn_Stokes_I_esd'
      loop_
     _alias.definition_id       '_diffrn_scan_frame.polarizn_Stokes_I_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd)i of _diffrn_scan_frame.polarizn_Stokes_I,
@@ -4930,8 +4939,9 @@ save_diffrn_scan_frame.polarizn_Stokes_I_esd
 ;
     _name.category_id           diffrn_scan_frame
     _name.object_id             polarizn_Stokes_I_su
+    _name.linked_item_id      '_diffrn_scan_frame.polarizn_Stokes_I'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -4975,7 +4985,7 @@ save_diffrn_scan_frame.polarizn_Stokes_Q_esd
     _definition.id             '_diffrn_scan_frame.polarizn_Stokes_Q_esd'
      loop_
     _alias.definition_id       '_diffrn_scan_frame.polarizn_Stokes_Q_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) of _diffrn_scan_frame.polarizn_Stokes_Q,
@@ -4990,8 +5000,9 @@ save_diffrn_scan_frame.polarizn_Stokes_Q_esd
 ;
     _name.category_id           diffrn_scan_frame
     _name.object_id             polarizn_Stokes_Q_su
+    _name.linked_item_id      '_diffrn_scan_frame.polarizn_Stokes_Q'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -5035,7 +5046,7 @@ save_diffrn_scan_frame.polarizn_Stokes_U_esd
     _definition.id             '_diffrn_scan_frame.polarizn_Stokes_U_esd'
      loop_
     _alias.definition_id       '_diffrn_scan_frame.polarizn_Stokes_U_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      The standard uncertainty (esd) _diffrn_scan_frame.polarizn_Stokes_U,
@@ -5050,8 +5061,9 @@ save_diffrn_scan_frame.polarizn_Stokes_U_esd
 ;
     _name.category_id           diffrn_scan_frame
     _name.object_id             polarizn_Stokes_U_su
+    _name.linked_item_id      '_diffrn_scan_frame.polarizn_Stokes_U'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
@@ -5096,7 +5108,7 @@ save_diffrn_scan_frame.polarizn_Stokes_V_esd
     _definition.id             '_diffrn_scan_frame.polarizn_Stokes_V_esd'
      loop_
     _alias.definition_id       '_diffrn_scan_frame.polarizn_Stokes_V_su'
-    _definition.update           2014-07-07
+    _definition.update           2014-07-30
     _description.text
 ;
      Standard uncertainty (esd) _diffrn_scan_frame.polarizn_Stokes_V,
@@ -5112,8 +5124,9 @@ save_diffrn_scan_frame.polarizn_Stokes_V_esd
 ;
     _name.category_id           diffrn_scan_frame
     _name.object_id             polarizn_Stokes_V_su
+    _name.linked_item_id      '_diffrn_scan_frame.polarizn_Stokes_V'
     _type.purpose               SU
-    _type.source                Derived
+    _type.source                Related
     _type.container             Single
     _type.contents              Real
      save_
