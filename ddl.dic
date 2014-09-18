@@ -8,10 +8,10 @@ data_DDL_DIC
  
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.11.04
-    _dictionary.date             2013-09-08
+    _dictionary.version          3.11.05
+    _dictionary.date             2014-09-18
     _dictionary.uri              www.iucr.org/cif/dic/ddl.dic 
-    _dictionary.ddl_conformance  3.11.04
+    _dictionary.ddl_conformance  3.11.05
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -47,7 +47,9 @@ save_ALIAS
     _name.category_id            ATTRIBUTES
     _name.object_id              ALIAS
     _category.key_id           '_alias.definition_id'
-    _category.key_list        ['_alias.definition_id']
+    loop_
+    _category_key.name         '_alias.definition_id'
+
 
  
 save_alias.definition_id  
@@ -128,10 +130,10 @@ save_category.key_id
     _definition.class            Attribute
     _description.text
 ;
-     Tag of a data item in a Loop category which is the generic key
+     Tag of a single data item in a Loop category which is the generic key
      to access other items in the category. The value of this
      item must be unique in order to provide unambiguous access to
-     a packet (row) in the table of values.
+     a packet (row) in the table of values. 
 ;
     _name.category_id            category
     _name.object_id              key_id
@@ -141,27 +143,40 @@ save_category.key_id
     _type.contents               Tag
      save_
  
+save_CATEGORY_KEY
 
-save_category.key_list
-    _definition.id             '_category.key_list'
-    _definition.update           2013-09-08
+    _definition.id               CATEGORY_KEY
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2014-09-18
+    _description.text
+;
+     The attributes used to specify (possibly multiple) 
+     keys for a given category.
+;
+    _name.category_id            CATEGORY
+    _name.object_id              KEY
+
+save_category_key.name
+    _definition.id             '_category_key.name'
+    _definition.update           2014-09-18
     _definition.class            Attribute
     _description.text
 ;
-     The List of tags that collectively represent the generic key
+     Tag(s) that together constitute the generic key
      to access other items in a Loop category. The value of items in
-     this list must be unique in order to provide unambiguous access 
-     to a packet (row) in the table of values.
+     this loop must be unique, so that unambiguous access 
+     to a packet (row) in the table of values is possible.
 ;
-    _name.category_id            category
-    _name.object_id              key_list
+    _name.category_id            category_key
+    _name.object_id              name
     _type.purpose                Identify
     _type.source                 Assigned
-    _type.container              List
+    _type.container              Single
     _type.contents               Tag
-    _type.dimension              [*]
      save_
 
+     save_   #------ close of CATEGORY_KEY category
 
      save_   #------ close of CATEGORY category
  
@@ -410,7 +425,9 @@ save_DESCRIPTION_EXAMPLE
     _name.category_id            DESCRIPTION
     _name.object_id              EXAMPLE
     _category.key_id           '_description_example.case'
-    _category.key_list        ['_description_example.case']
+    loop_
+    _category_key.name         '_description_example.case'
+
  
  
 save_description_example.case
@@ -617,7 +634,8 @@ save_DICTIONARY_AUDIT
     _name.category_id            DICTIONARY
     _name.object_id              AUDIT
     _category.key_id            '_dictionary_audit.version'
-    _category.key_list         ['_dictionary_audit.version']
+    loop_
+    _category.key_name          '_dictionary_audit.version'
  
  
 save_dictionary_audit.date
@@ -690,8 +708,9 @@ save_DICTIONARY_VALID
 ;
     _name.category_id            DICTIONARY  
     _name.object_id              VALID
-    _category.key_id            '_dictionary_valid.application'  
-    _category.key_list         ['_dictionary_valid.application'] 
+    _category.key_id            '_dictionary_valid.application'
+    loop_  
+    _category.key_name          '_dictionary_valid.application' 
  
  
 save_dictionary_valid.attributes 
@@ -785,7 +804,9 @@ save_DICTIONARY_XREF
     _name.category_id            DICTIONARY  
     _name.object_id              XREF
     _category.key_id           '_dictionary_xref.code'
-    _category.key_list        ['_dictionary_xref.code']
+    loop_
+    _category_key.name         '_dictionary_xref.code'
+
  
  
 save_dictionary_xref.code       
@@ -991,7 +1012,9 @@ save_ENUMERATION_DEFAULT
     _name.category_id            ENUMERATION
     _name.object_id              DEFAULT
     _category.key_id           '_enumeration_default.index'  
-    _category.key_list        ['_enumeration_default.index']
+    loop_
+    _category_key.name         '_enumeration_default.index'
+
  
  
 save_enumeration_default.index
@@ -1049,7 +1072,9 @@ save_ENUMERATION_SET
     _name.category_id            ENUMERATION
     _name.object_id              SET
     _category.key_id           '_enumeration_set.state'  
-    _category.key_list        ['_enumeration_set.state']
+    loop_
+    _category_key.name         '_enumeration_set.state'
+
  
  
 save_enumeration_set.state
@@ -1363,7 +1388,9 @@ save_METHOD
     _name.category_id            ATTRIBUTES
     _name.object_id              METHOD
     _category.key_id           '_method.purpose'
-    _category.key_list        ['_method.purpose']
+    loop_
+    _category_key.name         '_method.purpose'
+
  
  
 save_method.purpose       
@@ -1882,7 +1909,7 @@ save_units.code
                                  "_name.object_id"]
 
   ["Category","Recommended"]    ["_category.key_id",
-                                 "_category.key_list",
+                                 "_category_key.name",
                                  "_description.text"]
 
   ["Category","Prohibited"]     ["ALIAS", 
@@ -1897,14 +1924,13 @@ save_units.code
                                  "_definition.update",
                                  "_name.object_id",    
                                  "_name.category_id",
-                                 "_type.purpose",  
-                                 "_type.source",
                                  "_type.container",  
                                  "_type.contents"]
 
    ["Item","Recommended"]       ["_definition.scope",
                                  "_definition.class",
                                  "_type.source",  
+                                 "_type.purpose",
                                  "_description.text",
                                  "_description.common"]
 
@@ -2259,4 +2285,11 @@ Removed 'Measured' as a state for type.source
    Attribute _alias.deprecation_date added.
    Attribute _category.key_list      added.
    The attribute _category.key_list added to all Loop category defs.
+;
+     3.11.05 2014-09-18
+;
+   Looped category _category_key replaces _category.key_list
+   Added _category_key.name and changed all occurrences of 
+   _category.key_list to _category_key.name
+   Changed _type.source and _type.purpose to Recommended
 ;
