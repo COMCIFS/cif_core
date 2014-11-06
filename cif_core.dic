@@ -3644,7 +3644,7 @@ save_chemical_conn_atom.key
     _method.purpose
     _method.expression
      Definition
-;         _type.contents = Type_Contents(chemical_conn_atom.number))
+;         _type.contents = Type_Contents(chemical_conn_atom.number)
 ;
      Evaluation
 ;         _chemical_conn_atom.key = _chemical_conn_atom.number
@@ -4928,7 +4928,7 @@ save_symmetry_equiv.pos_site_id
    _method.expression
     Evaluation
 ;
-     _symmetry_equiv.pos_site_id = Current_Row(_symmetry_equiv) + 1
+     _symmetry_equiv.pos_site_id = Current_Row(symmetry_equiv) + 1
 ;
      save_
  
@@ -9041,8 +9041,8 @@ save_refln.F_complex
  
    Loop a  as  atom_site  {
  
-          f  =   a.site_symmetry_multiplicity * a.occupancy *
-                 ( r.form_factor_table [a.type_symbol]      +
+          f  =   a.site_symmetry_multiplicity * a.occupancy * ( 
+                         r.form_factor_table [a.type_symbol]      +
                         _atom_type_scat[a.type_symbol].dispersion  )
  
       Loop s  as  symmetry_equiv  {
@@ -11723,7 +11723,7 @@ save_atom_site.fract_xyz
 ;
      With a  as  atom_site
  
-     atom_site.fract_xyz =  [a.fract_x, a.fract_y, a.fract_z]
+     _atom_site.fract_xyz =  [a.fract_x, a.fract_y, a.fract_z]
 ;
      save_
  
@@ -13857,7 +13857,7 @@ save_atom_type.number_in_cell
  
        if ( a.type_symbol == t.symbol ) {
  
-          cnt +=  a.gt * a.site_symmetry_multiplicity
+          cnt +=  a.occupancy * a.site_symmetry_multiplicity
     }  }
     _atom_type.number_in_cell =  cnt
 ;
@@ -13931,7 +13931,7 @@ save_atom_type.radius_contact
     _method.expression
      Evaluation
 ;
-     _atom_type.radius_contact =  atom_type.radius_bond + 1.25
+     _atom_type.radius_contact =  _atom_type.radius_bond + 1.25
 ;
      save_
  
@@ -23242,7 +23242,7 @@ save_function.SeitzFromJones
      Function SeitzFromJones( j :[Single, Text])  { # Jones symmetry notation
  
       joneschrs = "123456xyz/,+- "
-      s         = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,1]]
+      s         = Matrix([[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,1]])
       axis      = 0
       sign      = 1
       inum      = 0
