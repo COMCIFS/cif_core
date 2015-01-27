@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.11.05
-    _dictionary.date             2014-09-18
+    _dictionary.date             2015-01-27
     _dictionary.uri              www.iucr.org/cif/dic/ddl.dic 
     _dictionary.ddl_conformance  3.11.05
     _dictionary.namespace        DdlDic
@@ -155,7 +155,8 @@ save_CATEGORY_KEY
      keys for a given category.
 ;
     _name.category_id            CATEGORY
-    _name.object_id              KEY
+    _name.object_id              CATEGORY_KEY
+    _category.key_id             '_category_key.name'
 
 save_category_key.name
     _definition.id             '_category_key.name'
@@ -423,7 +424,7 @@ save_DESCRIPTION_EXAMPLE
      values of the defined items.
 ;
     _name.category_id            DESCRIPTION
-    _name.object_id              EXAMPLE
+    _name.object_id              DESCRIPTION_EXAMPLE
     _category.key_id           '_description_example.case'
     loop_
     _category_key.name         '_description_example.case'
@@ -438,7 +439,7 @@ save_description_example.case
 ;
      An example case of the defined item.
 ;
-    _name.category_id            example
+    _name.category_id            description_example
     _name.object_id              case
     _type.purpose                Key
     _type.source                 Assigned
@@ -455,7 +456,7 @@ save_description_example.detail
 ;
      A description of an example case for the defined item.
 ;
-    _name.category_id            example
+    _name.category_id            description_example
     _name.object_id              detail
     _type.purpose                Describe
     _type.source                 Assigned
@@ -632,10 +633,10 @@ save_DICTIONARY_AUDIT
      in this category are NOT used as attributes of individual data items.
 ;
     _name.category_id            DICTIONARY
-    _name.object_id              AUDIT
+    _name.object_id              DICTIONARY_AUDIT
     _category.key_id            '_dictionary_audit.version'
     loop_
-    _category.key_name          '_dictionary_audit.version'
+    _category_key.name          '_dictionary_audit.version'
  
  
 save_dictionary_audit.date
@@ -646,7 +647,7 @@ save_dictionary_audit.date
 ;
      The date of each dictionary revision.
 ;
-    _name.category_id            audit
+    _name.category_id            dictionary_audit
     _name.object_id              date
     _type.purpose                Audit         
     _type.source                 Assigned
@@ -663,7 +664,7 @@ save_dictionary_audit.revision
 ;
      A description of the revision applied for the _dictionary_audit.version.
 ;
-    _name.category_id            audit
+    _name.category_id            dictionary_audit
     _name.object_id              revision
     _type.purpose                Describe  
     _type.source                 Assigned
@@ -680,7 +681,7 @@ save_dictionary_audit.version
 ;
      A unique version identifier for each revision of the dictionary.
 ;
-    _name.category_id            audit
+    _name.category_id            dictionary_audit
     _name.object_id              version
     _type.purpose                Key         
     _type.source                 Assigned
@@ -707,10 +708,10 @@ save_DICTIONARY_VALID
      and prohibited attributes.
 ;
     _name.category_id            DICTIONARY  
-    _name.object_id              VALID
+    _name.object_id              DICTIONARY_VALID
     _category.key_id            '_dictionary_valid.application'
     loop_  
-    _category.key_name          '_dictionary_valid.application' 
+    _category_key.name          '_dictionary_valid.application' 
  
  
 save_dictionary_valid.attributes 
@@ -722,7 +723,7 @@ save_dictionary_valid.attributes
      A list of the attribute names and categories that are assessed
      for application in the item, category and dictionary definitions.
 ;
-    _name.category_id            valid
+    _name.category_id            dictionary_valid
     _name.object_id              attributes
     _type.purpose                Audit         
     _type.source                 Assigned
@@ -740,7 +741,7 @@ save_dictionary_valid.option
 ;
      Option codes for applicability of attributes in definitions.
 ;
-    _name.category_id            valid
+    _name.category_id            dictionary_valid
     _name.object_id              option
     _type.purpose                State         
     _type.source                 Assigned
@@ -767,7 +768,7 @@ save_dictionary_valid.application
      as a two element list. This list signals the validity of applying
      the attributes given in _dictionary_valid.attributes.
 ;
-    _name.category_id            valid
+    _name.category_id            dictionary_valid
     _name.object_id              application
     _type.purpose                Key     
     _type.source                 Assigned
@@ -802,7 +803,7 @@ save_DICTIONARY_XREF
     o used as attributes of individual data items.
 ;
     _name.category_id            DICTIONARY  
-    _name.object_id              XREF
+    _name.object_id              DICTIONARY_XREF
     _category.key_id           '_dictionary_xref.code'
     loop_
     _category_key.name         '_dictionary_xref.code'
@@ -817,7 +818,7 @@ save_dictionary_xref.code
 ;
      A code identifying the cross-referenced dictionary.
 ;
-    _name.category_id            xref
+    _name.category_id            dictionary_xref
     _name.object_id              code
     _type.purpose                Key     
     _type.source                 Assigned
@@ -834,7 +835,7 @@ save_dictionary_xref.date
 ;
      Date of the cross-referenced dictionary.
 ;
-    _name.category_id            xref
+    _name.category_id            dictionary_xref
     _name.object_id              date
     _type.purpose                Audit       
     _type.source                 Assigned
@@ -851,7 +852,7 @@ save_dictionary_xref.format
 ;
      Format of the cross referenced dictionary.
 ;
-    _name.category_id            xref
+    _name.category_id            dictionary_xref
     _name.object_id              format
     _type.purpose                Audit
     _type.source                 Assigned
@@ -868,7 +869,7 @@ save_dictionary_xref.name
 ;
      The name and description of the cross-referenced dictionary.
 ;
-    _name.category_id            xref
+    _name.category_id            dictionary_xref
     _name.object_id              name
     _type.purpose                Audit     
     _type.source                 Assigned
@@ -885,7 +886,7 @@ save_dictionary_xref.uri
 ;
      The source URI of the cross referenced dictionary data.
 ;
-    _name.category_id            xref
+    _name.category_id            dictionary_xref
     _name.object_id              uri
     _type.purpose                Audit
     _type.source                 Assigned
@@ -1010,7 +1011,7 @@ save_ENUMERATION_DEFAULT
      data item by the item _enumeration.def_index_id.
 ;
     _name.category_id            ENUMERATION
-    _name.object_id              DEFAULT
+    _name.object_id              ENUMERATION_DEFAULT
     _category.key_id           '_enumeration_default.index'  
     loop_
     _category_key.name         '_enumeration_default.index'
@@ -1026,7 +1027,7 @@ save_enumeration_default.index
      Index key in the list default values referenced to by the value
      of _enumeration.def_index_id .
 ;
-    _name.category_id            default
+    _name.category_id            enumeration_default
     _name.object_id              index
     _type.purpose                Key
     _type.source                 Assigned
@@ -1045,7 +1046,7 @@ save_enumeration_default.value
      _enumeration.def_index_id. The reference index key is given by
      the value of _enumeration_default.index value.
 ;
-    _name.category_id            default
+    _name.category_id            enumeration_default
     _name.object_id              value
     _type.purpose                Encode
     _type.source                 Assigned
@@ -1070,7 +1071,7 @@ save_ENUMERATION_SET
      set of unique pre-determined values.
 ;
     _name.category_id            ENUMERATION
-    _name.object_id              SET
+    _name.object_id              ENUMERATION_SET
     _category.key_id           '_enumeration_set.state'  
     loop_
     _category_key.name         '_enumeration_set.state'
@@ -1085,7 +1086,7 @@ save_enumeration_set.state
 ;
      Permitted value state for the defined item.
 ;
-    _name.category_id            set
+    _name.category_id            enumeration_set
     _name.object_id              state
     _type.purpose                Key
     _type.source                 Assigned
@@ -1102,7 +1103,7 @@ save_enumeration_set.table_id
 ;
      Permitted id codes in the defined TABLE item {"<id>:<val>,...}.
 ;
-    _name.category_id            set
+    _name.category_id            enumeration_set
     _name.object_id              table_id
     _type.purpose                Encode
     _type.source                 Assigned
@@ -1120,7 +1121,7 @@ save_enumeration_set.detail
      The meaning of the code (identified by _enumeration_set.state)
      in terms of the value of the quantity it describes.
 ;
-    _name.category_id            set
+    _name.category_id            enumeration_set
     _name.object_id              detail
     _type.purpose                Describe    
     _type.source                 Assigned
@@ -1138,7 +1139,7 @@ save_enumeration_set.xref_code
      Identity of the equivalent item in the dictionary
      referenced by the DICTIONARY_XREF attributes.
 ;
-    _name.category_id            set
+    _name.category_id            enumeration_set
     _name.object_id              xref_code
     _type.purpose                Audit
     _type.source                 Assigned
@@ -1156,7 +1157,7 @@ save_enumeration_set.xref_dictionary
      Code identifying the dictionary in the DICTIONARY_XREF 
      list.
 ;
-    _name.category_id            set
+    _name.category_id            enumeration_set
     _name.object_id              xref_dictionary
     _type.purpose                Audit 
     _type.source                 Assigned
@@ -2293,3 +2294,9 @@ Removed 'Measured' as a state for type.source
    _category.key_list to _category_key.name
    Changed _type.source and _type.purpose to Recommended
 ;
+     3.11.06 2015-01-27
+   Replaced stub category names with full category names in _name.category_id
+   and _name.object_id.
+   Corrected all _category.key_name to _category_key.name
+;
+
