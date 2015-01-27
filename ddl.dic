@@ -2295,6 +2295,7 @@ Removed 'Measured' as a state for type.source
    Changed _type.source and _type.purpose to Recommended
 ;
      3.11.06 2015-01-27
+;
    Replaced stub category names with full category names in _name.category_id
    and _name.object_id.
    Corrected all _category.key_name to _category_key.name
