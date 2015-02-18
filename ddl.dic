@@ -8,10 +8,10 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.11.05
-    _dictionary.date             2015-01-27
+    _dictionary.version          3.11.08
+    _dictionary.date             2015-01-28
     _dictionary.uri              www.iucr.org/cif/dic/ddl.dic
-    _dictionary.ddl_conformance  3.11.05
+    _dictionary.ddl_conformance  3.11.08
     _dictionary.namespace        DdlDic
     _description.text                   
 ;
@@ -788,7 +788,7 @@ save_dictionary_valid.application
      Definition    
 ;
      _dictionary_valid.application 
-                      = [_definition.scope,_dictionary_valid.option]
+                      = [_dictionary_valid.scope,_dictionary_valid.option]
 ; 
 
 save_
@@ -814,6 +814,30 @@ save_dictionary_valid.attributes
 
 save_
 
+save_dictionary_valid.scope
+
+    _definition.id               '_dictionary_valid.scope'
+    _definition.class            Attribute
+    _definition.update           2015-01-28
+    _description.text                   
+;
+     The scope to which the specified restriction on usable
+     attributes applies.  
+;
+    _name.category_id            dictionary_valid
+    _name.object_id              scope
+    _type.purpose                Audit
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+              Dictionary    'restriction applies to dictionary definition data frame'   
+              Category      'restriction applies to a category definition save frame'     
+              Item          'restriction applies to an item definition save frame' 
+
+save_
 
 save_dictionary_valid.option
 
@@ -2340,5 +2364,10 @@ Removed 'Measured' as a state for type.source
 ;
    Converted to CIF2 format using automatic tool and post-editing for 
    presentation (JRH). 
+;
+         3.11.08   2015-01-28
+;
+   Created _dictionary_valid.scope and corrected dREL method for 
+   _dictionary_valid.application. 
 ;
 
