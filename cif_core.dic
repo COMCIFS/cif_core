@@ -8,8 +8,8 @@ data_CIF_CORE
  
     _dictionary.title            CIF_CORE
     _dictionary.class            Instance
-    _dictionary.version          3.0.03
-    _dictionary.date             2014-07-22
+    _dictionary.version          3.0.04
+    _dictionary.date             2015-02-18
     _dictionary.uri              www.iucr.org/cif/dic/cif_core.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifCore
@@ -945,13 +945,10 @@ save_exptl_crystal_face.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents              'Code,Matrix(Index,Index,index)'
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(exptl_crystal_face.id)
-;
      Evaluation
 ;              _exptl_crystal_face.key = _exptl_crystal_face.id
 ;
@@ -2149,13 +2146,10 @@ save_cell_measurement_refln.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Integer
      loop_
     _method.purpose
     _method.expression
-     Definition
-;          _type.contents = Type_Contents(cell_measurement_refln.hkl)
-;
      Evaluation
 ;          _cell_measurement_refln.key = _cell_measurement_refln.hkl
 ;
@@ -3639,13 +3633,10 @@ save_chemical_conn_atom.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
      loop_
     _method.purpose
     _method.expression
-     Definition
-;         _type.contents = Type_Contents(chemical_conn_atom.number)
-;
      Evaluation
 ;         _chemical_conn_atom.key = _chemical_conn_atom.number
 ;
@@ -3843,13 +3834,10 @@ save_chemical_conn_bond.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
      loop_
     _method.purpose
     _method.expression
-     Definition
-;         _type.contents = Type_Contents(chemical_conn_bond.id)
-;
      Evaluation
 ;         _chemical_conn_bond.key = _chemical_conn_bond.id
 ;
@@ -4533,13 +4521,10 @@ save_space_group_symop.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
      loop_
     _method.purpose
     _method.expression
-     Definition
-;         _type.contents = Type_Contents(_space_group_symop.id)
-;
      Evaluation
 ;         _symmetry_equiv.key = _space_group_symop.id
 ;
@@ -4864,13 +4849,10 @@ save_symmetry_equiv.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
      loop_
     _method.purpose
     _method.expression
-     Definition
-;         _type.contents = Type_Contents(symmetry_equiv.pos_site_id)
-;
      Evaluation
 ;         _symmetry_equiv.key = _symmetry_equiv.pos_site_id
 ;
@@ -5528,13 +5510,10 @@ save_diffrn_attenuator.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(diffrn_attenuator.code)
-;
      Evaluation
 ;              _diffrn_attenuator.key = _diffrn_attenuator.code
 ;
@@ -6125,14 +6104,12 @@ save_diffrn_orient_refln.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              Matrix
+    _type.contents               Integer
+    _type.dimension              [3]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;          _type.contents = Type_Contents(diffrn_orient_refln.hkl)
-;
      Evaluation
 ;          _diffrn_orient_refln.key = _diffrn_orient_refln.hkl
 ;
@@ -6534,13 +6511,10 @@ save_diffrn_radiation_wavelength.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;      _type.contents = Type_Contents(diffrn_radiation_wavelength.id)
-;
      Evaluation
 ;     _diffrn_radiation_wavelength.key = _diffrn_radiation_wavelength.id
 ;
@@ -6704,14 +6678,12 @@ save_diffrn_refln.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              Matrix
+    _type.contents               Integer
+    _type.dimension              [3]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(diffrn_refln.hkl)
-;
      Evaluation
 ;           _diffrn_refln.key = _diffrn_refln.hkl
 ;
@@ -7949,13 +7921,10 @@ save_diffrn_reflns_class.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(diffrn_reflns_class.code)
-;
      Evaluation
 ;           _diffrn_reflns_class.key = _diffrn_reflns_class.code
 ;
@@ -8154,13 +8123,10 @@ save_diffrn_scale_group.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(diffrn_scale_group.code)
-;
      Evaluation
 ;           _diffrn_scale_group.key = _diffrn_scale_group.code
 ;
@@ -8617,7 +8583,7 @@ save_diffrn_standard_refln.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
@@ -8756,14 +8722,12 @@ save_refln.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              Matrix
+    _type.contents               Integer
+    _type.dimension              [3]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(_refln.hkl)
-;
      Evaluation
 ;           _refln.key = _refln.hkl
 ;
@@ -10209,13 +10173,10 @@ save_reflns_class.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(reflns_class.code)
-;
      Evaluation
 ;           _reflns_class.key = _reflns_class.code
 ;
@@ -10554,13 +10515,10 @@ save_reflns_scale.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(reflns_scale.group_code)
-;
      Evaluation
 ;           _reflns_scale.key = _reflns_scale.group_code
 ;
@@ -10685,14 +10643,12 @@ save_reflns_shell.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               Real
+    _type.dimension              [2]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;         _type.contents = Type_Contents(reflns_shell.d_res_limits)
-;
      Evaluation
 ;         _reflns_shell.key = _reflns_shell.d_res_limits
 ;
@@ -11167,13 +11123,10 @@ save_atom_site.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(atom_site.label)
-;
      Evaluation
 ;              _atom_site.key = _atom_site.label
 ;
@@ -12352,13 +12305,10 @@ save_atom_site_aniso.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(atom_site_aniso.label)
-;
      Evaluation
 ;              _atom_site_aniso.key = _atom_site_aniso.label
 ;
@@ -13659,13 +13609,10 @@ save_atom_type.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(atom_type.symbol)
-;
      Evaluation
 ;              _atom_type.key = _atom_type.symbol
 ;
@@ -13996,13 +13943,10 @@ save_atom_type_scat.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(atom_type_scat.symbol)
-;
      Evaluation
 ;              _atom_type_scat.key = _atom_type_scat.symbol
 ;
@@ -16110,13 +16054,10 @@ save_refine_ls_class.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(refine_ls_class.code)
-;
      Evaluation
 ;              _refine_ls_class.key = _refine_ls_class.code
 ;
@@ -16438,14 +16379,12 @@ save_model_site.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               'List(Code,Symop)'
+    _type.dimension              [1]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(model_site.id)
-;
      Evaluation
 ;              _model_site.key = _model_site.id
 ;
@@ -17003,8 +16942,9 @@ save_geom_angle.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               'List(Code,Symop)'
+    _type.dimension              [3]
      loop_
     _method.purpose
     _method.expression
@@ -17291,8 +17231,9 @@ save_geom_bond.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               'List(Code,Symop)'
+    _type.dimension              [2]
      loop_
     _method.purpose
     _method.expression
@@ -17592,14 +17533,12 @@ save_geom_contact.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               'List(Code,Symop)'
+    _type.dimension              [2]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(geom_contact.id)
-;
      Evaluation
 ;              _geom_contact.key = _geom_contact.id
 ;
@@ -17813,14 +17752,12 @@ save_geom_hbond.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               'List(Code,Symop)'
+    _type.dimension              [3]
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(geom_hbond.id)
-;
      Evaluation
 ;              _geom_hbond.key = _geom_hbond.id
 ;
@@ -18298,8 +18235,9 @@ save_geom_torsion.key
     _name.object_id              key
     _type.purpose                Key
     _type.source                 Related
-    _type.container              Single
-    _type.contents               Implied
+    _type.container              List
+    _type.contents               'List(Code,Symop)'
+    _type.dimension              [4]
      loop_
     _method.purpose
     _method.expression
@@ -18584,13 +18522,10 @@ save_valence_param.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(valence_param.id)
-;
      Evaluation
 ;              _valence_param.key = _valence_param.id
 ;
@@ -18820,13 +18755,10 @@ save_valence_ref.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(valence_ref.id)
-;
      Evaluation
 ;              _valence_ref.key = _valence_ref.id
 ;
@@ -19056,13 +18988,10 @@ save_publ_manuscript_incl_extra.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Tag
     loop_
     _method.purpose
     _method.expression
-     Definition
-;    _type.contents = Type_Contents(publ_manuscript_incl_extra.item)
-;
      Evaluation
 ;    _publ_manuscript_incl_extra.key = _publ_manuscript_incl_extra.item
 ;
@@ -19642,13 +19571,10 @@ save_publ_body.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;                     _type.contents = Type_Contents(publ_body.label)
-;
      Evaluation
 ;                     _publ_body.key = _publ_body.label
 ;
@@ -19803,13 +19729,10 @@ save_publ_author.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Text
     loop_
     _method.purpose
     _method.expression
-     Definition
-;                     _type.contents = Type_Contents(publ_author.name)
-;
      Evaluation
 ;                     _publ_author.key = _publ_author.name
 ;
@@ -20003,13 +19926,10 @@ save_publ_contact_author.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Text
     loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(publ_contact_author.name)
-;
      Evaluation
 ;           _publ_contact_author.key = _publ_contact_author.name
 ;
@@ -21049,13 +20969,10 @@ save_journal_index.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
     loop_
     _method.purpose
     _method.expression
-     Definition
-;                     _type.contents = Type_Contents(journal_index.id)
-;
      Evaluation
 ;                     _journal_index.key = _journal_index.id
 ;
@@ -21180,13 +21097,10 @@ save_citation.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;                     _type.contents = Type_Contents(citation.id)
-;
      Evaluation
 ;                     _citation.key = _citation.id
 ;
@@ -21720,13 +21634,10 @@ save_citation_author.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;             _type.contents = Type_Contents(citation_author.ordinal)
-;
      Evaluation
 ;             _citation_author.key = _citation_author.ordinal
 ;
@@ -21836,13 +21747,10 @@ save_citation_editor.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Index
     loop_
     _method.purpose
     _method.expression
-     Definition
-;             _type.contents = Type_Contents(citation_editor.id)
-;
      Evaluation
 ;             _citation_editor.key = _citation_editor.id
 ;
@@ -22391,13 +22299,10 @@ save_audit_author.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Text
     loop_
     _method.purpose
     _method.expression
-     Definition
-;           _type.contents = Type_Contents(audit_author.name)
-;
      Evaluation
 ;           _audit_author.key = _audit_author.name
 ;
@@ -22576,13 +22481,10 @@ save_audit_contact_author.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Text
     loop_
     _method.purpose
     _method.expression
-     Definition
-;      _type.contents = Type_Contents(audit_contact_author.name)
-;
      Evaluation
 ;      _audit_contact_author.key = _audit_contact_author.name
 ;
@@ -22762,13 +22664,10 @@ save_audit_link.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
     loop_
     _method.purpose
     _method.expression
-     Definition
-;               _type.contents = Type_Contents(audit_link.block_code)
-;
      Evaluation
 ;               _audit_link.key = _audit_link.block_code
 ;
@@ -23028,13 +22927,10 @@ save_display_colour.key
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Implied
+    _type.contents               Code
      loop_
     _method.purpose
     _method.expression
-     Definition
-;              _type.contents = Type_Contents(display_colour.hue)
-;
      Evaluation
 ;              _display_colour.key = _display_colour.hue
 ;
