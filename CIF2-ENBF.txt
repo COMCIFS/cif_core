@@ -1,0 +1,329 @@
+(*
+ *   Extended Backhaus-Naur Form of the CIF2 syntax and grammar
+ *
+ * The CIF2 syntax is closely related to the STAR2 syntax published 
+ * by Spadaccini and Hall (J. Chem. Inf. Model., 2012, 52 (8), 
+ * pp 1901–1906 DOI: 10.1021/ci300074v. The CIF1.1 syntax was derived from 
+ * the original STAR syntax. 
+ * 
+ * The allowed character set is those having Unicode
+ * code points U+0009, U+000A, U+000D, U+0020 to U+D7FF, and
+ * U+E000 to U+10FFFD, less code points of the form U+xFFFE and U+xFFFF,
+ * where x is any hexadecimal digit (including 0). Note that the U+0007
+ * character used in STAR2 for escaping string terminators is not used
+ * in CIF2.
+ * 
+ * This document follows EBNF syntax as given in ISO/IEC 14977. In 
+ * particular, the common "+" notation is replaced by option or 
+ * repeat brackets, e.g. "(ab)+" is replaced by "(ab), {ab}".  Moreover,
+ * the provided EBNF applies to sequences of Unicode characters -- not
+ * sequences of bytes or encoded characters -- independent of any
+ * character encoding scheme (but see also below).
+ *
+ * This particular EBNF uses the "special sequence" mechanism to
+ * represent Unicode code points and code point ranges.  Individual
+ * code points are represented in a special sequence by the form
+ * U+[[h]h]hhhh -- that is, "U+" followed by the 4 to 6 hexadecimal
+ * digits of the unsigned, 21-bit code point value.  Ranges are
+ * represented by two such code point values separated by a hyphen
+ * character.  Whitespace is permitted on either or both sides of
+ * any code point value within this special sequence formulation.
+ *
+ *
+ *   CIF2 Grammar and Syntax
+ *
+ * CIF 2.0 is a binary format consisting of Unicode text encoded
+ * in UTF-8.  Notwithstanding its use of (nearly) the full Unicode
+ * character repertoire, CIF applies only the semantics described below
+ * to decoded character data, especially with respect to whitespace and
+ * line termination.  Software consuming CIF data and names generally
+ * ascribes additional semantics to them, however, which may include
+ * additional Unicode semantics.
+ *
+ * A CIF2 file consists of a sequence of data blocks separated by
+ * whitespace, with a required magic code as the first characters.
+ * Data may additionally be structured into save frames, which have
+ * the same form as data blocks and nest within data blocks. The data
+ * themselves may appear as individual (key, value) pairs, and / or they
+ * may be organized into tabular structures called "loops".
+ *
+ * All data names appearing directly within a given data block or save
+ * frame are required to be distinct with respect to a
+ * normalization / case-folding procedure described elsewhere.
+ * In the same way, data block names must be distinct within their CIF,
+ * and save frame names must be distinct within their immediate
+ * container (either a data block or a save frame).
+ *
+ * The main grammatic elements of CIFs are data block headers,
+ * save frame headers, data names, data values, and a few keywords.
+ * These all must always be separated from each other by whitespace.
+ * However, text blocks (one kind of data value) have a newline as
+ * part of their delimiter, and that newline can do double duty
+ * to satisfy the whitespace separation requirement.  Additionally,
+ * the requirement does not apply to separating the delimiters of
+ * list and table values from member values.  The productions below
+ * explicitly include whitespace wherever it is allowed or required.
+ *
+ * Although it cannot be represented in EBNF, CIF 2.0 additionally
+ * requires that newlines in the file (see below) not be separated by
+ * more than 2048 non-newline characters.
+ *)
+
+(*
+ * This formulation of the CIF2-file production accepts the end of the
+ * input as whitespace for the purpose of satisfying the CIF 2.0
+ * requirement that the version comment be followed by whitespace.
+ *)
+CIF2-file = file-heading, [ newline, [
+   wspace-any, data-block, 
+   { wspace,   data-block },
+], [ wspace ], [ comment ] ];
+
+file-heading = [ ?U+FEFF? ], magic-code, { space } ;
+
+(*
+ * The "magic code" identifies the CIF version with which an instance
+ * document claims to comply.
+ *)
+magic-code = '#\#CIF_2.0' ;
+
+(*
+ * A datablock consists of a data heading followed by zero or more 
+ * data items and save frames.
+ *)
+data-block = data-heading, { block-content } ;
+
+data-heading = data-token, container-name ;
+
+(*
+ * Each element inside a data block is either data or a save frame, separated
+ * from the header or previous element by whitespace.
+ *)
+block-content = wspace, ( data | save-frame ) ;
+
+(*
+ * A save frame has content similar to a data block's, but it resides
+ * inside a data block instead of at the top level.  (Save frames do not nest.)
+ *)
+save-frame = save-heading, { frame-content }, wspace, save-token ;
+
+save-heading = save-token, container-name;
+
+(*
+ * A save frame contains a sequence of data elements, each separated from the
+ * header or previous element by whitespace.
+ *)
+frame-content = wspace, data ;
+
+(* A data block or save frame name is composed of one or more non-blank characters *)
+container-name = non-blank-char, { non-blank-char } ;
+
+(* Data appear either as key/value pairs, or within loops. *)
+data = ( data-name, wspace-data-value ) | data-loop ;
+
+(*
+ * A data loop consists of a loop header (the case-insensitive word "loop_"
+ * followed by a sequence of datanames) and then a sequence of one or more
+ * whitespace-separated values.  Though it cannot be expressed in EBNF, CIF
+ * requires that a loop whose header contains N data names must contain an
+ * integral multiple of N data values.
+ *)
+data-loop = loop-token, wspace, data-name, { wspace, data-name },
+  wspace-data-value, { wspace-data-value } ;
+
+(*
+ * A dataname begins with an underscore character, and contains one or more
+ * additional, non-blank characters.
+ *)
+data-name = '_' , non-blank-char, { non-blank-char } ;
+
+(*
+ * A list contains zero or more whitespace-separated values.  The delimiting
+ * brackets may optionally be separated by whitespace from the values,
+ * or from each other if there are no values.
+ *)
+list = '[', [ list-values-start, { wspace-data-value } ], [ wspace ], ']' ;
+
+list-values-start =
+    ( wspace-any, nospace-value )
+  | ( wspace-any, [ comment ], semicolon-text )
+  | ( [ { wspace-to-eol }, space, { space } ], unquoted-string )
+  | ( wspace-to-eol, { wspace-to-eol }, unquoted-string-sol ) ;
+
+(*
+ * A table contains zero or more whitespace-separated key/value pairs.
+ * The delimiting brackets may optionally be separated by whitespace from
+ * the values, or from each other if there are no values.
+ *)
+table = '{', [ wspace-any, table-pair, { wspace, table-pair } ], [ wspace ], '}' ;
+
+(*
+ * Key-value pairs appearing in a table structure take the form 'key':value,
+ * where key must be a delimited string (but not a text block) and the value
+ * may be any data value.  Whitespace is permitted between the colon and value.
+ *)
+table-pair = ( apostrophe-string | quoted-string | apostrophe3-string | quote3-string ),
+  ':', ( nospace-value | unquoted-string | wspace-data-value ) ;
+
+(*
+ * In most contexts, data values must be preceded by explicit and/or
+ * implicit whitespace.  Only text blocks have implicit leading whitespace.
+ * Additionally, the whitespace preceeding an unquoted string affects the
+ * form that string may take.
+ *)
+wspace-data-value =
+    (   wspace, nospace-value )
+  | ( [ wspace-lines ], space, { space }, unquoted-string )
+  | (   wspace-lines, unquoted-string-sol )
+  | ( [ wspace ], [ comment ], semicolon-text ) ;
+
+(*
+ * These data values have neither implicit leading whitespace nor any special
+ * sensitivity to leading whitespace.
+ *)
+nospace-value =
+    apostrophe-string
+  | quoted-string
+  | apostrophe3-string
+  | quote3-string
+  | list
+  | table ;
+
+(* 
+ * Unquoted strings draw from a subset of the CIF character set, have an even
+ * more limited first character, and may not have the same form as a data block
+ * header, save frame header, or any of several reserved words.  When they appear
+ * at the start of a line, unquoted strings may not start with a semicolon.
+ *)
+unquoted-string-sol = unquoted-string - ( ';', { non-blank-char } ) ;
+
+unquoted-string = ( lead-char, {restrict-char} )
+  - ( ( ( data-token | save-token ), { non-blank-char } ) | loop-token | global-token | stop-token ) ;
+
+lead-char = restrict-char - ( '"' | '#' | '$' | "'" | '_' ) ;
+
+restrict-char = non-blank-char - ( '[' | ']' | '{' | '}' ) ;
+
+(* quote-delimited string *)
+quoted-string = quoted-delim, quoted-content, quoted-delim ;
+
+quoted-delim = '"' ;
+
+quoted-content = { char - quoted-delim } ;
+
+(* apostrophe-delimited string *)
+apostrophe-string = apostrophe-delim, apostrophe-content, apostrophe-delim ;
+
+apostrophe-delim = "'" ;
+
+apostrophe-content = { char - apostrophe-delim } ;
+
+(* triple-quote-delimited string *)
+quote3-string = quote3-delim, quote3-content, quote3-delim ;
+
+quote3-delim = '"""' ;
+
+quote3-content = { allchars } - ( { allchars }, quote3-delim, { allchars } ) ;
+
+(* triple-apostrophe-delimited string *)
+apostrophe3-string = apostrophe3-delim, apostrophe3-content, apostrophe3-delim ;
+
+apostrophe3-delim = "'''" ;
+
+apostrophe3-content = { allchars } - ( { allchars }, apostrophe3-delim, { allchars } ) ;
+
+(* text block *)
+semicolon-text = text-delim, text-content, text-delim ;
+
+text-delim = newline, ';' ;
+
+text-content = { allchars } - ( { allchars }, text-delim, { allchars } ) ;
+
+(*
+ * CIF keywords are case-insensitive.
+ *
+ * The global and stop tokens are part of the original STAR specification;
+ * they are reserved in case of future use in CIF.
+ *)
+
+data-token = ( 'D' | 'd' ), ( 'A' | 'a' ), ( 'T' | 't' ), ( 'A' | 'a' ), '_';
+
+save-token = ( 'S' | 's' ), ( 'A' | 'a' ), ( 'V' | 'v' ), ( 'E' | 'e' ), '_';
+
+loop-token = ( 'L' | 'l' ), ( 'O' | 'o' ),( 'O' | 'o' ), ( 'P' | 'p' ) , '_' ;
+
+global-token = ( 'G' | 'g' ), ( 'L' | 'l' ), ( 'O' | 'o' ), ( 'B' | 'b' ), ( 'A' | 'a' ), ( 'L' | 'l' ), '_' ;
+
+stop-token = ( 'S' | 's' ), ( 'T' | 't' ), ( 'O' | 'o' ), ( 'P' | 'p' ), '_' ;
+
+(* A single non-whitespace character *)
+non-blank-char = char - space ;
+
+(*
+ * Runs of spaces, tabs, newlines, and newline-terminated comments are
+ * required to separate many higher-level elements of this grammar.  In
+ * most contexts such runs may not begin with comments.  For the purposes
+ * of these particular productions, such runs *never* end with comments.
+ *)
+
+(*
+ * a nonempty run of whitespace and possibly comments, beginning with inline
+ * whitespace or a newline; may span multiple lines
+ *)
+wspace = ( space | newline ), wspace-any;
+
+(*
+ * a nonempty run of whitespace and possibly comments, beginning with inline
+ * whitespace or a newline, and ending with a newline; may span multiple lines
+ *)
+wspace-lines = [ space, { space }, [ comment ] ], newline, { wspace-to-eol } ;
+
+(*
+ * a possibly-empty run of whitespace and comments; may begin with a comment,
+ * and may span multiple lines
+ *)
+wspace-any = { wspace-to-eol }, { space }
+
+(*
+ * a run of zero or more spaces and/or tabs, optionally followed by a comment,
+ * always terminated by a newline.
+ *)
+wspace-to-eol = { space }, [ comment ], newline ;
+
+(*
+ * A comment is a hash symbol followed by every character up to, but not
+ * including, the end of the line
+ *)
+comment = '#', { char } ;
+
+(* 'char' represents any allowed character other than newline *)
+char = allchars - newline ;
+
+(* 
+ * Only ASCII space and tab characters are significant as inline
+ * whitespace. Unicode's classification of certain other code points as
+ * whitespace is not significant for the purposes of CIF.
+ *)
+space = ?U+0020? | ?U+0009? ;
+
+(*
+ * The two-character sequence U+000D U+000A is recognized as a line
+ * terminator, as are each of the characters U+000A and U+000D when they
+ * appear outside such a sequence.  Similarly to XML, CIF2 interprets
+ * each of these line terminator sequences as the single character U+000A,
+ * wherever they appear in a CIF instance document, as if that
+ * translation were performed prior to parsing.
+ *)
+newline = ?U+000A? ;
+
+(* For ease of specification we define a token for the full character set. *)
+allchars = ?U+0009? | ?U+000A? | ?U+000D? | ?U+0020 - U+007E?
+  | ?U+00A0 - U+D7FF? | ?U+E000 - U+FDCF? | ?U+FDF0 - U+FFFD?
+  | ?U+10000 - U+1FFFD?  | ?U+20000 - U+2FFFD?  | ?U+30000 - U+3FFFD?
+  | ?U+40000 - U+4FFFD?  | ?U+50000 - U+5FFFD?  | ?U+60000 - U+6FFFD?
+  | ?U+70000 - U+7FFFD?  | ?U+80000 - U+8FFFD?  | ?U+90000 - U+9FFFD?
+  | ?U+A0000 - U+AFFFD?  | ?U+B0000 - U+BFFFD?  | ?U+C0000 - U+CFFFD?
+  | ?U+D0000 - U+DFFFD?  | ?U+E0000 - U+EFFFD?  | ?U+F0000 - U+FFFFD?
+  | ?U+100000 - U+10FFFD? ;
+
+
