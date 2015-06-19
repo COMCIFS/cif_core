@@ -1,5 +1,5 @@
 (*
- *   Extended Backhaus-Naur Form of the CIF2 syntax and grammar
+ *   Extended Backus-Naur Form of the CIF2 syntax and grammar
  *
  * The CIF2 syntax is closely related to the STAR2 syntax published 
  * by Spadaccini and Hall (J. Chem. Inf. Model., 2012, 52 (8), 
