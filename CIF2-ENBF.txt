@@ -282,7 +282,7 @@ wspace-lines = [ space, { space }, [ comment ] ], newline, { wspace-to-eol } ;
  * a possibly-empty run of whitespace and comments; may begin with a comment,
  * and may span multiple lines
  *)
-wspace-any = { wspace-to-eol }, { space }
+wspace-any = { wspace-to-eol }, { space } ;
 
 (*
  * a run of zero or more spaces and/or tabs, optionally followed by a comment,
