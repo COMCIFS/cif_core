@@ -74,10 +74,11 @@
  * input as whitespace for the purpose of satisfying the CIF 2.0
  * requirement that the version comment be followed by whitespace.
  *)
-CIF2-file = file-heading, [ newline, [
+CIF2-file = ( file-heading, [ newline, [
    wspace-any, data-block, 
    { wspace,   data-block },
-], [ wspace ], [ comment ] ];
+], [ wspace ], [ comment ] ] )
+- ( { allchars }, 2049 * char, { allchars } );
 
 file-heading = [ ?U+FEFF? ], magic-code, { space } ;
 
