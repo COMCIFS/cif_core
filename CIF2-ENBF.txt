@@ -3,7 +3,7 @@
  *
  * The CIF2 syntax is closely related to the STAR2 syntax published 
  * by Spadaccini and Hall (J. Chem. Inf. Model., 2012, 52 (8), 
- * pp 1901–1906 DOI: 10.1021/ci300074v. The CIF1.1 syntax was derived from 
+ * pp 1901-1906 DOI: 10.1021/ci300074v. The CIF1.1 syntax was derived from 
  * the original STAR syntax. 
  * 
  * The allowed character set is those having Unicode
@@ -74,7 +74,7 @@
  *)
 CIF2-file = ( file-heading, [ line-term, [
    wspace-any, data-block, 
-   { wspace,   data-block },
+   { wspace,   data-block }
 ], [ wspace ], [ comment ] ] )
 - ( { allchars }, 2049 * char, { allchars } );
 
@@ -146,7 +146,7 @@ list = '[', [ list-values-start, { wspace-data-value } ], [ wspace ], ']' ;
 list-values-start =
     ( wspace-any, nospace-value )
   | ( wspace-any, [ comment ], text-field )
-  | ( [ { wspace-to-eol }, inline-wspace  { inline-wspace } ], wsdelim-string )
+  | ( [ { wspace-to-eol }, inline-wspace,  { inline-wspace } ], wsdelim-string )
   | ( wspace-to-eol, { wspace-to-eol }, wsdelim-string-sol ) ;
 
 (*
@@ -172,7 +172,7 @@ table-entry = ( quoted-string | triple-quoted-string ),
  *)
 wspace-data-value =
     (   wspace, nospace-value )
-  | ( [ wspace-lines ], inline-wspace  { inline-wspace }, wsdelim-string )
+  | ( [ wspace-lines ], inline-wspace, { inline-wspace }, wsdelim-string )
   | (   wspace-lines, wsdelim-string-sol )
   | ( [ wspace ], [ comment ], text-field ) ;
 
@@ -181,7 +181,7 @@ wspace-data-value =
  * sensitivity to leading whitespace.
  *)
 nospace-value =
-  | quoted-string
+    quoted-string
   | triple-quoted-string
   | list
   | table ;
@@ -271,7 +271,7 @@ wspace = ( inline-wspace | line-term ), wspace-any;
  * whitespace or a line terminator, and ending with a line terminator; may
  * span multiple lines
  *)
-wspace-lines = [ inline-wspace  { inline-wspace }, [ comment ] ], line-term, { wspace-to-eol } ;
+wspace-lines = [ inline-wspace, { inline-wspace }, [ comment ] ], line-term, { wspace-to-eol } ;
 
 (*
  * a possibly-empty run of whitespace and comments; may begin with a comment,
