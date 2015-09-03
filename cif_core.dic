@@ -18816,8 +18816,8 @@ save_valence_ref.reference
 save_PUBLICATION
     _definition.id               PUBLICATION
     _definition.scope            Category
-    _definition.class            Head
-    _definition.update           2012-05-07
+    _definition.class            Set 
+    _definition.update           2015-09-04
     _description.text
 ;
     The DICTIONARY group encompassing the CORE PUBLICATION data items defined
