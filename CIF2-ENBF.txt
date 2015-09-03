@@ -1,9 +1,9 @@
 (*
- *   Extended Backhaus-Naur Form of the CIF2 syntax and grammar
+ *   Extended Backus-Naur Form of the CIF2 syntax and grammar
  *
  * The CIF2 syntax is closely related to the STAR2 syntax published 
  * by Spadaccini and Hall (J. Chem. Inf. Model., 2012, 52 (8), 
- * pp 1901–1906 DOI: 10.1021/ci300074v. The CIF1.1 syntax was derived from 
+ * pp 1901-1906 DOI: 10.1021/ci300074v. The CIF1.1 syntax was derived from 
  * the original STAR syntax. 
  * 
  * The allowed character set is those having Unicode
@@ -57,29 +57,28 @@
  * The main grammatic elements of CIFs are data block headers,
  * save frame headers, data names, data values, and a few keywords.
  * These all must always be separated from each other by whitespace.
- * However, text blocks (one kind of data value) have a newline as
- * part of their delimiter, and that newline can do double duty
+ * However, text fields (one kind of data value) have a line terminator as
+ * part of their delimiter, and that line terminator can do double duty
  * to satisfy the whitespace separation requirement.  Additionally,
  * the requirement does not apply to separating the delimiters of
  * list and table values from member values.  The productions below
  * explicitly include whitespace wherever it is allowed or required.
- *
- * Although it cannot be represented in EBNF, CIF 2.0 additionally
- * requires that newlines in the file (see below) not be separated by
- * more than 2048 non-newline characters.
  *)
 
 (*
  * This formulation of the CIF2-file production accepts the end of the
  * input as whitespace for the purpose of satisfying the CIF 2.0
  * requirement that the version comment be followed by whitespace.
+ * It incorporates the CIF 2.0 limitation (also in CIF 1.1) that no
+ * line of a CIF may exceed 2048 characters.
  *)
-CIF2-file = file-heading, [ newline, [
+CIF2-file = ( file-heading, [ line-term, [
    wspace-any, data-block, 
-   { wspace,   data-block },
-], [ wspace ], [ comment ] ];
+   { wspace,   data-block }
+], [ wspace ], [ comment ] ] )
+- ( { allchars }, 2049 * char, { allchars } );
 
-file-heading = [ ?U+FEFF? ], magic-code, { space } ;
+file-heading = [ ?U+FEFF? ], magic-code, { inline-wspace } ;
 
 (*
  * The "magic code" identifies the CIF version with which an instance
@@ -93,7 +92,7 @@ magic-code = '#\#CIF_2.0' ;
  *)
 data-block = data-heading, { block-content } ;
 
-data-heading = data-token, container-name ;
+data-heading = data-token, container-code ;
 
 (*
  * Each element inside a data block is either data or a save frame, separated
@@ -107,7 +106,7 @@ block-content = wspace, ( data | save-frame ) ;
  *)
 save-frame = save-heading, { frame-content }, wspace, save-token ;
 
-save-heading = save-token, container-name;
+save-heading = save-token, container-code;
 
 (*
  * A save frame contains a sequence of data elements, each separated from the
@@ -116,7 +115,7 @@ save-heading = save-token, container-name;
 frame-content = wspace, data ;
 
 (* A data block or save frame name is composed of one or more non-blank characters *)
-container-name = non-blank-char, { non-blank-char } ;
+container-code = non-blank-char, { non-blank-char } ;
 
 (* Data appear either as key/value pairs, or within loops. *)
 data = ( data-name, wspace-data-value ) | data-loop ;
@@ -146,96 +145,91 @@ list = '[', [ list-values-start, { wspace-data-value } ], [ wspace ], ']' ;
 
 list-values-start =
     ( wspace-any, nospace-value )
-  | ( wspace-any, [ comment ], semicolon-text )
-  | ( [ { wspace-to-eol }, space, { space } ], unquoted-string )
-  | ( wspace-to-eol, { wspace-to-eol }, unquoted-string-sol ) ;
+  | ( wspace-any, [ comment ], text-field )
+  | ( [ { wspace-to-eol }, inline-wspace,  { inline-wspace } ], wsdelim-string )
+  | ( wspace-to-eol, { wspace-to-eol }, wsdelim-string-sol ) ;
 
 (*
  * A table contains zero or more whitespace-separated key/value pairs.
  * The delimiting brackets may optionally be separated by whitespace from
  * the values, or from each other if there are no values.
  *)
-table = '{', [ wspace-any, table-pair, { wspace, table-pair } ], [ wspace ], '}' ;
+table = '{', [ wspace-any, table-entry, { wspace, table-entry } ], [ wspace ], '}' ;
 
 (*
  * Key-value pairs appearing in a table structure take the form 'key':value,
  * where key must be a delimited string (but not a text block) and the value
  * may be any data value.  Whitespace is permitted between the colon and value.
  *)
-table-pair = ( apostrophe-string | quoted-string | apostrophe3-string | quote3-string ),
-  ':', ( nospace-value | unquoted-string | wspace-data-value ) ;
+table-entry = ( quoted-string | triple-quoted-string ),
+  ':', ( nospace-value | wsdelim-string | wspace-data-value ) ;
 
 (*
  * In most contexts, data values must be preceded by explicit and/or
- * implicit whitespace.  Only text blocks have implicit leading whitespace.
- * Additionally, the whitespace preceeding an unquoted string affects the
- * form that string may take.
+ * implicit whitespace.  Only text fields have implicit leading whitespace.
+ * Additionally, the whitespace preceding an whitespace-delimited string
+ * affects the form that string may take.
  *)
 wspace-data-value =
     (   wspace, nospace-value )
-  | ( [ wspace-lines ], space, { space }, unquoted-string )
-  | (   wspace-lines, unquoted-string-sol )
-  | ( [ wspace ], [ comment ], semicolon-text ) ;
+  | ( [ wspace-lines ], inline-wspace, { inline-wspace }, wsdelim-string )
+  | (   wspace-lines, wsdelim-string-sol )
+  | ( [ wspace ], [ comment ], text-field ) ;
 
 (*
  * These data values have neither implicit leading whitespace nor any special
  * sensitivity to leading whitespace.
  *)
 nospace-value =
-    apostrophe-string
-  | quoted-string
-  | apostrophe3-string
-  | quote3-string
+    quoted-string
+  | triple-quoted-string
   | list
   | table ;
 
 (* 
- * Unquoted strings draw from a subset of the CIF character set, have an even
- * more limited first character, and may not have the same form as a data block
- * header, save frame header, or any of several reserved words.  When they appear
- * at the start of a line, unquoted strings may not start with a semicolon.
+ * Whitespace-delimited strings draw from a subset of the CIF character set,
+ * have an even more limited first character, and may not have the same form
+ * as a data block header, save frame header, or any of several reserved
+ * words.  When they appear at the start of a line, whitespace-delimited
+ * strings may not start with a semicolon.
  *)
-unquoted-string-sol = unquoted-string - ( ';', { non-blank-char } ) ;
+wsdelim-string-sol = wsdelim-string - ( ';', { non-blank-char } ) ;
 
-unquoted-string = ( lead-char, {restrict-char} )
+wsdelim-string = ( lead-char, {restrict-char} )
   - ( ( ( data-token | save-token ), { non-blank-char } ) | loop-token | global-token | stop-token ) ;
 
 lead-char = restrict-char - ( '"' | '#' | '$' | "'" | '_' ) ;
 
 restrict-char = non-blank-char - ( '[' | ']' | '{' | '}' ) ;
 
-(* quote-delimited string *)
-quoted-string = quoted-delim, quoted-content, quoted-delim ;
+(* quote-delimited or apostrophe-delimited string *)
+quoted-string = ( quote-delim, quote-content, quote-delim )
+  | ( apostrophe-delim, apostrophe-content, apostrophe-delim ) ;
 
-quoted-delim = '"' ;
+quote-delim = '"' ;
 
-quoted-content = { char - quoted-delim } ;
-
-(* apostrophe-delimited string *)
-apostrophe-string = apostrophe-delim, apostrophe-content, apostrophe-delim ;
+quote-content = { char - quote-delim } ;
 
 apostrophe-delim = "'" ;
 
 apostrophe-content = { char - apostrophe-delim } ;
 
-(* triple-quote-delimited string *)
-quote3-string = quote3-delim, quote3-content, quote3-delim ;
+(* triple-quote-delimited and triple apostrophe-delimited strings *)
+triple-quoted-string = ( quote3-delim, quote3-content, quote3-delim )
+  | ( apostrophe3-delim, apostrophe3-content, apostrophe3-delim ) ;
 
 quote3-delim = '"""' ;
 
 quote3-content = { allchars } - ( { allchars }, quote3-delim, { allchars } ) ;
-
-(* triple-apostrophe-delimited string *)
-apostrophe3-string = apostrophe3-delim, apostrophe3-content, apostrophe3-delim ;
 
 apostrophe3-delim = "'''" ;
 
 apostrophe3-content = { allchars } - ( { allchars }, apostrophe3-delim, { allchars } ) ;
 
 (* text block *)
-semicolon-text = text-delim, text-content, text-delim ;
+text-field = text-delim, text-content, text-delim ;
 
-text-delim = newline, ';' ;
+text-delim = line-term, ';' ;
 
 text-content = { allchars } - ( { allchars }, text-delim, { allchars } ) ;
 
@@ -257,10 +251,10 @@ global-token = ( 'G' | 'g' ), ( 'L' | 'l' ), ( 'O' | 'o' ), ( 'B' | 'b' ), ( 'A'
 stop-token = ( 'S' | 's' ), ( 'T' | 't' ), ( 'O' | 'o' ), ( 'P' | 'p' ), '_' ;
 
 (* A single non-whitespace character *)
-non-blank-char = char - space ;
+non-blank-char = char - inline-wspace ;
 
 (*
- * Runs of spaces, tabs, newlines, and newline-terminated comments are
+ * Runs of spaces, tabs, line terminators, and comments are
  * required to separate many higher-level elements of this grammar.  In
  * most contexts such runs may not begin with comments.  For the purposes
  * of these particular productions, such runs *never* end with comments.
@@ -268,27 +262,28 @@ non-blank-char = char - space ;
 
 (*
  * a nonempty run of whitespace and possibly comments, beginning with inline
- * whitespace or a newline; may span multiple lines
+ * whitespace or a line terminator; may span multiple lines
  *)
-wspace = ( space | newline ), wspace-any;
+wspace = ( inline-wspace | line-term ), wspace-any;
 
 (*
  * a nonempty run of whitespace and possibly comments, beginning with inline
- * whitespace or a newline, and ending with a newline; may span multiple lines
+ * whitespace or a line terminator, and ending with a line terminator; may
+ * span multiple lines
  *)
-wspace-lines = [ space, { space }, [ comment ] ], newline, { wspace-to-eol } ;
+wspace-lines = [ inline-wspace, { inline-wspace }, [ comment ] ], line-term, { wspace-to-eol } ;
 
 (*
  * a possibly-empty run of whitespace and comments; may begin with a comment,
  * and may span multiple lines
  *)
-wspace-any = { wspace-to-eol }, { space }
+wspace-any = { wspace-to-eol }, { inline-wspace } ;
 
 (*
  * a run of zero or more spaces and/or tabs, optionally followed by a comment,
- * always terminated by a newline.
+ * always terminated by a line terminator.
  *)
-wspace-to-eol = { space }, [ comment ], newline ;
+wspace-to-eol = { inline-wspace }, [ comment ], line-term ;
 
 (*
  * A comment is a hash symbol followed by every character up to, but not
@@ -296,25 +291,25 @@ wspace-to-eol = { space }, [ comment ], newline ;
  *)
 comment = '#', { char } ;
 
-(* 'char' represents any allowed character other than newline *)
-char = allchars - newline ;
+(* 'char' represents any allowed character other than line-term *)
+char = allchars - line-term ;
 
 (* 
  * Only ASCII space and tab characters are significant as inline
  * whitespace. Unicode's classification of certain other code points as
  * whitespace is not significant for the purposes of CIF.
  *)
-space = ?U+0020? | ?U+0009? ;
+inline-wspace = ?U+0020? | ?U+0009? ;
 
 (*
  * The two-character sequence U+000D U+000A is recognized as a line
  * terminator, as are each of the characters U+000A and U+000D when they
  * appear outside such a sequence.  Similarly to XML, CIF2 interprets
- * each of these line terminator sequences as the single character U+000A,
+ * each of these line termination sequences as the single character U+000A,
  * wherever they appear in a CIF instance document, as if that
  * translation were performed prior to parsing.
  *)
-newline = ?U+000A? ;
+line-term = ( ?U+000D?, [ ?U+000A? ] ) | ?U+000A? ;
 
 (* For ease of specification we define a token for the full character set. *)
 allchars = ?U+0009? | ?U+000A? | ?U+000D? | ?U+0020 - U+007E?
