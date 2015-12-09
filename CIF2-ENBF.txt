@@ -206,13 +206,13 @@ restrict-char = non-blank-char - ( '[' | ']' | '{' | '}' ) ;
 quoted-string = ( quote-delim, quote-content, quote-delim )
   | ( apostrophe-delim, apostrophe-content, apostrophe-delim ) ;
 
-quote-delim = '"' ;
-
 quote-content = { char - quote-delim } ;
 
-apostrophe-delim = "'" ;
+quote-delim = '"' ;
 
 apostrophe-content = { char - apostrophe-delim } ;
+
+apostrophe-delim = "'" ;
 
 (* triple-quote-delimited and triple apostrophe-delimited strings *)
 triple-quoted-string = ( quote3-delim, quote3-content, quote3-delim )
@@ -220,11 +220,15 @@ triple-quoted-string = ( quote3-delim, quote3-content, quote3-delim )
 
 quote3-delim = '"""' ;
 
-quote3-content = { allchars } - ( { allchars }, quote3-delim, { allchars } ) ;
+quote3-content = { [ '"', [ '"' ] ], not-quote, { not-quote } } ;
+
+not-quote = allchars - '"' ;
 
 apostrophe3-delim = "'''" ;
 
-apostrophe3-content = { allchars } - ( { allchars }, apostrophe3-delim, { allchars } ) ;
+apostrophe3-content = { [ "'", [ "'" ] ], not-apostrophe, { not-apostrophe } } ;
+
+not-apostrophe = allchars - "'" ;
 
 (* text block *)
 text-field = text-delim, text-content, text-delim ;
