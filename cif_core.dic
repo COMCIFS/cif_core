@@ -6758,86 +6758,6 @@ _units.code                             none
 save_
 
 
-save_EXPERIMENTAL
-
-_definition.id                          EXPERIMENTAL
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-    The DICTIONARY group encompassing the CORE experimental data defined
-    and used with in the Crystallographic Information Framework (CIF).
-;
-_name.category_id                       CIF_CORE
-_name.object_id                         EXPERIMENTAL
-
-save_
-
-
-save_EXPERIMENTS
-
-_definition.id                          EXPERIMENTS
-_definition.scope                       Category
-_definition.class                       Ref-loop
-_definition.update                      2013-09-08
-_description.text                       
-;
-    This category is designed specifically to facilitate studies
-    involving multiple sets of experiments and their associated data
-    values. The data items are defined within the EXPTL category.
-    This category class is only used in an instance document when
-    there is more than one experiment encompassed by the category
-    of EXPTL items. When this is the case each set of EXPTL data,
-    one set per experiment, is enclosed in its own save frame.
-    In the instance document these are referred to as a loop of
-    the item _experiments.key.  See a typical example below.
-    When only one set of experimental data exists the EXPTL items
-    need not be enclosed in a save frame and the reference loop is
-    unnecessary.
-;
-_name.category_id                       EXPERIMENTAL
-_name.object_id                         EXPERIMENTS
-_category.key_id                        '_experiments.key'
-_category.key_list ['_experiments.key']
-loop_
-  _description_example.case
-         
-;
-     In an instance document this category is typically invoked as
- 
-            loop_ _experiments.key
-                           ${"frame":"exptl_blue"}$
-                           ${"frame":"exptl_red"}$
-; 
-
-save_
-
-
-save__experiments.key
-
-_definition.id                          '_experiments.key'
-loop_
-  _alias.definition_id
-         '_experiments.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Unique key to a set of save frames in a looped list.
-;
-_name.category_id                       experiments
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Ref-table
-_type.contents                          Name
-loop_
-  _description_example.case
-         '${"frame":phase1}$' 
-
-save_
-
-
 save_EXPTL
 
 _definition.id                          EXPTL
@@ -6850,7 +6770,7 @@ _description.text
      prior to diffraction measurements. These include crystallization
      crystal measurements and absorption-correction techniques used..
 ;
-_name.category_id                       EXPERIMENTS
+_name.category_id                       CIF_CORE
 _name.object_id                         EXPTL
 
 save_
@@ -10192,70 +10112,6 @@ _units.code                             dalton
 
 save_
 
-
-save_EXPTL_CRYSTALS
-
-_definition.id                          EXPTL_CRYSTALS
-_definition.scope                       Category
-_definition.class                       Ref-loop
-_definition.update                      2013-09-08
-_description.text                       
-;
-    This category is designed specifically to facilitate studies
-    involving multiple sets of experiments and their associated data
-    values. The data items are defined in the EXPTL_CRYSTAL category.
-    This category class is only used in an instance document when
-    there is more than one experiment encompassed by the category of
-    EXPTL items. When this is the case each set of EXPTL_CRYSTALa
-    data, one set per experiment, is enclosed in its own save frame.
-    In the instance document these are referred to as a loop of
-    the item _experiments.key.  See a typical example below.
-    When only one set of experimental data exists the EXPTL items
-    need not be enclosed in a save frame and the reference loop is
-    unnecessary.
-;
-_name.category_id                       EXPTL
-_name.object_id                         EXPTL_CRYSTALS
-_category.key_id                        '_exptl_crystals.key'
-_category.key_list ['_exptl_crystals.key']
-loop_
-  _description_example.case
-         
-;
-     In an instance document this category is typically invoked as
- 
-            loop_ _exptl_crystals.key
-                           ${"frame":"crystal_1"}$
-                           ${"frame":"crystal_2"}$
-; 
-
-save_
-
-
-save__exptl_crystals.key
-
-_definition.id                          '_exptl_crystals.key'
-loop_
-  _alias.definition_id
-         '_exptl_crystals.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Unique key code to a set of EXPTL_CRYSTAL items in a looped list.
-;
-_name.category_id                       exptl_crystals
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Ref-table
-_type.contents                          Code
-loop_
-  _description_example.case
-         '       ${"frame":c1}$       ' 
-
-save_
-
-
 save_EXPTL_ABSORPT
 
 _definition.id                          EXPTL_ABSORPT
@@ -10268,7 +10124,7 @@ _description.text
      of the  absorption measurements and corrections to the diffraction
      data.
 ;
-_name.category_id                       EXPTL_CRYSTALS
+_name.category_id                       EXPTL
 _name.object_id                         EXPTL_ABSORPT
 
 save_
@@ -10445,7 +10301,7 @@ _description.text
      The CATEGORY of data items used to specify information about a
      crystal used in the diffraction measurements.
 ;
-_name.category_id                       EXPTL_CRYSTALS
+_name.category_id                       EXPTL
 _name.object_id                         EXPTL_CRYSTAL
 
 save_
@@ -10838,7 +10694,6 @@ _definition.update                      2012-11-22
 _description.text                       
 ;
      Code identifying a crystal if multiple crystals are used.
-     See _exptl_crystals.key.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         id
@@ -11432,77 +11287,6 @@ _units.code                             millimetres
 save_
 
 
-save_SPACE_GROUPS
-
-_definition.id                          SPACE_GROUPS
-_definition.scope                       Category
-_definition.class                       Ref-loop
-_definition.update                      2013-09-08
-_description.text                       
-;
-     Contains all the data items that refer to the space group as a
-     whole, such as its name, crystal system etc. It may be looped,
-     for example, in a list of space groups and their properties.
- 
-     Only a subset of the SPACE_GROUP category items appear in the
-     core dictionary.  The remainder are found in the cif_sym
-     dictionary.
- 
-     Space group types are identified by their International Tables
-     for Crystallography Vol. A number. Specific settings of the
-     space groups can be identified either by their Hall symbol
-     or by specifying their symmetry operations.
- 
-     The commonly-used Hermann-Mauguin symbol determines the
-     space group type uniquely but several different Hermann-Mauguin
-     symbols may refer to the same space group type. It contains
-     information on the choice of the basis, but not on the
-     choice of origin.  Different formats for the Hermann-Mauguin
-     symbol are found in the cif_sym dictionary.
- 
-;
-_name.category_id                       EXPTL
-_name.object_id                         SPACE_GROUPS
-_category.key_id                        '_space_groups.key'
-_category.key_list ['_space_groups.key']
-loop_
-  _description_example.case
-         
-;
-     In an instance document this category is typically invoked as
- 
-            loop_ _exptl_crystals.key
-                           ${"frame":"space_group_1"}$
-                           ${"frame":"space_group_2"}$
-; 
-
-save_
-
-
-save__space_groups.key
-
-_definition.id                          '_space_groups.key'
-loop_
-  _alias.definition_id
-         '_space_groups.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Unique key code to a set of SPACE_GROUP items in a looped list.
-;
-_name.category_id                       space_groups
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Ref-table
-_type.contents                          Code
-loop_
-  _description_example.case
-         '       ${"frame":"sg_set_1}$      ' 
-
-save_
-
-
 save_SPACE_GROUP
 
 _definition.id                          SPACE_GROUP
@@ -11514,7 +11298,7 @@ _description.text
      The CATEGORY of data items used to specify space group
      information about the crystal used in the diffraction measurements.
 ;
-_name.category_id                       SPACE_GROUPS
+_name.category_id                       EXPTL
 _name.object_id                         SPACE_GROUP
 
 save_
