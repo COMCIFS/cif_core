@@ -1,7 +1,7 @@
 #\#CIF_2.0
 ##########################################################################
-#                                                                        # 
-#  CIF CORE DICTIONARY                                                   # 
+#                                                                        #
+#  CIF CORE DICTIONARY                                                   #
 #                                                                        #
 ##########################################################################
 
@@ -246,7 +246,7 @@ _name.object_id                         ambient_temperature_details
 _type.purpose                           Describe
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          text
+_type.contents                          Text
 
 save_
 
@@ -535,7 +535,9 @@ _description.text
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_ATTENUATOR
 _category.key_id                        '_diffrn_attenuator.key'
-_category.key_list ['_diffrn_attenuator.code']
+loop_
+  _category_key.name
+         '_diffrn_attenuator.code' 
 
 save_
 
@@ -1204,9 +1206,11 @@ _description.text
 _name.category_id                       DIFFRN_ORIENT
 _name.object_id                         DIFFRN_ORIENT_REFLN
 _category.key_id                        '_diffrn_orient_refln.key'
-_category.key_list ['_diffrn_orient_refln.index_h'  
-                   '_diffrn_orient_refln.index_k'  
-                   '_diffrn_orient_refln.index_l']
+loop_
+  _category_key.name
+         '_diffrn_orient_refln.index_h'          
+         '_diffrn_orient_refln.index_k'          
+         '_diffrn_orient_refln.index_l' 
 
 save_
 
@@ -1678,7 +1682,9 @@ _description.text
 _name.category_id                       DIFFRN_RADIATION
 _name.object_id                         DIFFRN_RADIATION_WAVELENGTH
 _category.key_id                        '_diffrn_radiation_wavelength.key'
-_category.key_list ['_diffrn_radiation_wavelength.id']
+loop_
+  _category_key.name
+         '_diffrn_radiation_wavelength.id' 
 
 save_
 
@@ -1857,8 +1863,11 @@ _description.text
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_REFLN
 _category.key_id                        '_diffrn_refln.key'
-_category.key_list ['_diffrn_refln.index_h'  '_diffrn_refln.index_k'  
-                   '_diffrn_refln.index_l']
+loop_
+  _category_key.name
+         '_diffrn_refln.index_h'       
+         '_diffrn_refln.index_k'       
+         '_diffrn_refln.index_l' 
 
 save_
 
@@ -3097,7 +3106,9 @@ _description.text
 _name.category_id                       DIFFRN_REFLNS
 _name.object_id                         DIFFRN_REFLNS_CLASS
 _category.key_id                        '_diffrn_reflns_class.key'
-_category.key_list ['_diffrn_reflns_class.code']
+loop_
+  _category_key.name
+         '_diffrn_reflns_class.code' 
 
 save_
 
@@ -3512,7 +3523,9 @@ _description.text
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_SCALE_GROUP
 _category.key_id                        '_diffrn_scale_group.key'
-_category.key_list ['_diffrn_scale_group.code']
+loop_
+  _category_key.name
+         '_diffrn_scale_group.code' 
 
 save_
 
@@ -4028,9 +4041,11 @@ _description.text
 _name.category_id                       DIFFRN_STANDARD
 _name.object_id                         DIFFRN_STANDARD_REFLN
 _category.key_id                        '_diffrn_standard_refln.key'
-_category.key_list ['_diffrn_standard_refln.index_h'  
-                   '_diffrn_standard_refln.index_k'  
-                   '_diffrn_standard_refln.index_l']
+loop_
+  _category_key.name
+         '_diffrn_standard_refln.index_h'        
+         '_diffrn_standard_refln.index_k'        
+         '_diffrn_standard_refln.index_l' 
 
 save_
 
@@ -4178,7 +4193,11 @@ _description.text
 _name.category_id                       DIFFRACTION
 _name.object_id                         REFLN
 _category.key_id                        '_refln.key'
-_category.key_list ['_refln.index_h'  '_refln.index_k'  '_refln.index_l']
+loop_
+  _category_key.name
+         '_refln.index_h'    
+         '_refln.index_k'    
+         '_refln.index_l' 
 
 save_
 
@@ -5767,7 +5786,9 @@ _description.text
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_CLASS
 _category.key_id                        '_reflns_class.key'
-_category.key_list ['_reflns_class.code']
+loop_
+  _category_key.name
+         '_reflns_class.code' 
 
 save_
 
@@ -6144,7 +6165,9 @@ _description.text
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_SCALE
 _category.key_id                        '_reflns_scale.key'
-_category.key_list ['_reflns_scale.group_code']
+loop_
+  _category_key.name
+         '_reflns_scale.group_code' 
 
 save_
 
@@ -6284,7 +6307,10 @@ _description.text
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_SHELL
 _category.key_id                        '_reflns_shell.key'
-_category.key_list ['_reflns_shell.d_res_low'  '_reflns_shell.d_res_high']
+loop_
+  _category_key.name
+         '_reflns_shell.d_res_low'     
+         '_reflns_shell.d_res_high' 
 
 save_
 
@@ -7683,9 +7709,11 @@ _description.text
 _name.category_id                       CELL_MEASUREMENT
 _name.object_id                         CELL_MEASUREMENT_REFLN
 _category.key_id                        '_cell_measurement_refln.key'
-_category.key_list ['_cell_measurement_refln.index_h'  
-                   '_cell_measurement_refln.index_k'  
-                   '_cell_measurement_refln.index_l']
+loop_
+  _category_key.name
+         '_cell_measurement_refln.index_h'       
+         '_cell_measurement_refln.index_k'       
+         '_cell_measurement_refln.index_l' 
 
 save_
 
@@ -9419,7 +9447,9 @@ _description.text
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_ATOM
 _category.key_id                        '_chemical_conn_atom.key'
-_category.key_list ['_chemical_conn_atom.number']
+loop_
+  _category_key.name
+         '_chemical_conn_atom.number' 
 
 save_
 
@@ -9641,7 +9671,10 @@ _description.text
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_BOND
 _category.key_id                        '_chemical_conn_bond.key'
-_category.key_list ['_chemical_conn_bond.atom_1'  '_chemical_conn_bond.atom_2']
+loop_
+  _category_key.name
+         '_chemical_conn_bond.atom_1'  
+         '_chemical_conn_bond.atom_2' 
 
 save_
 
@@ -10111,6 +10144,7 @@ _enumeration.range                      1.0:
 _units.code                             dalton
 
 save_
+
 
 save_EXPTL_ABSORPT
 
@@ -11049,7 +11083,9 @@ _description.text
 _name.category_id                       EXPTL_CRYSTAL
 _name.object_id                         EXPTL_CRYSTAL_FACE
 _category.key_id                        '_exptl_crystal_face.key'
-_category.key_list ['_exptl_crystal_face.id']
+loop_
+  _category_key.name
+         '_exptl_crystal_face.id' 
 
 save_
 
@@ -11496,7 +11532,9 @@ _description.text
 _name.category_id                       SPACE_GROUP
 _name.object_id                         SPACE_GROUP_SYMOP
 _category.key_id                        '_space_group_symop.key'
-_category.key_list ['_space_group_symop.id']
+loop_
+  _category_key.name
+         '_space_group_symop.id' 
 
 save_
 
@@ -11845,7 +11883,9 @@ _description.text
 _name.category_id                       SYMMETRY
 _name.object_id                         SYMMETRY_EQUIV
 _category.key_id                        '_symmetry_equiv.key'
-_category.key_list ['_symmetry_equiv.pos_site_id']
+loop_
+  _category_key.name
+         '_symmetry_equiv.pos_site_id' 
 
 save_
 
@@ -12560,11 +12600,6 @@ _description.text
 _name.category_id                       GEOM
 _name.object_id                         GEOM_ANGLE
 _category.key_id                        '_geom_angle.key'
-_category.key_list ['_geom_angle.atom_site_label_1'  
-                   '_geom_angle.atom_site_label_2'  
-                   '_geom_angle.atom_site_label_3'  
-                   '_geom_angle.site_symmetry_1'  '_geom_angle.site_symmetry_2'  
-                   '_geom_angle.site_symmetry_3']
 loop_
   _method.purpose
   _method.expression
@@ -12601,6 +12636,14 @@ loop_
                           .value     =  angle )
      }   }   }
 ; 
+loop_
+  _category_key.name
+         '_geom_angle.atom_site_label_1'         
+         '_geom_angle.atom_site_label_2'         
+         '_geom_angle.atom_site_label_3'         
+         '_geom_angle.site_symmetry_1'           
+         '_geom_angle.site_symmetry_2'           
+         '_geom_angle.site_symmetry_3' 
 
 save_
 
@@ -12892,9 +12935,6 @@ _description.text
 _name.category_id                       GEOM
 _name.object_id                         GEOM_BOND
 _category.key_id                        '_geom_bond.key'
-_category.key_list ['_geom_bond.atom_site_label_1'  
-                   '_geom_bond.atom_site_label_2'  '_geom_bond.site_symmetry_1'  
-                   '_geom_bond.site_symmetry_2']
 loop_
   _method.purpose
   _method.expression
@@ -12918,6 +12958,12 @@ loop_
                       .distance  =  d  )
       }   }
 ; 
+loop_
+  _category_key.name
+         '_geom_bond.atom_site_label_1'          
+         '_geom_bond.atom_site_label_2'          
+         '_geom_bond.site_symmetry_1'  
+         '_geom_bond.site_symmetry_2' 
 
 save_
 
@@ -13207,10 +13253,6 @@ _description.text
 _name.category_id                       GEOM
 _name.object_id                         GEOM_CONTACT
 _category.key_id                        '_geom_contact.key'
-_category.key_list ['_geom_contact.atom_site_label_1'  
-                   '_geom_contact.atom_site_label_2'  
-                   '_geom_contact.site_symmetry_1'  
-                   '_geom_contact.site_symmetry_2']
 loop_
   _method.purpose
   _method.expression
@@ -13247,6 +13289,12 @@ loop_
                                .distance  =  d  )
      }  }  }  }  }  }
 ; 
+loop_
+  _category_key.name
+         '_geom_contact.atom_site_label_1'       
+         '_geom_contact.atom_site_label_2'       
+         '_geom_contact.site_symmetry_1'         
+         '_geom_contact.site_symmetry_2' 
 
 save_
 
@@ -13485,11 +13533,14 @@ _description.text
 _name.category_id                       GEOM
 _name.object_id                         GEOM_HBOND
 _category.key_id                        '_geom_hbond.key'
-_category.key_list ['_geom_hbond.atom_site_label_D'  
-                   '_geom_hbond.atom_site_label_H'  
-                   '_geom_hbond.atom_site_label_A'  
-                   '_geom_hbond.site_symmetry_D'  '_geom_hbond.site_symmetry_H'  
-                   '_geom_hbond.site_symmetry_A']
+loop_
+  _category_key.name
+         '_geom_hbond.atom_site_label_D'         
+         '_geom_hbond.atom_site_label_H'         
+         '_geom_hbond.atom_site_label_A'         
+         '_geom_hbond.site_symmetry_D'           
+         '_geom_hbond.site_symmetry_H'           
+         '_geom_hbond.site_symmetry_A' 
 
 save_
 
@@ -13964,14 +14015,6 @@ _description.text
 _name.category_id                       GEOM
 _name.object_id                         GEOM_TORSION
 _category.key_id                        '_geom_torsion.key'
-_category.key_list ['_geom_torsion.atom_site_label_1'  
-                   '_geom_torsion.atom_site_label_2'  
-                   '_geom_torsion.atom_site_label_3'  
-                   '_geom_torsion.atom_site_label_4'  
-                   '_geom_torsion.site_symmetry_1'  
-                   '_geom_torsion.site_symmetry_2'  
-                   '_geom_torsion.site_symmetry_3'  
-                   '_geom_torsion.site_symmetry_4']
 loop_
   _method.purpose
   _method.expression
@@ -14020,6 +14063,16 @@ loop_
                                .angle     =  angle )
      }   }   }    }
 ; 
+loop_
+  _category_key.name
+         '_geom_torsion.atom_site_label_1'       
+         '_geom_torsion.atom_site_label_2'       
+         '_geom_torsion.atom_site_label_3'       
+         '_geom_torsion.atom_site_label_4'       
+         '_geom_torsion.site_symmetry_1'         
+         '_geom_torsion.site_symmetry_2'         
+         '_geom_torsion.site_symmetry_3'         
+         '_geom_torsion.site_symmetry_4' 
 
 save_
 
@@ -14326,7 +14379,6 @@ _description.text
 _name.category_id                       MODEL
 _name.object_id                         MODEL_SITE
 _category.key_id                        '_model_site.key'
-_category.key_list ['_model_site.label'  '_model_site.symop']
 loop_
   _method.purpose
   _method.expression
@@ -14396,6 +14448,10 @@ loop_
                     .mole_index      =  m  )
       }
 ; 
+loop_
+  _category_key.name
+         '_model_site.label'           
+         '_model_site.symop' 
 
 save_
 
@@ -14841,7 +14897,9 @@ _description.text
 _name.category_id                       VALENCE
 _name.object_id                         VALENCE_PARAM
 _category.key_id                        '_valence_param.key'
-_category.key_list ['_valence_param.id']
+loop_
+  _category_key.name
+         '_valence_param.id' 
 
 save_
 
@@ -14964,7 +15022,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.1:
-_units.code                             Angstroms
+_units.code                             angstroms
 
 save_
 
@@ -15083,7 +15141,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      1.:
-_units.code                             Angstroms
+_units.code                             angstroms
 
 save_
 
@@ -15101,7 +15159,9 @@ _description.text
 _name.category_id                       VALENCE
 _name.object_id                         VALENCE_REF
 _category.key_id                        '_valence_ref.key'
-_category.key_list ['_valence_ref.id']
+loop_
+  _category_key.name
+         '_valence_ref.id' 
 
 save_
 
@@ -15324,7 +15384,9 @@ _description.text
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_AUTHOR
 _category.key_id                        '_audit_author.key'
-_category.key_list ['_audit_author.name']
+loop_
+  _category_key.name
+         '_audit_author.name' 
 
 save_
 
@@ -15522,7 +15584,9 @@ _description.text
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_CONTACT_AUTHOR
 _category.key_id                        '_audit_contact_author.key'
-_category.key_list ['_audit_contact_author.name']
+loop_
+  _category_key.name
+         '_audit_contact_author.name' 
 
 save_
 
@@ -15724,7 +15788,9 @@ _description.text
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_LINK
 _category.key_id                        '_audit_link.key'
-_category.key_list ['_audit_link.block_code']
+loop_
+  _category_key.name
+         '_audit_link.block_code' 
 
 save_
 
@@ -15816,7 +15882,9 @@ _description.text
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION
 _category.key_id                        '_citation.key'
-_category.key_list ['_citation.id']
+loop_
+  _category_key.name
+         '_citation.id' 
 
 save_
 
@@ -16443,7 +16511,9 @@ _description.text
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_AUTHOR
 _category.key_id                        '_citation_author.key'
-_category.key_list ['_citation_author.ordinal']
+loop_
+  _category_key.name
+         '_citation_author.ordinal' 
 
 save_
 
@@ -16567,7 +16637,9 @@ _description.text
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_EDITOR
 _category.key_id                        '_citation_editor.key'
-_category.key_list ['_citation_editor.id']
+loop_
+  _category_key.name
+         '_citation_editor.id' 
 
 save_
 
@@ -17282,7 +17354,9 @@ _description.text
 _name.category_id                       DISPLAY
 _name.object_id                         DISPLAY_COLOUR
 _category.key_id                        '_display_colour.key'
-_category.key_list ['_display_colour.hue']
+loop_
+  _category_key.name
+         '_display_colour.hue' 
 
 save_
 
@@ -17863,7 +17937,7 @@ _name.object_id                         fax
 _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          text
+_type.contents                          Text
 
 save_
 
@@ -17932,7 +18006,7 @@ _name.object_id                         phone
 _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          text
+_type.contents                          Text
 
 save_
 
@@ -18196,7 +18270,9 @@ _description.text
 _name.category_id                       JOURNAL
 _name.object_id                         JOURNAL_INDEX
 _category.key_id                        '_journal_index.key'
-_category.key_list ['_journal_index.id']
+loop_
+  _category_key.name
+         '_journal_index.id' 
 
 save_
 
@@ -18559,7 +18635,9 @@ _description.text
 _name.category_id                       PUBL
 _name.object_id                         PUBL_AUTHOR
 _category.key_id                        '_publ_author.key'
-_category.key_list ['_publ_author.name']
+loop_
+  _category_key.name
+         '_publ_author.name' 
 
 save_
 
@@ -18784,7 +18862,9 @@ _description.text
 _name.category_id                       PUBL
 _name.object_id                         PUBL_BODY
 _category.key_id                        '_publ_body.key'
-_category.key_list ['_publ_body.label']
+loop_
+  _category_key.name
+         '_publ_body.label' 
 
 save_
 
@@ -18964,7 +19044,9 @@ _description.text
 _name.category_id                       PUBL
 _name.object_id                         PUBL_CONTACT_AUTHOR
 _category.key_id                        '_publ_contact_author.key'
-_category.key_list ['_publ_contact_author.name']
+loop_
+  _category_key.name
+         '_publ_contact_author.name' 
 
 save_
 
@@ -19284,7 +19366,9 @@ _description.text
 _name.category_id                       PUBL_MANUSCRIPT
 _name.object_id                         PUBL_MANUSCRIPT_INCL_EXTRA
 _category.key_id                        '_publ_manuscript_incl_extra.key'
-_category.key_list ['_publ_manuscript_incl_extra.item']
+loop_
+  _category_key.name
+         '_publ_manuscript_incl_extra.item' 
 
 save_
 
@@ -19964,7 +20048,9 @@ _description.text
 _name.category_id                       ATOM
 _name.object_id                         ATOM_SITE
 _category.key_id                        '_atom_site.key'
-_category.key_list ['_atom_site.label']
+loop_
+  _category_key.name
+         '_atom_site.label' 
 
 save_
 
@@ -21309,7 +21395,9 @@ _description.text
 _name.category_id                       ATOM_SITE
 _name.object_id                         ATOM_SITE_ANISO
 _category.key_id                        '_atom_site_aniso.key'
-_category.key_list ['_atom_site_aniso.label']
+loop_
+  _category_key.name
+         '_atom_site_aniso.label' 
 
 save_
 
@@ -22779,7 +22867,6 @@ _description.text
 _name.category_id                       ATOM
 _name.object_id                         ATOM_TYPE
 _category.key_id                        '_atom_type.key'
-_category.key_list ['_atom_type.symbol']
 loop_
   _method.purpose
   _method.expression
@@ -22796,6 +22883,9 @@ loop_
                                         .number_in_cell = '?'   )
       }
 ; 
+loop_
+  _category_key.name
+         '_atom_type.symbol' 
 
 save_
 
@@ -23171,7 +23261,9 @@ _description.text
 _name.category_id                       ATOM_TYPE
 _name.object_id                         ATOM_TYPE_SCAT
 _category.key_id                        '_atom_type_scat.key'
-_category.key_list ['_atom_type_scat.symbol']
+loop_
+  _category_key.name
+         '_atom_type_scat.symbol' 
 
 save_
 
@@ -25528,7 +25620,9 @@ _description.text
 _name.category_id                       REFINE_LS
 _name.object_id                         CLASS
 _category.key_id                        '_refine_ls_class.key'
-_category.key_list ['_refine_ls_class.code']
+loop_
+  _category_key.name
+         '_refine_ls_class.code' 
 
 save_
 
