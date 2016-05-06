@@ -741,6 +741,7 @@ save_units_code
 
    'degrees'          "angle      'degrees (of arc)'"
    'cycles'           "phase      'angle in 360 degree arcs'"
+   'radians'          "angle      'radians'"
    'degrees_squared'   "angle      'degrees (of arc)'"
 
    'degree_per_minute' "rotation_per_time  'degrees (of arc) per minute'"
@@ -770,6 +771,7 @@ save_units_code
    'kilovolts'     "emf         'kilovolts'"
 
    'volt_squared'     "emf         'volts squared'"
+   'Bohr_magnetons'   "magnetic moment"
 
    'arbitrary'    "arbitrary    'arbitrary system of units'"
 
@@ -2072,4 +2074,8 @@ save_colour_hue
       1.4.03  2014-06-09
 ;
    Inserted dummy line at top of each frame; this is skipped on import
+;
+      1.4.04  2016-04-01
+;
+   Added Bohr magnetons and radians to the units list (James Hester)
 ;
