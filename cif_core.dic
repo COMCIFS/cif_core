@@ -9,8 +9,8 @@ data_CIF_CORE
 
 _dictionary.title                       CIF_CORE
 _dictionary.class                       Instance
-_dictionary.version                     3.0.04
-_dictionary.date                        2015-02-18
+_dictionary.version                     3.0.05
+_dictionary.date                        2016-05-13
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.04
 _dictionary.namespace                   CifCore
@@ -4468,7 +4468,7 @@ loop_
   _alias.definition_id
          '_refln.F_complex'  
          '_refln_F_complex' 
-_definition.update                      2013-04-23
+_definition.update                      2016-05-13
 _description.text                       
 ;
      The structure factor vector for the reflection calculated from
@@ -4503,13 +4503,13 @@ loop_
                          r.form_factor_table [a.type_symbol]      +
                         _atom_type_scat[a.type_symbol].dispersion  )
  
-      Loop s  as  symmetry_equiv  {
+      Loop s  as  space_group_symop  {
  
           t   =  Exp(-h * s.R * a.tensor_beta * s.RT * h)
  
           fc +=  f * t * ExpImag(TwoPi *( h *( s.R * a.fract_xyz + s.T)))
    }  }
-          _refln.F_complex  =   fc / _symmetry.multiplicity
+          _refln.F_complex  =   fc / _space_group.multiplicity
 ; 
 
 save_
@@ -11328,25 +11328,110 @@ save_SPACE_GROUP
 _definition.id                          SPACE_GROUP
 _definition.scope                       Category
 _definition.class                       Set
-_definition.update                      2012-11-22
+_definition.update                      2016-05-06
 _description.text                       
 ;
      The CATEGORY of data items used to specify space group
      information about the crystal used in the diffraction measurements.
+     
+     Space-group types are identified by their number as listed in
+     International Tables for Crystallography Volume A, or by their
+     Schoenflies symbol. Specific settings of the space groups can
+     be identified by their Hall symbol, by specifying their
+     symmetry operations or generators, or by giving the
+     transformation that relates the specific setting to the
+     reference setting based on International Tables Volume A and
+     stored in this dictionary.
+
+     The commonly used Hermann-Mauguin symbol determines the
+     space-group type uniquely but several different Hermann-Mauguin
+     symbols may refer to the same space-group type. A
+     Hermann-Mauguin symbol contains information on the choice of
+     the basis, but not on the choice of origin.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
 ;
 _name.category_id                       EXPTL
 _name.object_id                         SPACE_GROUP
 
 save_
 
+save_space_group.Bravais_type
+    _definition.id             '_space_group.Bravais_type'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The symbol denoting the lattice type (Bravais type) to which the
+     translational subgroup (vector lattice) of the space group
+     belongs. It consists of a lower-case letter indicating the
+     crystal system followed by an upper-case letter indicating
+     the lattice centring. The setting-independent symbol mS
+     replaces the setting-dependent symbols mB and mC, and the
+     setting-independent symbol oS replaces the setting-dependent
+     symbols oA, oB and oC.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed., p. 15.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group
+    _name.object_id             Bravais_type
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     loop_ 
+    _enumeration_set.state        aP
+                                  mP     mS
+                                  oP     oS     oI    oF
+                                  tP     tI
+                                  hP     hR
+                                  cP     cI     cF
+     loop_
+    _description_example.case
+    _description_example.detail
+                          aP  'triclinic (anorthic) primitive lattice'
+     save_
+
+
+save_space_group.centring_type
+    _definition.id             '_space_group.centring_type'
+    _definition.update          2014-06-12
+    _description.text
+;
+     Symbol for the lattice centring. This symbol may be dependent
+     on the coordinate system chosen.
+;
+    _name.category_id           space_group
+    _name.object_id             centring_type
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+         P     'primitive            no centring'  
+         A     'A-face centred       (0,1/2,1/2)'  
+         B     'B-face centred       (1/2,0,1/2)'  
+         C     'C-face centred       (1/2,1/2,0)'  
+         F     'all faces centred    (0,1/2,1/2), (1/2,0,1/2), (1/2,1/2,0)'  
+         I     'body centred         (1/2,1/2,1/2)'  
+         R     'rhombohedral obverse centred (2/3,1/3,1/3), (1/3,2/3,2/3)'  
+         Rrev  'rhombohedral reverse centred (1/3,2/3,1/3), (2/3,1/3,2/3)'  
+         H     'hexagonal centred    (2/3,1/3,0), (1/3,2/3,0)'  
+     save_
 
 save__space_group.crystal_system
 
 _definition.id                          '_space_group.crystal_system'
 loop_
   _alias.definition_id
-         '_space_group.crystal_system' 
-_definition.update                      2014-06-12
+         '_space_group_crystal_system'
+         '_symmetry.cell_setting'
+_definition.update                      2016-05-09
 _description.text                       
 ;
      The name of the system of geometric crystal classes of space
@@ -11370,331 +11455,12 @@ loop_
          hexagonal           
          cubic 
 _enumeration.default                    triclinic
-
-save_
-
-
-save__space_group.id
-
-_definition.id                          '_space_group.id'
-loop_
-  _alias.definition_id
-         '_space_group.id'   
-         '_space_group_id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Code identifying a space group if multiple symmetries.
-     See _exptl_crystals.key.
-;
-_name.category_id                       space_group
-_name.object_id                         id
-_type.purpose                           Encode
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Code
-
-save_
-
-
-save__space_group.IT_number
-
-_definition.id                          '_space_group.IT_number'
-loop_
-  _alias.definition_id
-         '_space_group.IT_number'      
-         '_space_group_IT_number' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The number as assigned in International Tables for Crystallography
-     Vol A, specifying the proper affine class (i.e. the orientation
-     preserving affine class) of space groups (crystallographic space
-     group type) to which the space group belongs. This number defines
-     the space group type but not the coordinate system expressed.
-;
-_name.category_id                       space_group
-_name.object_id                         IT_number
-_type.purpose                           Number
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Integer
-_enumeration.range                      1:
-
-save_
-
-
-save__space_group.name_H_M_alt
-
-_definition.id                          '_space_group.name_H_M_alt'
-loop_
-  _alias.definition_id
-         '_space_group.name_H_M_alt'   
-         '_space_group_name_H-M_alt'   
-         '_space_group.name_H-M_alt' 
-_definition.update                      2013-03-09
-_description.text                       
-;
-    _space_group.name_H_M_alt allows for any Hermann-Mauguin symbol
-     to be given. The way in which this item is used is determined
-     by the user and in general is not intended to be interpreted by
-     computer. It may, for example, be used to give one of the
-     extended Hermann-Mauguin symbols given in Table 4.3.1 of
-     International Tables for Crystallography Vol. A (1995) or
-     a Hermann-Mauguin symbol for a conventional or unconventional
-     setting.
-     Each component of the space group name is separated by a
-     space or underscore. The use of space is strongly
-     recommended.  The underscore is only retained because it
-     was used in earlier archived files. It should not be
-     used in new CIFs. Subscripts should appear without special
-     symbols. Bars should be given as negative signs before the
-     numbers to which they apply.
-     The commonly used Hermann-Mauguin symbol determines the space
-     group type uniquely but a given space group type may be
-     described by more than one Hermann-Mauguin symbol. The space
-     group type is best described using _space_group_IT_number.
-     The Hermann-Mauguin symbol may contain information on the
-     choice of basis though not on the choice of origin. To
-     define the setting uniquely use _space_group.name_Hall or
-     list the symmetry operations.
-;
-_name.category_id                       space_group
-_name.object_id                         name_H_M_alt
-_type.purpose                           Encode
-_type.source                            Recorded
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _description_example.case
-  _description_example.detail
-         'P 1 21/m 1'        'space group No. 10'          
-         'P 2/n 2/n 2/n (origin at -1)'          'space group No. 48 origin 2'           
-         'R -3 2/m'          'space group No. 166 rhomb'   
-         
-;         loop_
-         _space_group.id
-         _space_group.name_H_M_alt
-                          '1'   'C m c m'
-                          '2'   'C 2/c 2/m 21/m'
-                          '3'   'A m a m'
-;        'three examples for space group No. 63' 
-
-save_
-
-
-save__space_group.name_Hall
-
-_definition.id                          '_space_group.name_Hall'
-loop_
-  _alias.definition_id
-         '_space_group.name_Hall'      
-         '_space_group_name_Hall' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Space group symbol defined by Hall. Each component of the
-     space group name is separated by a space or an underscore.
-     The use of space is strongly recommended because it specifies
-     the coordinate system. The underscore in the name is only
-     retained because it was used in earlier archived files. It
-     should not be used in new CIFs.
-     Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525
-          [See also International Tables for Crystallography,
-          Vol.B (1993) 1.4 Appendix B]
-;
-_name.category_id                       space_group
-_name.object_id                         name_Hall
-_type.purpose                           Encode
-_type.source                            Recorded
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _description_example.case
-         'P 2ac  2n'         
-         '-R 3 2"'           
-         'P 61 2 2 (0 0 -1)' 
-
-save_
-
-
-save_SPACE_GROUP_SYMOP
-
-_definition.id                          SPACE_GROUP_SYMOP
-_definition.scope                       Category
-_definition.class                       Loop
-_definition.update                      2013-09-08
-_description.text                       
-;
-     The CATEGORY of data items used to describe symmetry equivalent sites
-     in the crystal unit cell.
-;
-_name.category_id                       SPACE_GROUP
-_name.object_id                         SPACE_GROUP_SYMOP
-_category.key_id                        '_space_group_symop.key'
-loop_
-  _category_key.name
-         '_space_group_symop.id' 
-
-save_
-
-
-save__space_group_symop.id
-
-_definition.id                          '_space_group_symop.id'
-loop_
-  _alias.definition_id
-         '_space_group_symop.id'       
-         '_space_group_symop_id'       
-         '_space_group_symop.sg_id'    
-         '_space_group_symop_sg_id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     A sequential number that identifies each symmetry operation.
-     The identity operation (i.e. _space_group_symop.operation_xyz
-     set to 'x,y,z') should be set to 1.
-;
-_name.category_id                       space_group_symop
-_name.object_id                         id
-_type.purpose                           Number
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Index
-_enumeration.range                      1:
-
-save_
-
-
-save__space_group_symop.key
-
-_definition.id                          '_space_group_symop.key'
-loop_
-  _alias.definition_id
-         '_space_group_symop.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of space_group_symop items
-     in a looped list.
-;
-_name.category_id                       space_group_symop
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '         _symmetry_equiv.key = _space_group_symop.id'
-
-save_
-
-
-save__space_group_symop.operation_xyz
-
-_definition.id                          '_space_group_symop.operation_xyz'
-loop_
-  _alias.definition_id
-         '_space_group_symop.operation_xyz'      
-         '_space_group_symop_operation_xyz' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     A parsable string giving one of the symmetry operations of the
-     space group in algebraic form.  If W is a matrix representation
-     of the rotational part of the symmetry operation defined by the
-     positions and signs of x, y and z, and w is a column of
-     translations defined by fractions, an equivalent position
-     X' is generated from a given position X by the equation
- 
-               X' = WX + w
- 
-     (Note: X is used to represent bold_italics_x in International
-     Tables for Crystallography Vol. A, Part 5)
- 
-     When a list of symmetry operations is given, it must contain
-     a complete set of coordinate representatives which generates
-     all the operations of the space group by the addition of
-     all primitive translations of the space group. Such
-     representatives are to be found as the coordinates of
-     the general-equivalent position in International Tables for
-     Crystallography Vol. A (2002), to which it is necessary to
-     add any centring translations shown above the
-     general-equivalent position.
- 
-     That is to say, it is necessary to list explicitly all the
-     symmetry operations required to generate all the atoms in
-     the unit cell defined by the setting used.
-;
-_name.category_id                       space_group_symop
-_name.object_id                         operation_xyz
-_type.purpose                           Encode
-_type.source                            Recorded
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _description_example.case
-  _description_example.detail
-         'x,1/2-y,1/2+z'     'glide reflection through the plane (x,1/4,z) with glide vector (1/2)c'
-
-save_
-
-
-save_SYMMETRY
-
-_definition.id                          SYMMETRY
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe symmetry information
-     used in crystallographic structure studies.
-;
-_name.category_id                       EXPTL
-_name.object_id                         SYMMETRY
-
-save_
-
-
-save__symmetry.cell_setting
-
-_definition.id                          '_symmetry.cell_setting'
-loop_
-  _alias.definition_id
-         '_symmetry.cell_setting'      
-         '_symmetry_cell_setting'      
-         '_space_group_crystal_system' 
-_definition.update                      2013-04-11
-_description.text                       
-;
-     Code for cell settings for this space-group symmetry.
-;
-_name.category_id                       symmetry
-_name.object_id                         cell_setting
-_type.purpose                           State
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _enumeration_set.state
-         triclinic           
-         monoclinic          
-         orthorhombic        
-         tetragonal          
-         rhombohedral        
-         trigonal  
-         hexagonal           
-         cubic 
-_enumeration.default                    triclinic
 loop_
   _method.purpose
   _method.expression
          Validation          
 ;
-    setting = _symmetry.cell_setting
+    setting = _space_group.crystal_system
     a   = _cell_length.a
     b   = _cell_length.b
     c   = _cell_length.c
@@ -11746,42 +11512,130 @@ loop_
 
 save_
 
+save_space_group.IT_coordinate_system_code
+    _definition.id             '_space_group.IT_coordinate_system_code'
+    _definition.update          2016-05-13
+    _description.text
+;
+     A qualifier taken from the enumeration list identifying which
+     setting in International Tables for Crystallography Volume A
+     (2002) (IT) is used.  See IT Table 4.3.2.1, Section 2.2.16,
+     Table 2.2.16.1, Section 2.2.16.1 and Fig. 2.2.6.4.  This item
+     is not computer-interpretable and cannot be used to define the
+     coordinate system.  Use _space_group.transform_* instead.
 
-save__symmetry.Int_Tables_number
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group
+    _name.object_id             IT_coordinate_system_code
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+         'b1'  'monoclinic unique axis b, cell choice 1, abc'  
+         'b2'  'monoclinic unique axis b, cell choice 2, abc'  
+         'b3'  'monoclinic unique axis b, cell choice 3, abc'  
+         '-b1'  'monoclinic unique axis b, cell choice 1, c-ba'  
+         '-b2'  'monoclinic unique axis b, cell choice 2, c-ba'  
+         '-b3'  'monoclinic unique axis b, cell choice 3, c-ba'  
+         'c1'  'monoclinic unique axis c, cell choice 1, abc'  
+         'c2'  'monoclinic unique axis c, cell choice 2, abc'  
+         'c3'  'monoclinic unique axis c, cell choice 3, abc'  
+         '-c1'  'monoclinic unique axis c, cell choice 1, ba-c'  
+         '-c2'  'monoclinic unique axis c, cell choice 2, ba-c'  
+         '-c3'  'monoclinic unique axis c, cell choice 3, ba-c'  
+         'a1'  'monoclinic unique axis a, cell choice 1, abc'  
+         'a2'  'monoclinic unique axis a, cell choice 2, abc'  
+         'a3'  'monoclinic unique axis a, cell choice 3, abc'  
+         '-a1'  'monoclinic unique axis a, cell choice 1, -acb'  
+         '-a2'  'monoclinic unique axis a, cell choice 2, -acb'  
+         '-a3'  'monoclinic unique axis a, cell choice 3, -acb'  
+         'abc'  'orthorhombic'  
+         'ba-c'  'orthorhombic'  
+         'cab'  'orthorhombic'  
+         '-cba'  'orthorhombic'  
+         'bca'  'orthorhombic'  
+         'a-cb'  'orthorhombic'  
+         '1abc'  'orthorhombic origin choice 1'  
+         '1ba-c'  'orthorhombic origin choice 1'  
+         '1cab'  'orthorhombic origin choice 1'  
+         '1-cba'  'orthorhombic origin choice 1'  
+         '1bca'  'orthorhombic origin choice 1'  
+         '1a-cb'  'orthorhombic origin choice 1'  
+         '2abc'  'orthorhombic origin choice 2'  
+         '2ba-c'  'orthorhombic origin choice 2'  
+         '2cab'  'orthorhombic origin choice 2'  
+         '2-cba'  'orthorhombic origin choice 2'  
+         '2bca'  'orthorhombic origin choice 2'  
+         '2a-cb'  'orthorhombic origin choice 2'  
+         '1'  'tetragonal or cubic origin choice 1'  
+         '2'  'tetragonal or cubic origin choice 2'  
+         'h'  'trigonal using hexagonal axes'  
+         'r'  'trigonal using rhombohedral axes'  
+     save_
 
-_definition.id                          '_symmetry.Int_Tables_number'
+
+save__space_group.IT_number
+
+_definition.id                          '_space_group.IT_number'
 loop_
   _alias.definition_id
-         '_symmetry.Int_Tables_number'           
-         '_symmetry_Int_Tables_number' 
-_definition.update                      2012-11-22
+         '_space_group.IT_number'      
+         '_space_group_IT_number'
+         '_symmetry.Int_Tables_number'
+_definition.update                      2016-05-09
 _description.text                       
 ;
-     Space-group number from International Tables for Cryst., Vol. A.
+     The number as assigned in International Tables for Crystallography
+     Vol A, specifying the proper affine class (i.e. the orientation
+     preserving affine class) of space groups (crystallographic space
+     group type) to which the space group belongs. This number defines
+     the space group type but not the coordinate system expressed.
 ;
-_name.category_id                       symmetry
-_name.object_id                         Int_Tables_number
+_name.category_id                       space_group
+_name.object_id                         IT_number
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:230
 
 save_
 
+save_space_group.Laue_class
+    _definition.id             '_space_group.Laue_class'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The Hermann-Mauguin symbol of the geometric crystal class of the
+     point group of the space group where a centre of inversion is
+     added if not already present.
+;
+    _name.category_id           space_group
+    _name.object_id             Laue_class
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     loop_
+    _enumeration_set.state
+     '-1' '2/m' 'mmm' '4/m' '4/mmm' '-3' '-3m' '6/m' '6/mmm' 'm-3' 'm-3m'  
+     save_
 
-save__symmetry.multiplicity
+save__space_group.multiplicity
 
-_definition.id                          '_symmetry.multiplicity'
-loop_
-  _alias.definition_id
-         '_symmetry.multiplicity' 
-_definition.update                      2012-11-22
+_definition.id                          '_space_group.multiplicity'
+_definition.update                      2016-05-13
 _description.text                       
 ;
      Number of unique symmetry elements in the space group.
 ;
-_name.category_id                       symmetry
+_name.category_id                       space_group
 _name.object_id                         multiplicity
 _type.purpose                           Number
 _type.source                            Derived
@@ -11795,67 +11649,142 @@ loop_
 ;
      n =  0
  
-     Loop  s  as  symmetry_equiv  n +=  1
+     Loop  s  as  space_group_symop  n +=  1
  
-      _symmetry.multiplicity  =   n
+      _space_group.multiplicity  =   n
 ; 
 
 save_
 
+save__space_group.name_H-M_alt
 
-save__symmetry.space_group_name_H_M
-
-_definition.id                          '_symmetry.space_group_name_H_M'
+_definition.id                          '_space_group.name_H-M_alt'
 loop_
   _alias.definition_id
-         '_symmetry.space_group_name_H_M'        
-         '_symmetry_space_group_name_H-M'        
-         '_symmetry.space_group_name_H-M' 
-_definition.update                      2013-04-07
+         '_space_group_name_H-M_alt'
+_definition.update                      2016-05-13
 _description.text                       
 ;
-     Hermann-Mauguin space-group symbol. Note that the H-M symbol does
-     not necessarily contain complete information about the symmetry
-     and the space-group origin. If used always supply the FULL symbol
-     from International Tables for Crystallography, Vol. A (1987) and
-     indicate the origin and the setting if it is not implicit. If
-     there is any doubt that the equivalent positions can be uniquely
-     deduced from this symbol specify the _symmetry_equiv.pos_as_xyz
-     or *_Hall data items as well. Leave spaces between symbols
-     referring to different axes.
+    _space_group.name_H_M_alt allows for any Hermann-Mauguin symbol
+     to be given. The way in which this item is used is determined
+     by the user and in general is not intended to be interpreted by
+     computer. It may, for example, be used to give one of the
+     extended Hermann-Mauguin symbols given in Table 4.3.1 of
+     International Tables for Crystallography Vol. A (1995) or
+     a Hermann-Mauguin symbol for a conventional or unconventional
+     setting.
+     Each component of the space group name is separated by a
+     space or underscore. The use of space is strongly
+     recommended.  The underscore is only retained because it
+     was used in earlier archived files. It should not be
+     used in new CIFs. Subscripts should appear without special
+     symbols. Bars should be given as negative signs before the
+     numbers to which they apply.
+     The commonly used Hermann-Mauguin symbol determines the space
+     group type uniquely but a given space group type may be
+     described by more than one Hermann-Mauguin symbol. The space
+     group type is best described using _space_group_IT_number.
+     The Hermann-Mauguin symbol may contain information on the
+     choice of basis though not on the choice of origin. To
+     define the setting uniquely use _space_group.name_Hall or
+     list the symmetry operations.
 ;
-_name.category_id                       symmetry
-_name.object_id                         space_group_name_H_M
+_name.category_id                       space_group
+_name.object_id                         name_H_M_alt
 _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         'P 1 21/m 1'        
-         'P 2/n 2/n 2/n (origin at -1)'          
-         'R -3 2/m' 
+  _description_example.detail
+         'P 1 21/m 1'        'space group No. 10'          
+         'P 2/n 2/n 2/n (origin at -1)'          'space group No. 48 origin 2'           
+         'R -3 2/m'          'space group No. 166 rhomb'   
+         
+;         loop_
+         _space_group.id
+         _space_group.name_H_M_alt
+                          '1'   'C m c m'
+                          '2'   'C 2/c 2/m 21/m'
+                          '3'   'A m a m'
+;        'three examples for space group No. 63' 
 
 save_
 
+save_space_group.name_H-M_ref
+    _definition.id             '_space_group.name_H-M_ref'
+    _definition.update          2016-05-13
+    _description.text
+;
+     The short international Hermann-Mauguin space-group symbol as
+     defined in Section 2.2.3 and given as the first item of each
+     space-group table in Part 7 of International Tables
+     for Crystallography Volume A (2002).
 
-save__symmetry.space_group_name_Hall
+     Each component of the space-group name is separated by a
+     space or an underscore character. The use of a space is
+     strongly recommended.  The underscore is only retained
+     because it was used in old CIFs. It should
+     not be used in new CIFs.
 
-_definition.id                          '_symmetry.space_group_name_Hall'
+     Subscripts should appear without special symbols. Bars
+     should be given as negative signs before the numbers to which
+     they apply.  The short international Hermann-Mauguin symbol
+     determines the space-group type uniquely. However, the
+     space-group type is better described using
+     _space_group.IT_number or _space_group.name_Schoenflies. The
+     short international Hermann-Mauguin symbol contains no
+     information on the choice of basis or origin. To define the
+     setting uniquely use _space_group.name_Hall, list the symmetry
+     operations or generators, or give the transformation that
+     relates the setting to the reference setting defined in this
+     dictionary under _space_group.reference_setting.
+
+     _space_group.name_H-M_alt may be used to give the
+     Hermann-Mauguin symbol corresponding to the setting used.
+
+     In the enumeration list, each possible value is identified by
+     space-group number and Schoenflies symbol.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group
+    _name.object_id             name_H_M_ref
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+    _import.get       [{"file":'templ_enum.cif' "save":'H_M_ref'}]
+     save_
+
+
+save__space_group.name_Hall
+
+_definition.id                          '_space_group.name_Hall'
 loop_
   _alias.definition_id
-         '_symmetry.space_group_name_Hall'       
-         '_symmetry_space_group_name_Hall' 
-_definition.update                      2012-11-22
+         '_space_group.name_Hall'      
+         '_space_group_name_Hall'
+         '_symmetry_space_group_name_Hall'
+         '_symmetry.space_group_name_Hall'
+_definition.update                      2016-05-09
 _description.text                       
 ;
-     Space-group symbol as described by Hall. This symbol gives the
-     space-group setting explicitly. Leave spaces between the separate
-     components of the symbol.
-     Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525.
+     Space group symbol defined by Hall. Each component of the
+     space group name is separated by a space or an underscore.
+     The use of space is strongly recommended because it specifies
+     the coordinate system. The underscore in the name is only
+     retained because it was used in earlier archived files. It
+     should not be used in new CIFs.
+     Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525
+          [See also International Tables for Crystallography,
+          Vol.B (1993) 1.4 Appendix B]
 ;
-_name.category_id                       symmetry
-_name.object_id                         space_group_name_Hall
+_name.category_id                       space_group
+_name.object_id                         name_Hall
 _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
@@ -11868,102 +11797,303 @@ loop_
 
 save_
 
+save_space_group.name_H-M_alt_description
+    _definition.id             '_space_group.name_H-M_alt_description'
+    _definition.update          2016-05-13
+    _description.text
+;
+     A free-text description of the code appearing in
+     _space_group.name_H-M_alt.
+;
+    _name.category_id           space_group
+    _name.object_id             name_H_M_alt_description
+    _type.purpose               Describe
+    _type.source                Recorded
+    _type.container             Single
+    _type.contents              Text
+     save_
 
-save_SYMMETRY_EQUIV
 
-_definition.id                          SYMMETRY_EQUIV
+save_space_group.name_H-M_full
+    _definition.id             '_space_group.name_H-M_full'
+     loop_
+    _alias.definition_id
+          '_symmetry.space_group_name_H-M'
+          '_symmetry_space_group_name_H-M'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The full international Hermann-Mauguin space-group symbol as
+     defined in Section 2.2.3 and given as the second item of the
+     second line of each of the space-group tables of Part 7 of
+     International Tables for Crystallography Volume A (2002).
+
+     Each component of the space-group name is separated by a
+     space or an underscore character. The use of a space is
+     strongly recommended.  The underscore is only retained
+     because it was used in old CIFs. It should not be used in
+     new CIFs.
+
+     Subscripts should appear without special symbols. Bars should
+     be given as negative signs before the numbers to which they
+     apply. The commonly used Hermann-Mauguin symbol determines the
+     space-group type uniquely but a given space-group type may
+     be described by more than one Hermann-Mauguin symbol. The
+     space-group type is best described using
+     _space_group.IT_number or _space_group.name_Schoenflies. The
+     full international Hermann-Mauguin symbol contains information
+     about the choice of basis for monoclinic and orthorhombic
+     space groups but does not give information about the choice
+     of origin. To define the setting uniquely use
+     _space_group.name_Hall, list the symmetry operations
+     or generators, or give the transformation relating
+     the setting used to the reference setting defined in this
+     dictionary under _space_group.reference_setting.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group
+    _name.object_id             name_H_M_full
+    _type.purpose               Describe
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Text
+     loop_
+    _description_example.case
+    _description_example.detail
+         'P 21/n 21/m 21/a'  'full symbol for Pnma'  
+     save_
+
+
+save_space_group.name_Schoenflies
+    _definition.id             '_space_group.name_Schoenflies'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The Schoenflies symbol as listed in International Tables for
+     Crystallography Volume A denoting the proper affine class (i.e.
+     orientation-preserving affine class) of space groups
+     (space-group type) to which the space group belongs. This
+     symbol defines the space-group type independently of the
+     coordinate system in which the space group is expressed.
+
+     The symbol is given with a period, '.', separating the
+     Schoenflies point group and the superscript.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group
+    _name.object_id             name_Schoenflies
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+    _import.get       [{"file":'templ_enum.cif' "save":'Schoenflies'}]
+     loop_
+    _description_example.case
+    _description_example.detail
+             'C2h.5' 'Schoenflies symbol for space group No. 14'
+     save_
+
+
+save_space_group.Patterson_name_H-M
+    _definition.id             '_space_group.Patterson_name_H-M'
+    _definition.update          2016-05-13
+    _description.text
+;
+     The Hermann-Mauguin symbol of the type of that centrosymmetric
+     symmorphic space group to which the Patterson function belongs;
+     see Table 2.2.5.1 in International Tables for Crystallography
+     Volume A (2002).
+
+     A space separates each symbol referring to different axes.
+     Underscores may replace the spaces, but this use is discouraged.
+     Subscripts should appear without special symbols.
+     Bars should be given as negative signs before the number
+     to which they apply.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.,
+          Table 2.2.5.1. Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group
+    _name.object_id             Patterson_name_H_M
+    _type.purpose               Describe
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Text
+     loop_
+    _description_example.case
+               'P -1'
+               'P 2/m'      'C 2/m'
+               'P m m m'    'C m m m'   'I m m m'   'F m m m'
+               'P 4/m'                  'I 4/m'
+               'P 4/m m m'              'I 4/m m m'
+               'P -3'       'R -3'
+               'P -3 m 1'   'R -3 m'
+               'P -3 1 m'
+               'P 6/m'
+               'P 6/m m m'
+               'P m -3'                  'I m -3'    'F m -3'
+               'P m -3 m'                'I m -3 m'  'F m -3 m'
+     save_
+
+
+save_space_group.point_group_H-M
+    _definition.id             '_space_group.point_group_H-M'
+    _definition.update          2016-05-13
+    _description.text
+;
+     The Hermann-Mauguin symbol denoting the geometric crystal
+     class of space groups to which the space group belongs, and
+     the geometric crystal class of point groups to which the
+     point group of the space group belongs.
+;
+    _name.category_id           space_group
+    _name.object_id             point_group_H_M
+    _type.purpose               Describe
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Text
+     loop_
+    _description_example.case   '-4'  '4/m'  
+     save_
+
+
+
+save_SPACE_GROUP_GENERATOR
+
+_definition.id                          SPACE_GROUP_GENERATOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2016-05-10
+_description.text                       
+;
+     The CATEGORY of data items used to list generators for
+     the space group
+;
+_name.category_id                       SPACE_GROUP
+_name.object_id                         SPACE_GROUP_GENERATOR
+_category.key_id                        '_space_group_generator.key'
+loop_
+  _category_key.name
+         '_space_group_generator.key' 
+
+save_
+
+save_space_group_generator.key
+
+_definition.update                      2016-05-10
+_description.text     
+                  
+; 
+     Arbitrary identifier for each entry in the _space_group_generator.xyz
+     list.
+;
+
+_name.category_id                       space_group_generator
+_name.object_id                         key
+_type.purpose                           Key
+_type.source                            Assigned
+_type.container                         Single
+_type.contents                          Code
+
+save_
+
+save_space_group_generator.xyz
+    _definition.id             '_space_group_generator.xyz'
+    _definition.update          2016-05-10
+    _description.text
+;
+     A parsable string giving one of the symmetry generators of the
+     space group in algebraic form.  If W is a matrix representation
+     of the rotational part of the generator defined by the positions
+     and signs of x, y and z, and w is a column of translations
+     defined by the fractions, an equivalent position X' is
+     generated from a given position X by
+
+               X' = WX + w.
+
+     (Note: X is used to represent the bold italic x in International
+     Tables for Crystallography Volume A, Section 5.)
+
+     When a list of symmetry generators is given, it is assumed
+     that the complete list of symmetry operations of the space
+     group (including the identity operation) can be generated
+     through repeated multiplication of the generators, that is,
+     (W3, w3) is an operation of the space group if (W2,w2) and
+     (W1,w1) [where (W1,w1) is applied first] are either operations
+     or generators and:
+
+             W3 = W2 x W1
+             w3 = W2 x w1 + w2.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group_generator
+    _name.object_id             xyz
+    _type.purpose               Encode
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+    _enumeration.default        'x,y,z'
+     loop_
+    _description_example.case 
+    _description_example.detail 
+       'x,1/2-y,1/2+z' 
+      ''' c glide reflection through the plane (x,1/4,z)
+          chosen as one of the generators of the space group'''
+     save_
+
+save_SPACE_GROUP_SYMOP
+
+_definition.id                          SPACE_GROUP_SYMOP
+_definition.scope                       Category
+_definition.class                       Loop
+_definition.update                      2016-05-10
 _description.text                       
 ;
      The CATEGORY of data items used to describe symmetry equivalent sites
      in the crystal unit cell.
 ;
-_name.category_id                       SYMMETRY
-_name.object_id                         SYMMETRY_EQUIV
-_category.key_id                        '_symmetry_equiv.key'
+_name.category_id                       SPACE_GROUP
+_name.object_id                         SPACE_GROUP_SYMOP
+_category.key_id                        '_space_group_symop.key'
 loop_
   _category_key.name
-         '_symmetry_equiv.pos_site_id' 
+         '_space_group_symop.id' 
 
 save_
 
 
-save__symmetry_equiv.key
+save__space_group_symop.id
 
-_definition.id                          '_symmetry_equiv.key'
+_definition.id                          '_space_group_symop.id'
 loop_
   _alias.definition_id
-         '_symmetry_equiv.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of SYMMETRY_EQUIV items
-     in a looped list.
-;
-_name.category_id                       symmetry_equiv
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '         _symmetry_equiv.key = _symmetry_equiv.pos_site_id'
-
-save_
-
-
-save__symmetry_equiv.pos_as_xyz
-
-_definition.id                          '_symmetry_equiv.pos_as_xyz'
-loop_
-  _alias.definition_id
-         '_symmetry_equiv.pos_as_xyz'  
-         '_symmetry_equiv_pos_as_xyz' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Symmetry equivalent position in the 'xyz' representation. Except
-     for the space group P1, this data will be repeated in a loop.
-     The format of the data item is as per International Tables for
-     Crystallography, Vol. A. (1987). All equivalent positions should
-     be entered, including those for lattice centring and a centre of
-     symmetry, if present.
-;
-_name.category_id                       symmetry_equiv
-_name.object_id                         pos_as_xyz
-_type.purpose                           Encode
-_type.source                            Recorded
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _description_example.case
-         '-y+x,-y,1/3+z' 
-
-save_
-
-
-save__symmetry_equiv.pos_site_id
-
-_definition.id                          '_symmetry_equiv.pos_site_id'
-loop_
-  _alias.definition_id
-         '_symmetry_equiv.pos_site_id'           
-         '_symmetry_equiv_pos_site_id'           
-         '_symmetry_equiv.id' 
-_definition.update                      2012-12-30
-_description.text                       
-;
-     Index identifying each entry in the _symmetry_equiv.pos_as_xyz
+         '_space_group_symop.id'       
+         '_space_group_symop_id'       
+         '_symmetry_equiv.pos_site_id'
+_definition.update                      2016-05-13
+_description.text     
+                  
+; 
+     Index identifying each entry in the _space_group_symop.operation_xyz
      list. It is normally the sequence number of the entry in that
      list, and should be identified with the code 'n' in the geometry
-     symmetry codes of the form 'n_klm'.
+     symmetry codes of the form 'n_klm'. The identity operation
+     (i.e. _space_group_symop.operation_xyz set to 'x,y,z') should be
+     set to 1.  
 ;
-_name.category_id                       symmetry_equiv
-_name.object_id                         pos_site_id
+
+_name.category_id                       space_group_symop
+_name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
@@ -11974,19 +12104,109 @@ loop_
   _method.expression
          Evaluation          
 ;
-     _symmetry_equiv.pos_site_id = Current_Row(symmetry_equiv) + 1
+     _space_group_symop.id = Current_Row(space_group_symop) + 1
 ; 
 
 save_
 
 
-save__symmetry_equiv.R
+save__space_group_symop.key
 
-_definition.id                          '_symmetry_equiv.R'
+_definition.id                          '_space_group_symop.key'
 loop_
   _alias.definition_id
-         '_symmetry_equiv.R' 
-_definition.update                      2012-11-22
+         '_space_group_symop.key' 
+_definition.update                      2016-05-13
+_description.text                       
+;
+     Value is a unique key to a set of space_group_symop items
+     in a looped list.
+;
+_name.category_id                       space_group_symop
+_name.object_id                         key
+_type.purpose                           Key
+_type.source                            Related
+_type.container                         Single
+_type.contents                          Index
+loop_
+  _method.purpose
+  _method.expression
+         Evaluation          '         _space_group_symop.key = _space_group_symop.id'
+
+save_
+
+
+save__space_group_symop.operation_xyz
+
+_definition.id                          '_space_group_symop.operation_xyz'
+loop_
+  _alias.definition_id
+         '_space_group_symop.operation_xyz'      
+         '_space_group_symop_operation_xyz' 
+         '_symmetry_equiv.pos_as_xyz'
+         '_symmetry_equiv_pos_as_xyz'
+_definition.update                      2016-05-13
+_description.text                       
+;
+     A parsable string giving one of the symmetry operations of the
+     space group in algebraic form.  If W is a matrix representation
+     of the rotational part of the symmetry operation defined by the
+     positions and signs of x, y and z, and w is a column of
+     translations defined by fractions, an equivalent position
+     X' is generated from a given position X by the equation
+ 
+               X' = WX + w
+ 
+     (Note: X is used to represent bold_italics_x in International
+     Tables for Crystallography Vol. A, Part 5)
+ 
+     When a list of symmetry operations is given, it must contain
+     a complete set of coordinate representatives which generates
+     all the operations of the space group by the addition of
+     all primitive translations of the space group. Such
+     representatives are to be found as the coordinates of
+     the general-equivalent position in International Tables for
+     Crystallography Vol. A (2002), to which it is necessary to
+     add any centring translations shown above the
+     general-equivalent position.
+ 
+     That is to say, it is necessary to list explicitly all the
+     symmetry operations required to generate all the atoms in
+     the unit cell defined by the setting used.
+;
+_name.category_id                       space_group_symop
+_name.object_id                         operation_xyz
+_type.purpose                           Encode
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Text
+loop_
+  _description_example.case
+  _description_example.detail
+         'x,1/2-y,1/2+z'     'glide reflection through the plane (x,1/4,z) with glide vector (1/2)c'
+
+save_
+
+save_space_group_symop.operation_description
+    _definition.id             '_space_group_symop.operation_description'
+    _definition.update          2016-05-13
+    _description.text
+;
+     An optional text description of a particular symmetry operation
+     of the space group.
+;
+    _name.category_id           space_group_symop
+    _name.object_id             operation_description
+    _type.purpose               Describe
+    _type.source                Recorded
+    _type.container             Single
+    _type.contents              Text
+     save_
+
+save__space_group_symop.R
+
+_definition.id                          '_space_group_symop.R'
+_definition.update                      2016-05-13
 _description.text                       
 ;
      A matrix containing the symmetry rotation operations of a space group
@@ -11995,7 +12215,7 @@ _description.text
               R  =  |  r21  r22  r23  |
                     |  r31  r32  r33  |
 ;
-_name.category_id                       symmetry_equiv
+_name.category_id                       space_group_symop
 _name.object_id                         R
 _type.purpose                           Number
 _type.source                            Derived
@@ -12007,9 +12227,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-                       sm =  _symmetry_equiv.Seitz_matrix
+                       sm =  _space_group_symop.Seitz_matrix
  
-        _symmetry_equiv.R =  [[sm[0,0],sm[0,1],sm[0,2]],
+        _space_group_symop.R =  [[sm[0,0],sm[0,1],sm[0,2]],
                               [sm[1,0],sm[1,1],sm[1,2]],
                               [sm[2,0],sm[2,1],sm[2,2]]]
 ; 
@@ -12017,13 +12237,10 @@ loop_
 save_
 
 
-save__symmetry_equiv.RT
+save__space_group_symop.RT
 
-_definition.id                          '_symmetry_equiv.RT'
-loop_
-  _alias.definition_id
-         '_symmetry_equiv.RT' 
-_definition.update                      2012-11-22
+_definition.id                          '_space_group_symop.RT'
+_definition.update                      2016-05-13
 _description.text                       
 ;
      The TRANSPOSE of the symmetry rotation matrix representing the point
@@ -12033,7 +12250,7 @@ _description.text
               RT  =  |  r12  r22  r32  |
                      |  r13  r23  r33  |
 ;
-_name.category_id                       symmetry_equiv
+_name.category_id                       space_group_symop
 _name.object_id                         RT
 _type.purpose                           Number
 _type.source                            Derived
@@ -12045,19 +12262,16 @@ loop_
   _method.expression
          Evaluation          
 ;
-        _symmetry_equiv.RT =  Transpose (_symmetry_equiv.R)
+        _space_group_symop.RT =  Transpose (_space_group_symop.R)
 ; 
 
 save_
 
 
-save__symmetry_equiv.Seitz_matrix
+save__space_group_symop.Seitz_matrix
 
-_definition.id                          '_symmetry_equiv.Seitz_matrix'
-loop_
-  _alias.definition_id
-         '_symmetry_equiv.Seitz_matrix' 
-_definition.update                      2012-11-22
+_definition.id                          '_space_group_symop.Seitz_matrix'
+_definition.update                      2016-05-13
 _description.text                       
 ;
      A matrix containing the symmetry operations of a space group
@@ -12068,7 +12282,7 @@ _description.text
        | 0  1 |     |  r31  r32  r33  t3  |
                     |   0    0    0    1  |
 ;
-_name.category_id                       symmetry_equiv
+_name.category_id                       space_group_symop
 _name.object_id                         Seitz_matrix
 _type.purpose                           Number
 _type.source                            Derived
@@ -12080,24 +12294,21 @@ loop_
   _method.expression
          Evaluation          
 ;
-   _symmetry_equiv.Seitz_matrix =  SeitzFromJones (_symmetry_equiv.pos_as_xyz)
+   _space_group_symop.Seitz_matrix =  SeitzFromJones (_space_group_symop.operation_xyz)
 ; 
 
 save_
 
 
-save__symmetry_equiv.T
+save__space_group_symop.T
 
-_definition.id                          '_symmetry_equiv.T'
-loop_
-  _alias.definition_id
-         '_symmetry_equiv.T' 
-_definition.update                      2012-11-22
+_definition.id                          '_space_group_symop.T'
+_definition.update                      2016-05-13
 _description.text                       
 ;
      A vector containing the symmetry translation operations of a space group.
 ;
-_name.category_id                       symmetry_equiv
+_name.category_id                       space_group_symop
 _name.object_id                         T
 _type.purpose                           Number
 _type.source                            Derived
@@ -12109,12 +12320,157 @@ loop_
   _method.expression
          Evaluation          
 ;
-                       sm =  _symmetry_equiv.Seitz_matrix
+                       sm =  _space_group_symop.Seitz_matrix
  
-        _symmetry_equiv.T =   [sm[0,3],sm[1,3],sm[2,3]]
+        _space_group_symop.T =   [sm[0,3],sm[1,3],sm[2,3]]
 ; 
 
 save_
+
+
+
+save_SPACE_GROUP_WYCKOFF
+    _definition.id              SPACE_GROUP_WYCKOFF
+    _definition.scope           Category
+    _definition.class           Loop
+    _definition.update          2014-06-12
+    _description.text
+;
+     Contains information about Wyckoff positions of a space group.
+     Only one site can be given for each special position but the
+     remainder can be generated by applying the symmetry operations
+     stored in _space_group_symop.operation_xyz.
+;
+    _name.category_id           SPACE_GROUP
+    _name.object_id             SPACE_GROUP_WYCKOFF
+    _category.key_id          '_space_group_Wyckoff.id'
+    loop_
+    _category_key.name       '_space_group_Wyckoff.id'
+
+save_
+
+save_space_group_Wyckoff.coords_xyz
+    _definition.id             '_space_group_Wyckoff.coords_xyz'
+    _definition.update          2014-06-12
+    _description.text
+;
+     Coordinates of one site of a Wyckoff position expressed in
+     terms of its fractional coordinates (x,y,z) in the unit cell.
+     To generate the coordinates of all sites of this Wyckoff
+     position, it is necessary to multiply these coordinates by the
+     symmetry operations stored in _space_group_symop.operation_xyz.
+;
+    _name.category_id           space_group_Wyckoff
+    _name.object_id             coords_xyz
+    _type.purpose               Encode
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+    _enumeration.default        'x,y,z'
+     loop_
+    _description_example.case 
+    _description_example.detail 
+           'x,1/2,0' 'coordinates of Wyckoff site with 2.. symmetry'
+     save_
+
+
+save_space_group_Wyckoff.id
+    _definition.id             '_space_group_Wyckoff.id'
+    _definition.update          2014-06-12
+    _description.text
+;
+     An arbitrary code that is unique to a particular Wyckoff position.
+;
+    _name.category_id           space_group_Wyckoff
+    _name.object_id             id
+    _type.purpose               Encode
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     save_
+
+
+save_space_group_Wyckoff.letter
+    _definition.id             '_space_group_Wyckoff.letter'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The Wyckoff letter associated with this position, as given in
+     International Tables for Crystallography Volume A. The
+     enumeration value '\a' corresponds to the Greek letter 'alpha'
+     used in International Tables.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group_Wyckoff
+    _name.object_id             letter
+    _type.purpose               State
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     loop_
+    _enumeration_set.state
+           a b c d e f g h i j k l m n o p q r s t u v w x y z '\a'
+     save_
+
+
+save_space_group_Wyckoff.multiplicity
+    _definition.id             '_space_group_Wyckoff.multiplicity'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The multiplicity of this Wyckoff position as given in
+     International Tables Volume A.  It is the number of equivalent
+     sites per conventional unit cell.
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group_Wyckoff
+    _name.object_id             multiplicity
+    _type.purpose               Number
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Integer
+     save_
+
+save_space_group_Wyckoff.site_symmetry
+    _definition.id             '_space_group_Wyckoff.site_symmetry'
+    _definition.update          2014-06-12
+    _description.text
+;
+     The subgroup of the space group that leaves the point fixed.
+     It is isomorphic to a subgroup of the point group of the
+     space group. The site-symmetry symbol indicates the symmetry
+     in the symmetry direction determined by the Hermann-Mauguin
+     symbol of the space group (see International Tables for
+     Crystallography Volume A, Section 2.2.12).
+
+     Ref: International Tables for Crystallography (2002). Volume A,
+          Space-group symmetry, edited by Th. Hahn, 5th ed.
+          Dordrecht: Kluwer Academic Publishers.
+;
+    _name.category_id           space_group_Wyckoff
+    _name.object_id             site_symmetry
+    _type.purpose               Encode
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Code
+     loop_
+    _description_example.case
+    _description_example.detail
+         '2.22'  'position 2b in space group No. 94, P 42 21 2'  
+         '42.2'  'position 6b in space group No. 222, P n -3 n'  
+         '2..'  
+;         Site symmetry for the Wyckoff position 96f in space group No.
+          228, F d -3 c.  The site-symmetry group is isomorphic to the
+          point group 2 with the twofold axis along one of the {100}
+          directions.
+;
+     save_
 
 
 save_FUNCTION
@@ -12278,7 +12634,7 @@ save_
 save__function.SymEquiv
 
 _definition.id                          '_function.SymEquiv'
-_definition.update                      2014-04-17
+_definition.update                      2016-05-13
 _description.text                       
 ;
      The function
@@ -12286,7 +12642,7 @@ _description.text
  
      returns a fractional coordinate vector xyz' which is input vector
      xyz transformed by the input symop 'n_pqr' applied to the symmetry
-     equivalent matrix extracted from the category symmetry_equiv.
+     equivalent matrix extracted from the category space_group_symop.
 ;
 _name.category_id                       function
 _name.object_id                         SymEquiv
@@ -12303,7 +12659,7 @@ loop_
      Function SymEquiv( c :[Single, Symop],    # symop string n_pqr
                         x :[Matrix, Real]   ){  # fract coordinate vector
  
-             s = symmetry_equiv [ SymKey( c ) ]
+             s = space_group_symop [ SymKey( c ) ]
              SymEquiv = s.R * x + s.T + SymLat( c )
      }
 ; 
@@ -13270,7 +13626,7 @@ loop_
            radc  =   rc + m2.radius_contact
            label =   m2.id[0]
  
-           Loop  s  as  symmetry_equiv  :ns   {
+           Loop  s  as  space_group_symop  :ns   {
  
               axyz      =   s.R * m2.fract_xyz + s.T
  
@@ -14417,7 +14773,7 @@ loop_
                  For [ls3,a3,c3,rb3,rc3,m3] in atomlist  {
                      dmax  =  rb2 + rb3 + _geom.bond_distance_incr
  
-                     Loop  s  as  symmetry_equiv  :ns   {
+                     Loop  s  as  space_group_symop  :ns   {
  
                          axyz      =   s.R * a3 + s.T
                          bxyz,tran =   Closest (axyz, a2)
@@ -14523,7 +14879,7 @@ loop_
      [label,symop] =   _model_site.id
  
      a = atom_site[label]
-     s = symmetry_equiv[SymKey(symop)]
+     s = space_group_symop[SymKey(symop)]
  
      _model_site.adp_matrix_beta =  s.R * a.tensor_beta * s.RT
 ; 
@@ -21098,14 +21454,14 @@ loop_
         mul  =   0
         xyz  =   a.fract_xyz
  
-          Loop  s  as  symmetry_equiv  {
+          Loop  s  as  space_group_symop  {
  
              sxyz  =   s.R * xyz + s.T
              diff  =   Mod( 99.5 + xyz - sxyz, 1.0) - 0.5
  
              If ( Norm ( diff ) < 0.1 ) mul +=  1
        }
-    _atom_site.site_symmetry_multiplicity =  _symmetry.multiplicity / mul
+    _atom_site.site_symmetry_multiplicity =  _space_group.multiplicity / mul
 ; 
 
 save_
@@ -25859,3 +26215,12 @@ _enumeration.range                      0.0:
 _units.code                             none
 
 save_
+
+loop_
+  _dictionary_audit.version
+  _dictionary_audit.date
+  _dictionary_audit.revision
+         3.0.05    2016-05-13
+;
+     Merged in most symmetry dictionary definitions (James Hester)
+;
