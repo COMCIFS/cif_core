@@ -11977,7 +11977,7 @@ _description.text
      the space group
 ;
 _name.category_id                       SPACE_GROUP
-_name.object_id                         SPACE_GROUP_GENERATOR
+_name.object_id                         space_group_generator
 _category.key_id                        '_space_group_generator.key'
 loop_
   _category_key.name
@@ -11987,6 +11987,7 @@ save_
 
 save_space_group_generator.key
 
+_definition.id                          '_space_group_generator.key'
 _definition.update                      2016-05-10
 _description.text     
                   
@@ -12955,7 +12956,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_ANGLE
-_category.key_id                        '_geom_angle.key'
 loop_
   _method.purpose
   _method.expression
@@ -12987,7 +12987,12 @@ loop_
  
               angle =  Acosd ( v1*v2 / (d1*d2) )
  
-              geom_angle( .id        =  List ( m2.id, m1.id, m3.id ),
+              geom_angle( .atom_site_label_1  = m2.label,
+                          .atom_site_label_2  = m1.label,
+                          .atom_site_label_3  = m3.label,
+                          .site_symmetry_1 = m2.symop,
+                          .site_symmetry_2 = m1.symop,
+                          .site_symmetry_3 = m3.symop,
                           .distances =  List ( d1, d2 ),
                           .value     =  angle )
      }   }   }
@@ -13022,14 +13027,23 @@ save_
 save__geom_angle.atom_site_label_2
 
 _definition.id                          '_geom_angle.atom_site_label_2'
+_definition.update                      2016-08-31
+_description.text
+;
+     The unique identifier for the vertex atom of the angle.
+;
 loop_
   _alias.definition_id
          '_geom_angle.atom_site_label_2'         
          '_geom_angle_atom_site_label_2'         
          '_geom_angle.atom_site_id_2' 
-_import.get [{'save':atom_site_id  'file':templ_attr.cif}]
+
 _name.category_id                       geom_angle
 _name.object_id                         atom_site_label_2
+_type.purpose                Encode
+_type.source                 Assigned
+_type.container              Single
+_type.contents               Code
 
 save_
 
@@ -13068,69 +13082,6 @@ _type.container                         List
 _type.contents                          Real
 _type.dimension [2]
 _units.code                             angstroms
-
-save_
-
-
-save__geom_angle.id
-
-_definition.id                          '_geom_angle.id'
-loop_
-  _alias.definition_id
-         '_geom_angle.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Atom site labels and symmetry operators as pairs for each of the
-     three atom sites which identify the angle. The second label-symop
-     pair in the list identifies the site at the apex of the angle.
-;
-_name.category_id                       geom_angle
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With  a  as  geom_angle
- 
-         _geom_angle.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                            [ a.atom_site_label_2, a.site_symmetry_2 ],
-                            [ a.atom_site_label_3, a.site_symmetry_3 ]]
-; 
-
-save_
-
-
-save__geom_angle.key
-
-_definition.id                          '_geom_angle.key'
-loop_
-  _alias.definition_id
-         '_geom_angle.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of GEOM_ANGLE items
-     in a looped list.
-;
-_name.category_id                       geom_angle
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Definition          '              _type.contents = Type_Contents(geom_angle.id)'        
-         Evaluation          '              _geom_angle.key = _geom_angle.id' 
 
 save_
 
@@ -13218,7 +13169,8 @@ loop_
 _definition.update                      2012-12-14
 _description.text                       
 ;
-     Angle defined by the sites identified by _geom_angle.id
+     Angle defined by the atoms located at atom_site_x/site_symmetry_x for
+     x = 1,2,3. The vertex atom is at site x = 2.
 ;
 _name.category_id                       geom_angle
 _name.object_id                         value
@@ -13234,16 +13186,15 @@ loop_
          Evaluation          
 ;
      With a as geom_angle
- 
      xc = List()
- 
-     For [label,symop] in  a.id   {
- 
+     bundle = [[a.site_symmetry_1,a.atom_site_label_1],
+               [a.site_symmetry_2,a.atom_site_label_2],
+               [a.site_symmetry_3.a.atom_site_label_3]]
+     for symop,label in bundle {
          xf   =   SymEquiv(symop,  _atom_site[label].fract_xyz)
- 
          xc ++=  _atom_sites_Cartn_transform.matrix * xf
-      }
-         v1,v2  =  xc[0]-xc[1], xc[2]-xc[1]
+     }
+       v1,v2  =  xc[0]-xc[1], xc[2]-xc[1]
  
       _geom_angle.value =  Acosd ( v1 * v2 / ( Norm (v1) * Norm (v2) ) )
 ; 
@@ -13290,7 +13241,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_BOND
-_category.key_id                        '_geom_bond.key'
 loop_
   _method.purpose
   _method.expression
@@ -13310,7 +13260,10 @@ loop_
  
            If (d<dmin or d>(rad+m2.radius_bond)) Next
  
-           geom_bond( .id        =  List ( m1.id, m2.id ),
+           geom_bond( .atom_site_label_1        =  m1.label,
+                      .atom_site_label_2        =  m2.label,
+                      .site_symmetry_1          =  m1.symop,
+                      .site_symmetry_2          =  m2.symop,
                       .distance  =  d  )
       }   }
 ; 
@@ -13385,7 +13338,8 @@ loop_
  
      xc = List()
  
-     For [label,symop] in  b.id   {
+     For [label,symop] in  [[b.atom_site_1,b.site_symmetry_1,
+                            [b.atom_site_2,b.site_symmetry_2]   {
  
          xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
  
@@ -13422,68 +13376,6 @@ _enumeration.range                      0.:
 _units.code                             angstroms
 
 save_
-
-
-save__geom_bond.id
-
-_definition.id                          '_geom_bond.id'
-loop_
-  _alias.definition_id
-         '_geom_bond.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Identity of bond distance in terms of the atom site labels and
-     symmetry operators as pairs for each of the two "bonded" atom sites.
-;
-_name.category_id                       geom_bond
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [2]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With  a  as  geom_bond
- 
-           _geom_bond.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                             [ a.atom_site_label_2, a.site_symmetry_2 ]]
-; 
-
-save_
-
-
-save__geom_bond.key
-
-_definition.id                          '_geom_bond.key'
-loop_
-  _alias.definition_id
-         '_geom_bond.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of GEOM_BOND items
-     in a looped list.
-;
-_name.category_id                       geom_bond
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [2]
-loop_
-  _method.purpose
-  _method.expression
-         Definition          '              _type.contents = Type_Contents(geom_bond.id)'         
-         Evaluation          '              _geom_bond.key = _geom_bond.id' 
-
-save_
-
 
 save__geom_bond.multiplicity
 
@@ -13608,7 +13500,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_CONTACT
-_category.key_id                        '_geom_contact.key'
 loop_
   _method.purpose
   _method.expression
@@ -13621,10 +13512,10 @@ loop_
  
         Loop  m2  as  model_site  {
  
-           If (m2.id[1] != '1_555')  Next
+           If (m2.symop != '1_555')  Next
            radb  =   rb + m2.radius_bond
            radc  =   rc + m2.radius_contact
-           label =   m2.id[0]
+           label =   m2.label
  
            Loop  s  as  space_group_symop  :ns   {
  
@@ -13639,9 +13530,10 @@ loop_
  
                  If (d < radb or d > radc) Next
  
-                 id        =  List( m1.id, List( label, Symop(ns+1,tran) ) )
- 
-                 geom_contact( .id        =  id,
+                 geom_contact( .atom_site_label_1        =  m1.label,
+                               .site_symmetry_1          =  m1.symop,
+                               .atom_site_label_2        =  label,
+                               .site_symmetry_2          = Symop(ns+1,tran),
                                .distance  =  d  )
      }  }  }  }  }  }
 ; 
@@ -13716,7 +13608,8 @@ loop_
  
      xc = List()
  
-     For [label,symop] in  c.id   {
+     For [label,symop] in  [[c.atom_site_1,c.site_symmetry_1,
+                             c.atom_site_2,c.site_symmetry_2]] {
  
          xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
  
@@ -13753,67 +13646,6 @@ _enumeration.range                      0.:
 _units.code                             angstroms
 
 save_
-
-
-save__geom_contact.id
-
-_definition.id                          '_geom_contact.id'
-loop_
-  _alias.definition_id
-         '_geom_contact.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Atom site labels and symmetry operators as pairs for each of the
-     two atom sites which define the geom_contact bond.
-;
-_name.category_id                       geom_contact
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [2]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With  a  as  geom_contact
- 
-          _geom_contact.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                               [ a.atom_site_label_2, a.site_symmetry_2 ]]
-; 
-
-save_
-
-
-save__geom_contact.key
-
-_definition.id                          '_geom_contact.key'
-loop_
-  _alias.definition_id
-         '_geom_contact.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of GEOM_CONTACT items
-     in a looped list.
-;
-_name.category_id                       geom_contact
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [2]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _geom_contact.key = _geom_contact.id'
-
-save_
-
 
 save__geom_contact.publ_flag
 
@@ -13888,7 +13720,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_HBOND
-_category.key_id                        '_geom_hbond.key'
 loop_
   _category_key.name
          '_geom_hbond.atom_site_label_D'         
@@ -13911,7 +13742,7 @@ loop_
 _definition.update                      2012-12-14
 _description.text                       
 ;
-     Angle subtended by the sites identifyed in _geom_hbond.id.
+     Angle subtended by the sites listed.
      The hydrogen at site H is at the apex of the angle.
 ;
 _name.category_id                       geom_hbond
@@ -13927,11 +13758,14 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With h as geom_hbond
+     With a as geom_hbond
  
      xc = List()
- 
-     For [label,symop] in  h.id   {
+
+     bundle = [[ a.atom_site_label_D, a.site_symmetry_D ],
+               [ a.atom_site_label_H, a.site_symmetry_H ],
+               [ a.atom_site_label_A, a.site_symmetry_A ]]
+     For [label,symop] in bundle   {
  
          xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
  
@@ -14044,14 +13878,14 @@ loop_
   _method.expression
          Evaluation          
 ;
-     xc = List()
- 
-     Do i=0,2,2  {
-         l,s  =   _geom_hbond.id [i]
-         xf   =   SymEquiv(s, _atom_site[l].fract_xyz)
-         xc ++=  _atom_sites_Cartn_transform.matrix * xf
-      }
-      _geom_hbond.distance_DA =  Norm ( xc[0] - xc[1] )
+         with g as geom_hbond
+         l,s  =   g.atom_site_label_D, g.site_symmetry_D
+         d_pos =   SymEquiv(s, _atom_site[l].fract_xyz)
+         d_pos =  _atom_sites_Cartn_transform.matrix * d_pos
+         l,s  =   g.atom_site_label_A,g.site_symmetry_A
+         a_pos   =   SymEquiv(s, _atom_site[l].fract_xyz)
+         a_pos   = _atom_sites_Cartn_transform.matrix * a_pos
+         _geom_hbond.distance_DA =  Norm ( a_pos - d_pos )
 ; 
 
 save_
@@ -14112,14 +13946,14 @@ loop_
   _method.expression
          Evaluation          
 ;
-     xc = List()
- 
-     Do i=0,1  {
-         l,s  =   _geom_hbond.id [i]
-         xf   =   SymEquiv(s, _atom_site[l].fract_xyz)
-         xc ++=  _atom_sites_Cartn_transform.matrix * xf
-     }
-      _geom_hbond.distance_DH =  Norm ( xc[0] - xc[1] )
+         with g as geom_hbond
+         l,s  =   g.atom_site_label_D, g.site_symmetry_D
+         d_pos =   SymEquiv(s, _atom_site[l].fract_xyz)
+         d_pos =  _atom_sites_Cartn_transform.matrix * d_pos
+         l,s  =   g.atom_site_label_H,g.site_symmetry_H
+         h_pos   =   SymEquiv(s, _atom_site[l].fract_xyz)
+         h_pos   = _atom_sites_Cartn_transform.matrix * h_pos
+         _geom_hbond.distance_DH =  Norm ( h_pos - d_pos )
 ; 
 
 save_
@@ -14180,14 +14014,14 @@ loop_
   _method.expression
          Evaluation          
 ;
-     xc = List()
- 
-     Do i=1,2  {
-         l,s  =   _geom_hbond.id [i]
-         xf   =   SymEquiv(s, _atom_site[l].fract_xyz)
-         xc ++=  _atom_sites_Cartn_transform.matrix * xf
-     }
-      _geom_hbond.distance_HA =  Norm ( xc[0] - xc[1] )
+         with g as geom_hbond
+         l,s  =   g.atom_site_label_A, g.site_symmetry_A
+         a_pos =   SymEquiv(s, _atom_site[l].fract_xyz)
+         a_pos =  _atom_sites_Cartn_transform.matrix * a_pos
+         l,s  =   g.atom_site_label_H,g.site_symmetry_H
+         h_pos   =   SymEquiv(s, _atom_site[l].fract_xyz)
+         h_pos   = _atom_sites_Cartn_transform.matrix * h_pos
+         _geom_hbond.distance_HA =  Norm ( h_pos - a_pos )
 ; 
 
 save_
@@ -14219,69 +14053,6 @@ _enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
-
-
-save__geom_hbond.id
-
-_definition.id                          '_geom_hbond.id'
-loop_
-  _alias.definition_id
-         '_geom_hbond.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Atom site labels and symmetry operators as pairs for each of the
-     three atom sites which define the hydrogen angle and distances.
-     Site H is at the apex of the angle.
-;
-_name.category_id                       geom_hbond
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With  a  as  geom_hbond
- 
-         _geom_hbond.id =  [[ a.atom_site_label_D, a.site_symmetry_D ],
-                            [ a.atom_site_label_H, a.site_symmetry_H ],
-                            [ a.atom_site_label_A, a.site_symmetry_A ]]
-; 
-
-save_
-
-
-save__geom_hbond.key
-
-_definition.id                          '_geom_hbond.key'
-loop_
-  _alias.definition_id
-         '_geom_hbond.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of GEOM_HBOND items
-     in a looped list.
-;
-_name.category_id                       geom_hbond
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _geom_hbond.key = _geom_hbond.id' 
-
-save_
-
 
 save__geom_hbond.publ_flag
 
@@ -14370,7 +14141,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_TORSION
-_category.key_id                        '_geom_torsion.key'
 loop_
   _method.purpose
   _method.expression
@@ -14415,6 +14185,14 @@ loop_
                  If ( (u1^u2)*v23 < 0 ) angle = -angle
  
                  geom_torsion( .id        =  List ( m1.id,m2.id,m3.id,m4.id ),
+                               .atom_site_label_1 = m1.label
+                               .atom_site_label_2 = m2.label
+                               .atom_site_label_3 = m3.label
+                               .atom_site_label_4 = m4.label
+                               .site_symmetry_1   = m1.symop
+                               .site_symmetry_2   = m2.symop
+                               .site_symmetry_3   = m3.symop
+                               .site_symmetry_4   = m4.symop
                                .distances =  List ( d21,d23,d34 ),
                                .angle     =  angle )
      }   }   }    }
@@ -14573,70 +14351,6 @@ _units.code                             angstroms
 
 save_
 
-
-save__geom_torsion.id
-
-_definition.id                          '_geom_torsion.id'
-loop_
-  _alias.definition_id
-         '_geom_torsion.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Atom site labels and symmetry operators as pairs for each of the
-     four atom sites which define the torsion angle.
-;
-_name.category_id                       geom_torsion
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [4]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With  a  as  geom_torsion
- 
-         _geom_torsion.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                              [ a.atom_site_label_2, a.site_symmetry_2 ],
-                              [ a.atom_site_label_3, a.site_symmetry_3 ],
-                              [ a.atom_site_label_4, a.site_symmetry_4 ]]
-; 
-
-save_
-
-
-save__geom_torsion.key
-
-_definition.id                          '_geom_torsion.key'
-loop_
-  _alias.definition_id
-         '_geom_torsion.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of GEOM_TORSION items
-     in a looped list.
-;
-_name.category_id                       geom_torsion
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [4]
-loop_
-  _method.purpose
-  _method.expression
-         Definition          '              _type.contents = Type_Contents(geom_torsion.id)'      
-         Evaluation          '              _geom_torsion.key = _geom_torsion.id'
-
-save_
-
-
 save__geom_torsion.publ_flag
 
 _definition.id                          '_geom_torsion.publ_flag'
@@ -14734,7 +14448,6 @@ _description.text
 ;
 _name.category_id                       MODEL
 _name.object_id                         MODEL_SITE
-_category.key_id                        '_model_site.key'
 loop_
   _method.purpose
   _method.expression
@@ -14795,7 +14508,8 @@ loop_
  
      For [ls,ax,cx,rb,rc,n,m] in molelist  {
  
-        model_site( .id              =  ls,
+        model_site( .label              =  ls[0],
+                    .symop           =  ls[1],
                     .fract_xyz       =  ax,
                     .Cartn_xyz       =  cx,
                     .radius_bond     =  rb,
@@ -14876,10 +14590,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-     [label,symop] =   _model_site.id
- 
-     a = atom_site[label]
-     s = space_group_symop[SymKey(symop)]
+     with m as model_site
+     a = atom_site[m.label]
+     s = space_group_symop[SymKey(m.symop)]
  
      _model_site.adp_matrix_beta =  s.R * a.tensor_beta * s.RT
 ; 
@@ -14977,38 +14690,6 @@ loop_
 save_
 
 
-save__model_site.id
-
-_definition.id                          '_model_site.id'
-loop_
-  _alias.definition_id
-         '_model_site.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Identifier of model site in terms of the atom site label and
-     symmetry operator.
-;
-_name.category_id                       model_site
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [1]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With m as model_site
- 
-      _model_site.id =   List ( m.label, m.symop )
-; 
-
-save_
-
-
 save__model_site.index
 
 _definition.id                          '_model_site.index'
@@ -15031,33 +14712,6 @@ _enumeration.range                      1:
 save_
 
 
-save__model_site.key
-
-_definition.id                          '_model_site.key'
-loop_
-  _alias.definition_id
-         '_model_site.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of MODEL_SITE items
-     in a looped list.
-;
-_name.category_id                       model_site
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          'List(Code,Symop)'
-_type.dimension [1]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _model_site.key = _model_site.id' 
-
-save_
-
-
 save__model_site.label
 
 _definition.id                          '_model_site.label'
@@ -15076,13 +14730,6 @@ _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-      _model_site.label =   _model_site.id [0]
-; 
 
 save_
 
@@ -15183,13 +14830,6 @@ loop_
 _import.get [{'save':site_symmetry  'file':templ_attr.cif}]
 _name.category_id                       model_site
 _name.object_id                         symop
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-      _model_site.symop =   _model_site.id [1]
-; 
 
 save_
 
