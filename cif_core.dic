@@ -9,8 +9,8 @@ data_CIF_CORE
 
 _dictionary.title                       CIF_CORE
 _dictionary.class                       Instance
-_dictionary.version                     3.0.05
-_dictionary.date                        2016-05-13
+_dictionary.version                     3.0.06
+_dictionary.date                        2016-09-07
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.04
 _dictionary.namespace                   CifCore
@@ -534,7 +534,7 @@ _description.text
 ;
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_ATTENUATOR
-_category.key_id                        '_diffrn_attenuator.key'
+_category.key_id                        '_diffrn_attenuator.code'
 loop_
   _category_key.name
          '_diffrn_attenuator.code' 
@@ -563,33 +563,6 @@ _type.container                         Single
 _type.contents                          Code
 
 save_
-
-
-save__diffrn_attenuator.key
-
-_definition.id                          '_diffrn_attenuator.key'
-loop_
-  _alias.definition_id
-         '_diffrn_attenuator.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_ATTENUATOR items
-     in a looped list.
-;
-_name.category_id                       diffrn_attenuator
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _diffrn_attenuator.key = _diffrn_attenuator.code'
-
-save_
-
 
 save__diffrn_attenuator.material
 
@@ -1205,7 +1178,7 @@ _description.text
 ;
 _name.category_id                       DIFFRN_ORIENT
 _name.object_id                         DIFFRN_ORIENT_REFLN
-_category.key_id                        '_diffrn_orient_refln.key'
+_category.key_id                        '_diffrn_orient_refln.hkl'
 loop_
   _category_key.name
          '_diffrn_orient_refln.index_h'          
@@ -1370,34 +1343,6 @@ _name.category_id                       diffrn_orient_refln
 _name.object_id                         index_l
 
 save_
-
-
-save__diffrn_orient_refln.key
-
-_definition.id                          '_diffrn_orient_refln.key'
-loop_
-  _alias.definition_id
-         '_diffrn_orient_refln.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_ORIENT_REFLN items
-     in a looped list.
-;
-_name.category_id                       diffrn_orient_refln
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Matrix
-_type.contents                          Integer
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '          _diffrn_orient_refln.key = _diffrn_orient_refln.hkl'
-
-save_
-
 
 save_DIFFRN_RADIATION
 
@@ -1681,7 +1626,7 @@ _description.text
 ;
 _name.category_id                       DIFFRN_RADIATION
 _name.object_id                         DIFFRN_RADIATION_WAVELENGTH
-_category.key_id                        '_diffrn_radiation_wavelength.key'
+_category.key_id                        '_diffrn_radiation_wavelength.id'
 loop_
   _category_key.name
          '_diffrn_radiation_wavelength.id' 
@@ -1772,33 +1717,6 @@ loop_
 
 save_
 
-
-save__diffrn_radiation_wavelength.key
-
-_definition.id                          '_diffrn_radiation_wavelength.key'
-loop_
-  _alias.definition_id
-         '_diffrn_radiation_wavelength.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_RADIATION_WAVELENGTH items
-     in a looped list.
-;
-_name.category_id                       diffrn_radiation_wavelength
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '     _diffrn_radiation_wavelength.key = _diffrn_radiation_wavelength.id'
-
-save_
-
-
 save__diffrn_radiation_wavelength.value
 
 _definition.id                          '_diffrn_radiation_wavelength.value'
@@ -1862,9 +1780,10 @@ _description.text
 ;
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_REFLN
-_category.key_id                        '_diffrn_refln.key'
+_category.key_id                        '_diffrn_refln.hkl'
 loop_
   _category_key.name
+         '_diffrn_refln.crystal_id'
          '_diffrn_refln.index_h'       
          '_diffrn_refln.index_k'       
          '_diffrn_refln.index_l' 
@@ -2070,7 +1989,6 @@ _name.category_id                       diffrn_refln
 _name.object_id                         counts_total
 
 save_
-
 
 save__diffrn_refln.crystal_id
 
@@ -2293,33 +2211,6 @@ _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0:
 _units.code                             none
-
-save_
-
-
-save__diffrn_refln.key
-
-_definition.id                          '_diffrn_refln.key'
-loop_
-  _alias.definition_id
-         '_diffrn_refln.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_REFLN items
-     in a looped list.
-;
-_name.category_id                       diffrn_refln
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Matrix
-_type.contents                          Integer
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _diffrn_refln.key = _diffrn_refln.hkl'
 
 save_
 
@@ -2885,7 +2776,7 @@ _definition.id                          '_diffrn_reflns.point_measured_fraction_
 loop_
   _alias.definition_id
          '_diffrn_reflns.point_measured_fraction_full'     
-         "ffrn_reflns_point_group_measured_fraction_full'" 
+         '_diffrn_reflns_point_group_measured_fraction_full' 
 _definition.update                      2013-01-20
 _description.text                       
 ;
@@ -2917,7 +2808,7 @@ _definition.id                          '_diffrn_reflns.point_measured_fraction_
 loop_
   _alias.definition_id
          '_diffrn_reflns.point_measured_fraction_max'      
-         "ffrn_reflns_point_group_measured_fraction_max'" 
+         '_diffrn_reflns_point_group_measured_fraction_max' 
 _definition.update                      2013-01-20
 _description.text                       
 ;
@@ -3105,7 +2996,7 @@ _description.text
 ;
 _name.category_id                       DIFFRN_REFLNS
 _name.object_id                         DIFFRN_REFLNS_CLASS
-_category.key_id                        '_diffrn_reflns_class.key'
+_category.key_id                        '_diffrn_reflns_class.code'
 loop_
   _category_key.name
          '_diffrn_reflns_class.code' 
@@ -3262,32 +3153,6 @@ _type.contents                          Text
 loop_
   _description_example.case
          'm=1 first order satellites' 
-
-save_
-
-
-save__diffrn_reflns_class.key
-
-_definition.id                          '_diffrn_reflns_class.key'
-loop_
-  _alias.definition_id
-         '_diffrn_reflns_class.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_REFLNS_CLASS items
-     in a looped list.
-;
-_name.category_id                       diffrn_reflns_class
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _diffrn_reflns_class.key = _diffrn_reflns_class.code'
 
 save_
 
@@ -3522,7 +3387,7 @@ _description.text
 ;
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_SCALE_GROUP
-_category.key_id                        '_diffrn_scale_group.key'
+_category.key_id                        '_diffrn_scale_group.code'
 loop_
   _category_key.name
          '_diffrn_scale_group.code' 
@@ -3588,32 +3453,6 @@ _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
 _units.code                             none
-
-save_
-
-
-save__diffrn_scale_group.key
-
-_definition.id                          '_diffrn_scale_group.key'
-loop_
-  _alias.definition_id
-         '_diffrn_scale_group.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_SCALE_GROUP items
-     in a looped list.
-;
-_name.category_id                       diffrn_scale_group
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _diffrn_scale_group.key = _diffrn_scale_group.code'
 
 save_
 
@@ -4040,7 +3879,7 @@ _description.text
 ;
 _name.category_id                       DIFFRN_STANDARD
 _name.object_id                         DIFFRN_STANDARD_REFLN
-_category.key_id                        '_diffrn_standard_refln.key'
+_category.key_id                        '_diffrn_standard_refln.hkl'
 loop_
   _category_key.name
          '_diffrn_standard_refln.index_h'        
@@ -4152,33 +3991,6 @@ _name.object_id                         index_l
 save_
 
 
-save__diffrn_standard_refln.key
-
-_definition.id                          '_diffrn_standard_refln.key'
-loop_
-  _alias.definition_id
-         '_diffrn_standard_refln.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of DIFFRN_STANDARD_REFLN items
-     in a looped list.
-;
-_name.category_id                       diffrn_standard_refln
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Definition          '        _type.contents = Type_Contents(diffrn_standard_refln.code)' 
-         Evaluation          '       _diffrn_standard_refln.key = _diffrn_standard_refln.code'
-
-save_
-
-
 save_REFLN
 
 _definition.id                          REFLN
@@ -4192,9 +4004,9 @@ _description.text
 ;
 _name.category_id                       DIFFRACTION
 _name.object_id                         REFLN
-_category.key_id                        '_refln.key'
 loop_
   _category_key.name
+         '_refln.crystal_id'
          '_refln.index_h'    
          '_refln.index_k'    
          '_refln.index_l' 
@@ -4964,33 +4776,6 @@ _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
 _units.code                             none
-
-save_
-
-
-save__refln.key
-
-_definition.id                          '_refln.key'
-loop_
-  _alias.definition_id
-         '_refln.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of REFLN items
-     in a looped list.
-;
-_name.category_id                       refln
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Matrix
-_type.contents                          Integer
-_type.dimension [3]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _refln.key = _refln.hkl' 
 
 save_
 
@@ -5785,7 +5570,7 @@ _description.text
 ;
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_CLASS
-_category.key_id                        '_reflns_class.key'
+_category.key_id                        '_reflns_class.code'
 loop_
   _category_key.name
          '_reflns_class.code' 
@@ -5889,32 +5674,6 @@ _type.contents                          Text
 loop_
   _description_example.case
          'H0L0 common projection reflections' 
-
-save_
-
-
-save__reflns_class.key
-
-_definition.id                          '_reflns_class.key'
-loop_
-  _alias.definition_id
-         '_reflns_class.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of REFLNS_CLASS items
-     in a looped list.
-;
-_name.category_id                       reflns_class
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _reflns_class.key = _reflns_class.code'
 
 save_
 
@@ -6164,7 +5923,7 @@ _description.text
 ;
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_SCALE
-_category.key_id                        '_reflns_scale.key'
+_category.key_id                        '_reflns_scale.group_code'
 loop_
   _category_key.name
          '_reflns_scale.group_code' 
@@ -6191,32 +5950,6 @@ _type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
-
-save_
-
-
-save__reflns_scale.key
-
-_definition.id                          '_reflns_scale.key'
-loop_
-  _alias.definition_id
-         '_reflns_scale.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of REFLNS_SCALE items
-     in a looped list.
-;
-_name.category_id                       reflns_scale
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _reflns_scale.key = _reflns_scale.group_code'
 
 save_
 
@@ -6306,7 +6039,7 @@ _description.text
 ;
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_SHELL
-_category.key_id                        '_reflns_shell.key'
+_category.key_id                        '_reflns_shell.d_res_limits'
 loop_
   _category_key.name
          '_reflns_shell.d_res_low'     
@@ -6395,33 +6128,6 @@ _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
 _units.code                             angstroms
-
-save_
-
-
-save__reflns_shell.key
-
-_definition.id                          '_reflns_shell.key'
-loop_
-  _alias.definition_id
-         '_reflns_shell.key' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Value is a unique key to a set of REFLNS_SHELL items
-     in a looped list.
-;
-_name.category_id                       reflns_shell
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         List
-_type.contents                          Real
-_type.dimension [2]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '         _reflns_shell.key = _reflns_shell.d_res_limits'
 
 save_
 
@@ -6822,28 +6528,6 @@ _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      1:
 _enumeration.default                    1
-
-save_
-
-
-save__exptl.id
-
-_definition.id                          '_exptl.id'
-loop_
-  _alias.definition_id
-         '_exptl.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Code identifying an experiment if there are multiple sets of
-     experimental data. See _experiments.key.
-;
-_name.category_id                       exptl
-_name.object_id                         id
-_type.purpose                           Encode
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Code
 
 save_
 
@@ -7708,7 +7392,7 @@ _description.text
 ;
 _name.category_id                       CELL_MEASUREMENT
 _name.object_id                         CELL_MEASUREMENT_REFLN
-_category.key_id                        '_cell_measurement_refln.key'
+_category.key_id                        '_cell_measurement_refln.hkl'
 loop_
   _category_key.name
          '_cell_measurement_refln.index_h'       
@@ -7787,32 +7471,6 @@ loop_
 _import.get [{'save':Miller_index  'file':templ_attr.cif}]
 _name.category_id                       cell_measurement_refln
 _name.object_id                         index_l
-
-save_
-
-
-save__cell_measurement_refln.key
-
-_definition.id                          '_cell_measurement_refln.key'
-loop_
-  _alias.definition_id
-         '_cell_measurement_refln.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of CELL_MEASUREMENT_REFLN items
-     in a looped list.
-;
-_name.category_id                       cell_measurement_refln
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Integer
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '          _cell_measurement_refln.key = _cell_measurement_refln.hkl'
 
 save_
 
@@ -9446,7 +9104,7 @@ _description.text
 ;
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_ATOM
-_category.key_id                        '_chemical_conn_atom.key'
+_category.key_id                        '_chemical_conn_atom.number'
 loop_
   _category_key.name
          '_chemical_conn_atom.number' 
@@ -9525,32 +9183,6 @@ _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:1.0
 _units.code                             none
-
-save_
-
-
-save__chemical_conn_atom.key
-
-_definition.id                          '_chemical_conn_atom.key'
-loop_
-  _alias.definition_id
-         '_chemical_conn_atom.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of CHEMICAL_CONN_ATOM items
-     in a looped list.
-;
-_name.category_id                       chemical_conn_atom
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '         _chemical_conn_atom.key = _chemical_conn_atom.number'
 
 save_
 
@@ -9670,7 +9302,6 @@ _description.text
 ;
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_BOND
-_category.key_id                        '_chemical_conn_bond.key'
 loop_
   _category_key.name
          '_chemical_conn_bond.atom_1'  
@@ -9779,64 +9410,6 @@ _type.contents                          Real
 _enumeration.range                      0.5:
 _enumeration.default                    0.0
 _units.code                             angstroms
-
-save_
-
-
-save__chemical_conn_bond.id
-
-_definition.id                          '_chemical_conn_bond.id'
-loop_
-  _alias.definition_id
-         '_chemical_conn_bond.id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Bond identifier composed of a list of two sequence indices
-     specified as _chemical_conn_atom.number values.
-;
-_name.category_id                       chemical_conn_bond
-_name.object_id                         id
-_type.purpose                           Number
-_type.source                            Derived
-_type.container                         List
-_type.contents                          Index
-_type.dimension [2]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-    With  c  as  chemical_conn_bond
- 
-    _chemical_conn_bond.id =  [ c.atom_1, c.atom_2 ]
-; 
-
-save_
-
-
-save__chemical_conn_bond.key
-
-_definition.id                          '_chemical_conn_bond.key'
-loop_
-  _alias.definition_id
-         '_chemical_conn_bond.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of CHEMICAL_CONN_BOND items
-     in a looped list.
-;
-_name.category_id                       chemical_conn_bond
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '         _chemical_conn_bond.key = _chemical_conn_bond.id'
 
 save_
 
@@ -10328,18 +9901,20 @@ save_EXPTL_CRYSTAL
 
 _definition.id                          EXPTL_CRYSTAL
 _definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
+_definition.class                       Loop
+_definition.update                      2016-09-07
 _description.text                       
 ;
-     The CATEGORY of data items used to specify information about a
-     crystal used in the diffraction measurements.
+     The CATEGORY of data items used to specify information about
+     crystals used in the diffraction measurements.
 ;
 _name.category_id                       EXPTL
 _name.object_id                         EXPTL_CRYSTAL
-
+_category.key_id                        '_exptl_crystal.id'
+loop_
+_category_key.name
+   '_exptl_crystal.id'
 save_
-
 
 save__exptl_crystal.colour
 
@@ -10716,29 +10291,27 @@ loop_
 
 save_
 
-
-save__exptl_crystal.id
-
-_definition.id                          '_exptl_crystal.id'
-loop_
-  _alias.definition_id
-         '_exptl_crystal.id'           
-         '_exptl_crystal_id' 
-_definition.update                      2012-11-22
-_description.text                       
+save_exptl_crystal.id
+    _definition.id             '_exptl_crystal.id'
+     loop_
+    _alias.definition_id       '_exptl_crystal.id'
+                               '_exptl_crystal_id'
+    _definition.update           2016-09-07
+    _description.text
 ;
-     Code identifying a crystal if multiple crystals are used.
+     Code identifying a crystal if multiple crystals are used. A default
+     value is provided, so that this dataname and child datanames may
+     be omitted if a single crystal only is used.
 ;
-_name.category_id                       exptl_crystal
-_name.object_id                         id
-_type.purpose                           Encode
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Code
-
-save_
-
-
+    _name.category_id            exptl_crystal
+    _name.object_id              id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    _enumeration.default         '-'
+     save_
+ 
 save__exptl_crystal.preparation
 
 _definition.id                          '_exptl_crystal.preparation'
@@ -11078,14 +10651,16 @@ _definition.update                      2013-09-08
 _description.text                       
 ;
      The CATEGORY of data items which specify the dimensions of the
-     crystals used in the diffraction measurements.
+     crystal used in the diffraction measurements.
 ;
 _name.category_id                       EXPTL_CRYSTAL
 _name.object_id                         EXPTL_CRYSTAL_FACE
-_category.key_id                        '_exptl_crystal_face.key'
 loop_
   _category_key.name
-         '_exptl_crystal_face.id' 
+         '_exptl_crystal_face.crystal_id'
+         '_exptl_crystal_face.index_h'
+         '_exptl_crystal_face.index_k'
+         '_exptl_crystal_face.index_l'
 
 save_
 
@@ -11198,39 +10773,6 @@ loop_
 
 save_
 
-
-save__exptl_crystal_face.id
-
-_definition.id                          '_exptl_crystal_face.id'
-loop_
-  _alias.definition_id
-         '_exptl_crystal_face.id' 
-_definition.update                      2013-04-18
-_description.text                       
-;
-     Identifier which combines the crystal id and the face indices
-     as a list. This is normally the key item of the category.
-;
-_name.category_id                       exptl_crystal_face
-_name.object_id                         id
-_type.purpose                           Composite
-_type.source                            Derived
-_type.container                         List
-_type.contents                          'Code,Matrix(Index,Index,index)'
-_type.dimension [1]
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          
-;
-     With f as exptl_crystal_face
- 
-        _exptl_crystal_face.id = [ f.crystal_id, f.hkl ]
-; 
-
-save_
-
-
 save__exptl_crystal_face.index_h
 
 _definition.id                          '_exptl_crystal_face.index_h'
@@ -11269,32 +10811,6 @@ loop_
 _import.get [{'save':Miller_index  'file':templ_attr.cif}]
 _name.category_id                       exptl_crystal_face
 _name.object_id                         index_l
-
-save_
-
-
-save__exptl_crystal_face.key
-
-_definition.id                          '_exptl_crystal_face.key'
-loop_
-  _alias.definition_id
-         '_exptl_crystal_face.key' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Value is a unique key to a set of EXPTL_CRYSTAL items
-     in a looped list.
-;
-_name.category_id                       exptl_crystal_face
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          'Code,Matrix(Index,Index,index)'
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _exptl_crystal_face.key = _exptl_crystal_face.id'
 
 save_
 
@@ -12065,7 +11581,7 @@ _description.text
 ;
 _name.category_id                       SPACE_GROUP
 _name.object_id                         SPACE_GROUP_SYMOP
-_category.key_id                        '_space_group_symop.key'
+_category.key_id                        '_space_group_symop.id'
 loop_
   _category_key.name
          '_space_group_symop.id' 
@@ -12107,32 +11623,6 @@ loop_
 ;
      _space_group_symop.id = Current_Row(space_group_symop) + 1
 ; 
-
-save_
-
-
-save__space_group_symop.key
-
-_definition.id                          '_space_group_symop.key'
-loop_
-  _alias.definition_id
-         '_space_group_symop.key' 
-_definition.update                      2016-05-13
-_description.text                       
-;
-     Value is a unique key to a set of space_group_symop items
-     in a looped list.
-;
-_name.category_id                       space_group_symop
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '         _space_group_symop.key = _space_group_symop.id'
 
 save_
 
@@ -13338,8 +12828,8 @@ loop_
  
      xc = List()
  
-     For [label,symop] in  [[b.atom_site_1,b.site_symmetry_1,
-                            [b.atom_site_2,b.site_symmetry_2]   {
+     For [label,symop] in  [[b.atom_site_1,b.site_symmetry_1],
+                            [b.atom_site_2,b.site_symmetry_2]]   {
  
          xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
  
@@ -15068,31 +14558,6 @@ _enumeration.range                      1:
 save_
 
 
-save__valence_param.key
-
-_definition.id                          '_valence_param.key'
-loop_
-  _alias.definition_id
-         '_valence_param.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Unique key to looped list of VALENCE_PARAM items.
-;
-_name.category_id                       valence_param
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _valence_param.key = _valence_param.id'
-
-save_
-
-
 save__valence_param.ref_id
 
 _definition.id                          '_valence_param.ref_id'
@@ -15154,7 +14619,7 @@ _description.text
 ;
 _name.category_id                       VALENCE
 _name.object_id                         VALENCE_REF
-_category.key_id                        '_valence_ref.key'
+_category.key_id                        '_valence_ref.id'
 loop_
   _category_key.name
          '_valence_ref.id' 
@@ -15180,31 +14645,6 @@ _type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
-
-save_
-
-
-save__valence_ref.key
-
-_definition.id                          '_valence_ref.key'
-loop_
-  _alias.definition_id
-         '_valence_ref.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Unique key to looped list of VALENCE_REF items.
-;
-_name.category_id                       valence_ref
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _valence_ref.key = _valence_ref.id'
 
 save_
 
@@ -15379,7 +14819,7 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_AUTHOR
-_category.key_id                        '_audit_author.key'
+_category.key_id                        '_audit_author.name'
 loop_
   _category_key.name
          '_audit_author.name' 
@@ -15416,32 +14856,6 @@ loop_
                                  City and postcode
                                  COUNTRY 
 ; 
-
-save_
-
-
-save__audit_author.key
-
-_definition.id                          '_audit_author.key'
-loop_
-  _alias.definition_id
-         '_audit_author.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of AUDIT_AUTHOR items
-     in a looped list.
-;
-_name.category_id                       audit_author
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _audit_author.key = _audit_author.name'
 
 save_
 
@@ -15579,7 +14993,7 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_CONTACT_AUTHOR
-_category.key_id                        '_audit_contact_author.key'
+_category.key_id                        '_audit_contact_author.name'
 loop_
   _category_key.name
          '_audit_contact_author.name' 
@@ -15680,33 +15094,6 @@ loop_
 
 save_
 
-
-save__audit_contact_author.key
-
-_definition.id                          '_audit_contact_author.key'
-loop_
-  _alias.definition_id
-         '_audit_contact_author.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of AUDIT_CONTACT_AUTHOR items
-     in a looped list.
-;
-_name.category_id                       audit_contact_author
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '      _audit_contact_author.key = _audit_contact_author.name'
-
-save_
-
-
 save__audit_contact_author.name
 
 _definition.id                          '_audit_contact_author.name'
@@ -15783,7 +15170,7 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_LINK
-_category.key_id                        '_audit_link.key'
+_category.key_id                        '_audit_link.block_code'
 loop_
   _category_key.name
          '_audit_link.block_code' 
@@ -15839,32 +15226,6 @@ _type.contents                          Text
 save_
 
 
-save__audit_link.key
-
-_definition.id                          '_audit_link.key'
-loop_
-  _alias.definition_id
-         '_audit_link.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of AUDIT_LINK items
-     in a looped list.
-;
-_name.category_id                       audit_link
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '               _audit_link.key = _audit_link.block_code'
-
-save_
-
-
 save_CITATION
 
 _definition.id                          CITATION
@@ -15877,7 +15238,7 @@ _description.text
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION
-_category.key_id                        '_citation.key'
+_category.key_id                        '_citation.id'
 loop_
   _category_key.name
          '_citation.id' 
@@ -16329,32 +15690,6 @@ loop_
 save_
 
 
-save__citation.key
-
-_definition.id                          '_citation.key'
-loop_
-  _alias.definition_id
-         '_citation.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of CITATION items
-     in a looped list.
-;
-_name.category_id                       citation
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '                     _citation.key = _citation.id'
-
-save_
-
-
 save__citation.language
 
 _definition.id                          '_citation.language'
@@ -16506,9 +15841,9 @@ _description.text
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_AUTHOR
-_category.key_id                        '_citation_author.key'
 loop_
   _category_key.name
+         '_citation_author.citation_id'
          '_citation_author.ordinal' 
 
 save_
@@ -16534,32 +15869,6 @@ _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
-
-save_
-
-
-save__citation_author.key
-
-_definition.id                          '_citation_author.key'
-loop_
-  _alias.definition_id
-         '_citation_author.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of CITATION_AUTHOR items
-     in a looped list.
-;
-_name.category_id                       citation_author
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '             _citation_author.key = _citation_author.ordinal'
 
 save_
 
@@ -16632,10 +15941,11 @@ _description.text
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_EDITOR
-_category.key_id                        '_citation_editor.key'
+_category.key_id                        '_citation_editor.id'
 loop_
   _category_key.name
-         '_citation_editor.id' 
+         '_citation_editor.citation_id'
+         '_citation_editor.ordinal' 
 
 save_
 
@@ -16660,54 +15970,6 @@ _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
-
-save_
-
-
-save__citation_editor.id
-
-_definition.id                          '_citation_editor.id'
-loop_
-  _alias.definition_id
-         '_citation_editor.id' 
-_definition.update                      2012-12-11
-_description.text                       
-;
-     Index number identifier of the CITATION_EDITOR category.
-;
-_name.category_id                       citation_editor
-_name.object_id                         id
-_type.purpose                           Number
-_type.source                            Recorded
-_type.container                         Single
-_type.contents                          Index
-_enumeration.range                      1:
-
-save_
-
-
-save__citation_editor.key
-
-_definition.id                          '_citation_editor.key'
-loop_
-  _alias.definition_id
-         '_citation_editor.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of CITATION_EDITOR items
-     in a looped list.
-;
-_name.category_id                       citation_editor
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '             _citation_editor.key = _citation_editor.id'
 
 save_
 
@@ -17349,7 +16611,7 @@ _description.text
 ;
 _name.category_id                       DISPLAY
 _name.object_id                         DISPLAY_COLOUR
-_category.key_id                        '_display_colour.key'
+_category.key_id                        '_display_colour.hue'
 loop_
   _category_key.name
          '_display_colour.hue' 
@@ -17402,32 +16664,6 @@ _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':colour_RGB  'file':templ_enum.cif}]
 _enumeration.default                    black
-
-save_
-
-
-save__display_colour.key
-
-_definition.id                          '_display_colour.key'
-loop_
-  _alias.definition_id
-         '_display_colour.key' 
-_definition.update                      2012-05-07
-_description.text                       
-;
-     Value is a unique key to a set of DISPLAY_COLOUR items
-     in a looped list.
-;
-_name.category_id                       display_colour
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _display_colour.key = _display_colour.hue'
 
 save_
 
@@ -18265,7 +17501,6 @@ _description.text
 ;
 _name.category_id                       JOURNAL
 _name.object_id                         JOURNAL_INDEX
-_category.key_id                        '_journal_index.key'
 loop_
   _category_key.name
          '_journal_index.id' 
@@ -18294,33 +17529,6 @@ _type.contents                          Index
 _enumeration.range                      1:
 
 save_
-
-
-save__journal_index.key
-
-_definition.id                          '_journal_index.key'
-loop_
-  _alias.definition_id
-         '_journal_index.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of JOURNAL_INDEX items
-     in a looped list.
-;
-_name.category_id                       journal_index
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Index
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '                     _journal_index.key = _journal_index.id'
-
-save_
-
 
 save__journal_index.subterm
 
@@ -18630,7 +17838,6 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_AUTHOR
-_category.key_id                        '_publ_author.key'
 loop_
   _category_key.name
          '_publ_author.name' 
@@ -18740,32 +17947,6 @@ _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Code
-
-save_
-
-
-save__publ_author.key
-
-_definition.id                          '_publ_author.key'
-loop_
-  _alias.definition_id
-         '_publ_author.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of PUBL_AUTHOR items
-     in a looped list.
-;
-_name.category_id                       publ_author
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '                     _publ_author.key = _publ_author.name'
 
 save_
 
@@ -19361,7 +18542,6 @@ _description.text
 ;
 _name.category_id                       PUBL_MANUSCRIPT
 _name.object_id                         PUBL_MANUSCRIPT_INCL_EXTRA
-_category.key_id                        '_publ_manuscript_incl_extra.key'
 loop_
   _category_key.name
          '_publ_manuscript_incl_extra.item' 
@@ -19448,32 +18628,6 @@ _type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Tag
-
-save_
-
-
-save__publ_manuscript_incl_extra.key
-
-_definition.id                          '_publ_manuscript_incl_extra.key'
-loop_
-  _alias.definition_id
-         '_publ_manuscript_incl_extra.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of PUBL_MANUSCRIPT_INCL_EXTRA items
-     in a looped list.
-;
-_name.category_id                       publ_manuscript_incl_extra
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Tag
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '    _publ_manuscript_incl_extra.key = _publ_manuscript_incl_extra.item'
 
 save_
 
@@ -20043,7 +19197,7 @@ _description.text
 ;
 _name.category_id                       ATOM
 _name.object_id                         ATOM_SITE
-_category.key_id                        '_atom_site.key'
+_category.key_id                        '_atom_site.label'
 loop_
   _category_key.name
          '_atom_site.label' 
@@ -20689,32 +19843,6 @@ _import.get [{'save':fract_coord_su  'file':templ_attr.cif}]
 _name.category_id                       atom_site
 _name.object_id                         fract_z_su
 _name.linked_item_id                    '_atom_site.fract_z'
-
-save_
-
-
-save__atom_site.key
-
-_definition.id                          '_atom_site.key'
-loop_
-  _alias.definition_id
-         '_atom_site.key' 
-_definition.update                      2012-11-20
-_description.text                       
-;
-     Value is a unique key to a set of ATOM_SITE items
-     in a looped list.
-;
-_name.category_id                       atom_site
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _atom_site.key = _atom_site.label' 
 
 save_
 
@@ -21390,7 +20518,6 @@ _description.text
 ;
 _name.category_id                       ATOM_SITE
 _name.object_id                         ATOM_SITE_ANISO
-_category.key_id                        '_atom_site_aniso.key'
 loop_
   _category_key.name
          '_atom_site_aniso.label' 
@@ -21592,32 +20719,6 @@ _import.get [{'save':aniso_BIJ_su  'file':templ_attr.cif}]
 _name.category_id                       atom_site_aniso
 _name.object_id                         B_33_su
 _name.linked_item_id                    '_atom_site_aniso.B_33'
-
-save_
-
-
-save__atom_site_aniso.key
-
-_definition.id                          '_atom_site_aniso.key'
-loop_
-  _alias.definition_id
-         '_atom_site_aniso.key' 
-_definition.update                      2012-11-20
-_description.text                       
-;
-     Value is a unique key to a set of ATOM_SITE_ANISO items
-     in a looped list.
-;
-_name.category_id                       atom_site_aniso
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _atom_site_aniso.key = _atom_site_aniso.label'
 
 save_
 
@@ -22862,7 +21963,6 @@ _description.text
 ;
 _name.category_id                       ATOM
 _name.object_id                         ATOM_TYPE
-_category.key_id                        '_atom_type.key'
 loop_
   _method.purpose
   _method.expression
@@ -23256,7 +22356,6 @@ _description.text
 ;
 _name.category_id                       ATOM_TYPE
 _name.object_id                         ATOM_TYPE_SCAT
-_category.key_id                        '_atom_type_scat.key'
 loop_
   _category_key.name
          '_atom_type_scat.symbol' 
@@ -23777,33 +22876,6 @@ loop_
 ; 
 
 save_
-
-
-save__atom_type_scat.key
-
-_definition.id                          '_atom_type_scat.key'
-loop_
-  _alias.definition_id
-         '_atom_type_scat.key' 
-_definition.update                      2012-11-20
-_description.text                       
-;
-     Value is a unique key to a set of ATOM_TYPE_SCAT items in a
-     looped list. This list may be joined with the ATOM_TYPE list.
-;
-_name.category_id                       atom_type_scat
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _atom_type_scat.key = _atom_type_scat.symbol'
-
-save_
-
 
 save__atom_type_scat.length_neutron
 
@@ -24796,8 +23868,7 @@ loop_
   _enumeration_set.detail
          refall    'refined all H-atom parameters'         
          refxyz    'refined H-atom coordinates only'       
-         refU      'refined H-atom U'  
-         s         "only'"   
+         refU      'refined H-atom Us only'   
          noref     'no refinement of H-atom parameters'    
          constr    'H-atom parameters constrained'         
          hetero    
@@ -25615,7 +24686,7 @@ _description.text
 ;
 _name.category_id                       REFINE_LS
 _name.object_id                         CLASS
-_category.key_id                        '_refine_ls_class.key'
+_category.key_id                        '_refine_ls_class.code'
 loop_
   _category_key.name
          '_refine_ls_class.code' 
@@ -25697,32 +24768,6 @@ _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
 _units.code                             angstroms
-
-save_
-
-
-save__refine_ls_class.key
-
-_definition.id                          '_refine_ls_class.key'
-loop_
-  _alias.definition_id
-         '_refine_ls_class.key' 
-_definition.update                      2012-11-20
-_description.text                       
-;
-     Value is a unique key to a set of REFINE_LS_CLASS items
-     in a looped list.
-;
-_name.category_id                       refine_ls_class
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '              _refine_ls_class.key = _refine_ls_class.code'
 
 save_
 
@@ -25863,4 +24908,11 @@ loop_
          3.0.05    2016-05-13
 ;
      Merged in most symmetry dictionary definitions (James Hester)
+;
+         3.0.06    2016-09-07
+;
+     Adjusted and removed keys for changes in dREL operation. In particular:
+     exptl_crystal is now a looped category with default key value. Linked keys
+     also included in their category's key list (e.g. diffrn_refln,refln);
+     _citation_id added to key list of citation_author (James Hester)
 ;
