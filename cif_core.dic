@@ -14757,6 +14757,44 @@ loop_
 
 save_
 
+save_audit.schema
+
+_definition.id       '_audit.schema'
+_name.category_id    audit
+_name.object_id      schema
+_description.text
+;
+
+     This dataname identifies the type of information contained in the
+     datablock. Software written for one schema will not, in general,
+     correctly interpret datafiles written against a different schema.
+
+     Specifically, each value of _audit.schema corresponds to a list
+     of categories that were (potentially implicitly) restricted to a
+     single packet in the default Base schema, but which can contain
+     multiple packets in the specified schema.  All categories
+     containing child keys of the listed categories may also contain
+     multiple packets and do not need to be listed.
+     
+     The category list for each schema may instead be determined from
+     examination of the dictionaries that this datablock conforms to (see
+     _audit_conform.dictionary).
+
+;
+_type.contents          Text
+_type.purpose           State
+_type.container         Single
+_type.source            Assigned
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+    Base                'Original Core CIF schema'
+   'Space group tables' 'space_group category is looped'
+    Entry               'entry category is defined and looped: information from multiple datablocks in one block'
+    Custom              'Examine dictionaries provided in _audit_conform'
+    Local               'Locally modified dictionaries. These datafiles should not be distributed'
+_enumeration.default    Base
+save_
 
 save__audit.update_record
 
@@ -24889,7 +24927,7 @@ loop_
 ;
      Adjusted and removed keys for changes in dREL operation. In particular:
      exptl_crystal is now a looped category with default key value. Linked keys
-     also included in their category's key list (e.g. diffrn_refln,refln);
-     _citation_id added to key list of citation_author (James Hester);
+     also included in their category's key list (e.g. diffrn_refln,refln).
+     _citation_id added to key list of citation_author (James Hester).
      _diffrn.crystal_id removed as diffrn is Set category.
 ;
