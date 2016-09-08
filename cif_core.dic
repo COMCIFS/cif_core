@@ -337,30 +337,6 @@ _units.code                             kelvins
 save_
 
 
-save__diffrn.crystal_id
-
-_definition.id                          '_diffrn.crystal_id'
-loop_
-  _alias.definition_id
-         '_diffrn.crystal_id'          
-         '_diffrn_crystal_id' 
-_definition.update                      2014-06-12
-_description.text                       
-;
-     This data item is a pointer to _exptl_crystal.id in the
-     EXPTL_CRYSTAL category.
-;
-_name.category_id                       diffrn
-_name.object_id                         crystal_id
-_name.linked_item_id                    '_exptl_crystal.id'
-_type.purpose                           Link
-_type.source                            Assigned
-_type.container                         Single
-_type.contents                          Code
-
-save_
-
-
 save__diffrn.crystal_support
 
 _definition.id                          '_diffrn.crystal_support'
@@ -24914,5 +24890,6 @@ loop_
      Adjusted and removed keys for changes in dREL operation. In particular:
      exptl_crystal is now a looped category with default key value. Linked keys
      also included in their category's key list (e.g. diffrn_refln,refln);
-     _citation_id added to key list of citation_author (James Hester)
+     _citation_id added to key list of citation_author (James Hester);
+     _diffrn.crystal_id removed as diffrn is Set category.
 ;
