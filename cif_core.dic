@@ -10,7 +10,7 @@ data_CIF_CORE
 _dictionary.title                       CIF_CORE
 _dictionary.class                       Instance
 _dictionary.version                     3.0.06
-_dictionary.date                        2016-09-07
+_dictionary.date                        2016-09-13
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.04
 _dictionary.namespace                   CifCore
@@ -1759,7 +1759,6 @@ _name.object_id                         DIFFRN_REFLN
 _category.key_id                        '_diffrn_refln.hkl'
 loop_
   _category_key.name
-         '_diffrn_refln.crystal_id'
          '_diffrn_refln.index_h'       
          '_diffrn_refln.index_k'       
          '_diffrn_refln.index_l' 
@@ -1963,28 +1962,6 @@ loop_
 _import.get [{'save':diffr_counts  'file':templ_attr.cif}]
 _name.category_id                       diffrn_refln
 _name.object_id                         counts_total
-
-save_
-
-save__diffrn_refln.crystal_id
-
-_definition.id                          '_diffrn_refln.crystal_id'
-loop_
-  _alias.definition_id
-         '_diffrn_refln.crystal_id'    
-         '_diffrn_refln_crystal_id' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Code identifying each crystal if multiple crystals are used.
-;
-_name.category_id                       diffrn_refln
-_name.object_id                         crystal_id
-_name.linked_item_id                    '_exptl_crystal.id'
-_type.purpose                           Link
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
 
 save_
 
@@ -3982,7 +3959,6 @@ _name.category_id                       DIFFRACTION
 _name.object_id                         REFLN
 loop_
   _category_key.name
-         '_refln.crystal_id'
          '_refln.index_h'    
          '_refln.index_k'    
          '_refln.index_l' 
@@ -4148,30 +4124,6 @@ _description.text
 _name.category_id                       refln
 _name.object_id                         class_code
 _name.linked_item_id                    '_reflns_class.code'
-_type.purpose                           Link
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-
-save_
-
-
-save__refln.crystal_id
-
-_definition.id                          '_refln.crystal_id'
-loop_
-  _alias.definition_id
-         '_refln.crystal_id'           
-         '_refln_crystal_id' 
-_definition.update                      2012-11-26
-_description.text                       
-;
-     Code identifying each crystal if multiple crystals are used. Is
-     used to link with crystals identified by _exptl_crystal.id.
-;
-_name.category_id                       refln
-_name.object_id                         crystal_id
-_name.linked_item_id                    '_exptl_crystal.id'
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
@@ -4947,7 +4899,7 @@ loop_
 ;
      With r  as  refln
                             h =  r.hkl
-                            G =  _cell_reciprocal.metric_tensor
+                            G =  _cell.reciprocal_metric_tensor
  
      r.sin_theta_over_lambda  =   Sqrt ( h * G * h ) / 2.
 ; 
@@ -6754,11 +6706,11 @@ loop_
   _method.expression
          Evaluation          
 ;
-     with v  as  cell_vector
+     with c  as  cell
  
-           _cell.metric_tensor = [[ v.a*v.a, v.a*v.b, v.a*v.c ],
-                                  [ v.b*v.a, v.b*v.b, v.b*v.c ],
-                                  [ v.c*v.a, v.c*v.b, v.c*v.c ]]
+           _cell.metric_tensor = [[ c.vector_a*c.vector_a, c.vector_a*c.vector_b, c.vector_a*c.vector_c ],
+                                  [ c.vector_b*c.vector_a, c.vector_b*c.vector_b, c.vector_b*c.vector_c ],
+                                  [ c.vector_c*c.vector_a, c.vector_c*c.vector_b, c.vector_c*c.vector_c ]]
 ; 
 
 save_
@@ -6789,14 +6741,11 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With p  as  cell_length
-     With q  as  cell_angle
-     With r  as  cell_reciprocal_angle
- 
+     With c as cell
     _cell.orthogonal_matrix =   [
-          [  p.a*Sind(q.beta)*Sind(r.gamma),                 0,   0 ],
-          [ -p.a*Sind(q.beta)*Cosd(r.gamma), p.b*Sind(q.alpha),   0 ],
-          [  p.a*Cosd(q.beta),               p.b*Cosd(q.alpha), p.c ]]
+          [  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma), 0,                                0 ],
+          [ -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma), c.length_b*Sind(c.angle_alpha),   0 ],
+          [  c.length_a*Cosd(c.angle_beta),                                c.length_b*Cosd(c.angle_alpha), c.length_c ]]
 ; 
 
 save_
@@ -6851,9 +6800,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-      With v  as  cell_vector
+      With c  as  cell
  
-      _cell.volume =  v.a * ( v.b ^ v.c )
+      _cell.volume =  c.vector_a * ( c.vector_b ^ c.vector_c )
 ; 
 
 save_
@@ -6884,223 +6833,177 @@ _units.code                             angstrom_cubed
 
 save_
 
+save__cell.angle_alpha
 
-save_CELL_ANGLE
-
-_definition.id                          CELL_ANGLE
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe the angles between
-     the axes in the crystal unit cell.
-;
-_name.category_id                       CELL
-_name.object_id                         CELL_ANGLE
-
-save_
-
-
-save__cell_angle.alpha
-
-_definition.id                          '_cell_angle.alpha'
+_definition.id                          '_cell.angle_alpha'
 loop_
-  _alias.definition_id
-         '_cell_angle.alpha'           
+  _alias.definition_id           
          '_cell_angle_alpha'           
-         '_cell.angle_alpha' 
+         '_cell.angle_alpha'
 _import.get [{'save':cell_angle  'file':templ_attr.cif}]
-_name.category_id                       cell_angle
-_name.object_id                         alpha
+_name.category_id                       cell
+_name.object_id                         angle_alpha
 
 save_
 
 
-save__cell_angle.alpha_su
+save__cell.angle_alpha_su
 
-_definition.id                          '_cell_angle.alpha_su'
+_definition.id                          '_cell.angle_alpha_su'
 loop_
-  _alias.definition_id
-         '_cell_angle.alpha_su'        
+  _alias.definition_id        
          '_cell_angle_alpha_su'        
          '_cell.angle_alpha_esd' 
 _import.get [{'save':cell_angle_su  'file':templ_attr.cif}]
-_name.category_id                       cell_angle
-_name.object_id                         alpha_su
-_name.linked_item_id                    '_cell_angle.alpha'
+_name.category_id                       cell
+_name.object_id                         angle_alpha_su
+_name.linked_item_id                    '_cell.angle_alpha'
 
 save_
 
 
-save__cell_angle.beta
+save__cell.angle_beta
 
-_definition.id                          '_cell_angle.beta'
+_definition.id                          '_cell.angle_beta'
 loop_
-  _alias.definition_id
-         '_cell_angle.beta'  
+  _alias.definition_id  
          '_cell_angle_beta'  
          '_cell.angle_beta' 
 _import.get [{'save':cell_angle  'file':templ_attr.cif}]
-_name.category_id                       cell_angle
-_name.object_id                         beta
+_name.category_id                       cell
+_name.object_id                         angle_beta
 
 save_
 
 
-save__cell_angle.beta_su
+save__cell.angle_beta_su
 
-_definition.id                          '_cell_angle.beta_su'
+_definition.id                          '_cell.angle_beta_su'
 loop_
   _alias.definition_id
          '_cell_angle.beta_su'         
          '_cell_angle_beta_su'         
          '_cell.angle_beta_esd' 
 _import.get [{'save':cell_angle_su  'file':templ_attr.cif}]
-_name.category_id                       cell_angle
-_name.object_id                         beta_su
-_name.linked_item_id                    '_cell_angle.beta'
+_name.category_id                       cell
+_name.object_id                         angle_beta_su
+_name.linked_item_id                    '_cell.angle_beta'
 
 save_
 
 
-save__cell_angle.gamma
+save__cell.angle_gamma
 
-_definition.id                          '_cell_angle.gamma'
+_definition.id                          '_cell.angle_gamma'
 loop_
-  _alias.definition_id
-         '_cell_angle.gamma'           
+  _alias.definition_id 
          '_cell_angle_gamma'           
          '_cell.angle_gamma' 
 _import.get [{'save':cell_angle  'file':templ_attr.cif}]
-_name.category_id                       cell_angle
-_name.object_id                         gamma
+_name.category_id                       cell
+_name.object_id                         angle_gamma
 
 save_
 
 
-save__cell_angle.gamma_su
+save__cell.angle_gamma_su
 
-_definition.id                          '_cell_angle.gamma_su'
+_definition.id                          '_cell.angle_gamma_su'
 loop_
   _alias.definition_id
          '_cell_angle.gamma_su'        
          '_cell_angle_gamma_su'        
          '_cell.angle_gamma_esd' 
 _import.get [{'save':cell_angle_su  'file':templ_attr.cif}]
-_name.category_id                       cell_angle
-_name.object_id                         gamma_su
-_name.linked_item_id                    '_cell_angle.gamma'
+_name.category_id                       cell
+_name.object_id                         angle_gamma_su
+_name.linked_item_id                    '_cell.angle_gamma'
 
 save_
 
+save__cell.length_a
 
-save_CELL_LENGTH
-
-_definition.id                          CELL_LENGTH
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe the lengths of
-     the axes in the crystal unit cell.
-;
-_name.category_id                       CELL
-_name.object_id                         CELL_LENGTH
-
-save_
-
-
-save__cell_length.a
-
-_definition.id                          '_cell_length.a'
+_definition.id                          '_cell.length_a'
 loop_
-  _alias.definition_id
-         '_cell_length.a'    
+  _alias.definition_id  
          '_cell_length_a'    
          '_cell.length_a' 
 _import.get [{'save':cell_length  'file':templ_attr.cif}]
-_name.category_id                       cell_length
-_name.object_id                         a
+_name.category_id                       cell
+_name.object_id                         length_a
 
 save_
 
 
-save__cell_length.a_su
+save__cell.length_a_su
 
-_definition.id                          '_cell_length.a_su'
+_definition.id                          '_cell.length_a_su'
 loop_
-  _alias.definition_id
-         '_cell_length.a_su'           
+  _alias.definition_id           
          '_cell_length_a_su'           
          '_cell.length_a_esd' 
 _import.get [{'save':cell_length_su  'file':templ_attr.cif}]
-_name.category_id                       cell_length
-_name.object_id                         a_su
-_name.linked_item_id                    '_cell_length.a'
+_name.category_id                       cell
+_name.object_id                         length_a_su
+_name.linked_item_id                    '_cell.length_a'
 
 save_
 
 
-save__cell_length.b
+save__cell.length_b
 
-_definition.id                          '_cell_length.b'
+_definition.id                          '_cell.length_b'
 loop_
-  _alias.definition_id
-         '_cell_length.b'    
+  _alias.definition_id    
          '_cell_length_b'    
          '_cell.length_b' 
 _import.get [{'save':cell_length  'file':templ_attr.cif}]
-_name.category_id                       cell_length
-_name.object_id                         b
+_name.category_id                       cell
+_name.object_id                         length_b
 
 save_
 
 
-save__cell_length.b_su
+save__cell.length_b_su
 
-_definition.id                          '_cell_length.b_su'
+_definition.id                          '_cell.length_b_su'
 loop_
-  _alias.definition_id
-         '_cell_length.b_su'           
+  _alias.definition_id           
          '_cell_length_b_su'           
          '_cell.length_b_esd' 
 _import.get [{'save':cell_length_su  'file':templ_attr.cif}]
-_name.category_id                       cell_length
-_name.object_id                         b_su
-_name.linked_item_id                    '_cell_length.b'
+_name.category_id                       cell
+_name.object_id                         length_b_su
+_name.linked_item_id                    '_cell.length_b'
 
 save_
 
 
-save__cell_length.c
+save__cell.length_c
 
-_definition.id                          '_cell_length.c'
+_definition.id                          '_cell.length_c'
 loop_
   _alias.definition_id
-         '_cell_length.c'    
          '_cell_length_c'    
          '_cell.length_c' 
 _import.get [{'save':cell_length  'file':templ_attr.cif}]
-_name.category_id                       cell_length
-_name.object_id                         c
+_name.category_id                       cell
+_name.object_id                         length_c
 
 save_
 
 
-save__cell_length.c_su
+save__cell.length_c_su
 
-_definition.id                          '_cell_length.c_su'
+_definition.id                          '_cell.length_c_su'
 loop_
-  _alias.definition_id
-         '_cell_length.c_su'           
+  _alias.definition_id           
          '_cell_length_c_su'           
          '_cell.length_c_esd' 
 _import.get [{'save':cell_length_su  'file':templ_attr.cif}]
-_name.category_id                       cell_length
-_name.object_id                         c_su
-_name.linked_item_id                    '_cell_length.c'
+_name.category_id                       cell
+_name.object_id                         length_c_su
+_name.linked_item_id                    '_cell.length_c'
 
 save_
 
@@ -7475,30 +7378,10 @@ _units.code                             degrees
 save_
 
 
-save_CELL_RECIPROCAL
+save__cell.convert_Uij_to_betaij
 
-_definition.id                          CELL_RECIPROCAL
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe the unit cell data
-     in reciprocal space.
-;
-_name.category_id                       CELL
-_name.object_id                         CELL_RECIPROCAL
-
-save_
-
-
-save__cell_reciprocal.convert_Uij_to_betaij
-
-_definition.id                          '_cell_reciprocal.convert_Uij_to_betaij'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal.convert_Uij_to_betaij' 
-_definition.update                      2013-04-28
+_definition.id                          '_cell.convert_Uij_to_betaij'
+_definition.update                      2016-09-08
 _description.text                       
 ;
      The reciprocal space matrix for converting the U(ij) matrix of
@@ -7515,7 +7398,7 @@ _description.text
  
     where C is conversion matrix defined here.
 ;
-_name.category_id                       cell_reciprocal
+_name.category_id                       cell
 _name.object_id                         convert_Uij_to_betaij
 _type.purpose                           Measurand
 _type.source                            Derived
@@ -7527,24 +7410,21 @@ loop_
   _method.expression
          Evaluation          
 ;
-    With r  as  cell_reciprocal_length
+    With c  as  cell
  
-    _cell_reciprocal.convert_Uij_to_betaij = \
-                             1.4142 * Pi * Matrix([[ r.a, 0, 0 ],
-                                                   [ 0, r.b, 0 ],
-                                                   [ 0, 0, r.c ]])
+    _cell.convert_Uij_to_betaij = \
+                             1.4142 * Pi * Matrix([[ c.reciprocal_length_a, 0, 0 ],
+                                                   [ 0, c.reciprocal_length_b, 0 ],
+                                                   [ 0, 0, c.reciprocal_length_c ]])
 ; 
 
 save_
 
 
-save__cell_reciprocal.convert_Uiso_to_Uij
+save__cell.convert_Uiso_to_Uij
 
-_definition.id                          '_cell_reciprocal.convert_Uiso_to_Uij'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal.convert_Uiso_to_Uij' 
-_definition.update                      2013-04-28
+_definition.id                          '_cell.convert_Uiso_to_Uij'
+_definition.update                      2016-09-08
 _description.text                       
 ;
      The reciprocal space matrix for converting the isotropic Uiso
@@ -7555,7 +7435,7 @@ _description.text
                        | cos(beta*)   cos(alpha*)   1           |
  
 ;
-_name.category_id                       cell_reciprocal
+_name.category_id                       cell
 _name.object_id                         convert_Uiso_to_Uij
 _type.purpose                           Measurand
 _type.source                            Derived
@@ -7567,32 +7447,29 @@ loop_
   _method.expression
          Evaluation          
 ;
-    With r  as  cell_reciprocal_angle
+    With c  as  cell
  
-    _cell_reciprocal.convert_Uiso_to_Uij = \
-                          [[ 1., Cosd(r.gamma), Cosd(r.beta)  ],
-                           [ Cosd(r.gamma), 1., Cosd(r.alpha) ],
-                           [ Cosd(r.beta), Cosd(r.alpha), 1.  ]]
+    _cell.convert_Uiso_to_Uij = \
+                          [[ 1., Cosd(c.reciprocal_angle_gamma), Cosd(c.reciprocal_angle_beta)  ],
+                           [ Cosd(c.reciprocal_angle_gamma), 1., Cosd(c.reciprocal_angle_alpha) ],
+                           [ Cosd(c.reciprocal_angle_beta), Cosd(c.reciprocal_angle_alpha), 1.  ]]
 ; 
 
 save_
 
 
-save__cell_reciprocal.metric_tensor
+save__cell.reciprocal_metric_tensor
 
-_definition.id                          '_cell_reciprocal.metric_tensor'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal.metric_tensor' 
-_definition.update                      2012-11-22
+_definition.id                          '_cell.reciprocal_metric_tensor'
+_definition.update                      2016-09-08
 _description.text                       
 ;
      The reciprocal (contravariant) metric tensor used to transform
      vectors and coordinates from reciprocal space to real (direct)
      space.
 ;
-_name.category_id                       cell_reciprocal
-_name.object_id                         metric_tensor
+_name.category_id                       cell
+_name.object_id                         reciprocal_metric_tensor
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -7603,23 +7480,20 @@ loop_
   _method.expression
          Evaluation          
 ;
-     with r  as  cell_reciprocal_vector
- 
-    _cell_reciprocal.metric_tensor = [[ r.a*r.a, r.a*r.b, r.a*r.c ],
-                                      [ r.b*r.a, r.b*r.b, r.b*r.c ],
-                                      [ r.c*r.a, r.c*r.b, r.c*r.c ]]
+     with c as cell
+    _cell.reciprocal_metric_tensor = [
+         [ c.reciprocal_vector_a*c.reciprocal_vector_a, c.reciprocal_vector_a*c.reciprocal_vector_b, c.reciprocal_vector_a*c.reciprocal_vector_c ],
+         [ c.reciprocal_vector_b*c.reciprocal_vector_a, c.reciprocal_vector_b*c.reciprocal_vector_b, c.reciprocal_vector_b*c.reciprocal_vector_c ],
+         [ c.reciprocal_vector_c*c.reciprocal_vector_a, c.reciprocal_vector_c*c.reciprocal_vector_b, c.reciprocal_vector_c*c.reciprocal_vector_c ]]
 ; 
 
 save_
 
 
-save__cell_reciprocal.orthogonal_matrix
+save__cell.reciprocal_orthogonal_matrix
 
-_definition.id                          '_cell_reciprocal.orthogonal_matrix'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal.orthogonal_matrix' 
-_definition.update                      2012-11-22
+_definition.id                          '_cell.reciprocal_orthogonal_matrix'
+_definition.update                      2016-09-08
 _description.text                       
 ;
      Orthogonal matrix of the reciprocal space. The matrix may be
@@ -7628,8 +7502,8 @@ _description.text
  
                      M h = p
 ;
-_name.category_id                       cell_reciprocal
-_name.object_id                         orthogonal_matrix
+_name.category_id                       cell
+_name.object_id                         reciprocal_orthogonal_matrix
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -7640,48 +7514,29 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_reciprocal.orthogonal_matrix  =  Inverse(
+    _cell.reciprocal_orthogonal_matrix  =  Inverse(
  
                            Transpose( _cell.orthogonal_matrix ))
 ; 
 
 save_
 
+save__cell.reciprocal_angle_alpha
 
-save_CELL_RECIPROCAL_ANGLE
-
-_definition.id                          CELL_RECIPROCAL_ANGLE
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe the unit cell angles
-     in reciprocal space.
-;
-_name.category_id                       CELL_RECIPROCAL
-_name.object_id                         CELL_RECIPROCAL_ANGLE
-
-save_
-
-
-save__cell_reciprocal_angle.alpha
-
-_definition.id                          '_cell_reciprocal_angle.alpha'
+_definition.id                          '_cell.reciprocal_angle_alpha'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle.alpha'          
          '_cell_reciprocal_angle_alpha'          
          '_cell.reciprocal_angle_alpha' 
 _definition.update                      2013-01-18
 _description.text                       
 ;
-     Reciprocal of the angle between _cell_length.b and _cell_length.c.
+     Reciprocal of the angle between _cell.length_b and _cell.length_c.
      Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
           New York: John Wiley & Sons Inc.
 ;
-_name.category_id                       cell_reciprocal_angle
-_name.object_id                         alpha
+_name.category_id                       cell
+_name.object_id                         reciprocal_angle_alpha
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -7693,32 +7548,31 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With c as cell_angle
+     With c as cell
  
-    _cell_reciprocal_angle.alpha = Acosd(
-    (Cosd(c.beta)*Cosd(c.gamma)-Cosd(c.alpha))/(Sind(c.beta)*Sind(c.gamma)))
+    _cell.reciprocal_angle_alpha = Acosd(
+    (Cosd(c.angle_beta)*Cosd(c.angle_gamma)-Cosd(c.angle_alpha))/(Sind(c.angle_beta)*Sind(c.angle_gamma)))
 ; 
 
 save_
 
 
-save__cell_reciprocal_angle.alpha_su
+save__cell.reciprocal_angle_alpha_su
 
-_definition.id                          '_cell_reciprocal_angle.alpha_su'
+_definition.id                          '_cell.reciprocal_angle_alpha_su'
 loop_
-  _alias.definition_id
-         '_cell_reciprocal_angle.alpha_su'       
+  _alias.definition_id     
          '_cell_reciprocal_angle_alpha_su'       
          '_cell.reciprocal_angle_alpha_esd' 
 _definition.update                      2013-01-18
 _description.text                       
 ;
      Standard Uncertainty of the
-     Reciprocal of the angle between _cell_length.b and _cell_length.c.
+     Reciprocal of the angle between _cell.length_b and _cell.length_c.
 ;
-_name.category_id                       cell_reciprocal_angle
-_name.object_id                         alpha_su
-_name.linked_item_id                    '_cell_reciprocal_angle.alpha'
+_name.category_id                       cell
+_name.object_id                         reciprocal_angle_alpha_su
+_name.linked_item_id                    '_cell.reciprocal_angle_alpha'
 _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
@@ -7729,23 +7583,22 @@ _units.code                             degrees
 save_
 
 
-save__cell_reciprocal_angle.beta
+save__cell.reciprocal_angle_beta
 
-_definition.id                          '_cell_reciprocal_angle.beta'
+_definition.id                          '_cell.reciprocal_angle_beta'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle.beta'           
          '_cell_reciprocal_angle_beta'           
          '_cell.reciprocal_angle_beta' 
 _definition.update                      2013-01-18
 _description.text                       
 ;
-     Reciprocal of the angle between _cell_length.a and _cell_length.c.
+     Reciprocal of the angle between _cell.length_a and _cell.length_c.
      Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
           New York: John Wiley & Sons Inc.
 ;
-_name.category_id                       cell_reciprocal_angle
-_name.object_id                         beta
+_name.category_id                       cell
+_name.object_id                         reciprocal_angle_beta
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -7757,32 +7610,31 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With c as cell_angle
+     With c as cell
  
-    _cell_reciprocal_angle.beta = Acosd(
-    (Cosd(c.alpha)*Cosd(c.gamma)-Cosd(c.beta))/(Sind(c.alpha)*Sind(c.gamma)))
+    _cell.reciprocal_angle_beta = Acosd(
+    (Cosd(c.angle_alpha)*Cosd(c.angle_gamma)-Cosd(c.angle_beta))/(Sind(c.angle_alpha)*Sind(c.angle_gamma)))
 ; 
 
 save_
 
 
-save__cell_reciprocal_angle.beta_su
+save__cell.reciprocal_angle_beta_su
 
-_definition.id                          '_cell_reciprocal_angle.beta_su'
+_definition.id                          '_cell.reciprocal_angle_beta_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle.beta_su'        
          '_cell_reciprocal_angle_beta_su'        
          '_cell.reciprocal_angle_beta_esd' 
 _definition.update                      2013-01-18
 _description.text                       
 ;
      Standard Uncertainty of the
-     Reciprocal of the angle between _cell_length.a and _cell_length.c.
+     Reciprocal of the angle between _cell.length_a and _cell.length_c.
 ;
-_name.category_id                       cell_reciprocal_angle
-_name.object_id                         beta_su
-_name.linked_item_id                    '_cell_reciprocal_angle.beta'
+_name.category_id                       cell
+_name.object_id                         reciprocal_angle_beta_su
+_name.linked_item_id                    '_cell.reciprocal_angle_beta'
 _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
@@ -7793,23 +7645,22 @@ _units.code                             degrees
 save_
 
 
-save__cell_reciprocal_angle.gamma
+save__cell.reciprocal_angle_gamma
 
-_definition.id                          '_cell_reciprocal_angle.gamma'
+_definition.id                          '_cell.reciprocal_angle_gamma'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle.gamma'          
          '_cell_reciprocal_angle_gamma'          
          '_cell.reciprocal_angle_gamma' 
-_definition.update                      2013-01-18
+_definition.update                      2016-09-09
 _description.text                       
 ;
-     Reciprocal of the angle between _cell_length.a and _cell_length.b.
+     Reciprocal of the angle between _cell.length_a and _cell.length_b.
      Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
           New York: John Wiley & Sons Inc.
 ;
-_name.category_id                       cell_reciprocal_angle
-_name.object_id                         gamma
+_name.category_id                       cell
+_name.object_id                         reciprocal_angle_gamma
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -7821,31 +7672,30 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With c as cell_angle
+     With c as cell
  
-    _cell_reciprocal_angle.gamma = Acosd(
-    (Cosd(c.alpha)*Cosd(c.beta)-Cosd(c.gamma))/(Sind(c.alpha)*Sind(c.beta)))
+    _cell.reciprocal_angle_gamma = Acosd(
+    (Cosd(c.angle_alpha)*Cosd(c.angle_beta)-Cosd(c.angle_gamma))/(Sind(c.angle_alpha)*Sind(c.angle_beta)))
 ; 
 
 save_
 
 
-save__cell_reciprocal_angle.gamma_su
+save__cell.reciprocal_angle_gamma_su
 
-_definition.id                          '_cell_reciprocal_angle.gamma_su'
+_definition.id                          '_cell.reciprocal_angle_gamma_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle.gamma_su'       
          '_cell_reciprocal_angle_gamma_su'       
          '_cell.reciprocal_angle_gamma_esd' 
 _definition.update                      2013-01-18
 _description.text                       
 ;
      Standard Uncertainty of the
-     Reciprocal of the angle between _cell_length.a and _cell_length.b.
+     Reciprocal of the angle between _cell.length_a and _cell.length_b.
 ;
-_name.category_id                       cell_reciprocal_angle
-_name.object_id                         gamma_su
+_name.category_id                       cell
+_name.object_id                         reciprocal_angle_gamma_su
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -7856,38 +7706,20 @@ _units.code                             degrees
 save_
 
 
-save_CELL_RECIPROCAL_LENGTH
+save__cell.reciprocal_length_a
 
-_definition.id                          CELL_RECIPROCAL_LENGTH
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe the unit cell lengths
-     in reciprocal space.
-;
-_name.category_id                       CELL_RECIPROCAL
-_name.object_id                         CELL_RECIPROCAL_LENGTH
-
-save_
-
-
-save__cell_reciprocal_length.a
-
-_definition.id                          '_cell_reciprocal_length.a'
+_definition.id                          '_cell.reciprocal_length_a'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length.a'   
          '_cell_reciprocal_length_a'   
          '_cell.reciprocal_length_a' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Reciprocal of the _cell_length.a.
+     Reciprocal of the _cell.length_a.
 ;
-_name.category_id                       cell_reciprocal_length
-_name.object_id                         a
+_name.category_id                       cell
+_name.object_id                         reciprocal_length_a
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -7899,28 +7731,27 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_reciprocal_length.a = Norm ( _cell_reciprocal_vector.a )
+    _cell.reciprocal_length_a = Norm ( _cell.reciprocal_vector_a )
 ; 
 
 save_
 
 
-save__cell_reciprocal_length.a_su
+save__cell.reciprocal_length_a_su
 
-_definition.id                          '_cell_reciprocal_length.a_su'
+_definition.id                          '_cell.reciprocal_length_a_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length.a_su'          
          '_cell_reciprocal_length_a_su'          
          '_cell.reciprocal_length_a_esd' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Standard Uncertainty of the reciprocal of the _cell_length.a.
+     Standard Uncertainty of the reciprocal of the _cell.length_a.
 ;
-_name.category_id                       cell_reciprocal_length
-_name.object_id                         a_su
-_name.linked_item_id                    '_cell_reciprocal_length.a'
+_name.category_id                       cell
+_name.object_id                         reciprocal_length_a_su
+_name.linked_item_id                    '_cell.reciprocal_length_a'
 _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
@@ -7931,21 +7762,20 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__cell_reciprocal_length.b
+save__cell.reciprocal_length_b
 
-_definition.id                          '_cell_reciprocal_length.b'
+_definition.id                          '_cell.reciprocal_length_b'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length.b'   
          '_cell_reciprocal_length_b'   
          '_cell.reciprocal_length_b' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Reciprocal of the _cell_length.b.
+     Reciprocal of the _cell.length_b.
 ;
-_name.category_id                       cell_reciprocal_length
-_name.object_id                         b
+_name.category_id                       cell
+_name.object_id                         reciprocal_length_b
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -7957,28 +7787,27 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_reciprocal_length.b = Norm ( _cell_reciprocal_vector.b )
+    _cell.reciprocal_length_b = Norm ( _cell.reciprocal_vector_b )
 ; 
 
 save_
 
 
-save__cell_reciprocal_length.b_su
+save__cell.reciprocal_length_b_su
 
-_definition.id                          '_cell_reciprocal_length.b_su'
+_definition.id                          '_cell.reciprocal_length_b_su'
 loop_
-  _alias.definition_id
-         '_cell_reciprocal_length.b_su'          
+  _alias.definition_id          
          '_cell_reciprocal_length_b_su'          
          '_cell.reciprocal_length_b_esd' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Standard Uncertainty of the reciprocal of the _cell_length.b.
+     Standard Uncertainty of the reciprocal of the _cell.length_b.
 ;
-_name.category_id                       cell_reciprocal_length
-_name.object_id                         b_su
-_name.linked_item_id                    '_cell_reciprocal_length.b'
+_name.category_id                       cell
+_name.object_id                         reciprocal_length_b_su
+_name.linked_item_id                    '_cell.reciprocal_length_b'
 _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
@@ -7989,21 +7818,20 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__cell_reciprocal_length.c
+save__cell.reciprocal_length_c
 
-_definition.id                          '_cell_reciprocal_length.c'
+_definition.id                          '_cell.reciprocal_length_c'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length.c'   
          '_cell_reciprocal_length_c'   
          '_cell.reciprocal_length_c' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Reciprocal of the _cell_length.c.
+     Reciprocal of the _cell.length_c.
 ;
-_name.category_id                       cell_reciprocal_length
-_name.object_id                         c
+_name.category_id                       cell
+_name.object_id                         reciprocal_length_c
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -8015,27 +7843,26 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_reciprocal_length.c = Norm ( _cell_reciprocal_vector.c )
+    _cell.reciprocal_length_c = Norm ( _cell.reciprocal_vector_c )
 ; 
 
 save_
 
 
-save__cell_reciprocal_length.c_su
+save__cell.reciprocal_length_c_su
 
-_definition.id                          '_cell_reciprocal_length.c_su'
+_definition.id                          '_cell.reciprocal_length_c_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length.c_su'          
          '_cell_reciprocal_length_c_su'          
          '_cell.reciprocal_length_c_esd' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Standard Uncertainty of the reciprocal of the _cell_length.c.
+     Standard Uncertainty of the reciprocal of the _cell.length_c.
 ;
-_name.category_id                       cell_reciprocal_length
-_name.object_id                         c_su
+_name.category_id                       cell
+_name.object_id                         reciprocal_length_c_su
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
@@ -8045,37 +7872,16 @@ _units.code                             reciprocal_angstroms
 
 save_
 
+save__cell.reciprocal_vector_a
 
-save_CELL_RECIPROCAL_VECTOR
-
-_definition.id                          CELL_RECIPROCAL_VECTOR
-_definition.scope                       Category
-_definition.class                       Set
+_definition.id                          '_cell.reciprocal_vector_a'
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     The CATEGORY of data items used to describe the unit cell vectors
-     in reciprocal space.
+     Reciprocal of the _cell.vector_a.
 ;
-_name.category_id                       CELL_RECIPROCAL
-_name.object_id                         CELL_RECIPROCAL_VECTOR
-
-save_
-
-
-save__cell_reciprocal_vector.a
-
-_definition.id                          '_cell_reciprocal_vector.a'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal_vector.a' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Reciprocal of the _cell_vector.a.
-;
-_name.category_id                       cell_reciprocal_vector
-_name.object_id                         a
+_name.category_id                       cell
+_name.object_id                         reciprocal_vector_a
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -8086,27 +7892,24 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With c  as  cell_vector
+     With c  as  cell
  
-    _cell_reciprocal_vector.a = c.b ^ c.c / _cell.volume
+    _cell.reciprocal_vector_a = c.vector_b ^ c.vector_c / _cell.volume
 ; 
 
 save_
 
 
-save__cell_reciprocal_vector.b
+save__cell.reciprocal_vector_b
 
-_definition.id                          '_cell_reciprocal_vector.b'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal_vector.b' 
+_definition.id                          '_cell.reciprocal_vector_b'
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Reciprocal of the _cell_vector.b.
+     Reciprocal of the _cell.vector_b.
 ;
-_name.category_id                       cell_reciprocal_vector
-_name.object_id                         b
+_name.category_id                       cell
+_name.object_id                         reciprocal_vector_b
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -8117,27 +7920,24 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With c  as  cell_vector
+     With c  as  cell
  
-    _cell_reciprocal_vector.b = c.c ^ c.a / _cell.volume
+    _cell.reciprocal_vector_b = c.vector_c ^ c.vector_a / _cell.volume
 ; 
 
 save_
 
 
-save__cell_reciprocal_vector.c
+save__cell.reciprocal_vector_c
 
-_definition.id                          '_cell_reciprocal_vector.c'
-loop_
-  _alias.definition_id
-         '_cell_reciprocal_vector.c' 
+_definition.id                          '_cell.reciprocal_vector_c'
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Reciprocal of the _cell_vector.c.
+     Reciprocal of the _cell.vector_c.
 ;
-_name.category_id                       cell_reciprocal_vector
-_name.object_id                         c
+_name.category_id                       cell
+_name.object_id                         reciprocal_vector_c
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -8148,44 +7948,23 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With c  as  cell_vector
+     With c  as  cell
  
-    _cell_reciprocal_vector.c = c.a ^ c.b / _cell.volume
+    _cell.reciprocal_vector_c = c.vector_a ^ c.vector_b / _cell.volume
 ; 
 
 save_
 
+save__cell.vector_a
 
-save_CELL_VECTOR
-
-_definition.id                          CELL_VECTOR
-_definition.scope                       Category
-_definition.class                       Set
-_definition.update                      2012-11-22
-_description.text                       
-;
-     The CATEGORY of data items used to describe the axial vectors of
-     the crystal unit cell.
-;
-_name.category_id                       CELL
-_name.object_id                         CELL_VECTOR
-
-save_
-
-
-save__cell_vector.a
-
-_definition.id                          '_cell_vector.a'
-loop_
-  _alias.definition_id
-         '_cell_vector.a' 
+_definition.id                          '_cell.vector_a'
 _definition.update                      2012-11-22
 _description.text                       
 ;
      The cell vector along the x axis.
 ;
-_name.category_id                       cell_vector
-_name.object_id                         a
+_name.category_id                       cell
+_name.object_id                         vector_a
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -8196,25 +7975,22 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_vector.a = _cell.orthogonal_matrix * Matrix([1,0,0])
+    _cell.vector_a = _cell.orthogonal_matrix * Matrix([1,0,0])
 ; 
 
 save_
 
 
-save__cell_vector.b
+save__cell.vector_b
 
-_definition.id                          '_cell_vector.b'
-loop_
-  _alias.definition_id
-         '_cell_vector.b' 
+_definition.id                          '_cell.vector_b'
 _definition.update                      2012-11-22
 _description.text                       
 ;
      The cell vector along the y axis.
 ;
-_name.category_id                       cell_vector
-_name.object_id                         b
+_name.category_id                       cell
+_name.object_id                         vector_b
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -8225,25 +8001,25 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_vector.b = _cell.orthogonal_matrix * Matrix([0,1,0])
+    _cell.vector_b = _cell.orthogonal_matrix * Matrix([0,1,0])
 ; 
 
 save_
 
 
-save__cell_vector.c
+save__cell.vector_c
 
-_definition.id                          '_cell_vector.c'
+_definition.id                          '_cell.vector_c'
 loop_
   _alias.definition_id
-         '_cell_vector.c' 
+         '_cell.vector_c' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
      The cell vector along the z axis.
 ;
-_name.category_id                       cell_vector
-_name.object_id                         c
+_name.category_id                       cell
+_name.object_id                         vector_c
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
@@ -8254,7 +8030,7 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _cell_vector.c = _cell.orthogonal_matrix * Matrix([0,0,1])
+    _cell.vector_c = _cell.orthogonal_matrix * Matrix([0,0,1])
 ; 
 
 save_
@@ -9877,8 +9653,8 @@ save_EXPTL_CRYSTAL
 
 _definition.id                          EXPTL_CRYSTAL
 _definition.scope                       Category
-_definition.class                       Loop
-_definition.update                      2016-09-07
+_definition.class                       Set
+_definition.update                      2016-09-13
 _description.text                       
 ;
      The CATEGORY of data items used to specify information about
@@ -9886,10 +9662,7 @@ _description.text
 ;
 _name.category_id                       EXPTL
 _name.object_id                         EXPTL_CRYSTAL
-_category.key_id                        '_exptl_crystal.id'
-loop_
-_category_key.name
-   '_exptl_crystal.id'
+
 save_
 
 save__exptl_crystal.colour
@@ -10270,14 +10043,11 @@ save_
 save_exptl_crystal.id
     _definition.id             '_exptl_crystal.id'
      loop_
-    _alias.definition_id       '_exptl_crystal.id'
-                               '_exptl_crystal_id'
+    _alias.definition_id       '_exptl_crystal_id'
     _definition.update           2016-09-07
     _description.text
 ;
-     Code identifying a crystal if multiple crystals are used. A default
-     value is provided, so that this dataname and child datanames may
-     be omitted if a single crystal only is used.
+     Code identifying a crystal.
 ;
     _name.category_id            exptl_crystal
     _name.object_id              id
@@ -10285,7 +10055,6 @@ save_exptl_crystal.id
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
-    _enumeration.default         '-'
      save_
  
 save__exptl_crystal.preparation
@@ -10633,32 +10402,9 @@ _name.category_id                       EXPTL_CRYSTAL
 _name.object_id                         EXPTL_CRYSTAL_FACE
 loop_
   _category_key.name
-         '_exptl_crystal_face.crystal_id'
          '_exptl_crystal_face.index_h'
          '_exptl_crystal_face.index_k'
          '_exptl_crystal_face.index_l'
-
-save_
-
-
-save__exptl_crystal_face.crystal_id
-
-_definition.id                          '_exptl_crystal_face.crystal_id'
-loop_
-  _alias.definition_id
-         '_exptl_crystal_face.crystal_id' 
-_definition.update                      2012-11-22
-_description.text                       
-;
-     Code identifying a crystal if multiple crystals are used.
-;
-_name.category_id                       exptl_crystal_face
-_name.object_id                         crystal_id
-_name.linked_item_id                    '_exptl_crystal.id'
-_type.purpose                           Link
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
 
 save_
 
@@ -10953,13 +10699,13 @@ loop_
          Validation          
 ;
     setting = _space_group.crystal_system
-    a   = _cell_length.a
-    b   = _cell_length.b
-    c   = _cell_length.c
+    a   = _cell.length_a
+    b   = _cell.length_b
+    c   = _cell.length_c
     d   = 0.01
-    alp = _cell_angle.alpha
-    bet = _cell_angle.beta
-    gam = _cell_angle.gamma
+    alp = _cell.angle_alpha
+    bet = _cell.angle_beta
+    gam = _cell.angle_gamma
     warn_len = 'Possible mismatch between cell lengths and cell setting'
     warn_ang = 'Possible mismatch between cell angles and cell setting'
  
@@ -18052,7 +17798,6 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_BODY
-_category.key_id                        '_publ_body.key'
 loop_
   _category_key.name
          '_publ_body.label' 
@@ -18147,32 +17892,6 @@ _enumeration.default                    cif
 save_
 
 
-save__publ_body.key
-
-_definition.id                          '_publ_body.key'
-loop_
-  _alias.definition_id
-         '_publ_body.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of PUBL_BODY items
-     in a looped list.
-;
-_name.category_id                       publ_body
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Code
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '                     _publ_body.key = _publ_body.label'
-
-save_
-
-
 save__publ_body.label
 
 _definition.id                          '_publ_body.label'
@@ -18234,7 +17953,6 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_CONTACT_AUTHOR
-_category.key_id                        '_publ_contact_author.key'
 loop_
   _category_key.name
          '_publ_contact_author.name' 
@@ -18354,32 +18072,6 @@ _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Text
-
-save_
-
-
-save__publ_contact_author.key
-
-_definition.id                          '_publ_contact_author.key'
-loop_
-  _alias.definition_id
-         '_publ_contact_author.key' 
-_definition.update                      2012-12-13
-_description.text                       
-;
-     Value is a unique key to a set of PUBL_CONTACT_AUTHOR items
-     in a looped list.
-;
-_name.category_id                       publ_contact_author
-_name.object_id                         key
-_type.purpose                           Key
-_type.source                            Related
-_type.container                         Single
-_type.contents                          Text
-loop_
-  _method.purpose
-  _method.expression
-         Evaluation          '           _publ_contact_author.key = _publ_contact_author.name'
 
 save_
 
@@ -20332,10 +20024,10 @@ loop_
          If (a.adp_type == 'uiso')  U  =  a.U_iso_or_equiv
          Else                       U  =  a.B_iso_or_equiv / (8 * Pi**2)
  
-             UIJ = U * _cell_reciprocal.convert_Uiso_to_Uij
+             UIJ = U * _cell.convert_Uiso_to_Uij
      }
  
-              CUB = _cell_reciprocal.convert_Uij_to_betaij
+              CUB = _cell.convert_Uij_to_betaij
  
         _atom_site.tensor_beta =  CUB * UIJ * CUB
 ; 
@@ -21341,11 +21033,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With l  as  cell_length
-     With a  as  cell_angle
-     With r  as  cell_reciprocal_angle
- 
-    _atom_sites_Cartn_transform.mat_11 =  l.a*Sind(a.beta)*Sind(r.gamma)
+     With c as cell
+
+    _atom_sites_Cartn_transform.mat_11 =  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma)
 ; 
 
 save_
@@ -21411,11 +21101,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With l  as  cell_length
-     With a  as  cell_angle
-     With r  as  cell_reciprocal_angle
+     with c as cell
  
-    _atom_sites_Cartn_transform.mat_21 =  -l.a*Sind(a.beta)*Cosd(r.gamma)
+    _atom_sites_Cartn_transform.mat_21 =  -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma)
 ; 
 
 save_
@@ -21437,9 +21125,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With a  as  cell_angle
+     With c  as  cell
  
-    _atom_sites_Cartn_transform.mat_22 =  _cell_length.b * Sind(a.alpha)
+    _atom_sites_Cartn_transform.mat_22 =  c.length_b * Sind(c.angle_alpha)
 ; 
 
 save_
@@ -21483,9 +21171,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With a  as  cell_angle
+     With c  as  cell
  
-    _atom_sites_Cartn_transform.mat_31 =  _cell_length.a * Cosd(a.beta)
+    _atom_sites_Cartn_transform.mat_31 =  c.length_a * Cosd(c.angle_beta)
 ; 
 
 save_
@@ -21507,9 +21195,9 @@ loop_
   _method.expression
          Evaluation          
 ;
-     With a  as  cell_angle
+     With c  as  cell
  
-    _atom_sites_Cartn_transform.mat_32 =  _cell_length.b * Cosd(a.alpha)
+    _atom_sites_Cartn_transform.mat_32 =  c.length_b * Cosd(c.angle_alpha)
 ; 
 
 save_
@@ -21531,7 +21219,7 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _atom_sites_Cartn_transform.mat_33 =  _cell_length.c
+    _atom_sites_Cartn_transform.mat_33 =  _cell.length_c
 ; 
 
 save_
@@ -24923,11 +24611,11 @@ loop_
 ;
      Merged in most symmetry dictionary definitions (James Hester)
 ;
-         3.0.06    2016-09-07
+         3.0.06    2016-09-13
 ;
-     Adjusted and removed keys for changes in dREL operation. In particular:
-     exptl_crystal is now a looped category with default key value. Linked keys
-     also included in their category's key list (e.g. diffrn_refln,refln).
+     Adjusted and removed keys for changes in dREL operation.
      _citation_id added to key list of citation_author (James Hester).
-     _diffrn.crystal_id removed as diffrn is Set category.
+     _diffrn.crystal_id removed as diffrn is Set category. Changed 
+     EXPTL_CRYSTAL to Set type in keeping with current use patterns.
+     Removed all child keys of exptl_crystal_id.
 ;
