@@ -4684,28 +4684,6 @@ save__reflns.limit_index_m_min_list
 save_
 
 
-save_SPACE_GROUP
-
-    _definition.id               SPACE_GROUP
-    _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2014-06-27
-    _description.text                   
-;
-
-      The SPACE_GROUP category introduced in the symmetry CIF
-      dictionary (cif_sym.dic) is intended to replace the original
-      core SYMMETRY category. For modulated structures, superspace-
-      group descriptions may be included in the same category, but
-      include the _ssg_ flag to indicate their dimensionality of > 3.
-;
-    _name.category_id            MS_GROUP
-    _name.object_id              SPACE_GROUP
-_category.key_list ['_space_group.id']
-
-save_
-
-
 save__space_group.ssg_IT_number
 
     _definition.id               '_space_group.ssg_IT_number'
