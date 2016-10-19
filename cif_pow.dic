@@ -22,7 +22,9 @@ data_CIF_POW
 ;
 
     The CIF_POW dictionary records the definitions of data items needed in
-    powder diffraction studies.
+    powder diffraction studies. Note that unlike most IUCr CIF
+    dictionaries, the dataname is not always constructed as
+    <category>.<object>
 
 ;
 
@@ -48,8 +50,8 @@ save_PD_BLOCK
 
     _definition.id               PD_BLOCK
     _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2014-06-20
+    _definition.class            Set
+    _definition.update           2016-10-18
     _description.text                   
 ;
 
@@ -80,14 +82,33 @@ save_PD_BLOCK
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_BLOCK
-    _category_key.name           '_pd_block.id'
 
 save_
 
-save__pd_block.diffractogram_id
+save_PD_BLOCK_DIFFRACTOGRAM
+    _definition.id               PD_BLOCK_DIFFRACTOGRAM
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-18
+    _description.text                   
+;
 
-    _definition.id               '_pd_block.diffractogram_id'
-    _definition.update           2014-06-20
+    A number of diffractograms may contribute to the
+    determination of the structure of a single phase.
+    The _pd_block.ids of those diffractograms should
+    be listed here.
+    
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_BLOCK_DIFFRACTOGRAM
+    _category_key.name           '_pd_block_diffractogram.id'
+    
+save_
+
+save__pd_block_diffractogram.id
+
+    _definition.id               '_pd_block_diffractogram.id'
+    _definition.update           2016-10-18
     loop_
       _alias.definition_id
           '_pd_block_diffractogram_id' 
@@ -103,8 +124,8 @@ save__pd_block.diffractogram_id
       a _pd_block.id code matching the code in
       _pd_block.diffractogram_id.
 ;
-    _name.category_id            pd_block
-    _name.object_id              diffractogram_id
+    _name.category_id            pd_block_diffractogram
+    _name.object_id              id
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
@@ -200,6 +221,52 @@ save__pd_block.id
             '1991-15-09T16:54|SEPD7234|B.Toby|SEPD.IPNS.ANL.GOV'
 save_
 
+save_PD_CALC_OVERALL
+
+    _definition.id               PD_CALC_OVERALL
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2016-10-18
+    _description.text                   
+;
+
+      Items in this category record overall features of the computed
+      diffractogram.
+
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_CALC_OVERALL
+
+save_
+
+save__pd_calc.method
+
+    _definition.id               '_pd_calc.method'
+    _definition.update           2016-10-18
+    loop_
+      _alias.definition_id
+          '_pd_calc_method' 
+    _description.text                   
+;
+
+      A description of the method used for the calculation of the
+      intensities in _pd_calc.intensity_*. If the pattern was
+      calculated from crystal structure data, the atom coordinates and
+      other crystallographic information should be included in the
+      datablock using the core CIF _atom_site_ and _cell_ data items.
+
+;
+
+    _name.category_id            pd_calc_overall
+    _name.object_id              method
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
 save_PD_CALC
 
     _definition.id               PD_CALC
@@ -214,7 +281,7 @@ save_PD_CALC
       program such as LAZY/PULVERIX or the computed intensities from a
       Rietveld refinement.
 ;
-    _name.category_id            PD_GROUP
+    _name.category_id            PD_DATA
     _name.object_id              PD_CALC
     _category_key.name           '_pd_calc.point_id'
 
@@ -294,33 +361,6 @@ save__pd_calc.intensity_total
 
 save_
 
-
-save__pd_calc.method
-
-    _definition.id               '_pd_calc.method'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calc_method' 
-    _description.text                   
-;
-
-      A description of the method used for the calculation of
-      the intensities in _pd_calc.intensity_*. If the pattern was
-      calculated from crystal structure data, the atom coordinates
-      and other crystallographic information should be included
-      using the core CIF _atom_site_ and _cell_ data items.
-;
-    _name.category_id            pd_calc
-    _name.object_id              method
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
 save__pd_calc.point_id
 
     _definition.id               '_pd_calc.point_id'
@@ -339,6 +379,7 @@ save__pd_calc.point_id
 ;
     _name.category_id            pd_calc
     _name.object_id              point_id
+    _name.linked_item_id         '_pd_data.point_id'
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
@@ -351,8 +392,8 @@ save_PD_CALIB
 
     _definition.id               PD_CALIB
     _definition.scope            Category
-    _definition.class            Set
-    _definition.update           2014-06-20
+    _definition.class            Loop
+    _definition.update           2016-10-17
     _description.text                   
 ;
 
@@ -362,192 +403,14 @@ save_PD_CALIB
       section of the CIF should generally be written when the
       intensities are first measured, but from then on should remain
       unchanged. Loops may be used for calibration information that
-      differs by detector channel. The _pd_calibration_ items,
-      however, are never looped.
+      differs by detector channel. 
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_CALIB
+    _category_key.name           '_pd_calib.detector_id'
 
 save_
 
-
-save__pd_calib.2theta_off_max
-
-    _definition.id               '_pd_calib.2theta_off_max'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calib_2theta_off_max' 
-    _description.text                   
-;
-
-      _pd_calib_2theta_offset defines an offset angle (in degrees)
-      used to calibrate 2\\q (as defined in _pd_meas_2theta_).
-      Calibration is done by adding the offset:
- 
-           2\\q~calibrated~ = 2\\q~measured~ + 2\\q~offset~
- 
-      For cases where the _pd_calib.2theta_offset value is
-      not a constant, but rather varies with 2\\q, a set
-      of offset values can be supplied in a loop. In this case,
-      the value where the offset has been determined can be
-      specified as _pd_calib.2theta_off_point. Alternatively, a
-      range where the offset is applicable can be specified using
-      _pd_calib.2theta_off_min and _pd_calib.2theta_off_max.
-;
-    _name.category_id            pd_calib
-    _name.object_id              2theta_off_max
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_calib.2theta_off_min
-
-    _definition.id               '_pd_calib.2theta_off_min'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calib_2theta_off_min' 
-    _description.text                   
-;
-
-      _pd_calib_2theta_offset defines an offset angle (in degrees)
-      used to calibrate 2\\q (as defined in _pd_meas_2theta_).
-      Calibration is done by adding the offset:
- 
-           2\\q~calibrated~ = 2\\q~measured~ + 2\\q~offset~
- 
-      For cases where the _pd_calib.2theta_offset value is
-      not a constant, but rather varies with 2\\q, a set
-      of offset values can be supplied in a loop. In this case,
-      the value where the offset has been determined can be
-      specified as _pd_calib.2theta_off_point. Alternatively, a
-      range where the offset is applicable can be specified using
-      _pd_calib.2theta_off_min and _pd_calib.2theta_off_max.
-;
-    _name.category_id            pd_calib
-    _name.object_id              2theta_off_min
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_calib.2theta_off_point
-
-    _definition.id               '_pd_calib.2theta_off_point'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calib_2theta_off_point' 
-    _description.text                   
-;
-
-      _pd_calib_2theta_offset defines an offset angle (in degrees)
-      used to calibrate 2\\q (as defined in _pd_meas_2theta_).
-      Calibration is done by adding the offset:
- 
-           2\\q~calibrated~ = 2\\q~measured~ + 2\\q~offset~
- 
-      For cases where the _pd_calib.2theta_offset value is
-      not a constant, but rather varies with 2\\q, a set
-      of offset values can be supplied in a loop. In this case,
-      the value where the offset has been determined can be
-      specified as _pd_calib.2theta_off_point. Alternatively, a
-      range where the offset is applicable can be specified using
-      _pd_calib.2theta_off_min and _pd_calib.2theta_off_max.
-;
-    _name.category_id            pd_calib
-    _name.object_id              2theta_off_point
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_calib.2theta_offset
-
-    _definition.id               '_pd_calib.2theta_offset'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calib_2theta_offset' 
-    _description.text                   
-;
-
-      _pd_calib_2theta_offset defines an offset angle (in degrees)
-      used to calibrate 2\\q (as defined in _pd_meas_2theta_).
-      Calibration is done by adding the offset:
- 
-           2\\q~calibrated~ = 2\\q~measured~ + 2\\q~offset~
- 
-      For cases where the _pd_calib.2theta_offset value is
-      not a constant, but rather varies with 2\\q, a set
-      of offset values can be supplied in a loop. In this case,
-      the value where the offset has been determined can be
-      specified as _pd_calib.2theta_off_point. Alternatively, a
-      range where the offset is applicable can be specified using
-      _pd_calib.2theta_off_min and _pd_calib.2theta_off_max.
-;
-    _name.category_id            pd_calib
-    _name.object_id              2theta_offset
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_calib.conversion_eqn
-
-    _definition.id               '_pd_calib.conversion_eqn'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calibration_conversion_eqn' 
-    _description.text                   
-;
-
-      The calibration function for converting a channel number
-      supplied in _pd_meas.detector_id for a position-sensitive
-      or energy-dispersive detector or the distance supplied in
-      _pd_meas_position to Q, energy, angle etc.
-      Use _pd_calib.std_external_* to define a pointer
-      to the file or data block containing the information used
-      to define this function.
-;
-    _name.category_id            pd_calib
-    _name.object_id              conversion_eqn
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-    loop_
-    _description_example.case
-            
-;
-     2\\q~actual~ = 2\\q~setting~ + arctan(
-      cos(P~1~) / {1/[P~0~ (CC - CH~0~ - P~2~ CC^2^)] - sin(P~1~)})
-; 
-
-save_
 
 
 save__pd_calib.detector_id
@@ -567,6 +430,7 @@ save__pd_calib.detector_id
 ;
     _name.category_id            pd_calib
     _name.object_id              detector_id
+    _name.linked_object_id       '_pd_meas.detector_id'
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
@@ -599,89 +463,6 @@ save__pd_calib.detector_response
     _enumeration.range           0.0:
 
 save_
-
-
-save__pd_calib.special_details
-
-    _definition.id               '_pd_calib.special_details'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calibration_special_details' 
-    _description.text                   
-;
-
-      Description of how the instrument was
-      calibrated, particularly for instruments where
-      calibration information is used to make hardware
-      settings that would otherwise be invisible once data
-      collection is completed. Do not use this item to specify
-      information that can be specified using other _pd_calib_
-      items.
-;
-    _name.category_id            pd_calib
-    _name.object_id              special_details
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_calib.std_external_block_id
-
-    _definition.id               '_pd_calib.std_external_block_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calib_std_external_block_id' 
-    _description.text                   
-;
-
-      Identifies the data set used as an external standard for
-      the diffraction angle or the intensity calibrations.
-      *_name specifies the name of the material and
-      *_id the _pd_block_id for the CIF containing calibration
-      measurements. If more than one data set is used for
-      calibration, these fields may be looped.
-;
-    _name.category_id            pd_calib
-    _name.object_id              std_external_block_id
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
-save__pd_calib.std_external_name
-
-    _definition.id               '_pd_calib.std_external_name'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_calib_std_external_name' 
-    _description.text                   
-;
-
-      Identifies the data set used as an external standard for
-      the diffraction angle or the intensity calibrations.
-      *_name specifies the name of the material and
-      *_id the _pd_block_id for the CIF containing calibration
-      measurements. If more than one data set is used for
-      calibration, these fields may be looped.
-;
-    _name.category_id            pd_calib
-    _name.object_id              std_external_name
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
 
 save__pd_calib.std_internal_mass_percent
 
@@ -734,6 +515,334 @@ save__pd_calib.std_internal_name
 
 save_
 
+save_PD_CALIB_OFFSET
+
+    _definition.id               PD_CALIB_OFFSET
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-19
+    _description.text                   
+;
+
+      Datanames in this category define an offset angle (in degrees)
+      used to calibrate 2\\q (as defined in _pd_meas_2theta_).
+      Calibration is done by adding the offset:
+ 
+           2\\q~calibrated~ = 2\\q~measured~ + 2\\q~offset~
+ 
+      For cases where the _pd_calib.2theta_offset value is
+      not a constant, but rather varies with 2\\q, a set
+      of offset values is supplied in a loop. In this case,
+      the value where the offset has been determined can be
+      specified as _pd_calib.2theta_off_point. Alternatively, a
+      range where the offset is applicable can be specified using
+      _pd_calib.2theta_off_min and _pd_calib.2theta_off_max.
+;
+
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_CALIB_OFFSET
+    loop_
+       _category_key.name
+       '_pd_calib_offset.id'
+save_
+
+save__pd_calib.2theta_off_max
+
+    _definition.id               '_pd_calib.2theta_off_max'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_calib_2theta_off_max' 
+    _description.text                   
+;
+
+     The maximum nominal 2\\q value to which the offset given by
+     _pd_calib.2theta_offset applies.
+;
+    _name.category_id            pd_calib_offset
+    _name.object_id              2theta_off_max
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+save__pd_calib.2theta_off_min
+
+    _definition.id               '_pd_calib.2theta_off_min'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_calib_2theta_off_min' 
+    _description.text                   
+;
+
+     The minimum nominal 2\\q value to which the offset given by
+     _pd_calib.2theta_offset applies.
+;
+    _name.category_id            pd_calib_offset
+    _name.object_id              2theta_off_min
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+save__pd_calib.2theta_off_point
+
+    _definition.id               '_pd_calib.2theta_off_point'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_calib_2theta_off_point' 
+    _description.text                   
+;
+
+     The nominal 2\\q value to which the offset given in
+     _pd_calib.2theta_offset applies.
+;
+    _name.category_id            pd_calib_offset
+    _name.object_id              2theta_off_point
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+save__pd_calib.2theta_offset
+
+    _definition.id               '_pd_calib.2theta_offset'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_calib_2theta_offset' 
+    _description.text                   
+;
+
+      _pd_calib_2theta_offset defines an offset angle (in degrees)
+      used to calibrate 2\\q (as defined in _pd_meas_2theta_).
+      Calibration is done by adding the offset:
+ 
+           2\\q~calibrated~ = 2\\q~measured~ + 2\\q~offset~
+ 
+;
+    _name.category_id            pd_calib_offset
+    _name.object_id              2theta_offset
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+save_pd_calib_offset.id
+
+    _definition.id               '_pd_calib_offset.id'
+    _definition.update           2016-10-19
+    _description.text                   
+;
+      An arbitrary code which identifies a particular 2\\q offset
+      description.  As a default value is defined, this may be
+      omitted if only a single offset is provided.
+;
+    _name.category_id            pd_calib_offset
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    _enumeration.default         '.'
+    
+save_
+
+save_PD_CALIB_STD
+
+    _definition.id               PD_CALIB_STD
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-18
+    _description.text                   
+;
+
+      This category identifies the external standards used for the calibration
+      of the instrument that are used directly or indirectly in the
+      interpretation of this data set. The information in this
+      section of the CIF should generally be written when the
+      intensities are first measured, but from then on should remain
+      unchanged. Loops may be used for calibration information that
+      differs by detector channel or when multiple standards are
+      used (for example, separately for angular and gain calibration).
+;
+
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_CALIB_STD
+    loop_
+       _category_key.name
+       '_pd_calib_std.detector_id'
+       '_pd_calib_std.external_block_id'
+
+save_
+
+save__pd_calib_std.detector_id
+
+    _definition.id               '_pd_calib_std.detector_id'
+    _definition.update           2016-10-18
+    _description.text                   
+;
+
+      A code which identifies the detector or channel number that the
+      calibration data applies to. Note that this code should match a
+      detector from _pd_meas.detector_id
+      
+;
+    _name.category_id            pd_calib_std
+    _name.object_id              detector_id
+    _name.linked_object_id       '_pd_meas.detector_id'
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_calib_std.external_block_id
+
+    _definition.id               '_pd_calib.std_external_block_id'
+    _definition.update           2016-10-18
+    loop_
+      _alias.definition_id
+          '_pd_calib_std_external_block_id' 
+    _description.text                   
+;
+
+      Identifies the pd_block.id used as an external standard for the
+      diffraction angle or the intensity calibrations.  If more than
+      one data set is used for calibration, these fields may be
+      looped.
+
+;
+
+    _name.category_id            pd_calib_std
+    _name.object_id              external_block_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_calib_std.external_name
+
+    _definition.id               '_pd_calib_std.external_name'
+    _definition.update           2016-10-18
+    loop_
+      _alias.definition_id
+          '_pd_calib_std_external_name' 
+    _description.text                   
+;
+
+      Identifies the name of the material used as an external standard for
+      the diffraction angle or the intensity calibrations.
+      If more than one data set is used for
+      calibration, these fields may be looped.
+;
+    _name.category_id            pd_calib_std
+    _name.object_id              external_name
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save_PD_CALIBRATION
+
+    _definition.id               PD_CALIBRATION
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2016-10-17
+    _description.text                   
+;
+
+     This section contains calibration information that is
+     not looped
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_CALIBRATION
+
+save_
+
+save__pd_calibration.conversion_eqn
+
+    _definition.id               '_pd_calibration.conversion_eqn'
+    _definition.update           2016-10-17
+    loop_
+      _alias.definition_id
+          '_pd_calibration_conversion_eqn' 
+    _description.text                   
+;
+
+      The calibration function for converting a channel number
+      supplied in _pd_meas.detector_id for a position-sensitive
+      or energy-dispersive detector or the distance supplied in
+      _pd_meas_position to Q, energy, angle etc.
+      Use _pd_calib_std.external_* to define a pointer
+      to the file or data block containing the data used to
+      determine the parameter values in this function.
+;
+    _name.category_id            pd_calibration
+    _name.object_id              conversion_eqn
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+    loop_
+    _description_example.case
+            
+;
+     2\\q~actual~ = 2\\q~setting~ + arctan(
+      cos(P~1~) / {1/[P~0~ (CC - CH~0~ - P~2~ CC^2^)] - sin(P~1~)})
+; 
+
+save_
+
+save__pd_calibration.special_details
+
+    _definition.id               '_pd_calibration.special_details'
+    _definition.update           2016-10-17
+    loop_
+      _alias.definition_id
+          '_pd_calibration_special_details' 
+    _description.text                   
+;
+
+      Description of how the instrument was
+      calibrated, particularly for instruments where
+      calibration information is used to make hardware
+      settings that would otherwise be invisible once data
+      collection is completed. Do not use this item to specify
+      information that can be specified using other _pd_calib_
+      items.
+;
+    _name.category_id            pd_calibration
+    _name.object_id              special_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
 
 save_PD_CHAR
 
@@ -931,80 +1040,20 @@ save_PD_DATA
     _description.text                   
 ;
 
-      The PD_DATA category contains raw, processed and calculated
-      data points in a diffraction data set. In many cases, it is
-      convenient to tabulate calculated values against the
-      raw and processed measurements, and so the various
-      _pd_meas_, _pd_proc_ and _pd_calc_ data items belonging
-      to this category may be looped together. In some instances,
-      however, it makes more sense to maintain separate tables of
-      the data contributing to the measured and processed
-      diffractograms (for example, a profile may be calculated
-      at 2theta values different from those of the measured
-      data points). To facilitate the identification of equivalent
-      points in these separate tables, separate identifiers are
-      defined.
+      The PD_DATA category is a "container" category
+      that is defined in order to allow raw, processed and calculated
+      data points in a diffraction data set to be optionally
+      tabulated together. As PD_CALC, PD_MEAS and PD_PROC are
+      all subcategories of this category, the various
+      items belonging to those categories may be looped
+      together or separately, as desired. 
 ;
+
     _name.category_id            PD_GROUP
     _name.object_id              PD_DATA
     _category_key.name           '_pd_data.point_id'
 
 save_
-
-
-save__pd_data.calc_point_id
-
-    _definition.id               '_pd_data.calc_point_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_data_calc_point_id' 
-    _description.text                   
-;
-
-      Arbitrary label identifying a calculated data point. Used to
-      identify a specific entry in a list of values forming the
-      calculated diffractogram. The role of this identifier may
-      be adopted by _pd_data.point_id if measured, processed and
-      calculated intensity values are combined in a single list.
-;
-    _name.category_id            pd_data
-    _name.object_id              calc_point_id
-    _name.linked_item_id         '_pd_calc.point_id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
-save__pd_data.meas_point_id
-
-    _definition.id               '_pd_data.meas_point_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_data_meas_point_id' 
-    _description.text                   
-;
-
-      Arbitrary label identifying a measured data point. Used to
-      identify a specific entry in a list of measured intensities.
-      The role of this identifier may be adopted by
-      _pd_data.point_id if measured, processed and calculated
-      intensity values are combined in a single list.
-;
-    _name.category_id            pd_data
-    _name.object_id              meas_point_id
-    _name.linked_item_id         '_pd_meas.point_id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
 
 save__pd_data.point_id
 
@@ -1017,7 +1066,11 @@ save__pd_data.point_id
 ;
 
       Arbitrary label identifying an entry in the table of
-      diffractogram intensity values.
+      diffractogram intensity values. This should be used in
+      preference to the pd_calc/pd_meas/pd_proc point_id datanames
+      whenever datanames from more than one of the pd_calc/
+      pd_proc/pd_meas categories are looped together.
+      
 ;
     _name.category_id            pd_data
     _name.object_id              point_id
@@ -1027,36 +1080,6 @@ save__pd_data.point_id
     _type.contents               Code
 
 save_
-
-
-save__pd_data.proc_point_id
-
-    _definition.id               '_pd_data.proc_point_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_data_proc_point_id' 
-    _description.text                   
-;
-
-      Arbitrary label identifying a processed data point. Used to
-      identify a specific entry in a list of processed intensities.
-      The role of this identifier may be adopted by
-      _pd_data.point_id if measured, processed and calculated
-      intensity values are combined in a single list, or by
-      _pd_data.meas_point_id if measured and processed lists are
-      combined.
-;
-    _name.category_id            pd_data
-    _name.object_id              proc_point_id
-    _name.linked_item_id         '_pd_proc.point_id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
 
 save_PD_INSTR
 
@@ -2908,43 +2931,28 @@ save__pd_instr.var_illum_len
 
 save_
 
+save_PD_MEAS_OVERALL
 
-save_PD_MEAS
-
-    _definition.id               PD_MEAS
+    _definition.id               PD_MEAS_OVERALL
     _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2016-10-17
+    _definition.class            Set
+    _definition.update           2016-10-18
     _description.text                   
 ;
 
-      This section contains the measured diffractogram and information
-      about the conditions used for the measurement of the diffraction
-      data set, prior to processing and application of correction
-      terms. While additional information may be added to the CIF
-      as data are processed and transported between laboratories
-      (possibly with the addition of a new _pd_block_id entry), the
-      information in this section of the CIF will rarely be changed
-      once data collection is complete.
- 
-      Where possible, measurements in this section should have no
-      post-collection processing applied (normalizations, corrections,
-      smoothing, zero-offset corrections etc.). Such corrected
-      measurements should be recorded in the _pd_proc_ section.
- 
-      Data sets that are measured as counts, where a standard
-      uncertainty can be considered equivalent to the standard
-      deviation and where the standard deviation can be estimated
-      as the square root of the number of counts recorded, should
-      use the _pd_meas_counts_ fields. All other intensity values
-      should be recorded using _pd_meas_intensity_.
+      This section contains information about the conditions used for
+      the measurement of the diffraction data set, prior to processing
+      and application of correction terms. While additional
+      information may be added to the CIF as data are processed and
+      transported between laboratories (possibly with the addition of
+      a new _pd_block_id entry), the information in this section of
+      the CIF will rarely be changed once data collection is complete.
+
 ;
     _name.category_id            PD_GROUP
-    _name.object_id              PD_MEAS
-    _category_key.name           '_pd_meas.point_id'
-
+    _name.object_id              PD_MEAS_OVERALL
+    
 save_
-
 
 save__pd_meas.2theta_fixed
 
@@ -2961,7 +2969,7 @@ save__pd_meas.2theta_fixed
       where 2\\q is scanned, see _pd_meas.2theta_scan or
       _pd_meas.2theta_range_*.
 ;
-    _name.category_id            pd_meas
+    _name.category_id            pd_meas_overall
     _name.object_id              2theta_fixed
     _type.purpose                Number
     _type.source                 Derived
@@ -2987,7 +2995,7 @@ save__pd_meas.2theta_range_inc
       _pd_meas.2theta_scan values for data sets measured with a
       constant step size.
 ;
-    _name.category_id            pd_meas
+    _name.category_id            pd_meas_overall
     _name.object_id              2theta_range_inc
     _type.purpose                Number
     _type.source                 Derived
@@ -3014,7 +3022,7 @@ save__pd_meas.2theta_range_max
       _pd_meas.2theta_scan values for data sets measured with a
       constant step size.
 ;
-    _name.category_id            pd_meas
+    _name.category_id            pd_meas_overall
     _name.object_id              2theta_range_max
     _type.purpose                Number
     _type.source                 Derived
@@ -3041,7 +3049,7 @@ save__pd_meas.2theta_range_min
       _pd_meas.2theta_scan values for data sets measured with a
       constant step size.
 ;
-    _name.category_id            pd_meas
+    _name.category_id            pd_meas_overall
     _name.object_id              2theta_range_min
     _type.purpose                Number
     _type.source                 Derived
@@ -3052,6 +3060,312 @@ save__pd_meas.2theta_range_min
 
 save_
 
+save__pd_meas.angle_chi
+
+    _definition.id               '_pd_meas.angle_chi'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_angle_chi' 
+    _description.text                   
+;
+
+      The diffractometer angle in degrees for an instrument with a
+      Euler circle. The definitions for these angles follow the
+      convention of International Tables for X-ray Crystallography
+      (1974), Vol. IV, p. 276.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              angle_chi
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:360.0
+
+save_
+
+
+save__pd_meas.angle_omega
+
+    _definition.id               '_pd_meas.angle_omega'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_angle_omega' 
+    _description.text                   
+;
+
+      The diffractometer angle in degrees for an instrument with a
+      Euler circle. The definitions for these angles follow the
+      convention of International Tables for X-ray Crystallography
+      (1974), Vol. IV, p. 276.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              angle_omega
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:360.0
+
+save_
+
+
+save__pd_meas.angle_phi
+
+    _definition.id               '_pd_meas.angle_phi'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_angle_phi' 
+    _description.text                   
+;
+
+      The diffractometer angle in degrees for an instrument with a
+      Euler circle. The definitions for these angles follow the
+      convention of International Tables for X-ray Crystallography
+      (1974), Vol. IV, p. 276.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              angle_phi
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:360.0
+
+save_
+
+save__pd_meas.datetime_initiated
+
+    _definition.id               '_pd_meas.datetime_initiated'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_datetime_initiated' 
+    _description.text                   
+;
+
+      The date and time of the data-set measurement. Entries follow
+      the standard CIF format 'yyyy-mm-ddThh:mm:ss+zz'. Use
+      of seconds and a time zone is optional, but use of hours
+      and minutes is strongly encouraged. Where possible, give the
+      time when the measurement was started rather than when
+      it was completed.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              datetime_initiated
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+    loop_
+    _description_example.case
+            "1990-07-13T14:40" 
+
+save_
+
+save__pd_meas.number_of_points
+
+    _definition.id               '_pd_meas.number_of_points'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_number_of_points' 
+    _description.text                   
+;
+
+     Total number of points in the measured diffractogram.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              number_of_points
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Count
+    _enumeration.range           1:
+
+save_
+
+
+
+save__pd_meas.rocking_angle
+
+    _definition.id               '_pd_meas.rocking_angle'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_rocking_angle' 
+    _description.text                   
+;
+
+      The angular range in degrees through which a sample
+      is rotated or oscillated during a measurement step
+      (see _pd_meas.rocking_axis).
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              rocking_angle
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0:360.0
+    _units.code                             degrees
+
+save_
+
+
+save__pd_meas.rocking_axis
+
+    _definition.id               '_pd_meas.rocking_axis'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_rocking_axis' 
+    _description.text                   
+;
+
+      The axis (or axes) used to rotate or rock the
+      specimen for better randomization of crystallites
+      (see _pd_meas.rocking_angle).
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              rocking_axis
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+              chi  
+              omega          
+              phi 
+
+save_
+
+
+save__pd_meas.scan_method
+
+    _definition.id               '_pd_meas.scan_method'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_scan_method' 
+    _description.text                   
+;
+
+      Code identifying the method for scanning reciprocal space.
+      The designation `fixed' should be used for measurements where
+      film, a stationary position-sensitive or area detector
+      or other non-moving detection mechanism is used to
+      measure diffraction intensities.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              scan_method
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+              step          'step scan'          
+              cont          'continuous scan'    
+              tof           'time of flight'     
+              disp          'energy dispersive'  
+              fixed         'stationary detector' 
+
+save_
+
+
+save__pd_meas.special_details
+
+    _definition.id               '_pd_meas.special_details'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_special_details' 
+    _description.text                   
+;
+
+      Special details of the diffraction measurement process.
+      Include information about source instability, degradation etc.
+      However, this item should not be used to record information
+      that can be specified in other pd_meas entries.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              special_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+save__pd_meas.units_of_intensity
+
+    _definition.id               '_pd_meas.units_of_intensity'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_units_of_intensity' 
+    _description.text                   
+;
+
+      Units for intensity measurements when _pd_meas.intensity_*
+      is used. Note that use of 'counts' or 'counts per second'
+      here is strongly discouraged: convert the intensity
+      measurements to counts and use _pd_meas.counts_* and
+      _pd_meas.step_count_time instead of _pd_meas.intensity_*.
+;
+    _name.category_id            pd_meas_overall
+    _name.object_id              units_of_intensity
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+    loop_
+    _description_example.case
+            "estimated from strip chart"         
+            "arbitrary, from film density"       
+            "counts, with automatic dead-time correction applied" 
+
+save_
+
+save_PD_MEAS
+
+    _definition.id               PD_MEAS
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-17
+    _description.text                   
+;
+
+      This section contains the measured diffractogram prior to
+      processing and application of correction terms. While additional
+      information may be added to the CIF as data are processed and
+      transported between laboratories (possibly with the addition of
+      a new _pd_block_id entry), the information in this section of
+      the CIF will rarely be changed once data collection is complete.
+ 
+      Where possible, measurements in this section should have no
+      post-collection processing applied (normalizations, corrections,
+      smoothing, zero-offset corrections etc.). Such corrected
+      measurements should be recorded in the _pd_proc_ section.
+ 
+      Data sets that are measured as counts, where a standard
+      uncertainty can be considered equivalent to the standard
+      deviation and where the standard deviation can be estimated
+      as the square root of the number of counts recorded, should
+      use the _pd_meas_counts_ fields. All other intensity values
+      should be recorded using _pd_meas_intensity_.
+;
+    _name.category_id            PD_DATA
+    _name.object_id              PD_MEAS
+    _category_key.name           '_pd_meas.point_id'
+
+save_
 
 save__pd_meas.2theta_scan
 
@@ -3090,111 +3404,6 @@ save__pd_meas.2theta_scan
     _units.code                             degrees
 
 save_
-
-
-save__pd_meas.angle_2theta
-
-    _definition.id               '_pd_meas.angle_2theta'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_angle_2theta' 
-    _description.text                   
-;
-
-      The diffractometer angle in degrees for an instrument with a
-      Euler circle. The definitions for these angles follow the
-      convention of International Tables for X-ray Crystallography
-      (1974), Vol. IV, p. 276.
-;
-    _name.category_id            pd_meas
-    _name.object_id              angle_2theta
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:360.0
-
-save_
-
-
-save__pd_meas.angle_chi
-
-    _definition.id               '_pd_meas.angle_chi'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_angle_chi' 
-    _description.text                   
-;
-
-      The diffractometer angle in degrees for an instrument with a
-      Euler circle. The definitions for these angles follow the
-      convention of International Tables for X-ray Crystallography
-      (1974), Vol. IV, p. 276.
-;
-    _name.category_id            pd_meas
-    _name.object_id              angle_chi
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:360.0
-
-save_
-
-
-save__pd_meas.angle_omega
-
-    _definition.id               '_pd_meas.angle_omega'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_angle_omega' 
-    _description.text                   
-;
-
-      The diffractometer angle in degrees for an instrument with a
-      Euler circle. The definitions for these angles follow the
-      convention of International Tables for X-ray Crystallography
-      (1974), Vol. IV, p. 276.
-;
-    _name.category_id            pd_meas
-    _name.object_id              angle_omega
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:360.0
-
-save_
-
-
-save__pd_meas.angle_phi
-
-    _definition.id               '_pd_meas.angle_phi'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_angle_phi' 
-    _description.text                   
-;
-
-      The diffractometer angle in degrees for an instrument with a
-      Euler circle. The definitions for these angles follow the
-      convention of International Tables for X-ray Crystallography
-      (1974), Vol. IV, p. 276.
-;
-    _name.category_id            pd_meas
-    _name.object_id              angle_phi
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:360.0
-
-save_
-
 
 save__pd_meas.counts_background
 
@@ -3247,7 +3456,7 @@ save__pd_meas.counts_container
 
       Counts measured at the measurement point as a function of
       angle, time, channel or some other variable (see
-      _pd_meas_2theta_ etc.). specimen container or mounting
+      _pd_meas_2theta_ etc.). from specimen container or mounting
       without a specimen, includes background.
       Corrections for background, detector dead time etc.
       should not have been made to these values. Instead use
@@ -3349,37 +3558,6 @@ save__pd_meas.counts_total
 
 save_
 
-
-save__pd_meas.datetime_initiated
-
-    _definition.id               '_pd_meas.datetime_initiated'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_datetime_initiated' 
-    _description.text                   
-;
-
-      The date and time of the data-set measurement. Entries follow
-      the standard CIF format 'yyyy-mm-ddThh:mm:ss+zz'. Use
-      of seconds and a time zone is optional, but use of hours
-      and minutes is strongly encouraged. Where possible, give the
-      time when the measurement was started rather than when
-      it was completed.
-;
-    _name.category_id            pd_meas
-    _name.object_id              datetime_initiated
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Text
-    loop_
-    _description_example.case
-            "1990-07-13T14:40" 
-
-save_
-
-
 save__pd_meas.detector_id
 
     _definition.id               '_pd_meas.detector_id'
@@ -3409,132 +3587,6 @@ save__pd_meas.detector_id
     _type.contents               Code
 
 save_
-
-
-save__pd_meas.info_author_address
-
-    _definition.id               '_pd_meas.info_author_address'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_info_author_address' 
-    _description.text                   
-;
-
-      The address of the person who measured the data set. If there
-      is more than one person, this will be looped with
-      _pd_meas_info_author_name.
-;
-    _name.category_id            pd_meas
-    _name.object_id              info_author_address
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_meas.info_author_email
-
-    _definition.id               '_pd_meas.info_author_email'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_info_author_email' 
-    _description.text                   
-;
-
-      The e-mail address of the person who measured the data set. If
-      there is more than one person, this will be looped with
-      _pd_meas_info_author_name.
-;
-    _name.category_id            pd_meas
-    _name.object_id              info_author_email
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_meas.info_author_fax
-
-    _definition.id               '_pd_meas.info_author_fax'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_info_author_fax' 
-    _description.text                   
-;
-
-      The fax number of the person who measured the data set. If
-      there is more than one person, this will be looped with
-      _pd_meas_info_author_name. The recommended style is
-      the international dialing prefix, followed by the area code in
-      parentheses, followed by the local number with no spaces.
-;
-    _name.category_id            pd_meas
-    _name.object_id              info_author_fax
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_meas.info_author_name
-
-    _definition.id               '_pd_meas.info_author_name'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_info_author_name' 
-    _description.text                   
-;
-
-      The name of the person who measured the data set. The family
-      name(s), followed by a comma and including any dynastic
-      components, precedes the first name(s) or initial(s).
-      For more than one person use a loop to specify multiple values.
-;
-    _name.category_id            pd_meas
-    _name.object_id              info_author_name
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_meas.info_author_phone
-
-    _definition.id               '_pd_meas.info_author_phone'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_info_author_phone' 
-    _description.text                   
-;
-
-      The telephone number of the person who measured the data set.
-      If there is more than one person, this will be looped with
-      _pd_meas_info_author_name. The recommended style is
-      the international dialing prefix, followed by the area code in
-      parentheses, followed by the local number with no spaces.
-;
-    _name.category_id            pd_meas
-    _name.object_id              info_author_phone
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
 
 save__pd_meas.intensity_background
 
@@ -3677,30 +3729,6 @@ save__pd_meas.intensity_total
 
 save_
 
-
-save__pd_meas.number_of_points
-
-    _definition.id               '_pd_meas.number_of_points'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_number_of_points' 
-    _description.text                   
-;
-
-     Total number of points in the measured diffractogram.
-;
-    _name.category_id            pd_meas
-    _name.object_id              number_of_points
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Count
-    _enumeration.range           1:
-
-save_
-
-
 save__pd_meas.point_id
 
     _definition.id               '_pd_meas.point_id'
@@ -3765,121 +3793,6 @@ save__pd_meas.position
 
 save_
 
-
-save__pd_meas.rocking_angle
-
-    _definition.id               '_pd_meas.rocking_angle'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_rocking_angle' 
-    _description.text                   
-;
-
-      The angular range in degrees through which a sample
-      is rotated or oscillated during a measurement step
-      (see _pd_meas.rocking_axis).
-;
-    _name.category_id            pd_meas
-    _name.object_id              rocking_angle
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0:360.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_meas.rocking_axis
-
-    _definition.id               '_pd_meas.rocking_axis'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_rocking_axis' 
-    _description.text                   
-;
-
-      The axis (or axes) used to rotate or rock the
-      specimen for better randomization of crystallites
-      (see _pd_meas.rocking_angle).
-;
-    _name.category_id            pd_meas
-    _name.object_id              rocking_axis
-    _type.purpose                State
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-    loop_
-    _enumeration_set.state
-              chi  
-              omega          
-              phi 
-
-save_
-
-
-save__pd_meas.scan_method
-
-    _definition.id               '_pd_meas.scan_method'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_scan_method' 
-    _description.text                   
-;
-
-      Code identifying the method for scanning reciprocal space.
-      The designation `fixed' should be used for measurements where
-      film, a stationary position-sensitive or area detector
-      or other non-moving detection mechanism is used to
-      measure diffraction intensities.
-;
-    _name.category_id            pd_meas
-    _name.object_id              scan_method
-    _type.purpose                State
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-    loop_
-    _enumeration_set.state
-    _enumeration_set.detail
-              step          'step scan'          
-              cont          'continuous scan'    
-              tof           'time of flight'     
-              disp          'energy dispersive'  
-              fixed         'stationary detector' 
-
-save_
-
-
-save__pd_meas.special_details
-
-    _definition.id               '_pd_meas.special_details'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_meas_special_details' 
-    _description.text                   
-;
-
-      Special details of the diffraction measurement process.
-      Include information about source instability, degradation etc.
-      However, this item should not be used to record information
-      that can be specified in other pd_meas entries.
-;
-    _name.category_id            pd_meas
-    _name.object_id              special_details
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
 save__pd_meas.step_count_time
 
     _definition.id               '_pd_meas.step_count_time'
@@ -3891,10 +3804,7 @@ save__pd_meas.step_count_time
 ;
 
       The count time in seconds for each intensity measurement.
-      If this value varies for different intensity measurements,
-      then this item will be placed in the loop with the
-      diffraction measurements. If a single fixed value is used,
-      it may be recorded outside the loop.
+
 ;
     _name.category_id            pd_meas
     _name.object_id              step_count_time
@@ -3906,7 +3816,6 @@ save__pd_meas.step_count_time
     _units.code                             seconds
 
 save_
-
 
 save__pd_meas.time_of_flight
 
@@ -3934,33 +3843,184 @@ save__pd_meas.time_of_flight
 save_
 
 
-save__pd_meas.units_of_intensity
+save_PD_MEAS_INFO_AUTHOR
 
-    _definition.id               '_pd_meas.units_of_intensity'
+    _definition.id               PD_MEAS_INFO_AUTHOR
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-18
+    _description.text                   
+;
+      This section contains information about the person(s)
+      who conducted the measurement.
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_MEAS_INFO_AUTHOR
+    _category_key.name           '_pd_meas_info_author.name'
+
+save_
+
+save__pd_meas_info_author.address
+
+    _definition.id               '_pd_meas_info_author.address'
     _definition.update           2014-06-20
     loop_
       _alias.definition_id
-          '_pd_meas_units_of_intensity' 
+          '_pd_meas_info_author_address' 
     _description.text                   
 ;
 
-      Units for intensity measurements when _pd_meas.intensity_*
-      is used. Note that use of 'counts' or 'counts per second'
-      here is strongly discouraged: convert the intensity
-      measurements to counts and use _pd_meas.counts_* and
-      _pd_meas.step_count_time instead of _pd_meas.intensity_*.
+      The address of the person who measured the data set. If there
+      is more than one person, this will be looped with
+      _pd_meas_info.author_name.
 ;
-    _name.category_id            pd_meas
-    _name.object_id              units_of_intensity
+    _name.category_id            pd_meas_info_author
+    _name.object_id              address
     _type.purpose                Describe
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Text
+
+save_
+
+
+save__pd_meas_info_author.email
+
+    _definition.id               '_pd_meas_info_author.email'
+    _definition.update           2014-06-20
     loop_
-    _description_example.case
-            "estimated from strip chart"         
-            "arbitrary, from film density"       
-            "counts, with automatic dead-time correction applied" 
+      _alias.definition_id
+          '_pd_meas_info_author_email' 
+    _description.text                   
+;
+
+      The e-mail address of the person who measured the data set. If
+      there is more than one person, this will be looped with
+      _pd_meas_info_author_name.
+;
+    _name.category_id            pd_meas_info_author
+    _name.object_id              email
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_meas_info_author.fax
+
+    _definition.id               '_pd_meas_info_author.fax'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_info_author_fax' 
+    _description.text                   
+;
+
+      The fax number of the person who measured the data set. If
+      there is more than one person, this will be looped with
+      _pd_meas_info_author_name. The recommended style is
+      the international dialing prefix, followed by the area code in
+      parentheses, followed by the local number with no spaces.
+;
+    _name.category_id            pd_meas_info_author
+    _name.object_id              fax
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_meas_info_author.name
+
+    _definition.id               '_pd_meas_info_author.name'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_info_author_name' 
+    _description.text                   
+;
+
+      The name of the person who measured the data set. The family
+      name(s), followed by a comma and including any dynastic
+      components, precedes the first name(s) or initial(s).
+      For more than one person use a loop to specify multiple values.
+;
+    _name.category_id            pd_meas_info_author
+    _name.object_id              name
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_meas_info_author.phone
+
+    _definition.id               '_pd_meas_info_author.phone'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_meas_info_author_phone' 
+    _description.text                   
+;
+
+      The telephone number of the person who measured the data set.
+      If there is more than one person, this will be looped with
+      _pd_meas_info_author.name. The recommended style is
+      the international dialing prefix, followed by the area code in
+      parentheses, followed by the local number with no spaces.
+;
+    _name.category_id            pd_meas_info_author
+    _name.object_id              phone
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+save_PD_PEAK_OVERALL
+
+    _definition.id               PD_PEAK_OVERALL
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2016-10-18
+    _description.text                   
+;
+
+      This category describes general aspects of the peak extraction
+      process. 
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_PEAK_OVERALL
+
+save_
+
+save__pd_peak.special_details
+
+    _definition.id               '_pd_peak.special_details'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_peak_special_details' 
+    _description.text                   
+;
+
+      Detailed description of any non-routine processing steps
+      used for peak determination or other comments
+      related to the peak table that cannot be given elsewhere.
+;
+    _name.category_id            pd_peak_overall
+    _name.object_id              special_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
 
 save_
 
@@ -4143,31 +4203,6 @@ save__pd_peak.pk_height
 
 save_
 
-
-save__pd_peak.special_details
-
-    _definition.id               '_pd_peak.special_details'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_peak_special_details' 
-    _description.text                   
-;
-
-      Detailed description of any non-routine processing steps
-      used for peak determination or other comments
-      related to the peak table that cannot be given elsewhere.
-;
-    _name.category_id            pd_peak
-    _name.object_id              special_details
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
 save__pd_peak.wavelength_id
 
     _definition.id               '_pd_peak.wavelength_id'
@@ -4254,7 +4289,7 @@ save_PD_PHASE
     _definition.id               PD_PHASE
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2016-10-17
+    _definition.update           2016-10-18
     _description.text                   
 ;
 
@@ -4271,7 +4306,7 @@ save_PD_PHASE
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_PHASE
-    _category_key.name           '_pd_phase.block_id'
+    _category_key.name           '_pd_phase.id'
 
 save_
 
@@ -4289,8 +4324,8 @@ save__pd_phase.block_id
       A block ID code identifying the phase contributing to
       the diffraction peak. The data block containing the
       crystallographic information for this phase will be
-      identified with a _pd_block_id code matching the
-      code in _pd_phase_block_id.
+      identified with a _pd_block.id code matching the
+      code in _pd_phase.block_id.
 ;
     _name.category_id            pd_phase
     _name.object_id              block_id
@@ -4494,6 +4529,234 @@ save__pd_prep.temperature
 
 save_
 
+save_PD_PROC_OVERALL
+
+    _definition.id               PD_PROC_OVERALL
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2016-10-18
+    _description.text                   
+;
+
+      This section contains overall information about the diffraction
+      data set after processing and application of correction
+      terms. If the data set is reprocessed, this section may be
+      replaced (with the addition of a new _pd_block.id entry).
+
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_PROC_OVERALL
+
+save_
+
+save__pd_proc.2theta_range_inc
+
+    _definition.id               '_pd_proc.2theta_range_inc'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_2theta_range_inc' 
+    _description.text                   
+;
+
+      The increment in 2\\q diffraction angles in degrees for the
+      measurement of intensities. These may be used in place of the
+      _pd_proc_2theta_corrected values, or in the case of white-beam
+      experiments it will define the fixed 2\\q value.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              2theta_range_min
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+
+save__pd_proc.2theta_range_max
+
+    _definition.id               '_pd_proc.2theta_range_max'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_2theta_range_max' 
+    _description.text                   
+;
+
+      The maximum 2\\q diffraction angle in degrees for the
+      measurement of intensities. This may be used in place of the
+      _pd_proc_2theta_corrected values, or in the case of white-beam
+      experiments it will define the fixed 2\\q value together with
+      _pd_proc.2theta_range_min.
+      
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              2theta_range_max
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+
+save__pd_proc.2theta_range_min
+
+    _definition.id               '_pd_proc.2theta_range_min'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_2theta_range_min' 
+    _description.text                   
+;
+
+      The minimum 2\\q diffraction angle in degrees for the
+      measurement of intensities. This may be used in place of the
+      _pd_proc_2theta_corrected values, or in the case of white-beam
+      experiments they will define the fixed 2\\q value together with
+      _pd_proc.2theta_range_max.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              2theta_range_min
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+    _units.code                             degrees
+
+save_
+
+save__pd_proc.info_data_reduction
+
+    _definition.id               '_pd_proc.info_data_reduction'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_data_reduction' 
+    _description.text                   
+;
+
+      Description of the processing steps applied in the data-reduction
+      process (background subtraction, \a-2 stripping, smoothing\
+      etc.). Include details of the program(s) used etc.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              info_data_reduction
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_proc.info_datetime
+
+    _definition.id               '_pd_proc.info_datetime'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_datetime' 
+    _description.text                   
+;
+
+      Date(s) and time(s) when the data set was processed.
+      May be looped if multiple processing steps were used.
+ 
+      Dates and times should be specified in the standard CIF
+      format 'yyyy-mm-ddThh:mm:ss+zz'. Use of seconds and a
+      time zone is optional, but use of hours and minutes is
+      strongly encouraged.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              info_datetime
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _description_example.case
+            "1990-07-13T14:40" 
+
+save_
+
+
+save__pd_proc.info_excluded_regions
+
+    _definition.id               '_pd_proc.info_excluded_regions'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_excluded_regions' 
+    _description.text                   
+;
+
+      Description of regions in the diffractogram excluded
+      from processing along with a justification of why the
+      data points were not used.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              info_excluded_regions
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+    loop_
+    _description_example.case
+            "20 to 21 degrees unreliable due to beam dump" 
+
+save_
+
+
+save__pd_proc.info_special_details
+
+    _definition.id               '_pd_proc.info_special_details'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_special_details' 
+    _description.text                   
+;
+
+      Detailed description of any non-routine processing steps
+      applied due to any irregularities in this particular data set.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              info_special_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+save__pd_proc.number_of_points
+
+    _definition.id               '_pd_proc.number_of_points'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_number_of_points' 
+    _description.text                   
+;
+
+      The total number of data points in the processed diffractogram.
+;
+    _name.category_id            pd_proc_overall
+    _name.object_id              number_of_points
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Count
+    _enumeration.range           1:
+
+save_
 
 save_PD_PROC
 
@@ -4507,9 +4770,9 @@ save_PD_PROC
       This section contains the diffraction data set after processing
       and application of correction terms. If the data set is
       reprocessed, this section may be replaced (with the addition of
-      a new _pd_block_id entry).
+      a new _pd_block.id entry).
 ;
-    _name.category_id            PD_GROUP
+    _name.category_id            PD_DATA
     _name.object_id              PD_PROC
     _category_key.name          '_pd_proc.point_id'
 
@@ -4546,88 +4809,6 @@ save__pd_proc.2theta_corrected
 
 save_
 
-
-save__pd_proc.2theta_range_inc
-
-    _definition.id               '_pd_proc.2theta_range_inc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_2theta_range_inc' 
-    _description.text                   
-;
-
-      The range of 2\\q diffraction angles in degrees for the
-      measurement of intensities. These may be used in place of the
-      _pd_proc_2theta_corrected values, or in the case of white-beam
-      experiments it will define the fixed 2\\q value.
-;
-    _name.category_id            pd_proc
-    _name.object_id              2theta_range_min
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_proc.2theta_range_max
-
-    _definition.id               '_pd_proc.2theta_range_max'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_2theta_range_max' 
-    _description.text                   
-;
-
-      The range of 2\\q diffraction angles in degrees for the
-      measurement of intensities. These may be used in place of the
-      _pd_proc_2theta_corrected values, or in the case of white-beam
-      experiments it will define the fixed 2\\q value.
-;
-    _name.category_id            pd_proc
-    _name.object_id              2theta_range_max
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
-save__pd_proc.2theta_range_min
-
-    _definition.id               '_pd_proc.2theta_range_min'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_2theta_range_min' 
-    _description.text                   
-;
-
-      The range of 2\\q diffraction angles in degrees for the
-      measurement of intensities. These may be used in place of the
-      _pd_proc_2theta_corrected values, or in the case of white-beam
-      experiments it will define the fixed 2\\q value.
-;
-    _name.category_id            pd_proc
-    _name.object_id              2theta_range_min
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-    _units.code                             degrees
-
-save_
-
-
 save__pd_proc.d_spacing
 
     _definition.id               '_pd_proc.d_spacing'
@@ -4651,7 +4832,6 @@ save__pd_proc.d_spacing
     _units.code                             angstroms
 
 save_
-
 
 save__pd_proc.energy_detection
 
@@ -4705,238 +4885,6 @@ save__pd_proc.energy_incident
 
 save_
 
-
-save__pd_proc.info_author_address
-
-    _definition.id               '_pd_proc.info_author_address'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_author_address' 
-    _description.text                   
-;
-
-       The address of the person who processed the data.
-       If there is more than one person, this will be looped with
-       _pd_proc_info_author_name.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_author_address
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_proc.info_author_email
-
-    _definition.id               '_pd_proc.info_author_email'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_author_email' 
-    _description.text                   
-;
-
-       The e-mail address of the person who processed the
-       data.  If there is more than one person, this will be looped
-       with _pd_proc_info_author_name.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_author_email
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_proc.info_author_fax
-
-    _definition.id               '_pd_proc.info_author_fax'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_author_fax' 
-    _description.text                   
-;
-
-       The fax number of the person who processed the data.
-       If there is more than one person, this will be looped with
-       _pd_proc_info_author_name. The recommended style is
-       the international dialing prefix, followed by the area code in
-       parentheses, followed by the local number with no spaces.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_author_fax
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_proc.info_author_name
-
-    _definition.id               '_pd_proc.info_author_name'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_author_name' 
-    _description.text                   
-;
-
-       The name of the person who processed the data, if different
-       from the person(s) who measured the data set. The family
-       name(s), followed by a comma and including any dynastic
-       components, precedes the first name(s) or initial(s). For
-       more than one person use a loop to specify multiple values.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_author_name
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_proc.info_author_phone
-
-    _definition.id               '_pd_proc.info_author_phone'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_author_phone' 
-    _description.text                   
-;
-
-       The telephone number of the person who processed the data.
-       If there is more than one person, this will be looped
-       with _pd_proc_info_author_name. The recommended style is
-       the international dialing prefix, followed by the area code in
-       parentheses, followed by the local number with no spaces.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_author_phone
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_proc.info_data_reduction
-
-    _definition.id               '_pd_proc.info_data_reduction'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_data_reduction' 
-    _description.text                   
-;
-
-      Description of the processing steps applied in the data-reduction
-      process (background subtraction, \a-2 stripping, smoothing\
-      etc.). Include details of the program(s) used etc.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_data_reduction
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save__pd_proc.info_datetime
-
-    _definition.id               '_pd_proc.info_datetime'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_datetime' 
-    _description.text                   
-;
-
-      Date(s) and time(s) when the data set was processed.
-      May be looped if multiple processing steps were used.
- 
-      Dates and times should be specified in the standard CIF
-      format 'yyyy-mm-ddThh:mm:ss+zz'. Use of seconds and a
-      time zone is optional, but use of hours and minutes is
-      strongly encouraged.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_datetime
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-    loop_
-    _description_example.case
-            "1990-07-13T14:40" 
-
-save_
-
-
-save__pd_proc.info_excluded_regions
-
-    _definition.id               '_pd_proc.info_excluded_regions'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_excluded_regions' 
-    _description.text                   
-;
-
-      Description of regions in the diffractogram excluded
-      from processing along with a justification of why the
-      data points were not used.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_excluded_regions
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-    loop_
-    _description_example.case
-            "20 to 21 degrees unreliable due to beam dump" 
-
-save_
-
-
-save__pd_proc.info_special_details
-
-    _definition.id               '_pd_proc.info_special_details'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_info_special_details' 
-    _description.text                   
-;
-
-      Detailed description of any non-routine processing steps
-      applied due to any irregularities in this particular data set.
-;
-    _name.category_id            pd_proc
-    _name.object_id              info_special_details
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
 save__pd_proc.intensity_bkg_calc
 
     _definition.id               '_pd_proc.intensity_bkg_calc'
@@ -4948,13 +4896,14 @@ save__pd_proc.intensity_bkg_calc
 ;
 
       Inclusion of s.u.'s for these values is strongly recommended.
+      
       _pd_proc_intensity_bkg_calc is intended to contain the
       background intensity for every data point where the
       background function has been fitted or estimated (for example, in
       all Rietveld and profile fits).
 ;
     _name.category_id            pd_proc
-    _name.object_id              pd_proc_intensity_bkg_calc
+    _name.object_id              intensity_bkg_calc
     _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
@@ -4975,6 +4924,7 @@ save__pd_proc.intensity_bkg_fix
 ;
 
       Inclusion of s.u.'s for these values is strongly recommended.
+
       If the background is estimated for a limited number of points
       and the calculated background is then extrapolated from
       these fixed points, indicate the background values for
@@ -4989,19 +4939,6 @@ save__pd_proc.intensity_bkg_fix
       background subtraction (or should be applied to the
       background values equally).
  
-      If the intensities have been corrected for a variation of the
-      incident intensity as a function of a data-collection
-      variable (examples: source fluctuations in synchrotrons,
-      \q-compensated slits in conventional diffractometers,\
-      spectral corrections for white-beam experiments), the
-      correction function should be specified as
-      _pd_proc_intensity_incident. The normalization should be
-      specified in _pd_proc_intensity_incident as a value to be
-      used to divide the measured intensities to obtained the
-      normalized diffractogram. Thus, the
-      _pd_proc_intensity_incident values should increase as the
-      incident flux is increased.
- 
       The other normalization factors applied to the data set (for
       example, Lp corrections, compensation for variation in
       counting time) may be specified in _pd_proc_intensity_norm.
@@ -5009,7 +4946,7 @@ save__pd_proc.intensity_bkg_fix
       measured intensities.
 ;
     _name.category_id            pd_proc
-    _name.object_id              pd_proc_intensity_bkg_fix
+    _name.object_id              intensity_bkg_fix
     _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
@@ -5033,7 +4970,7 @@ save__pd_proc.intensity_incident
       If the intensities have been corrected for a variation of the
       incident intensity as a function of a data-collection
       variable (examples: source fluctuations in synchrotrons,
-      \q-compensated slits in conventional diffractometers,\
+      \q-compensated slits in conventional diffractometers,
       spectral corrections for white-beam experiments), the
       correction function should be specified as
       _pd_proc_intensity_incident. The normalization should be
@@ -5044,7 +4981,7 @@ save__pd_proc.intensity_incident
       incident flux is increased.
 ;
     _name.category_id            pd_proc
-    _name.object_id              pd_proc_intensity_incident
+    _name.object_id              intensity_incident
     _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
@@ -5072,7 +5009,7 @@ save__pd_proc.intensity_net
       uncorrected).
 ;
     _name.category_id            pd_proc
-    _name.object_id              pd_proc_intensity_net
+    _name.object_id              intensity_net
     _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
@@ -5093,33 +5030,26 @@ save__pd_proc.intensity_norm
 ;
 
       Inclusion of s.u.'s for these values is strongly recommended.
+
       Background values should be on the same scale as the
-      _pd_proc_intensity_net values. Thus normalization and
-      correction factors should be applied before
-      background subtraction (or should be applied to the
-      background values equally).
+      _pd_proc_intensity_net values. Thus normalization and correction
+      factors should be applied before background subtraction (or
+      should be applied to the background values equally).
  
-      If the intensities have been corrected for a variation of the
-      incident intensity as a function of a data-collection
-      variable (examples: source fluctuations in synchrotrons,
-      \q-compensated slits in conventional diffractometers,\
-      spectral corrections for white-beam experiments), the
-      correction function should be specified as
-      _pd_proc_intensity_incident. The normalization should be
-      specified in _pd_proc_intensity_incident as a value to be
-      used to divide the measured intensities to obtained the
-      normalized diffractogram. Thus, the
-      _pd_proc_intensity_incident values should increase as the
-      incident flux is increased.
- 
-      The other normalization factors applied to the data set (for
+      Normalization factors applied to the data set (for
       example, Lp corrections, compensation for variation in
       counting time) may be specified in _pd_proc_intensity_norm.
       The function should be specified as the one used to divide the
       measured intensities.
+
+      Note that if the intensities have been corrected for a variation
+      of the incident intensity as a function of a data-collection
+      variable, the correction function should be specified separately
+      as _pd_proc_intensity_incident.
+
 ;
     _name.category_id            pd_proc
-    _name.object_id              pd_proc_intensity_norm
+    _name.object_id              intensity_norm
     _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
@@ -5147,7 +5077,7 @@ save__pd_proc.intensity_total
       Inclusion of s.u.'s for these values is strongly recommended.
 ;
     _name.category_id            pd_proc
-    _name.object_id              pd_proc_intensity_total
+    _name.object_id              intensity_total
     _type.purpose                Measurand
     _type.source                 Derived
     _type.container              Single
@@ -5155,30 +5085,6 @@ save__pd_proc.intensity_total
     _enumeration.range           0.0:
 
 save_
-
-
-save__pd_proc.number_of_points
-
-    _definition.id               '_pd_proc.number_of_points'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_proc_number_of_points' 
-    _description.text                   
-;
-
-      The total number of data points in the processed diffractogram.
-;
-    _name.category_id            pd_proc
-    _name.object_id              number_of_points
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Count
-    _enumeration.range           1:
-
-save_
-
 
 save__pd_proc.point_id
 
@@ -5263,6 +5169,147 @@ save__pd_proc.wavelength
 save_
 
 
+save_PD_PROC_INFO_AUTHOR
+
+    _definition.id               PD_PROC_INFO_AUTHOR
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-18
+    _description.text                   
+;
+      This section contains information about the person(s)
+      who processed the data.
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_PROC_INFO_AUTHOR
+    _category_key.name           '_pd_proc_info_author.name'
+
+save_
+
+save__pd_proc_info_author.address
+
+    _definition.id               '_pd_proc_info_author.address'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_author_address' 
+    _description.text                   
+;
+
+       The address of the person who processed the data.
+       If there is more than one person, this will be looped with
+       _pd_proc_info_author_name.
+;
+    _name.category_id            pd_proc_info_author
+    _name.object_id              address
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_proc_info_author.email
+
+    _definition.id               '_pd_proc_info_author.email'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_author_email' 
+    _description.text                   
+;
+
+       The e-mail address of the person who processed the
+       data.  If there is more than one person, this will be looped
+       with _pd_proc_info_author_name.
+;
+    _name.category_id            pd_proc_info_author
+    _name.object_id              email
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_proc_info_author.fax
+
+    _definition.id               '_pd_proc_info_author.fax'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_author_fax' 
+    _description.text                   
+;
+
+       The fax number of the person who processed the data.
+       If there is more than one person, this will be looped with
+       _pd_proc_info_author_name. The recommended style is
+       the international dialing prefix, followed by the area code in
+       parentheses, followed by the local number with no spaces.
+;
+    _name.category_id            pd_proc_info_author
+    _name.object_id              fax
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+
+save__pd_proc_info_author.name
+
+    _definition.id               '_pd_proc_info_author.name'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_author_name' 
+    _description.text                   
+;
+
+       The name of the person who processed the data, if different
+       from the person(s) who measured the data set. The family
+       name(s), followed by a comma and including any dynastic
+       components, precedes the first name(s) or initial(s). For
+       more than one person use a loop to specify multiple values.
+;
+    _name.category_id            pd_proc_info_author
+    _name.object_id              name
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
+save__pd_proc_info_author.phone
+
+    _definition.id               '_pd_proc_info_author.phone'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_proc_info_author_phone' 
+    _description.text                   
+;
+
+       The telephone number of the person who processed the data.
+       If there is more than one person, this will be looped
+       with _pd_proc_info_author_name. The recommended style is
+       the international dialing prefix, followed by the area code in
+       parentheses, followed by the local number with no spaces.
+;
+    _name.category_id            pd_proc_info_author
+    _name.object_id              phone
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+
+save_
+
 save_PD_PROC_LS
 
     _definition.id               PD_PROC_LS
@@ -5288,7 +5335,6 @@ save_PD_PROC_LS
     _name.object_id              PD_PROC_LS
 
 save_
-
 
 save__pd_proc_ls.background_function
 
@@ -5670,7 +5716,6 @@ save_PD_REFLN
     loop_
     _category_key.name          '_pd_refln.peak_id'
                                 '_pd_refln.phase_id'  
-                                '_pd_refln.wavelength_id'
 
 save_
 
