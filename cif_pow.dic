@@ -251,9 +251,11 @@ save__pd_calc.method
 
       A description of the method used for the calculation of the
       intensities in _pd_calc.intensity_*. If the pattern was
-      calculated from crystal structure data, the atom coordinates and
-      other crystallographic information should be included in the
-      datablock using the core CIF _atom_site_ and _cell_ data items.
+      calculated from crystal structure data for a single phase, the
+      atom coordinates and other crystallographic information should
+      be included in the datablock using the core CIF _atom_site_ and
+      _cell_ data items.  If multiple phases were used, these should
+      be listed in the pd_phase category.
 
 ;
 
@@ -718,7 +720,7 @@ save_
 
 save__pd_calib_std.external_block_id
 
-    _definition.id               '_pd_calib.std_external_block_id'
+    _definition.id               '_pd_calib_std.external_block_id'
     _definition.update           2016-10-18
     loop_
       _alias.definition_id
@@ -726,10 +728,8 @@ save__pd_calib_std.external_block_id
     _description.text                   
 ;
 
-      Identifies the pd_block.id used as an external standard for the
-      diffraction angle or the intensity calibrations.  If more than
-      one data set is used for calibration, these fields may be
-      looped.
+      Identifies the _pd_block.id used as an external standard for the
+      diffraction angle or the intensity calibrations.
 
 ;
 
@@ -754,8 +754,7 @@ save__pd_calib_std.external_name
 
       Identifies the name of the material used as an external standard for
       the diffraction angle or the intensity calibrations.
-      If more than one data set is used for
-      calibration, these fields may be looped.
+
 ;
     _name.category_id            pd_calib_std
     _name.object_id              external_name
@@ -874,8 +873,7 @@ save__pd_char.atten_coef_mu_calc
 
       The calculated \\m will be obtained from the atomic content of
       the cell, the average density (allowing for specimen packing)
-      and the radiation wavelength. The observed \\m will be
-      determined by a transmission measurement.
+      and the radiation wavelength.
       Note that _pd_char.atten_coef_mu_calc will differ from
       _exptl_absorpt.coefficient_mu if the packing density is
       not unity.
@@ -892,34 +890,29 @@ _units.code                             reciprocal_millimetres
 save_
 
 
-save__pd_char.atten_coef_mu_gt
+save__pd_char.atten_coef_mu_obs
 
-    _definition.id               '_pd_char.atten_coef_mu_gt'
+    _definition.id               '_pd_char.atten_coef_mu_obs'
     _definition.update           2014-06-20
     loop_
       _alias.definition_id
-          '_pd_char_atten_coef_mu_gt'  
           '_pd_char_atten_coef_mu_obs' 
     _description.text                   
 ;
 
-      The observed and calculated linear attenuation coefficient,
+      The observed linear attenuation coefficient,
       \\m, in units of inverse millimetres. Note that this quantity
       is sometimes referred to as the mass absorption coefficient;
       however, this term accounts for other potentially significant
       losses of incident radiation, for example incoherent
       scattering of neutrons.
  
-      The calculated \\m will be obtained from the atomic content of
-      the cell, the average density (allowing for specimen packing)
-      and the radiation wavelength. The observed \\m will be
-      determined by a transmission measurement.
-      Note that _pd_char.atten_coef_mu_calc will differ from
-      _exptl_absorpt.coefficient_mu if the packing density is
-      not unity.
+      The observed \\m will be determined by a transmission
+      measurement.
+
 ;
     _name.category_id            pd_char
-    _name.object_id              atten_coef_mu_gt
+    _name.object_id              atten_coef_mu_obs
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
@@ -1103,7 +1096,7 @@ save_PD_INSTR
         _diffrn_radiation_polarisn_ratio for the source polarization,
         _diffrn_radiation_probe for the radiation type.
       For data sets measured with partially monochromatized radiation,
-      for example, where both K\\a~1~ and K\\a~2~ are present, it is\
+      for example, where both K\\a~1~ and K\\a~2~ are present, it is
       important that all wavelengths present are included in a
       loop_ using _diffrn_radiation_wavelength to define the
       wavelength and _diffrn_radiation_wavelength_wt to define the
@@ -1111,7 +1104,7 @@ save_PD_INSTR
       _diffrn_radiation_wavelength_id also be present in the
       wavelength loop. It may also be useful to
       create a "dummy" ID to use for labelling
-      peaks/reflections where the K\\a~1~ and K\\a~2~ wavelengths are\
+      peaks/reflections where the K\\a~1~ and K\\a~2~ wavelengths are
       not resolved. Set _diffrn_radiation_wavelength_wt to be 0 for
       such a dummy ID.
  
@@ -1120,11 +1113,6 @@ save_PD_INSTR
       analyser refers to post-diffraction (post-specimen)
       monochromator.  The analyser may be fixed for specific
       wavelength or may be capable of being scanned.
- 
-      For multiple-detector instruments it may be necessary to loop the
-      *_anal/detc or *_spec/detc values (for  _pd_instr_dist_,
-      _pd_instr_divg_, _pd_instr_slit_ and  _pd_instr_soller_) with
-      the detector ID's (_pd_calib_detector_id).
  
       It is strongly recommended that the core dictionary term
       _diffrn_radiation_probe (specifying the nature of the radiation
@@ -1135,46 +1123,19 @@ save_PD_INSTR
 
 save_
 
-
-save__pd_instr.2theta_monochr_post
-
-    _definition.id               '_pd_instr.2theta_monochr_post'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_2theta_monochr_post' 
-    _description.text                   
-;
-
-      The 2\\q angle for a pre-specimen or post-specimen
-      monochromator (see _pd_instr.monochr_pre_spec and
-      _pd_instr.monochr_post_spec).
-;
-    _name.category_id            pd_instr
-    _name.object_id              2theta_monochr_post
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           -180.0:180.0
-_units.code                             degrees
-
-save_
-
-
 save__pd_instr.2theta_monochr_pre
 
     _definition.id               '_pd_instr.2theta_monochr_pre'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_2theta_monochr_pre' 
     _description.text                   
 ;
 
-      The 2\\q angle for a pre-specimen or post-specimen
-      monochromator (see _pd_instr.monochr_pre_spec and
-      _pd_instr.monochr_post_spec).
+      The 2\\q angle for a pre-specimen monochromator (see also
+      _pd_instr.monochr_pre_spec).
+
 ;
     _name.category_id            pd_instr
     _name.object_id              2theta_monochr_pre
@@ -1198,7 +1159,7 @@ save__pd_instr.beam_size_ax
     _description.text                   
 ;
 
-      Axial and equatorial dimensions of the radiation beam
+      Axial dimension of the radiation beam
       at the specimen position (in millimetres).
       The perpendicular to the plane containing the incident
       and scattered beam is the axial (*_ax) direction.
@@ -1214,7 +1175,6 @@ save__pd_instr.beam_size_ax
 
 save_
 
-
 save__pd_instr.beam_size_eq
 
     _definition.id               '_pd_instr.beam_size_eq'
@@ -1225,10 +1185,10 @@ save__pd_instr.beam_size_eq
     _description.text                   
 ;
 
-      Axial and equatorial dimensions of the radiation beam
+      Equatorial dimensions of the radiation beam
       at the specimen position (in millimetres).
-      The perpendicular to the plane containing the incident
-      and scattered beam is the axial (*_ax) direction.
+      The equatorial dimension is in the plane of scattering.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              size_eq
@@ -1241,7 +1201,6 @@ save__pd_instr.beam_size_eq
 
 save_
 
-
 save__pd_instr.cons_illum_flag
 
     _definition.id               '_pd_instr.cons_illum_flag'
@@ -1253,7 +1212,7 @@ save__pd_instr.cons_illum_flag
 ;
 
       Use 'yes' for instruments where the divergence slit is
-      \q-compensated to yield a constant illumination length\
+      \q-compensated to yield a constant illumination length
       (also see _pd_instr.cons_illum_len).
  
       For other flat-plate instruments, where the illumination
@@ -1285,17 +1244,11 @@ save__pd_instr.cons_illum_len
     _description.text                   
 ;
 
-      Length of the specimen that is illuminated by the radiation
-      source (in millimetres).
- 
-      Use _pd_instr_cons_illum_len for instruments where
-      the illumination length does not vary with 2\\q, by\
-      adjustment of the divergence slits (sometimes known
-      as \q-compensated slits).\
-      Use _pd_instr_var_illum_len for instruments where
-      the illuminated length of the specimen has been
-      characterized as a function of 2\\q, most commonly true\
-      with a fixed divergence slit.
+      Use _pd_instr_cons_illum_len for instruments where the length of
+      sample illuminated does not vary with 2\\q, usually achieved by
+      adjustment of the divergence slits (sometimes known as
+      \q-compensated slits).
+
 ;
     _name.category_id            pd_instr
     _name.object_id              cons_illum_len
@@ -1309,33 +1262,6 @@ save__pd_instr.cons_illum_len
 save_
 
 
-save__pd_instr.dist_anal_detc
-
-    _definition.id               '_pd_instr.dist_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_dist_anal/detc' 
-    _description.text                   
-;
-
-      Specifies distances in millimetres for the instrument geometry:
-      The distance from the specimen to the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              dist_anal_detc
-    _type.purpose                Number
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
 
 
 save__pd_instr.dist_mono_spec
@@ -1348,12 +1274,10 @@ save__pd_instr.dist_mono_spec
     _description.text                   
 ;
 
-      Specifies distances in millimetres for the instrument geometry:
-      The distance from the monochromator to the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Specifies distances in millimetres from the monochromator to the specimen.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              dist_mono_spec
@@ -1366,81 +1290,20 @@ save__pd_instr.dist_mono_spec
 
 save_
 
-
-save__pd_instr.dist_spec_anal
-
-    _definition.id               '_pd_instr.dist_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_dist_spec/anal' 
-    _description.text                   
-;
-
-      Specifies distances in millimetres for the instrument geometry:
-      The distance from the specimen to the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              dist_spec_anal
-    _type.purpose                Number
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
-save__pd_instr.dist_spec_detc
-
-    _definition.id               '_pd_instr.dist_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_dist_spec/detc' 
-    _description.text                   
-;
-
-      Specifies distances in millimetres for the instrument geometry:
-      The distance from the specimen to the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              dist_spec_detc
-    _type.purpose                Number
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
 save__pd_instr.dist_src_mono
 
     _definition.id               '_pd_instr.dist_src_mono'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_dist_src/mono' 
     _description.text                   
 ;
 
-      Specifies distances in millimetres for the instrument geometry:
-      The distance from the radiation source to the monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Specifies distance in millimetres from the radiation source to
+      the monochromator.  Note that *_src_spec is used in place of
+      *_src_mono and *_mono_spec if there is no monochromator in use.
+
 ;
     _name.category_id            pd_instr
     _name.object_id              dist_src_mono
@@ -1453,23 +1316,20 @@ save__pd_instr.dist_src_mono
 
 save_
 
-
 save__pd_instr.dist_src_spec
 
     _definition.id               '_pd_instr.dist_src_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_dist_src/spec' 
     _description.text                   
 ;
 
-      Specifies distances in millimetres for the instrument geometry:
-      The distance from the radiation source to the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Specifies distances in millimetres from the radiation source to
+      the specimen.  Note that *_src_spec is used in place of
+      *_src_mono and *_mono_spec if there is no monochromator in use
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              dist_src_spec
@@ -1482,45 +1342,10 @@ save__pd_instr.dist_src_spec
 
 save_
 
-
-save__pd_instr.divg_ax_anal_detc
-
-    _definition.id               '_pd_instr.divg_ax_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_divg_ax_anal/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_ax_):
-      Collimation between the analyser and the detector;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              divg_ax_anal_detc
-    _type.purpose                Number
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
 save__pd_instr.divg_ax_mono_spec
 
     _definition.id               '_pd_instr.divg_ax_mono_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_divg_ax_mono/spec' 
@@ -1529,15 +1354,13 @@ save__pd_instr.divg_ax_mono_spec
 
       Describes collimation in the axial direction
       (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
+      and diffracted beams) between the monochromator and the specimen.
       Values are the maximum divergence angles in
       degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_ax_):
-      Collimation between the monochromator and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      other than Soller slits (see _pd_instr.soller_ax_):
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              divg_ax_mono_spec
@@ -1550,96 +1373,24 @@ save__pd_instr.divg_ax_mono_spec
 
 save_
 
-
-save__pd_instr.divg_ax_spec_anal
-
-    _definition.id               '_pd_instr.divg_ax_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_divg_ax_spec/anal' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_ax_):
-      Collimation between the specimen and the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              divg_ax_spec_anal
-    _type.purpose                Number
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
-save__pd_instr.divg_ax_spec_detc
-
-    _definition.id               '_pd_instr.divg_ax_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_divg_ax_spec_detc' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_ax_):
-      Collimation between the specimen and the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              divg_ax_spec_detc
-    _type.purpose                Number
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
 save__pd_instr.divg_ax_src_mono
 
     _definition.id               '_pd_instr.divg_ax_src_mono'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_divg_ax_src/mono' 
     _description.text                   
 ;
 
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr.soller_ax_):
-      collimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) between
+      the radiation source and monochromator.  Values are the maximum
+      divergence angles in degrees, as limited by slits or beamline
+      optics other than Soller slits (see _pd_instr.soller_ax_).  Note
+      that *_src_spec is used in place of *_src_mono and *_mono_spec
+      if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              divg_ax_src_mono
@@ -1656,7 +1407,7 @@ save_
 save__pd_instr.divg_ax_src_spec
 
     _definition.id               '_pd_instr.divg_ax_src_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_divg_ax_src/spec' 
@@ -1665,15 +1416,13 @@ save__pd_instr.divg_ax_src_spec
 
       Describes collimation in the axial direction
       (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
+      and diffracted beams)  between the radiation source and specimen.
       Values are the maximum divergence angles in
       degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr.soller_ax_):
-      Collimation between the radiation source and specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      other than Soller slits (see _pd_instr.soller_ax_).
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              divg_ax_src_spec
@@ -1686,44 +1435,10 @@ save__pd_instr.divg_ax_src_spec
 
 save_
 
-
-save__pd_instr.divg_eq_anal_detc
-
-    _definition.id               '_pd_instr.divg_eq_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_divg_eq_anal/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_eq_):
-      Collimation between the analyser and the detector;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              divg_eq_anal_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
 save__pd_instr.divg_eq_mono_spec
 
     _definition.id               '_pd_instr.divg_eq_mono_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_divg_eq_mono/spec' 
@@ -1731,15 +1446,13 @@ save__pd_instr.divg_eq_mono_spec
 ;
 
       Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
+      containing the incident and diffracted beams) between the monochromator and the specimen
+      Values are the maximum divergence angles in
       degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_eq_):
-      Collimation between the monochromator and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      other than Soller slits (see _pd_instr.soller_eq_):
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
+
 ;
     _name.category_id            pd_instr
     _name.object_id              divg_eq_mono_spec
@@ -1752,77 +1465,10 @@ save__pd_instr.divg_eq_mono_spec
 
 save_
 
-
-save__pd_instr.divg_eq_spec_anal
-
-    _definition.id               '_pd_instr.divg_eq_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_divg_eq_spec/anal' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_eq_):
-      Collimation between the specimen and the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              divg_eq_spec_anal
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
-save__pd_instr.divg_eq_spec_detc
-
-    _definition.id               '_pd_instr.divg_eq_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_divg_eq_spec/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_eq_):
-      Collimation between the specimen and the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              divg_eq_spec_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
 save__pd_instr.divg_eq_src_mono
 
     _definition.id               '_pd_instr.divg_eq_src_mono'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_divg_eq_src/mono' 
@@ -1830,15 +1476,13 @@ save__pd_instr.divg_eq_src_mono
 ;
 
       Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
+      containing the incident and diffracted beams) between the radiation source and monochromator
+      Values are the maximum divergence angles in
       degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_eq_):
-      Collimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      other than Soller slits (see _pd_instr.soller_eq_).
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              divg_eq_src_mono
@@ -1855,7 +1499,7 @@ save_
 save__pd_instr.divg_eq_src_spec
 
     _definition.id               '_pd_instr.divg_eq_src_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_divg_eq_src/spec' 
@@ -1863,15 +1507,13 @@ save__pd_instr.divg_eq_src_spec
 ;
 
       Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by slits or beamline optics
-      other than Soller slits (see _pd_instr_soller_eq_):
-      Collimation between the radiation source and specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      containing the incident and diffracted beams) between the
+      radiation source and specimen.  Values are the maximum
+      divergence angles in degrees, as limited by slits or beamline
+      optics other than Soller slits (see _pd_instr_soller_eq_).  Note
+      that *_src_spec is used in place of *_src_mono and *_mono_spec
+      if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              divg_eq_src_spec
@@ -1908,7 +1550,7 @@ save__pd_instr.geometry
             "Bragg-Brentano"          
             "Guinier"        
             
-;Parallel-beam non-focusing optics with channel-cut
+;         Parallel-beam non-focusing optics with channel-cut
           monochromator and linear position-sensitive detector
 ; 
 
@@ -1942,54 +1584,6 @@ save__pd_instr.location
 
 save_
 
-
-save__pd_instr.monochr_post_spec
-
-    _definition.id               '_pd_instr.monochr_post_spec'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_monochr_post/spec' 
-    _description.text                   
-;
-
-      Indicates the method used to obtain monochromatic radiation.
-      Use _pd_instr_monochr_pre_spec to describe the primary beam
-      monochromator (pre-specimen monochromation). Use
-      _pd_instr_monochr_post_spec to specify the
-      post-diffraction analyser (post-specimen monochromation).
- 
-      When a monochromator crystal is used, the material and the
-      indices of the Bragg reflection are specified.
- 
-      Note that monochromators may have either 'parallel' or
-      'antiparallel' orientation. It is assumed that the
-      geometry is parallel unless specified otherwise.
-      In a parallel geometry, the position of the monochromator
-      allows the incident beam and the final post-specimen
-      and post-monochromator beam to be as close to parallel
-      as possible. In a parallel geometry, the diffracting
-      planes in the specimen and monochromator will be parallel
-      when 2\\q~monochromator~ is equal to 2\\q~specimen~.\
-      For further discussion see R. Jenkins & R. Snyder (1996).
-      Introduction to X-ray Powder Diffraction,
-      pp. 164-165. New York: Wiley.
-;
-    _name.category_id            pd_instr
-    _name.object_id              monochr_post_spec
-    _type.purpose                Describe
-    _type.source                 Recorded
-    _type.container              Single
-    _type.contents               Text
-    loop_
-    _description_example.case
-            "Zr filter"      
-            "Ge 220"         
-            "none"           
-            "equatorial mounted graphite (0001)"           
-            "Si (111), antiparallel" 
-
-save_
 
 
 save__pd_instr.monochr_pre_spec
@@ -2041,43 +1635,10 @@ save__pd_instr.monochr_pre_spec
 save_
 
 
-save__pd_instr.slit_ax_anal_detc
-
-    _definition.id               '_pd_instr.slit_ax_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_slit_ax_anal/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument as a slit width
-      (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the analyser and the detector;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              slit_ax_anal_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
 save__pd_instr.slit_ax_mono_spec
 
     _definition.id               '_pd_instr.slit_ax_mono_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_slit_ax_mono/spec' 
@@ -2088,12 +1649,10 @@ save__pd_instr.slit_ax_mono_spec
       (perpendicular to the plane containing the incident
       and diffracted beams) for the instrument as a slit width
       (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the monochromator and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Values are the width of the slit (in millimetres) defining
+      collimation between the monochromator and the specimen.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
 ;
     _name.category_id            pd_instr
     _name.object_id              slit_ax_mono_spec
@@ -2107,92 +1666,24 @@ save__pd_instr.slit_ax_mono_spec
 save_
 
 
-save__pd_instr.slit_ax_spec_anal
-
-    _definition.id               '_pd_instr.slit_ax_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_slit_ax_spec/anal' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument as a slit width
-      (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the specimen and the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              slit_ax_spec_anal
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
-save__pd_instr.slit_ax_spec_detc
-
-    _definition.id               '_pd_instr.slit_ax_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_slit_ax_spec/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument as a slit width
-      (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the specimen and the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              slit_ax_spec_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
 save__pd_instr.slit_ax_src_mono
 
     _definition.id               '_pd_instr.slit_ax_src_mono'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_slit_ax_src/mono' 
     _description.text                   
 ;
 
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument as a slit width
-      (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument as a slit width (as opposed to a divergence angle).
+      Values are the width of the slit (in millimetres) defining
+      Collimation between the radiation source and monochromator.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              slit_ax_src_mono
@@ -2209,58 +1700,24 @@ save_
 save__pd_instr.slit_ax_src_spec
 
     _definition.id               '_pd_instr.slit_ax_src_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_slit_ax_src/spec' 
     _description.text                   
 ;
 
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument as a slit width
-      (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the radiation source and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and *_anal/detc
-      if there is no analyser in use.
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument as a slit width (as opposed to a divergence angle).
+      Values are the width of the slit (in millimetres) defining
+      Collimation between the radiation source and the specimen.  Note
+      that *_src_spec is used in place of *_src_mono and *_mono_spec
+      if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              slit_ax_src_spec
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
-save__pd_instr.slit_eq_anal_detc
-
-    _definition.id               '_pd_instr.slit_eq_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_slit_eq_anal/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for the
-      instrument as a slit width (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Ollimation between the analyser and the detector;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              slit_eq_anal_detc
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
@@ -2284,12 +1741,10 @@ save__pd_instr.slit_eq_mono_spec
       Describes collimation in the equatorial plane (the plane
       containing the incident and diffracted beams) for the
       instrument as a slit width (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Ollimation between the monochromator and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Values are the width of the slit (in millimetres) defining
+      Ollimation between the monochromator and the specimen.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
 ;
     _name.category_id            pd_instr
     _name.object_id              slit_eq_mono_spec
@@ -2301,71 +1756,6 @@ save__pd_instr.slit_eq_mono_spec
     _units.code                             millimetres
 
 save_
-
-
-save__pd_instr.slit_eq_spec_anal
-
-    _definition.id               '_pd_instr.slit_eq_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_slit_eq_spec/anal' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for the
-      instrument as a slit width (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the specimen and the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              slit_eq_spec_anal
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
-
-save__pd_instr.slit_eq_spec_detc
-
-    _definition.id               '_pd_instr.slit_eq_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_slit_eq_spec/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for the
-      instrument as a slit width (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the specimen and the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              slit_eq_spec_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             millimetres
-
-save_
-
 
 save__pd_instr.slit_eq_src_mono
 
@@ -2380,12 +1770,11 @@ save__pd_instr.slit_eq_src_mono
       Describes collimation in the equatorial plane (the plane
       containing the incident and diffracted beams) for the
       instrument as a slit width (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Collimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Values are the width of the slit (in millimetres) defining
+      Collimation between the radiation source and monochromator.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              slit_eq_src_mono
@@ -2412,12 +1801,10 @@ save__pd_instr.slit_eq_src_spec
       Describes collimation in the equatorial plane (the plane
       containing the incident and diffracted beams) for the
       instrument as a slit width (as opposed to a divergence angle).
-      Values are the width of the slit (in millimetres) defining:
-      Ollimation between the radiation source and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Values are the width of the slit (in millimetres) defining
+      Ollimation between the radiation source and the specimen.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
 ;
     _name.category_id            pd_instr
     _name.object_id              slit_eq_src_spec
@@ -2427,39 +1814,6 @@ save__pd_instr.slit_eq_src_spec
     _type.contents               Real
     _enumeration.range           0.0:
     _units.code                             millimetres
-
-save_
-
-
-save__pd_instr.soller_ax_anal_detc
-
-    _definition.id               '_pd_instr.soller_ax_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_soller_ax_anal/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the analyser and the detector;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              soller_ax_anal_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
 
 save_
 
@@ -2474,16 +1828,14 @@ save__pd_instr.soller_ax_mono_spec
     _description.text                   
 ;
 
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the monochromator and specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument.  Values are the maximum divergence angles in
+      degrees, as limited by Soller slits located between the
+      monochromator and specimen.  Note that *_src_spec is used in
+      place of *_src_mono and *_mono_spec if there is no monochromator
+      in use.
+      
 ;
     _name.category_id            pd_instr
     _name.object_id              soller_ax_mono_spec
@@ -2497,70 +1849,6 @@ save__pd_instr.soller_ax_mono_spec
 save_
 
 
-save__pd_instr.soller_ax_spec_anal
-
-    _definition.id               '_pd_instr.soller_ax_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_soller_ax_spec/anal' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the specimen and the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              soller_ax_spec_anal
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
-save__pd_instr.soller_ax_spec_detc
-
-    _definition.id               '_pd_instr.soller_ax_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_soller_ax_spec/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the specimen and the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              soller_ax_spec_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
 
 
 save__pd_instr.soller_ax_src_mono
@@ -2579,10 +1867,10 @@ save__pd_instr.soller_ax_src_mono
       Values are the maximum divergence angles in
       degrees, as limited by Soller slits located thus:
       Collimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use, and
+      *_spec_detc is used in place of *_spec_anal and
+      *_anal_detc if there is no analyser in use.
 ;
     _name.category_id            pd_instr
     _name.object_id              soller_ax_src_mono
@@ -2599,23 +1887,21 @@ save_
 save__pd_instr.soller_ax_src_spec
 
     _definition.id               '_pd_instr.soller_ax_src_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_soller_ax_src/spec' 
     _description.text                   
 ;
 
-      Describes collimation in the axial direction
-      (perpendicular to the plane containing the incident
-      and diffracted beams) for the instrument.
-      Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the radiation source and specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument.  Values are the maximum divergence angles in
+      degrees, as limited by Soller slits located between the
+      radiation source and specimen.  Note that *_src_spec is used in
+      place of *_src_mono and *_mono_spec if there is no monochromator
+      in use.
+
 ;
     _name.category_id            pd_instr
     _name.object_id              soller_ax_src_spec
@@ -2628,43 +1914,10 @@ save__pd_instr.soller_ax_src_spec
 
 save_
 
-
-save__pd_instr.soller_eq_anal_detc
-
-    _definition.id               '_pd_instr.soller_eq_anal_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_soller_eq_anal/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the analyser and the detector;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              soller_eq_anal_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
 save__pd_instr.soller_eq_mono_spec
 
     _definition.id               '_pd_instr.soller_eq_mono_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_soller_eq_mono/spec' 
@@ -2674,12 +1927,9 @@ save__pd_instr.soller_eq_mono_spec
       Describes collimation in the equatorial plane (the plane
       containing the incident and diffracted beams) for
       the instrument. Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the monochromator and the specimen;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      degrees, as limited by Soller slits located  between the monochromator and the specimen.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use.
 ;
     _name.category_id            pd_instr
     _name.object_id              soller_eq_mono_spec
@@ -2692,69 +1942,6 @@ save__pd_instr.soller_eq_mono_spec
 
 save_
 
-
-save__pd_instr.soller_eq_spec_anal
-
-    _definition.id               '_pd_instr.soller_eq_spec_anal'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_soller_eq_spec/anal' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the specimen and the analyser;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              soller_eq_spec_anal
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
-
-
-save__pd_instr.soller_eq_spec_detc
-
-    _definition.id               '_pd_instr.soller_eq_spec_detc'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_instr_soller_eq_spec/detc' 
-    _description.text                   
-;
-
-      Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Collimation between the specimen and the detector.
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
-;
-    _name.category_id            pd_instr
-    _name.object_id              soller_eq_spec_detc
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:
-    _units.code                             degrees
-
-save_
 
 
 save__pd_instr.soller_eq_src_mono
@@ -2772,10 +1959,10 @@ save__pd_instr.soller_eq_src_mono
       the instrument. Values are the maximum divergence angles in
       degrees, as limited by Soller slits located thus:
       Collimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      Note that *_src_spec is used in place of *_src_mono and
+      *_mono_spec if there is no monochromator in use, and
+      *_spec_detc is used in place of *_spec_anal and
+      *_anal_detc if there is no analyser in use.
 ;
     _name.category_id            pd_instr
     _name.object_id              soller_eq_src_mono
@@ -2792,7 +1979,7 @@ save_
 save__pd_instr.soller_eq_src_spec
 
     _definition.id               '_pd_instr.soller_eq_src_spec'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_soller_eq_src/spec' 
@@ -2800,14 +1987,12 @@ save__pd_instr.soller_eq_src_spec
 ;
 
       Describes collimation in the equatorial plane (the plane
-      containing the incident and diffracted beams) for
-      the instrument. Values are the maximum divergence angles in
-      degrees, as limited by Soller slits located thus:
-      Ollimation between the radiation source and monochromator;
-      Note that *_src/spec is used in place of *_src/mono and
-      *_mono/spec if there is no monochromator in use, and
-      *_spec/detc is used in place of *_spec/anal and
-      *_anal/detc if there is no analyser in use.
+      containing the incident and diffracted beams) for the
+      instrument. Values are the maximum divergence angles in degrees,
+      as limited by Soller slits located between the radiation source
+      and monochromator.  Note that *_src_spec is used in place of
+      *_src_mono and *_mono_spec if there is no monochromator in use.
+
 ;
     _name.category_id            pd_instr
     _name.object_id              soller_eq_src_spec
@@ -2831,10 +2016,10 @@ save__pd_instr.source_size_ax
     _description.text                   
 ;
 
-      Axial and equatorial intrinsic dimensions
-      of the radiation source (in millimetres).
-      The perpendicular to the plane containing the incident
-      and scattered beam is the axial (*_ax) direction.
+      Axial intrinsic dimension of the radiation source (in
+      millimetres).  The perpendicular to the plane containing the
+      incident and scattered beam is the axial (*_ax) direction.
+
 ;
     _name.category_id            pd_instr
     _name.object_id              source_size_ax
@@ -2858,10 +2043,10 @@ save__pd_instr.source_size_eq
     _description.text                   
 ;
 
-      Axial and equatorial intrinsic dimensions
-      of the radiation source (in millimetres).
-      The perpendicular to the plane containing the incident
-      and scattered beam is the axial (*_ax) direction.
+      Equatorial intrinsic dimension of the radiation source (in
+      millimetres).  The equatorial direction is in the plane
+      containing the incident and scattered beam.
+
 ;
     _name.category_id            pd_instr
     _name.object_id              source_size_eq
@@ -2902,7 +2087,7 @@ save_
 save__pd_instr.var_illum_len
 
     _definition.id               '_pd_instr.var_illum_len'
-    _definition.update           2014-06-20
+    _definition.update           2016-10-20
     loop_
       _alias.definition_id
           '_pd_instr_var_illum_len' 
@@ -2919,8 +2104,9 @@ save__pd_instr.var_illum_len
       See _pd_instr.cons_illum_len for instruments where
       the divergence slit is \q-compensated to yield a\
       constant illumination length.
+
 ;
-    _name.category_id            pd_instr
+    _name.category_id            pd_meas
     _name.object_id              var_illum_len
     _type.purpose                Number
     _type.source                 Derived
@@ -2930,6 +2116,750 @@ save__pd_instr.var_illum_len
     _units.code                             millimetres
 
 save_
+
+save_PD_INSTR_DETECTOR
+
+    _definition.id               PD_INSTR_DETECTOR
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-20
+    _description.text                   
+;
+
+      This section contains information relevant to the detector
+      geometry used for the diffraction measurement. For most laboratories,
+      very little of this information will change, so a standard file
+      may be prepared and included with each data set.
+ 
+      The term analyser refers to post-diffraction (post-specimen)
+      monochromator.  The analyser may be fixed for specific
+      wavelength or may be capable of being scanned.
+ 
+      For multiple-detector instruments it may be necessary to loop the
+      *_anal_detc or *_spec_detc values (for  _pd_instr.dist_,
+      _pd_instr.divg_, _pd_instr.slit_ and  _pd_instr.soller_) with
+      the detector ID's (_pd_instr_detector.id).
+ 
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_INSTR_DETECTOR
+    _category_key.name           '_pd_instr_detector.id'
+
+save_
+
+save__pd_instr.2theta_monochr_post
+
+    _definition.id               '_pd_instr.2theta_monochr_post'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_2theta_monochr_post' 
+    _description.text                   
+;
+
+      The 2\\q angle for a post-specimen
+      monochromator (also called an analyzer)
+      (see also _pd_instr.monochr_post_spec).
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              2theta_monochr_post
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           -180.0:180.0
+_units.code                             degrees
+
+save_
+
+save__pd_instr_detector.id
+
+    _definition.id               '_pd_instr_detector.id'
+    _definition.update           2016-10-20
+    _description.text                   
+;
+
+      A code which identifies the detector or channel number in a
+      position-sensitive, energy-dispersive or other multiple-detector
+      instrument for which individual instrument geometry is being
+      defined. Note that this code should match the code name used for
+      _pd_meas.detector_id.  Where a single detector is used, this
+      may be omitted.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              id
+    _name.linked_object_id       '_pd_meas.detector_id'
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_instr.dist_anal_detc
+
+    _definition.id               '_pd_instr.dist_anal_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_dist_anal/detc' 
+    _description.text                   
+;
+
+      Specifies the distance in millimetres from the analyser to the detector.
+      Note that *_spec_detc is used in place of *_anal_detc
+      if there is no analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              dist_anal_detc
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.dist_spec_anal
+
+    _definition.id               '_pd_instr.dist_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_dist_spec/anal' 
+    _description.text                   
+;
+
+      Specifies distances in millimetres from the specimen to the
+      analyser.  Note that *_spec_detc is used in place of *_spec_anal
+      if there is no analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              dist_spec_anal
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.dist_spec_detc
+
+    _definition.id               '_pd_instr.dist_spec_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_dist_spec/detc' 
+    _description.text                   
+;
+
+      Specifies distance in millimetres from the specimen to the
+      detector.  Note that *_spec_anal and *_anal_detc are used
+      instead of *_spec_detc if there is an analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              dist_spec_detc
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.divg_ax_anal_detc
+
+    _definition.id               '_pd_instr.divg_ax_anal_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_divg_ax_anal/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) between
+      the analyser and the detector. Values are the maximum divergence
+      angles in degrees, as limited by slits or beamline optics other
+      than Soller slits (see _pd_instr.soller_ax_): Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc if
+      there is no analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              divg_ax_anal_detc
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.divg_ax_spec_anal
+
+    _definition.id               '_pd_instr.divg_ax_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_divg_ax_spec/anal' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction
+      (perpendicular to the plane containing the incident
+      and diffracted beams) between the specimen and the analyser.
+      Values are the maximum divergence angles in
+      degrees, as limited by slits or beamline optics
+      other than Soller slits (see _pd_instr.soller_ax_).
+      Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc
+      if there is no analyser in use.
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              divg_ax_spec_anal
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.divg_ax_spec_detc
+
+    _definition.id               '_pd_instr.divg_ax_spec_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_divg_ax_spec/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction
+      (perpendicular to the plane containing the incident
+      and diffracted beams) between the specimen and the detector.
+      Values are the maximum divergence angles in
+      degrees, as limited by slits or beamline optics
+      other than Soller slits (see _pd_instr.soller_ax_).
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc
+      if there is no analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              divg_ax_spec_detc
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.divg_eq_anal_detc
+
+    _definition.id               '_pd_instr.divg_eq_anal_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_divg_eq_anal/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) between the
+      analyser and the detector.  Values are the maximum divergence
+      angles in degrees, as limited by slits or beamline optics other
+      than Soller slits (see _pd_instr.soller_eq_).  Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc if
+      there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              divg_eq_anal_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.divg_eq_spec_anal
+
+    _definition.id               '_pd_instr.divg_eq_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_divg_eq_spec/anal' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) between the
+      specimen and the analyser.  Values are the maximum divergence
+      angles in degrees, as limited by slits or beamline optics other
+      than Soller slits (see _pd_instr_soller_eq_). Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc if
+      there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              divg_eq_spec_anal
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.divg_eq_spec_detc
+
+    _definition.id               '_pd_instr.divg_eq_spec_detc'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_divg_eq_spec/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) between the
+      specimen and the detector. Values are the maximum divergence
+      angles in degrees, as limited by slits or beamline optics other
+      than Soller slits (see _pd_instr_soller_eq_): *_spec_detc is
+      used in place of *_spec_anal and *_anal_detc if there is no
+      analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              divg_eq_spec_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.monochr_post_spec
+
+    _definition.id               '_pd_instr.monochr_post_spec'
+    _definition.update           2014-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_monochr_post/spec' 
+    _description.text                   
+;
+
+      Indicates the method used to obtain monochromatic radiation.
+      Use _pd_instr_monochr_pre_spec to describe the primary beam
+      monochromator (pre-specimen monochromation). Use
+      _pd_instr_monochr_post_spec to specify the
+      post-diffraction analyser (post-specimen monochromation).
+ 
+      When a monochromator crystal is used, the material and the
+      indices of the Bragg reflection are specified.
+ 
+      Note that monochromators may have either 'parallel' or
+      'antiparallel' orientation. It is assumed that the
+      geometry is parallel unless specified otherwise.
+      In a parallel geometry, the position of the monochromator
+      allows the incident beam and the final post-specimen
+      and post-monochromator beam to be as close to parallel
+      as possible. In a parallel geometry, the diffracting
+      planes in the specimen and monochromator will be parallel
+      when 2\\q~monochromator~ is equal to 2\\q~specimen~.\
+      For further discussion see R. Jenkins & R. Snyder (1996).
+      Introduction to X-ray Powder Diffraction,
+      pp. 164-165. New York: Wiley.
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              monochr_post_spec
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+    loop_
+    _description_example.case
+            "Zr filter"      
+            "Ge 220"         
+            "none"           
+            "equatorial mounted graphite (0001)"           
+            "Si (111), antiparallel" 
+
+save_
+
+save__pd_instr.slit_ax_anal_detc
+
+    _definition.id               '_pd_instr.slit_ax_anal_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_slit_ax_anal/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument as a slit width (as opposed to a divergence angle).
+      Values are the width of the slit (in millimetres) defining
+      collimation between the analyser and the detector.  Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc if
+      there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              slit_ax_anal_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.slit_ax_spec_anal
+
+    _definition.id               '_pd_instr.slit_ax_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_slit_ax_spec/anal' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument as a slit width (as opposed to a divergence angle).
+      Values are the width of the slit (in millimetres) defining
+      collimation between the specimen and the analyser.  Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc if
+      there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              slit_ax_spec_anal
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.slit_ax_spec_detc
+
+    _definition.id               '_pd_instr.slit_ax_spec_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_slit_ax_spec/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument as a slit width (as opposed to a divergence angle).
+      Values are the width of the slit (in millimetres) defining
+      Collimation between the specimen and the detector.  Note that
+      *_spec_detc is used in place of *_spec_anal and *_anal_detc if
+      there is no analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              slit_ax_spec_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+save__pd_instr.slit_eq_anal_detc
+
+    _definition.id               '_pd_instr.slit_eq_anal_detc'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_slit_eq_anal/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) for the instrument
+      as a slit width (as opposed to a divergence angle).  Values are
+      the width of the slit (in millimetres) defining Ollimation
+      between the analyser and the detector.  Note that *_spec_detc is
+      used in place of *_spec_anal and *_anal_detc if there is no
+      analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              slit_eq_anal_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.slit_eq_spec_anal
+
+    _definition.id               '_pd_instr.slit_eq_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_slit_eq_spec/anal' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) for the instrument
+      as a slit width (as opposed to a divergence angle).  Values are
+      the width of the slit (in millimetres) defining Collimation
+      between the specimen and the analyser.  Note that *_spec_detc is
+      used in place of *_spec_anal and *_anal_detc if there is no
+      analyser in use.
+      
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              slit_eq_spec_anal
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+
+save__pd_instr.slit_eq_spec_detc
+
+    _definition.id               '_pd_instr.slit_eq_spec_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_slit_eq_spec/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) for the instrument
+      as a slit width (as opposed to a divergence angle).  Values are
+      the width of the slit (in millimetres) defining Collimation
+      between the specimen and the detector.  Note that *_spec_detc is
+      used in place of *_spec_anal and *_anal_detc if there is no
+      analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              slit_eq_spec_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_instr.soller_ax_anal_detc
+
+    _definition.id               '_pd_instr.soller_ax_anal_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_soller_ax_anal/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument.  Values are the maximum divergence angles in
+      degrees, as limited by Soller slits located between the analyser
+      and the detector.  Note that *_spec_detc is used in place of
+      *_spec_anal and *_anal_detc if there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              soller_ax_anal_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.soller_ax_spec_anal
+
+    _definition.id               '_pd_instr.soller_ax_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_soller_ax_spec/anal' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument.  Values are the maximum divergence angles in
+      degrees, as limited by Soller slits located between the specimen
+      and the analyser; Note that *_spec_detc is used in place of
+      *_spec_anal and *_anal_detc if there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              soller_ax_spec_anal
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.soller_eq_anal_detc
+
+    _definition.id               '_pd_instr.soller_eq_anal_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_soller_eq_anal/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) for the
+      instrument. Values are the maximum divergence angles in degrees,
+      as limited by Soller slits located between the analyser and the
+      detector; Note that *_spec_detc is used in place of *_spec_anal
+      and *_anal_detc if there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              soller_eq_anal_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.soller_ax_spec_detc
+
+    _definition.id               '_pd_instr.soller_ax_spec_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_soller_ax_spec/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the axial direction (perpendicular to
+      the plane containing the incident and diffracted beams) for the
+      instrument.  Values are the maximum divergence angles in
+      degrees, as limited by Soller slits located between the specimen
+      and the detector.  Note that *_spec_detc is used in place of
+      *_spec_anal and *_anal_detc if there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              soller_ax_spec_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+save__pd_instr.soller_eq_spec_anal
+
+    _definition.id               '_pd_instr.soller_eq_spec_anal'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_soller_eq_spec/anal' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) for the
+      instrument. Values are the maximum divergence angles in degrees,
+      as limited by Soller slits located between the specimen and the
+      analyser.  Note that *_spec_detc is used in place of *_spec_anal
+      and *_anal_detc if there is no analyser in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              soller_eq_spec_anal
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
+
+save__pd_instr.soller_eq_spec_detc
+
+    _definition.id               '_pd_instr.soller_eq_spec_detc'
+    _definition.update           2016-10-20
+    loop_
+      _alias.definition_id
+          '_pd_instr_soller_eq_spec/detc' 
+    _description.text                   
+;
+
+      Describes collimation in the equatorial plane (the plane
+      containing the incident and diffracted beams) for the
+      instrument. Values are the maximum divergence angles in degrees,
+      as limited by Soller slits located between the specimen and the
+      detectoomator in use, and *_spec_detc is used in place of
+      *_spec_anal and *_anal_detc if there is no analys er in use.
+
+;
+    _name.category_id            pd_instr_detector
+    _name.object_id              soller_eq_spec_detc
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             degrees
+
+save_
+
 
 save_PD_MEAS_OVERALL
 
