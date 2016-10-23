@@ -13,8 +13,8 @@ data_CIF_POW
 
     _dictionary.title            CIF_POW
     _dictionary.class            Instance
-    _dictionary.version          2.00.01
-    _dictionary.date             2016-10-17
+    _dictionary.version          2.0.2
+    _dictionary.date             2016-10-21
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
     _dictionary.ddl_conformance  3.11.09
     _dictionary.namespace        CifPow
@@ -5379,19 +5379,6 @@ save__pd_proc_ls.prof_R_factor
     _description.text                   
 ;
 
-      Rietveld/profile fit R factors.
- 
-      Note that the R factor computed for Rietveld refinements
-      using the extracted reflection intensity values (often
-      called the Rietveld or Bragg R factor, R~B~) is not properly
-      a profile R factor. This R factor may be specified using
-      _refine_ls.R_I_factor. (Some authors report
-      _refine_ls.R_Fsqd_factor or _refine_ls_R_factor_all
-      as the Rietveld or Bragg R factor. While it is appropriate
-      to compute and report any or all of these R factors,
-      the names "Rietveld or Bragg R factor" refer strictly to
-      _refine_ls.R_I_factor.)
- 
      _pd_proc_ls.prof_R_factor, often called R~p~, is an
        unweighted fitness metric for the agreement between the
        observed and computed diffraction patterns.
@@ -5434,19 +5421,6 @@ save__pd_proc_ls.prof_wR_expected
           '_pd_proc_ls_prof_wR_expected' 
     _description.text                   
 ;
-
-      Rietveld/profile fit R factors.
- 
-      Note that the R factor computed for Rietveld refinements
-      using the extracted reflection intensity values (often
-      called the Rietveld or Bragg R factor, R~B~) is not properly
-      a profile R factor. This R factor may be specified using
-      _refine_ls.R_I_factor. (Some authors report
-      _refine_ls.R_Fsqd_factor or _refine_ls_R_factor_all
-      as the Rietveld or Bragg R factor. While it is appropriate
-      to compute and report any or all of these R factors,
-      the names "Rietveld or Bragg R factor" refer strictly to
-      _refine_ls.R_I_factor.)
  
      _pd_proc_ls.prof_wR_expected, sometimes called the
        theoretical R~wp~ or R~exp~, is a weighted fitness metric for
@@ -5495,19 +5469,6 @@ save__pd_proc_ls.prof_wR_factor
           '_pd_proc_ls_prof_wR_factor' 
     _description.text                   
 ;
-
-      Rietveld/profile fit R factors.
- 
-      Note that the R factor computed for Rietveld refinements
-      using the extracted reflection intensity values (often
-      called the Rietveld or Bragg R factor, R~B~) is not properly
-      a profile R factor. This R factor may be specified using
-      _refine_ls.R_I_factor. (Some authors report
-      _refine_ls.R_Fsqd_factor or _refine_ls_R_factor_all
-      as the Rietveld or Bragg R factor. While it is appropriate
-      to compute and report any or all of these R factors,
-      the names "Rietveld or Bragg R factor" refer strictly to
-      _refine_ls.R_I_factor.)
  
      _pd_proc_ls.prof_wR_factor, often called R~wp~, is a
        weighted fitness metric for the agreement between the
@@ -5971,3 +5932,17 @@ save__pd_spec.special_details
     _type.contents               Text
 
 save_
+
+loop_
+  _dictionary_audit.version
+  _dictionary_audit.date
+  _dictionary_audit.revision
+         2.0.1    2014-06-20
+;
+     Initial conversion to DDLm (Syd Hall)
+;
+         2.0.2    2016-10-21
+;
+     Substantial edits to conform to current DDLm, CIF2 syntax
+     and intended DDL1 usage (James Hester)
+;
