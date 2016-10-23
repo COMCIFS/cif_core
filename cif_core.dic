@@ -12550,8 +12550,8 @@ loop_
  
      xc = List()
  
-     For [label,symop] in  [[b.atom_site_1,b.site_symmetry_1],
-                            [b.atom_site_2,b.site_symmetry_2]]   {
+     For [label,symop] in  [[b.atom_site_label_1,b.site_symmetry_1],
+                            [b.atom_site_label_2,b.site_symmetry_2]]   {
  
          xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
  
@@ -12820,8 +12820,8 @@ loop_
  
      xc = List()
  
-     For [label,symop] in  [[c.atom_site_1,c.site_symmetry_1,
-                             c.atom_site_2,c.site_symmetry_2]] {
+     For [label,symop] in  [[c.atom_site_label_1,c.site_symmetry_1,
+                             c.atom_site_label_2,c.site_symmetry_2]] {
  
          xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
  
