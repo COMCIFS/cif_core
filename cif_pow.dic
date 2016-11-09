@@ -13,8 +13,8 @@ data_CIF_POW
 
     _dictionary.title            CIF_POW
     _dictionary.class            Instance
-    _dictionary.version          2.0.2
-    _dictionary.date             2016-10-21
+    _dictionary.version          2.1
+    _dictionary.date             2016-11-09
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
     _dictionary.ddl_conformance  3.11.09
     _dictionary.namespace        CifPow
@@ -42,7 +42,8 @@ save_PD_GROUP
 ;
     _name.category_id            CIF_POW
     _name.object_id              PD_GROUP
-
+    _import.get                 [{"file":"cif_core.dic" "save":"CIF_CORE" "mode":"Full"}]
+    
 save_
 
 
@@ -85,53 +86,6 @@ save_PD_BLOCK
 
 save_
 
-save_PD_BLOCK_DIFFRACTOGRAM
-    _definition.id               PD_BLOCK_DIFFRACTOGRAM
-    _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2016-10-18
-    _description.text                   
-;
-
-    A number of diffractograms may contribute to the
-    determination of the structure of a single phase.
-    The _pd_block.ids of those diffractograms should
-    be listed here.
-    
-;
-    _name.category_id            PD_GROUP
-    _name.object_id              PD_BLOCK_DIFFRACTOGRAM
-    _category_key.name           '_pd_block_diffractogram.id'
-    
-save_
-
-save__pd_block_diffractogram.id
-
-    _definition.id               '_pd_block_diffractogram.id'
-    _definition.update           2016-10-18
-    loop_
-      _alias.definition_id
-          '_pd_block_diffractogram_id' 
-    _description.text                   
-;
-
-      A block ID code (see _pd_block.id) that identifies
-      diffraction data contained in a data block other
-      than the current block. This will occur most frequently
-      when more than one set of diffraction data
-      is used for a structure determination. The data
-      block containing the diffraction data will contain
-      a _pd_block.id code matching the code in
-      _pd_block.diffractogram_id.
-;
-    _name.category_id            pd_block_diffractogram
-    _name.object_id              id
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Text
-
-save_
 
 save__pd_block.id
 
@@ -219,6 +173,54 @@ save__pd_block.id
     _description_example.case
             "1991-15-09T16:54|Si-std|B.Toby|D500#1234-987"
             '1991-15-09T16:54|SEPD7234|B.Toby|SEPD.IPNS.ANL.GOV'
+save_
+
+save_PD_BLOCK_DIFFRACTOGRAM
+    _definition.id               PD_BLOCK_DIFFRACTOGRAM
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-10-18
+    _description.text                   
+;
+
+    A number of diffractograms may contribute to the
+    determination of the structure of a single phase.
+    The _pd_block.ids of those diffractograms should
+    be listed here.
+    
+;
+    _name.category_id            PD_GROUP
+    _name.object_id              PD_BLOCK_DIFFRACTOGRAM
+    _category_key.name           '_pd_block_diffractogram.id'
+    
+save_
+
+save__pd_block_diffractogram.id
+
+    _definition.id               '_pd_block_diffractogram.id'
+    _definition.update           2016-10-18
+    loop_
+      _alias.definition_id
+          '_pd_block_diffractogram_id' 
+    _description.text                   
+;
+
+      A block ID code (see _pd_block.id) that identifies
+      diffraction data contained in a data block other
+      than the current block. This will occur most frequently
+      when more than one set of diffraction data
+      is used for a structure determination. The data
+      block containing the diffraction data will contain
+      a _pd_block.id code matching the code in
+      _pd_block.diffractogram_id.
+;
+    _name.category_id            pd_block_diffractogram
+    _name.object_id              id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+
 save_
 
 save_PD_CALC_OVERALL
@@ -705,7 +707,8 @@ save__pd_calib_std.detector_id
 
       A code which identifies the detector or channel number that the
       calibration data applies to. Note that this code should match a
-      detector from _pd_meas.detector_id
+      detector from _pd_meas.detector_id and may be omitted if only
+      one detector is used.
       
 ;
     _name.category_id            pd_calib_std
@@ -715,6 +718,7 @@ save__pd_calib_std.detector_id
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
+    _enumeration.default         "."
 
 save_
 
@@ -3303,7 +3307,8 @@ save__pd_meas.2theta_scan
     _definition.update           2014-06-20
     loop_
       _alias.definition_id
-          '_pd_meas_2theta_scan' 
+          '_pd_meas_2theta_scan'
+          '_pd_meas_angle_2theta'
     _description.text                   
 ;
 
@@ -3321,8 +3326,11 @@ save__pd_meas.2theta_scan
       using _pd_proc.2theta_corrected.
  
       Note that for data sets collected with constant step size,
-      _pd_meas.2theta_range_ (*_min, *_max and *_inc) may be
-      used instead of _pd_meas.2theta_scan.
+      _pd_meas.2theta_range_ (*_min, *_max and *_inc) may be used
+      instead of _pd_meas.2theta_scan. _pd_meas_2theta_angle was
+      originally a distinct but cognate definition and should not be
+      used in new files.
+      
 ;
     _name.category_id            pd_meas
     _name.object_id              2theta_scan
@@ -3677,6 +3685,7 @@ save__pd_meas.point_id
 ;
     _name.category_id            pd_meas
     _name.object_id              point_id
+    _name.linked_item_id         '_pd_data.point_id'
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
@@ -4218,104 +4227,20 @@ save_PD_PHASE
 
     _definition.id               PD_PHASE
     _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2016-10-18
+    _definition.class            Set
+    _definition.update           2016-11-09
     _description.text                   
 ;
 
-      This section contains a description of the crystalline phases
-      contributing to the powder diffraction data set. Note that if
-      multiple-phase Rietveld or other structural analysis is
-      performed, the structural results will be placed in different
-      data blocks, using CIF entries from the core CIF dictionary.
+      This section contains definitions for labelling a single
+      crystalline phase. Note that a separate extension dictionary
+      is provided for multiple-phase Rietveld.
  
-      The _pd_phase_block_id entry points to the CIF block with
-      structural parameters for each crystalline phase. The
-      _pd_phase_id serves to link to _pd_refln_phase_id, which is
-      used to label peaks by phase.
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_PHASE
-    _category_key.name           '_pd_phase.id'
 
 save_
-
-
-save__pd_phase.block_id
-
-    _definition.id               '_pd_phase.block_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_phase_block_id' 
-    _description.text                   
-;
-
-      A block ID code identifying the phase contributing to
-      the diffraction peak. The data block containing the
-      crystallographic information for this phase will be
-      identified with a _pd_block.id code matching the
-      code in _pd_phase.block_id.
-;
-    _name.category_id            pd_phase
-    _name.object_id              block_id
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
-save__pd_phase.id
-
-    _definition.id               '_pd_phase.id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_phase_id' 
-    _description.text                   
-;
-
-      A code for each crystal phase used to link with
-      _pd_refln.phase_id.
-;
-    _name.category_id            pd_phase
-    _name.object_id              id
-    _name.linked_item_id         '_pd_refln.phase_id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
-save__pd_phase.mass_percent
-
-    _definition.id               '_pd_phase.mass_percent'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_phase_mass_percent'     
-          '_pd_phase_mass_%' 
-    _description.text                   
-;
-
-      Per cent composition of the specified crystal phase
-      expressed as the total mass of the component
-      with respect to the total mass of the specimen.
-;
-    _name.category_id            pd_phase
-    _name.object_id              mass_percent
-    _type.purpose                Number
-    _type.source                 Derived
-    _type.container              Single
-    _type.contents               Real
-    _enumeration.range           0.0:100.0
-
-save_
-
 
 save__pd_phase.name
 
@@ -4327,7 +4252,7 @@ save__pd_phase.name
     _description.text                   
 ;
 
-      The name of the crystal phase identified by _pd_phase.id.
+      The name of the crystal phase.
       It may be designated as unknown or by a structure type etc.
 ;
     _name.category_id            pd_phase
@@ -5036,6 +4961,7 @@ save__pd_proc.point_id
 ;
     _name.category_id            pd_proc
     _name.object_id              point_id
+    _name.linked_item_id         '_pd_data.point_id'
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
@@ -5584,33 +5510,6 @@ save__pd_proc_ls.weight
 
 save_
 
-
-save_PD_REFLN
-
-    _definition.id               PD_REFLN
-    _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2014-06-20
-    _description.text                   
-;
-
-      This section provides a mechanism to identify each peak in the
-      peak-table section (_pd_peak_) with the phase(s) (_pd_phase_id)
-      and the reflection indices (_refln_index_) associated with the
-      peak.  There are no restrictions on the number of phases or
-      reflections associated with an observed peak. Reflections may
-      also be included that are not observed; use '.' for the
-      _pd_refln_peak_id.
-;
-    _name.category_id            PD_GROUP
-    _name.object_id              PD_REFLN
-    loop_
-    _category_key.name          '_pd_refln.peak_id'
-                                '_pd_refln.phase_id'  
-
-save_
-
-
 save__pd_refln.peak_id
 
     _definition.id               '_pd_refln.peak_id'
@@ -5623,9 +5522,9 @@ save__pd_refln.peak_id
 
       Code which identifies the powder diffraction peak that
       contains the current reflection. This code must match a
-      _pd_peak.id code.
+      _pd_peak.id code. 
 ;
-    _name.category_id            pd_refln
+    _name.category_id            refln
     _name.object_id              peak_id
     _name.linked_item_id         '_pd_peak.id'
     _type.purpose                Link
@@ -5635,35 +5534,10 @@ save__pd_refln.peak_id
 
 save_
 
-
-save__pd_refln.phase_id
-
-    _definition.id               '_pd_refln.phase_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_refln_phase_id' 
-    _description.text                   
-;
-
-      Code which identifies the crystal phase associated with this
-      reflection. This code must match a _pd_phase.id code.
-;
-    _name.category_id            pd_refln
-    _name.object_id              phase_id
-    _name.linked_item_id         '_pd_phase.id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
 save__pd_refln.wavelength_id
 
     _definition.id               '_pd_refln.wavelength_id'
-    _definition.update           2014-06-20
+    _definition.update           2016-11-03
     loop_
       _alias.definition_id
           '_pd_refln_wavelength_id' 
@@ -5671,10 +5545,10 @@ save__pd_refln.wavelength_id
 ;
 
       Code which identifies the wavelength associated with the
-      reflection and the peak pointed to by _pd_refln_peak_id.
+      reflection and the peak pointed to by _pd_refln.peak_id.
       This code must match a _diffrn_radiation_wavelength.id code.
 ;
-    _name.category_id            pd_refln
+    _name.category_id            refln
     _name.object_id              wavelength_id
     _name.linked_item_id         '_diffrn_radiation_wavelength.id'
     _type.purpose                Link
@@ -5944,5 +5818,15 @@ loop_
          2.0.2    2016-10-21
 ;
      Substantial edits to conform to current DDLm, CIF2 syntax
-     and intended DDL1 usage (James Hester)
+     and intended DDL1 usage (James Hester).
+;
+         2.0.3    2016-11-03
+;
+     Removed pd_refln category and pd_refln.phase_id, remaining
+     datanames assigned to core REFLN category (James Hester).
+;
+         2.1      2016-11-09
+;
+     Changed PD_PHASE to Set category. Multiple phases are now
+     covered by an extension dictionary. (James Hester)
 ;

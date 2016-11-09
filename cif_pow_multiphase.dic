@@ -1,0 +1,191 @@
+#\#CIF_2.0
+##############################################################################
+#                                                                            #
+#                        Extension to Powder CIF Dictionary                  #
+#                                                                            #
+#  Additional data definitions for multi-phase powder samples.               #
+#                                                                            #
+#                                                                            #
+#                                                                            #
+##############################################################################
+
+data_CIF_POW_MULTIPHASE
+
+    _dictionary.title            CIF_POW_MULTIPHASE
+    _dictionary.class            Instance
+    _dictionary.version          1.0
+    _dictionary.date             2016-11-09
+    _dictionary.uri              www.iucr.org/cif/dic/cif_pow_multiphase.dic
+    _dictionary.ddl_conformance  3.11.09
+    _dictionary.namespace        CifPow
+    _description.text                   
+;
+
+    The CIF_POW_MULTIPHASE dictionary enhances the definitions of
+    data items used in powder diffraction studies by allowing multiple
+    phases to associated with a single experiment.  Any CIF data file
+    using definitions from this dictionary must set the value of
+    _audit.schema to 'Multiphase'.
+
+;
+
+save_PD_EXT_GROUP
+
+    _definition.id               PD_EXT_GROUP
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2016-11-09
+    _description.text                   
+;
+      Groups all of the categories of definitions in the
+      extended powder diffraction study of materials.
+;
+    _name.category_id            CIF_POW_MULTIPHASE
+    _name.object_id              PD_EXT_GROUP
+    _import.get                 [{"file":"cif_pow.dic" "save":"PD_GROUP" "mode":"Full"}]
+    
+save_
+
+save_PD_PHASE
+
+    _definition.id               PD_PHASE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-11-09
+    _description.text                   
+;
+
+      This section contains a description of the crystalline phases
+      contributing to the powder diffraction data set. Note that if
+      multiple-phase Rietveld or other structural analysis is
+      performed, the structural results will be placed in different
+      data blocks, using CIF entries from the core CIF dictionary.
+ 
+      The _pd_phase.block_id entry points to the CIF block with
+      structural parameters for each crystalline phase. The
+      _pd_phase_id serves to link to _pd_refln.phase_id, which is
+      used to label peaks by phase.
+;
+    _name.category_id            PD_EXT_GROUP
+    _name.object_id              PD_PHASE
+    _category_key.name           '_pd_phase.id'
+
+save_
+
+
+save__pd_phase.block_id
+
+    _definition.id               '_pd_phase.block_id'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_block_id' 
+    _description.text                   
+;
+
+      A block ID code identifying the phase contributing to
+      the diffraction peak. The data block containing the
+      crystallographic information for this phase will be
+      identified with a _pd_block.id code matching the
+      code in _pd_phase.block_id.
+;
+    _name.category_id            pd_phase
+    _name.object_id              block_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_phase.id
+
+    _definition.id               '_pd_phase.id'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_id' 
+    _description.text                   
+;
+
+      A code for each crystal phase used to link with
+      _pd_refln.phase_id.
+;
+    _name.category_id            pd_phase
+    _name.object_id              id
+    _name.linked_item_id         '_pd_refln.phase_id'
+    _type.purpose                Link
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    _enumeration.default         '.'
+
+save_
+
+save__pd_phase.mass_percent
+
+    _definition.id               '_pd_phase.mass_percent'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_mass_percent'     
+          '_pd_phase_mass_%' 
+    _description.text                   
+;
+
+      Per cent composition of the specified crystal phase
+      expressed as the total mass of the component
+      with respect to the total mass of the specimen.
+;
+    _name.category_id            pd_phase
+    _name.object_id              mass_percent
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:100.0
+
+save_
+
+save_REFLN
+
+_definition.id                          REFLN
+_definition.scope                       Category
+_definition.class                       Loop
+_definition.update                      2016-11-09
+_description.text                       
+;
+     The CATEGORY of data items used to describe the reflection data
+     used in the refinement of one or more crystallographic phases.
+;
+_name.category_id                       DIFFRACTION
+_name.object_id                         REFLN
+loop_
+  _category_key.name
+         '_refln.index_h'    
+         '_refln.index_k'    
+         '_refln.index_l'
+         '_pd_refln.phase_id'
+save_
+
+save_pd_refln.phase_id
+
+    _definition.id               '_pd_refln.phase_id'
+    _definition.update           2016-11-09
+    loop_
+      _alias.definition_id
+          '_pd_refln_phase_id' 
+    _description.text                   
+;
+      A code which identifies the particular phase to which
+      this reflection belongs.
+;
+    _name.category_id            refln
+    _name.object_id              phase_id
+    _name.linked_object_id       '_pd_phase.id'
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
