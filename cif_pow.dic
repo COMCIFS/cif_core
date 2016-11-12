@@ -13,8 +13,8 @@ data_CIF_POW
 
     _dictionary.title            CIF_POW
     _dictionary.class            Instance
-    _dictionary.version          2.1
-    _dictionary.date             2016-11-09
+    _dictionary.version          2.2
+    _dictionary.date             2016-11-12
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
     _dictionary.ddl_conformance  3.11.09
     _dictionary.namespace        CifPow
@@ -524,7 +524,7 @@ save_PD_CALIB_OFFSET
     _definition.id               PD_CALIB_OFFSET
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2016-10-19
+    _definition.update           2016-11-12
     _description.text                   
 ;
 
@@ -548,6 +548,7 @@ save_PD_CALIB_OFFSET
     loop_
        _category_key.name
        '_pd_calib_offset.id'
+       '_pd_calib_offset.detector_id'
 save_
 
 save__pd_calib.2theta_off_max
@@ -648,6 +649,27 @@ save__pd_calib.2theta_offset
     _enumeration.range           -180.0:180.0
     _units.code                             degrees
 
+save_
+
+save_pd_calib_offset.detector_id
+
+    _definition.id               '_pd_calib_offset.detector_id'
+    _definition.update           2016-11-12
+    _description.text                   
+;
+      The detector to which the offset values relate.
+      As a default value is defined, the detector id may be
+      omitted if only a single detector is present.
+;
+    _name.category_id            pd_calib_offset
+    _name.object_id              detector_id
+    _name.linked_item_id         '_pd_calib.detector_id'
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    _enumeration.default         '.'
+    
 save_
 
 save_pd_calib_offset.id
@@ -5829,4 +5851,9 @@ loop_
 ;
      Changed PD_PHASE to Set category. Multiple phases are now
      covered by an extension dictionary. (James Hester)
+;
+         2.2      2016-11-12
+;
+     Added _pd_calib_offset.detector_id to allow for per-detector
+     2 theta offsets (James Hester)
 ;

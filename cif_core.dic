@@ -20447,6 +20447,7 @@ _description.text
 ;
 _name.category_id                       atom_site_aniso
 _name.object_id                         label
+_name.linked_item_id                    '_atom_site.label'
 _type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single

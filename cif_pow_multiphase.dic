@@ -37,8 +37,8 @@ save_PD_EXT_GROUP
     _definition.update           2016-11-09
     _description.text                   
 ;
-      Groups all of the categories of definitions in the
-      extended powder diffraction study of materials.
+      Groups all of the categories of definitions for the
+      multiphase powder dictionary.
 ;
     _name.category_id            CIF_POW_MULTIPHASE
     _name.object_id              PD_EXT_GROUP
