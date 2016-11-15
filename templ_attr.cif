@@ -60,7 +60,8 @@ save_restr_label
     _definition.update           2014-06-29
     _description.text
 ;
-      Labels of atom sites subtending distance or angle. Atom 2 is apex.
+      Labels of atom sites subtending distance or angle. Atom 2 is the apex for
+      angular restraints.
 ;
     _name.linked_item_id       '_atom_site.label'
     _type.purpose                Encode
