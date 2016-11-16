@@ -16,7 +16,7 @@ data_CIF_RSTR
     _dictionary.title            CIF_RSTR
     _dictionary.class            Instance
     _dictionary.version          3.1
-    _dictionary.date             2016-11-15
+    _dictionary.date             2016-11-16
     _dictionary.uri              www.iucr.org/cif/dic/cif_rstr.dic
     _dictionary.ddl_conformance  3.11.09
     _dictionary.namespace        CifRstr
@@ -82,7 +82,7 @@ save_CIF_RSTR
     _definition.id               CIF_RSTR
     _definition.scope            Category
     _definition.class            Head
-    _definition.update           2014-06-29
+    _definition.update           2016-11-16
     _description.text                   
 ;
 
@@ -91,7 +91,7 @@ save_CIF_RSTR
 ;
     _name.category_id            CIF_DIC
     _name.object_id              CIF_RSTR
-
+    _import.get                  [{"file":"cif_core.dic" "save":"CIF_CORE" "mode":"Full"}]
 save_
 
 
@@ -3239,7 +3239,7 @@ save_
     _dictionary_audit.date
     _dictionary_audit.revision
  
-      3.1   2016-11-15
+      3.1   2016-11-16
 ;
    Initial CIF2 version created from STAR2 version provided by Syd Hall
    (J Hester)
