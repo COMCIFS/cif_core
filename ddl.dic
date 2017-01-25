@@ -8,10 +8,10 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.11.09
-    _dictionary.date             2015-05-07
+    _dictionary.version          3.11.10
+    _dictionary.date             2017-01-25
     _dictionary.uri              www.iucr.org/cif/dic/ddl.dic
-    _dictionary.ddl_conformance  3.11.09
+    _dictionary.ddl_conformance  3.11.10
     _dictionary.namespace        DdlDic
     _description.text                   
 ;
@@ -583,6 +583,29 @@ save_dictionary.ddl_conformance
 
 save_
 
+save_dictionary.formalism
+
+    _definition.id               '_dictionary.formalism'
+    _definition.class            Attribute
+    _definition.update           2017-01-25
+    _description.text                   
+;
+
+     The definitions contained in this dictionary are associated
+     with the value of this attribute. Datanames may only be
+     redefined if the value of this attribute is also changed, and
+     any such redefinitions must include the original behaviour as
+     a particular case.
+
+;
+    _name.category_id            dictionary
+    _name.object_id              formalism
+    _type.purpose                Audit
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+
+save_
 
 save_dictionary.namespace
 
@@ -1440,10 +1463,18 @@ save_import_details.mode
     _definition.update           2015-05-06
     _description.text                   
 ;
-     Code identifying how a definition save frame is to be imported.
-     "Full" imports the entire definition frame including the leading 
-            and trailing save statements.
-     "Contents" imports only the lines within the save frame.
+
+     Code identifying how the definition referenced
+     by _import_details.frame_id is to be imported.  "Full" imports the
+     entire definition together with any child definitions (in the case
+     of categories) found in the target dictionary. The importing
+     definition becomes the parent of the imported definition. As a
+     special case, a 'Head' category importing a'Head' category is
+     equivalent to importing all children of the imported 'Head'
+     category as children of the importing 'Head' category.
+     "Contents" imports only the attributes found in the imported
+     definition.
+     
 ;
     _name.category_id            import_details
     _name.object_id              mode
@@ -1454,8 +1485,8 @@ save_import_details.mode
     loop_
     _enumeration_set.state
     _enumeration_set.detail
-              Full          'import requested definition with frame'           
-              Contents      'import contents of requested defn frame' 
+              Full          'import requested definition together with any child definitions'           
+              Contents      'import contents of requested definition' 
     _enumeration.default         Contents
 
 save_
@@ -2531,4 +2562,11 @@ Removed 'Measured' as a state for type.source
    Fixed _import.get dREL methods by moving individual table entries into
    a sub-category and adding reference and order attributes. (James Hester/
    John Bollinger)
+;
+
+         3.11.10   2017-01-25
+;
+   Adjusted definition of _import_details.mode to remove references to
+   save frames and add special 'Head' category treatment.  Added
+   _dictionary.formalism
 ;
