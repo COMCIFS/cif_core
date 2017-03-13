@@ -54,7 +54,6 @@ save_atom_site_label
                                 C_a_phe_83_a_0  Zn_Zn_301_A_0
      save_
 
-
 save_restr_label
 
     _definition.update           2014-06-29
@@ -162,7 +161,7 @@ save_matrix_w
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _name.category_id            cell_subsystem_matrix_W
+    _name.category_id            cell_subsystem
      save_
 
 
