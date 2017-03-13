@@ -12,11 +12,13 @@
 data_CIF_POW
 
     _dictionary.title            CIF_POW
+    _dictionary.formalism        Powder
     _dictionary.class            Instance
-    _dictionary.version          2.2
-    _dictionary.date             2016-11-12
+    _dictionary.version          2.3
+    _dictionary.date             2017-01-27
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
-    _dictionary.ddl_conformance  3.11.09
+    _dictionary.ddl_conformance  3.11.10
+    _dictionary.formalism        Powder
     _dictionary.namespace        CifPow
     _description.text                   
 ;
@@ -5532,54 +5534,6 @@ save__pd_proc_ls.weight
 
 save_
 
-save__pd_refln.peak_id
-
-    _definition.id               '_pd_refln.peak_id'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_refln_peak_id' 
-    _description.text                   
-;
-
-      Code which identifies the powder diffraction peak that
-      contains the current reflection. This code must match a
-      _pd_peak.id code. 
-;
-    _name.category_id            refln
-    _name.object_id              peak_id
-    _name.linked_item_id         '_pd_peak.id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-save__pd_refln.wavelength_id
-
-    _definition.id               '_pd_refln.wavelength_id'
-    _definition.update           2016-11-03
-    loop_
-      _alias.definition_id
-          '_pd_refln_wavelength_id' 
-    _description.text                   
-;
-
-      Code which identifies the wavelength associated with the
-      reflection and the peak pointed to by _pd_refln.peak_id.
-      This code must match a _diffrn_radiation_wavelength.id code.
-;
-    _name.category_id            refln
-    _name.object_id              wavelength_id
-    _name.linked_item_id         '_diffrn_radiation_wavelength.id'
-    _type.purpose                Link
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
 
 save_PD_SPEC
 
@@ -5829,6 +5783,263 @@ save__pd_spec.special_details
 
 save_
 
+save_PD_PHASE
+
+    _definition.id               PD_PHASE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2016-11-09
+    _description.text                   
+;
+
+      This section contains a description of the crystalline phases
+      contributing to the powder diffraction data set. Note that if
+      multiple-phase Rietveld or other structural analysis is
+      performed, the structural results will be placed in different
+      data blocks, using CIF entries from the core CIF dictionary.
+ 
+      The _pd_phase.block_id entry points to the CIF block with
+      structural parameters for each crystalline phase. The
+      _pd_phase_id serves to link to _pd_refln.phase_id, which is
+      used to label peaks by phase.
+;
+    _name.category_id            PD_EXT_GROUP
+    _name.object_id              PD_PHASE
+    _category_key.name           '_pd_phase.id'
+
+save_
+
+
+save__pd_phase.block_id
+
+    _definition.id               '_pd_phase.block_id'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_block_id' 
+    _description.text                   
+;
+
+      A block ID code identifying the phase contributing to
+      the diffraction peak. The data block containing the
+      crystallographic information for this phase will be
+      identified with a _pd_block.id code matching the
+      code in _pd_phase.block_id.
+;
+    _name.category_id            pd_phase
+    _name.object_id              block_id
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_phase.id
+
+    _definition.id               '_pd_phase.id'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_id' 
+    _description.text                   
+;
+
+      A code for each crystal phase used to link with
+      _pd_refln.phase_id.
+;
+    _name.category_id            pd_phase
+    _name.object_id              id
+    _name.linked_item_id         '_pd_refln.phase_id'
+    _type.purpose                Link
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    _enumeration.default         '.'
+
+save_
+
+save__pd_phase.mass_percent
+
+    _definition.id               '_pd_phase.mass_percent'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_mass_percent'     
+          '_pd_phase_mass_%' 
+    _description.text                   
+;
+
+      Per cent composition of the specified crystal phase
+      expressed as the total mass of the component
+      with respect to the total mass of the specimen.
+;
+    _name.category_id            pd_phase
+    _name.object_id              mass_percent
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:100.0
+
+save_
+
+save_REFLN
+
+_definition.id                          REFLN
+_definition.scope                       Category
+_definition.class                       Loop
+_definition.update                      2016-11-09
+_description.text                       
+;
+     The CATEGORY of data items used to describe the reflection data
+     used in the refinement of one or more crystallographic phases.
+;
+_name.category_id                       DIFFRACTION
+_name.object_id                         REFLN
+loop_
+  _category_key.name
+         '_refln.index_h'    
+         '_refln.index_k'    
+         '_refln.index_l'
+         '_pd_refln.phase_id'
+save_
+
+save_refln.F_complex
+
+_definition.id                          '_refln.F_complex'
+loop_
+  _alias.definition_id
+         '_refln.F_complex'  
+         '_refln_F_complex' 
+_definition.update                      2017-03-07
+_description.text                       
+;
+     The structure factor vector for the reflection calculated from
+     the atom site data for the phase given by phase_id.
+;
+_name.category_id                       refln
+_name.object_id                         F_complex
+_type.purpose                           Measurand
+_type.source                            Derived
+_type.container                         Single
+_type.contents                          Complex
+_enumeration.default                    0.
+loop_
+  _method.purpose
+  _method.expression
+         Definition          
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;        
+
+save_
+
+save_refln.F_squared_meas
+
+_definition.id                          '_refln.F_squared_meas'
+loop_
+  _alias.definition_id
+         '_refln.F_meas'     
+         '_refln_F_meas' 
+_definition.update                      2017-03-07
+_description.text                       
+;
+     The structure factor amplitude for the reflection derived from a powder
+     histogram by partitioning observed intensity between peaks at each point
+     in the same proportion as the model peaks contribute to that point.
+;
+_name.category_id                       refln
+_name.object_id                         F_squared_meas
+_type.purpose                           Measurand
+_type.source                            Derived
+_type.container                         Single
+_type.contents                          Real
+_enumeration.default                    0.
+loop_
+  _method.purpose
+  _method.expression
+         Definition          
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+; 
+
+save_
+
+save_pd_refln.phase_id
+
+    _definition.id               '_pd_refln.phase_id'
+    _definition.update           2016-11-09
+    loop_
+      _alias.definition_id
+          '_pd_refln_phase_id' 
+    _description.text                   
+;
+      A code which identifies the particular phase to which
+      this reflection belongs.
+;
+    _name.category_id            refln
+    _name.object_id              phase_id
+    _name.linked_object_id       '_pd_phase.id'
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_refln.peak_id
+
+    _definition.id               '_pd_refln.peak_id'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_refln_peak_id' 
+    _description.text                   
+;
+
+      Code which identifies the powder diffraction peak that
+      contains the current reflection. This code must match a
+      _pd_peak.id code. 
+;
+    _name.category_id            refln
+    _name.object_id              peak_id
+    _name.linked_item_id         '_pd_peak.id'
+    _type.purpose                Link
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save__pd_refln.wavelength_id
+
+    _definition.id               '_pd_refln.wavelength_id'
+    _definition.update           2016-11-03
+    loop_
+      _alias.definition_id
+          '_pd_refln_wavelength_id' 
+    _description.text                   
+;
+
+      Code which identifies the wavelength associated with the
+      reflection and the peak pointed to by _pd_refln.peak_id.
+      This code must match a _diffrn_radiation_wavelength.id code.
+;
+    _name.category_id            refln
+    _name.object_id              wavelength_id
+    _name.linked_item_id         '_diffrn_radiation_wavelength.id'
+    _type.purpose                Link
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
 loop_
   _dictionary_audit.version
   _dictionary_audit.date
@@ -5856,4 +6067,10 @@ loop_
 ;
      Added _pd_calib_offset.detector_id to allow for per-detector
      2 theta offsets (James Hester)
+;
+         2.3      2017-01-26
+;
+     Returned pd_phase and pd_refln.phase_id to dictionary after
+     acceptance of _dictionary.formalism mechanism. Set _audit.formalism
+     to 'powder'.
 ;
