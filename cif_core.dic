@@ -1758,10 +1758,7 @@ _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_REFLN
 _category.key_id                        '_diffrn_refln.hkl'
 loop_
-  _category_key.name
-         '_diffrn_refln.index_h'       
-         '_diffrn_refln.index_k'       
-         '_diffrn_refln.index_l' 
+    _category_key.name                  '_diffrn_refln.hkl'
 
 save_
 
@@ -12375,8 +12372,7 @@ save__geom_angle.value
 
 _definition.id                          '_geom_angle.value'
 loop_
-  _alias.definition_id
-         '_geom_angle.value'           
+  _alias.definition_id           
          '_geom_angle' 
 _definition.update                      2012-12-14
 _description.text                       
@@ -12523,8 +12519,7 @@ save__geom_bond.distance
 
 _definition.id                          '_geom_bond.distance'
 loop_
-  _alias.definition_id
-         '_geom_bond.distance'         
+  _alias.definition_id        
          '_geom_bond_distance'         
          '_geom_bond.dist' 
 _definition.update                      2012-12-14
@@ -12568,7 +12563,6 @@ save__geom_bond.distance_su
 _definition.id                          '_geom_bond.distance_su'
 loop_
   _alias.definition_id
-         '_geom_bond.distance_su'      
          '_geom_bond_distance_su'      
          '_geom_bond.dist_esd' 
 _definition.update                      2012-12-14
@@ -13396,7 +13390,7 @@ loop_
                  angle =  Acosd ( u1 * u2 / ( Norm(u1) * Norm(u2) ) )
                  If ( (u1^u2)*v23 < 0 ) angle = -angle
  
-                 geom_torsion( .id        =  List ( m1.id,m2.id,m3.id,m4.id ),
+                 geom_torsion(
                                .atom_site_label_1 = m1.label
                                .atom_site_label_2 = m2.label
                                .atom_site_label_3 = m3.label
@@ -13741,9 +13735,6 @@ save_
 save__model_site.adp_eigen_system
 
 _definition.id                          '_model_site.adp_eigen_system'
-loop_
-  _alias.definition_id
-         '_model_site.adp_eigen_system' 
 _definition.update                      2012-11-22
 _description.text                       
 ;
