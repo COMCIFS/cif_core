@@ -178,7 +178,6 @@ save_ms_index
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _name.category_id            diffrn_refln
      save_
 
 
@@ -194,7 +193,6 @@ save_index_limit_max
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _name.category_id            diffrn_reflns
      save_
 
 
@@ -210,7 +208,6 @@ save_index_limit_min
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _name.category_id            diffrn_reflns
      save_
 
 

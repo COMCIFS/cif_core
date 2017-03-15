@@ -2822,22 +2822,22 @@ save__cell_subsystem.matrix_W
       the modulation wave vectors are reciprocal vectors of the
       other subsystem(s) referred to the reciprocal basis of one
       of them. The choice of the enlarged reciprocal basis
-      {a*, b*, c*, q~1~,..., q~d~\} is completely arbitrary, but\
+      {a*, b*, c*, q~1~,..., q~d~} is completely arbitrary, but
       the reciprocal basis of each subsystem is always known through
       the W matrices. These matrices [(3+d)x(3+d)-dimensional], one for
       each subsystem, can be blocked as follows:
 
-                        (Z^\n^~3~    Z^\\n^~d~)\
-                 W^\n^= (                    )\
-                        (V^\n^~3~    V^\\n^~d~),\
+                        (Z^\n^~3~    Z^\n^~d~)
+                 W^\n^= (                    )
+                        (V^\n^~3~    V^\n^~d~)
 
       the dimension of each block being (3x3), (3xd), (dx3) and (dxd)
-      for Z^\n^~3~, Z^\\n^~d~, V^\\n^~3~ and V^\\n^~d~, respectively. F
-      example, Z^\n^ expresses the reciprocal basis of each subsystem\
-      in terms of the basis {a*, b*, c*, q~1~ ,..., q~d~\}.\
+      for Z^\n^~3~, Z^\n^~d~, V^\n^~3~ and V^\n^~d~, respectively. For
+      example, Z^\n^ expresses the reciprocal basis of each subsystem
+      in terms of the basis {a*, b*, c*, q~1~ ,..., q~d~}.
       W^\n^ also gives the irrational components of the modulation wave
       vectors of each subsystem in its own three-dimensional reciprocal
-      basis {a~\\n~*, b~\\n~*, c~\\n~*\} and the superspace group of\
+      basis {a~\n~*, b~\n~*, c~\n~*} and the superspace group of
       a given subsystem from the unique superspace group of the
       composite.
 
@@ -2874,8 +2874,8 @@ save__cell_subsystem.matrix_W
       Ref: Smaalen, S. van (1991). Phys. Rev. B, 43, 11330-11341.
       Smaalen, S. van (1995). Crystallogr. Rev. 4, 79-202.
 ;
-    _name.category_id            cell_subsystem_matrix_W
-    _name.object_id              matrix
+    _name.category_id            cell_subsystem
+    _name.object_id              matrix_W
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Matrix
@@ -5203,6 +5203,7 @@ save_diffrn_refln.index_m_1
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_1'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_1
      save_
 
@@ -5212,6 +5213,7 @@ save_diffrn_refln.index_m_2
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_2'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_2
      save_
 
@@ -5221,6 +5223,7 @@ save_diffrn_refln.index_m_3
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_3'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_3
      save_
 
@@ -5230,6 +5233,7 @@ save_diffrn_refln.index_m_4
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_4'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_4
      save_
 
@@ -5239,6 +5243,7 @@ save_diffrn_refln.index_m_5
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_5'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_5
      save_
 
@@ -5248,6 +5253,7 @@ save_diffrn_refln.index_m_6
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_6'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_6
      save_
 
@@ -5257,6 +5263,7 @@ save_diffrn_refln.index_m_7
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_7'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_7
      save_
 
@@ -5266,6 +5273,7 @@ save_diffrn_refln.index_m_8
      loop_
     _alias.definition_id       '_diffrn_refln_index_m_8'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_refln
     _name.object_id              index_m_8
      save_
 
@@ -5315,6 +5323,7 @@ save_diffrn_reflns.limit_index_m_1_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_1_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_1_max
      save_
 
@@ -5324,6 +5333,7 @@ save_diffrn_reflns.limit_index_m_2_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_2_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_2_max
      save_
 
@@ -5333,6 +5343,7 @@ save_diffrn_reflns.limit_index_m_3_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_3_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_3_max
      save_
 
@@ -5342,6 +5353,7 @@ save_diffrn_reflns.limit_index_m_4_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_4_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_4_max
      save_
 
@@ -5351,6 +5363,7 @@ save_diffrn_reflns.limit_index_m_5_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_5_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_5_max
      save_
 
@@ -5360,6 +5373,7 @@ save_diffrn_reflns.limit_index_m_6_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_6_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_6_max
      save_
 
@@ -5369,6 +5383,7 @@ save_diffrn_reflns.limit_index_m_7_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_7_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_7_max
      save_
 
@@ -5378,6 +5393,7 @@ save_diffrn_reflns.limit_index_m_8_max
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_8_max'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_8_max
      save_
  
@@ -5427,6 +5443,7 @@ save_diffrn_reflns.limit_index_m_1_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_1_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_1_min
      save_
 
@@ -5436,6 +5453,7 @@ save_diffrn_reflns.limit_index_m_2_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_2_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_2_min
      save_
 
@@ -5445,6 +5463,7 @@ save_diffrn_reflns.limit_index_m_3_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_3_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_3_min
      save_
 
@@ -5454,6 +5473,7 @@ save_diffrn_reflns.limit_index_m_4_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_4_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_4_min
      save_
 
@@ -5463,6 +5483,7 @@ save_diffrn_reflns.limit_index_m_5_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_5_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_5_min
      save_
 
@@ -5472,6 +5493,7 @@ save_diffrn_reflns.limit_index_m_6_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_6_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_6_min
      save_
 
@@ -5481,6 +5503,7 @@ save_diffrn_reflns.limit_index_m_7_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_7_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_7_min
      save_
 
@@ -5490,6 +5513,7 @@ save_diffrn_reflns.limit_index_m_8_min
      loop_
     _alias.definition_id       '_diffrn_reflns_limit_index_m_8_min'
     _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            diffrn_reflns
     _name.object_id              limit_index_m_8_min
      save_
 
@@ -5569,6 +5593,7 @@ save_diffrn_standard_refln.index_m_1
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_1'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_1
      save_
 
@@ -5578,6 +5603,7 @@ save_diffrn_standard_refln.index_m_2
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_2'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_2
      save_
 
@@ -5587,6 +5613,7 @@ save_diffrn_standard_refln.index_m_3
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_3'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_3
      save_
 
@@ -5596,6 +5623,7 @@ save_diffrn_standard_refln.index_m_4
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_4'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_4
      save_
 
@@ -5605,6 +5633,7 @@ save_diffrn_standard_refln.index_m_5
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_5'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_5
      save_
 
@@ -5614,6 +5643,7 @@ save_diffrn_standard_refln.index_m_6
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_6'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_6
      save_
 
@@ -5623,6 +5653,7 @@ save_diffrn_standard_refln.index_m_7
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_7'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_7
      save_
 
@@ -5632,6 +5663,7 @@ save_diffrn_standard_refln.index_m_8
      loop_
     _alias.definition_id       '_diffrn_standard_refln_index_m_8'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            diffrn_standard_refln
     _name.object_id              index_m_8
      save_
 
@@ -5705,6 +5737,7 @@ save_exptl_crystal_face.index_m_1
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_1'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_1
      save_
 
@@ -5714,6 +5747,7 @@ save_exptl_crystal_face.index_m_2
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_2'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_2
      save_
 
@@ -5723,6 +5757,7 @@ save_exptl_crystal_face.index_m_3
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_3'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_3
      save_
 
@@ -5732,6 +5767,7 @@ save_exptl_crystal_face.index_m_4
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_4'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_4
      save_
 
@@ -5741,6 +5777,7 @@ save_exptl_crystal_face.index_m_5
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_5'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_5
      save_
 
@@ -5750,6 +5787,7 @@ save_exptl_crystal_face.index_m_6
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_6'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_6
      save_
 
@@ -5759,6 +5797,7 @@ save_exptl_crystal_face.index_m_7
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_7'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_7
      save_
 
@@ -5768,6 +5807,7 @@ save_exptl_crystal_face.index_m_8
      loop_
     _alias.definition_id       '_exptl_crystal_face_index_m_8'
     _import.get        [{"file":'templ_attr.cif' "save":'ms_index'}]
+    _name.category_id            exptl_crystal_face
     _name.object_id              index_m_8
 save_
 
@@ -6599,9 +6639,168 @@ save__reflns.limit_index_m_min_list
                     m.limit_index_m_3_min, m.limit_index_m_4_min,
                     m.limit_index_m_5_min, m.limit_index_m_6_min,
                     m.limit_index_m_7_min, m.limit_index_m_8_min ]
-; 
+;
 
 save_
+
+save_reflns.limit_index_m_1_max
+    _definition.id             '_reflns.limit_index_m_1_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_1_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_1_max
+     save_
+
+
+save_reflns.limit_index_m_2_max
+    _definition.id             '_reflns.limit_index_m_2_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_2_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_2_max
+     save_
+
+
+save_reflns.limit_index_m_3_max
+    _definition.id             '_reflns.limit_index_m_3_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_3_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_3_max
+     save_
+
+
+save_reflns.limit_index_m_4_max
+    _definition.id             '_reflns.limit_index_m_4_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_4_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_4_max
+     save_
+
+
+save_reflns.limit_index_m_5_max
+    _definition.id             '_reflns.limit_index_m_5_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_5_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id              reflns
+    _name.object_id                limit_index_m_5_max
+     save_
+
+
+save_reflns.limit_index_m_6_max
+    _definition.id             '_reflns.limit_index_m_6_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_6_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_6_max
+     save_
+
+
+save_reflns.limit_index_m_7_max
+    _definition.id             '_reflns.limit_index_m_7_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_7_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_7_max
+     save_
+
+
+save_reflns.limit_index_m_8_max
+    _definition.id             '_reflns.limit_index_m_8_max'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_8_max'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_max'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_8_max
+     save_
+ 
+
+save_reflns.limit_index_m_1_min
+    _definition.id             '_reflns.limit_index_m_1_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_1_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_1_min
+     save_
+
+
+save_reflns.limit_index_m_2_min
+    _definition.id             '_reflns.limit_index_m_2_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_2_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_2_min
+     save_
+
+
+save_reflns.limit_index_m_3_min
+    _definition.id             '_reflns.limit_index_m_3_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_3_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_3_min
+     save_
+
+
+save_reflns.limit_index_m_4_min
+    _definition.id             '_reflns.limit_index_m_4_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_4_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_4_min
+     save_
+
+
+save_reflns.limit_index_m_5_min
+    _definition.id             '_reflns.limit_index_m_5_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_5_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_5_min
+     save_
+
+
+save_reflns.limit_index_m_6_min
+    _definition.id             '_reflns.limit_index_m_6_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_6_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_6_min
+     save_
+
+
+save_reflns.limit_index_m_7_min
+    _definition.id             '_reflns.limit_index_m_7_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_7_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_7_min
+     save_
+
+
+save_reflns.limit_index_m_8_min
+    _definition.id             '_reflns.limit_index_m_8_min'
+     loop_
+    _alias.definition_id       '_reflns_limit_index_m_8_min'
+    _import.get        [{"file":'templ_attr.cif' "save":'index_limit_min'}]
+    _name.category_id            reflns
+    _name.object_id              limit_index_m_8_min
+     save_
 
 loop_
   _dictionary_audit.version
@@ -6613,9 +6812,10 @@ loop_
 ;
          3.1      2016-11-17
 ;
-     Substantial edits to conform to current DDLm, CIF2 syntax.
+     Substantial edits to conform to current DDLm, CIF2 syntax (James Hester).
 ;
          3.2      2017-03-11
 ;
-     Initial version for consideration by MS group
+     Returned all additional indices to main dictionary, removed category_id
+     from templates(James Hester)
 ;
