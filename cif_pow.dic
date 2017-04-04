@@ -18,7 +18,6 @@ data_CIF_POW
     _dictionary.date             2017-01-27
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
     _dictionary.ddl_conformance  3.11.10
-    _dictionary.formalism        Powder
     _dictionary.namespace        CifPow
     _description.text                   
 ;
