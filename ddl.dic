@@ -808,7 +808,7 @@ save_dictionary_valid.application
     _type.source                 Assigned
     _type.container              List
     _type.contents               Code
-    _type.dimension              [2]
+    _type.dimension              '[2]'
     loop_
     _method.purpose
     _method.expression
@@ -837,7 +837,7 @@ save_dictionary_valid.attributes
     _type.source                 Assigned
     _type.container              List
     _type.contents               Name
-    _type.dimension              []
+    _type.dimension              '[]'
 
 save_
 
