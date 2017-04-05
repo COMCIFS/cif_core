@@ -2107,7 +2107,7 @@ save_type.source
 ;               A quantity derived from other data items within the 
                 domain instance. This item is NOT PRIMITIVE.
 ; 
-    _enumeration.default         Selected
+    _enumeration.default         Assigned
 
 save_
 
