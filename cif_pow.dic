@@ -14,8 +14,8 @@ data_CIF_POW
     _dictionary.title            CIF_POW
     _dictionary.formalism        Powder
     _dictionary.class            Instance
-    _dictionary.version          2.3
-    _dictionary.date             2017-01-27
+    _dictionary.version          2.4
+    _dictionary.date             2017-04-05
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
     _dictionary.ddl_conformance  3.11.10
     _dictionary.formalism        Powder
@@ -5944,12 +5944,14 @@ loop_
   _alias.definition_id
          '_refln.F_meas'     
          '_refln_F_meas' 
-_definition.update                      2017-03-07
+_definition.update                      2017-03-22
 _description.text                       
 ;
-     The structure factor amplitude for the reflection derived from a powder
-     histogram by partitioning observed intensity between peaks at each point
-     in the same proportion as the model peaks contribute to that point.
+     The structure factor amplitude for the reflection derived by partitioning
+     the background-subtracted observed intensity _pd_proc.intensity_net between
+     reflections in the same proportion as those reflections contribute to
+     the corresponding background-free calculated point in _pd_calc.intensity_net 
+
 ;
 _name.category_id                       refln
 _name.object_id                         F_squared_meas
@@ -6071,6 +6073,11 @@ loop_
          2.3      2017-01-26
 ;
      Returned pd_phase and pd_refln.phase_id to dictionary after
-     acceptance of _dictionary.formalism mechanism. Set _audit.formalism
-     to 'powder'.
+     acceptance of _dictionary.formalism mechanism. Set
+     _dictionary.formalism to 'powder'.
+;
+         2.4      2017-04-05
+;
+     Added definition for _refln.F_meas after consultation with
+     PD DMG. (James Hester)
 ;
