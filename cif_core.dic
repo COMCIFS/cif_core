@@ -10936,15 +10936,6 @@ loop_
          'P 1 21/m 1'        'space group No. 10'          
          'P 2/n 2/n 2/n (origin at -1)'          'space group No. 48 origin 2'           
          'R -3 2/m'          'space group No. 166 rhomb'   
-         
-;         loop_
-         _space_group.id
-         _space_group.name_H_M_alt
-                          '1'   'C m c m'
-                          '2'   'C 2/c 2/m 21/m'
-                          '3'   'A m a m'
-;        'three examples for space group No. 63' 
-
 save_
 
 save_space_group.name_H-M_ref
