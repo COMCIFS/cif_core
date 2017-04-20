@@ -1124,7 +1124,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -1265,7 +1265,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -2054,7 +2054,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -2650,7 +2650,7 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -2681,7 +2681,7 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -3308,7 +3308,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -3885,7 +3885,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -4474,7 +4474,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Table
 _type.contents                          Real
-_type.dimension []
+_type.dimension                         '[]'
 _units.code                             none
 loop_
   _method.purpose
@@ -4531,7 +4531,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -5323,7 +5323,7 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 _units.code                             none
 loop_
   _method.purpose
@@ -5356,7 +5356,7 @@ _type.source                            Assigned
 _type.container                         Matrix
 _type.contents                          Real
 _units.code                             none
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -6017,7 +6017,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Real
-_type.dimension [2]
+_type.dimension                         '[2]'
 _units.code                             angstroms
 loop_
   _method.purpose
@@ -6697,7 +6697,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -6732,7 +6732,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -7295,7 +7295,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -7401,7 +7401,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -7438,7 +7438,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -7471,7 +7471,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -7505,7 +7505,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -7883,7 +7883,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -7911,7 +7911,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -7939,7 +7939,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -7966,7 +7966,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -7992,7 +7992,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -8021,7 +8021,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -9681,7 +9681,7 @@ _type.purpose                           Composite
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Code
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _description_example.case
          '[transluscent, pale, green]' 
@@ -10479,7 +10479,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -11422,7 +11422,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -11457,7 +11457,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -11489,7 +11489,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [4  4]
+_type.dimension                         '[4  4]'
 loop_
   _method.purpose
   _method.expression
@@ -11515,7 +11515,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -11748,7 +11748,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         List
 _type.contents                          'Matrix(Real,Real,Real)'
-_type.dimension [2]
+_type.dimension                         '[2]'
 loop_
   _method.purpose
   _method.expression
@@ -11785,7 +11785,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [4  4]
+_type.dimension                         '[4  4]'
 loop_
   _method.purpose
   _method.expression
@@ -11851,7 +11851,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -11922,7 +11922,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -12280,7 +12280,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Real
-_type.dimension [2]
+_type.dimension                         '[2]'
 _units.code                             angstroms
 
 save_
@@ -13543,7 +13543,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 _units.code                             angstroms
 
 save_
@@ -13745,7 +13745,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         List
 _type.contents                          'List(Real,Real,Real,Real)'
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -13778,7 +13778,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -13811,7 +13811,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -13868,7 +13868,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -16440,7 +16440,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Integer
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -19192,7 +19192,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -19461,7 +19461,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -19976,7 +19976,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -20455,7 +20455,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -20488,7 +20488,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -21236,7 +21236,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -21317,7 +21317,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -21540,7 +21540,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3  3]
+_type.dimension                         '[3  3]'
 loop_
   _method.purpose
   _method.expression
@@ -21621,7 +21621,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
-_type.dimension [3]
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -22212,7 +22212,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Real
-_type.dimension [9]
+_type.dimension                         '[9]'
 _units.code                             none
 loop_
   _method.purpose
@@ -22547,7 +22547,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Real
-_type.dimension [4]
+_type.dimension                         '[4]'
 _units.code                             none
 loop_
   _method.purpose
@@ -22659,7 +22659,7 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         List
 _type.contents                          'List(Real,Real)'
-_type.dimension []
+_type.dimension                         '[]'
 _units.code                             none
 
 save_

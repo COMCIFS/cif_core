@@ -658,7 +658,7 @@ save__atom_site_displace_special_func.sawtooth
     _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
-    _type.dimension              [3]
+    _type.dimension              '[3]'
     _enumeration.default         [0.0  0.0  0.0]
     loop_
     _method.purpose
@@ -2394,7 +2394,7 @@ save__atom_sites_modulation.global_phase_list
     _type.source                 Derived
     _type.container              List
     _type.contents               Real
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -2880,7 +2880,7 @@ save__cell_subsystem.matrix_W
     _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
-    _type.dimension              [11  11]
+    _type.dimension              '[11  11]'
     loop_
     _method.purpose
     _method.expression
@@ -4112,7 +4112,7 @@ save__cell_wave_vector.x
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _type.dimension              [3]
+    _type.dimension              '[3]'
     _enumeration.default         0.0
 
 save_
@@ -4152,7 +4152,7 @@ save__cell_wave_vector.xyz
     _type.source                 Derived
     _type.container              Matrix
     _type.contents               Real
-    _type.dimension              [3]
+    _type.dimension              '[3]'
     loop_
     _method.purpose
     _method.expression
@@ -4184,7 +4184,7 @@ save__cell_wave_vector.y
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _type.dimension              [3]
+    _type.dimension              '[3]'
     _enumeration.default         0.0
 
 save_
@@ -4207,7 +4207,7 @@ save__cell_wave_vector.z
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _type.dimension              [3]
+    _type.dimension              '[3]'
     _enumeration.default         0.0
 save_
 
@@ -5182,7 +5182,7 @@ save__diffrn_refln.index_m_list
     _type.source                 Recorded
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -5300,7 +5300,7 @@ save__diffrn_reflns.limit_index_m_max_list
     _type.source                 Derived
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -5420,7 +5420,7 @@ save__diffrn_reflns.limit_index_m_min_list
     _type.source                 Derived
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -5572,7 +5572,7 @@ save__diffrn_standard_refln.index_m_list
     _type.source                 Recorded
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -5716,7 +5716,7 @@ save__exptl_crystal_face.index_m_list
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -5862,7 +5862,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         List
 _type.contents                          Real
-_type.dimension [2]
+_type.dimension                         '[2]'
 _units.code                             angstroms
 
 save_
@@ -6521,7 +6521,7 @@ save__refln.index_m_list
     _type.source                 Recorded
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -6583,7 +6583,7 @@ save__reflns.limit_index_m_max_list
     _type.source                 Derived
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
@@ -6625,7 +6625,7 @@ save__reflns.limit_index_m_min_list
     _type.source                 Derived
     _type.container              List
     _type.contents               Integer
-    _type.dimension              [8]
+    _type.dimension              '[8]'
     loop_
     _method.purpose
     _method.expression
