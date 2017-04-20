@@ -371,7 +371,7 @@ save_DESCRIPTION
     _definition.update           2011-06-20
     _description.text                   
 ;
-     The attributes of descriptive (non-machine parseable) parts of
+     The attributes of descriptive (non-machine parsable) parts of
      definitions.
 ;
     _name.category_id            ATTRIBUTES
@@ -449,7 +449,7 @@ save_DESCRIPTION_EXAMPLE
     _definition.update           2013-09-08
     _description.text                   
 ;
-     The attributes of descriptive (non-machine parseable) examples of
+     The attributes of descriptive (non-machine parsable) examples of
      values of the defined items.
 ;
     _name.category_id            DESCRIPTION
@@ -1816,7 +1816,7 @@ save_type.contents
               Code          'case-insens contig. string of STAR characters'    
               Name          'case-insens contig. string of alpha-num chars or underscore'         
               Tag           'case-insens contig. STAR string with leading underscore'   
-              Filename      'case-sens string indentifying an external file'   
+              Filename      'case-sens string identifying an external file'
               Uri           'case-sens string as universal resource indicator of a file'          
               Date          'ISO standard date format <yyyy>-<mm>-<dd>'        
               Version       'version digit string of the form <major>.<version>.<update>'         
@@ -2004,7 +2004,7 @@ save_type.purpose
 ;        
               Encode        
 ;                  Used to type items with values that are text or codes 
-                   that are formatted to be machine parsible.
+                   that are formatted to be machine parsable.
 ;        
               State         
 ;                  Used to type items with values that are restricted to 
@@ -2425,7 +2425,7 @@ save_
 ;        
          3.8.02    2011-06-21           
 ;
-Reconfigure _dictionary_valid attribures into lists, and reset the
+Reconfigure _dictionary_valid attributes into lists, and reset the
 attribute application criteria at the rear of the DDL dictionary.
 ;        
          3.8.03    2011-06-22           
