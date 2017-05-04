@@ -9129,8 +9129,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.5:
-_enumeration.default                    0.0
+_enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
@@ -9151,13 +9150,13 @@ _description.text
      distance.
 ;
 _name.category_id                       chemical_conn_bond
+_name.linked_item_id                    '_chemical_conn_bond.distance'
 _name.object_id                         distance_su
-_type.purpose                           Number
+_type.purpose                           SU
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.5:
-_enumeration.default                    0.0
+_enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
