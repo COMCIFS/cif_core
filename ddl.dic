@@ -1819,7 +1819,8 @@ save_type.contents
               Complex       'complex number <R>+j<I>'      
               Binary        'binary number \b<N>'          
               Hexadecimal   'hexadecimal number \x<N>'     
-              Octal         'octal number \o<N>'           
+              Octal         'octal number \o<N>'
+	      Symop         'a string composed of an integer followed by an underscore and 3 or more digits'
               Implied       'implied by the context of the attribute' 
               ByReference
                             """The contents have the same form as those of the attribute referenced by
