@@ -1765,23 +1765,12 @@ save_type.container
     _enumeration_set.detail
               Single        'single value'       
               Multiple      'values as List or by boolean ,|&!* or range : ops'         
-              List        '''ordered set of values bounded by [] and separated by
-                             commas. Elements need not be of same contents type.'''
-              Array       '''ordered set of numerical values bounded by [] and 
-                             separated by commas. Operations across arrays are
+              List        '''ordered set of values. Elements need not be of same contents type.'''
+              Array       '''ordered set of numerical values. Operations across arrays are
                              equivalent to operations across elements of the Array.'''
-              Matrix      '''ordered set of numerical values for a tensor bounded by 
-                             [] and separated by commas. Tensor operations such as
+              Matrix      '''ordered set of numerical values for a tensor. Tensor operations such as
                              dot and cross products, are valid cross matrix objects.'''       
-              Table         'id:value elements bounded by {}; separated by commas'      
-              Ref-table   '''a STAR construction with key:value elements bounded
-                             by ${..}$ and separated by commas.
-                             The id tags below are privileged and optional.
-                             source  - filename or URI
-                             block   - data blockname
-                             frame   - framecode or [framecode,framecode,..]
-                             item    - dataname or [dataname,dataname,..]
-                             key     - key value if item is in a list'''
+              Table         'An unordered set of id:value elements'      
     _enumeration.default         Single
 
 save_
