@@ -180,7 +180,6 @@ save__diffrn.ambient_pressure_su
 _definition.id                          '_diffrn.ambient_pressure_su'
 loop_
   _alias.definition_id
-         '_diffrn.ambient_pressure_su'           
          '_diffrn_ambient_pressure_su'           
          '_diffrn.ambient_pressure_esd' 
 _definition.update                      2012-11-26
@@ -191,11 +190,11 @@ _description.text
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_pressure_su
-_type.purpose                           Number
+_name.linked_item_id                    '_diffrn.ambient_pressure'
+_type.purpose                           SU
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kilopascals
 
 save_
@@ -314,7 +313,6 @@ save__diffrn.ambient_temperature_su
 _definition.id                          '_diffrn.ambient_temperature_su'
 loop_
   _alias.definition_id
-         '_diffrn.ambient_temperature_su'        
          '_diffrn_ambient_temperature_su'        
          '_diffrn_ambient_temp_su'     
          '_diffrn.ambient_temp_esd' 
@@ -331,7 +329,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kelvins
 
 save_
@@ -2140,7 +2137,6 @@ save__diffrn_refln.intensity_net_su
 _definition.id                          '_diffrn_refln.intensity_net_su'
 loop_
   _alias.definition_id
-         '_diffrn_refln.intensity_net_su'        
          '_diffrn_refln_intensity_u'   
          '_diffrn_refln_intensity_sigma'         
          '_diffrn_refln.intensity_sigma'         
@@ -2159,7 +2155,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0:
 _units.code                             none
 
 save_
@@ -4290,7 +4285,6 @@ save__refln.F_meas_su
 _definition.id                          '_refln.F_meas_su'
 loop_
   _alias.definition_id
-         '_refln.F_meas_su'  
          '_refln_F_sigma'    
          '_refln.F_meas_sigma'         
          '_refln_F_meas_su' 
@@ -4683,7 +4677,6 @@ save__refln.intensity_meas_su
 _definition.id                          '_refln.intensity_meas_su'
 loop_
   _alias.definition_id
-         '_refln.intensity_meas_su'    
          '_refln_intensity_meas_su'    
          '_refln.intensity_sigma'      
          '_refln_intensity_sigma' 
@@ -4699,7 +4692,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             none
 
 save_
@@ -6825,7 +6817,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstrom_cubed
 
 save_
@@ -7068,7 +7059,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kilopascals
 
 save_
@@ -7173,7 +7163,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kelvins
 
 save_
@@ -7574,7 +7563,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:180.
 _units.code                             degrees
 
 save_
@@ -7636,7 +7624,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:180.
 _units.code                             degrees
 
 save_
@@ -7693,11 +7680,11 @@ _description.text
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_gamma_su
-_type.purpose                           Measurand
+_name.linked_item_id                    '_cell.reciprocal_angle_gamma'
+_type.purpose                           SU
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:180.
 _units.code                             degrees
 
 save_
@@ -7753,7 +7740,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             reciprocal_angstroms
 
 save_
@@ -7809,7 +7795,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             reciprocal_angstroms
 
 save_
@@ -7860,11 +7845,11 @@ _description.text
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_c_su
-_type.purpose                           Measurand
+_name.linked_item_id                    '_cell.reciprocal_length_c'
+_type.purpose                           SU
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             reciprocal_angstroms
 
 save_
@@ -8725,7 +8710,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kelvins
 
 save_
@@ -8826,7 +8810,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kelvins
 
 save_
@@ -9156,7 +9139,6 @@ _type.purpose                           SU
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
@@ -9829,7 +9811,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             megagrams_per_metre_cubed
 
 save_
@@ -9937,7 +9918,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             kelvins
 
 save_
@@ -12594,7 +12574,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             angstroms
 
 save_
@@ -12864,7 +12843,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             angstroms
 
 save_
@@ -13022,7 +13000,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      -180.:180.
 _units.code                             degrees
 
 save_
@@ -13135,7 +13112,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
@@ -13203,7 +13179,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
@@ -13271,7 +13246,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
@@ -19042,7 +19016,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstrom_squared
 
 save_
@@ -19108,7 +19081,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstrom_squared
 
 save_
@@ -19724,8 +19696,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:1.0
-_enumeration.default                    0.0
 _units.code                             none
 
 save_
@@ -20131,7 +20101,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstrom_squared
 
 save_
@@ -20189,7 +20158,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             angstrom_squared
 
 save_
@@ -23194,7 +23162,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.:
 _units.code                             none
 
 save_
@@ -23432,7 +23399,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             none
 
 save_
@@ -23506,7 +23472,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 _units.code                             none
 
 save_

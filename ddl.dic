@@ -2054,10 +2054,10 @@ save_type.purpose
 ;        
               SU            
 ;                  Used to type an item with a numerical value that is the 
-                   standard uncertainty of an item with the identical name
-                   except for the suffix '_su'. The definition of an SU item 
-                   must include the attribute "_name.linked_item_id" which
-                   explicitly identifies the associated measurand item.
+                   standard uncertainty of another dataname. The definition
+                   of an SU item must include the attribute
+                   "_name.linked_item_id" which explicitly identifies the
+                   associated measurand item. SU values must be non-negative.
 ; 
               Internal
 ;                  Used to type items that serve only internal purposes of the dictionary
