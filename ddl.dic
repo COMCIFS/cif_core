@@ -675,7 +675,7 @@ save_dictionary.uri
     _definition.update           2006-11-16
     _description.text
 ;
-     The universal resource indicator of this dictionary.
+     The uniform resource identifier of this dictionary.
 ;
     _name.category_id            dictionary
     _name.object_id              uri
@@ -1822,7 +1822,7 @@ save_type.contents
               Name          'case-insens contig. string of alpha-num chars or underscore'
               Tag           'case-insens contig. STAR string with leading underscore'
               Filename      'case-sens string identifying an external file'
-              Uri           'case-sens string as universal resource indicator of a file'
+              Uri           'case-sens string as uniform resource identifier of a file'
               Date          'ISO standard date format <yyyy>-<mm>-<dd>'
               Version       'version digit string of the form <major>.<version>.<update>'
               Dimension     'integer limits of an Array/Matrix/List in square brackets'
@@ -1921,7 +1921,7 @@ save_type.indices
      Filename     'name of an external file'
      Code         'code used for indexing data or referencing data resources'
      Date         'ISO date format yyyy-mm-dd'
-     Uri          'an universal resource identifier string, per RFC 3986'
+     Uri          'an uniform resource identifier string, per RFC 3986'
      Version      'version digit string of the form <major>.<version>.<update>'
      ByReference
 ;
