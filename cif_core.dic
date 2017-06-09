@@ -9,10 +9,10 @@ data_CIF_CORE
 
 _dictionary.title                       CIF_CORE
 _dictionary.class                       Instance
-_dictionary.version                     3.0.06
-_dictionary.date                        2016-09-13
+_dictionary.version                     3.0.07
+_dictionary.date                        2017-06-10
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
-_dictionary.ddl_conformance             3.11.04
+_dictionary.ddl_conformance             3.11.11
 _dictionary.namespace                   CifCore
 _description.text                       
 ;
@@ -10664,7 +10664,6 @@ _definition.id                          '_space_group.crystal_system'
 loop_
   _alias.definition_id
          '_space_group_crystal_system'
-         '_symmetry.cell_setting'
 _definition.update                      2016-05-09
 _description.text                       
 ;
@@ -10732,11 +10731,6 @@ loop_
       If( Abs(a-b)>d && Abs(a-c)>d )                        Throw( warn_len)
       If( Abs(alp-90)<d && Abs(bet-90)<d && Abs(gam-90)<d ) Throw( warn_ang)
       If( Abs(gam-120)>d || Abs(alp-90)>d || Abs(bet-90)>d) Throw( warn_ang)
-    }
-    Else If(setting == 'rhombohedral') {
-      If( Abs(a-b)>d || Abs(a-c)>d || Abs(b-c)>d )          Throw( warn_len)
-      If( Abs(alp-90)<d || Abs(bet-90)<d || Abs(gam-90)<d ) Alert('B', warn_ang)
-      If( Abs(alp-bet)>d || Abs(alp-gam)>d || Abs(bet-gam)>d) Throw( warn_ang)
     }
     Else If(setting == 'cubic') {
       If( Abs(a-b)>d || Abs(a-c)>d || Abs(b-c)>d )          Throw( warn_len)
@@ -11672,6 +11666,38 @@ save_space_group_Wyckoff.site_symmetry
 ;
      save_
 
+save__symmetry.cell_setting
+    _definition.id               '_symmetry.cell_setting'
+    _alias.definition_id         '_symmetry_cell_setting'
+    _definition.update           2017-06-10
+    _definition.replaced_by      '_space_group.crystal_system'
+    _description.text
+;              
+     This dataname should not be used and is DEPRECATED as it is
+     ambiguous. 
+
+     The original definition is as follows:
+
+     The cell settings for this space-group symmetry.
+;
+                
+    _name.category_id             space_group
+    _name.object_id               deprecated_setting
+    _type.purpose                 Describe
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+    loop_
+    _enumeration_set.state
+                                  triclinic
+                                  monoclinic
+                                  orthorhombic
+                                  tetragonal
+                                  rhombohedral
+                                  trigonal
+                                  hexagonal
+                                  cubic
+     save_
 
 save_FUNCTION
 
@@ -24600,4 +24626,9 @@ loop_
      _diffrn.crystal_id removed as diffrn is Set category. Changed 
      EXPTL_CRYSTAL to Set type in keeping with current use patterns.
      Removed all child keys of exptl_crystal_id.
+;
+         3.0.07    2017-06-10
+;
+     Added and deprecated symmetry.cell_setting. Removed rhombohedral
+     option from dREL method for space_group.crystal_system. (James Hester)
 ;
