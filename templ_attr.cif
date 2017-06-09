@@ -239,8 +239,6 @@ save_cell_angle_su
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           0.0:180.0
-    _enumeration.default         90.0
     _units.code                  degrees
      save_
 
@@ -272,8 +270,6 @@ save_cell_length_su
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           0.:
-    _enumeration.default         0.0
     _units.code                  angstroms
      save_
  
@@ -349,7 +345,6 @@ save_Cartn_coord_su
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           -1000.:1000.
     _units.code                  angstroms
      save_
 
@@ -382,7 +377,6 @@ save_fract_coord_su
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           -1.:1.
     _units.code                  none
      save_
 
@@ -577,7 +571,6 @@ save_aniso_BIJ_su
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.default         ?
     _units.code                  angstrom_squared
      save_
 
@@ -621,7 +614,6 @@ save_aniso_UIJ_su
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.default         ?
     _units.code                  angstrom_squared
      save_
 
