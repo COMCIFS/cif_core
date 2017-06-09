@@ -8,10 +8,10 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.11.10
-    _dictionary.date             2017-01-25
+    _dictionary.version          3.11.11
+    _dictionary.date             2017-06-10
     _dictionary.uri              www.iucr.org/cif/dic/ddl.dic
-    _dictionary.ddl_conformance  3.11.10
+    _dictionary.ddl_conformance  3.11.11
     _dictionary.namespace        DdlDic
     _description.text                   
 ;
@@ -293,6 +293,25 @@ save_definition.id
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Tag
+
+save_
+
+save_definition.replaced_by
+
+    _definition.id               '_definition.replaced_by'
+    _definition.class            Attribute
+    _definition.update           2017-06-10
+    _description.text
+;
+     A dataname that should be used instead of the defined dataname.
+     The defined dataname is deprecated and should not be used.
+;
+    _name.category_id            definition
+    _name.object_id              replaced_by
+    _type.container              Single
+    _type.purpose                Encode
+    _type.contents               Name
+    _type.source                 Assigned
 
 save_
 
@@ -701,7 +720,6 @@ save_DICTIONARY_AUDIT
 ;
     _name.category_id            DICTIONARY
     _name.object_id              DICTIONARY_AUDIT
-    _category.key_id             '_dictionary_audit.version'
     loop_
     _category_key.name
                                  '_dictionary_audit.version' 
@@ -2559,4 +2577,8 @@ Removed 'Measured' as a state for type.source
    Adjusted definition of _import_details.mode to remove references to
    save frames and add special 'Head' category treatment.  Added
    _dictionary.formalism
+;
+         3.11.11   2017-06-10
+;
+  Added '_definition.replaced_by' to flag deprecated definitions
 ;
