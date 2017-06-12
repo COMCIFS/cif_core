@@ -11648,6 +11648,7 @@ save_space_group_Wyckoff.site_symmetry
 
 save__symmetry.cell_setting
     _definition.id               '_symmetry.cell_setting'
+    loop_
     _alias.definition_id         '_symmetry_cell_setting'
     _definition.update           2017-06-10
     _definition.replaced_by      '_space_group.crystal_system'
