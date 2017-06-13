@@ -570,6 +570,7 @@ save_ATOM_SITE_DISPLACE_SPECIAL_FUNC
 ;
     _name.category_id            MS_GROUP
     _name.object_id              ATOM_SITE_DISPLACE_SPECIAL_FUNC
+    loop_
     _category_key.name           '_atom_site_displace_special_func.id'
 
 save_
@@ -4064,6 +4065,7 @@ save_CELL_WAVE_VECTOR
 ;
     _name.category_id            MS_GROUP
     _name.object_id              CELL_WAVE_VECTOR
+	loop_
     _category_key.name           '_cell_wave_vector.seq_id'
 
 save_
