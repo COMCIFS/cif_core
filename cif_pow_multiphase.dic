@@ -68,6 +68,7 @@ save_PD_PHASE
 ;
     _name.category_id            PD_EXT_GROUP
     _name.object_id              PD_PHASE
+	loop_
     _category_key.name           '_pd_phase.id'
 
 save_

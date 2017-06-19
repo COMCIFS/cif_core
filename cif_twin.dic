@@ -787,7 +787,7 @@ save_twin_refln.index_hkl
     _type.source                 Derived
     _type.container              Matrix
     _type.contents               Integer
-    _type.dimension              [3]
+    _type.dimension              '[3]'
     loop_
     _method.purpose
     _method.expression

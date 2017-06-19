@@ -192,6 +192,7 @@ save_PD_BLOCK_DIFFRACTOGRAM
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_BLOCK_DIFFRACTOGRAM
+    loop_
     _category_key.name           '_pd_block_diffractogram.id'
     
 save_
@@ -288,6 +289,7 @@ save_PD_CALC
 ;
     _name.category_id            PD_DATA
     _name.object_id              PD_CALC
+    loop_
     _category_key.name           '_pd_calc.point_id'
 
 save_
@@ -412,6 +414,7 @@ save_PD_CALIB
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_CALIB
+    loop_
     _category_key.name           '_pd_calib.detector_id'
 
 save_
@@ -1071,6 +1074,7 @@ save_PD_DATA
 
     _name.category_id            PD_GROUP
     _name.object_id              PD_DATA
+    loop_
     _category_key.name           '_pd_data.point_id'
 
 save_
@@ -1619,7 +1623,8 @@ save__pd_instr.monochr_pre_spec
     _definition.update           2014-06-20
     loop_
       _alias.definition_id
-          '_pd_instr_monochr_pre/spec' 
+          '_pd_instr_monochr_pre/spec'
+          '_pd_instr_monochr_pre_spec'
     _description.text                   
 ;
 
@@ -2170,6 +2175,7 @@ save_PD_INSTR_DETECTOR
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_INSTR_DETECTOR
+    loop_
     _category_key.name           '_pd_instr_detector.id'
 
 save_
@@ -2490,7 +2496,8 @@ save__pd_instr.monochr_post_spec
     _definition.update           2014-10-20
     loop_
       _alias.definition_id
-          '_pd_instr_monochr_post/spec' 
+          '_pd_instr_monochr_post/spec'
+          '_pd_instr_monochr_post_spec'
     _description.text                   
 ;
 
@@ -3320,6 +3327,7 @@ save_PD_MEAS
 ;
     _name.category_id            PD_DATA
     _name.object_id              PD_MEAS
+    loop_
     _category_key.name           '_pd_meas.point_id'
 
 save_
@@ -3818,6 +3826,7 @@ save_PD_MEAS_INFO_AUTHOR
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_MEAS_INFO_AUTHOR
+    loop_
     _category_key.name           '_pd_meas_info_author.name'
 
 save_
@@ -4009,6 +4018,7 @@ save_PD_PEAK
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_PEAK
+    loop_
     _category_key.name           '_pd_peak.id'
 
 save_
@@ -4652,6 +4662,7 @@ save_PD_PROC
 ;
     _name.category_id            PD_DATA
     _name.object_id              PD_PROC
+    loop_
     _category_key.name          '_pd_proc.point_id'
 
 save_
@@ -5061,6 +5072,7 @@ save_PD_PROC_INFO_AUTHOR
 ;
     _name.category_id            PD_GROUP
     _name.object_id              PD_PROC_INFO_AUTHOR
+    loop_
     _category_key.name           '_pd_proc_info_author.name'
 
 save_
@@ -5804,6 +5816,7 @@ save_PD_PHASE
 ;
     _name.category_id            PD_EXT_GROUP
     _name.object_id              PD_PHASE
+    loop_
     _category_key.name           '_pd_phase.id'
 
 save_
