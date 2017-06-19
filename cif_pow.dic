@@ -5922,7 +5922,6 @@ save_refln.F_complex
 _definition.id                          '_refln.F_complex'
 loop_
   _alias.definition_id
-         '_refln.F_complex'  
          '_refln_F_complex' 
 _definition.update                      2017-03-07
 _description.text                       

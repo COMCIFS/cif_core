@@ -74,7 +74,6 @@ save_twin.dimensionality
     loop_
       _alias.definition_id
           '_twin_dimensionality'       
-          '_twin.dimensionality' 
     _description.text                   
 ;
 
@@ -107,7 +106,6 @@ save_twin.formation_mechanism
     loop_
       _alias.definition_id
           '_twin_formation_mechanism'  
-          '_twin.formation_mechanism' 
     _description.text                   
 ;
 
@@ -136,7 +134,6 @@ save_twin.morphology
     loop_
       _alias.definition_id
           '_twin_morphology'           
-          '_twin.morphology' 
     _description.text                   
 ;
 
@@ -167,7 +164,6 @@ save_twin.special_details
     loop_
       _alias.definition_id
           '_twin_special_details'      
-          '_twin.special_details' 
     _description.text                   
 ;
 
