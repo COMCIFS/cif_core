@@ -2407,7 +2407,7 @@ save_pd_instr.location
 save_pd_instr.monochr_pre_spec
     _definition.id             '_pd_instr.monochr_pre_spec'
      loop_
-    _alias.definition_id       '_pd_instr_monochr_pre/spec'
+    _alias.definition_id       '_pd_instr_monochr_pre_spec'
     _definition.update           2014-06-20
     _description.text
 ;
@@ -2452,7 +2452,7 @@ save_pd_instr.monochr_pre_spec
 save_pd_instr.monochr_post_spec
     _definition.id             '_pd_instr.monochr_post_spec'
      loop_
-    _alias.definition_id       '_pd_instr_monochr_post/spec'
+    _alias.definition_id       '_pd_instr_monochr_post_spec'
     _definition.update           2014-06-20
     _description.text
 ;
