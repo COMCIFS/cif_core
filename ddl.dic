@@ -292,7 +292,7 @@ save_definition.id
     _type.purpose                Identify
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Tag
+    _type.contents               Code
 
 save_
 
@@ -854,7 +854,7 @@ save_dictionary_valid.attributes
     _type.purpose                Audit
     _type.source                 Assigned
     _type.container              List
-    _type.contents               Tag
+    _type.contents               Code
     _type.dimension              '[]'
 
 save_
