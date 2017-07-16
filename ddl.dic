@@ -1252,7 +1252,7 @@ save_enumeration_set.state
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Text
 
 save_
 
