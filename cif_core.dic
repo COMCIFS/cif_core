@@ -1451,7 +1451,7 @@ _name.object_id                         probe
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          x-ray     
@@ -1507,7 +1507,7 @@ _name.object_id                         xray_symbol
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -1586,7 +1586,7 @@ _name.object_id                         determination
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -2107,7 +2107,7 @@ _name.object_id                         scan_mode
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -2135,7 +2135,7 @@ _name.object_id                         scan_mode_backgd
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -3333,7 +3333,7 @@ _name.object_id                         device
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -4369,7 +4369,7 @@ _name.object_id                         include_status
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -4622,7 +4622,7 @@ _name.object_id                         refinement_status
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -4827,7 +4827,7 @@ _name.object_id                         apply_dispersion_to_Fcalc
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -7738,7 +7738,7 @@ _name.object_id                         absolute_configuration
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -7844,7 +7844,7 @@ _name.object_id                         enantioexcess_bulk_technique
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -7912,7 +7912,7 @@ _name.object_id                         enantioexcess_crystal_technique
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -8805,7 +8805,7 @@ _name.object_id                         type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -9209,7 +9209,7 @@ _name.object_id                         correction_type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -9891,7 +9891,7 @@ _name.object_id                         general
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          metallic  
@@ -9946,7 +9946,7 @@ _name.object_id                         intensity
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          dark      
@@ -10190,7 +10190,7 @@ save_space_group.Bravais_type
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_ 
     _enumeration_set.state        aP
                                   mP     mS
@@ -10218,7 +10218,7 @@ save_space_group.centring_type
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
     _enumeration_set.detail
@@ -10252,7 +10252,7 @@ _name.object_id                         crystal_system
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          triclinic           
@@ -10336,7 +10336,7 @@ save_space_group.IT_coordinate_system_code
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
     _enumeration_set.detail
@@ -10424,7 +10424,7 @@ save_space_group.Laue_class
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
      '-1' '2/m' 'mmm' '4/m' '4/mmm' '-3' '-3m' '6/m' '6/mmm' 'm-3' 'm-3m'  
@@ -11175,7 +11175,7 @@ save_space_group_Wyckoff.letter
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
            a b c d e f g h i j k l m n o p q r s t u v w x y z '\a'
@@ -11882,7 +11882,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -12188,7 +12188,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -12423,7 +12423,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -12812,7 +12812,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -13094,7 +13094,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -14601,7 +14601,7 @@ _name.object_id                         coordinate_linkage
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -16694,7 +16694,7 @@ _name.object_id                         type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -17171,7 +17171,7 @@ _name.object_id                         element
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          section   
@@ -17202,7 +17202,7 @@ _name.object_id                         format
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -17588,7 +17588,7 @@ _name.object_id                         defn
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -17687,7 +17687,7 @@ _name.object_id                         category
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -18221,7 +18221,7 @@ _name.object_id                         adp_type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -18432,7 +18432,7 @@ _name.object_id                         calc_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -18988,7 +18988,7 @@ _name.object_id                         refinement_flags
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -19022,7 +19022,7 @@ _name.object_id                         refinement_flags_adp
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -19052,7 +19052,7 @@ _name.object_id                         refinement_flags_occupancy
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -19082,7 +19082,7 @@ _name.object_id                         refinement_flags_posn
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -20020,7 +20020,7 @@ _name.object_id                         solution_hydrogens
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -20070,7 +20070,7 @@ _name.object_id                         solution_primary
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -20120,7 +20120,7 @@ _name.object_id                         solution_secondary
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -22615,7 +22615,7 @@ _name.object_id                         hydrogen_treatment
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -22684,7 +22684,7 @@ _name.object_id                         matrix_type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -23223,7 +23223,7 @@ _name.object_id                         structure_factor_coef
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -23286,7 +23286,7 @@ _name.object_id                         weighting_scheme
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
