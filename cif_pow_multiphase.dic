@@ -183,7 +183,7 @@ save_pd_refln.phase_id
 ;
     _name.category_id            refln
     _name.object_id              phase_id
-    _name.linked_object_id       '_pd_phase.id'
+    _name.linked_item_id       '_pd_phase.id'
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
