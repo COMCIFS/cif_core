@@ -10,7 +10,8 @@ data_DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.12.0
     _dictionary.date             2017-07-14
-    _dictionary.uri              www.iucr.org/cif/dic/ddl.dic
+    _dictionary.uri              
+             https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.12.0
     _dictionary.namespace        DdlDic
     _description.text
