@@ -33,6 +33,7 @@ save_ATTRIBUTES
      dictionary.
 ;
     _name.object_id              ATTRIBUTES
+    _name.category_id            DDL_DIC
 
 save_
 
@@ -1692,6 +1693,8 @@ save_name.category_id
     _description.text
 ;
      The name of the category in which a category or item resides.
+     For Head categories this is the _dictionary.title given in the
+     enclosing data block.
 ;
     _name.category_id            name
     _name.object_id              category_id
