@@ -5,9 +5,9 @@
 #                                                                        #
 ##########################################################################
 
-data_CIF_CORE
+data_CORE_DIC
 
-_dictionary.title                       CIF_CORE
+_dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.07
 _dictionary.date                        2017-06-10
@@ -31,7 +31,7 @@ _description.text
      The CIF_CORE group contains the definitions of data items that
      are common to all domains of crystallographic studies.
 ;
-_name.category_id                       CIF_DIC
+_name.category_id                       CORE_DIC
 _name.object_id                         CIF_CORE
 
 save_
