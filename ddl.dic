@@ -1825,7 +1825,8 @@ save_type.contents
      Two "case insensitive" strings are considered identical when
      they match under the Unicode canonical caseless matching algorithm.
 
-     In all cases, "whitespace" refers to ASCII whitespace only.
+     In all cases, "whitespace" refers to ASCII whitespace only, that
+     is [U+0009],[U+000A],[U+000D] and [U+0020].
 ;
     _name.category_id            type
     _name.object_id              contents
@@ -1858,7 +1859,9 @@ save_type.contents
               Binary        'binary number \b<N>'
               Hexadecimal   'hexadecimal number \x<N>'
               Octal         'octal number \o<N>'
-              Symop         'a string composed of an integer followed by an underscore and 3 or more digits'
+              Symop         '''a string composed of an integer
+                            optionally followed by an underscore or space and
+                            three or more digits'''
               Implied       'implied by the context of the attribute'
               ByReference  '''The contents have the same form as those of the attribute referenced by
                              _type.contents_referenced_id.'''
