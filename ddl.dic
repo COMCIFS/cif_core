@@ -8,11 +8,11 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.12.0
-    _dictionary.date             2017-07-14
+    _dictionary.version          3.13.0
+    _dictionary.date             2017-07-21
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
-    _dictionary.ddl_conformance  3.12.0
+    _dictionary.ddl_conformance  3.13.0
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -677,7 +677,7 @@ save_dictionary.uri
     _definition.update           2006-11-16
     _description.text
 ;
-     The uniform resource identifier of this dictionary.
+     An absolute uniform resource identifier (URI) for this dictionary.
 ;
     _name.category_id            dictionary
     _name.object_id              uri
@@ -693,10 +693,13 @@ save_dictionary.version
 
     _definition.id               '_dictionary.version'
     _definition.class            Attribute
-    _definition.update           2006-11-16
+    _definition.update           2017-07-21
     _description.text
 ;
-     A unique version identifier for the dictionary.
+     A unique version identifier for the dictionary.  Where a
+     dictionary contains templates, the major version
+     number should be incremented whenever one or more templates
+     remove or add attributes.
 ;
     _name.category_id            dictionary
     _name.object_id              version
@@ -1355,6 +1358,7 @@ save_
 save_IMPORT_DETAILS
     _definition.id              IMPORT_DETAILS
     _definition.scope           Category
+    _definition.update          2015-05-06
     _name.category_id           IMPORT
     _name.object_id             IMPORT_DETAILS
     _definition.class           Loop
@@ -1372,10 +1376,12 @@ save_import_details.file_id
 
     _definition.id               '_import_details.file_id'
     _definition.class            Attribute
-    _definition.update           2015-05-06
+    _definition.update           2017-07-21
     _description.text
 ;
-     The file name/URI of the source dictionary
+     A URI reference as per RFC3986 giving the location of the source dictionary.
+     The base URI for the URI reference is the _dictionary.uri of the
+     importing dictionary.
 ;
     _name.category_id            import_details
     _name.object_id              file_id
@@ -1383,6 +1389,26 @@ save_import_details.file_id
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Uri
+
+save_
+
+save_import_details.file_version
+
+    _definition.id               '_import_details.file_version'
+    _definition.class            Attribute
+    _definition.update           2017-07-21
+    _description.text
+;
+     The required major version number for _dictionary.version of the
+     imported dictionary. Dictionaries with the same major version
+     number are compatible. If absent or null, any version is permitted.
+;
+    _name.category_id            import_details
+    _name.object_id              file_version
+    _type.purpose                Identify
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Integer
 
 save_
 
@@ -1511,7 +1537,7 @@ save_
 
 save_import_details.single
     _definition.id             '_import_details.single'
-    _definition.update           2015-04-24
+    _definition.update           2017-07-21
     _definition.class            Attribute
     _description.text
 ;
@@ -1532,6 +1558,7 @@ save_import_details.single
 ;
     with id as import_details
     _import_details.single = {"file":id.file_id,
+                              "version":id.file_version,
                               "save":id.frame_id,
                               "mode":id.mode,
                               "dupl":id.if_dupl,
@@ -1541,7 +1568,7 @@ save_import_details.single
 
 save_import_details.single_index
     _definition.id             '_import_details.single_index'
-    _definition.update           2015-04-24
+    _definition.update           2015-07-21
     _definition.class            Attribute
     _description.text
 ;
@@ -1555,11 +1582,12 @@ save_import_details.single_index
      loop_
     _enumeration_set.state
     _enumeration_set.detail
-       file 'filename/URI of source dictionary'
-       save 'save framecode of source definition'
-       mode 'mode for including save frames'
-       dupl 'option for duplicate entries'
-       miss 'option for missing duplicate entries'
+       file    'URI of source dictionary'
+       version 'Version of source dictionary'
+       save    'save framecode of source definition'
+       mode    'mode for including save frames'
+       dupl    'option for duplicate entries'
+       miss    'option for missing duplicate entries'
      save_
 
 #============================================================================
@@ -1844,7 +1872,6 @@ save_type.contents
                              characters or underscore'''
               Tag         '''case-insensitive CIF2 character sequence with leading 
                              underscore and no ASCII whitespace'''
-              Filename      'case-sensitive string identifying an external file'
               Uri           'A Uniform Resource Identifier per RFC 3986'
               Date          'ISO standard date format <yyyy>-<mm>-<dd>'
               Version       'version digit string of the form <major>.<version>.<update>'
@@ -1944,7 +1971,6 @@ save_type.indices
     _enumeration_set.state
     _enumeration_set.detail
      Text         'A case-sensitive sequence of CIF2 characters'
-     Filename     'name of an external file'
      Code        '''case-insensitive sequence of CIF2 characters
                    containing no ASCII whitespace.'''
      Date         'ISO date format yyyy-mm-dd'
@@ -2606,4 +2632,10 @@ Removed 'Measured' as a state for type.source
 ;
   Clarified charactersets and syntax. Fixed incorrect use of Name in
   '_definition.replaced_by'.
+;
+         3.13.0    2017-07-21
+;
+   Added _import_details.file_version and clarified use of dictionary
+   version for template dictionaries.  Removed 'Filename' as a data type.
+   Clarified use of URIs in dictionaries. (JRH)
 ;
