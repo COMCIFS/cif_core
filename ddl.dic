@@ -1738,8 +1738,8 @@ save_name.linked_item_id
     _definition.update           2011-12-08
     _description.text
 ;
-     Dataname of an equivalent item in another category which has a
-     common set of values, or, in the definition of a type Su
+     Dataname of an equivalent item which has a
+     common set of values, or, in the definition of a type SU
      item is the name of the associated Measurement item to
      which the standard uncertainty applies.
 ;
@@ -2068,13 +2068,14 @@ save_type.purpose
                    within the category.
 ;
               Link
-;                  Used to type an item with a value that is unique within
-                   a looped list of items belonging to another category.
-                   The definition of this item must contain the attribute
-                   "_name.linked_item_id" specifying the data name of the
-                   key item for this list. The defined item represents a
-                   a foreign key linking packets in this category list to
-                   packets in another category.
+;                  Used to type an item with a value that is drawn
+                   from the set of unique values for another item.
+                   The definition of this item must contain the
+                   attribute "_name.linked_item_id" specifying the
+                   data name of the other item. The defined item is
+                   usually (but not always) a foreign key linking
+                   packets in this category to packets in another
+                   category.
 ;
               Composite
 ;                  Used to type items with value strings composed of
