@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.13.0
-    _dictionary.date             2017-07-21
+    _dictionary.date             2017-07-23
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.13.0
@@ -696,10 +696,7 @@ save_dictionary.version
     _definition.update           2017-07-21
     _description.text
 ;
-     A unique version identifier for the dictionary.  Where a
-     dictionary contains templates, the major version
-     number should be incremented whenever one or more templates
-     remove or add attributes.
+     A unique version identifier for the dictionary.
 ;
     _name.category_id            dictionary
     _name.object_id              version
@@ -1380,8 +1377,8 @@ save_import_details.file_id
     _description.text
 ;
      A URI reference as per RFC3986 giving the location of the source dictionary.
-     The base URI for the URI reference is the _dictionary.uri of the
-     importing dictionary.
+     When a relative URI is used, the base URI for the URI reference is the
+     _dictionary.uri of the importing dictionary.
 ;
     _name.category_id            import_details
     _name.object_id              file_id
@@ -1399,7 +1396,7 @@ save_import_details.file_version
     _definition.update           2017-07-21
     _description.text
 ;
-     The required major version number for _dictionary.version of the
+     The required version number for _dictionary.version of the
      imported dictionary. Dictionaries with the same major version
      number are compatible. If absent or null, any version is permitted.
 ;
@@ -1408,7 +1405,7 @@ save_import_details.file_version
     _type.purpose                Identify
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Integer
+    _type.contents               Version
 
 save_
 
@@ -1582,12 +1579,12 @@ save_import_details.single_index
      loop_
     _enumeration_set.state
     _enumeration_set.detail
-       file    'URI of source dictionary'
-       version 'Version of source dictionary'
-       save    'save framecode of source definition'
-       mode    'mode for including save frames'
-       dupl    'option for duplicate entries'
-       miss    'option for missing duplicate entries'
+       file         'URI of source dictionary'
+       version      'version of source dictionary'
+       save         'save framecode of source definition'
+       mode         'mode for including save frames'
+       dupl         'option for duplicate entries'
+       miss         'option for missing duplicate entries'
      save_
 
 #============================================================================
@@ -2633,9 +2630,8 @@ Removed 'Measured' as a state for type.source
   Clarified charactersets and syntax. Fixed incorrect use of Name in
   '_definition.replaced_by'.
 ;
-         3.13.0    2017-07-21
+         3.13.0    2017-07-23
 ;
-   Added _import_details.file_version and clarified use of dictionary
-   version for template dictionaries.  Removed 'Filename' as a data type.
+   Added _import_details.file_version.  Removed 'Filename' as a data type.
    Clarified use of URIs in dictionaries. (JRH)
 ;
