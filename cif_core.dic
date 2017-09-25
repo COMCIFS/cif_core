@@ -5,9 +5,9 @@
 #                                                                        #
 ##########################################################################
 
-data_CIF_CORE
+data_CORE_DIC
 
-_dictionary.title                       CIF_CORE
+_dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.07
 _dictionary.date                        2017-06-10
@@ -31,7 +31,7 @@ _description.text
      The CIF_CORE group contains the definitions of data items that
      are common to all domains of crystallographic studies.
 ;
-_name.category_id                       CIF_DIC
+_name.category_id                       CORE_DIC
 _name.object_id                         CIF_CORE
 
 save_
@@ -1451,7 +1451,7 @@ _name.object_id                         probe
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          x-ray     
@@ -1507,7 +1507,7 @@ _name.object_id                         xray_symbol
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -1586,7 +1586,7 @@ _name.object_id                         determination
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -2107,7 +2107,7 @@ _name.object_id                         scan_mode
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -2135,7 +2135,7 @@ _name.object_id                         scan_mode_backgd
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -3333,7 +3333,7 @@ _name.object_id                         device
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -4369,7 +4369,7 @@ _name.object_id                         include_status
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -4622,7 +4622,7 @@ _name.object_id                         refinement_status
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -4827,7 +4827,7 @@ _name.object_id                         apply_dispersion_to_Fcalc
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -7738,7 +7738,7 @@ _name.object_id                         absolute_configuration
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -7844,7 +7844,7 @@ _name.object_id                         enantioexcess_bulk_technique
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -7912,7 +7912,7 @@ _name.object_id                         enantioexcess_crystal_technique
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -8805,7 +8805,7 @@ _name.object_id                         type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -9209,7 +9209,7 @@ _name.object_id                         correction_type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -9891,7 +9891,7 @@ _name.object_id                         general
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          metallic  
@@ -9946,7 +9946,7 @@ _name.object_id                         intensity
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          dark      
@@ -10190,7 +10190,7 @@ save_space_group.Bravais_type
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_ 
     _enumeration_set.state        aP
                                   mP     mS
@@ -10218,7 +10218,7 @@ save_space_group.centring_type
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
     _enumeration_set.detail
@@ -10252,7 +10252,7 @@ _name.object_id                         crystal_system
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          triclinic           
@@ -10336,7 +10336,7 @@ save_space_group.IT_coordinate_system_code
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
     _enumeration_set.detail
@@ -10424,7 +10424,7 @@ save_space_group.Laue_class
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
      '-1' '2/m' 'mmm' '4/m' '4/mmm' '-3' '-3m' '6/m' '6/mmm' 'm-3' 'm-3m'  
@@ -11175,7 +11175,7 @@ save_space_group_Wyckoff.letter
     _type.purpose               State
     _type.source                Assigned
     _type.container             Single
-    _type.contents              Code
+    _type.contents              Text
      loop_
     _enumeration_set.state
            a b c d e f g h i j k l m n o p q r s t u v w x y z '\a'
@@ -11882,7 +11882,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -12188,7 +12188,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -12423,7 +12423,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -12812,7 +12812,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -13094,7 +13094,7 @@ _name.object_id                         publ_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -13915,6 +13915,38 @@ loop_
 
 save_
 
+save__audit.block_doi
+    _definition.id                      '_audit.block_doi'
+    _alias.definition_id                '_audit_block_doi'
+    _definition.update                  2017-09-23
+    _description.text
+;              The digital object identifier (DOI) registered to identify
+               the data set publication represented by the current
+               datablock. This can be used as a unique identifier for
+               the datablock so long as the code used is a valid DOI
+               (i.e. begins with a valid publisher prefix assigned by a
+               Registration Agency and a suffix guaranteed to be unique
+               by the publisher) and has had its metadata deposited
+               with a DOI Registration Agency.
+
+               A DOI is a unique character string identifying any
+               object of intellectual property. It provides a
+               persistent identifier for an object on a digital network
+               and permits the association of related current data in a
+               structured extensible way. A DOI is an implementation
+               of the Internet concepts of Uniform Resource Name and
+               Universal Resource Locator managed according to the
+               specifications of the International DOI Foundation (see
+               http://www.doi.org).
+;
+    _name.category_id                   audit
+    _name.object_id                     block_doi
+    _type.purpose                       Encode
+    _type.source                        Assigned
+    _type.container                     Single
+    _type.contents                      Text
+    _description_example.case           10.5517/CC6V9DQ
+save_
 
 save__audit.creation_date
 
@@ -13966,6 +13998,7 @@ save_
 save_audit.schema
 
 _definition.id       '_audit.schema'
+_definition.update   2016-09-08
 _name.category_id    audit
 _name.object_id      schema
 _description.text
@@ -14601,7 +14634,7 @@ _name.object_id                         coordinate_linkage
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -14677,6 +14710,31 @@ _type.contents                          Code
 
 save_
 
+save_citation.doi
+    _definition.id              '_citation.doi'
+    _alias.definition_id        '_citation_doi'
+    _definition.update          2017-09-23
+    _description.text
+;              The Digital Object Identifier (DOI) of the cited work.
+
+               A DOI is a unique character string identifying any
+               object of intellectual property. It provides a
+               persistent identifier for an object on a digital network
+               and permits the association of related current data in a
+               structured extensible way. A DOI is an implementation
+               of the Internet concepts of Uniform Resource Name and
+               Universal Resource Locator managed according to the
+               specifications of the International DOI Foundation (see
+               http://www.doi.org).
+;
+    _name.category_id            citation
+    _name.object_id              doi
+    _type.purpose                Encode
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+    _description_example.case    '10.5517/CC6V9DQ'
+save_
 
 save__citation.id
 
@@ -14946,6 +15004,26 @@ _enumeration.range                      1:
 
 save_
 
+save_citation.publisher
+    _definition.id               '_citation.publisher'
+    _alias.definition_id         '_citation_publisher'
+    _definition.update           2017-09-23
+    _description.text
+;              The name of the publisher of the cited work. This
+               should be used for citations of journal articles or
+               datasets (in the latter case the publisher could be a
+               curated database). For books or book chapters use
+               _citation.book_publisher.
+;
+    _name.category_id                       citation
+    _name.object_id                         publisher
+    _type.purpose                           Describe
+    _type.source                            Recorded
+    _type.container                         Single
+    _type.contents                          Text
+    _description_example.case               
+             'Cambridge Crystallographic Data Centre'
+save_
 
 save__citation.special_details
 
@@ -15427,6 +15505,35 @@ _type.contents                          Text
 
 save_
 
+save_database.dataset_doi
+    _definition.id              '_database.dataset_doi'
+    _alias.definition_id        '_database_dataset_doi'
+    _definition.update          2017-09-23
+    _description.text
+;              The digital object identifier (DOI) registered to identify
+               a data set publication associated with the structure
+               described in the current datablock. This should be used
+               for a dataset obtained from a curated database such as
+               CSD or PDB.
+
+               A DOI is a unique character string identifying any
+               object of intellectual property. It provides a
+               persistent identifier for an object on a digital network
+               and permits the association of related current data in a
+               structured extensible way. A DOI is an implementation
+               of the Internet concepts of Uniform Resource Name and
+               Universal Resource Locator managed according to the
+               specifications of the International DOI Foundation (see
+               http://www.doi.org).
+;
+    _name.category_id                       database
+    _name.object_id                         dataset_doi
+    _type.purpose                           Encode
+    _type.source                            Recorded
+    _type.container                         Single
+    _type.contents                          Text
+    _description_example.case               '10.2210/pdb4hhb/pdb'
+save_
 
 save__database.journal_ASTM
 
@@ -16694,7 +16801,7 @@ _name.object_id                         type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -17041,6 +17148,24 @@ _type.contents                          Code
 
 save_
 
+save_publ_author.id_orcid
+    _definition.id              '_publ_author.id_orcid'
+    _alias.definition_id        '_publ_author_id_orcid'
+    _definition.update          2017-09-23
+    _description.text
+;              Identifier in the ORCID Registry of a publication
+               author. ORCID is an open, non-profit, community-driven
+               service to provide a registry of unique researcher
+               identifiers (http://orcid.org).
+;
+    _name.category_id                       publ_author
+    _name.object_id                         id_orcid
+    _type.purpose                           Encode
+    _type.source                            Recorded
+    _type.container                         Single
+    _type.contents                          Code
+    _description_example.case               0000-0003-0391-0002
+save_
 
 save__publ_author.name
 
@@ -17171,7 +17296,7 @@ _name.object_id                         element
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
          section   
@@ -17202,7 +17327,7 @@ _name.object_id                         format
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -17395,6 +17520,25 @@ _type.contents                          Text
 
 save_
 
+save_publ_contact_author.id_orcid
+    _definition.id                 '_publ_contact_author.id_orcid'
+    _alias.definition_id           '_publ_contact_author_id_orcid'
+    _definition.update             2017-09-23
+    _description.text
+;              Identifier in the ORCID Registry of the author submitting
+               the manuscript and data block. ORCID is an open, non-profit,
+               community-driven service to provide a registry of unique
+               researcher identifiers (http://orcid.org).
+;
+    _name.category_id                       publ_contact_author
+    _name.object_id                         id_orcid
+    _type.purpose                           Encode
+    _type.source                            Recorded
+    _type.container                         Single
+    _type.contents                          Text
+    _description_example.case      0000-0003-0391-0002
+
+save_
 
 save__publ_contact_author.name
 
@@ -17588,7 +17732,7 @@ _name.object_id                         defn
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -17687,7 +17831,7 @@ _name.object_id                         category
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -18221,7 +18365,7 @@ _name.object_id                         adp_type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -18432,7 +18576,7 @@ _name.object_id                         calc_flag
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -18988,7 +19132,7 @@ _name.object_id                         refinement_flags
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -19022,7 +19166,7 @@ _name.object_id                         refinement_flags_adp
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -19052,7 +19196,7 @@ _name.object_id                         refinement_flags_occupancy
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -19082,7 +19226,7 @@ _name.object_id                         refinement_flags_posn
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -20020,7 +20164,7 @@ _name.object_id                         solution_hydrogens
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -20070,7 +20214,7 @@ _name.object_id                         solution_primary
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -20120,7 +20264,7 @@ _name.object_id                         solution_secondary
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -22615,7 +22759,7 @@ _name.object_id                         hydrogen_treatment
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -22684,7 +22828,7 @@ _name.object_id                         matrix_type
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -23223,7 +23367,7 @@ _name.object_id                         structure_factor_coef
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -23286,7 +23430,7 @@ _name.object_id                         weighting_scheme
 _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
@@ -23645,3 +23789,9 @@ loop_
      Added and deprecated symmetry.cell_setting. Removed rhombohedral
      option from dREL method for space_group.crystal_system. (James Hester)
 ;
+         3.0.08    2017-09-23
+;    
+     Added missing items from DDL1 version: _citation.doi, _audit.block_doi
+     _citation.publisher, _database.dataset_doi, _publ_contact_author.id_orcid,
+     _publ_author.id_orcid (James Hester)
+; 

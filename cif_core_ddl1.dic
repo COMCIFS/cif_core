@@ -16,8 +16,8 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_core.dic
-    _dictionary_version         2.4.3
-    _dictionary_update          2012-05-16
+    _dictionary_version         2.4.5
+    _dictionary_update          2014-11-21
     _dictionary_history
 ;
    1991-05-27  Created from CIF Dictionary text. SRH
@@ -693,7 +693,14 @@ data_on_this_dictionary
    2012-11-05 BMcM: Added _reflns_Friedel_fraction_full and
                         _reflns_Friedel_fraction_max
                     Added several new enumeration values to
-                        _refine_ls_hydrogen_treatment 
+                        _refine_ls_hydrogen_treatment
+   2014-05-20 BMcM: Added new categories (GI, GM, GO, Hi, HM, HO)
+                        to _publ_requested_category
+   2014-11-21 BMcM: Data items related to data citation and author
+                        identification: _audit_block_doi; _citation_doi;
+                        _citation_id; _citation_publisher;
+                        _database_dataset_doi; _publ_author_id_orcid;
+                        _publ_contact_author_id_orcid
 ;
 
 ###############
@@ -1989,6 +1996,7 @@ data_audit_[]
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
     _audit_block_code                  TOZ_1991-03-20
+    _audit_block_doi                   10.1107/S0108270191009630
 
     _audit_creation_date               1991-03-20
     _audit_creation_method   from_xtal_archive_file_using_CIFIO
@@ -2016,6 +2024,32 @@ data_audit_block_code
     _example                     TOZ_1991-03-20
     _definition
 ;              A code intended to identify uniquely the current data block.
+;
+
+data_audit_block_doi
+    _name                      '_audit_block_doi'
+    _category                    audit
+    _type                        char
+    _example                     10.5517/CC6V9DQ
+    _definition
+;              The digital object identifier (DOI) registered to identify
+               the data set publication represented by the current
+               datablock. This can be used as a unique identifier for
+               the datablock so long as the code used is a valid DOI
+               (i.e. begins with a valid publisher prefix assigned by a
+               Registration Agency and a suffix guaranteed to be unique
+               by the publisher) and has had its metadata deposited
+               with a DOI Registration Agency.
+
+               A DOI is a unique character string identifying any
+               object of intellectual property. It provides a
+               persistent identifier for an object on a digital network
+               and permits the association of related current data in a
+               structured extensible way. A DOI is an implementation
+               of the Internet concepts of Uniform Resource Name and
+               Universal Resource Locator managed according to the
+               specifications of the International DOI Foundation (see
+               http://www.doi.org).
 ;
 
 data_audit_creation_date
@@ -3768,6 +3802,27 @@ data_citation_database_id_Medline
                bibliographic entry.
 ;
 
+data_citation_doi
+    _name                      '_citation_doi'
+    _category                    citation
+    _type                        char
+    _list                        yes
+    _list_reference            '_citation_id'
+    _example                    '10.5517/CC6V9DQ'
+    _definition
+;              The Digital Object Identifier (DOI) of the cited work.
+
+               A DOI is a unique character string identifying any
+               object of intellectual property. It provides a
+               persistent identifier for an object on a digital network
+               and permits the association of related current data in a
+               structured extensible way. A DOI is an implementation
+               of the Internet concepts of Uniform Resource Name and
+               Universal Resource Locator managed according to the
+               specifications of the International DOI Foundation (see
+               http://www.doi.org).
+;
+
 data_citation_id
     _name                      '_citation_id'
     _category                    citation
@@ -3894,6 +3949,21 @@ data_citation_page_
     _definition
 ;              The first and last pages of the citation;  relevant for
                journal articles, books and book chapters.
+;
+
+data_citation_publisher
+    _name                      '_citation_publisher'
+    _category                    citation
+    _type                        char
+    _list                        yes
+    _list_reference            '_citation_id'
+    _example                    'Cambridge Crystallographic Data Centre'
+    _definition
+;              The name of the publisher of the cited work. This
+               should be used for citations of journal articles or
+               datasets (in the latter case the publisher could be a
+               curated database). For books or book chapters use
+               _citation_book_publisher.
 ;
 
 data_citation_special_details
@@ -4248,6 +4318,29 @@ data_database_CSD_history
 ;              A history of changes made by the Cambridge Crystallographic Data
                Centre and incorporated into the Cambridge Structural Database
                (CSD).
+;
+
+data_database_dataset_doi
+    _name                      '_database_dataset_doi'
+    _category                    database
+    _type                        char
+    _example                     '10.2210/pdb4hhb/pdb'
+    _definition
+;              The digital object identifier (DOI) registered to identify
+               a data set publication associated with the structure
+               described in the current datablock. This should be used
+               for a dataset obtained from a curated database such as
+               CSD or PDB.
+
+               A DOI is a unique character string identifying any
+               object of intellectual property. It provides a
+               persistent identifier for an object on a digital network
+               and permits the association of related current data in a
+               structured extensible way. A DOI is an implementation
+               of the Internet concepts of Uniform Resource Name and
+               Universal Resource Locator managed according to the
+               specifications of the International DOI Foundation (see
+               http://www.doi.org).
 ;
 
 data_database_journal_
@@ -7941,6 +8034,18 @@ data_publ_contact_author_id_iucr
                (http://wdc.iucr.org).
 ;
 
+data_publ_contact_author_id_orcid
+    _name                      '_publ_contact_author_id_orcid'
+    _category                    publ
+    _type                        char
+    _example                     0000-0003-0391-0002
+    _definition
+;              Identifier in the ORCID Registry of the author submitting
+               the manuscript and data block. ORCID is an open, non-profit,
+               community-driven service to provide a registry of unique
+               researcher identifiers (http://orcid.org).
+;
+
 data_publ_contact_author_name
     _name                      '_publ_contact_author_name'
     _category                    publ
@@ -8017,20 +8122,26 @@ data_publ_requested_category
     _type                        char
     loop_ _enumeration
           _enumeration_detail
+            AD  'Addenda and Errata (Acta C, Acta E)'
+            CI  'CIF-access paper - inorganic (Acta C) (no longer in use)'
+            CM  'CIF-access paper - metal-organic (Acta C) (no longer in use)'
+            CO  'CIF-access paper - organic (Acta C)  (no longer in use)'
+            EI  'Electronic submission - inorganic (Acta E)'
+            EM  'Electronic submission - metal-organic (Acta E)'
+            EO  'Electronic submission - organic (Acta E)'
             FA  'Full article'
             FI  'Full submission - inorganic (Acta C)'
-            FO  'Full submission - organic (Acta C)'
             FM  'Full submission - metal-organic (Acta C)'
-            CI  'CIF-access paper - inorganic (Acta C) (no longer in use)'
-            CO  'CIF-access paper - organic (Acta C)  (no longer in use)'
-            CM  'CIF-access paper - metal-organic (Acta C) (no longer in use)'
-            EI  'Electronic submission - inorganic (Acta E)'
-            EO  'Electronic submission - organic (Acta E)'
-            EM  'Electronic submission - metal-organic (Acta E)'
+            FO  'Full submission - organic (Acta C)'
+            GI  'Research communications - inorganic compounds (Acta E)'
+            GM  'Research communications - metal-organic compounds (Acta E)'
+            GO  'Research communications - organic compounds (Acta E)'
+            HI  'Data reports - inorganic compounds (Acta E)'
+            HM  'Data reports - metal-organic compounds (Acta E)'
+            HO  'Data reports - organic compounds (Acta E)'
             QI  'Inorganic compounds (Acta E)'
-            QO  'Organic compounds (Acta E)'
             QM  'Metal-organic compounds (Acta E)'
-            AD  'Addenda and Errata (Acta C, Acta E)'
+            QO  'Organic compounds (Acta E)'
             SC  'Short communication'
     _enumeration_default         FA
     _definition
@@ -8180,6 +8291,19 @@ data_publ_author_id_iucr
 ;              Identifier in the IUCr contact database of a publication
                author.  This identifier may be available from the World
                Directory of Crystallographers (http://wdc.iucr.org).
+;
+
+data_publ_author_id_orcid
+    _name                      '_publ_author_id_orcid'
+    _category                    publ_author
+    _type                        char
+    _list                        both
+    _example                     0000-0003-0391-0002
+    _definition
+;              Identifier in the ORCID Registry of a publication
+               author. ORCID is an open, non-profit, community-driven
+               service to provide a registry of unique researcher
+               identifiers (http://orcid.org).
 ;
 
 data_publ_author_name
