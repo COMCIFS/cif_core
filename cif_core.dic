@@ -3975,7 +3975,7 @@ loop_
   _method.expression
          Evaluation          
 ;
-    _refln.d_spacing = 2. / _refln.sin_theta_over_lambda
+    _refln.d_spacing = 1 / (2 * _refln.sin_theta_over_lambda)
 ; 
 
 save_
@@ -17835,18 +17835,27 @@ _type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
-         FA        'Full article'      
-         FI        'Full submission - inorganic (Acta C)'  
-         FO        'Full submission - organic (Acta C)'    
-         FM        'Full submission - metal-organic (Acta C)'        
-         CI        'CIF-access paper - inorganic (Acta C)'           
-         CO        'CIF-access paper - organic (Acta C)'   
-         CM        'CIF-access paper - metal-organic (Acta C)'       
-         EI        'Electronic submission - inorganic (Acta E)'      
-         EO        'Electronic submission - organic (Acta E)'        
-         EM        'Electronic submission - metal-organic (Acta E)'  
-         AD        'Addenda & Errata (Acta C, Acta E)'     
-         SC        'Short Communication' 
+            AD  'Addenda and Errata (Acta C, Acta E)'
+            CI  'CIF-access paper - inorganic (Acta C) (no longer in use)'
+            CM  'CIF-access paper - metal-organic (Acta C) (no longer in use)'
+            CO  'CIF-access paper - organic (Acta C)  (no longer in use)'
+            EI  'Electronic submission - inorganic (Acta E)'
+            EM  'Electronic submission - metal-organic (Acta E)'
+            EO  'Electronic submission - organic (Acta E)'
+            FA  'Full article'
+            FI  'Full submission - inorganic (Acta C)'
+            FM  'Full submission - metal-organic (Acta C)'
+            FO  'Full submission - organic (Acta C)'
+            GI  'Research communications - inorganic compounds (Acta E)'
+            GM  'Research communications - metal-organic compounds (Acta E)'
+            GO  'Research communications - organic compounds (Acta E)'
+            HI  'Data reports - inorganic compounds (Acta E)'
+            HM  'Data reports - metal-organic compounds (Acta E)'
+            HO  'Data reports - organic compounds (Acta E)'
+            QI  'Inorganic compounds (Acta E)'
+            QM  'Metal-organic compounds (Acta E)'
+            QO  'Organic compounds (Acta E)'
+            SC  'Short communication'
 _enumeration.default                    FA
 
 save_
@@ -19125,7 +19134,11 @@ _definition.update                      2013-03-08
 _description.text                       
 ;
      A concatenated series of single-letter codes which indicate the
-     refinement restraints or constraints applied to this site.
+     refinement restraints or constraints applied to this site. This
+     item should not be used. It has been replaced by 
+     _atom_site.refinement_flags_posn, _adp and _occupancy. It is
+     retained in this dictionary only to provide compatibility with
+     legacy CIFs.
 ;
 _name.category_id                       atom_site
 _name.object_id                         refinement_flags
@@ -19200,10 +19213,8 @@ _type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
-         .         'no constraints on atomic displacement parameters'          
-         T         'special-position constraints on atomic displacement parameters'     
-         U         'Uiso or Uij restraint (rigid bond)'    
-         TU        'both constraints applied' 
+         .         'no constraints on site-occupancy parameters'          
+         P         'site-occupancy constraint'
 _enumeration.default                    .
 
 save_
@@ -20174,7 +20185,8 @@ loop_
          direct    'structure-invariant direct methods'    
          geom      'inferred from neighbouring sites'      
          disper    'anomalous-dispersion techniques'       
-         isomor    'isomorphous structure methods'         
+         isomor    'isomorphous structure methods'
+         mixed     'a mixture of "geom" and "difmap"'         
          notdet    'coordinates were not determined'       
          dual      'dual-space method (Sheldrick et al., 2001)'      
          iterative           
