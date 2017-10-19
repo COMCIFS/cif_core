@@ -4831,9 +4831,11 @@ _type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
-         Yes       'Apply dispersion'  
-         No        'Do not apply dispersion' 
-_enumeration.default                    Yes
+         yes       'apply dispersion'
+         y         'abbreviation for "yes"'
+         no        'do not apply dispersion'
+         n         'abbreviation for "no"'
+_enumeration.default                    yes
 
 save_
 
@@ -13098,9 +13100,11 @@ _type.contents                          Text
 loop_
   _enumeration_set.state
   _enumeration_set.detail
-         Yes       Publish   
-         No        'Do not publish' 
-_enumeration.default                    No
+         yes       publish
+         y         'abbreviation for "yes"'
+         no        'do not publish'
+         n         'abbreviation for "no"'
+_enumeration.default                    no
 
 save_
 
