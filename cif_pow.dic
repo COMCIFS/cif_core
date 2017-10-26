@@ -4250,46 +4250,6 @@ save__pd_peak.width_d_spacing
 save_
 
 
-save_PD_PHASE
-
-    _definition.id               PD_PHASE
-    _definition.scope            Category
-    _definition.class            Set
-    _definition.update           2016-11-09
-    _description.text                   
-;
-
-      This section contains definitions for labelling a single
-      crystalline phase. Note that a separate extension dictionary
-      is provided for multiple-phase Rietveld.
- 
-;
-    _name.category_id            PD_GROUP
-    _name.object_id              PD_PHASE
-
-save_
-
-save__pd_phase.name
-
-    _definition.id               '_pd_phase.name'
-    _definition.update           2014-06-20
-    loop_
-      _alias.definition_id
-          '_pd_phase_name' 
-    _description.text                   
-;
-
-      The name of the crystal phase.
-      It may be designated as unknown or by a structure type etc.
-;
-    _name.category_id            pd_phase
-    _name.object_id              name
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
 
 
 save_PD_PREP
@@ -5738,7 +5698,7 @@ save_
 save__pd_spec.size_axial
 
     _definition.id               '_pd_spec.size_axial'
-    _definition.update           2014-06-20
+    _definition.update           2017-10-18
     loop_
       _alias.definition_id
           '_pd_spec_size_axial' 
@@ -5755,7 +5715,7 @@ save__pd_spec.size_axial
  
 ;
     _name.category_id            pd_spec
-    _name.object_id              pd_spec_size_axial
+    _name.object_id              size_axial
     _type.purpose                Number
     _type.source                 Recorded
     _type.container              Single
@@ -5765,6 +5725,65 @@ save__pd_spec.size_axial
 
 save_
 
+save__pd_spec.size_equat
+
+    _definition.id               '_pd_spec.size_equat'
+    _definition.update           2017-10-18
+    loop_
+      _alias.definition_id
+          '_pd_spec_size_equat' 
+    _description.text                   
+;
+
+      The size of the specimen in three mutually perpendicular
+      directions in millimetres.
+      The perpendicular to the plane containing the incident
+      and scattered beam is the *_axial direction.
+      In transmission geometry, the scattering vector is parallel
+      to *_equat and in reflection geometry the scattering vector is
+      parallel to *_thick.
+ 
+;
+    _name.category_id            pd_spec
+    _name.object_id              size_equat
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
+
+save__pd_spec.size_thick
+
+    _definition.id               '_pd_spec.size_thick'
+    _definition.update           2017-10-18
+    loop_
+      _alias.definition_id
+          '_pd_spec_size_thick' 
+    _description.text                   
+;
+
+      The size of the specimen in three mutually perpendicular
+      directions in millimetres.
+      The perpendicular to the plane containing the incident
+      and scattered beam is the *_axial direction.
+      In transmission geometry, the scattering vector is parallel
+      to *_equat and in reflection geometry the scattering vector is
+      parallel to *_thick.
+ 
+;
+    _name.category_id            pd_spec
+    _name.object_id              size_thick
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                             millimetres
+
+save_
 
 save__pd_spec.special_details
 
@@ -5808,7 +5827,7 @@ save_PD_PHASE
       _pd_phase_id serves to link to _pd_refln.phase_id, which is
       used to label peaks by phase.
 ;
-    _name.category_id            PD_EXT_GROUP
+    _name.category_id            PD_GROUP
     _name.object_id              PD_PHASE
     loop_
     _category_key.name           '_pd_phase.id'
@@ -5887,6 +5906,28 @@ save__pd_phase.mass_percent
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:100.0
+
+save_
+
+save__pd_phase.name
+
+    _definition.id               '_pd_phase.name'
+    _definition.update           2014-06-20
+    loop_
+      _alias.definition_id
+          '_pd_phase_name' 
+    _description.text                   
+;
+
+      The name of the crystal phase.
+      It may be designated as unknown or by a structure type etc.
+;
+    _name.category_id            pd_phase
+    _name.object_id              name
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
 
 save_
 

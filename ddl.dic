@@ -8,11 +8,11 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.13.0
-    _dictionary.date             2017-07-23
+    _dictionary.version          3.13.1
+    _dictionary.date             2017-10-26
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
-    _dictionary.ddl_conformance  3.13.0
+    _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -496,7 +496,7 @@ save_description_example.case
     _name.object_id              case
     _type.purpose                Key
     _type.source                 Assigned
-    _type.container              Single
+    _type.container              Implied
     _type.contents               Implied
 
 save_
@@ -1083,7 +1083,7 @@ save_enumeration.default
     _name.object_id              default
     _type.purpose                Encode
     _type.source                 Assigned
-    _type.container              Single
+    _type.container              Implied
     _type.contents               Implied
 
 save_
@@ -1192,7 +1192,7 @@ save_enumeration_default.value
     _name.object_id              value
     _type.purpose                Encode
     _type.source                 Assigned
-    _type.container              Single
+    _type.container              Implied
     _type.contents               Implied
 
 save_
@@ -1797,7 +1797,9 @@ save_type.container
     _definition.update           2013-04-07
     _description.text
 ;
-     The CONTAINER type of the defined data item value.
+     The CONTAINER type of the defined data item value. 'Implied' may only
+     be used in an attribute dictionary for attributes whose types are linked
+     to the values of other attributes.
 ;
     _name.category_id            type
     _name.object_id              container
@@ -1816,6 +1818,8 @@ save_type.container
               Matrix      '''ordered set of numerical values for a tensor. Tensor operations such as
                              dot and cross products, are valid cross matrix objects.'''
               Table         'An unordered set of id:value elements'
+              Implied      '''(For use in the attribute dictionary only). Determined by
+                             the values of other attributes.'''
     _enumeration.default         Single
 
 save_
@@ -2635,4 +2639,9 @@ Removed 'Measured' as a state for type.source
 ;
    Added _import_details.file_version.  Removed 'Filename' as a data type.
    Clarified use of URIs in dictionaries. (JRH)
+;
+         3.13.1    2017-10-26
+;
+   Added 'Implied' container type to allow examples and defaults to adjust
+   to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
