@@ -13964,7 +13964,7 @@ loop_
 _definition.update                      2012-11-29
 _description.text                       
 ;
-     The date dd-mm-yyyy of each revision to the data.
+     The date yyyy-mm-dd of each revision to the data.
 ;
 _name.category_id                       audit
 _name.object_id                         creation_date
