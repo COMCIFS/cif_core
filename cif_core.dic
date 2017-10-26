@@ -9886,7 +9886,8 @@ loop_
 _definition.update                      2012-11-22
 _description.text                       
 ;
-     Appearance of the crystal as prescribed state codes.
+     Appearance of the crystal as prescribed state codes. Note that 'dull'
+     and 'clear' should no longer be used.
 ;
 _name.category_id                       exptl_crystal_appearance
 _name.object_id                         general
@@ -9899,8 +9900,10 @@ loop_
          metallic  
          lustrous  
          transparent         
-         transluscent        
-         opaque    
+         translucent        
+         opaque
+         dull
+         clear
          . 
 _enumeration.default                    .
 
@@ -14153,7 +14156,7 @@ save_AUDIT_CONFORM
 
 _definition.id                          AUDIT_CONFORM
 _definition.scope                       Category
-_definition.class                       Set
+_definition.class                       Loop
 _definition.update                      2012-05-07
 _description.text                       
 ;
