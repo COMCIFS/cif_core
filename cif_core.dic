@@ -70,7 +70,7 @@ _name.object_id                         DIFFRN
 save_
 
 
-save__diffrn.ambient_environment
+save_diffrn.ambient_environment
 
 _definition.id                          '_diffrn.ambient_environment'
 loop_
@@ -96,7 +96,7 @@ loop_
 save_
 
 
-save__diffrn.ambient_pressure
+save_diffrn.ambient_pressure
 
 _definition.id                          '_diffrn.ambient_pressure'
 loop_
@@ -119,7 +119,7 @@ _units.code                             kilopascals
 save_
 
 
-save__diffrn.ambient_pressure_gt
+save_diffrn.ambient_pressure_gt
 
 _definition.id                          '_diffrn.ambient_pressure_gt'
 loop_
@@ -145,7 +145,7 @@ _units.code                             kilopascals
 save_
 
 
-save__diffrn.ambient_pressure_lt
+save_diffrn.ambient_pressure_lt
 
 _definition.id                          '_diffrn.ambient_pressure_lt'
 loop_
@@ -171,7 +171,7 @@ _units.code                             kilopascals
 save_
 
 
-save__diffrn.ambient_pressure_su
+save_diffrn.ambient_pressure_su
 
 _definition.id                          '_diffrn.ambient_pressure_su'
 loop_
@@ -196,7 +196,7 @@ _units.code                             kilopascals
 save_
 
 
-save__diffrn.ambient_temperature
+save_diffrn.ambient_temperature
 
 _definition.id                          '_diffrn.ambient_temperature'
 loop_
@@ -221,7 +221,7 @@ _units.code                             kelvins
 save_
 
 
-save__diffrn.ambient_temperature_details
+save_diffrn.ambient_temperature_details
 
 _definition.id                          '_diffrn.ambient_temperature_details'
 loop_
@@ -244,7 +244,7 @@ _type.contents                          Text
 save_
 
 
-save__diffrn.ambient_temperature_gt
+save_diffrn.ambient_temperature_gt
 
 _definition.id                          '_diffrn.ambient_temperature_gt'
 loop_
@@ -272,7 +272,7 @@ _units.code                             kelvins
 save_
 
 
-save__diffrn.ambient_temperature_lt
+save_diffrn.ambient_temperature_lt
 
 _definition.id                          '_diffrn.ambient_temperature_lt'
 loop_
@@ -300,7 +300,7 @@ _units.code                             kelvins
 save_
 
 
-save__diffrn.ambient_temperature_su
+save_diffrn.ambient_temperature_su
 
 _definition.id                          '_diffrn.ambient_temperature_su'
 loop_
@@ -326,7 +326,7 @@ _units.code                             kelvins
 save_
 
 
-save__diffrn.crystal_support
+save_diffrn.crystal_support
 
 _definition.id                          '_diffrn.crystal_support'
 _definition.update                      2014-06-12
@@ -351,7 +351,7 @@ loop_
 save_
 
 
-save__diffrn.crystal_treatment
+save_diffrn.crystal_treatment
 
 _definition.id                          '_diffrn.crystal_treatment'
 loop_
@@ -378,7 +378,7 @@ loop_
 save_
 
 
-save__diffrn.measured_fraction_theta_full
+save_diffrn.measured_fraction_theta_full
 
 _definition.id                          '_diffrn.measured_fraction_theta_full'
 loop_
@@ -402,7 +402,7 @@ _units.code                             none
 save_
 
 
-save__diffrn.measured_fraction_theta_max
+save_diffrn.measured_fraction_theta_max
 
 _definition.id                          '_diffrn.measured_fraction_theta_max'
 loop_
@@ -426,7 +426,7 @@ _units.code                             none
 save_
 
 
-save__diffrn.special_details
+save_diffrn.special_details
 
 _definition.id                          '_diffrn.special_details'
 loop_
@@ -456,7 +456,7 @@ loop_
 save_
 
 
-save__diffrn.symmetry_description
+save_diffrn.symmetry_description
 
 _definition.id                          '_diffrn.symmetry_description'
 loop_
@@ -499,7 +499,7 @@ loop_
 save_
 
 
-save__diffrn_attenuator.code
+save_diffrn_attenuator.code
 
 _definition.id                          '_diffrn_attenuator.code'
 loop_
@@ -520,7 +520,7 @@ _type.contents                          Code
 
 save_
 
-save__diffrn_attenuator.material
+save_diffrn_attenuator.material
 
 _definition.id                          '_diffrn_attenuator.material'
 loop_
@@ -541,7 +541,7 @@ _type.contents                          Text
 save_
 
 
-save__diffrn_attenuator.scale
+save_diffrn_attenuator.scale
 
 _definition.id                          '_diffrn_attenuator.scale'
 loop_
@@ -582,7 +582,7 @@ _name.object_id                         DIFFRN_DETECTOR
 save_
 
 
-save__diffrn_detector.area_resol_mean
+save_diffrn_detector.area_resol_mean
 
 _definition.id                          '_diffrn_detector.area_resol_mean'
 loop_
@@ -605,7 +605,7 @@ _units.code                             pixels_per_millimetre
 save_
 
 
-save__diffrn_detector.description
+save_diffrn_detector.description
 
 _definition.id                          '_diffrn_detector.description'
 loop_
@@ -634,7 +634,7 @@ loop_
 save_
 
 
-save__diffrn_detector.details
+save_diffrn_detector.details
 
 _definition.id                          '_diffrn_detector.details'
 loop_
@@ -655,7 +655,7 @@ _type.contents                          Text
 save_
 
 
-save__diffrn_detector.dtime
+save_diffrn_detector.dtime
 
 _definition.id                          '_diffrn_detector.dtime'
 loop_
@@ -680,7 +680,7 @@ _units.code                             microseconds
 save_
 
 
-save__diffrn_detector.make
+save_diffrn_detector.make
 
 _definition.id                          '_diffrn_detector.make'
 loop_
@@ -719,7 +719,7 @@ _name.object_id                         DIFFRN_MEASUREMENT
 save_
 
 
-save__diffrn_measurement.details
+save_diffrn_measurement.details
 
 _definition.id                          '_diffrn_measurement.details'
 loop_
@@ -744,7 +744,7 @@ loop_
 save_
 
 
-save__diffrn_measurement.device_class
+save_diffrn_measurement.device_class
 
 _definition.id                          '_diffrn_measurement.device_class'
 loop_
@@ -774,7 +774,7 @@ loop_
 save_
 
 
-save__diffrn_measurement.device_details
+save_diffrn_measurement.device_details
 
 _definition.id                          '_diffrn_measurement.device_details'
 loop_
@@ -799,7 +799,7 @@ loop_
 save_
 
 
-save__diffrn_measurement.device_make
+save_diffrn_measurement.device_make
 
 _definition.id                          '_diffrn_measurement.device_make'
 loop_
@@ -828,7 +828,7 @@ loop_
 save_
 
 
-save__diffrn_measurement.method
+save_diffrn_measurement.method
 
 _definition.id                          '_diffrn_measurement.method'
 loop_
@@ -853,7 +853,7 @@ loop_
 save_
 
 
-save__diffrn_measurement.specimen_support
+save_diffrn_measurement.specimen_support
 
 _definition.id                          '_diffrn_measurement.specimen_support'
 loop_
@@ -915,7 +915,7 @@ _name.object_id                         DIFFRN_ORIENT_MATRIX
 save_
 
 
-save__diffrn_orient_matrix.type
+save_diffrn_orient_matrix.type
 
 _definition.id                          '_diffrn_orient_matrix.type'
 loop_
@@ -937,7 +937,7 @@ _type.contents                          Text
 save_
 
 
-save__diffrn_orient_matrix.UB_11
+save_diffrn_orient_matrix.UB_11
 
 _definition.id                          '_diffrn_orient_matrix.UB_11'
 loop_
@@ -951,7 +951,7 @@ _name.object_id                         UB_11
 save_
 
 
-save__diffrn_orient_matrix.UB_12
+save_diffrn_orient_matrix.UB_12
 
 _definition.id                          '_diffrn_orient_matrix.UB_12'
 loop_
@@ -965,7 +965,7 @@ _name.object_id                         UB_12
 save_
 
 
-save__diffrn_orient_matrix.UB_13
+save_diffrn_orient_matrix.UB_13
 
 _definition.id                          '_diffrn_orient_matrix.UB_13'
 loop_
@@ -979,7 +979,7 @@ _name.object_id                         UB_13
 save_
 
 
-save__diffrn_orient_matrix.UB_21
+save_diffrn_orient_matrix.UB_21
 
 _definition.id                          '_diffrn_orient_matrix.UB_21'
 loop_
@@ -993,7 +993,7 @@ _name.object_id                         UB_21
 save_
 
 
-save__diffrn_orient_matrix.UB_22
+save_diffrn_orient_matrix.UB_22
 
 _definition.id                          '_diffrn_orient_matrix.UB_22'
 loop_
@@ -1007,7 +1007,7 @@ _name.object_id                         UB_22
 save_
 
 
-save__diffrn_orient_matrix.UB_23
+save_diffrn_orient_matrix.UB_23
 
 _definition.id                          '_diffrn_orient_matrix.UB_23'
 loop_
@@ -1021,7 +1021,7 @@ _name.object_id                         UB_23
 save_
 
 
-save__diffrn_orient_matrix.UB_31
+save_diffrn_orient_matrix.UB_31
 
 _definition.id                          '_diffrn_orient_matrix.UB_31'
 loop_
@@ -1035,7 +1035,7 @@ _name.object_id                         UB_31
 save_
 
 
-save__diffrn_orient_matrix.UB_32
+save_diffrn_orient_matrix.UB_32
 
 _definition.id                          '_diffrn_orient_matrix.UB_32'
 loop_
@@ -1049,7 +1049,7 @@ _name.object_id                         UB_32
 save_
 
 
-save__diffrn_orient_matrix.UB_33
+save_diffrn_orient_matrix.UB_33
 
 _definition.id                          '_diffrn_orient_matrix.UB_33'
 loop_
@@ -1063,7 +1063,7 @@ _name.object_id                         UB_33
 save_
 
 
-save__diffrn_orient_matrix.UBIJ
+save_diffrn_orient_matrix.UBIJ
 
 _definition.id                          '_diffrn_orient_matrix.UBIJ'
 _definition.update                      2012-11-26
@@ -1118,7 +1118,7 @@ loop_
 save_
 
 
-save__diffrn_orient_refln.angle_chi
+save_diffrn_orient_refln.angle_chi
 
 _definition.id                          '_diffrn_orient_refln.angle_chi'
 loop_
@@ -1131,7 +1131,7 @@ _name.object_id                         angle_chi
 save_
 
 
-save__diffrn_orient_refln.angle_kappa
+save_diffrn_orient_refln.angle_kappa
 
 _definition.id                          '_diffrn_orient_refln.angle_kappa'
 loop_
@@ -1144,7 +1144,7 @@ _name.object_id                         angle_kappa
 save_
 
 
-save__diffrn_orient_refln.angle_omega
+save_diffrn_orient_refln.angle_omega
 
 _definition.id                          '_diffrn_orient_refln.angle_omega'
 loop_
@@ -1157,7 +1157,7 @@ _name.object_id                         angle_omega
 save_
 
 
-save__diffrn_orient_refln.angle_phi
+save_diffrn_orient_refln.angle_phi
 
 _definition.id                          '_diffrn_orient_refln.angle_phi'
 loop_
@@ -1170,7 +1170,7 @@ _name.object_id                         angle_phi
 save_
 
 
-save__diffrn_orient_refln.angle_psi
+save_diffrn_orient_refln.angle_psi
 
 _definition.id                          '_diffrn_orient_refln.angle_psi'
 loop_
@@ -1183,7 +1183,7 @@ _name.object_id                         angle_psi
 save_
 
 
-save__diffrn_orient_refln.angle_theta
+save_diffrn_orient_refln.angle_theta
 
 _definition.id                          '_diffrn_orient_refln.angle_theta'
 loop_
@@ -1196,7 +1196,7 @@ _name.object_id                         angle_theta
 save_
 
 
-save__diffrn_orient_refln.hkl
+save_diffrn_orient_refln.hkl
 
 _definition.id                          '_diffrn_orient_refln.hkl'
 _definition.update                      2012-11-26
@@ -1224,7 +1224,7 @@ loop_
 save_
 
 
-save__diffrn_orient_refln.index_h
+save_diffrn_orient_refln.index_h
 
 _definition.id                          '_diffrn_orient_refln.index_h'
 loop_
@@ -1237,7 +1237,7 @@ _name.object_id                         index_h
 save_
 
 
-save__diffrn_orient_refln.index_k
+save_diffrn_orient_refln.index_k
 
 _definition.id                          '_diffrn_orient_refln.index_k'
 loop_
@@ -1250,7 +1250,7 @@ _name.object_id                         index_k
 save_
 
 
-save__diffrn_orient_refln.index_l
+save_diffrn_orient_refln.index_l
 
 _definition.id                          '_diffrn_orient_refln.index_l'
 loop_
@@ -1281,7 +1281,7 @@ _name.object_id                         DIFFRN_RADIATION
 save_
 
 
-save__diffrn_radiation.collimation
+save_diffrn_radiation.collimation
 
 _definition.id                          '_diffrn_radiation.collimation'
 loop_
@@ -1307,7 +1307,7 @@ loop_
 save_
 
 
-save__diffrn_radiation.filter_edge
+save_diffrn_radiation.filter_edge
 
 _definition.id                          '_diffrn_radiation.filter_edge'
 loop_
@@ -1330,7 +1330,7 @@ _units.code                             angstroms
 save_
 
 
-save__diffrn_radiation.inhomogeneity
+save_diffrn_radiation.inhomogeneity
 
 _definition.id                          '_diffrn_radiation.inhomogeneity'
 loop_
@@ -1353,7 +1353,7 @@ _units.code                             millimetres
 save_
 
 
-save__diffrn_radiation.monochromator
+save_diffrn_radiation.monochromator
 
 _definition.id                          '_diffrn_radiation.monochromator'
 loop_
@@ -1382,7 +1382,7 @@ loop_
 save_
 
 
-save__diffrn_radiation.polarisn_norm
+save_diffrn_radiation.polarisn_norm
 
 _definition.id                          '_diffrn_radiation.polarisn_norm'
 loop_
@@ -1406,7 +1406,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_radiation.polarisn_ratio
+save_diffrn_radiation.polarisn_ratio
 
 _definition.id                          '_diffrn_radiation.polarisn_ratio'
 loop_
@@ -1434,7 +1434,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_radiation.probe
+save_diffrn_radiation.probe
 
 _definition.id                          '_diffrn_radiation.probe'
 loop_
@@ -1463,7 +1463,7 @@ _enumeration.default                    x-ray
 save_
 
 
-save__diffrn_radiation.type
+save_diffrn_radiation.type
 
 _definition.id                          '_diffrn_radiation.type'
 loop_
@@ -1491,7 +1491,7 @@ loop_
 save_
 
 
-save__diffrn_radiation.xray_symbol
+save_diffrn_radiation.xray_symbol
 
 _definition.id                          '_diffrn_radiation.xray_symbol'
 loop_
@@ -1543,7 +1543,7 @@ loop_
 save_
 
 
-save__diffrn_radiation_wavelength.details
+save_diffrn_radiation_wavelength.details
 
 _definition.id                          '_diffrn_radiation_wavelength.details'
 loop_
@@ -1567,7 +1567,7 @@ _type.contents                          Text
 save_
 
 
-save__diffrn_radiation_wavelength.determination
+save_diffrn_radiation_wavelength.determination
 
 _definition.id                          '_diffrn_radiation_wavelength.determination'
 loop_
@@ -1598,7 +1598,7 @@ _enumeration.default                    fundamental
 save_
 
 
-save__diffrn_radiation_wavelength.id
+save_diffrn_radiation_wavelength.id
 
 _definition.id                          '_diffrn_radiation_wavelength.id'
 loop_
@@ -1623,7 +1623,7 @@ loop_
 
 save_
 
-save__diffrn_radiation_wavelength.value
+save_diffrn_radiation_wavelength.value
 
 _definition.id                          '_diffrn_radiation_wavelength.value'
 loop_
@@ -1647,7 +1647,7 @@ _units.code                             angstroms
 save_
 
 
-save__diffrn_radiation_wavelength.wt
+save_diffrn_radiation_wavelength.wt
 
 _definition.id                          '_diffrn_radiation_wavelength.wt'
 loop_
@@ -1691,7 +1691,7 @@ loop_
 save_
 
 
-save__diffrn_refln.angle_chi
+save_diffrn_refln.angle_chi
 
 _definition.id                          '_diffrn_refln.angle_chi'
 loop_
@@ -1704,7 +1704,7 @@ _name.object_id                         angle_chi
 save_
 
 
-save__diffrn_refln.angle_kappa
+save_diffrn_refln.angle_kappa
 
 _definition.id                          '_diffrn_refln.angle_kappa'
 loop_
@@ -1717,7 +1717,7 @@ _name.object_id                         angle_kappa
 save_
 
 
-save__diffrn_refln.angle_omega
+save_diffrn_refln.angle_omega
 
 _definition.id                          '_diffrn_refln.angle_omega'
 loop_
@@ -1730,7 +1730,7 @@ _name.object_id                         angle_omega
 save_
 
 
-save__diffrn_refln.angle_phi
+save_diffrn_refln.angle_phi
 
 _definition.id                          '_diffrn_refln.angle_phi'
 loop_
@@ -1743,7 +1743,7 @@ _name.object_id                         angle_phi
 save_
 
 
-save__diffrn_refln.angle_psi
+save_diffrn_refln.angle_psi
 
 _definition.id                          '_diffrn_refln.angle_psi'
 loop_
@@ -1756,7 +1756,7 @@ _name.object_id                         angle_psi
 save_
 
 
-save__diffrn_refln.angle_theta
+save_diffrn_refln.angle_theta
 
 _definition.id                          '_diffrn_refln.angle_theta'
 loop_
@@ -1769,7 +1769,7 @@ _name.object_id                         angle_theta
 save_
 
 
-save__diffrn_refln.attenuator_code
+save_diffrn_refln.attenuator_code
 
 _definition.id                          '_diffrn_refln.attenuator_code'
 loop_
@@ -1791,7 +1791,7 @@ _type.contents                          Code
 save_
 
 
-save__diffrn_refln.class_code
+save_diffrn_refln.class_code
 
 _definition.id                          '_diffrn_refln.class_code'
 loop_
@@ -1813,7 +1813,7 @@ _type.contents                          Code
 save_
 
 
-save__diffrn_refln.counts_bg_1
+save_diffrn_refln.counts_bg_1
 
 _definition.id                          '_diffrn_refln.counts_bg_1'
 loop_
@@ -1826,7 +1826,7 @@ _name.object_id                         counts_bg_1
 save_
 
 
-save__diffrn_refln.counts_bg_2
+save_diffrn_refln.counts_bg_2
 
 _definition.id                          '_diffrn_refln.counts_bg_2'
 loop_
@@ -1839,7 +1839,7 @@ _name.object_id                         counts_bg_2
 save_
 
 
-save__diffrn_refln.counts_net
+save_diffrn_refln.counts_net
 
 _definition.id                          '_diffrn_refln.counts_net'
 loop_
@@ -1852,7 +1852,7 @@ _name.object_id                         counts_net
 save_
 
 
-save__diffrn_refln.counts_peak
+save_diffrn_refln.counts_peak
 
 _definition.id                          '_diffrn_refln.counts_peak'
 loop_
@@ -1865,7 +1865,7 @@ _name.object_id                         counts_peak
 save_
 
 
-save__diffrn_refln.counts_total
+save_diffrn_refln.counts_total
 
 _definition.id                          '_diffrn_refln.counts_total'
 loop_
@@ -1878,7 +1878,7 @@ _name.object_id                         counts_total
 save_
 
 
-save__diffrn_refln.detect_slit_horiz
+save_diffrn_refln.detect_slit_horiz
 
 _definition.id                          '_diffrn_refln.detect_slit_horiz'
 loop_
@@ -1901,7 +1901,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_refln.detect_slit_vert
+save_diffrn_refln.detect_slit_vert
 
 _definition.id                          '_diffrn_refln.detect_slit_vert'
 loop_
@@ -1924,7 +1924,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_refln.elapsed_time
+save_diffrn_refln.elapsed_time
 
 _definition.id                          '_diffrn_refln.elapsed_time'
 loop_
@@ -1947,7 +1947,7 @@ _units.code                             minutes
 save_
 
 
-save__diffrn_refln.hkl
+save_diffrn_refln.hkl
 
 _definition.id                          '_diffrn_refln.hkl'
 _definition.update                      2012-11-26
@@ -1977,7 +1977,7 @@ loop_
 save_
 
 
-save__diffrn_refln.index_h
+save_diffrn_refln.index_h
 
 _definition.id                          '_diffrn_refln.index_h'
 loop_
@@ -1990,7 +1990,7 @@ _name.object_id                         index_h
 save_
 
 
-save__diffrn_refln.index_k
+save_diffrn_refln.index_k
 
 _definition.id                          '_diffrn_refln.index_k'
 loop_
@@ -2003,7 +2003,7 @@ _name.object_id                         index_k
 save_
 
 
-save__diffrn_refln.index_l
+save_diffrn_refln.index_l
 
 _definition.id                          '_diffrn_refln.index_l'
 loop_
@@ -2016,7 +2016,7 @@ _name.object_id                         index_l
 save_
 
 
-save__diffrn_refln.intensity_net
+save_diffrn_refln.intensity_net
 
 _definition.id                          '_diffrn_refln.intensity_net'
 loop_
@@ -2040,7 +2040,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_refln.intensity_net_su
+save_diffrn_refln.intensity_net_su
 
 _definition.id                          '_diffrn_refln.intensity_net_su'
 loop_
@@ -2068,7 +2068,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_refln.scale_group_code
+save_diffrn_refln.scale_group_code
 
 _definition.id                          '_diffrn_refln.scale_group_code'
 loop_
@@ -2090,7 +2090,7 @@ _type.contents                          Code
 save_
 
 
-save__diffrn_refln.scan_mode
+save_diffrn_refln.scan_mode
 
 _definition.id                          '_diffrn_refln.scan_mode'
 loop_
@@ -2119,7 +2119,7 @@ _enumeration.default                    ot
 save_
 
 
-save__diffrn_refln.scan_mode_backgd
+save_diffrn_refln.scan_mode_backgd
 
 _definition.id                          '_diffrn_refln.scan_mode_backgd'
 loop_
@@ -2146,7 +2146,7 @@ _enumeration.default                    st
 save_
 
 
-save__diffrn_refln.scan_rate
+save_diffrn_refln.scan_rate
 
 _definition.id                          '_diffrn_refln.scan_rate'
 loop_
@@ -2169,7 +2169,7 @@ _units.code                             degree_per_minute
 save_
 
 
-save__diffrn_refln.scan_time_backgd
+save_diffrn_refln.scan_time_backgd
 
 _definition.id                          '_diffrn_refln.scan_time_backgd'
 loop_
@@ -2192,7 +2192,7 @@ _units.code                             seconds
 save_
 
 
-save__diffrn_refln.scan_width
+save_diffrn_refln.scan_width
 
 _definition.id                          '_diffrn_refln.scan_width'
 loop_
@@ -2215,7 +2215,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_refln.sin_theta_over_lambda
+save_diffrn_refln.sin_theta_over_lambda
 
 _definition.id                          '_diffrn_refln.sin_theta_over_lambda'
 loop_
@@ -2240,7 +2240,7 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__diffrn_refln.standard_code
+save_diffrn_refln.standard_code
 
 _definition.id                          '_diffrn_refln.standard_code'
 loop_
@@ -2264,7 +2264,7 @@ _type.contents                          Code
 save_
 
 
-save__diffrn_refln.wavelength
+save_diffrn_refln.wavelength
 
 _definition.id                          '_diffrn_refln.wavelength'
 loop_
@@ -2287,7 +2287,7 @@ _units.code                             angstroms
 save_
 
 
-save__diffrn_refln.wavelength_id
+save_diffrn_refln.wavelength_id
 
 _definition.id                          '_diffrn_refln.wavelength_id'
 loop_
@@ -2326,7 +2326,7 @@ _name.object_id                         DIFFRN_REFLNS
 save_
 
 
-save__diffrn_reflns.av_R_equivalents
+save_diffrn_reflns.av_R_equivalents
 
 _definition.id                          '_diffrn_reflns.av_R_equivalents'
 loop_
@@ -2352,7 +2352,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns.av_sunetI_over_netI
+save_diffrn_reflns.av_sunetI_over_netI
 
 _definition.id                          '_diffrn_reflns.av_sunetI_over_netI'
 loop_
@@ -2379,7 +2379,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns.Laue_measured_fraction_full
+save_diffrn_reflns.Laue_measured_fraction_full
 
 _definition.id                          '_diffrn_reflns.Laue_measured_fraction_full'
 loop_
@@ -2410,7 +2410,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns.Laue_measured_fraction_max
+save_diffrn_reflns.Laue_measured_fraction_max
 
 _definition.id                          '_diffrn_reflns.Laue_measured_fraction_max'
 loop_
@@ -2438,7 +2438,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns.limit_h_max
+save_diffrn_reflns.limit_h_max
 
 _definition.id                          '_diffrn_reflns.limit_h_max'
 loop_
@@ -2451,7 +2451,7 @@ _name.object_id                         limit_h_max
 save_
 
 
-save__diffrn_reflns.limit_h_min
+save_diffrn_reflns.limit_h_min
 
 _definition.id                          '_diffrn_reflns.limit_h_min'
 loop_
@@ -2464,7 +2464,7 @@ _name.object_id                         limit_h_min
 save_
 
 
-save__diffrn_reflns.limit_k_max
+save_diffrn_reflns.limit_k_max
 
 _definition.id                          '_diffrn_reflns.limit_k_max'
 loop_
@@ -2477,7 +2477,7 @@ _name.object_id                         limit_k_max
 save_
 
 
-save__diffrn_reflns.limit_k_min
+save_diffrn_reflns.limit_k_min
 
 _definition.id                          '_diffrn_reflns.limit_k_min'
 loop_
@@ -2490,7 +2490,7 @@ _name.object_id                         limit_k_min
 save_
 
 
-save__diffrn_reflns.limit_l_max
+save_diffrn_reflns.limit_l_max
 
 _definition.id                          '_diffrn_reflns.limit_l_max'
 loop_
@@ -2503,7 +2503,7 @@ _name.object_id                         limit_l_max
 save_
 
 
-save__diffrn_reflns.limit_l_min
+save_diffrn_reflns.limit_l_min
 
 _definition.id                          '_diffrn_reflns.limit_l_min'
 loop_
@@ -2516,7 +2516,7 @@ _name.object_id                         limit_l_min
 save_
 
 
-save__diffrn_reflns.limit_max
+save_diffrn_reflns.limit_max
 
 _definition.id                          '_diffrn_reflns.limit_max'
 _definition.update                      2013-01-15
@@ -2544,7 +2544,7 @@ loop_
 save_
 
 
-save__diffrn_reflns.limit_min
+save_diffrn_reflns.limit_min
 
 _definition.id                          '_diffrn_reflns.limit_min'
 _definition.update                      2013-01-15
@@ -2572,7 +2572,7 @@ loop_
 save_
 
 
-save__diffrn_reflns.number
+save_diffrn_reflns.number
 
 _definition.id                          '_diffrn_reflns.number'
 loop_
@@ -2596,7 +2596,7 @@ _enumeration.range                      0:
 save_
 
 
-save__diffrn_reflns.point_measured_fraction_full
+save_diffrn_reflns.point_measured_fraction_full
 
 _definition.id                          '_diffrn_reflns.point_measured_fraction_full'
 loop_
@@ -2627,7 +2627,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns.point_measured_fraction_max
+save_diffrn_reflns.point_measured_fraction_max
 
 _definition.id                          '_diffrn_reflns.point_measured_fraction_max'
 loop_
@@ -2655,7 +2655,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns.reduction_process
+save_diffrn_reflns.reduction_process
 
 _definition.id                          '_diffrn_reflns.reduction_process'
 loop_
@@ -2679,7 +2679,7 @@ loop_
 save_
 
 
-save__diffrn_reflns.resolution_full
+save_diffrn_reflns.resolution_full
 
 _definition.id                          '_diffrn_reflns.resolution_full'
 loop_
@@ -2704,7 +2704,7 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__diffrn_reflns.resolution_max
+save_diffrn_reflns.resolution_max
 
 _definition.id                          '_diffrn_reflns.resolution_max'
 loop_
@@ -2729,7 +2729,7 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__diffrn_reflns.theta_full
+save_diffrn_reflns.theta_full
 
 _definition.id                          '_diffrn_reflns.theta_full'
 loop_
@@ -2754,7 +2754,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_reflns.theta_max
+save_diffrn_reflns.theta_max
 
 _definition.id                          '_diffrn_reflns.theta_max'
 loop_
@@ -2777,7 +2777,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_reflns.theta_min
+save_diffrn_reflns.theta_min
 
 _definition.id                          '_diffrn_reflns.theta_min'
 loop_
@@ -2822,7 +2822,7 @@ loop_
 save_
 
 
-save__diffrn_reflns_class.av_R_eq
+save_diffrn_reflns_class.av_R_eq
 
 _definition.id                          '_diffrn_reflns_class.av_R_eq'
 loop_
@@ -2848,7 +2848,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns_class.av_suI_over_I
+save_diffrn_reflns_class.av_suI_over_I
 
 _definition.id                          '_diffrn_reflns_class.av_suI_over_I'
 loop_
@@ -2875,7 +2875,7 @@ _units.code                             none
 save_
 
 
-save__diffrn_reflns_class.code
+save_diffrn_reflns_class.code
 
 _definition.id                          '_diffrn_reflns_class.code'
 loop_
@@ -2899,7 +2899,7 @@ loop_
 save_
 
 
-save__diffrn_reflns_class.d_res_high
+save_diffrn_reflns_class.d_res_high
 
 _definition.id                          '_diffrn_reflns_class.d_res_high'
 loop_
@@ -2922,7 +2922,7 @@ _units.code                             angstroms
 save_
 
 
-save__diffrn_reflns_class.d_res_low
+save_diffrn_reflns_class.d_res_low
 
 _definition.id                          '_diffrn_reflns_class.d_res_low'
 loop_
@@ -2945,7 +2945,7 @@ _units.code                             angstroms
 save_
 
 
-save__diffrn_reflns_class.description
+save_diffrn_reflns_class.description
 
 _definition.id                          '_diffrn_reflns_class.description'
 loop_
@@ -2969,7 +2969,7 @@ loop_
 save_
 
 
-save__diffrn_reflns_class.number
+save_diffrn_reflns_class.number
 
 _definition.id                          '_diffrn_reflns_class.number'
 loop_
@@ -3013,7 +3013,7 @@ _name.object_id                         DIFFRN_REFLNS_TRANSF_MATRIX
 save_
 
 
-save__diffrn_reflns_transf_matrix.11
+save_diffrn_reflns_transf_matrix.11
 
 _definition.id                          '_diffrn_reflns_transf_matrix.11'
 loop_
@@ -3027,7 +3027,7 @@ _name.object_id                         11
 save_
 
 
-save__diffrn_reflns_transf_matrix.12
+save_diffrn_reflns_transf_matrix.12
 
 _definition.id                          '_diffrn_reflns_transf_matrix.12'
 loop_
@@ -3041,7 +3041,7 @@ _name.object_id                         12
 save_
 
 
-save__diffrn_reflns_transf_matrix.13
+save_diffrn_reflns_transf_matrix.13
 
 _definition.id                          '_diffrn_reflns_transf_matrix.13'
 loop_
@@ -3055,7 +3055,7 @@ _name.object_id                         13
 save_
 
 
-save__diffrn_reflns_transf_matrix.21
+save_diffrn_reflns_transf_matrix.21
 
 _definition.id                          '_diffrn_reflns_transf_matrix.21'
 loop_
@@ -3069,7 +3069,7 @@ _name.object_id                         21
 save_
 
 
-save__diffrn_reflns_transf_matrix.22
+save_diffrn_reflns_transf_matrix.22
 
 _definition.id                          '_diffrn_reflns_transf_matrix.22'
 loop_
@@ -3083,7 +3083,7 @@ _name.object_id                         22
 save_
 
 
-save__diffrn_reflns_transf_matrix.23
+save_diffrn_reflns_transf_matrix.23
 
 _definition.id                          '_diffrn_reflns_transf_matrix.23'
 loop_
@@ -3097,7 +3097,7 @@ _name.object_id                         23
 save_
 
 
-save__diffrn_reflns_transf_matrix.31
+save_diffrn_reflns_transf_matrix.31
 
 _definition.id                          '_diffrn_reflns_transf_matrix.31'
 loop_
@@ -3111,7 +3111,7 @@ _name.object_id                         31
 save_
 
 
-save__diffrn_reflns_transf_matrix.32
+save_diffrn_reflns_transf_matrix.32
 
 _definition.id                          '_diffrn_reflns_transf_matrix.32'
 loop_
@@ -3125,7 +3125,7 @@ _name.object_id                         32
 save_
 
 
-save__diffrn_reflns_transf_matrix.33
+save_diffrn_reflns_transf_matrix.33
 
 _definition.id                          '_diffrn_reflns_transf_matrix.33'
 loop_
@@ -3139,7 +3139,7 @@ _name.object_id                         33
 save_
 
 
-save__diffrn_reflns_transf_matrix.TIJ
+save_diffrn_reflns_transf_matrix.TIJ
 
 _definition.id                          '_diffrn_reflns_transf_matrix.TIJ'
 _definition.update                      2012-11-26
@@ -3194,7 +3194,7 @@ loop_
 save_
 
 
-save__diffrn_scale_group.code
+save_diffrn_scale_group.code
 
 _definition.id                          '_diffrn_scale_group.code'
 loop_
@@ -3230,7 +3230,7 @@ loop_
 save_
 
 
-save__diffrn_scale_group.I_net
+save_diffrn_scale_group.I_net
 
 _definition.id                          '_diffrn_scale_group.I_net'
 loop_
@@ -3271,7 +3271,7 @@ _name.object_id                         DIFFRN_SOURCE
 save_
 
 
-save__diffrn_source.current
+save_diffrn_source.current
 
 _definition.id                          '_diffrn_source.current'
 loop_
@@ -3294,7 +3294,7 @@ _units.code                             milliamperes
 save_
 
 
-save__diffrn_source.details
+save_diffrn_source.details
 
 _definition.id                          '_diffrn_source.details'
 loop_
@@ -3315,7 +3315,7 @@ _type.contents                          Text
 save_
 
 
-save__diffrn_source.device
+save_diffrn_source.device
 
 _definition.id                          '_diffrn_source.device'
 loop_
@@ -3348,7 +3348,7 @@ _enumeration.default                    tube
 save_
 
 
-save__diffrn_source.make
+save_diffrn_source.make
 
 _definition.id                          '_diffrn_source.make'
 loop_
@@ -3375,7 +3375,7 @@ loop_
 save_
 
 
-save__diffrn_source.power
+save_diffrn_source.power
 
 _definition.id                          '_diffrn_source.power'
 loop_
@@ -3396,7 +3396,7 @@ _units.code                             kilowatts
 save_
 
 
-save__diffrn_source.size
+save_diffrn_source.size
 
 _definition.id                          '_diffrn_source.size'
 loop_
@@ -3421,7 +3421,7 @@ loop_
 save_
 
 
-save__diffrn_source.take_off_angle
+save_diffrn_source.take_off_angle
 
 _definition.id                          '_diffrn_source.take_off_angle'
 loop_
@@ -3447,7 +3447,7 @@ _units.code                             degrees
 save_
 
 
-save__diffrn_source.target
+save_diffrn_source.target
 
 _definition.id                          '_diffrn_source.target'
 loop_
@@ -3471,7 +3471,7 @@ _enumeration.default                    Cu
 save_
 
 
-save__diffrn_source.voltage
+save_diffrn_source.voltage
 
 _definition.id                          '_diffrn_source.voltage'
 loop_
@@ -3511,7 +3511,7 @@ _name.object_id                         DIFFRN_STANDARD
 save_
 
 
-save__diffrn_standard.decay_percent
+save_diffrn_standard.decay_percent
 
 _definition.id                          '_diffrn_standard.decay_percent'
 loop_
@@ -3551,7 +3551,7 @@ loop_
 save_
 
 
-save__diffrn_standard.interval_count
+save_diffrn_standard.interval_count
 
 _definition.id                          '_diffrn_standard.interval_count'
 loop_
@@ -3574,7 +3574,7 @@ _enumeration.range                      0:
 save_
 
 
-save__diffrn_standard.interval_time
+save_diffrn_standard.interval_time
 
 _definition.id                          '_diffrn_standard.interval_time'
 loop_
@@ -3598,7 +3598,7 @@ _units.code                             minutes
 save_
 
 
-save__diffrn_standard.number
+save_diffrn_standard.number
 
 _definition.id                          '_diffrn_standard.number'
 loop_
@@ -3621,7 +3621,7 @@ _enumeration.range                      0:
 save_
 
 
-save__diffrn_standard.scale_su_average
+save_diffrn_standard.scale_su_average
 
 _definition.id                          '_diffrn_standard.scale_su_average'
 loop_
@@ -3672,7 +3672,7 @@ loop_
 save_
 
 
-save__diffrn_standard_refln.code
+save_diffrn_standard_refln.code
 
 _definition.id                          '_diffrn_standard_refln.code'
 loop_
@@ -3700,7 +3700,7 @@ loop_
 save_
 
 
-save__diffrn_standard_refln.hkl
+save_diffrn_standard_refln.hkl
 
 _definition.id                          '_diffrn_standard_refln.hkl'
 _definition.update                      2012-11-26
@@ -3728,7 +3728,7 @@ loop_
 save_
 
 
-save__diffrn_standard_refln.index_h
+save_diffrn_standard_refln.index_h
 
 _definition.id                          '_diffrn_standard_refln.index_h'
 loop_
@@ -3741,7 +3741,7 @@ _name.object_id                         index_h
 save_
 
 
-save__diffrn_standard_refln.index_k
+save_diffrn_standard_refln.index_k
 
 _definition.id                          '_diffrn_standard_refln.index_k'
 loop_
@@ -3754,7 +3754,7 @@ _name.object_id                         index_k
 save_
 
 
-save__diffrn_standard_refln.index_l
+save_diffrn_standard_refln.index_l
 
 _definition.id                          '_diffrn_standard_refln.index_l'
 loop_
@@ -3789,7 +3789,7 @@ loop_
 save_
 
 
-save__refln.A_calc
+save_refln.A_calc
 
 _definition.id                          '_refln.A_calc'
 loop_
@@ -3824,7 +3824,7 @@ loop_
 save_
 
 
-save__refln.A_meas
+save_refln.A_meas
 
 _definition.id                          '_refln.A_meas'
 loop_
@@ -3855,7 +3855,7 @@ loop_
 save_
 
 
-save__refln.B_calc
+save_refln.B_calc
 
 _definition.id                          '_refln.B_calc'
 loop_
@@ -3890,7 +3890,7 @@ loop_
 save_
 
 
-save__refln.B_meas
+save_refln.B_meas
 
 _definition.id                          '_refln.B_meas'
 loop_
@@ -3921,7 +3921,7 @@ loop_
 save_
 
 
-save__refln.class_code
+save_refln.class_code
 
 _definition.id                          '_refln.class_code'
 loop_
@@ -3950,7 +3950,7 @@ _type.contents                          Code
 save_
 
 
-save__refln.d_spacing
+save_refln.d_spacing
 
 _definition.id                          '_refln.d_spacing'
 loop_
@@ -3981,7 +3981,7 @@ loop_
 save_
 
 
-save__refln.F_calc
+save_refln.F_calc
 
 _definition.id                          '_refln.F_calc'
 loop_
@@ -4017,7 +4017,7 @@ loop_
 save_
 
 
-save__refln.F_complex
+save_refln.F_complex
 
 _definition.id                          '_refln.F_complex'
 loop_
@@ -4070,7 +4070,7 @@ loop_
 save_
 
 
-save__refln.F_meas
+save_refln.F_meas
 
 _definition.id                          '_refln.F_meas'
 loop_
@@ -4102,7 +4102,7 @@ loop_
 save_
 
 
-save__refln.F_meas_su
+save_refln.F_meas_su
 
 _definition.id                          '_refln.F_meas_su'
 loop_
@@ -4136,7 +4136,7 @@ loop_
 save_
 
 
-save__refln.F_squared_calc
+save_refln.F_squared_calc
 
 _definition.id                          '_refln.F_squared_calc'
 loop_
@@ -4170,7 +4170,7 @@ loop_
 save_
 
 
-save__refln.F_squared_meas
+save_refln.F_squared_meas
 
 _definition.id                          '_refln.F_squared_meas'
 loop_
@@ -4204,7 +4204,7 @@ loop_
 save_
 
 
-save__refln.F_squared_meas_su
+save_refln.F_squared_meas_su
 
 _definition.id                          '_refln.F_squared_meas_su'
 loop_
@@ -4240,7 +4240,7 @@ loop_
 save_
 
 
-save__refln.fom
+save_refln.fom
 
 _definition.id                          '_refln.fom'
 _definition.update                      2014-06-12
@@ -4266,7 +4266,7 @@ _type.contents                          Real
 save_
 
 
-save__refln.form_factor_table
+save_refln.form_factor_table
 
 _definition.id                          '_refln.form_factor_table'
 _definition.update                      2013-04-23
@@ -4321,7 +4321,7 @@ loop_
 save_
 
 
-save__refln.hkl
+save_refln.hkl
 
 _definition.id                          '_refln.hkl'
 _definition.update                      2012-11-26
@@ -4349,7 +4349,7 @@ loop_
 save_
 
 
-save__refln.include_status
+save_refln.include_status
 
 _definition.id                          '_refln.include_status'
 loop_
@@ -4384,7 +4384,7 @@ _enumeration.default                    o
 save_
 
 
-save__refln.index_h
+save_refln.index_h
 
 _definition.id                          '_refln.index_h'
 loop_
@@ -4397,7 +4397,7 @@ _name.object_id                         index_h
 save_
 
 
-save__refln.index_k
+save_refln.index_k
 
 _definition.id                          '_refln.index_k'
 loop_
@@ -4410,7 +4410,7 @@ _name.object_id                         index_k
 save_
 
 
-save__refln.index_l
+save_refln.index_l
 
 _definition.id                          '_refln.index_l'
 loop_
@@ -4423,7 +4423,7 @@ _name.object_id                         index_l
 save_
 
 
-save__refln.intensity_calc
+save_refln.intensity_calc
 
 _definition.id                          '_refln.intensity_calc'
 loop_
@@ -4453,7 +4453,7 @@ loop_
 save_
 
 
-save__refln.intensity_meas
+save_refln.intensity_meas
 
 _definition.id                          '_refln.intensity_meas'
 loop_
@@ -4476,7 +4476,7 @@ _units.code                             none
 save_
 
 
-save__refln.intensity_meas_su
+save_refln.intensity_meas_su
 
 _definition.id                          '_refln.intensity_meas_su'
 loop_
@@ -4501,7 +4501,7 @@ _units.code                             none
 save_
 
 
-save__refln.Lp_factor
+save_refln.Lp_factor
 
 _definition.id                          '_refln.Lp_factor'
 loop_
@@ -4526,7 +4526,7 @@ _units.code                             none
 save_
 
 
-save__refln.mean_path_length_tbar
+save_refln.mean_path_length_tbar
 
 _definition.id                          '_refln.mean_path_length_tbar'
 loop_
@@ -4549,7 +4549,7 @@ _units.code                             millimetres
 save_
 
 
-save__refln.phase_calc
+save_refln.phase_calc
 
 _definition.id                          '_refln.phase_calc'
 loop_
@@ -4581,7 +4581,7 @@ loop_
 save_
 
 
-save__refln.phase_meas
+save_refln.phase_meas
 
 _definition.id                          '_refln.phase_meas'
 loop_
@@ -4606,7 +4606,7 @@ _units.code                             degrees
 save_
 
 
-save__refln.refinement_status
+save_refln.refinement_status
 
 _definition.id                          '_refln.refinement_status'
 loop_
@@ -4634,7 +4634,7 @@ _enumeration.default                    incl
 save_
 
 
-save__refln.scale_group_code
+save_refln.scale_group_code
 
 _definition.id                          '_refln.scale_group_code'
 loop_
@@ -4657,7 +4657,7 @@ _type.contents                          Code
 save_
 
 
-save__refln.sin_theta_over_lambda
+save_refln.sin_theta_over_lambda
 
 _definition.id                          '_refln.sin_theta_over_lambda'
 loop_
@@ -4693,7 +4693,7 @@ loop_
 save_
 
 
-save__refln.symmetry_epsilon
+save_refln.symmetry_epsilon
 
 _definition.id                          '_refln.symmetry_epsilon'
 loop_
@@ -4717,7 +4717,7 @@ _enumeration.range                      1:48
 save_
 
 
-save__refln.symmetry_multiplicity
+save_refln.symmetry_multiplicity
 
 _definition.id                          '_refln.symmetry_multiplicity'
 loop_
@@ -4743,7 +4743,7 @@ _enumeration.range                      1:48
 save_
 
 
-save__refln.wavelength
+save_refln.wavelength
 
 _definition.id                          '_refln.wavelength'
 loop_
@@ -4768,7 +4768,7 @@ _units.code                             angstroms
 save_
 
 
-save__refln.wavelength_id
+save_refln.wavelength_id
 
 _definition.id                          '_refln.wavelength_id'
 loop_
@@ -4812,7 +4812,7 @@ _name.object_id                         REFLNS
 save_
 
 
-save__reflns.apply_dispersion_to_Fcalc
+save_reflns.apply_dispersion_to_Fcalc
 
 _definition.id                          '_reflns.apply_dispersion_to_Fcalc'
 _definition.update                      2013-04-28
@@ -4840,7 +4840,7 @@ _enumeration.default                    yes
 save_
 
 
-save__reflns.d_resolution_high
+save_reflns.d_resolution_high
 
 _definition.id                          '_reflns.d_resolution_high'
 loop_
@@ -4864,7 +4864,7 @@ _units.code                             angstroms
 save_
 
 
-save__reflns.d_resolution_low
+save_reflns.d_resolution_low
 
 _definition.id                          '_reflns.d_resolution_low'
 loop_
@@ -4888,7 +4888,7 @@ _units.code                             angstroms
 save_
 
 
-save__reflns.Friedel_coverage
+save_reflns.Friedel_coverage
 
 _definition.id                          '_reflns.Friedel_coverage'
 loop_
@@ -4941,7 +4941,7 @@ _units.code                             none
 save_
 
 
-save__reflns.Friedel_fraction_full
+save_reflns.Friedel_fraction_full
 
 _definition.id                          '_reflns.Friedel_fraction_full'
 loop_
@@ -4971,7 +4971,7 @@ _units.code                             none
 save_
 
 
-save__reflns.Friedel_fraction_max
+save_reflns.Friedel_fraction_max
 
 _definition.id                          '_reflns.Friedel_fraction_max'
 loop_
@@ -5001,7 +5001,7 @@ _units.code                             none
 save_
 
 
-save__reflns.limit_h_max
+save_reflns.limit_h_max
 
 _definition.id                          '_reflns.limit_h_max'
 loop_
@@ -5014,7 +5014,7 @@ _name.object_id                         limit_h_max
 save_
 
 
-save__reflns.limit_h_min
+save_reflns.limit_h_min
 
 _definition.id                          '_reflns.limit_h_min'
 loop_
@@ -5027,7 +5027,7 @@ _name.object_id                         limit_h_min
 save_
 
 
-save__reflns.limit_k_max
+save_reflns.limit_k_max
 
 _definition.id                          '_reflns.limit_k_max'
 loop_
@@ -5040,7 +5040,7 @@ _name.object_id                         limit_k_max
 save_
 
 
-save__reflns.limit_k_min
+save_reflns.limit_k_min
 
 _definition.id                          '_reflns.limit_k_min'
 loop_
@@ -5053,7 +5053,7 @@ _name.object_id                         limit_k_min
 save_
 
 
-save__reflns.limit_l_max
+save_reflns.limit_l_max
 
 _definition.id                          '_reflns.limit_l_max'
 loop_
@@ -5066,7 +5066,7 @@ _name.object_id                         limit_l_max
 save_
 
 
-save__reflns.limit_l_min
+save_reflns.limit_l_min
 
 _definition.id                          '_reflns.limit_l_min'
 loop_
@@ -5079,7 +5079,7 @@ _name.object_id                         limit_l_min
 save_
 
 
-save__reflns.limit_max
+save_reflns.limit_max
 
 _definition.id                          '_reflns.limit_max'
 _definition.update                      2013-01-15
@@ -5108,7 +5108,7 @@ loop_
 save_
 
 
-save__reflns.limit_min
+save_reflns.limit_min
 
 _definition.id                          '_reflns.limit_min'
 _definition.update                      2013-01-15
@@ -5137,7 +5137,7 @@ loop_
 save_
 
 
-save__reflns.number_gt
+save_reflns.number_gt
 
 _definition.id                          '_reflns.number_gt'
 loop_
@@ -5166,7 +5166,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns.number_total
+save_reflns.number_total
 
 _definition.id                          '_reflns.number_total'
 loop_
@@ -5193,7 +5193,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns.special_details
+save_reflns.special_details
 
 _definition.id                          '_reflns.special_details'
 loop_
@@ -5217,7 +5217,7 @@ _type.contents                          Text
 save_
 
 
-save__reflns.threshold_expression
+save_reflns.threshold_expression
 
 _definition.id                          '_reflns.threshold_expression'
 loop_
@@ -5266,7 +5266,7 @@ loop_
 save_
 
 
-save__reflns_class.code
+save_reflns_class.code
 
 _definition.id                          '_reflns_class.code'
 loop_
@@ -5290,7 +5290,7 @@ loop_
 save_
 
 
-save__reflns_class.d_res_high
+save_reflns_class.d_res_high
 
 _definition.id                          '_reflns_class.d_res_high'
 loop_
@@ -5314,7 +5314,7 @@ _units.code                             angstroms
 save_
 
 
-save__reflns_class.d_res_low
+save_reflns_class.d_res_low
 
 _definition.id                          '_reflns_class.d_res_low'
 loop_
@@ -5338,7 +5338,7 @@ _units.code                             angstroms
 save_
 
 
-save__reflns_class.description
+save_reflns_class.description
 
 _definition.id                          '_reflns_class.description'
 loop_
@@ -5362,7 +5362,7 @@ loop_
 save_
 
 
-save__reflns_class.number_gt
+save_reflns_class.number_gt
 
 _definition.id                          '_reflns_class.number_gt'
 loop_
@@ -5389,7 +5389,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_class.number_total
+save_reflns_class.number_total
 
 _definition.id                          '_reflns_class.number_total'
 loop_
@@ -5414,7 +5414,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_class.R_factor_all
+save_reflns_class.R_factor_all
 
 _definition.id                          '_reflns_class.R_factor_all'
 loop_
@@ -5446,7 +5446,7 @@ _units.code                             none
 save_
 
 
-save__reflns_class.R_factor_gt
+save_reflns_class.R_factor_gt
 
 _definition.id                          '_reflns_class.R_factor_gt'
 loop_
@@ -5481,7 +5481,7 @@ _units.code                             none
 save_
 
 
-save__reflns_class.R_Fsqd_factor
+save_reflns_class.R_Fsqd_factor
 
 _definition.id                          '_reflns_class.R_Fsqd_factor'
 loop_
@@ -5515,7 +5515,7 @@ _units.code                             none
 save_
 
 
-save__reflns_class.R_I_factor
+save_reflns_class.R_I_factor
 
 _definition.id                          '_reflns_class.R_I_factor'
 loop_
@@ -5549,7 +5549,7 @@ _units.code                             none
 save_
 
 
-save__reflns_class.wR_factor_all
+save_reflns_class.wR_factor_all
 
 _definition.id                          '_reflns_class.wR_factor_all'
 loop_
@@ -5608,7 +5608,7 @@ loop_
 save_
 
 
-save__reflns_scale.group_code
+save_reflns_scale.group_code
 
 _definition.id                          '_reflns_scale.group_code'
 loop_
@@ -5630,7 +5630,7 @@ _type.contents                          Code
 save_
 
 
-save__reflns_scale.meas_F
+save_reflns_scale.meas_F
 
 _definition.id                          '_reflns_scale.meas_F'
 loop_
@@ -5653,7 +5653,7 @@ _units.code                             none
 save_
 
 
-save__reflns_scale.meas_F_squared
+save_reflns_scale.meas_F_squared
 
 _definition.id                          '_reflns_scale.meas_F_squared'
 loop_
@@ -5676,7 +5676,7 @@ _units.code                             none
 save_
 
 
-save__reflns_scale.meas_intensity
+save_reflns_scale.meas_intensity
 
 _definition.id                          '_reflns_scale.meas_intensity'
 loop_
@@ -5721,7 +5721,7 @@ loop_
 save_
 
 
-save__reflns_shell.d_res_high
+save_reflns_shell.d_res_high
 
 _definition.id                          '_reflns_shell.d_res_high'
 loop_
@@ -5745,7 +5745,7 @@ _units.code                             angstroms
 save_
 
 
-save__reflns_shell.d_res_limits
+save_reflns_shell.d_res_limits
 
 _definition.id                          '_reflns_shell.d_res_limits'
 _definition.update                      2012-11-26
@@ -5776,7 +5776,7 @@ loop_
 save_
 
 
-save__reflns_shell.d_res_low
+save_reflns_shell.d_res_low
 
 _definition.id                          '_reflns_shell.d_res_low'
 loop_
@@ -5800,7 +5800,7 @@ _units.code                             angstroms
 save_
 
 
-save__reflns_shell.meanI_over_suI_all
+save_reflns_shell.meanI_over_suI_all
 
 _definition.id                          '_reflns_shell.meanI_over_suI_all'
 loop_
@@ -5827,7 +5827,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.meanI_over_suI_gt
+save_reflns_shell.meanI_over_suI_gt
 
 _definition.id                          '_reflns_shell.meanI_over_suI_gt'
 loop_
@@ -5857,7 +5857,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.number_measured_all
+save_reflns_shell.number_measured_all
 
 _definition.id                          '_reflns_shell.number_measured_all'
 loop_
@@ -5879,7 +5879,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_shell.number_measured_gt
+save_reflns_shell.number_measured_gt
 
 _definition.id                          '_reflns_shell.number_measured_gt'
 loop_
@@ -5904,7 +5904,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_shell.number_possible
+save_reflns_shell.number_possible
 
 _definition.id                          '_reflns_shell.number_possible'
 loop_
@@ -5927,7 +5927,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_shell.number_unique_all
+save_reflns_shell.number_unique_all
 
 _definition.id                          '_reflns_shell.number_unique_all'
 loop_
@@ -5949,7 +5949,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_shell.number_unique_gt
+save_reflns_shell.number_unique_gt
 
 _definition.id                          '_reflns_shell.number_unique_gt'
 loop_
@@ -5974,7 +5974,7 @@ _enumeration.range                      0:
 save_
 
 
-save__reflns_shell.percent_possible_all
+save_reflns_shell.percent_possible_all
 
 _definition.id                          '_reflns_shell.percent_possible_all'
 loop_
@@ -5997,7 +5997,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.percent_possible_gt
+save_reflns_shell.percent_possible_gt
 
 _definition.id                          '_reflns_shell.percent_possible_gt'
 loop_
@@ -6023,7 +6023,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.Rmerge_F_all
+save_reflns_shell.Rmerge_F_all
 
 _definition.id                          '_reflns_shell.Rmerge_F_all'
 loop_
@@ -6057,7 +6057,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.Rmerge_F_gt
+save_reflns_shell.Rmerge_F_gt
 
 _definition.id                          '_reflns_shell.Rmerge_F_gt'
 loop_
@@ -6084,7 +6084,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.Rmerge_I_all
+save_reflns_shell.Rmerge_I_all
 
 _definition.id                          '_reflns_shell.Rmerge_I_all'
 loop_
@@ -6118,7 +6118,7 @@ _units.code                             none
 save_
 
 
-save__reflns_shell.Rmerge_I_gt
+save_reflns_shell.Rmerge_I_gt
 
 _definition.id                          '_reflns_shell.Rmerge_I_gt'
 loop_
@@ -6163,7 +6163,7 @@ _name.object_id                         EXPTL
 save_
 
 
-save__exptl.crystals_number
+save_exptl.crystals_number
 
 _definition.id                          '_exptl.crystals_number'
 loop_
@@ -6186,7 +6186,7 @@ _enumeration.default                    1
 save_
 
 
-save__exptl.method
+save_exptl.method
 
 _definition.id                          '_exptl.method'
 _definition.update                      2014-06-12
@@ -6218,7 +6218,7 @@ loop_
 save_
 
 
-save__exptl.method_details
+save_exptl.method_details
 
 _definition.id                          '_exptl.method_details'
 _definition.update                      2014-06-12
@@ -6240,7 +6240,7 @@ loop_
 save_
 
 
-save__exptl.special_details
+save_exptl.special_details
 
 _definition.id                          '_exptl.special_details'
 loop_
@@ -6263,7 +6263,7 @@ _type.contents                          Text
 save_
 
 
-save__exptl.transmission_factor_max
+save_exptl.transmission_factor_max
 
 _definition.id                          '_exptl.transmission_factor_max'
 loop_
@@ -6291,7 +6291,7 @@ _units.code                             none
 save_
 
 
-save__exptl.transmission_factor_min
+save_exptl.transmission_factor_min
 
 _definition.id                          '_exptl.transmission_factor_min'
 loop_
@@ -6336,7 +6336,7 @@ _name.object_id                         CELL
 save_
 
 
-save__cell.atomic_mass
+save_cell.atomic_mass
 
 _definition.id                          '_cell.atomic_mass'
 _definition.update                      2012-11-22
@@ -6371,7 +6371,7 @@ loop_
 save_
 
 
-save__cell.formula_units_Z
+save_cell.formula_units_Z
 
 _definition.id                          '_cell.formula_units_Z'
 loop_
@@ -6395,7 +6395,7 @@ _enumeration.range                      1:
 save_
 
 
-save__cell.metric_tensor
+save_cell.metric_tensor
 
 _definition.id                          '_cell.metric_tensor'
 _definition.update                      2012-11-22
@@ -6426,7 +6426,7 @@ loop_
 save_
 
 
-save__cell.orthogonal_matrix
+save_cell.orthogonal_matrix
 
 _definition.id                          '_cell.orthogonal_matrix'
 _definition.update                      2012-11-22
@@ -6458,7 +6458,7 @@ loop_
 save_
 
 
-save__cell.special_details
+save_cell.special_details
 
 _definition.id                          '_cell.special_details'
 loop_
@@ -6481,7 +6481,7 @@ _type.contents                          Text
 save_
 
 
-save__cell.volume
+save_cell.volume
 
 _definition.id                          '_cell.volume'
 loop_
@@ -6513,7 +6513,7 @@ loop_
 save_
 
 
-save__cell.volume_su
+save_cell.volume_su
 
 _definition.id                          '_cell.volume_su'
 loop_
@@ -6536,7 +6536,7 @@ _units.code                             angstrom_cubed
 
 save_
 
-save__cell.angle_alpha
+save_cell.angle_alpha
 
 _definition.id                          '_cell.angle_alpha'
 loop_
@@ -6549,7 +6549,7 @@ _name.object_id                         angle_alpha
 save_
 
 
-save__cell.angle_alpha_su
+save_cell.angle_alpha_su
 
 _definition.id                          '_cell.angle_alpha_su'
 loop_
@@ -6564,7 +6564,7 @@ _name.linked_item_id                    '_cell.angle_alpha'
 save_
 
 
-save__cell.angle_beta
+save_cell.angle_beta
 
 _definition.id                          '_cell.angle_beta'
 loop_
@@ -6577,7 +6577,7 @@ _name.object_id                         angle_beta
 save_
 
 
-save__cell.angle_beta_su
+save_cell.angle_beta_su
 
 _definition.id                          '_cell.angle_beta_su'
 loop_
@@ -6593,7 +6593,7 @@ _name.linked_item_id                    '_cell.angle_beta'
 save_
 
 
-save__cell.angle_gamma
+save_cell.angle_gamma
 
 _definition.id                          '_cell.angle_gamma'
 loop_
@@ -6606,7 +6606,7 @@ _name.object_id                         angle_gamma
 save_
 
 
-save__cell.angle_gamma_su
+save_cell.angle_gamma_su
 
 _definition.id                          '_cell.angle_gamma_su'
 loop_
@@ -6621,7 +6621,7 @@ _name.linked_item_id                    '_cell.angle_gamma'
 
 save_
 
-save__cell.length_a
+save_cell.length_a
 
 _definition.id                          '_cell.length_a'
 loop_
@@ -6634,7 +6634,7 @@ _name.object_id                         length_a
 save_
 
 
-save__cell.length_a_su
+save_cell.length_a_su
 
 _definition.id                          '_cell.length_a_su'
 loop_
@@ -6649,7 +6649,7 @@ _name.linked_item_id                    '_cell.length_a'
 save_
 
 
-save__cell.length_b
+save_cell.length_b
 
 _definition.id                          '_cell.length_b'
 loop_
@@ -6662,7 +6662,7 @@ _name.object_id                         length_b
 save_
 
 
-save__cell.length_b_su
+save_cell.length_b_su
 
 _definition.id                          '_cell.length_b_su'
 loop_
@@ -6677,7 +6677,7 @@ _name.linked_item_id                    '_cell.length_b'
 save_
 
 
-save__cell.length_c
+save_cell.length_c
 
 _definition.id                          '_cell.length_c'
 loop_
@@ -6690,7 +6690,7 @@ _name.object_id                         length_c
 save_
 
 
-save__cell.length_c_su
+save_cell.length_c_su
 
 _definition.id                          '_cell.length_c_su'
 loop_
@@ -6722,7 +6722,7 @@ _name.object_id                         CELL_MEASUREMENT
 save_
 
 
-save__cell_measurement.pressure
+save_cell_measurement.pressure
 
 _definition.id                          '_cell_measurement.pressure'
 loop_
@@ -6746,7 +6746,7 @@ _units.code                             kilopascals
 save_
 
 
-save__cell_measurement.pressure_su
+save_cell_measurement.pressure_su
 
 _definition.id                          '_cell_measurement.pressure_su'
 loop_
@@ -6771,7 +6771,7 @@ _units.code                             kilopascals
 save_
 
 
-save__cell_measurement.radiation
+save_cell_measurement.radiation
 
 _definition.id                          '_cell_measurement.radiation'
 loop_
@@ -6797,7 +6797,7 @@ loop_
 save_
 
 
-save__cell_measurement.reflns_used
+save_cell_measurement.reflns_used
 
 _definition.id                          '_cell_measurement.reflns_used'
 loop_
@@ -6820,7 +6820,7 @@ _enumeration.range                      3:
 save_
 
 
-save__cell_measurement.temperature
+save_cell_measurement.temperature
 
 _definition.id                          '_cell_measurement.temperature'
 loop_
@@ -6846,7 +6846,7 @@ _units.code                             kelvins
 save_
 
 
-save__cell_measurement.temperature_su
+save_cell_measurement.temperature_su
 
 _definition.id                          '_cell_measurement.temperature_su'
 loop_
@@ -6871,7 +6871,7 @@ _units.code                             kelvins
 save_
 
 
-save__cell_measurement.theta_max
+save_cell_measurement.theta_max
 
 _definition.id                          '_cell_measurement.theta_max'
 loop_
@@ -6895,7 +6895,7 @@ _units.code                             degrees
 save_
 
 
-save__cell_measurement.theta_min
+save_cell_measurement.theta_min
 
 _definition.id                          '_cell_measurement.theta_min'
 loop_
@@ -6919,7 +6919,7 @@ _units.code                             degrees
 save_
 
 
-save__cell_measurement.wavelength
+save_cell_measurement.wavelength
 
 _definition.id                          '_cell_measurement.wavelength'
 loop_
@@ -6967,7 +6967,7 @@ loop_
 save_
 
 
-save__cell_measurement_refln.hkl
+save_cell_measurement_refln.hkl
 
 _definition.id                          '_cell_measurement_refln.hkl'
 _definition.update                      2012-11-22
@@ -6995,7 +6995,7 @@ loop_
 save_
 
 
-save__cell_measurement_refln.index_h
+save_cell_measurement_refln.index_h
 
 _definition.id                          '_cell_measurement_refln.index_h'
 loop_
@@ -7008,7 +7008,7 @@ _name.object_id                         index_h
 save_
 
 
-save__cell_measurement_refln.index_k
+save_cell_measurement_refln.index_k
 
 _definition.id                          '_cell_measurement_refln.index_k'
 loop_
@@ -7021,7 +7021,7 @@ _name.object_id                         index_k
 save_
 
 
-save__cell_measurement_refln.index_l
+save_cell_measurement_refln.index_l
 
 _definition.id                          '_cell_measurement_refln.index_l'
 loop_
@@ -7034,7 +7034,7 @@ _name.object_id                         index_l
 save_
 
 
-save__cell_measurement_refln.theta
+save_cell_measurement_refln.theta
 
 _definition.id                          '_cell_measurement_refln.theta'
 loop_
@@ -7057,7 +7057,7 @@ _units.code                             degrees
 save_
 
 
-save__cell.convert_Uij_to_betaij
+save_cell.convert_Uij_to_betaij
 
 _definition.id                          '_cell.convert_Uij_to_betaij'
 _definition.update                      2016-09-08
@@ -7100,7 +7100,7 @@ loop_
 save_
 
 
-save__cell.convert_Uiso_to_Uij
+save_cell.convert_Uiso_to_Uij
 
 _definition.id                          '_cell.convert_Uiso_to_Uij'
 _definition.update                      2016-09-08
@@ -7137,7 +7137,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_metric_tensor
+save_cell.reciprocal_metric_tensor
 
 _definition.id                          '_cell.reciprocal_metric_tensor'
 _definition.update                      2016-09-08
@@ -7169,7 +7169,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_orthogonal_matrix
+save_cell.reciprocal_orthogonal_matrix
 
 _definition.id                          '_cell.reciprocal_orthogonal_matrix'
 _definition.update                      2016-09-08
@@ -7200,7 +7200,7 @@ loop_
 
 save_
 
-save__cell.reciprocal_angle_alpha
+save_cell.reciprocal_angle_alpha
 
 _definition.id                          '_cell.reciprocal_angle_alpha'
 loop_
@@ -7235,7 +7235,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_angle_alpha_su
+save_cell.reciprocal_angle_alpha_su
 
 _definition.id                          '_cell.reciprocal_angle_alpha_su'
 loop_
@@ -7260,7 +7260,7 @@ _units.code                             degrees
 save_
 
 
-save__cell.reciprocal_angle_beta
+save_cell.reciprocal_angle_beta
 
 _definition.id                          '_cell.reciprocal_angle_beta'
 loop_
@@ -7295,7 +7295,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_angle_beta_su
+save_cell.reciprocal_angle_beta_su
 
 _definition.id                          '_cell.reciprocal_angle_beta_su'
 loop_
@@ -7320,7 +7320,7 @@ _units.code                             degrees
 save_
 
 
-save__cell.reciprocal_angle_gamma
+save_cell.reciprocal_angle_gamma
 
 _definition.id                          '_cell.reciprocal_angle_gamma'
 loop_
@@ -7355,7 +7355,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_angle_gamma_su
+save_cell.reciprocal_angle_gamma_su
 
 _definition.id                          '_cell.reciprocal_angle_gamma_su'
 loop_
@@ -7380,7 +7380,7 @@ _units.code                             degrees
 save_
 
 
-save__cell.reciprocal_length_a
+save_cell.reciprocal_length_a
 
 _definition.id                          '_cell.reciprocal_length_a'
 loop_
@@ -7410,7 +7410,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_length_a_su
+save_cell.reciprocal_length_a_su
 
 _definition.id                          '_cell.reciprocal_length_a_su'
 loop_
@@ -7434,7 +7434,7 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__cell.reciprocal_length_b
+save_cell.reciprocal_length_b
 
 _definition.id                          '_cell.reciprocal_length_b'
 loop_
@@ -7464,7 +7464,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_length_b_su
+save_cell.reciprocal_length_b_su
 
 _definition.id                          '_cell.reciprocal_length_b_su'
 loop_
@@ -7488,7 +7488,7 @@ _units.code                             reciprocal_angstroms
 save_
 
 
-save__cell.reciprocal_length_c
+save_cell.reciprocal_length_c
 
 _definition.id                          '_cell.reciprocal_length_c'
 loop_
@@ -7518,7 +7518,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_length_c_su
+save_cell.reciprocal_length_c_su
 
 _definition.id                          '_cell.reciprocal_length_c_su'
 loop_
@@ -7541,7 +7541,7 @@ _units.code                             reciprocal_angstroms
 
 save_
 
-save__cell.reciprocal_vector_a
+save_cell.reciprocal_vector_a
 
 _definition.id                          '_cell.reciprocal_vector_a'
 _definition.update                      2012-11-22
@@ -7569,7 +7569,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_vector_b
+save_cell.reciprocal_vector_b
 
 _definition.id                          '_cell.reciprocal_vector_b'
 _definition.update                      2012-11-22
@@ -7597,7 +7597,7 @@ loop_
 save_
 
 
-save__cell.reciprocal_vector_c
+save_cell.reciprocal_vector_c
 
 _definition.id                          '_cell.reciprocal_vector_c'
 _definition.update                      2012-11-22
@@ -7624,7 +7624,7 @@ loop_
 
 save_
 
-save__cell.vector_a
+save_cell.vector_a
 
 _definition.id                          '_cell.vector_a'
 _definition.update                      2012-11-22
@@ -7650,7 +7650,7 @@ loop_
 save_
 
 
-save__cell.vector_b
+save_cell.vector_b
 
 _definition.id                          '_cell.vector_b'
 _definition.update                      2012-11-22
@@ -7676,7 +7676,7 @@ loop_
 save_
 
 
-save__cell.vector_c
+save_cell.vector_c
 
 _definition.id                          '_cell.vector_c'
 _definition.update                      2012-11-22
@@ -7720,7 +7720,7 @@ _name.object_id                         CHEMICAL
 save_
 
 
-save__chemical.absolute_configuration
+save_chemical.absolute_configuration
 
 _definition.id                          '_chemical.absolute_configuration'
 loop_
@@ -7775,7 +7775,7 @@ _enumeration.default                    .
 save_
 
 
-save__chemical.compound_source
+save_chemical.compound_source
 
 _definition.id                          '_chemical.compound_source'
 loop_
@@ -7799,7 +7799,7 @@ _type.contents                          Text
 save_
 
 
-save__chemical.enantioexcess_bulk
+save_chemical.enantioexcess_bulk
 
 _definition.id                          '_chemical.enantioexcess_bulk'
 loop_
@@ -7830,7 +7830,7 @@ _units.code                             none
 save_
 
 
-save__chemical.enantioexcess_bulk_technique
+save_chemical.enantioexcess_bulk_technique
 
 _definition.id                          '_chemical.enantioexcess_bulk_technique'
 loop_
@@ -7868,7 +7868,7 @@ _enumeration.default                    OA
 save_
 
 
-save__chemical.enantioexcess_crystal
+save_chemical.enantioexcess_crystal
 
 _definition.id                          '_chemical.enantioexcess_crystal'
 loop_
@@ -7898,7 +7898,7 @@ _units.code                             none
 save_
 
 
-save__chemical.enantioexcess_crystal_technique
+save_chemical.enantioexcess_crystal_technique
 
 _definition.id                          '_chemical.enantioexcess_crystal_technique'
 loop_
@@ -7932,7 +7932,7 @@ _enumeration.default                    CD
 save_
 
 
-save__chemical.identifier_inchi
+save_chemical.identifier_inchi
 
 _definition.id                          '_chemical.identifier_inchi'
 loop_
@@ -7963,7 +7963,7 @@ loop_
 save_
 
 
-save__chemical.identifier_inchi_key
+save_chemical.identifier_inchi_key
 
 _definition.id                          '_chemical.identifier_inchi_key'
 loop_
@@ -7991,7 +7991,7 @@ loop_
 save_
 
 
-save__chemical.identifier_inchi_version
+save_chemical.identifier_inchi_version
 
 _definition.id                          '_chemical.identifier_inchi_version'
 loop_
@@ -8016,7 +8016,7 @@ loop_
 save_
 
 
-save__chemical.melting_point
+save_chemical.melting_point
 
 _definition.id                          '_chemical.melting_point'
 loop_
@@ -8039,7 +8039,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.melting_point_gt
+save_chemical.melting_point_gt
 
 _definition.id                          '_chemical.melting_point_gt'
 loop_
@@ -8063,7 +8063,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.melting_point_lt
+save_chemical.melting_point_lt
 
 _definition.id                          '_chemical.melting_point_lt'
 loop_
@@ -8087,7 +8087,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.name_common
+save_chemical.name_common
 
 _definition.id                          '_chemical.name_common'
 loop_
@@ -8108,7 +8108,7 @@ _type.contents                          Text
 save_
 
 
-save__chemical.name_mineral
+save_chemical.name_mineral
 
 _definition.id                          '_chemical.name_mineral'
 loop_
@@ -8130,7 +8130,7 @@ _type.contents                          Text
 save_
 
 
-save__chemical.name_structure_type
+save_chemical.name_structure_type
 
 _definition.id                          '_chemical.name_structure_type'
 loop_
@@ -8152,7 +8152,7 @@ _type.contents                          Text
 save_
 
 
-save__chemical.name_systematic
+save_chemical.name_systematic
 
 _definition.id                          '_chemical.name_systematic'
 loop_
@@ -8173,7 +8173,7 @@ _type.contents                          Text
 save_
 
 
-save__chemical.optical_rotation
+save_chemical.optical_rotation
 
 _definition.id                          '_chemical.optical_rotation'
 loop_
@@ -8211,7 +8211,7 @@ loop_
 save_
 
 
-save__chemical.properties_biological
+save_chemical.properties_biological
 
 _definition.id                          '_chemical.properties_biological'
 loop_
@@ -8247,7 +8247,7 @@ loop_
 save_
 
 
-save__chemical.properties_physical
+save_chemical.properties_physical
 
 _definition.id                          '_chemical.properties_physical'
 loop_
@@ -8280,7 +8280,7 @@ loop_
 save_
 
 
-save__chemical.temperature_decomposition
+save_chemical.temperature_decomposition
 
 _definition.id                          '_chemical.temperature_decomposition'
 loop_
@@ -8303,7 +8303,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_decomposition_gt
+save_chemical.temperature_decomposition_gt
 
 _definition.id                          '_chemical.temperature_decomposition_gt'
 loop_
@@ -8327,7 +8327,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_decomposition_lt
+save_chemical.temperature_decomposition_lt
 
 _definition.id                          '_chemical.temperature_decomposition_lt'
 loop_
@@ -8351,7 +8351,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_decomposition_su
+save_chemical.temperature_decomposition_su
 
 _definition.id                          '_chemical.temperature_decomposition_su'
 loop_
@@ -8376,7 +8376,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_sublimation
+save_chemical.temperature_sublimation
 
 _definition.id                          '_chemical.temperature_sublimation'
 loop_
@@ -8399,7 +8399,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_sublimation_gt
+save_chemical.temperature_sublimation_gt
 
 _definition.id                          '_chemical.temperature_sublimation_gt'
 loop_
@@ -8423,7 +8423,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_sublimation_lt
+save_chemical.temperature_sublimation_lt
 
 _definition.id                          '_chemical.temperature_sublimation_lt'
 loop_
@@ -8447,7 +8447,7 @@ _units.code                             kelvins
 save_
 
 
-save__chemical.temperature_sublimation_su
+save_chemical.temperature_sublimation_su
 
 _definition.id                          '_chemical.temperature_sublimation_su'
 loop_
@@ -8501,7 +8501,7 @@ loop_
 save_
 
 
-save__chemical_conn_atom.charge
+save_chemical_conn_atom.charge
 
 _definition.id                          '_chemical_conn_atom.charge'
 loop_
@@ -8525,7 +8525,7 @@ _enumeration.default                    0
 save_
 
 
-save__chemical_conn_atom.display_x
+save_chemical_conn_atom.display_x
 
 _definition.id                          '_chemical_conn_atom.display_x'
 loop_
@@ -8549,7 +8549,7 @@ _units.code                             none
 save_
 
 
-save__chemical_conn_atom.display_y
+save_chemical_conn_atom.display_y
 
 _definition.id                          '_chemical_conn_atom.display_y'
 loop_
@@ -8573,7 +8573,7 @@ _units.code                             none
 save_
 
 
-save__chemical_conn_atom.NCA
+save_chemical_conn_atom.NCA
 
 _definition.id                          '_chemical_conn_atom.NCA'
 loop_
@@ -8595,7 +8595,7 @@ _enumeration.range                      0:
 save_
 
 
-save__chemical_conn_atom.NH
+save_chemical_conn_atom.NH
 
 _definition.id                          '_chemical_conn_atom.NH'
 loop_
@@ -8621,7 +8621,7 @@ _enumeration.range                      0:
 save_
 
 
-save__chemical_conn_atom.number
+save_chemical_conn_atom.number
 
 _definition.id                          '_chemical_conn_atom.number'
 loop_
@@ -8643,7 +8643,7 @@ _enumeration.range                      1:
 save_
 
 
-save__chemical_conn_atom.type_symbol
+save_chemical_conn_atom.type_symbol
 
 _definition.id                          '_chemical_conn_atom.type_symbol'
 loop_
@@ -8692,7 +8692,7 @@ loop_
 save_
 
 
-save__chemical_conn_bond.atom_1
+save_chemical_conn_bond.atom_1
 
 _definition.id                          '_chemical_conn_bond.atom_1'
 loop_
@@ -8716,7 +8716,7 @@ _enumeration.range                      1:
 save_
 
 
-save__chemical_conn_bond.atom_2
+save_chemical_conn_bond.atom_2
 
 _definition.id                          '_chemical_conn_bond.atom_2'
 loop_
@@ -8740,7 +8740,7 @@ _enumeration.range                      1:
 save_
 
 
-save__chemical_conn_bond.distance
+save_chemical_conn_bond.distance
 
 _definition.id                          '_chemical_conn_bond.distance'
 loop_
@@ -8765,7 +8765,7 @@ _units.code                             angstroms
 save_
 
 
-save__chemical_conn_bond.distance_su
+save_chemical_conn_bond.distance_su
 
 _definition.id                          '_chemical_conn_bond.distance_su'
 loop_
@@ -8790,7 +8790,7 @@ _units.code                             angstroms
 save_
 
 
-save__chemical_conn_bond.type
+save_chemical_conn_bond.type
 
 _definition.id                          '_chemical_conn_bond.type'
 loop_
@@ -8882,7 +8882,7 @@ _name.object_id                         CHEMICAL_FORMULA
 save_
 
 
-save__chemical_formula.analytical
+save_chemical_formula.analytical
 
 _definition.id                          '_chemical_formula.analytical'
 loop_
@@ -8907,7 +8907,7 @@ loop_
 save_
 
 
-save__chemical_formula.iupac
+save_chemical_formula.iupac
 
 _definition.id                          '_chemical_formula.iupac'
 loop_
@@ -8938,7 +8938,7 @@ loop_
 save_
 
 
-save__chemical_formula.moiety
+save_chemical_formula.moiety
 
 _definition.id                          '_chemical_formula.moiety'
 loop_
@@ -8978,7 +8978,7 @@ loop_
 save_
 
 
-save__chemical_formula.structural
+save_chemical_formula.structural
 
 _definition.id                          '_chemical_formula.structural'
 loop_
@@ -9013,7 +9013,7 @@ loop_
 save_
 
 
-save__chemical_formula.sum
+save_chemical_formula.sum
 
 _definition.id                          '_chemical_formula.sum'
 loop_
@@ -9039,7 +9039,7 @@ loop_
 save_
 
 
-save__chemical_formula.weight
+save_chemical_formula.weight
 
 _definition.id                          '_chemical_formula.weight'
 loop_
@@ -9064,7 +9064,7 @@ _units.code                             dalton
 save_
 
 
-save__chemical_formula.weight_meas
+save_chemical_formula.weight_meas
 
 _definition.id                          '_chemical_formula.weight_meas'
 loop_
@@ -9105,7 +9105,7 @@ _name.object_id                         EXPTL_ABSORPT
 save_
 
 
-save__exptl_absorpt.coefficient_mu
+save_exptl_absorpt.coefficient_mu
 
 _definition.id                          '_exptl_absorpt.coefficient_mu'
 loop_
@@ -9130,7 +9130,7 @@ _units.code                             reciprocal_millimetres
 save_
 
 
-save__exptl_absorpt.correction_T_max
+save_exptl_absorpt.correction_T_max
 
 _definition.id                          '_exptl_absorpt.correction_T_max'
 loop_
@@ -9161,7 +9161,7 @@ _units.code                             none
 save_
 
 
-save__exptl_absorpt.correction_T_min
+save_exptl_absorpt.correction_T_min
 
 _definition.id                          '_exptl_absorpt.correction_T_min'
 loop_
@@ -9192,7 +9192,7 @@ _units.code                             none
 save_
 
 
-save__exptl_absorpt.correction_type
+save_exptl_absorpt.correction_type
 
 _definition.id                          '_exptl_absorpt.correction_type'
 loop_
@@ -9231,7 +9231,7 @@ _enumeration.default                    none
 save_
 
 
-save__exptl_absorpt.process_details
+save_exptl_absorpt.process_details
 
 _definition.id                          '_exptl_absorpt.process_details'
 loop_
@@ -9276,7 +9276,7 @@ _name.object_id                         EXPTL_CRYSTAL
 
 save_
 
-save__exptl_crystal.colour
+save_exptl_crystal.colour
 
 _definition.id                          '_exptl_crystal.colour'
 loop_
@@ -9311,7 +9311,7 @@ loop_
 save_
 
 
-save__exptl_crystal.density_diffrn
+save_exptl_crystal.density_diffrn
 
 _definition.id                          '_exptl_crystal.density_diffrn'
 loop_
@@ -9341,7 +9341,7 @@ loop_
 save_
 
 
-save__exptl_crystal.density_meas
+save_exptl_crystal.density_meas
 
 _definition.id                          '_exptl_crystal.density_meas'
 loop_
@@ -9364,7 +9364,7 @@ _units.code                             megagrams_per_metre_cubed
 save_
 
 
-save__exptl_crystal.density_meas_gt
+save_exptl_crystal.density_meas_gt
 
 _definition.id                          '_exptl_crystal.density_meas_gt'
 loop_
@@ -9391,7 +9391,7 @@ _units.code                             megagrams_per_metre_cubed
 save_
 
 
-save__exptl_crystal.density_meas_lt
+save_exptl_crystal.density_meas_lt
 
 _definition.id                          '_exptl_crystal.density_meas_lt'
 loop_
@@ -9418,7 +9418,7 @@ _units.code                             megagrams_per_metre_cubed
 save_
 
 
-save__exptl_crystal.density_meas_su
+save_exptl_crystal.density_meas_su
 
 _definition.id                          '_exptl_crystal.density_meas_su'
 loop_
@@ -9443,7 +9443,7 @@ _units.code                             megagrams_per_metre_cubed
 save_
 
 
-save__exptl_crystal.density_meas_temp
+save_exptl_crystal.density_meas_temp
 
 _definition.id                          '_exptl_crystal.density_meas_temp'
 loop_
@@ -9467,7 +9467,7 @@ _units.code                             kelvins
 save_
 
 
-save__exptl_crystal.density_meas_temp_gt
+save_exptl_crystal.density_meas_temp_gt
 
 _definition.id                          '_exptl_crystal.density_meas_temp_gt'
 loop_
@@ -9494,7 +9494,7 @@ _units.code                             kelvins
 save_
 
 
-save__exptl_crystal.density_meas_temp_lt
+save_exptl_crystal.density_meas_temp_lt
 
 _definition.id                          '_exptl_crystal.density_meas_temp_lt'
 loop_
@@ -9521,7 +9521,7 @@ _units.code                             kelvins
 save_
 
 
-save__exptl_crystal.density_meas_temp_su
+save_exptl_crystal.density_meas_temp_su
 
 _definition.id                          '_exptl_crystal.density_meas_temp_su'
 loop_
@@ -9546,7 +9546,7 @@ _units.code                             kelvins
 save_
 
 
-save__exptl_crystal.density_method
+save_exptl_crystal.density_method
 
 _definition.id                          '_exptl_crystal.density_method'
 loop_
@@ -9570,7 +9570,7 @@ loop_
 save_
 
 
-save__exptl_crystal.description
+save_exptl_crystal.description
 
 _definition.id                          '_exptl_crystal.description'
 loop_
@@ -9592,7 +9592,7 @@ _type.contents                          Text
 save_
 
 
-save__exptl_crystal.F_000
+save_exptl_crystal.F_000
 
 _definition.id                          '_exptl_crystal.F_000'
 loop_
@@ -9653,7 +9653,7 @@ save_exptl_crystal.id
     _type.contents               Code
      save_
  
-save__exptl_crystal.preparation
+save_exptl_crystal.preparation
 
 _definition.id                          '_exptl_crystal.preparation'
 loop_
@@ -9678,7 +9678,7 @@ loop_
 save_
 
 
-save__exptl_crystal.pressure_history
+save_exptl_crystal.pressure_history
 
 _definition.id                          '_exptl_crystal.pressure_history'
 loop_
@@ -9699,7 +9699,7 @@ _type.contents                          Text
 save_
 
 
-save__exptl_crystal.recrystallization_method
+save_exptl_crystal.recrystallization_method
 
 _definition.id                          '_exptl_crystal.recrystallization_method'
 loop_
@@ -9723,7 +9723,7 @@ _type.contents                          Text
 save_
 
 
-save__exptl_crystal.size_length
+save_exptl_crystal.size_length
 
 _definition.id                          '_exptl_crystal.size_length'
 loop_
@@ -9746,7 +9746,7 @@ _units.code                             millimetres
 save_
 
 
-save__exptl_crystal.size_max
+save_exptl_crystal.size_max
 
 _definition.id                          '_exptl_crystal.size_max'
 loop_
@@ -9769,7 +9769,7 @@ _units.code                             millimetres
 save_
 
 
-save__exptl_crystal.size_mid
+save_exptl_crystal.size_mid
 
 _definition.id                          '_exptl_crystal.size_mid'
 loop_
@@ -9792,7 +9792,7 @@ _units.code                             millimetres
 save_
 
 
-save__exptl_crystal.size_min
+save_exptl_crystal.size_min
 
 _definition.id                          '_exptl_crystal.size_min'
 loop_
@@ -9815,7 +9815,7 @@ _units.code                             millimetres
 save_
 
 
-save__exptl_crystal.size_rad
+save_exptl_crystal.size_rad
 
 _definition.id                          '_exptl_crystal.size_rad'
 loop_
@@ -9838,7 +9838,7 @@ _units.code                             millimetres
 save_
 
 
-save__exptl_crystal.thermal_history
+save_exptl_crystal.thermal_history
 
 _definition.id                          '_exptl_crystal.thermal_history'
 loop_
@@ -9876,7 +9876,7 @@ _name.object_id                         EXPTL_CRYSTAL_APPEARANCE
 save_
 
 
-save__exptl_crystal_appearance.general
+save_exptl_crystal_appearance.general
 
 _definition.id                          '_exptl_crystal_appearance.general'
 loop_
@@ -9910,7 +9910,7 @@ _enumeration.default                    .
 save_
 
 
-save__exptl_crystal_appearance.hue
+save_exptl_crystal_appearance.hue
 
 _definition.id                          '_exptl_crystal_appearance.hue'
 loop_
@@ -9934,7 +9934,7 @@ _enumeration.default                    white
 save_
 
 
-save__exptl_crystal_appearance.intensity
+save_exptl_crystal_appearance.intensity
 
 _definition.id                          '_exptl_crystal_appearance.intensity'
 loop_
@@ -9996,7 +9996,7 @@ loop_
 save_
 
 
-save__exptl_crystal_face.diffr_chi
+save_exptl_crystal_face.diffr_chi
 
 _definition.id                          '_exptl_crystal_face.diffr_chi'
 loop_
@@ -10009,7 +10009,7 @@ _name.object_id                         diffr_chi
 save_
 
 
-save__exptl_crystal_face.diffr_kappa
+save_exptl_crystal_face.diffr_kappa
 
 _definition.id                          '_exptl_crystal_face.diffr_kappa'
 loop_
@@ -10022,7 +10022,7 @@ _name.object_id                         diffr_kappa
 save_
 
 
-save__exptl_crystal_face.diffr_phi
+save_exptl_crystal_face.diffr_phi
 
 _definition.id                          '_exptl_crystal_face.diffr_phi'
 loop_
@@ -10035,7 +10035,7 @@ _name.object_id                         diffr_phi
 save_
 
 
-save__exptl_crystal_face.diffr_psi
+save_exptl_crystal_face.diffr_psi
 
 _definition.id                          '_exptl_crystal_face.diffr_psi'
 loop_
@@ -10048,7 +10048,7 @@ _name.object_id                         diffr_psi
 save_
 
 
-save__exptl_crystal_face.hkl
+save_exptl_crystal_face.hkl
 
 _definition.id                          '_exptl_crystal_face.hkl'
 _definition.update                      2012-11-22
@@ -10075,7 +10075,7 @@ loop_
 
 save_
 
-save__exptl_crystal_face.index_h
+save_exptl_crystal_face.index_h
 
 _definition.id                          '_exptl_crystal_face.index_h'
 loop_
@@ -10088,7 +10088,7 @@ _name.object_id                         index_h
 save_
 
 
-save__exptl_crystal_face.index_k
+save_exptl_crystal_face.index_k
 
 _definition.id                          '_exptl_crystal_face.index_k'
 loop_
@@ -10101,7 +10101,7 @@ _name.object_id                         index_k
 save_
 
 
-save__exptl_crystal_face.index_l
+save_exptl_crystal_face.index_l
 
 _definition.id                          '_exptl_crystal_face.index_l'
 loop_
@@ -10114,7 +10114,7 @@ _name.object_id                         index_l
 save_
 
 
-save__exptl_crystal_face.perp_dist
+save_exptl_crystal_face.perp_dist
 
 _definition.id                          '_exptl_crystal_face.perp_dist'
 loop_
@@ -10238,7 +10238,7 @@ save_space_group.centring_type
          H     'hexagonal centred    (2/3,1/3,0), (1/3,2/3,0)'  
      save_
 
-save__space_group.crystal_system
+save_space_group.crystal_system
 
 _definition.id                          '_space_group.crystal_system'
 loop_
@@ -10388,7 +10388,7 @@ save_space_group.IT_coordinate_system_code
      save_
 
 
-save__space_group.IT_number
+save_space_group.IT_number
 
 _definition.id                          '_space_group.IT_number'
 loop_
@@ -10435,7 +10435,7 @@ save_space_group.Laue_class
      '-1' '2/m' 'mmm' '4/m' '4/mmm' '-3' '-3m' '6/m' '6/mmm' 'm-3' 'm-3m'  
      save_
 
-save__space_group.multiplicity
+save_space_group.multiplicity
 
 _definition.id                          '_space_group.multiplicity'
 _definition.update                      2016-05-13
@@ -10464,7 +10464,7 @@ loop_
 
 save_
 
-save__space_group.name_H-M_alt
+save_space_group.name_H-M_alt
 
 _definition.id                          '_space_group.name_H-M_alt'
 loop_
@@ -10560,7 +10560,7 @@ save_space_group.name_H-M_ref
      save_
 
 
-save__space_group.name_Hall
+save_space_group.name_Hall
 
 _definition.id                          '_space_group.name_Hall'
 loop_
@@ -10871,7 +10871,7 @@ loop_
 save_
 
 
-save__space_group_symop.id
+save_space_group_symop.id
 
 _definition.id                          '_space_group_symop.id'
 loop_
@@ -10908,7 +10908,7 @@ loop_
 save_
 
 
-save__space_group_symop.operation_xyz
+save_space_group_symop.operation_xyz
 
 _definition.id                          '_space_group_symop.operation_xyz'
 loop_
@@ -10974,7 +10974,7 @@ save_space_group_symop.operation_description
     _type.contents              Text
      save_
 
-save__space_group_symop.R
+save_space_group_symop.R
 
 _definition.id                          '_space_group_symop.R'
 _definition.update                      2016-05-13
@@ -11008,7 +11008,7 @@ loop_
 save_
 
 
-save__space_group_symop.RT
+save_space_group_symop.RT
 
 _definition.id                          '_space_group_symop.RT'
 _definition.update                      2016-05-13
@@ -11039,7 +11039,7 @@ loop_
 save_
 
 
-save__space_group_symop.Seitz_matrix
+save_space_group_symop.Seitz_matrix
 
 _definition.id                          '_space_group_symop.Seitz_matrix'
 _definition.update                      2016-05-13
@@ -11071,7 +11071,7 @@ loop_
 save_
 
 
-save__space_group_symop.T
+save_space_group_symop.T
 
 _definition.id                          '_space_group_symop.T'
 _definition.update                      2016-05-13
@@ -11243,7 +11243,7 @@ save_space_group_Wyckoff.site_symmetry
 ;
      save_
 
-save__symmetry.cell_setting
+save_symmetry.cell_setting
     _definition.id               '_symmetry.cell_setting'
     loop_
     _alias.definition_id         '_symmetry_cell_setting'
@@ -11295,7 +11295,7 @@ _name.object_id                         FUNCTION
 save_
 
 
-save__function.AtomType
+save_function.AtomType
 
 _definition.id                          '_function.AtomType'
 _definition.update                      2013-04-17
@@ -11332,7 +11332,7 @@ loop_
 save_
 
 
-save__function.Closest
+save_function.Closest
 
 _definition.id                          '_function.Closest'
 _definition.update                      2012-10-16
@@ -11370,7 +11370,7 @@ loop_
 save_
 
 
-save__function.SeitzFromJones
+save_function.SeitzFromJones
 
 _definition.id                          '_function.SeitzFromJones'
 _definition.update                      2013-04-24
@@ -11435,7 +11435,7 @@ loop_
 save_
 
 
-save__function.SymEquiv
+save_function.SymEquiv
 
 _definition.id                          '_function.SymEquiv'
 _definition.update                      2016-05-13
@@ -11471,7 +11471,7 @@ loop_
 save_
 
 
-save__function.SymKey
+save_function.SymKey
 
 _definition.id                          '_function.SymKey'
 _definition.update                      2012-12-17
@@ -11507,7 +11507,7 @@ loop_
 save_
 
 
-save__function.SymLat
+save_function.SymLat
 
 _definition.id                          '_function.SymLat'
 _definition.update                      2013-03-10
@@ -11543,7 +11543,7 @@ loop_
 save_
 
 
-save__function.Symop
+save_function.Symop
 
 _definition.id                          '_function.Symop'
 _definition.update                      2006-06-30
@@ -11626,7 +11626,7 @@ _name.object_id                         GEOM
 save_
 
 
-save__geom.bond_distance_incr
+save_geom.bond_distance_incr
 
 _definition.id                          '_geom.bond_distance_incr'
 _definition.update                      2012-11-22
@@ -11648,7 +11648,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom.bond_distance_min
+save_geom.bond_distance_min
 
 _definition.id                          '_geom.bond_distance_min'
 _definition.update                      2012-11-22
@@ -11668,7 +11668,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom.contact_distance_incr
+save_geom.contact_distance_incr
 
 _definition.id                          '_geom.contact_distance_incr'
 _definition.update                      2012-11-22
@@ -11690,7 +11690,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom.contact_distance_min
+save_geom.contact_distance_min
 
 _definition.id                          '_geom.contact_distance_min'
 _definition.update                      2012-11-22
@@ -11710,7 +11710,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom.special_details
+save_geom.special_details
 
 _definition.id                          '_geom.special_details'
 loop_
@@ -11799,7 +11799,7 @@ loop_
 save_
 
 
-save__geom_angle.atom_site_label_1
+save_geom_angle.atom_site_label_1
 
 _definition.id                          '_geom_angle.atom_site_label_1'
 loop_
@@ -11813,7 +11813,7 @@ _name.object_id                         atom_site_label_1
 save_
 
 
-save__geom_angle.atom_site_label_2
+save_geom_angle.atom_site_label_2
 
 _definition.id                          '_geom_angle.atom_site_label_2'
 _definition.update                      2016-08-31
@@ -11836,7 +11836,7 @@ _type.contents               Code
 save_
 
 
-save__geom_angle.atom_site_label_3
+save_geom_angle.atom_site_label_3
 
 _definition.id                          '_geom_angle.atom_site_label_3'
 loop_
@@ -11850,7 +11850,7 @@ _name.object_id                         atom_site_label_3
 save_
 
 
-save__geom_angle.distances
+save_geom_angle.distances
 
 _definition.id                          '_geom_angle.distances'
 _definition.update                      2012-11-22
@@ -11870,7 +11870,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom_angle.publ_flag
+save_geom_angle.publ_flag
 
 _definition.id                          '_geom_angle.publ_flag'
 loop_
@@ -11900,7 +11900,7 @@ _enumeration.default                    no
 save_
 
 
-save__geom_angle.site_symmetry_1
+save_geom_angle.site_symmetry_1
 
 _definition.id                          '_geom_angle.site_symmetry_1'
 loop_
@@ -11913,7 +11913,7 @@ _name.object_id                         site_symmetry_1
 save_
 
 
-save__geom_angle.site_symmetry_2
+save_geom_angle.site_symmetry_2
 
 _definition.id                          '_geom_angle.site_symmetry_2'
 loop_
@@ -11926,7 +11926,7 @@ _name.object_id                         site_symmetry_2
 save_
 
 
-save__geom_angle.site_symmetry_3
+save_geom_angle.site_symmetry_3
 
 _definition.id                          '_geom_angle.site_symmetry_3'
 loop_
@@ -11939,7 +11939,7 @@ _name.object_id                         site_symmetry_3
 save_
 
 
-save__geom_angle.value
+save_geom_angle.value
 
 _definition.id                          '_geom_angle.value'
 loop_
@@ -11981,7 +11981,7 @@ loop_
 save_
 
 
-save__geom_angle.value_su
+save_geom_angle.value_su
 
 _definition.id                          '_geom_angle.value_su'
 loop_
@@ -12055,7 +12055,7 @@ loop_
 save_
 
 
-save__geom_bond.atom_site_label_1
+save_geom_bond.atom_site_label_1
 
 _definition.id                          '_geom_bond.atom_site_label_1'
 loop_
@@ -12069,7 +12069,7 @@ _name.object_id                         atom_site_label_1
 save_
 
 
-save__geom_bond.atom_site_label_2
+save_geom_bond.atom_site_label_2
 
 _definition.id                          '_geom_bond.atom_site_label_2'
 loop_
@@ -12083,7 +12083,7 @@ _name.object_id                         atom_site_label_2
 save_
 
 
-save__geom_bond.distance
+save_geom_bond.distance
 
 _definition.id                          '_geom_bond.distance'
 loop_
@@ -12126,7 +12126,7 @@ loop_
 save_
 
 
-save__geom_bond.distance_su
+save_geom_bond.distance_su
 
 _definition.id                          '_geom_bond.distance_su'
 loop_
@@ -12150,7 +12150,7 @@ _units.code                             angstroms
 
 save_
 
-save__geom_bond.multiplicity
+save_geom_bond.multiplicity
 
 _definition.id                          '_geom_bond.multiplicity'
 loop_
@@ -12176,7 +12176,7 @@ _enumeration.range                      1:
 save_
 
 
-save__geom_bond.publ_flag
+save_geom_bond.publ_flag
 
 _definition.id                          '_geom_bond.publ_flag'
 loop_
@@ -12206,7 +12206,7 @@ _enumeration.default                    no
 save_
 
 
-save__geom_bond.site_symmetry_1
+save_geom_bond.site_symmetry_1
 
 _definition.id                          '_geom_bond.site_symmetry_1'
 loop_
@@ -12219,7 +12219,7 @@ _name.object_id                         site_symmetry_1
 save_
 
 
-save__geom_bond.site_symmetry_2
+save_geom_bond.site_symmetry_2
 
 _definition.id                          '_geom_bond.site_symmetry_2'
 loop_
@@ -12232,7 +12232,7 @@ _name.object_id                         site_symmetry_2
 save_
 
 
-save__geom_bond.valence
+save_geom_bond.valence
 
 _definition.id                          '_geom_bond.valence'
 loop_
@@ -12315,7 +12315,7 @@ loop_
 save_
 
 
-save__geom_contact.atom_site_label_1
+save_geom_contact.atom_site_label_1
 
 _definition.id                          '_geom_contact.atom_site_label_1'
 loop_
@@ -12329,7 +12329,7 @@ _name.object_id                         atom_site_label_1
 save_
 
 
-save__geom_contact.atom_site_label_2
+save_geom_contact.atom_site_label_2
 
 _definition.id                          '_geom_contact.atom_site_label_2'
 loop_
@@ -12343,7 +12343,7 @@ _name.object_id                         atom_site_label_2
 save_
 
 
-save__geom_contact.distance
+save_geom_contact.distance
 
 _definition.id                          '_geom_contact.distance'
 loop_
@@ -12386,7 +12386,7 @@ loop_
 save_
 
 
-save__geom_contact.distance_su
+save_geom_contact.distance_su
 
 _definition.id                          '_geom_contact.distance_su'
 loop_
@@ -12410,7 +12410,7 @@ _units.code                             angstroms
 
 save_
 
-save__geom_contact.publ_flag
+save_geom_contact.publ_flag
 
 _definition.id                          '_geom_contact.publ_flag'
 loop_
@@ -12441,7 +12441,7 @@ _enumeration.default                    no
 save_
 
 
-save__geom_contact.site_symmetry_1
+save_geom_contact.site_symmetry_1
 
 _definition.id                          '_geom_contact.site_symmetry_1'
 loop_
@@ -12454,7 +12454,7 @@ _name.object_id                         site_symmetry_1
 save_
 
 
-save__geom_contact.site_symmetry_2
+save_geom_contact.site_symmetry_2
 
 _definition.id                          '_geom_contact.site_symmetry_2'
 loop_
@@ -12492,7 +12492,7 @@ loop_
 save_
 
 
-save__geom_hbond.angle_DHA
+save_geom_hbond.angle_DHA
 
 _definition.id                          '_geom_hbond.angle_DHA'
 loop_
@@ -12538,7 +12538,7 @@ loop_
 save_
 
 
-save__geom_hbond.angle_DHA_su
+save_geom_hbond.angle_DHA_su
 
 _definition.id                          '_geom_hbond.angle_DHA_su'
 loop_
@@ -12563,7 +12563,7 @@ _units.code                             degrees
 save_
 
 
-save__geom_hbond.atom_site_label_A
+save_geom_hbond.atom_site_label_A
 
 _definition.id                          '_geom_hbond.atom_site_label_A'
 loop_
@@ -12577,7 +12577,7 @@ _name.object_id                         atom_site_label_A
 save_
 
 
-save__geom_hbond.atom_site_label_D
+save_geom_hbond.atom_site_label_D
 
 _definition.id                          '_geom_hbond.atom_site_label_D'
 loop_
@@ -12591,7 +12591,7 @@ _name.object_id                         atom_site_label_D
 save_
 
 
-save__geom_hbond.atom_site_label_H
+save_geom_hbond.atom_site_label_H
 
 _definition.id                          '_geom_hbond.atom_site_label_H'
 loop_
@@ -12605,7 +12605,7 @@ _name.object_id                         atom_site_label_H
 save_
 
 
-save__geom_hbond.distance_DA
+save_geom_hbond.distance_DA
 
 _definition.id                          '_geom_hbond.distance_DA'
 loop_
@@ -12644,7 +12644,7 @@ loop_
 save_
 
 
-save__geom_hbond.distance_DA_su
+save_geom_hbond.distance_DA_su
 
 _definition.id                          '_geom_hbond.distance_DA_su'
 loop_
@@ -12670,7 +12670,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom_hbond.distance_DH
+save_geom_hbond.distance_DH
 
 _definition.id                          '_geom_hbond.distance_DH'
 loop_
@@ -12709,7 +12709,7 @@ loop_
 save_
 
 
-save__geom_hbond.distance_DH_su
+save_geom_hbond.distance_DH_su
 
 _definition.id                          '_geom_hbond.distance_DH_su'
 loop_
@@ -12735,7 +12735,7 @@ _units.code                             angstroms
 save_
 
 
-save__geom_hbond.distance_HA
+save_geom_hbond.distance_HA
 
 _definition.id                          '_geom_hbond.distance_HA'
 loop_
@@ -12774,7 +12774,7 @@ loop_
 save_
 
 
-save__geom_hbond.distance_HA_su
+save_geom_hbond.distance_HA_su
 
 _definition.id                          '_geom_hbond.distance_HA_su'
 loop_
@@ -12799,7 +12799,7 @@ _units.code                             angstroms
 
 save_
 
-save__geom_hbond.publ_flag
+save_geom_hbond.publ_flag
 
 _definition.id                          '_geom_hbond.publ_flag'
 loop_
@@ -12830,7 +12830,7 @@ _enumeration.default                    no
 save_
 
 
-save__geom_hbond.site_symmetry_A
+save_geom_hbond.site_symmetry_A
 
 _definition.id                          '_geom_hbond.site_symmetry_A'
 loop_
@@ -12843,7 +12843,7 @@ _name.object_id                         site_symmetry_A
 save_
 
 
-save__geom_hbond.site_symmetry_D
+save_geom_hbond.site_symmetry_D
 
 _definition.id                          '_geom_hbond.site_symmetry_D'
 loop_
@@ -12856,7 +12856,7 @@ _name.object_id                         site_symmetry_D
 save_
 
 
-save__geom_hbond.site_symmetry_H
+save_geom_hbond.site_symmetry_H
 
 _definition.id                          '_geom_hbond.site_symmetry_H'
 loop_
@@ -12952,7 +12952,7 @@ loop_
 save_
 
 
-save__geom_torsion.angle
+save_geom_torsion.angle
 
 _definition.id                          '_geom_torsion.angle'
 loop_
@@ -12984,7 +12984,7 @@ _units.code                             degrees
 save_
 
 
-save__geom_torsion.angle_su
+save_geom_torsion.angle_su
 
 _definition.id                          '_geom_torsion.angle_su'
 loop_
@@ -13008,7 +13008,7 @@ _units.code                             degrees
 save_
 
 
-save__geom_torsion.atom_site_label_1
+save_geom_torsion.atom_site_label_1
 
 _definition.id                          '_geom_torsion.atom_site_label_1'
 loop_
@@ -13022,7 +13022,7 @@ _name.object_id                         atom_site_label_1
 save_
 
 
-save__geom_torsion.atom_site_label_2
+save_geom_torsion.atom_site_label_2
 
 _definition.id                          '_geom_torsion.atom_site_label_2'
 loop_
@@ -13036,7 +13036,7 @@ _name.object_id                         atom_site_label_2
 save_
 
 
-save__geom_torsion.atom_site_label_3
+save_geom_torsion.atom_site_label_3
 
 _definition.id                          '_geom_torsion.atom_site_label_3'
 loop_
@@ -13050,7 +13050,7 @@ _name.object_id                         atom_site_label_3
 save_
 
 
-save__geom_torsion.atom_site_label_4
+save_geom_torsion.atom_site_label_4
 
 _definition.id                          '_geom_torsion.atom_site_label_4'
 loop_
@@ -13064,7 +13064,7 @@ _name.object_id                         atom_site_label_4
 save_
 
 
-save__geom_torsion.distances
+save_geom_torsion.distances
 
 _definition.id                          '_geom_torsion.distances'
 _definition.update                      2012-11-22
@@ -13083,7 +13083,7 @@ _units.code                             angstroms
 
 save_
 
-save__geom_torsion.publ_flag
+save_geom_torsion.publ_flag
 
 _definition.id                          '_geom_torsion.publ_flag'
 loop_
@@ -13112,7 +13112,7 @@ _enumeration.default                    no
 save_
 
 
-save__geom_torsion.site_symmetry_1
+save_geom_torsion.site_symmetry_1
 
 _definition.id                          '_geom_torsion.site_symmetry_1'
 loop_
@@ -13125,7 +13125,7 @@ _name.object_id                         site_symmetry_1
 save_
 
 
-save__geom_torsion.site_symmetry_2
+save_geom_torsion.site_symmetry_2
 
 _definition.id                          '_geom_torsion.site_symmetry_2'
 loop_
@@ -13138,7 +13138,7 @@ _name.object_id                         site_symmetry_2
 save_
 
 
-save__geom_torsion.site_symmetry_3
+save_geom_torsion.site_symmetry_3
 
 _definition.id                          '_geom_torsion.site_symmetry_3'
 loop_
@@ -13151,7 +13151,7 @@ _name.object_id                         site_symmetry_3
 save_
 
 
-save__geom_torsion.site_symmetry_4
+save_geom_torsion.site_symmetry_4
 
 _definition.id                          '_geom_torsion.site_symmetry_4'
 loop_
@@ -13255,7 +13255,7 @@ loop_
 save_
 
 
-save__model_site.adp_eigen_system
+save_model_site.adp_eigen_system
 
 _definition.id                          '_model_site.adp_eigen_system'
 _definition.update                      2012-11-22
@@ -13293,7 +13293,7 @@ loop_
 save_
 
 
-save__model_site.adp_matrix_beta
+save_model_site.adp_matrix_beta
 
 _definition.id                          '_model_site.adp_matrix_beta'
 _definition.update                      2013-03-08
@@ -13323,7 +13323,7 @@ loop_
 save_
 
 
-save__model_site.Cartn_xyz
+save_model_site.Cartn_xyz
 
 _definition.id                          '_model_site.Cartn_xyz'
 _definition.update                      2012-11-22
@@ -13351,7 +13351,7 @@ loop_
 save_
 
 
-save__model_site.display_colour
+save_model_site.display_colour
 
 _definition.id                          '_model_site.display_colour'
 _definition.update                      2013-01-23
@@ -13374,7 +13374,7 @@ _enumeration.def_index_id               '_model_site.type_symbol'
 save_
 
 
-save__model_site.fract_xyz
+save_model_site.fract_xyz
 
 _definition.id                          '_model_site.fract_xyz'
 _definition.update                      2012-12-14
@@ -13404,7 +13404,7 @@ loop_
 save_
 
 
-save__model_site.index
+save_model_site.index
 
 _definition.id                          '_model_site.index'
 _definition.update                      2012-11-22
@@ -13423,7 +13423,7 @@ _enumeration.range                      1:
 save_
 
 
-save__model_site.label
+save_model_site.label
 
 _definition.id                          '_model_site.label'
 _definition.update                      2012-11-22
@@ -13442,7 +13442,7 @@ _type.contents                          Code
 save_
 
 
-save__model_site.mole_index
+save_model_site.mole_index
 
 _definition.id                          '_model_site.mole_index'
 _definition.update                      2013-03-09
@@ -13462,7 +13462,7 @@ _enumeration.default                    1
 save_
 
 
-save__model_site.radius_bond
+save_model_site.radius_bond
 
 _definition.id                          '_model_site.radius_bond'
 _definition.update                      2012-11-22
@@ -13491,7 +13491,7 @@ loop_
 save_
 
 
-save__model_site.radius_contact
+save_model_site.radius_contact
 
 _definition.id                          '_model_site.radius_contact'
 _definition.update                      2012-11-22
@@ -13520,7 +13520,7 @@ loop_
 save_
 
 
-save__model_site.symop
+save_model_site.symop
 
 _definition.id                          '_model_site.symop'
 _import.get [{'save':site_symmetry  'file':templ_attr.cif}]
@@ -13530,7 +13530,7 @@ _name.object_id                         symop
 save_
 
 
-save__model_site.type_symbol
+save_model_site.type_symbol
 
 _definition.id                          '_model_site.type_symbol'
 _definition.update                      2012-11-22
@@ -13593,7 +13593,7 @@ loop_
 save_
 
 
-save__valence_param.atom_1
+save_valence_param.atom_1
 
 _definition.id                          '_valence_param.atom_1'
 loop_
@@ -13616,7 +13616,7 @@ _type.contents                          Code
 save_
 
 
-save__valence_param.atom_1_valence
+save_valence_param.atom_1_valence
 
 _definition.id                          '_valence_param.atom_1_valence'
 loop_
@@ -13640,7 +13640,7 @@ _units.code                             coulomb
 save_
 
 
-save__valence_param.atom_2
+save_valence_param.atom_2
 
 _definition.id                          '_valence_param.atom_2'
 loop_
@@ -13663,7 +13663,7 @@ _type.contents                          Code
 save_
 
 
-save__valence_param.atom_2_valence
+save_valence_param.atom_2_valence
 
 _definition.id                          '_valence_param.atom_2_valence'
 loop_
@@ -13687,7 +13687,7 @@ _units.code                             coulomb
 save_
 
 
-save__valence_param.B
+save_valence_param.B
 
 _definition.id                          '_valence_param.B'
 loop_
@@ -13711,7 +13711,7 @@ _units.code                             angstroms
 save_
 
 
-save__valence_param.details
+save_valence_param.details
 
 _definition.id                          '_valence_param.details'
 loop_
@@ -13732,7 +13732,7 @@ _type.contents                          Text
 save_
 
 
-save__valence_param.id
+save_valence_param.id
 
 _definition.id                          '_valence_param.id'
 loop_
@@ -13754,7 +13754,7 @@ _enumeration.range                      1:
 save_
 
 
-save__valence_param.ref_id
+save_valence_param.ref_id
 
 _definition.id                          '_valence_param.ref_id'
 loop_
@@ -13777,7 +13777,7 @@ _type.contents                          Code
 save_
 
 
-save__valence_param.Ro
+save_valence_param.Ro
 
 _definition.id                          '_valence_param.Ro'
 loop_
@@ -13821,7 +13821,7 @@ loop_
 save_
 
 
-save__valence_ref.id
+save_valence_ref.id
 
 _definition.id                          '_valence_ref.id'
 loop_
@@ -13842,7 +13842,7 @@ _type.contents                          Code
 save_
 
 
-save__valence_ref.reference
+save_valence_ref.reference
 
 _definition.id                          '_valence_ref.reference'
 loop_
@@ -13898,7 +13898,7 @@ _name.object_id                         AUDIT
 save_
 
 
-save__audit.block_code
+save_audit.block_code
 
 _definition.id                          '_audit.block_code'
 loop_
@@ -13922,7 +13922,7 @@ loop_
 
 save_
 
-save__audit.block_doi
+save_audit.block_doi
     _definition.id                      '_audit.block_doi'
     _alias.definition_id                '_audit_block_doi'
     _definition.update                  2017-09-23
@@ -13955,7 +13955,7 @@ save__audit.block_doi
     _description_example.case           10.5517/CC6V9DQ
 save_
 
-save__audit.creation_date
+save_audit.creation_date
 
 _definition.id                          '_audit.creation_date'
 loop_
@@ -13979,7 +13979,7 @@ loop_
 save_
 
 
-save__audit.creation_method
+save_audit.creation_method
 
 _definition.id                          '_audit.creation_method'
 loop_
@@ -14042,7 +14042,7 @@ _enumeration_set.detail
 _enumeration.default    Base
 save_
 
-save__audit.update_record
+save_audit.update_record
 
 _definition.id                          '_audit.update_record'
 loop_
@@ -14086,7 +14086,7 @@ loop_
 save_
 
 
-save__audit_author.address
+save_audit_author.address
 
 _definition.id                          '_audit_author.address'
 loop_
@@ -14118,7 +14118,7 @@ loop_
 save_
 
 
-save__audit_author.name
+save_audit_author.name
 
 _definition.id                          '_audit_author.name'
 loop_
@@ -14165,11 +14165,11 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_CONFORM
+_category_key.name                      '_audit_conform.dict_name'
 
 save_
 
-
-save__audit_conform.dict_location
+save_audit_conform.dict_location
 
 _definition.id                          '_audit_conform.dict_location'
 loop_
@@ -14191,7 +14191,7 @@ _type.contents                          Text
 save_
 
 
-save__audit_conform.dict_name
+save_audit_conform.dict_name
 
 _definition.id                          '_audit_conform.dict_name'
 loop_
@@ -14213,7 +14213,7 @@ _type.contents                          Text
 save_
 
 
-save__audit_conform.dict_version
+save_audit_conform.dict_version
 
 _definition.id                          '_audit_conform.dict_version'
 loop_
@@ -14255,7 +14255,7 @@ loop_
 save_
 
 
-save__audit_contact_author.address
+save_audit_contact_author.address
 
 _definition.id                          '_audit_contact_author.address'
 loop_
@@ -14286,7 +14286,7 @@ loop_
 save_
 
 
-save__audit_contact_author.email
+save_audit_contact_author.email
 
 _definition.id                          '_audit_contact_author.email'
 loop_
@@ -14316,7 +14316,7 @@ loop_
 save_
 
 
-save__audit_contact_author.fax
+save_audit_contact_author.fax
 
 _definition.id                          '_audit_contact_author.fax'
 loop_
@@ -14345,7 +14345,7 @@ loop_
 
 save_
 
-save__audit_contact_author.name
+save_audit_contact_author.name
 
 _definition.id                          '_audit_contact_author.name'
 loop_
@@ -14375,7 +14375,7 @@ loop_
 save_
 
 
-save__audit_contact_author.phone
+save_audit_contact_author.phone
 
 _definition.id                          '_audit_contact_author.phone'
 loop_
@@ -14427,7 +14427,7 @@ loop_
 save_
 
 
-save__audit_link.block_code
+save_audit_link.block_code
 
 _definition.id                          '_audit_link.block_code'
 loop_
@@ -14451,7 +14451,7 @@ _type.contents                          Code
 save_
 
 
-save__audit_link.block_description
+save_audit_link.block_description
 
 _definition.id                          '_audit_link.block_description'
 loop_
@@ -14493,7 +14493,7 @@ loop_
 save_
 
 
-save__citation.abstract
+save_citation.abstract
 
 _definition.id                          '_citation.abstract'
 loop_
@@ -14516,7 +14516,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.abstract_id_CAS
+save_citation.abstract_id_CAS
 
 _definition.id                          '_citation.abstract_id_CAS'
 loop_
@@ -14537,7 +14537,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.book_id_ISBN
+save_citation.book_id_ISBN
 
 _definition.id                          '_citation.book_id_ISBN'
 loop_
@@ -14558,7 +14558,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.book_publisher
+save_citation.book_publisher
 
 _definition.id                          '_citation.book_publisher'
 loop_
@@ -14579,7 +14579,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.book_publisher_city
+save_citation.book_publisher_city
 
 _definition.id                          '_citation.book_publisher_city'
 loop_
@@ -14600,7 +14600,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.book_title
+save_citation.book_title
 
 _definition.id                          '_citation.book_title'
 loop_
@@ -14621,7 +14621,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.coordinate_linkage
+save_citation.coordinate_linkage
 
 _definition.id                          '_citation.coordinate_linkage'
 loop_
@@ -14654,7 +14654,7 @@ _enumeration.default                    yes
 save_
 
 
-save__citation.country
+save_citation.country
 
 _definition.id                          '_citation.country'
 loop_
@@ -14675,7 +14675,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.database_id_CSD
+save_citation.database_id_CSD
 
 _definition.id                          '_citation.database_id_CSD'
 loop_
@@ -14697,7 +14697,7 @@ _type.contents                          Code
 save_
 
 
-save__citation.database_id_Medline
+save_citation.database_id_Medline
 
 _definition.id                          '_citation.database_id_Medline'
 loop_
@@ -14743,7 +14743,7 @@ save_citation.doi
     _description_example.case    '10.5517/CC6V9DQ'
 save_
 
-save__citation.id
+save_citation.id
 
 _definition.id                          '_citation.id'
 loop_
@@ -14774,7 +14774,7 @@ loop_
 save_
 
 
-save__citation.journal_abbrev
+save_citation.journal_abbrev
 
 _definition.id                          '_citation.journal_abbrev'
 loop_
@@ -14799,7 +14799,7 @@ loop_
 save_
 
 
-save__citation.journal_full
+save_citation.journal_full
 
 _definition.id                          '_citation.journal_full'
 loop_
@@ -14823,7 +14823,7 @@ loop_
 save_
 
 
-save__citation.journal_id_ASTM
+save_citation.journal_id_ASTM
 
 _definition.id                          '_citation.journal_id_ASTM'
 loop_
@@ -14846,7 +14846,7 @@ _type.contents                          Code
 save_
 
 
-save__citation.journal_id_CSD
+save_citation.journal_id_CSD
 
 _definition.id                          '_citation.journal_id_CSD'
 loop_
@@ -14872,7 +14872,7 @@ loop_
 save_
 
 
-save__citation.journal_id_ISSN
+save_citation.journal_id_ISSN
 
 _definition.id                          '_citation.journal_id_ISSN'
 loop_
@@ -14894,7 +14894,7 @@ _type.contents                          Code
 save_
 
 
-save__citation.journal_issue
+save_citation.journal_issue
 
 _definition.id                          '_citation.journal_issue'
 loop_
@@ -14919,7 +14919,7 @@ loop_
 save_
 
 
-save__citation.journal_volume
+save_citation.journal_volume
 
 _definition.id                          '_citation.journal_volume'
 loop_
@@ -14944,7 +14944,7 @@ loop_
 save_
 
 
-save__citation.language
+save_citation.language
 
 _definition.id                          '_citation.language'
 loop_
@@ -14968,7 +14968,7 @@ loop_
 save_
 
 
-save__citation.page_first
+save_citation.page_first
 
 _definition.id                          '_citation.page_first'
 loop_
@@ -14990,7 +14990,7 @@ _enumeration.range                      1:
 save_
 
 
-save__citation.page_last
+save_citation.page_last
 
 _definition.id                          '_citation.page_last'
 loop_
@@ -15032,7 +15032,7 @@ save_citation.publisher
              'Cambridge Crystallographic Data Centre'
 save_
 
-save__citation.special_details
+save_citation.special_details
 
 _definition.id                          '_citation.special_details'
 loop_
@@ -15055,7 +15055,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.title
+save_citation.title
 
 _definition.id                          '_citation.title'
 loop_
@@ -15076,7 +15076,7 @@ _type.contents                          Text
 save_
 
 
-save__citation.year
+save_citation.year
 
 _definition.id                          '_citation.year'
 loop_
@@ -15117,7 +15117,7 @@ loop_
 save_
 
 
-save__citation_author.citation_id
+save_citation_author.citation_id
 
 _definition.id                          '_citation_author.citation_id'
 loop_
@@ -15140,7 +15140,7 @@ _type.contents                          Code
 save_
 
 
-save__citation_author.name
+save_citation_author.name
 
 _definition.id                          '_citation_author.name'
 loop_
@@ -15172,7 +15172,7 @@ loop_
 save_
 
 
-save__citation_author.ordinal
+save_citation_author.ordinal
 
 _definition.id                          '_citation_author.ordinal'
 loop_
@@ -15215,7 +15215,7 @@ loop_
 save_
 
 
-save__citation_editor.citation_id
+save_citation_editor.citation_id
 
 _definition.id                          '_citation_editor.citation_id'
 loop_
@@ -15238,7 +15238,7 @@ _type.contents                          Code
 save_
 
 
-save__citation_editor.name
+save_citation_editor.name
 
 _definition.id                          '_citation_editor.name'
 loop_
@@ -15271,7 +15271,7 @@ loop_
 save_
 
 
-save__citation_editor.ordinal
+save_citation_editor.ordinal
 
 _definition.id                          '_citation_editor.ordinal'
 loop_
@@ -15310,7 +15310,7 @@ _name.object_id                         COMPUTING
 save_
 
 
-save__computing.cell_refinement
+save_computing.cell_refinement
 
 _definition.id                          '_computing.cell_refinement'
 loop_
@@ -15334,7 +15334,7 @@ loop_
 save_
 
 
-save__computing.diffrn_collection
+save_computing.diffrn_collection
 
 _definition.id                          '_computing.diffrn_collection'
 loop_
@@ -15359,7 +15359,7 @@ loop_
 save_
 
 
-save__computing.diffrn_reduction
+save_computing.diffrn_reduction
 
 _definition.id                          '_computing.diffrn_reduction'
 loop_
@@ -15385,7 +15385,7 @@ loop_
 save_
 
 
-save__computing.molecular_graphics
+save_computing.molecular_graphics
 
 _definition.id                          '_computing.molecular_graphics'
 loop_
@@ -15406,7 +15406,7 @@ _type.contents                          Text
 save_
 
 
-save__computing.publication_material
+save_computing.publication_material
 
 _definition.id                          '_computing.publication_material'
 loop_
@@ -15427,7 +15427,7 @@ _type.contents                          Text
 save_
 
 
-save__computing.structure_refinement
+save_computing.structure_refinement
 
 _definition.id                          '_computing.structure_refinement'
 loop_
@@ -15451,7 +15451,7 @@ loop_
 save_
 
 
-save__computing.structure_solution
+save_computing.structure_solution
 
 _definition.id                          '_computing.structure_solution'
 loop_
@@ -15491,7 +15491,7 @@ _name.object_id                         'DATABASE'
 save_
 
 
-save__database.CSD_history
+save_database.CSD_history
 
 _definition.id                          '_database.CSD_history'
 loop_
@@ -15542,7 +15542,7 @@ save_database.dataset_doi
     _description_example.case               '10.2210/pdb4hhb/pdb'
 save_
 
-save__database.journal_ASTM
+save_database.journal_ASTM
 
 _definition.id                          '_database.journal_ASTM'
 loop_
@@ -15564,7 +15564,7 @@ _type.contents                          Code
 save_
 
 
-save__database.journal_CSD
+save_database.journal_CSD
 
 _definition.id                          '_database.journal_CSD'
 loop_
@@ -15603,7 +15603,7 @@ _name.object_id                         'DATABASE_CODE'
 save_
 
 
-save__database_code.CAS
+save_database_code.CAS
 
 _definition.id                          '_database_code.CAS'
 loop_
@@ -15625,7 +15625,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.COD
+save_database_code.COD
 
 _definition.id                          '_database_code.COD'
 loop_
@@ -15647,7 +15647,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.CSD
+save_database_code.CSD
 
 _definition.id                          '_database_code.CSD'
 loop_
@@ -15669,7 +15669,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.depnum_ccdc_archive
+save_database_code.depnum_ccdc_archive
 
 _definition.id                          '_database_code.depnum_ccdc_archive'
 loop_
@@ -15693,7 +15693,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.depnum_ccdc_fiz
+save_database_code.depnum_ccdc_fiz
 
 _definition.id                          '_database_code.depnum_ccdc_fiz'
 loop_
@@ -15717,7 +15717,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.depnum_ccdc_journal
+save_database_code.depnum_ccdc_journal
 
 _definition.id                          '_database_code.depnum_ccdc_journal'
 loop_
@@ -15741,7 +15741,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.ICSD
+save_database_code.ICSD
 
 _definition.id                          '_database_code.ICSD'
 loop_
@@ -15763,7 +15763,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.MDF
+save_database_code.MDF
 
 _definition.id                          '_database_code.MDF'
 loop_
@@ -15785,7 +15785,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.NBS
+save_database_code.NBS
 
 _definition.id                          '_database_code.NBS'
 loop_
@@ -15807,7 +15807,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.PDB
+save_database_code.PDB
 
 _definition.id                          '_database_code.PDB'
 loop_
@@ -15829,7 +15829,7 @@ _type.contents                          Code
 save_
 
 
-save__database_code.PDF
+save_database_code.PDF
 
 _definition.id                          '_database_code.PDF'
 loop_
@@ -15889,7 +15889,7 @@ loop_
 save_
 
 
-save__display_colour.blue
+save_display_colour.blue
 
 _definition.id                          '_display_colour.blue'
 _import.get [{'save':display_colour  'file':templ_attr.cif}]
@@ -15899,7 +15899,7 @@ _name.object_id                         blue
 save_
 
 
-save__display_colour.green
+save_display_colour.green
 
 _definition.id                          '_display_colour.green'
 _import.get [{'save':display_colour  'file':templ_attr.cif}]
@@ -15909,7 +15909,7 @@ _name.object_id                         green
 save_
 
 
-save__display_colour.hue
+save_display_colour.hue
 
 _definition.id                          '_display_colour.hue'
 _definition.update                      2012-05-07
@@ -15929,7 +15929,7 @@ _enumeration.default                    black
 save_
 
 
-save__display_colour.red
+save_display_colour.red
 
 _definition.id                          '_display_colour.red'
 _import.get [{'save':display_colour  'file':templ_attr.cif}]
@@ -15939,7 +15939,7 @@ _name.object_id                         red
 save_
 
 
-save__display_colour.RGB
+save_display_colour.RGB
 
 _definition.id                          '_display_colour.RGB'
 _definition.update                      2012-11-20
@@ -15987,7 +15987,7 @@ _name.object_id                         JOURNAL
 save_
 
 
-save__journal.coden_ASTM
+save_journal.coden_ASTM
 
 _definition.id                          '_journal.coden_ASTM'
 loop_
@@ -16008,7 +16008,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.coden_Cambridge
+save_journal.coden_Cambridge
 
 _definition.id                          '_journal.coden_Cambridge'
 loop_
@@ -16029,7 +16029,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.data_validation_number
+save_journal.data_validation_number
 
 _definition.id                          '_journal.data_validation_number'
 loop_
@@ -16050,7 +16050,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.issue
+save_journal.issue
 
 _definition.id                          '_journal.issue'
 loop_
@@ -16071,7 +16071,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.language
+save_journal.language
 
 _definition.id                          '_journal.language'
 loop_
@@ -16092,7 +16092,7 @@ _type.contents                          Text
 save_
 
 
-save__journal.name_full
+save_journal.name_full
 
 _definition.id                          '_journal.name_full'
 loop_
@@ -16113,7 +16113,7 @@ _type.contents                          Text
 save_
 
 
-save__journal.page_first
+save_journal.page_first
 
 _definition.id                          '_journal.page_first'
 loop_
@@ -16135,7 +16135,7 @@ _enumeration.default                    1
 save_
 
 
-save__journal.page_last
+save_journal.page_last
 
 _definition.id                          '_journal.page_last'
 loop_
@@ -16157,7 +16157,7 @@ _enumeration.range                      1:
 save_
 
 
-save__journal.paper_category
+save_journal.paper_category
 
 _definition.id                          '_journal.paper_category'
 loop_
@@ -16178,7 +16178,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.paper_doi
+save_journal.paper_doi
 
 _definition.id                          '_journal.paper_doi'
 loop_
@@ -16199,7 +16199,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.suppl_publ_number
+save_journal.suppl_publ_number
 
 _definition.id                          '_journal.suppl_publ_number'
 loop_
@@ -16220,7 +16220,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.suppl_publ_pages
+save_journal.suppl_publ_pages
 
 _definition.id                          '_journal.suppl_publ_pages'
 loop_
@@ -16242,7 +16242,7 @@ _enumeration.range                      1:
 save_
 
 
-save__journal.validation_number
+save_journal.validation_number
 
 _definition.id                          '_journal.validation_number'
 _definition.update                      2013-01-23
@@ -16260,7 +16260,7 @@ _type.contents                          Code
 save_
 
 
-save__journal.volume
+save_journal.volume
 
 _definition.id                          '_journal.volume'
 loop_
@@ -16282,7 +16282,7 @@ _enumeration.range                      1:
 save_
 
 
-save__journal.year
+save_journal.year
 
 _definition.id                          '_journal.year'
 loop_
@@ -16320,7 +16320,7 @@ _name.object_id                         JOURNAL_COEDITOR
 save_
 
 
-save__journal_coeditor.address
+save_journal_coeditor.address
 
 _definition.id                          '_journal_coeditor.address'
 loop_
@@ -16342,7 +16342,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_coeditor.code
+save_journal_coeditor.code
 
 _definition.id                          '_journal_coeditor.code'
 loop_
@@ -16364,7 +16364,7 @@ _type.contents                          Code
 save_
 
 
-save__journal_coeditor.email
+save_journal_coeditor.email
 
 _definition.id                          '_journal_coeditor.email'
 loop_
@@ -16386,7 +16386,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_coeditor.fax
+save_journal_coeditor.fax
 
 _definition.id                          '_journal_coeditor.fax'
 loop_
@@ -16408,7 +16408,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_coeditor.name
+save_journal_coeditor.name
 
 _definition.id                          '_journal_coeditor.name'
 loop_
@@ -16430,7 +16430,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_coeditor.notes
+save_journal_coeditor.notes
 
 _definition.id                          '_journal_coeditor.notes'
 loop_
@@ -16452,7 +16452,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_coeditor.phone
+save_journal_coeditor.phone
 
 _definition.id                          '_journal_coeditor.phone'
 loop_
@@ -16490,7 +16490,7 @@ _name.object_id                         JOURNAL_DATE
 save_
 
 
-save__journal_date.accepted
+save_journal_date.accepted
 
 _definition.id                          '_journal_date.accepted'
 loop_
@@ -16512,7 +16512,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.from_coeditor
+save_journal_date.from_coeditor
 
 _definition.id                          '_journal_date.from_coeditor'
 loop_
@@ -16534,7 +16534,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.printers_final
+save_journal_date.printers_final
 
 _definition.id                          '_journal_date.printers_final'
 loop_
@@ -16556,7 +16556,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.printers_first
+save_journal_date.printers_first
 
 _definition.id                          '_journal_date.printers_first'
 loop_
@@ -16578,7 +16578,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.proofs_in
+save_journal_date.proofs_in
 
 _definition.id                          '_journal_date.proofs_in'
 loop_
@@ -16600,7 +16600,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.proofs_out
+save_journal_date.proofs_out
 
 _definition.id                          '_journal_date.proofs_out'
 loop_
@@ -16622,7 +16622,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.recd_copyright
+save_journal_date.recd_copyright
 
 _definition.id                          '_journal_date.recd_copyright'
 loop_
@@ -16644,7 +16644,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.recd_electronic
+save_journal_date.recd_electronic
 
 _definition.id                          '_journal_date.recd_electronic'
 loop_
@@ -16666,7 +16666,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.recd_hard_copy
+save_journal_date.recd_hard_copy
 
 _definition.id                          '_journal_date.recd_hard_copy'
 loop_
@@ -16688,7 +16688,7 @@ _type.contents                          Date
 save_
 
 
-save__journal_date.to_coeditor
+save_journal_date.to_coeditor
 
 _definition.id                          '_journal_date.to_coeditor'
 loop_
@@ -16729,7 +16729,7 @@ loop_
 save_
 
 
-save__journal_index.id
+save_journal_index.id
 
 _definition.id                          '_journal_index.id'
 loop_
@@ -16750,7 +16750,7 @@ _enumeration.range                      1:
 
 save_
 
-save__journal_index.subterm
+save_journal_index.subterm
 
 _definition.id                          '_journal_index.subterm'
 loop_
@@ -16771,7 +16771,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_index.term
+save_journal_index.term
 
 _definition.id                          '_journal_index.term'
 loop_
@@ -16792,7 +16792,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_index.type
+save_journal_index.type
 
 _definition.id                          '_journal_index.type'
 loop_
@@ -16836,7 +16836,7 @@ _name.object_id                         JOURNAL_TECHEDITOR
 save_
 
 
-save__journal_techeditor.address
+save_journal_techeditor.address
 
 _definition.id                          '_journal_techeditor.address'
 loop_
@@ -16858,7 +16858,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_techeditor.code
+save_journal_techeditor.code
 
 _definition.id                          '_journal_techeditor.code'
 loop_
@@ -16880,7 +16880,7 @@ _type.contents                          Code
 save_
 
 
-save__journal_techeditor.email
+save_journal_techeditor.email
 
 _definition.id                          '_journal_techeditor.email'
 loop_
@@ -16902,7 +16902,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_techeditor.fax
+save_journal_techeditor.fax
 
 _definition.id                          '_journal_techeditor.fax'
 loop_
@@ -16924,7 +16924,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_techeditor.name
+save_journal_techeditor.name
 
 _definition.id                          '_journal_techeditor.name'
 loop_
@@ -16946,7 +16946,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_techeditor.notes
+save_journal_techeditor.notes
 
 _definition.id                          '_journal_techeditor.notes'
 loop_
@@ -16968,7 +16968,7 @@ _type.contents                          Text
 save_
 
 
-save__journal_techeditor.phone
+save_journal_techeditor.phone
 
 _definition.id                          '_journal_techeditor.phone'
 loop_
@@ -17014,7 +17014,7 @@ _name.object_id                         PUBL
 save_
 
 
-save__publ.contact_letter
+save_publ.contact_letter
 
 _definition.id                          '_publ.contact_letter'
 loop_
@@ -17054,7 +17054,7 @@ loop_
 save_
 
 
-save__publ_author.address
+save_publ_author.address
 
 _definition.id                          '_publ_author.address'
 loop_
@@ -17085,7 +17085,7 @@ loop_
 save_
 
 
-save__publ_author.email
+save_publ_author.email
 
 _definition.id                          '_publ_author.email'
 loop_
@@ -17110,7 +17110,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_author.footnote
+save_publ_author.footnote
 
 _definition.id                          '_publ_author.footnote'
 loop_
@@ -17133,7 +17133,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_author.id_iucr
+save_publ_author.id_iucr
 
 _definition.id                          '_publ_author.id_iucr'
 loop_
@@ -17174,7 +17174,7 @@ save_publ_author.id_orcid
     _description_example.case               0000-0003-0391-0002
 save_
 
-save__publ_author.name
+save_publ_author.name
 
 _definition.id                          '_publ_author.name'
 loop_
@@ -17207,7 +17207,7 @@ loop_
 save_
 
 
-save__publ_author.phone
+save_publ_author.phone
 
 _definition.id                          '_publ_author.phone'
 loop_
@@ -17266,7 +17266,7 @@ loop_
 save_
 
 
-save__publ_body.contents
+save_publ_body.contents
 
 _definition.id                          '_publ_body.contents'
 loop_
@@ -17287,7 +17287,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_body.element
+save_publ_body.element
 
 _definition.id                          '_publ_body.element'
 loop_
@@ -17316,7 +17316,7 @@ _enumeration.default                    section
 save_
 
 
-save__publ_body.format
+save_publ_body.format
 
 _definition.id                          '_publ_body.format'
 loop_
@@ -17350,7 +17350,7 @@ _enumeration.default                    cif
 save_
 
 
-save__publ_body.label
+save_publ_body.label
 
 _definition.id                          '_publ_body.label'
 loop_
@@ -17376,7 +17376,7 @@ loop_
 save_
 
 
-save__publ_body.title
+save_publ_body.title
 
 _definition.id                          '_publ_body.title'
 loop_
@@ -17416,7 +17416,7 @@ loop_
 save_
 
 
-save__publ_contact_author.address
+save_publ_contact_author.address
 
 _definition.id                          '_publ_contact_author.address'
 loop_
@@ -17449,7 +17449,7 @@ loop_
 save_
 
 
-save__publ_contact_author.email
+save_publ_contact_author.email
 
 _definition.id                          '_publ_contact_author.email'
 loop_
@@ -17478,7 +17478,7 @@ loop_
 save_
 
 
-save__publ_contact_author.fax
+save_publ_contact_author.fax
 
 _definition.id                          '_publ_contact_author.fax'
 loop_
@@ -17505,7 +17505,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_contact_author.id_iucr
+save_publ_contact_author.id_iucr
 
 _definition.id                          '_publ_contact_author.id_iucr'
 loop_
@@ -17547,7 +17547,7 @@ save_publ_contact_author.id_orcid
 
 save_
 
-save__publ_contact_author.name
+save_publ_contact_author.name
 
 _definition.id                          '_publ_contact_author.name'
 loop_
@@ -17576,7 +17576,7 @@ loop_
 save_
 
 
-save__publ_contact_author.phone
+save_publ_contact_author.phone
 
 _definition.id                          '_publ_contact_author.phone'
 loop_
@@ -17624,7 +17624,7 @@ _name.object_id                         PUBL_MANUSCRIPT
 save_
 
 
-save__publ_manuscript.creation
+save_publ_manuscript.creation
 
 _definition.id                          '_publ_manuscript.creation'
 loop_
@@ -17647,7 +17647,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_manuscript.processed
+save_publ_manuscript.processed
 
 _definition.id                          '_publ_manuscript.processed'
 loop_
@@ -17672,7 +17672,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_manuscript.text
+save_publ_manuscript.text
 
 _definition.id                          '_publ_manuscript.text'
 loop_
@@ -17721,7 +17721,7 @@ loop_
 save_
 
 
-save__publ_manuscript_incl_extra.defn
+save_publ_manuscript_incl_extra.defn
 
 _definition.id                          '_publ_manuscript_incl_extra.defn'
 loop_
@@ -17752,7 +17752,7 @@ _enumeration.default                    yes
 save_
 
 
-save__publ_manuscript_incl_extra.info
+save_publ_manuscript_incl_extra.info
 
 _definition.id                          '_publ_manuscript_incl_extra.info'
 loop_
@@ -17776,7 +17776,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_manuscript_incl_extra.item
+save_publ_manuscript_incl_extra.item
 
 _definition.id                          '_publ_manuscript_incl_extra.item'
 loop_
@@ -17818,7 +17818,7 @@ _name.object_id                         PUBL_REQUESTED
 save_
 
 
-save__publ_requested.category
+save_publ_requested.category
 
 _definition.id                          '_publ_requested.category'
 loop_
@@ -17868,7 +17868,7 @@ _enumeration.default                    FA
 save_
 
 
-save__publ_requested.coeditor_name
+save_publ_requested.coeditor_name
 
 _definition.id                          '_publ_requested.coeditor_name'
 loop_
@@ -17891,7 +17891,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_requested.journal
+save_publ_requested.journal
 
 _definition.id                          '_publ_requested.journal'
 loop_
@@ -17934,7 +17934,7 @@ _name.object_id                         PUBL_SECTION
 save_
 
 
-save__publ_section.abstract
+save_publ_section.abstract
 
 _definition.id                          '_publ_section.abstract'
 loop_
@@ -17956,7 +17956,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.acknowledgements
+save_publ_section.acknowledgements
 
 _definition.id                          '_publ_section.acknowledgements'
 loop_
@@ -17978,7 +17978,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.comment
+save_publ_section.comment
 
 _definition.id                          '_publ_section.comment'
 loop_
@@ -18000,7 +18000,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.discussion
+save_publ_section.discussion
 
 _definition.id                          '_publ_section.discussion'
 loop_
@@ -18022,7 +18022,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.experimental
+save_publ_section.experimental
 
 _definition.id                          '_publ_section.experimental'
 loop_
@@ -18044,7 +18044,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.exptl_prep
+save_publ_section.exptl_prep
 
 _definition.id                          '_publ_section.exptl_prep'
 loop_
@@ -18066,7 +18066,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.exptl_refinement
+save_publ_section.exptl_refinement
 
 _definition.id                          '_publ_section.exptl_refinement'
 loop_
@@ -18088,7 +18088,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.exptl_solution
+save_publ_section.exptl_solution
 
 _definition.id                          '_publ_section.exptl_solution'
 loop_
@@ -18110,7 +18110,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.figure_captions
+save_publ_section.figure_captions
 
 _definition.id                          '_publ_section.figure_captions'
 loop_
@@ -18132,7 +18132,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.introduction
+save_publ_section.introduction
 
 _definition.id                          '_publ_section.introduction'
 loop_
@@ -18154,7 +18154,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.keywords
+save_publ_section.keywords
 
 _definition.id                          '_publ_section.keywords'
 loop_
@@ -18176,7 +18176,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.references
+save_publ_section.references
 
 _definition.id                          '_publ_section.references'
 loop_
@@ -18198,7 +18198,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.related_literature
+save_publ_section.related_literature
 
 _definition.id                          '_publ_section.related_literature'
 loop_
@@ -18220,7 +18220,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.synopsis
+save_publ_section.synopsis
 
 _definition.id                          '_publ_section.synopsis'
 loop_
@@ -18242,7 +18242,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.table_legends
+save_publ_section.table_legends
 
 _definition.id                          '_publ_section.table_legends'
 loop_
@@ -18264,7 +18264,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.title
+save_publ_section.title
 
 _definition.id                          '_publ_section.title'
 loop_
@@ -18286,7 +18286,7 @@ _type.contents                          Text
 save_
 
 
-save__publ_section.title_footnote
+save_publ_section.title_footnote
 
 _definition.id                          '_publ_section.title_footnote'
 loop_
@@ -18363,7 +18363,7 @@ loop_
 save_
 
 
-save__atom_site.adp_type
+save_atom_site.adp_type
 
 _definition.id                          '_atom_site.adp_type'
 loop_
@@ -18397,7 +18397,7 @@ _enumeration.default                    Uiso
 save_
 
 
-save__atom_site.attached_hydrogens
+save_atom_site.attached_hydrogens
 
 _definition.id                          '_atom_site.attached_hydrogens'
 loop_
@@ -18428,7 +18428,7 @@ loop_
 save_
 
 
-save__atom_site.B_equiv_geom_mean
+save_atom_site.B_equiv_geom_mean
 
 _definition.id                          '_atom_site.B_equiv_geom_mean'
 loop_
@@ -18461,7 +18461,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.B_equiv_geom_mean_su
+save_atom_site.B_equiv_geom_mean_su
 
 _definition.id                          '_atom_site.B_equiv_geom_mean_su'
 loop_
@@ -18488,7 +18488,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.B_iso_or_equiv
+save_atom_site.B_iso_or_equiv
 
 _definition.id                          '_atom_site.B_iso_or_equiv'
 loop_
@@ -18524,7 +18524,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.B_iso_or_equiv_su
+save_atom_site.B_iso_or_equiv_su
 
 _definition.id                          '_atom_site.B_iso_or_equiv_su'
 loop_
@@ -18551,7 +18551,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.calc_attached_atom
+save_atom_site.calc_attached_atom
 
 _definition.id                          '_atom_site.calc_attached_atom'
 loop_
@@ -18574,7 +18574,7 @@ _type.contents                          Code
 save_
 
 
-save__atom_site.calc_flag
+save_atom_site.calc_flag
 
 _definition.id                          '_atom_site.calc_flag'
 loop_
@@ -18605,7 +18605,7 @@ _enumeration.default                    d
 save_
 
 
-save__atom_site.Cartn_x
+save_atom_site.Cartn_x
 
 _definition.id                          '_atom_site.Cartn_x'
 loop_
@@ -18618,7 +18618,7 @@ _name.object_id                         Cartn_x
 save_
 
 
-save__atom_site.Cartn_x_su
+save_atom_site.Cartn_x_su
 
 _definition.id                          '_atom_site.Cartn_x_su'
 loop_
@@ -18633,7 +18633,7 @@ _name.linked_item_id                    '_atom_site.Cartn_x'
 save_
 
 
-save__atom_site.Cartn_xyz
+save_atom_site.Cartn_xyz
 
 _definition.id                          '_atom_site.Cartn_xyz'
 _definition.update                      2012-11-20
@@ -18661,7 +18661,7 @@ loop_
 save_
 
 
-save__atom_site.Cartn_y
+save_atom_site.Cartn_y
 
 _definition.id                          '_atom_site.Cartn_y'
 loop_
@@ -18674,7 +18674,7 @@ _name.object_id                         Cartn_y
 save_
 
 
-save__atom_site.Cartn_y_su
+save_atom_site.Cartn_y_su
 
 _definition.id                          '_atom_site.Cartn_y_su'
 loop_
@@ -18689,7 +18689,7 @@ _name.linked_item_id                    '_atom_site.Cartn_y'
 save_
 
 
-save__atom_site.Cartn_z
+save_atom_site.Cartn_z
 
 _definition.id                          '_atom_site.Cartn_z'
 loop_
@@ -18702,7 +18702,7 @@ _name.object_id                         Cartn_z
 save_
 
 
-save__atom_site.Cartn_z_su
+save_atom_site.Cartn_z_su
 
 _definition.id                          '_atom_site.Cartn_z_su'
 loop_
@@ -18717,7 +18717,7 @@ _name.linked_item_id                    '_atom_site.Cartn_z'
 save_
 
 
-save__atom_site.chemical_conn_number
+save_atom_site.chemical_conn_number
 
 _definition.id                          '_atom_site.chemical_conn_number'
 loop_
@@ -18741,7 +18741,7 @@ _enumeration.range                      1:
 save_
 
 
-save__atom_site.constraints
+save_atom_site.constraints
 
 _definition.id                          '_atom_site.constraints'
 loop_
@@ -18767,7 +18767,7 @@ loop_
 save_
 
 
-save__atom_site.description
+save_atom_site.description
 
 _definition.id                          '_atom_site.description'
 loop_
@@ -18793,7 +18793,7 @@ loop_
 save_
 
 
-save__atom_site.disorder_assembly
+save_atom_site.disorder_assembly
 
 _definition.id                          '_atom_site.disorder_assembly'
 loop_
@@ -18825,7 +18825,7 @@ loop_
 save_
 
 
-save__atom_site.disorder_group
+save_atom_site.disorder_group
 
 _definition.id                          '_atom_site.disorder_group'
 loop_
@@ -18859,7 +18859,7 @@ loop_
 save_
 
 
-save__atom_site.fract_x
+save_atom_site.fract_x
 
 _definition.id                          '_atom_site.fract_x'
 loop_
@@ -18872,7 +18872,7 @@ _name.object_id                         fract_x
 save_
 
 
-save__atom_site.fract_x_su
+save_atom_site.fract_x_su
 
 _definition.id                          '_atom_site.fract_x_su'
 loop_
@@ -18887,7 +18887,7 @@ _name.linked_item_id                    '_atom_site.fract_x'
 save_
 
 
-save__atom_site.fract_xyz
+save_atom_site.fract_xyz
 
 _definition.id                          '_atom_site.fract_xyz'
 _definition.update                      2012-11-20
@@ -18916,7 +18916,7 @@ loop_
 save_
 
 
-save__atom_site.fract_y
+save_atom_site.fract_y
 
 _definition.id                          '_atom_site.fract_y'
 loop_
@@ -18929,7 +18929,7 @@ _name.object_id                         fract_y
 save_
 
 
-save__atom_site.fract_y_su
+save_atom_site.fract_y_su
 
 _definition.id                          '_atom_site.fract_y_su'
 loop_
@@ -18944,7 +18944,7 @@ _name.linked_item_id                    '_atom_site.fract_y'
 save_
 
 
-save__atom_site.fract_z
+save_atom_site.fract_z
 
 _definition.id                          '_atom_site.fract_z'
 loop_
@@ -18957,7 +18957,7 @@ _name.object_id                         fract_z
 save_
 
 
-save__atom_site.fract_z_su
+save_atom_site.fract_z_su
 
 _definition.id                          '_atom_site.fract_z_su'
 loop_
@@ -18972,7 +18972,7 @@ _name.linked_item_id                    '_atom_site.fract_z'
 save_
 
 
-save__atom_site.label
+save_atom_site.label
 
 _definition.id                          '_atom_site.label'
 loop_
@@ -18986,7 +18986,7 @@ _name.object_id                         label
 save_
 
 
-save__atom_site.label_component_0
+save_atom_site.label_component_0
 
 _definition.id                          '_atom_site.label_component_0'
 loop_
@@ -18999,7 +18999,7 @@ _name.object_id                         label_component_0
 save_
 
 
-save__atom_site.label_component_1
+save_atom_site.label_component_1
 
 _definition.id                          '_atom_site.label_component_1'
 loop_
@@ -19012,7 +19012,7 @@ _name.object_id                         label_component_1
 save_
 
 
-save__atom_site.label_component_2
+save_atom_site.label_component_2
 
 _definition.id                          '_atom_site.label_component_2'
 loop_
@@ -19025,7 +19025,7 @@ _name.object_id                         label_component_2
 save_
 
 
-save__atom_site.label_component_3
+save_atom_site.label_component_3
 
 _definition.id                          '_atom_site.label_component_3'
 loop_
@@ -19038,7 +19038,7 @@ _name.object_id                         label_component_3
 save_
 
 
-save__atom_site.label_component_4
+save_atom_site.label_component_4
 
 _definition.id                          '_atom_site.label_component_4'
 loop_
@@ -19051,7 +19051,7 @@ _name.object_id                         label_component_4
 save_
 
 
-save__atom_site.label_component_5
+save_atom_site.label_component_5
 
 _definition.id                          '_atom_site.label_component_5'
 loop_
@@ -19064,7 +19064,7 @@ _name.object_id                         label_component_5
 save_
 
 
-save__atom_site.label_component_6
+save_atom_site.label_component_6
 
 _definition.id                          '_atom_site.label_component_6'
 loop_
@@ -19077,7 +19077,7 @@ _name.object_id                         label_component_6
 save_
 
 
-save__atom_site.occupancy
+save_atom_site.occupancy
 
 _definition.id                          '_atom_site.occupancy'
 loop_
@@ -19106,7 +19106,7 @@ _units.code                             none
 save_
 
 
-save__atom_site.occupancy_su
+save_atom_site.occupancy_su
 
 _definition.id                          '_atom_site.occupancy_su'
 loop_
@@ -19131,7 +19131,7 @@ _units.code                             none
 save_
 
 
-save__atom_site.refinement_flags
+save_atom_site.refinement_flags
 
 _definition.id                          '_atom_site.refinement_flags'
 loop_
@@ -19169,7 +19169,7 @@ _enumeration.default                    .
 save_
 
 
-save__atom_site.refinement_flags_adp
+save_atom_site.refinement_flags_adp
 
 _definition.id                          '_atom_site.refinement_flags_adp'
 loop_
@@ -19199,7 +19199,7 @@ _enumeration.default                    .
 save_
 
 
-save__atom_site.refinement_flags_occupancy
+save_atom_site.refinement_flags_occupancy
 
 _definition.id                          '_atom_site.refinement_flags_occupancy'
 loop_
@@ -19227,7 +19227,7 @@ _enumeration.default                    .
 save_
 
 
-save__atom_site.refinement_flags_posn
+save_atom_site.refinement_flags_posn
 
 _definition.id                          '_atom_site.refinement_flags_posn'
 loop_
@@ -19269,7 +19269,7 @@ _enumeration.default                    .
 save_
 
 
-save__atom_site.restraints
+save_atom_site.restraints
 
 _definition.id                          '_atom_site.restraints'
 loop_
@@ -19295,7 +19295,7 @@ loop_
 save_
 
 
-save__atom_site.site_symmetry_multiplicity
+save_atom_site.site_symmetry_multiplicity
 
 _definition.id                          '_atom_site.site_symmetry_multiplicity'
 loop_
@@ -19344,7 +19344,7 @@ loop_
 save_
 
 
-save__atom_site.site_symmetry_order
+save_atom_site.site_symmetry_order
 
 _definition.id                          '_atom_site.site_symmetry_order'
 loop_
@@ -19371,7 +19371,7 @@ _enumeration.range                      1:48
 save_
 
 
-save__atom_site.tensor_beta
+save_atom_site.tensor_beta
 
 _definition.id                          '_atom_site.tensor_beta'
 _definition.update                      2013-04-28
@@ -19434,7 +19434,7 @@ loop_
 save_
 
 
-save__atom_site.type_symbol
+save_atom_site.type_symbol
 
 _definition.id                          '_atom_site.type_symbol'
 loop_
@@ -19472,7 +19472,7 @@ loop_
 save_
 
 
-save__atom_site.U_equiv_geom_mean
+save_atom_site.U_equiv_geom_mean
 
 _definition.id                          '_atom_site.U_equiv_geom_mean'
 loop_
@@ -19501,7 +19501,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.U_equiv_geom_mean_su
+save_atom_site.U_equiv_geom_mean_su
 
 _definition.id                          '_atom_site.U_equiv_geom_mean_su'
 loop_
@@ -19525,7 +19525,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.U_iso_or_equiv
+save_atom_site.U_iso_or_equiv
 
 _definition.id                          '_atom_site.U_iso_or_equiv'
 loop_
@@ -19556,7 +19556,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.U_iso_or_equiv_su
+save_atom_site.U_iso_or_equiv_su
 
 _definition.id                          '_atom_site.U_iso_or_equiv_su'
 loop_
@@ -19580,7 +19580,7 @@ _units.code                             angstrom_squared
 save_
 
 
-save__atom_site.Wyckoff_symbol
+save_atom_site.Wyckoff_symbol
 
 _definition.id                          '_atom_site.Wyckoff_symbol'
 loop_
@@ -19622,7 +19622,7 @@ loop_
 save_
 
 
-save__atom_site_aniso.B_11
+save_atom_site_aniso.B_11
 
 _definition.id                          '_atom_site_aniso.B_11'
 loop_
@@ -19637,7 +19637,7 @@ _name.object_id                         B_11
 save_
 
 
-save__atom_site_aniso.B_11_su
+save_atom_site_aniso.B_11_su
 
 _definition.id                          '_atom_site_aniso.B_11_su'
 loop_
@@ -19653,7 +19653,7 @@ _name.linked_item_id                    '_atom_site_aniso.B_11'
 save_
 
 
-save__atom_site_aniso.B_12
+save_atom_site_aniso.B_12
 
 _definition.id                          '_atom_site_aniso.B_12'
 loop_
@@ -19668,7 +19668,7 @@ _name.object_id                         B_12
 save_
 
 
-save__atom_site_aniso.B_12_su
+save_atom_site_aniso.B_12_su
 
 _definition.id                          '_atom_site_aniso.B_12_su'
 loop_
@@ -19684,7 +19684,7 @@ _name.linked_item_id                    '_atom_site_aniso.B_12'
 save_
 
 
-save__atom_site_aniso.B_13
+save_atom_site_aniso.B_13
 
 _definition.id                          '_atom_site_aniso.B_13'
 loop_
@@ -19699,7 +19699,7 @@ _name.object_id                         B_13
 save_
 
 
-save__atom_site_aniso.B_13_su
+save_atom_site_aniso.B_13_su
 
 _definition.id                          '_atom_site_aniso.B_13_su'
 loop_
@@ -19715,7 +19715,7 @@ _name.linked_item_id                    '_atom_site_aniso.B_13'
 save_
 
 
-save__atom_site_aniso.B_22
+save_atom_site_aniso.B_22
 
 _definition.id                          '_atom_site_aniso.B_22'
 loop_
@@ -19730,7 +19730,7 @@ _name.object_id                         B_22
 save_
 
 
-save__atom_site_aniso.B_22_su
+save_atom_site_aniso.B_22_su
 
 _definition.id                          '_atom_site_aniso.B_22_su'
 loop_
@@ -19746,7 +19746,7 @@ _name.linked_item_id                    '_atom_site_aniso.B_22'
 save_
 
 
-save__atom_site_aniso.B_23
+save_atom_site_aniso.B_23
 
 _definition.id                          '_atom_site_aniso.B_23'
 loop_
@@ -19761,7 +19761,7 @@ _name.object_id                         B_23
 save_
 
 
-save__atom_site_aniso.B_23_su
+save_atom_site_aniso.B_23_su
 
 _definition.id                          '_atom_site_aniso.B_23_su'
 loop_
@@ -19777,7 +19777,7 @@ _name.linked_item_id                    '_atom_site_aniso.B_23'
 save_
 
 
-save__atom_site_aniso.B_33
+save_atom_site_aniso.B_33
 
 _definition.id                          '_atom_site_aniso.B_33'
 loop_
@@ -19792,7 +19792,7 @@ _name.object_id                         B_33
 save_
 
 
-save__atom_site_aniso.B_33_su
+save_atom_site_aniso.B_33_su
 
 _definition.id                          '_atom_site_aniso.B_33_su'
 loop_
@@ -19808,7 +19808,7 @@ _name.linked_item_id                    '_atom_site_aniso.B_33'
 save_
 
 
-save__atom_site_aniso.label
+save_atom_site_aniso.label
 
 _definition.id                          '_atom_site_aniso.label'
 loop_
@@ -19834,7 +19834,7 @@ _type.contents                          Code
 save_
 
 
-save__atom_site_aniso.matrix_B
+save_atom_site_aniso.matrix_B
 
 _definition.id                          '_atom_site_aniso.matrix_B'
 _definition.update                      2012-11-20
@@ -19864,7 +19864,7 @@ loop_
 save_
 
 
-save__atom_site_aniso.matrix_U
+save_atom_site_aniso.matrix_U
 
 _definition.id                          '_atom_site_aniso.matrix_U'
 _definition.update                      2012-11-20
@@ -19894,7 +19894,7 @@ loop_
 save_
 
 
-save__atom_site_aniso.ratio
+save_atom_site_aniso.ratio
 
 _definition.id                          '_atom_site_aniso.ratio'
 loop_
@@ -19920,7 +19920,7 @@ _units.code                             none
 save_
 
 
-save__atom_site_aniso.type_symbol
+save_atom_site_aniso.type_symbol
 
 _definition.id                          '_atom_site_aniso.type_symbol'
 loop_
@@ -19952,7 +19952,7 @@ loop_
 save_
 
 
-save__atom_site_aniso.U_11
+save_atom_site_aniso.U_11
 
 _definition.id                          '_atom_site_aniso.U_11'
 loop_
@@ -19967,7 +19967,7 @@ _name.object_id                         U_11
 save_
 
 
-save__atom_site_aniso.U_11_su
+save_atom_site_aniso.U_11_su
 
 _definition.id                          '_atom_site_aniso.U_11_su'
 loop_
@@ -19983,7 +19983,7 @@ _name.linked_item_id                    '_atom_site_aniso.U_11'
 save_
 
 
-save__atom_site_aniso.U_12
+save_atom_site_aniso.U_12
 
 _definition.id                          '_atom_site_aniso.U_12'
 loop_
@@ -19998,7 +19998,7 @@ _name.object_id                         U_12
 save_
 
 
-save__atom_site_aniso.U_12_su
+save_atom_site_aniso.U_12_su
 
 _definition.id                          '_atom_site_aniso.U_12_su'
 loop_
@@ -20014,7 +20014,7 @@ _name.linked_item_id                    '_atom_site_aniso.U_12'
 save_
 
 
-save__atom_site_aniso.U_13
+save_atom_site_aniso.U_13
 
 _definition.id                          '_atom_site_aniso.U_13'
 loop_
@@ -20029,7 +20029,7 @@ _name.object_id                         U_13
 save_
 
 
-save__atom_site_aniso.U_13_su
+save_atom_site_aniso.U_13_su
 
 _definition.id                          '_atom_site_aniso.U_13_su'
 loop_
@@ -20045,7 +20045,7 @@ _name.linked_item_id                    '_atom_site_aniso.U_13'
 save_
 
 
-save__atom_site_aniso.U_22
+save_atom_site_aniso.U_22
 
 _definition.id                          '_atom_site_aniso.U_22'
 loop_
@@ -20060,7 +20060,7 @@ _name.object_id                         U_22
 save_
 
 
-save__atom_site_aniso.U_22_su
+save_atom_site_aniso.U_22_su
 
 _definition.id                          '_atom_site_aniso.U_22_su'
 loop_
@@ -20076,7 +20076,7 @@ _name.linked_item_id                    '_atom_site_aniso.U_22'
 save_
 
 
-save__atom_site_aniso.U_23
+save_atom_site_aniso.U_23
 
 _definition.id                          '_atom_site_aniso.U_23'
 loop_
@@ -20091,7 +20091,7 @@ _name.object_id                         U_23
 save_
 
 
-save__atom_site_aniso.U_23_su
+save_atom_site_aniso.U_23_su
 
 _definition.id                          '_atom_site_aniso.U_23_su'
 loop_
@@ -20107,7 +20107,7 @@ _name.linked_item_id                    '_atom_site_aniso.U_23'
 save_
 
 
-save__atom_site_aniso.U_33
+save_atom_site_aniso.U_33
 
 _definition.id                          '_atom_site_aniso.U_33'
 loop_
@@ -20122,7 +20122,7 @@ _name.object_id                         U_33
 save_
 
 
-save__atom_site_aniso.U_33_su
+save_atom_site_aniso.U_33_su
 
 _definition.id                          '_atom_site_aniso.U_33_su'
 loop_
@@ -20155,7 +20155,7 @@ _name.object_id                         ATOM_SITES
 save_
 
 
-save__atom_sites.solution_hydrogens
+save_atom_sites.solution_hydrogens
 
 _definition.id                          '_atom_sites.solution_hydrogens'
 loop_
@@ -20206,7 +20206,7 @@ _enumeration.default                    difmap
 save_
 
 
-save__atom_sites.solution_primary
+save_atom_sites.solution_primary
 
 _definition.id                          '_atom_sites.solution_primary'
 loop_
@@ -20256,7 +20256,7 @@ _enumeration.default                    direct
 save_
 
 
-save__atom_sites.solution_secondary
+save_atom_sites.solution_secondary
 
 _definition.id                          '_atom_sites.solution_secondary'
 loop_
@@ -20306,7 +20306,7 @@ _enumeration.default                    difmap
 save_
 
 
-save__atom_sites.special_details
+save_atom_sites.special_details
 
 _definition.id                          '_atom_sites.special_details'
 loop_
@@ -20345,7 +20345,7 @@ _name.object_id                         ATOM_SITES_CARTN_TRANSFORM
 save_
 
 
-save__atom_sites_Cartn_transform.axes
+save_atom_sites_Cartn_transform.axes
 
 _definition.id                          '_atom_sites_Cartn_transform.axes'
 loop_
@@ -20372,7 +20372,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_11
+save_atom_sites_Cartn_transform.mat_11
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_11'
 loop_
@@ -20395,7 +20395,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_12
+save_atom_sites_Cartn_transform.mat_12
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_12'
 loop_
@@ -20416,7 +20416,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_13
+save_atom_sites_Cartn_transform.mat_13
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_13'
 loop_
@@ -20437,7 +20437,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_21
+save_atom_sites_Cartn_transform.mat_21
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_21'
 loop_
@@ -20460,7 +20460,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_22
+save_atom_sites_Cartn_transform.mat_22
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_22'
 loop_
@@ -20483,7 +20483,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_23
+save_atom_sites_Cartn_transform.mat_23
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_23'
 loop_
@@ -20504,7 +20504,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_31
+save_atom_sites_Cartn_transform.mat_31
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_31'
 loop_
@@ -20527,7 +20527,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_32
+save_atom_sites_Cartn_transform.mat_32
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_32'
 loop_
@@ -20550,7 +20550,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.mat_33
+save_atom_sites_Cartn_transform.mat_33
 
 _definition.id                          '_atom_sites_Cartn_transform.mat_33'
 loop_
@@ -20571,7 +20571,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.matrix
+save_atom_sites_Cartn_transform.matrix
 
 _definition.id                          '_atom_sites_Cartn_transform.matrix'
 _definition.update                      2012-12-11
@@ -20612,7 +20612,7 @@ loop_
 save_
 
 
-save__atom_sites_Cartn_transform.vec_1
+save_atom_sites_Cartn_transform.vec_1
 
 _definition.id                          '_atom_sites_Cartn_transform.vec_1'
 loop_
@@ -20626,7 +20626,7 @@ _name.object_id                         vec_1
 save_
 
 
-save__atom_sites_Cartn_transform.vec_2
+save_atom_sites_Cartn_transform.vec_2
 
 _definition.id                          '_atom_sites_Cartn_transform.vec_2'
 loop_
@@ -20640,7 +20640,7 @@ _name.object_id                         vec_2
 save_
 
 
-save__atom_sites_Cartn_transform.vec_3
+save_atom_sites_Cartn_transform.vec_3
 
 _definition.id                          '_atom_sites_Cartn_transform.vec_3'
 loop_
@@ -20654,7 +20654,7 @@ _name.object_id                         vec_3
 save_
 
 
-save__atom_sites_Cartn_transform.vector
+save_atom_sites_Cartn_transform.vector
 
 _definition.id                          '_atom_sites_Cartn_transform.vector'
 _definition.update                      2012-11-20
@@ -20703,7 +20703,7 @@ _name.object_id                         ATOM_SITES_FRACT_TRANSFORM
 save_
 
 
-save__atom_sites_fract_transform.axes
+save_atom_sites_fract_transform.axes
 
 _definition.id                          '_atom_sites_fract_transform.axes'
 loop_
@@ -20730,7 +20730,7 @@ loop_
 save_
 
 
-save__atom_sites_fract_transform.mat_11
+save_atom_sites_fract_transform.mat_11
 
 _definition.id                          '_atom_sites_fract_transform.mat_11'
 loop_
@@ -20744,7 +20744,7 @@ _name.object_id                         mat_11
 save_
 
 
-save__atom_sites_fract_transform.mat_12
+save_atom_sites_fract_transform.mat_12
 
 _definition.id                          '_atom_sites_fract_transform.mat_12'
 loop_
@@ -20758,7 +20758,7 @@ _name.object_id                         mat_12
 save_
 
 
-save__atom_sites_fract_transform.mat_13
+save_atom_sites_fract_transform.mat_13
 
 _definition.id                          '_atom_sites_fract_transform.mat_13'
 loop_
@@ -20772,7 +20772,7 @@ _name.object_id                         mat_13
 save_
 
 
-save__atom_sites_fract_transform.mat_21
+save_atom_sites_fract_transform.mat_21
 
 _definition.id                          '_atom_sites_fract_transform.mat_21'
 loop_
@@ -20786,7 +20786,7 @@ _name.object_id                         mat_21
 save_
 
 
-save__atom_sites_fract_transform.mat_22
+save_atom_sites_fract_transform.mat_22
 
 _definition.id                          '_atom_sites_fract_transform.mat_22'
 loop_
@@ -20800,7 +20800,7 @@ _name.object_id                         mat_22
 save_
 
 
-save__atom_sites_fract_transform.mat_23
+save_atom_sites_fract_transform.mat_23
 
 _definition.id                          '_atom_sites_fract_transform.mat_23'
 loop_
@@ -20814,7 +20814,7 @@ _name.object_id                         mat_23
 save_
 
 
-save__atom_sites_fract_transform.mat_31
+save_atom_sites_fract_transform.mat_31
 
 _definition.id                          '_atom_sites_fract_transform.mat_31'
 loop_
@@ -20828,7 +20828,7 @@ _name.object_id                         mat_31
 save_
 
 
-save__atom_sites_fract_transform.mat_32
+save_atom_sites_fract_transform.mat_32
 
 _definition.id                          '_atom_sites_fract_transform.mat_32'
 loop_
@@ -20842,7 +20842,7 @@ _name.object_id                         mat_32
 save_
 
 
-save__atom_sites_fract_transform.mat_33
+save_atom_sites_fract_transform.mat_33
 
 _definition.id                          '_atom_sites_fract_transform.mat_33'
 loop_
@@ -20856,7 +20856,7 @@ _name.object_id                         mat_33
 save_
 
 
-save__atom_sites_fract_transform.matrix
+save_atom_sites_fract_transform.matrix
 
 _definition.id                          '_atom_sites_fract_transform.matrix'
 _definition.update                      2012-12-11
@@ -20897,7 +20897,7 @@ loop_
 save_
 
 
-save__atom_sites_fract_transform.vec_1
+save_atom_sites_fract_transform.vec_1
 
 _definition.id                          '_atom_sites_fract_transform.vec_1'
 loop_
@@ -20911,7 +20911,7 @@ _name.object_id                         vec_1
 save_
 
 
-save__atom_sites_fract_transform.vec_2
+save_atom_sites_fract_transform.vec_2
 
 _definition.id                          '_atom_sites_fract_transform.vec_2'
 loop_
@@ -20925,7 +20925,7 @@ _name.object_id                         vec_2
 save_
 
 
-save__atom_sites_fract_transform.vec_3
+save_atom_sites_fract_transform.vec_3
 
 _definition.id                          '_atom_sites_fract_transform.vec_3'
 loop_
@@ -20939,7 +20939,7 @@ _name.object_id                         vec_3
 save_
 
 
-save__atom_sites_fract_transform.vector
+save_atom_sites_fract_transform.vector
 
 _definition.id                          '_atom_sites_fract_transform.vector'
 _definition.update                      2012-11-20
@@ -21006,7 +21006,7 @@ loop_
 save_
 
 
-save__atom_type.analytical_mass_percent
+save_atom_type.analytical_mass_percent
 
 _definition.id                          '_atom_type.analytical_mass_percent'
 loop_
@@ -21030,7 +21030,7 @@ _units.code                             none
 save_
 
 
-save__atom_type.atomic_mass
+save_atom_type.atomic_mass
 
 _definition.id                          '_atom_type.atomic_mass'
 _definition.update                      2012-11-20
@@ -21051,7 +21051,7 @@ _units.code                             dalton
 save_
 
 
-save__atom_type.atomic_number
+save_atom_type.atomic_number
 
 _definition.id                          '_atom_type.atomic_number'
 _definition.update                      2012-11-20
@@ -21071,7 +21071,7 @@ _enumeration.def_index_id               '_atom_type.symbol'
 save_
 
 
-save__atom_type.description
+save_atom_type.description
 
 _definition.id                          '_atom_type.description'
 loop_
@@ -21099,7 +21099,7 @@ loop_
 save_
 
 
-save__atom_type.display_colour
+save_atom_type.display_colour
 
 _definition.id                          '_atom_type.display_colour'
 _definition.update                      2012-11-20
@@ -21122,7 +21122,7 @@ _enumeration.def_index_id               '_atom_type.symbol'
 save_
 
 
-save__atom_type.electron_count
+save_atom_type.electron_count
 
 _definition.id                          '_atom_type.electron_count'
 _definition.update                      2012-11-20
@@ -21143,7 +21143,7 @@ _enumeration.range                      1:
 save_
 
 
-save__atom_type.element_symbol
+save_atom_type.element_symbol
 
 _definition.id                          '_atom_type.element_symbol'
 _definition.update                      2012-11-20
@@ -21166,7 +21166,7 @@ _enumeration.def_index_id               '_atom_type.symbol'
 save_
 
 
-save__atom_type.key
+save_atom_type.key
 
 _definition.id                          '_atom_type.key'
 _definition.update                      2012-11-20
@@ -21189,7 +21189,7 @@ loop_
 save_
 
 
-save__atom_type.number_in_cell
+save_atom_type.number_in_cell
 
 _definition.id                          '_atom_type.number_in_cell'
 loop_
@@ -21229,7 +21229,7 @@ loop_
 save_
 
 
-save__atom_type.oxidation_number
+save_atom_type.oxidation_number
 
 _definition.id                          '_atom_type.oxidation_number'
 loop_
@@ -21252,7 +21252,7 @@ _enumeration.default                    0
 save_
 
 
-save__atom_type.radius_bond
+save_atom_type.radius_bond
 
 _definition.id                          '_atom_type.radius_bond'
 loop_
@@ -21277,7 +21277,7 @@ _units.code                             angstroms
 save_
 
 
-save__atom_type.radius_contact
+save_atom_type.radius_contact
 
 _definition.id                          '_atom_type.radius_contact'
 loop_
@@ -21307,7 +21307,7 @@ loop_
 save_
 
 
-save__atom_type.symbol
+save_atom_type.symbol
 
 _definition.id                          '_atom_type.symbol'
 loop_
@@ -21358,7 +21358,7 @@ loop_
 save_
 
 
-save__atom_type_scat.Cromer_Mann_a1
+save_atom_type_scat.Cromer_Mann_a1
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_a1'
 loop_
@@ -21373,7 +21373,7 @@ _name.object_id                         Cromer_Mann_a1
 save_
 
 
-save__atom_type_scat.Cromer_Mann_a2
+save_atom_type_scat.Cromer_Mann_a2
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_a2'
 loop_
@@ -21388,7 +21388,7 @@ _name.object_id                         Cromer_Mann_a2
 save_
 
 
-save__atom_type_scat.Cromer_Mann_a3
+save_atom_type_scat.Cromer_Mann_a3
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_a3'
 loop_
@@ -21403,7 +21403,7 @@ _name.object_id                         Cromer_Mann_a3
 save_
 
 
-save__atom_type_scat.Cromer_Mann_a4
+save_atom_type_scat.Cromer_Mann_a4
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_a4'
 loop_
@@ -21418,7 +21418,7 @@ _name.object_id                         Cromer_Mann_a4
 save_
 
 
-save__atom_type_scat.Cromer_Mann_b1
+save_atom_type_scat.Cromer_Mann_b1
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_b1'
 loop_
@@ -21433,7 +21433,7 @@ _name.object_id                         Cromer_Mann_b1
 save_
 
 
-save__atom_type_scat.Cromer_Mann_b2
+save_atom_type_scat.Cromer_Mann_b2
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_b2'
 loop_
@@ -21448,7 +21448,7 @@ _name.object_id                         Cromer_Mann_b2
 save_
 
 
-save__atom_type_scat.Cromer_Mann_b3
+save_atom_type_scat.Cromer_Mann_b3
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_b3'
 loop_
@@ -21463,7 +21463,7 @@ _name.object_id                         Cromer_Mann_b3
 save_
 
 
-save__atom_type_scat.Cromer_Mann_b4
+save_atom_type_scat.Cromer_Mann_b4
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_b4'
 loop_
@@ -21478,7 +21478,7 @@ _name.object_id                         Cromer_Mann_b4
 save_
 
 
-save__atom_type_scat.Cromer_Mann_c
+save_atom_type_scat.Cromer_Mann_c
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_c'
 loop_
@@ -21493,7 +21493,7 @@ _name.object_id                         Cromer_Mann_c
 save_
 
 
-save__atom_type_scat.Cromer_Mann_coeffs
+save_atom_type_scat.Cromer_Mann_coeffs
 
 _definition.id                          '_atom_type_scat.Cromer_Mann_coeffs'
 _definition.update                      2012-11-20
@@ -21529,7 +21529,7 @@ loop_
 save_
 
 
-save__atom_type_scat.dispersion
+save_atom_type_scat.dispersion
 
 _definition.id                          '_atom_type_scat.dispersion'
 _definition.update                      2013-04-28
@@ -21563,7 +21563,7 @@ loop_
 save_
 
 
-save__atom_type_scat.dispersion_imag
+save_atom_type_scat.dispersion_imag
 
 _definition.id                          '_atom_type_scat.dispersion_imag'
 loop_
@@ -21600,7 +21600,7 @@ loop_
 save_
 
 
-save__atom_type_scat.dispersion_imag_cu
+save_atom_type_scat.dispersion_imag_cu
 
 _definition.id                          '_atom_type_scat.dispersion_imag_cu'
 _definition.update                      2012-11-20
@@ -21622,7 +21622,7 @@ _units.code                             none
 save_
 
 
-save__atom_type_scat.dispersion_imag_mo
+save_atom_type_scat.dispersion_imag_mo
 
 _definition.id                          '_atom_type_scat.dispersion_imag_mo'
 _definition.update                      2012-11-20
@@ -21644,7 +21644,7 @@ _units.code                             none
 save_
 
 
-save__atom_type_scat.dispersion_real
+save_atom_type_scat.dispersion_real
 
 _definition.id                          '_atom_type_scat.dispersion_real'
 loop_
@@ -21681,7 +21681,7 @@ _enumeration.default                    0.0
 save_
 
 
-save__atom_type_scat.dispersion_real_cu
+save_atom_type_scat.dispersion_real_cu
 
 _definition.id                          '_atom_type_scat.dispersion_real_cu'
 _definition.update                      2012-11-20
@@ -21703,7 +21703,7 @@ _units.code                             none
 save_
 
 
-save__atom_type_scat.dispersion_real_mo
+save_atom_type_scat.dispersion_real_mo
 
 _definition.id                          '_atom_type_scat.dispersion_real_mo'
 _definition.update                      2012-11-20
@@ -21725,7 +21725,7 @@ _units.code                             none
 save_
 
 
-save__atom_type_scat.dispersion_source
+save_atom_type_scat.dispersion_source
 
 _definition.id                          '_atom_type_scat.dispersion_source'
 loop_
@@ -21751,7 +21751,7 @@ loop_
 save_
 
 
-save__atom_type_scat.hi_ang_Fox_c0
+save_atom_type_scat.hi_ang_Fox_c0
 
 _definition.id                          '_atom_type_scat.hi_ang_Fox_c0'
 _import.get [{'save':hi_ang_Fox_coeffs  'file':templ_attr.cif}  
@@ -21762,7 +21762,7 @@ _name.object_id                         hi_ang_Fox_c0
 save_
 
 
-save__atom_type_scat.hi_ang_Fox_c1
+save_atom_type_scat.hi_ang_Fox_c1
 
 _definition.id                          '_atom_type_scat.hi_ang_Fox_c1'
 _import.get [{'save':hi_ang_Fox_coeffs  'file':templ_attr.cif}  
@@ -21773,7 +21773,7 @@ _name.object_id                         hi_ang_Fox_c1
 save_
 
 
-save__atom_type_scat.hi_ang_Fox_c2
+save_atom_type_scat.hi_ang_Fox_c2
 
 _definition.id                          '_atom_type_scat.hi_ang_Fox_c2'
 _import.get [{'save':hi_ang_Fox_coeffs  'file':templ_attr.cif}  
@@ -21784,7 +21784,7 @@ _name.object_id                         hi_ang_Fox_c2
 save_
 
 
-save__atom_type_scat.hi_ang_Fox_c3
+save_atom_type_scat.hi_ang_Fox_c3
 
 _definition.id                          '_atom_type_scat.hi_ang_Fox_c3'
 _import.get [{'save':hi_ang_Fox_coeffs  'file':templ_attr.cif}  
@@ -21795,7 +21795,7 @@ _name.object_id                         hi_ang_Fox_c3
 save_
 
 
-save__atom_type_scat.hi_ang_Fox_coeffs
+save_atom_type_scat.hi_ang_Fox_coeffs
 
 _definition.id                          '_atom_type_scat.hi_ang_Fox_coeffs'
 _definition.update                      2012-11-30
@@ -21827,7 +21827,7 @@ loop_
 
 save_
 
-save__atom_type_scat.length_neutron
+save_atom_type_scat.length_neutron
 
 _definition.id                          '_atom_type_scat.length_neutron'
 loop_
@@ -21852,7 +21852,7 @@ _units.code                             femtometres
 save_
 
 
-save__atom_type_scat.source
+save_atom_type_scat.source
 
 _definition.id                          '_atom_type_scat.source'
 loop_
@@ -21877,7 +21877,7 @@ loop_
 save_
 
 
-save__atom_type_scat.symbol
+save_atom_type_scat.symbol
 
 _definition.id                          '_atom_type_scat.symbol'
 loop_
@@ -21900,7 +21900,7 @@ _type.contents                          Code
 save_
 
 
-save__atom_type_scat.versus_stol_list
+save_atom_type_scat.versus_stol_list
 
 _definition.id                          '_atom_type_scat.versus_stol_list'
 loop_
@@ -21943,7 +21943,7 @@ _name.object_id                         REFINE
 save_
 
 
-save__refine.special_details
+save_refine.special_details
 
 _definition.id                          '_refine.special_details'
 loop_
@@ -21984,7 +21984,7 @@ _name.object_id                         REFINE_DIFF
 save_
 
 
-save__refine_diff.density_max
+save_refine_diff.density_max
 
 _definition.id                          '_refine_diff.density_max'
 loop_
@@ -22016,7 +22016,7 @@ loop_
 save_
 
 
-save__refine_diff.density_max_su
+save_refine_diff.density_max_su
 
 _definition.id                          '_refine_diff.density_max_su'
 loop_
@@ -22040,7 +22040,7 @@ _type.contents                          Real
 save_
 
 
-save__refine_diff.density_min
+save_refine_diff.density_min
 
 _definition.id                          '_refine_diff.density_min'
 loop_
@@ -22072,7 +22072,7 @@ loop_
 save_
 
 
-save__refine_diff.density_min_su
+save_refine_diff.density_min_su
 
 _definition.id                          '_refine_diff.density_min_su'
 loop_
@@ -22096,7 +22096,7 @@ _type.contents                          Real
 save_
 
 
-save__refine_diff.density_rms
+save_refine_diff.density_rms
 
 _definition.id                          '_refine_diff.density_rms'
 loop_
@@ -22133,7 +22133,7 @@ loop_
 save_
 
 
-save__refine_diff.density_rms_su
+save_refine_diff.density_rms_su
 
 _definition.id                          '_refine_diff.density_rms_su'
 loop_
@@ -22174,7 +22174,7 @@ _name.object_id                         REFINE_LS
 save_
 
 
-save__refine_ls.abs_structure_details
+save_refine_ls.abs_structure_details
 
 _definition.id                          '_refine_ls.abs_structure_details'
 loop_
@@ -22196,7 +22196,7 @@ _type.contents                          Text
 save_
 
 
-save__refine_ls.abs_structure_Flack
+save_refine_ls.abs_structure_Flack
 
 _definition.id                          '_refine_ls.abs_structure_Flack'
 loop_
@@ -22228,7 +22228,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.abs_structure_Flack_su
+save_refine_ls.abs_structure_Flack_su
 
 _definition.id                          '_refine_ls.abs_structure_Flack_su'
 loop_
@@ -22252,7 +22252,7 @@ _type.contents                          Real
 save_
 
 
-save__refine_ls.abs_structure_Rogers
+save_refine_ls.abs_structure_Rogers
 
 _definition.id                          '_refine_ls.abs_structure_Rogers'
 loop_
@@ -22281,7 +22281,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.abs_structure_Rogers_su
+save_refine_ls.abs_structure_Rogers_su
 
 _definition.id                          '_refine_ls.abs_structure_Rogers_su'
 loop_
@@ -22305,7 +22305,7 @@ _type.contents                          Real
 save_
 
 
-save__refine_ls.d_res_high
+save_refine_ls.d_res_high
 
 _definition.id                          '_refine_ls.d_res_high'
 loop_
@@ -22330,7 +22330,7 @@ _units.code                             angstroms
 save_
 
 
-save__refine_ls.d_res_low
+save_refine_ls.d_res_low
 
 _definition.id                          '_refine_ls.d_res_low'
 loop_
@@ -22355,7 +22355,7 @@ _units.code                             angstroms
 save_
 
 
-save__refine_ls.extinction_coef
+save_refine_ls.extinction_coef
 
 _definition.id                          '_refine_ls.extinction_coef'
 loop_
@@ -22395,7 +22395,7 @@ loop_
 save_
 
 
-save__refine_ls.extinction_coef_su
+save_refine_ls.extinction_coef_su
 
 _definition.id                          '_refine_ls.extinction_coef_su'
 loop_
@@ -22419,7 +22419,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.extinction_expression
+save_refine_ls.extinction_expression
 
 _definition.id                          '_refine_ls.extinction_expression'
 loop_
@@ -22451,7 +22451,7 @@ loop_
 save_
 
 
-save__refine_ls.extinction_method
+save_refine_ls.extinction_method
 
 _definition.id                          '_refine_ls.extinction_method'
 loop_
@@ -22498,7 +22498,7 @@ loop_
 save_
 
 
-save__refine_ls.F_calc_details
+save_refine_ls.F_calc_details
 
 _definition.id                          '_refine_ls.F_calc_details'
 loop_
@@ -22528,7 +22528,7 @@ loop_
 save_
 
 
-save__refine_ls.F_calc_formula
+save_refine_ls.F_calc_formula
 
 _definition.id                          '_refine_ls.F_calc_formula'
 loop_
@@ -22549,7 +22549,7 @@ _type.contents                          Text
 save_
 
 
-save__refine_ls.F_calc_precision
+save_refine_ls.F_calc_precision
 
 _definition.id                          '_refine_ls.F_calc_precision'
 loop_
@@ -22583,7 +22583,7 @@ loop_
 save_
 
 
-save__refine_ls.goodness_of_fit_all
+save_refine_ls.goodness_of_fit_all
 
 _definition.id                          '_refine_ls.goodness_of_fit_all'
 loop_
@@ -22624,7 +22624,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.goodness_of_fit_all_su
+save_refine_ls.goodness_of_fit_all_su
 
 _definition.id                          '_refine_ls.goodness_of_fit_all_su'
 loop_
@@ -22649,7 +22649,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.goodness_of_fit_gt
+save_refine_ls.goodness_of_fit_gt
 
 _definition.id                          '_refine_ls.goodness_of_fit_gt'
 loop_
@@ -22694,7 +22694,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.goodness_of_fit_gt_su
+save_refine_ls.goodness_of_fit_gt_su
 
 _definition.id                          '_refine_ls.goodness_of_fit_gt_su'
 loop_
@@ -22720,7 +22720,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.goodness_of_fit_ref
+save_refine_ls.goodness_of_fit_ref
 
 _definition.id                          '_refine_ls.goodness_of_fit_ref'
 loop_
@@ -22761,7 +22761,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.hydrogen_treatment
+save_refine_ls.hydrogen_treatment
 
 _definition.id                          '_refine_ls.hydrogen_treatment'
 loop_
@@ -22830,7 +22830,7 @@ _enumeration.default                    undef
 save_
 
 
-save__refine_ls.matrix_type
+save_refine_ls.matrix_type
 
 _definition.id                          '_refine_ls.matrix_type'
 loop_
@@ -22862,7 +22862,7 @@ _enumeration.default                    full
 save_
 
 
-save__refine_ls.number_constraints
+save_refine_ls.number_constraints
 
 _definition.id                          '_refine_ls.number_constraints'
 loop_
@@ -22890,7 +22890,7 @@ _enumeration.default                    0
 save_
 
 
-save__refine_ls.number_parameters
+save_refine_ls.number_parameters
 
 _definition.id                          '_refine_ls.number_parameters'
 loop_
@@ -22920,7 +22920,7 @@ _enumeration.range                      0:
 save_
 
 
-save__refine_ls.number_reflns
+save_refine_ls.number_reflns
 
 _definition.id                          '_refine_ls.number_reflns'
 loop_
@@ -22943,7 +22943,7 @@ _enumeration.range                      1:
 save_
 
 
-save__refine_ls.number_reflns_gt
+save_refine_ls.number_reflns_gt
 
 _definition.id                          '_refine_ls.number_reflns_gt'
 loop_
@@ -22969,7 +22969,7 @@ _enumeration.range                      1:
 save_
 
 
-save__refine_ls.number_restraints
+save_refine_ls.number_restraints
 
 _definition.id                          '_refine_ls.number_restraints'
 loop_
@@ -22996,7 +22996,7 @@ _enumeration.range                      0:
 save_
 
 
-save__refine_ls.R_factor_all
+save_refine_ls.R_factor_all
 
 _definition.id                          '_refine_ls.R_factor_all'
 loop_
@@ -23043,7 +23043,7 @@ loop_
 save_
 
 
-save__refine_ls.R_factor_gt
+save_refine_ls.R_factor_gt
 
 _definition.id                          '_refine_ls.R_factor_gt'
 loop_
@@ -23081,7 +23081,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.R_Fsqd_factor
+save_refine_ls.R_Fsqd_factor
 
 _definition.id                          '_refine_ls.R_Fsqd_factor'
 loop_
@@ -23117,7 +23117,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.R_I_factor
+save_refine_ls.R_I_factor
 
 _definition.id                          '_refine_ls.R_I_factor'
 loop_
@@ -23152,7 +23152,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.restrained_S_all
+save_refine_ls.restrained_S_all
 
 _definition.id                          '_refine_ls.restrained_S_all'
 loop_
@@ -23204,7 +23204,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.restrained_S_gt
+save_refine_ls.restrained_S_gt
 
 _definition.id                          '_refine_ls.restrained_S_gt'
 loop_
@@ -23257,7 +23257,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.shift_over_su_max
+save_refine_ls.shift_over_su_max
 
 _definition.id                          '_refine_ls.shift_over_su_max'
 loop_
@@ -23286,7 +23286,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.shift_over_su_max_lt
+save_refine_ls.shift_over_su_max_lt
 
 _definition.id                          '_refine_ls.shift_over_su_max_lt'
 loop_
@@ -23313,7 +23313,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.shift_over_su_mean
+save_refine_ls.shift_over_su_mean
 
 _definition.id                          '_refine_ls.shift_over_su_mean'
 loop_
@@ -23342,7 +23342,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.shift_over_su_mean_lt
+save_refine_ls.shift_over_su_mean_lt
 
 _definition.id                          '_refine_ls.shift_over_su_mean_lt'
 loop_
@@ -23369,7 +23369,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.structure_factor_coef
+save_refine_ls.structure_factor_coef
 
 _definition.id                          '_refine_ls.structure_factor_coef'
 loop_
@@ -23398,7 +23398,7 @@ _enumeration.default                    F
 save_
 
 
-save__refine_ls.weighting_details
+save_refine_ls.weighting_details
 
 _definition.id                          '_refine_ls.weighting_details'
 loop_
@@ -23431,7 +23431,7 @@ loop_
 save_
 
 
-save__refine_ls.weighting_scheme
+save_refine_ls.weighting_scheme
 
 _definition.id                          '_refine_ls.weighting_scheme'
 loop_
@@ -23461,7 +23461,7 @@ _enumeration.default                    sigma
 save_
 
 
-save__refine_ls.wR_factor_all
+save_refine_ls.wR_factor_all
 
 _definition.id                          '_refine_ls.wR_factor_all'
 loop_
@@ -23496,7 +23496,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.wR_factor_gt
+save_refine_ls.wR_factor_gt
 
 _definition.id                          '_refine_ls.wR_factor_gt'
 loop_
@@ -23533,7 +23533,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls.wR_factor_ref
+save_refine_ls.wR_factor_ref
 
 _definition.id                          '_refine_ls.wR_factor_ref'
 loop_
@@ -23588,7 +23588,7 @@ loop_
 save_
 
 
-save__refine_ls_class.code
+save_refine_ls_class.code
 
 _definition.id                          '_refine_ls_class.code'
 loop_
@@ -23615,7 +23615,7 @@ loop_
 save_
 
 
-save__refine_ls_class.d_res_high
+save_refine_ls_class.d_res_high
 
 _definition.id                          '_refine_ls_class.d_res_high'
 loop_
@@ -23639,7 +23639,7 @@ _units.code                             angstroms
 save_
 
 
-save__refine_ls_class.d_res_low
+save_refine_ls_class.d_res_low
 
 _definition.id                          '_refine_ls_class.d_res_low'
 loop_
@@ -23663,7 +23663,7 @@ _units.code                             angstroms
 save_
 
 
-save__refine_ls_class.R_factor_all
+save_refine_ls_class.R_factor_all
 
 _definition.id                          '_refine_ls_class.R_factor_all'
 loop_
@@ -23687,7 +23687,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls_class.R_factor_gt
+save_refine_ls_class.R_factor_gt
 
 _definition.id                          '_refine_ls_class.R_factor_gt'
 loop_
@@ -23713,7 +23713,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls_class.R_Fsqd_factor
+save_refine_ls_class.R_Fsqd_factor
 
 _definition.id                          '_refine_ls_class.R_Fsqd_factor'
 loop_
@@ -23738,7 +23738,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls_class.R_I_factor
+save_refine_ls_class.R_I_factor
 
 _definition.id                          '_refine_ls_class.R_I_factor'
 loop_
@@ -23763,7 +23763,7 @@ _units.code                             none
 save_
 
 
-save__refine_ls_class.wR_factor_all
+save_refine_ls_class.wR_factor_all
 
 _definition.id                          '_refine_ls_class.wR_factor_all'
 loop_
