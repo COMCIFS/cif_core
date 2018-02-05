@@ -796,7 +796,7 @@ save_display_colour
     _type.purpose                Number
     _type.source                 Recorded
     _type.container              Single 
-    _type.contents               Index
+    _type.contents               Integer
     _enumeration.range           0:255
     _units.code                  none
      save_
