@@ -1458,7 +1458,6 @@ loop_
          neutron   
          electron  
          gamma 
-_enumeration.default                    x-ray
 
 save_
 
@@ -1515,7 +1514,6 @@ loop_
          K-L~2~    'K\a~2~ in older Siegbahn notation'     
          K-M~3~    'K\b~1~ in older Siegbahn notation'     
          'K-L~2,3~'          'use where K-L~3~ and K-L~2~ are not resolved' 
-_enumeration.default                    K-L~3~
 
 save_
 
@@ -1593,7 +1591,6 @@ loop_
          fundamental         'Fundamental property of matter e.g. MoK\alpha'   
          estimated           'Estimated  e.g. from monochromator angle or time of flight'         
          refined   'Refined using a standard crystal with known cell parameters'
-_enumeration.default                    fundamental
 
 save_
 
@@ -1665,7 +1662,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:1.0
-_enumeration.default                    1.0
 _units.code                             none
 
 save_
@@ -2114,7 +2110,6 @@ loop_
          om        'omega scan'        
          ot        'omega/2theta scan'           
          q         'Q-scans (arbitrary reciprocal directions)' 
-_enumeration.default                    ot
 
 save_
 
@@ -2141,7 +2136,6 @@ loop_
   _enumeration_set.detail
          st        'stationary counter background'         
          mo        'moving counter background' 
-_enumeration.default                    st
 
 save_
 
@@ -3343,7 +3337,6 @@ loop_
          elect-micro         'electron microscope'         
          rot_anode           'rotating-anode X-ray tube'   
          synch     synchrotron 
-_enumeration.default                    tube
 
 save_
 
@@ -3466,7 +3459,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':element_symbol  'file':templ_enum.cif}]
-_enumeration.default                    Cu
 
 save_
 
@@ -3807,7 +3799,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3842,7 +3833,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3873,7 +3863,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3908,7 +3897,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4000,7 +3988,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4036,7 +4023,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Complex
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4089,7 +4075,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4123,7 +4108,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4155,7 +4139,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4189,7 +4172,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4225,7 +4207,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4380,7 +4361,6 @@ loop_
          x         'du : deemed unreliable measurement -- not used'  
          h         'hd : above _refine_ls.d_res_high'      
          l         'ld : below _refine_ls.d_res_low' 
-_enumeration.default                    o
 
 save_
 
@@ -4630,7 +4610,6 @@ loop_
          incl      'included in ls process'      
          excl      'excluded from ls process'    
          extn      'excluded due to extinction' 
-_enumeration.default                    incl
 
 save_
 
@@ -4836,7 +4815,6 @@ loop_
          y         'abbreviation for "yes"'
          no        'do not apply dispersion'
          n         'abbreviation for "no"'
-_enumeration.default                    yes
 
 save_
 
@@ -6182,7 +6160,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      1:
-_enumeration.default                    1
 
 save_
 
@@ -7771,7 +7748,6 @@ loop_
          is available. An arbitrary choice of enantiomer has been made.
 ;        
          .         inapplicable 
-_enumeration.default                    .
 
 save_
 
@@ -7864,7 +7840,6 @@ loop_
      the bulk compound in solution.
 ;        
          other     '    Enantioexcess determined by a technique not in this list.'
-_enumeration.default                    OA
 
 save_
 
@@ -7928,7 +7903,6 @@ loop_
      the crystal taken into solution.
 ;        
          other     '    Enantioexcess determined by a technique not in this list.'
-_enumeration.default                    CD
 
 save_
 
@@ -8521,7 +8495,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      -6:6
-_enumeration.default                    0
 
 save_
 
@@ -8849,7 +8822,6 @@ loop_
          poly      'polymeric bond'    
          delo      'delocalized double bond'     
          pi        'pi bond' 
-_enumeration.default                    sing
 
 save_
 
@@ -9256,7 +9228,6 @@ loop_
          psi-scan  'psi-scan corrections'        
          refdelf   'refined from delta-F'        
          sphere    spherical 
-_enumeration.default                    none
 
 save_
 
@@ -9491,7 +9462,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
-_enumeration.default                    293.
 _units.code                             kelvins
 
 save_
@@ -9518,7 +9488,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
-_enumeration.default                    293.
 _units.code                             kelvins
 
 save_
@@ -9545,7 +9514,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
-_enumeration.default                    293.
 _units.code                             kelvins
 
 save_
@@ -9935,7 +9903,6 @@ loop_
          dull
          clear
          . 
-_enumeration.default                    .
 
 save_
 
@@ -9959,7 +9926,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':colour_RGB  'file':templ_enum.cif}]
-_enumeration.default                    white
 
 save_
 
@@ -9999,7 +9965,6 @@ loop_
          greenish  
          bluish    
          . 
-_enumeration.default                    .
 
 save_
 
@@ -10298,7 +10263,6 @@ loop_
          trigonal  
          hexagonal           
          cubic 
-_enumeration.default                    triclinic
 loop_
   _method.purpose
   _method.expression
@@ -10872,7 +10836,6 @@ save_space_group_generator.xyz
     _type.source                Assigned
     _type.container             Single
     _type.contents              Code
-    _enumeration.default        'x,y,z'
      loop_
     _description_example.case 
     _description_example.detail 
@@ -11168,7 +11131,6 @@ save_space_group_Wyckoff.coords_xyz
     _type.source                Assigned
     _type.container             Single
     _type.contents              Code
-    _enumeration.default        'x,y,z'
      loop_
     _description_example.case 
     _description_example.detail 
@@ -11673,7 +11635,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11693,7 +11654,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11715,7 +11675,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11735,7 +11694,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -13671,7 +13629,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Index
-_enumeration.default                    1
 
 save_
 
@@ -14864,7 +14821,6 @@ loop_
          n         'abbreviation for "no"'       
          yes       'citation related to current coordinates'         
          y         'abbreviation for "yes"' 
-_enumeration.default                    yes
 
 save_
 
@@ -16186,7 +16142,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':colour_RGB  'file':templ_enum.cif}]
-_enumeration.default                    black
 
 save_
 
@@ -16392,7 +16347,6 @@ _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
-_enumeration.default                    1
 
 save_
 
@@ -18659,7 +18613,6 @@ loop_
          Bani      'anisotropic Bij'   
          Biso      'isotropic B'       
          Bovl      'overall B' 
-_enumeration.default                    Uiso
 
 save_
 
@@ -18684,7 +18637,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      0:8
-_enumeration.default                    0
 loop_
   _description_example.case
   _description_example.detail
@@ -18867,7 +18819,6 @@ loop_
          calc      'calculated from molecular geometry'    
          c         'abbreviation for "calc"'     
          dum       'dummy site with meaningless coordinates' 
-_enumeration.default                    d
 
 save_
 
@@ -19367,7 +19318,6 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:1.0
-_enumeration.default                    1.0
 _units.code                             none
 
 save_
@@ -19431,7 +19381,6 @@ loop_
          U         'Uiso or Uij restraint (rigid bond)'    
          P         'partial occupancy constraint'          
          .         'no refinement constraints' 
-_enumeration.default                    .
 
 save_
 
@@ -19461,7 +19410,6 @@ loop_
          T         'special-position constraints on atomic displacement parameters'     
          U         'Uiso or Uij restraint (rigid bond)'    
          TU        'both constraints applied' 
-_enumeration.default                    .
 
 save_
 
@@ -19489,7 +19437,6 @@ loop_
   _enumeration_set.detail
          .         'no constraints on site-occupancy parameters'          
          P         'site-occupancy constraint'
-_enumeration.default                    .
 
 save_
 
@@ -19531,7 +19478,6 @@ loop_
          DRS       'combination of the above constraints'  
          GRS       'combination of the above constraints'  
          DGRS      'combination of the above constraints' 
-_enumeration.default                    .
 
 save_
 
@@ -20469,7 +20415,6 @@ loop_
                   and S\"uto, A. (2004). Acta Cryst. A60, 134-141]
 ;        
          other     'a method not included elsewhere in this list' 
-_enumeration.default                    difmap
 
 save_
 
@@ -20519,7 +20464,6 @@ loop_
                   and S\"uto, A. (2004). Acta Cryst. A60, 134-141]
 ;        
          other     'a method not included elsewhere in this list' 
-_enumeration.default                    direct
 
 save_
 
@@ -20569,7 +20513,6 @@ loop_
                   and S\"uto, A. (2004). Acta Cryst. A60, 134-141]
 ;        
          other     'a method not included elsewhere in this list' 
-_enumeration.default                    difmap
 
 save_
 
@@ -21516,7 +21459,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      -8:8
-_enumeration.default                    0
 
 save_
 
@@ -21814,7 +21756,6 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Complex
-_enumeration.default                    0.0
 _units.code                             none
 loop_
   _method.purpose
@@ -21852,7 +21793,6 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.0
 _units.code                             none
 loop_
   _method.purpose
@@ -21946,7 +21886,6 @@ loop_
  
              _atom_type_scat.dispersion_real = a
 ; 
-_enumeration.default                    0.0
 
 save_
 
@@ -22116,7 +22055,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.0
 _units.code                             femtometres
 
 save_
@@ -23095,7 +23033,6 @@ loop_
 ;        
          mixed     'some constrained, some independent'    
          undef     'H-atom parameters not defined' 
-_enumeration.default                    undef
 
 save_
 
@@ -23127,7 +23064,6 @@ loop_
          userblock           'user-defined blocks'         
          diagonal  'diagonal elements only'      
          sparse    'selected elements only' 
-_enumeration.default                    full
 
 save_
 
@@ -23155,7 +23091,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      0:
-_enumeration.default                    0
 
 save_
 
@@ -23663,7 +23598,6 @@ loop_
          F         'structure factor magnitude'  
          Fsqd      'structure factor squared'    
          Inet      'net intensity' 
-_enumeration.default                    F
 
 save_
 
@@ -23726,7 +23660,6 @@ loop_
          sigma     "based on measured s.u.'s"    
          unit      'unit or no weights applied'  
          calc      'calculated weights applied' 
-_enumeration.default                    sigma
 
 save_
 
