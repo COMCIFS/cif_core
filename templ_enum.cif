@@ -625,6 +625,7 @@ save_element_symbol
                Cf    Californium
                Cl    Chlorine
                Cm    Curium
+               Cn    Copernicium
                Co    Cobalt
                Cr    Chromium
                Cs    Cesium
@@ -685,6 +686,7 @@ save_element_symbol
                Rb    Rubidium
                Re    Rhenium
                Rf    Rutherfordium
+               Rg    Roentgenium
                Rh    Rhodium
                Rn    Radon
                Ru    Ruthenium
@@ -706,9 +708,6 @@ save_element_symbol
                Tl    Thallium
                Tm    Thulium
                U     Uranium
-               Uub   Ununbium
-               Uun   Ununnilium
-               Uuu   Ununumium
                V     Vanadium
                W     Tungsten
                Xe    Xenon
@@ -2125,4 +2124,8 @@ save_colour_hue
       1.4.05  2016-05-13
 ;  
    Added Schoenflies group list (James Hester)
+;
+      1.4.06  2017-12-12
+;
+   Updated atom symbol list for newly-named elements (James Hester)
 ;

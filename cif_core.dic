@@ -1458,7 +1458,6 @@ loop_
          neutron   
          electron  
          gamma 
-_enumeration.default                    x-ray
 
 save_
 
@@ -1515,7 +1514,6 @@ loop_
          K-L~2~    'K\a~2~ in older Siegbahn notation'     
          K-M~3~    'K\b~1~ in older Siegbahn notation'     
          'K-L~2,3~'          'use where K-L~3~ and K-L~2~ are not resolved' 
-_enumeration.default                    K-L~3~
 
 save_
 
@@ -1593,7 +1591,6 @@ loop_
          fundamental         'Fundamental property of matter e.g. MoK\alpha'   
          estimated           'Estimated  e.g. from monochromator angle or time of flight'         
          refined   'Refined using a standard crystal with known cell parameters'
-_enumeration.default                    fundamental
 
 save_
 
@@ -1665,7 +1662,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:1.0
-_enumeration.default                    1.0
 _units.code                             none
 
 save_
@@ -2114,7 +2110,6 @@ loop_
          om        'omega scan'        
          ot        'omega/2theta scan'           
          q         'Q-scans (arbitrary reciprocal directions)' 
-_enumeration.default                    ot
 
 save_
 
@@ -2141,7 +2136,6 @@ loop_
   _enumeration_set.detail
          st        'stationary counter background'         
          mo        'moving counter background' 
-_enumeration.default                    st
 
 save_
 
@@ -3343,7 +3337,6 @@ loop_
          elect-micro         'electron microscope'         
          rot_anode           'rotating-anode X-ray tube'   
          synch     synchrotron 
-_enumeration.default                    tube
 
 save_
 
@@ -3466,7 +3459,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':element_symbol  'file':templ_enum.cif}]
-_enumeration.default                    Cu
 
 save_
 
@@ -3780,6 +3772,7 @@ _description.text
 ;
 _name.category_id                       DIFFRACTION
 _name.object_id                         REFLN
+_category.key_id                        '_refln.hkl'
 loop_
   _category_key.name
          '_refln.index_h'    
@@ -3806,7 +3799,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3841,7 +3833,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3872,7 +3863,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3907,7 +3897,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -3999,7 +3988,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4035,7 +4023,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Complex
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4088,7 +4075,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4122,7 +4108,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4154,7 +4139,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4188,7 +4172,6 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4224,7 +4207,6 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.
 loop_
   _method.purpose
   _method.expression
@@ -4379,7 +4361,6 @@ loop_
          x         'du : deemed unreliable measurement -- not used'  
          h         'hd : above _refine_ls.d_res_high'      
          l         'ld : below _refine_ls.d_res_low' 
-_enumeration.default                    o
 
 save_
 
@@ -4629,7 +4610,6 @@ loop_
          incl      'included in ls process'      
          excl      'excluded from ls process'    
          extn      'excluded due to extinction' 
-_enumeration.default                    incl
 
 save_
 
@@ -4835,7 +4815,6 @@ loop_
          y         'abbreviation for "yes"'
          no        'do not apply dispersion'
          n         'abbreviation for "no"'
-_enumeration.default                    yes
 
 save_
 
@@ -6181,7 +6160,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      1:
-_enumeration.default                    1
 
 save_
 
@@ -7770,7 +7748,6 @@ loop_
          is available. An arbitrary choice of enantiomer has been made.
 ;        
          .         inapplicable 
-_enumeration.default                    .
 
 save_
 
@@ -7863,7 +7840,6 @@ loop_
      the bulk compound in solution.
 ;        
          other     '    Enantioexcess determined by a technique not in this list.'
-_enumeration.default                    OA
 
 save_
 
@@ -7927,7 +7903,6 @@ loop_
      the crystal taken into solution.
 ;        
          other     '    Enantioexcess determined by a technique not in this list.'
-_enumeration.default                    CD
 
 save_
 
@@ -8520,7 +8495,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      -6:6
-_enumeration.default                    0
 
 save_
 
@@ -8684,6 +8658,7 @@ _description.text
 ;
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_BOND
+_category.key_id                        '_chemical_conn_bond.id'
 loop_
   _category_key.name
          '_chemical_conn_bond.atom_1'  
@@ -8789,7 +8764,35 @@ _units.code                             angstroms
 
 save_
 
-
+ 
+save_chemical_conn_bond.id
+    _definition.id             '_chemical_conn_bond.id'
+     loop_
+    _alias.definition_id       '_chemical_conn_bond.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Bond identifier composed of a list of two sequence indices
+     specified as _chemical_conn_atom.number values.
+;
+    _name.category_id            chemical_conn_bond
+    _name.object_id              id
+    _type.purpose                Number
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               Index
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+    With  c  as  chemical_conn_bond
+ 
+    _chemical_conn_bond.id =  [ c.atom_1, c.atom_2 ]
+;
+save_
+ 
 save_chemical_conn_bond.type
 
 _definition.id                          '_chemical_conn_bond.type'
@@ -8819,7 +8822,6 @@ loop_
          poly      'polymeric bond'    
          delo      'delocalized double bond'     
          pi        'pi bond' 
-_enumeration.default                    sing
 
 save_
 
@@ -9226,7 +9228,6 @@ loop_
          psi-scan  'psi-scan corrections'        
          refdelf   'refined from delta-F'        
          sphere    spherical 
-_enumeration.default                    none
 
 save_
 
@@ -9461,7 +9462,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
-_enumeration.default                    293.
 _units.code                             kelvins
 
 save_
@@ -9488,7 +9488,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
-_enumeration.default                    293.
 _units.code                             kelvins
 
 save_
@@ -9515,7 +9514,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
-_enumeration.default                    293.
 _units.code                             kelvins
 
 save_
@@ -9905,7 +9903,6 @@ loop_
          dull
          clear
          . 
-_enumeration.default                    .
 
 save_
 
@@ -9929,7 +9926,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':colour_RGB  'file':templ_enum.cif}]
-_enumeration.default                    white
 
 save_
 
@@ -9969,7 +9965,6 @@ loop_
          greenish  
          bluish    
          . 
-_enumeration.default                    .
 
 save_
 
@@ -9987,6 +9982,7 @@ _description.text
 ;
 _name.category_id                       EXPTL_CRYSTAL
 _name.object_id                         EXPTL_CRYSTAL_FACE
+_category.key_id                        '_exptl_crystal_face.hkl'
 loop_
   _category_key.name
          '_exptl_crystal_face.index_h'
@@ -10267,7 +10263,6 @@ loop_
          trigonal  
          hexagonal           
          cubic 
-_enumeration.default                    triclinic
 loop_
   _method.purpose
   _method.expression
@@ -10841,7 +10836,6 @@ save_space_group_generator.xyz
     _type.source                Assigned
     _type.container             Single
     _type.contents              Code
-    _enumeration.default        'x,y,z'
      loop_
     _description_example.case 
     _description_example.detail 
@@ -11137,7 +11131,6 @@ save_space_group_Wyckoff.coords_xyz
     _type.source                Assigned
     _type.container             Single
     _type.contents              Code
-    _enumeration.default        'x,y,z'
      loop_
     _description_example.case 
     _description_example.detail 
@@ -11642,7 +11635,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11662,7 +11654,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11684,7 +11675,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11704,7 +11694,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.2
 _units.code                             angstroms
 
 save_
@@ -11746,6 +11735,7 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_ANGLE
+_category.key_id                        '_geom_angle.id'
 loop_
   _method.purpose
   _method.expression
@@ -11869,6 +11859,36 @@ _units.code                             angstroms
 
 save_
 
+save_geom_angle.id
+    _definition.id             '_geom_angle.id'
+     loop_
+    _alias.definition_id       '_geom_angle.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     three atom sites which identify the angle. The second label-symop
+     pair in the list identifies the site at the apex of the angle.
+;
+    _name.category_id            geom_angle
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               List
+    _type.dimension              [3]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_angle
+ 
+         _geom_angle.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                            [ a.atom_site_label_2, a.site_symmetry_2 ],
+                            [ a.atom_site_label_3, a.site_symmetry_3 ]]
+;
+     save_
 
 save_geom_angle.publ_flag
 
@@ -12019,6 +12039,7 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_BOND
+_category.key_id                        '_geom_bond.id'
 loop_
   _method.purpose
   _method.expression
@@ -12150,6 +12171,35 @@ _units.code                             angstroms
 
 save_
 
+save_geom_bond.id
+    _definition.id             '_geom_bond.id'
+     loop_
+    _alias.definition_id       '_geom_bond.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identity of bond distance in terms of the atom site labels and
+     symmetry operators as pairs for each of the two "bonded" atom sites.
+;
+    _name.category_id            geom_bond
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               List
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_bond
+ 
+           _geom_bond.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                             [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+
 save_geom_bond.multiplicity
 
 _definition.id                          '_geom_bond.multiplicity'
@@ -12268,6 +12318,7 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_CONTACT
+_category.key_id                        '_geom_contact.id'
 loop_
   _method.purpose
   _method.expression
@@ -12410,6 +12461,35 @@ _units.code                             angstroms
 
 save_
 
+save_geom_contact.id
+    _definition.id             '_geom_contact.id'
+     loop_
+    _alias.definition_id       '_geom_contact.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     two atom sites which define the geom_contact bond.
+;
+    _name.category_id            geom_contact
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               List
+    _type.dimension              [2]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_contact
+ 
+          _geom_contact.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                               [ a.atom_site_label_2, a.site_symmetry_2 ]]
+;
+     save_
+
 save_geom_contact.publ_flag
 
 _definition.id                          '_geom_contact.publ_flag'
@@ -12480,6 +12560,7 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_HBOND
+_category.key_id                        '_geom_hbond.id'
 loop_
   _category_key.name
          '_geom_hbond.atom_site_label_D'         
@@ -12799,6 +12880,37 @@ _units.code                             angstroms
 
 save_
 
+save_geom_hbond.id
+    _definition.id             '_geom_hbond.id'
+     loop_
+    _alias.definition_id       '_geom_hbond.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     three atom sites which define the hydrogen angle and distances.
+     Site H is at the apex of the angle.
+;
+    _name.category_id            geom_hbond
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               List
+    _type.dimension              [3]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_hbond
+ 
+         _geom_hbond.id =  [[ a.atom_site_label_D, a.site_symmetry_D ],
+                            [ a.atom_site_label_H, a.site_symmetry_H ],
+                            [ a.atom_site_label_A, a.site_symmetry_A ]]
+;
+     save_
+
 save_geom_hbond.publ_flag
 
 _definition.id                          '_geom_hbond.publ_flag'
@@ -12882,6 +12994,7 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_TORSION
+_category.key_id                        '_geom_torsion.id'
 loop_
   _method.purpose
   _method.expression
@@ -12926,14 +13039,14 @@ loop_
                  If ( (u1^u2)*v23 < 0 ) angle = -angle
  
                  geom_torsion(
-                               .atom_site_label_1 = m1.label
-                               .atom_site_label_2 = m2.label
-                               .atom_site_label_3 = m3.label
-                               .atom_site_label_4 = m4.label
-                               .site_symmetry_1   = m1.symop
-                               .site_symmetry_2   = m2.symop
-                               .site_symmetry_3   = m3.symop
-                               .site_symmetry_4   = m4.symop
+                               .atom_site_label_1 = m1.label,
+                               .atom_site_label_2 = m2.label,
+                               .atom_site_label_3 = m3.label,
+                               .atom_site_label_4 = m4.label,
+                               .site_symmetry_1   = m1.symop,
+                               .site_symmetry_2   = m2.symop,
+                               .site_symmetry_3   = m3.symop,
+                               .site_symmetry_4   = m4.symop,
                                .distances =  List ( d21,d23,d34 ),
                                .angle     =  angle )
      }   }   }    }
@@ -13083,6 +13196,37 @@ _units.code                             angstroms
 
 save_
 
+save_geom_torsion.id
+    _definition.id             '_geom_torsion.id'
+     loop_
+    _alias.definition_id       '_geom_torsion.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Atom site labels and symmetry operators as pairs for each of the
+     four atom sites which define the torsion angle.
+;
+    _name.category_id            geom_torsion
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               List
+    _type.dimension              [4]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With  a  as  geom_torsion
+ 
+         _geom_torsion.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
+                              [ a.atom_site_label_2, a.site_symmetry_2 ],
+                              [ a.atom_site_label_3, a.site_symmetry_3 ],
+                              [ a.atom_site_label_4, a.site_symmetry_4 ]]
+;
+     save_
+
 save_geom_torsion.publ_flag
 
 _definition.id                          '_geom_torsion.publ_flag'
@@ -13177,6 +13321,7 @@ _description.text
 ;
 _name.category_id                       MODEL
 _name.object_id                         MODEL_SITE
+_category.key_id                        '_model_site.id'
 loop_
   _method.purpose
   _method.expression
@@ -13403,6 +13548,33 @@ loop_
 
 save_
 
+save_model_site.id
+    _definition.id             '_model_site.id'
+     loop_
+    _alias.definition_id       '_model_site.id'
+    _definition.update           2012-11-22
+    _description.text
+;
+     Identifier of model site in terms of the atom site label and
+     symmetry operator.
+;
+    _name.category_id            model_site
+    _name.object_id              id
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              List
+    _type.contents               List
+    _type.dimension              [1]
+     loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;
+     With m as model_site
+ 
+      _model_site.id =   List ( m.label, m.symop )
+;
+     save_
 
 save_model_site.index
 
@@ -13457,7 +13629,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Index
-_enumeration.default                    1
 
 save_
 
@@ -13585,7 +13756,7 @@ _description.text
 ;
 _name.category_id                       VALENCE
 _name.object_id                         VALENCE_PARAM
-_category.key_id                        '_valence_param.key'
+_category.key_id                        '_valence_param.id'
 loop_
   _category_key.name
          '_valence_param.id' 
@@ -14165,6 +14336,7 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_CONFORM
+_category.key_id                        '_audit_conform.dict_name'
 _category_key.name                      '_audit_conform.dict_name'
 
 save_
@@ -14649,7 +14821,6 @@ loop_
          n         'abbreviation for "no"'       
          yes       'citation related to current coordinates'         
          y         'abbreviation for "yes"' 
-_enumeration.default                    yes
 
 save_
 
@@ -15109,6 +15280,7 @@ _description.text
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_AUTHOR
+_category.key_id                        '_citation_author.key'
 loop_
   _category_key.name
          '_citation_author.citation_id'
@@ -15116,6 +15288,29 @@ loop_
 
 save_
 
+save_citation_author.key
+    _definition.id             '_citation_author.key'
+     loop_
+    _alias.definition_id       '_citation_author.key'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Value is a unique key to a set of CITATION_AUTHOR items
+     in a looped list.
+;
+    _name.category_id            citation_author
+    _name.object_id              key
+    _type.purpose                Key
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Implied
+    loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;             _citation_author.key = [_citation_author.citation_id,_citation_author.ordinal]
+;
+save_
 
 save_citation_author.citation_id
 
@@ -15237,6 +15432,29 @@ _type.contents                          Code
 
 save_
 
+save_citation_editor.id
+    _definition.id             '_citation_editor.id'
+     loop_
+    _alias.definition_id       '_citation_editor.id'
+    _definition.update           2012-12-13
+    _description.text
+;
+     Value is a unique key to a set of CITATION_EDITOR items
+     in a looped list.
+;
+    _name.category_id            citation_editor
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Implied
+    loop_
+    _method.purpose
+    _method.expression
+     Evaluation
+;             _citation_editor.id = [_citation_editor.citation_id,_citation_editor.ordinal]
+;
+save_
 
 save_citation_editor.name
 
@@ -15924,7 +16142,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
 _import.get [{'save':colour_RGB  'file':templ_enum.cif}]
-_enumeration.default                    black
 
 save_
 
@@ -16130,7 +16347,6 @@ _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
-_enumeration.default                    1
 
 save_
 
@@ -16722,6 +16938,7 @@ _description.text
 ;
 _name.category_id                       JOURNAL
 _name.object_id                         JOURNAL_INDEX
+_category.key_id                        '_journal_index.id'
 loop_
   _category_key.name
          '_journal_index.id' 
@@ -17047,6 +17264,7 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_AUTHOR
+_category.key_id                        '_publ_author.name'
 loop_
   _category_key.name
          '_publ_author.name' 
@@ -17259,6 +17477,7 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_BODY
+_category.key_id                        '_publ_body.label'
 loop_
   _category_key.name
          '_publ_body.label' 
@@ -17409,6 +17628,7 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_CONTACT_AUTHOR
+_category.key_id                        '_publ_contact_author.name'
 loop_
   _category_key.name
          '_publ_contact_author.name' 
@@ -17714,6 +17934,7 @@ _description.text
 ;
 _name.category_id                       PUBL_MANUSCRIPT
 _name.object_id                         PUBL_MANUSCRIPT_INCL_EXTRA
+_category.key_id                        '_publ_manuscript_incl_extra.item'
 loop_
   _category_key.name
          '_publ_manuscript_incl_extra.item' 
@@ -18392,7 +18613,6 @@ loop_
          Bani      'anisotropic Bij'   
          Biso      'isotropic B'       
          Bovl      'overall B' 
-_enumeration.default                    Uiso
 
 save_
 
@@ -18417,7 +18637,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      0:8
-_enumeration.default                    0
 loop_
   _description_example.case
   _description_example.detail
@@ -18600,7 +18819,6 @@ loop_
          calc      'calculated from molecular geometry'    
          c         'abbreviation for "calc"'     
          dum       'dummy site with meaningless coordinates' 
-_enumeration.default                    d
 
 save_
 
@@ -19100,7 +19318,6 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:1.0
-_enumeration.default                    1.0
 _units.code                             none
 
 save_
@@ -19164,7 +19381,6 @@ loop_
          U         'Uiso or Uij restraint (rigid bond)'    
          P         'partial occupancy constraint'          
          .         'no refinement constraints' 
-_enumeration.default                    .
 
 save_
 
@@ -19194,7 +19410,6 @@ loop_
          T         'special-position constraints on atomic displacement parameters'     
          U         'Uiso or Uij restraint (rigid bond)'    
          TU        'both constraints applied' 
-_enumeration.default                    .
 
 save_
 
@@ -19222,7 +19437,6 @@ loop_
   _enumeration_set.detail
          .         'no constraints on site-occupancy parameters'          
          P         'site-occupancy constraint'
-_enumeration.default                    .
 
 save_
 
@@ -19264,7 +19478,6 @@ loop_
          DRS       'combination of the above constraints'  
          GRS       'combination of the above constraints'  
          DGRS      'combination of the above constraints' 
-_enumeration.default                    .
 
 save_
 
@@ -19615,6 +19828,7 @@ _description.text
 ;
 _name.category_id                       ATOM_SITE
 _name.object_id                         ATOM_SITE_ANISO
+_category.key_id                        '_atom_site_aniso.label'
 loop_
   _category_key.name
          '_atom_site_aniso.label' 
@@ -20201,7 +20415,6 @@ loop_
                   and S\"uto, A. (2004). Acta Cryst. A60, 134-141]
 ;        
          other     'a method not included elsewhere in this list' 
-_enumeration.default                    difmap
 
 save_
 
@@ -20251,7 +20464,6 @@ loop_
                   and S\"uto, A. (2004). Acta Cryst. A60, 134-141]
 ;        
          other     'a method not included elsewhere in this list' 
-_enumeration.default                    direct
 
 save_
 
@@ -20301,7 +20513,6 @@ loop_
                   and S\"uto, A. (2004). Acta Cryst. A60, 134-141]
 ;        
          other     'a method not included elsewhere in this list' 
-_enumeration.default                    difmap
 
 save_
 
@@ -20983,6 +21194,7 @@ _description.text
 ;
 _name.category_id                       ATOM
 _name.object_id                         ATOM_TYPE
+_category.key_id                        '_atom_type.symbol'
 loop_
   _method.purpose
   _method.expression
@@ -21247,7 +21459,6 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      -8:8
-_enumeration.default                    0
 
 save_
 
@@ -21351,6 +21562,7 @@ _description.text
 ;
 _name.category_id                       ATOM_TYPE
 _name.object_id                         ATOM_TYPE_SCAT
+_category.key_id                        '_atom_type_scat.symbol'
 loop_
   _category_key.name
          '_atom_type_scat.symbol' 
@@ -21544,7 +21756,6 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Complex
-_enumeration.default                    0.0
 _units.code                             none
 loop_
   _method.purpose
@@ -21582,7 +21793,6 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.0
 _units.code                             none
 loop_
   _method.purpose
@@ -21676,7 +21886,6 @@ loop_
  
              _atom_type_scat.dispersion_real = a
 ; 
-_enumeration.default                    0.0
 
 save_
 
@@ -21846,7 +22055,6 @@ _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
-_enumeration.default                    0.0
 _units.code                             femtometres
 
 save_
@@ -22825,7 +23033,6 @@ loop_
 ;        
          mixed     'some constrained, some independent'    
          undef     'H-atom parameters not defined' 
-_enumeration.default                    undef
 
 save_
 
@@ -22857,7 +23064,6 @@ loop_
          userblock           'user-defined blocks'         
          diagonal  'diagonal elements only'      
          sparse    'selected elements only' 
-_enumeration.default                    full
 
 save_
 
@@ -22885,7 +23091,6 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
 _enumeration.range                      0:
-_enumeration.default                    0
 
 save_
 
@@ -23393,7 +23598,6 @@ loop_
          F         'structure factor magnitude'  
          Fsqd      'structure factor squared'    
          Inet      'net intensity' 
-_enumeration.default                    F
 
 save_
 
@@ -23456,7 +23660,6 @@ loop_
          sigma     "based on measured s.u.'s"    
          unit      'unit or no weights applied'  
          calc      'calculated weights applied' 
-_enumeration.default                    sigma
 
 save_
 
