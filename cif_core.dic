@@ -8797,7 +8797,7 @@ save_chemical_conn_bond.id
     _type.source                 Derived
     _type.container              List
     _type.contents               Index
-    _type.dimension              [2]
+    _type.dimension              '[2]'
      loop_
     _method.purpose
     _method.expression
@@ -11892,7 +11892,7 @@ save_geom_angle.id
     _type.source                 Derived
     _type.container              List
     _type.contents               List
-    _type.dimension              [3]
+    _type.dimension              '[3]'
      loop_
     _method.purpose
     _method.expression
@@ -12203,7 +12203,7 @@ save_geom_bond.id
     _type.source                 Derived
     _type.container              List
     _type.contents               List
-    _type.dimension              [2]
+    _type.dimension              '[2]'
      loop_
     _method.purpose
     _method.expression
@@ -12493,7 +12493,7 @@ save_geom_contact.id
     _type.source                 Derived
     _type.container              List
     _type.contents               List
-    _type.dimension              [2]
+    _type.dimension              '[2]'
      loop_
     _method.purpose
     _method.expression
@@ -12913,7 +12913,7 @@ save_geom_hbond.id
     _type.source                 Derived
     _type.container              List
     _type.contents               List
-    _type.dimension              [3]
+    _type.dimension              '[3]'
      loop_
     _method.purpose
     _method.expression
@@ -13228,7 +13228,7 @@ save_geom_torsion.id
     _type.source                 Derived
     _type.container              List
     _type.contents               List
-    _type.dimension              [4]
+    _type.dimension              '[4]'
      loop_
     _method.purpose
     _method.expression
@@ -13580,7 +13580,7 @@ save_model_site.id
     _type.source                 Derived
     _type.container              List
     _type.contents               List
-    _type.dimension              [1]
+    _type.dimension              '[1]'
      loop_
     _method.purpose
     _method.expression
