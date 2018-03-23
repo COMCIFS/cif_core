@@ -1856,6 +1856,9 @@ save_type.contents
 
      In all cases, "whitespace" refers to ASCII whitespace only, that
      is [U+0009],[U+000A],[U+000D] and [U+0020].
+
+     Note that descriptions of text syntax are relevant only to those
+     formats that encode data values as text.
 ;
     _name.category_id            type
     _name.object_id              contents
@@ -1874,7 +1877,9 @@ save_type.contents
               Tag         '''case-insensitive CIF2 character sequence with leading 
                              underscore and no ASCII whitespace'''
               Uri           'A Uniform Resource Identifier per RFC 3986'
-              Date          'ISO standard date format <yyyy>-<mm>-<dd>'
+              Date          'ISO standard date format <yyyy>-<mm>-<dd>. Use DateTime for all new dictionaries'
+              DateTime
+            'A timestamp. Text formats must use date-time or full-date productions of RFC3339 ABNF'
               Version       'version digit string of the form <major>.<version>.<update>'
               Dimension     'integer limits of an Array/Matrix/List in square brackets'
               Range         'inclusive range of numerical values min:max'
