@@ -3287,6 +3287,27 @@ _units.code                             milliamperes
 
 save_
 
+save_diffrn_source.description
+loop_
+  _alias.definition_id
+         '_diffrn_source'    
+         '_diffrn_radiation_source'    
+         '_diffrn_source.source' 
+_definition.update                      2018-02-26
+_definition.replaced_by                 '_diffrn_source.device'
+_description.text                       
+;
+     The general class of the source of radiation. This is deprecated.
+     Use _diffrn_source.device and _diffrn_source.details.
+;
+_name.category_id                       diffrn_source
+_name.object_id                         description
+_type.purpose                           Describe
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Text
+
+save_
 
 save_diffrn_source.details
 
@@ -3297,7 +3318,7 @@ loop_
 _definition.update                      2012-11-26
 _description.text                       
 ;
-     General description of the radiation source device.
+     A description of special aspects of the source.
 ;
 _name.category_id                       diffrn_source
 _name.object_id                         details
@@ -3312,12 +3333,7 @@ save_
 save_diffrn_source.device
 
 _definition.id                          '_diffrn_source.device'
-loop_
-  _alias.definition_id
-         '_diffrn_source'    
-         '_diffrn_radiation_source'    
-         '_diffrn_source.source' 
-_definition.update                      2013-08-09
+_definition.update                      2018-02-26
 _description.text                       
 ;
      Enumerated code for the device providing the source of radiation.
