@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.07
-_dictionary.date                        2017-06-10
+_dictionary.version                     3.0.09
+_dictionary.date                        2018-04-10
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.11
 _dictionary.namespace                   CifCore
@@ -14669,7 +14669,9 @@ _definition.class                       Loop
 _definition.update                      2013-09-08
 _description.text                       
 ;
-     Category of items describing literature cited in the publication.
+        Data items in the CITATION category record details about the
+        literature cited as being relevant to the contents of the data
+        block.
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION
@@ -24033,3 +24035,8 @@ loop_
      _citation.publisher, _database.dataset_doi, _publ_contact_author.id_orcid,
      _publ_author.id_orcid (James Hester)
 ; 
+         3.0.09    2018-04-10
+;
+     Rewrote CITATION category description to cover all relevant uses rather than
+     only publication-related uses (James Hester).
+;
