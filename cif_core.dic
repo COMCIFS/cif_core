@@ -20596,7 +20596,7 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         'a parallel to x; b in the plane of y & z' 
+         'a parallel to x; b in the plane of x & y'
 
 save_
 
@@ -20954,7 +20954,7 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         'a parallel to x; b in the plane of y & z' 
+         'a parallel to x; b in the plane of x & y'
 
 save_
 

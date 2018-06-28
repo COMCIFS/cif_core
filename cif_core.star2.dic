@@ -12996,7 +12996,7 @@ save_atom_sites_Cartn_transform.axes
     _type.container              Single
     _type.contents               Text
      loop_
-    _description_example.case   'a parallel to x; b in the plane of y & z'
+    _description_example.case   'a parallel to x; b in the plane of x & y'
      save_
  
  
@@ -13334,7 +13334,7 @@ save_atom_sites_fract_transform.axes
     _type.container              Single
     _type.contents               Text
      loop_
-    _description_example.case   'a parallel to x; b in the plane of y & z'
+    _description_example.case   'a parallel to x; b in the plane of x & y'
      save_
  
  
