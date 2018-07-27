@@ -3288,6 +3288,8 @@ _units.code                             milliamperes
 save_
 
 save_diffrn_source.description
+
+_definition.id                          '_diffrn_source.description'
 loop_
   _alias.definition_id
          '_diffrn_source'    
