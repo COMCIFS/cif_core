@@ -2077,14 +2077,16 @@ save_type.purpose
                    within the category.
 ;
               Link
-;                  Used to type an item with a value that is drawn
-                   from the set of unique values for another item.
-                   The definition of this item must contain the
-                   attribute "_name.linked_item_id" specifying the
-                   data name of the other item. The defined item is
-                   usually (but not always) a foreign key linking
-                   packets in this category to packets in another
-                   category.
+;
+                   Used to type an item that acts as a foreign key
+                   between two categories.  The definition of the item
+                   must additionally contain the attribute
+                   "_name.linked_item_id" specifying the data name of
+                   the item with unique values in the linked
+                   category. The values of the defined item are drawn
+                   from the set of values in the referenced
+                   item. Cross referencing items from the same
+                   category is allowed.
 ;
               Composite
 ;                  Used to type items with value strings composed of
