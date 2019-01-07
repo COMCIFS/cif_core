@@ -2643,7 +2643,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.95:1.0
+_enumeration.range                      0:1.0
 _units.code                             none
 
 save_
@@ -12240,7 +12240,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Count
-_enumeration.range                      1:
+_enumeration.range                      0:
 
 save_
 
@@ -23156,7 +23156,7 @@ _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
-_enumeration.range                      1:
+_enumeration.range                      0:
 
 save_
 
