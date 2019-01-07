@@ -9596,7 +9596,7 @@ _definition.update                      2012-11-22
 _description.text                       
 ;
      Description of the quality and habit of the crystal. The crystal
-     dimensions should appear in the exptl_crystal_size category.
+     dimensions should be provided using the exptl_crystal.size_* datanames.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         description
@@ -10344,7 +10344,7 @@ save_space_group.IT_coordinate_system_code
      (2002) (IT) is used.  See IT Table 4.3.2.1, Section 2.2.16,
      Table 2.2.16.1, Section 2.2.16.1 and Fig. 2.2.6.4.  This item
      is not computer-interpretable and cannot be used to define the
-     coordinate system.  Use _space_group.transform_* instead.
+     coordinate system.
 
      Ref: International Tables for Crystallography (2002). Volume A,
           Space-group symmetry, edited by Th. Hahn, 5th ed.
@@ -10549,10 +10549,8 @@ save_space_group.name_H-M_ref
      _space_group.IT_number or _space_group.name_Schoenflies. The
      short international Hermann-Mauguin symbol contains no
      information on the choice of basis or origin. To define the
-     setting uniquely use _space_group.name_Hall, list the symmetry
-     operations or generators, or give the transformation that
-     relates the setting to the reference setting defined in this
-     dictionary under _space_group.reference_setting.
+     setting uniquely use _space_group.name_Hall, or list the symmetry
+     operations or generators.
 
      _space_group.name_H-M_alt may be used to give the
      Hermann-Mauguin symbol corresponding to the setting used.
@@ -10657,10 +10655,8 @@ save_space_group.name_H-M_full
      about the choice of basis for monoclinic and orthorhombic
      space groups but does not give information about the choice
      of origin. To define the setting uniquely use
-     _space_group.name_Hall, list the symmetry operations
-     or generators, or give the transformation relating
-     the setting used to the reference setting defined in this
-     dictionary under _space_group.reference_setting.
+     _space_group.name_Hall, or list the symmetry operations
+     or generators.
 
      Ref: International Tables for Crystallography (2002). Volume A,
           Space-group symmetry, edited by Th. Hahn, 5th ed.
@@ -14212,7 +14208,7 @@ _description.text
      
      The category list for each schema may instead be determined from
      examination of the dictionaries that this datablock conforms to (see
-     _audit_conform.dictionary).
+     _audit_conform.dict_name).
 
 ;
 _type.contents          Text
@@ -15398,10 +15394,10 @@ _description.text
 ;
 _name.category_id                       citation_author
 _name.object_id                         ordinal
-_type.purpose                           Encode
+_type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Index
 
 save_
 
@@ -15523,7 +15519,7 @@ _name.object_id                         ordinal
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Index
 
 save_
 
