@@ -323,7 +323,6 @@ save_Cartn_coord
     _type.source                 Derived 
     _type.container              Single 
     _type.contents               Real
-    _enumeration.range           -1000.:1000.
     _units.code                  angstroms
      save_
 
@@ -357,7 +356,6 @@ save_fract_coord
     _type.source                 Derived 
     _type.container              Single 
     _type.contents               Real
-    _enumeration.range           -1.:1.
     _units.code                  none
      save_
 
@@ -663,7 +661,6 @@ save_Miller_index
     _type.source                 Recorded
     _type.container              Single 
     _type.contents               Integer
-    _enumeration.range           -1000:1000
     _units.code                  none
      save_
 
