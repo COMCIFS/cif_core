@@ -15171,11 +15171,10 @@ _description.text
 ;
 _name.category_id                       citation
 _name.object_id                         page_first
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
-_enumeration.range                      1:
+_type.contents                          Text
 
 save_
 
@@ -15193,11 +15192,10 @@ _description.text
 ;
 _name.category_id                       citation
 _name.object_id                         page_last
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
-_enumeration.range                      1:
+_type.contents                          Text
 
 save_
 
@@ -16361,10 +16359,10 @@ _description.text
 ;
 _name.category_id                       journal
 _name.object_id                         page_first
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Integer
+_type.contents                          Text
 
 save_
 
@@ -16382,11 +16380,10 @@ _description.text
 ;
 _name.category_id                       journal
 _name.object_id                         page_last
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Integer
-_enumeration.range                      1:
+_type.contents                          Text
 
 save_
 
