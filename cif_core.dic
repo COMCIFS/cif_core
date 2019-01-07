@@ -9973,8 +9973,9 @@ loop_
          intense   
          pale      
          whitish   
-         blackish  
-         grayish   
+         blackish
+         greyish       
+         grayish         #prefer 'greyish'
          brownish  
          reddish   
          pinkish   
@@ -13814,7 +13815,7 @@ loop_
 _definition.update                      2012-12-13
 _description.text                       
 ;
-     The valence (formal charge) of the atom 1 whose bond
+     The formal charge of the atom 1 whose bond
      valence parameters are given in this category.
 ;
 _name.category_id                       valence_param
@@ -13824,7 +13825,6 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
-_units.code                             coulomb
 
 save_
 
@@ -13861,7 +13861,7 @@ loop_
 _definition.update                      2012-12-13
 _description.text                       
 ;
-     The valence (formal charge) of the atom 2 whose bond
+     The formal charge of the atom 2 whose bond
      valence parameters are given in this category.
 ;
 _name.category_id                       valence_param
@@ -13871,7 +13871,6 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
-_units.code                             coulomb
 
 save_
 

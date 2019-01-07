@@ -548,6 +548,7 @@ save_colour_RGB
      black                            '[ 000, 000, 000 ]'
      white                            '[ 255, 255, 255 ]'
      grey                             '[ 192, 192, 192 ]'
+     gray                             '[ 192, 192, 192 ]' #prefer 'grey'
      grey_light                       '[ 211, 211, 211 ]'
      grey_slate                       '[ 112, 128, 144 ]'
      blue                             '[ 000, 000, 255 ]'
