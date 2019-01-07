@@ -9639,7 +9639,6 @@ _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 loop_
   _method.purpose
   _method.expression
