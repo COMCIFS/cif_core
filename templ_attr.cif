@@ -146,7 +146,6 @@ save_matrix_pdb
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.default         1.0
      save_
 
 
@@ -223,7 +222,6 @@ save_cell_angle
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:180.0
-    _enumeration.default         90.0
     _units.code                  degrees
      save_
 
@@ -309,7 +307,6 @@ save_site_symmetry
     _description_example.detail '4'     '4th symmetry operation applied'
                                 '7_645' '7th symm. posn.; +a on x; -b on y'
                                  .      'no symmetry or translation to site'
-    _enumeration.default        '1_555'
      save_
  
 
@@ -326,7 +323,6 @@ save_Cartn_coord
     _type.source                 Derived 
     _type.container              Single 
     _type.contents               Real
-    _enumeration.range           -1000.:1000.
     _units.code                  angstroms
      save_
 
@@ -360,7 +356,6 @@ save_fract_coord
     _type.source                 Derived 
     _type.container              Single 
     _type.contents               Real
-    _enumeration.range           -1.:1.
     _units.code                  none
      save_
 
@@ -443,8 +438,7 @@ save_Cartn_matrix
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single 
-    _type.contents               Real 
-    _enumeration.default         ?       
+    _type.contents               Real        
     _units.code                  reciprocal_angstroms
      save_
 
@@ -507,8 +501,7 @@ save_fract_matrix
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single 
-    _type.contents               Real 
-    _enumeration.default         ?       
+    _type.contents               Real        
     _units.code                  none
      save_
 
@@ -534,8 +527,7 @@ save_aniso_BIJ
     _type.purpose                Measurand
     _type.source                 Derived 
     _type.container              Single 
-    _type.contents               Real 
-    _enumeration.default         ?       
+    _type.contents               Real        
     _units.code                  angstrom_squared
      save_
 
@@ -552,7 +544,6 @@ save_aniso_BIJ2
     _type.source                Derived
     _type.container             Single
     _type.contents              Real
-    _enumeration.default        ?
     _units.code                 angstrom_squared
      save_
 
@@ -594,8 +585,7 @@ save_aniso_UIJ
     _type.purpose                Measurand 
     _type.source                 Derived 
     _type.container              Single 
-    _type.contents               Real 
-    _enumeration.default         ?       
+    _type.contents               Real        
     _units.code                  angstrom_squared
      save_
 
@@ -671,7 +661,6 @@ save_Miller_index
     _type.source                 Recorded
     _type.container              Single 
     _type.contents               Integer
-    _enumeration.range           -1000:1000
     _units.code                  none
      save_
 
@@ -687,8 +676,7 @@ save_orient_matrix
     _type.purpose                Number
     _type.source                 Recorded
     _type.container              Single 
-    _type.contents               Real 
-    _enumeration.default         ?       
+    _type.contents               Real        
     _units.code                  none
      save_
 
@@ -705,8 +693,7 @@ save_transf_matrix
     _type.purpose                Number
     _type.source                 Recorded 
     _type.container              Single 
-    _type.contents               Real 
-    _enumeration.default         ?       
+    _type.contents               Real        
     _units.code                  none
      save_
 

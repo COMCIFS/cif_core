@@ -548,6 +548,7 @@ save_colour_RGB
      black                            '[ 000, 000, 000 ]'
      white                            '[ 255, 255, 255 ]'
      grey                             '[ 192, 192, 192 ]'
+     gray                             '[ 192, 192, 192 ]' #prefer 'grey'
      grey_light                       '[ 211, 211, 211 ]'
      grey_slate                       '[ 112, 128, 144 ]'
      blue                             '[ 000, 000, 255 ]'
@@ -729,44 +730,44 @@ save_units_code
    'coulomb'        "electronic charge in Coulombs"
    'electron_volts' "electronic charge in electron volts eV"
 
-   'metres'       "length    'metres (meters * 10^(0))'"
-   'centimetres'  "length    'centimetres (meters * 10^( -2))'"
-   'millimetres'  "length    'millimetres (meters * 10^( -3))'"
-   'nanometres'   "length    'nanometres  (meters * 10^( -9))'"
-   'angstroms'    "length    'angstroms   (meters * 10^(-10))'"
-   'picometres'   "length    'picometres  (meters * 10^(-12))'"
-   'femtometres'  "length    'femtometres (meters * 10^(-15))'"
+   'metres'       "length    'metres (metres * 10^(0))'"
+   'centimetres'  "length    'centimetres (metres * 10^( -2))'"
+   'millimetres'  "length    'millimetres (metres * 10^( -3))'"
+   'nanometres'   "length    'nanometres  (metres * 10^( -9))'"
+   'angstroms'    "length    'angstroms   (metres * 10^(-10))'"
+   'picometres'   "length    'picometres  (metres * 10^(-12))'"
+   'femtometres'  "length    'femtometres (metres * 10^(-15))'"
 
    'reciprocal_centimetres' 
-   "per_length 'reciprocal centimetres (meters * 10^( -2)^-1)'"
+   "per_length 'reciprocal centimetres (metres * 10^( -2)^-1)'"
    'reciprocal_millimetres' 
-   "per_length 'reciprocal millimetres (meters * 10^( -3)^-1)'"
+   "per_length 'reciprocal millimetres (metres * 10^( -3)^-1)'"
    'reciprocal_nanometres'  
-   "per-length 'reciprocal nanometres  (meters * 10^( -9)^-1)'"
+   "per-length 'reciprocal nanometres  (metres * 10^( -9)^-1)'"
    'reciprocal_angstroms'   
-   "per-length 'reciprocal angstroms   (meters * 10^(-10)^-1)'"
+   "per-length 'reciprocal angstroms   (metres * 10^(-10)^-1)'"
    'reciprocal_angstrom_squared'
    "per-area 'reciprocal angstroms^2'"
    'reciprocal_picometres'  
-   "per-length 'reciprocal picometres  (meters * 10^(-12)^-1)'"
+   "per-length 'reciprocal picometres  (metres * 10^(-12)^-1)'"
 
    'nanometre_squared'     
-   "length_squared 'nanometres squared (meters * 10^( -9))^2'"
+   "length_squared 'nanometres squared (metres * 10^( -9))^2'"
    'angstrom_squared'      
-   "length_squared 'angstroms squared  (meters * 10^(-10))^2'"
+   "length_squared 'angstroms squared  (metres * 10^(-10))^2'"
    '8pi_angstroms_squared' 
-   "length_squared '8pi^2 * angstroms squared (meters * 10^(-10))^2'"
+   "length_squared '8pi^2 * angstroms squared (metres * 10^(-10))^2'"
    'picometre_squared'    
-   "length_squared 'picometres squared (meters * 10^(-12))^2'"
+   "length_squared 'picometres squared (metres * 10^(-12))^2'"
    'femtometre_squared'    
-   "length_squared 'femtometres squared (meters * 10^(-12))^2'"
+   "length_squared 'femtometres squared (metres * 10^(-12))^2'"
 
    'nanometre_cubed'       
-   "length_cubed 'nanometres cubed (meters * 10^( -9))^3'"
+   "length_cubed 'nanometres cubed (metres * 10^( -9))^3'"
    'angstrom_cubed'        
-   "length_cubed 'angstroms cubed  (meters * 10^(-10))^3'"
+   "length_cubed 'angstroms cubed  (metres * 10^(-10))^3'"
    'picometre_cubed'       
-   "length_cubed 'picometres cubed (meters * 10^(-12))^3'"
+   "length_cubed 'picometres cubed (metres * 10^(-12))^3'"
 
    'grams_per_centimetre_cubed' "density 'grams per cubic centimetre'" 
    'kilograms_per_metre_cubed' "density 'kilograms per cubic metre'" 
@@ -797,11 +798,11 @@ save_units_code
    'electron_squared'  "electrons-squared    'electrons squared'"
 
    'electrons_per_nanometre_cubed'    
-   "electron-density 'electrons per nanometres cubed (meters * 10^( -9))^3'"
+   "electron-density 'electrons per nanometres cubed (metres * 10^( -9))^3'"
    'electrons_per_angstrom_cubed'     
-   "electron-density 'electrons per angstroms  cubed (meters * 10^(-10))^3'"
+   "electron-density 'electrons per angstroms  cubed (metres * 10^(-10))^3'"
    'electrons_per_picometre_cubed'     
-   "electron-density 'electrons per picometres cubed (meters * 10^(-12))^3'"
+   "electron-density 'electrons per picometres cubed (metres * 10^(-12))^3'"
 
    'dalton'      "standard atomic mass unit"
  

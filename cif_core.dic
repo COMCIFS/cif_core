@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.07
-_dictionary.date                        2017-06-10
+_dictionary.version                     3.0.09
+_dictionary.date                        2018-04-10
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.11
 _dictionary.namespace                   CifCore
@@ -2643,7 +2643,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.95:1.0
+_enumeration.range                      0:1.0
 _units.code                             none
 
 save_
@@ -7084,7 +7084,7 @@ loop_
   _method.purpose
   _method.expression
          Evaluation          
-;
+;\
     With c  as  cell
  
     _cell.convert_Uij_to_betaij = \
@@ -7121,7 +7121,7 @@ loop_
   _method.purpose
   _method.expression
          Evaluation          
-;
+;\
     With c  as  cell
  
     _cell.convert_Uiso_to_Uij = \
@@ -9596,7 +9596,7 @@ _definition.update                      2012-11-22
 _description.text                       
 ;
      Description of the quality and habit of the crystal. The crystal
-     dimensions should appear in the exptl_crystal_size category.
+     dimensions should be provided using the exptl_crystal.size_* datanames.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         description
@@ -9639,7 +9639,6 @@ _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      0.0:
 loop_
   _method.purpose
   _method.expression
@@ -9973,8 +9972,9 @@ loop_
          intense   
          pale      
          whitish   
-         blackish  
-         grayish   
+         blackish
+         greyish       
+         grayish         #prefer 'greyish'
          brownish  
          reddish   
          pinkish   
@@ -10343,7 +10343,7 @@ save_space_group.IT_coordinate_system_code
      (2002) (IT) is used.  See IT Table 4.3.2.1, Section 2.2.16,
      Table 2.2.16.1, Section 2.2.16.1 and Fig. 2.2.6.4.  This item
      is not computer-interpretable and cannot be used to define the
-     coordinate system.  Use _space_group.transform_* instead.
+     coordinate system.
 
      Ref: International Tables for Crystallography (2002). Volume A,
           Space-group symmetry, edited by Th. Hahn, 5th ed.
@@ -10548,10 +10548,8 @@ save_space_group.name_H-M_ref
      _space_group.IT_number or _space_group.name_Schoenflies. The
      short international Hermann-Mauguin symbol contains no
      information on the choice of basis or origin. To define the
-     setting uniquely use _space_group.name_Hall, list the symmetry
-     operations or generators, or give the transformation that
-     relates the setting to the reference setting defined in this
-     dictionary under _space_group.reference_setting.
+     setting uniquely use _space_group.name_Hall, or list the symmetry
+     operations or generators.
 
      _space_group.name_H-M_alt may be used to give the
      Hermann-Mauguin symbol corresponding to the setting used.
@@ -10656,10 +10654,8 @@ save_space_group.name_H-M_full
      about the choice of basis for monoclinic and orthorhombic
      space groups but does not give information about the choice
      of origin. To define the setting uniquely use
-     _space_group.name_Hall, list the symmetry operations
-     or generators, or give the transformation relating
-     the setting used to the reference setting defined in this
-     dictionary under _space_group.reference_setting.
+     _space_group.name_Hall, or list the symmetry operations
+     or generators.
 
      Ref: International Tables for Crystallography (2002). Volume A,
           Space-group symmetry, edited by Th. Hahn, 5th ed.
@@ -11011,7 +11007,6 @@ loop_
          Evaluation          
 ;
                        sm =  _space_group_symop.Seitz_matrix
- 
         _space_group_symop.R =  [[sm[0,0],sm[0,1],sm[0,2]],
                               [sm[1,0],sm[1,1],sm[1,2]],
                               [sm[2,0],sm[2,1],sm[2,2]]]
@@ -11415,7 +11410,7 @@ loop_
  
       do i=0,Len(j)-1    {
           c = j[i]
-          If (c not in joneschrs) print 'illegal char in symmetry xyz'
+          If (c not in joneschrs) dummy = print('illegal char in symmetry xyz')
  
           If      (c == ' ') Next
           If      (c == ',') {
@@ -11430,10 +11425,10 @@ loop_
           Else If (c == 'z') s[axis,2] = sign
           Else   {
                If (inum == 0)   m  = AtoI(c)
-               If (inum == 1 and c != '/') print 'illegal num in symmetry xyz'
+               If (inum == 1 and c != '/') dummy = print('illegal num in symmetry xyz')
                If (inum == 2)   {
                                 n  = AtoI(c)
-                     If(n == 5) print 'illegal translation in symmetry xyz'
+                     If(n == 5) dummy = print('illegal translation in symmetry xyz')
                      s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
                      sign      = 1
                }
@@ -11582,7 +11577,7 @@ loop_
                      t  :[List  , Integer]) { # cell translation vector
  
             d  =  t + 5
-         Symop =  `n` + '_' + `d[0]` + `d[1]` + `d[2]`
+         Symop =  repr(n) + '_' + repr(d[0]) + repr(d[1]) + repr(d[2])
      }
 ; 
 
@@ -11836,6 +11831,7 @@ loop_
 
 _name.category_id                       geom_angle
 _name.object_id                         atom_site_label_2
+_name.linked_item_id                    '_atom_site.label'
 _type.purpose                Encode
 _type.source                 Assigned
 _type.container              Single
@@ -12239,7 +12235,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Count
-_enumeration.range                      1:
+_enumeration.range                      0:
 
 save_
 
@@ -13814,7 +13810,7 @@ loop_
 _definition.update                      2012-12-13
 _description.text                       
 ;
-     The valence (formal charge) of the atom 1 whose bond
+     The formal charge of the atom 1 whose bond
      valence parameters are given in this category.
 ;
 _name.category_id                       valence_param
@@ -13824,7 +13820,6 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
-_units.code                             coulomb
 
 save_
 
@@ -13861,7 +13856,7 @@ loop_
 _definition.update                      2012-12-13
 _description.text                       
 ;
-     The valence (formal charge) of the atom 2 whose bond
+     The formal charge of the atom 2 whose bond
      valence parameters are given in this category.
 ;
 _name.category_id                       valence_param
@@ -13871,7 +13866,6 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
-_units.code                             coulomb
 
 save_
 
@@ -14213,7 +14207,7 @@ _description.text
      
      The category list for each schema may instead be determined from
      examination of the dictionaries that this datablock conforms to (see
-     _audit_conform.dictionary).
+     _audit_conform.dict_name).
 
 ;
 _type.contents          Text
@@ -14671,7 +14665,9 @@ _definition.class                       Loop
 _definition.update                      2013-09-08
 _description.text                       
 ;
-     Category of items describing literature cited in the publication.
+        Data items in the CITATION category record details about the
+        literature cited as being relevant to the contents of the data
+        block.
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION
@@ -15170,11 +15166,10 @@ _description.text
 ;
 _name.category_id                       citation
 _name.object_id                         page_first
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
-_enumeration.range                      1:
+_type.contents                          Text
 
 save_
 
@@ -15192,11 +15187,10 @@ _description.text
 ;
 _name.category_id                       citation
 _name.object_id                         page_last
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
-_enumeration.range                      1:
+_type.contents                          Text
 
 save_
 
@@ -15399,10 +15393,10 @@ _description.text
 ;
 _name.category_id                       citation_author
 _name.object_id                         ordinal
-_type.purpose                           Encode
+_type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Code
+_type.contents                          Index
 
 save_
 
@@ -15524,7 +15518,7 @@ _name.object_id                         ordinal
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Index
 
 save_
 
@@ -16213,8 +16207,7 @@ _description.text
      Category of items recording details about the book-keeping
      by the journal staff when processing a CIF submitted for
      publication.  The creator of a CIF will not normally specify
-     these data items.  The data names are not defined in the
-     dictionary because they are for journal use only.
+     these data items. 
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         JOURNAL
@@ -16361,10 +16354,10 @@ _description.text
 ;
 _name.category_id                       journal
 _name.object_id                         page_first
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Integer
+_type.contents                          Text
 
 save_
 
@@ -16382,11 +16375,10 @@ _description.text
 ;
 _name.category_id                       journal
 _name.object_id                         page_last
-_type.purpose                           Number
+_type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Integer
-_enumeration.range                      1:
+_type.contents                          Text
 
 save_
 
@@ -18032,7 +18024,7 @@ _description.text
 ;
 _name.category_id                       publ_manuscript_incl_extra
 _name.object_id                         item
-_type.purpose                           Link
+_type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Tag
@@ -19563,10 +19555,8 @@ loop_
         xyz  =   a.fract_xyz
  
           Loop  s  as  space_group_symop  {
- 
              sxyz  =   s.R * xyz + s.T
              diff  =   Mod( 99.5 + xyz - sxyz, 1.0) - 0.5
- 
              If ( Norm ( diff ) < 0.1 ) mul +=  1
        }
     _atom_site.site_symmetry_multiplicity =  _space_group.multiplicity / mul
@@ -22045,7 +22035,7 @@ loop_
   _method.purpose
   _method.expression
          Evaluation          
-;
+;\
      With t  as  atom_type_scat
  
     _atom_type_scat.hi_ang_Fox_coeffs  =  \
@@ -23161,7 +23151,7 @@ _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Count
-_enumeration.range                      1:
+_enumeration.range                      0:
 
 save_
 
@@ -24035,3 +24025,8 @@ loop_
      _citation.publisher, _database.dataset_doi, _publ_contact_author.id_orcid,
      _publ_author.id_orcid (James Hester)
 ; 
+         3.0.09    2018-04-10
+;
+     Rewrote CITATION category description to cover all relevant uses rather than
+     only publication-related uses (James Hester).
+;
