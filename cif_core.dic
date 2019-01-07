@@ -3288,6 +3288,8 @@ _units.code                             milliamperes
 save_
 
 save_diffrn_source.description
+
+_definition.id                          '_diffrn_source.description'
 loop_
   _alias.definition_id
          '_diffrn_source'    
@@ -7082,7 +7084,7 @@ loop_
   _method.purpose
   _method.expression
          Evaluation          
-;
+;\
     With c  as  cell
  
     _cell.convert_Uij_to_betaij = \
@@ -7119,7 +7121,7 @@ loop_
   _method.purpose
   _method.expression
          Evaluation          
-;
+;\
     With c  as  cell
  
     _cell.convert_Uiso_to_Uij = \
@@ -11009,7 +11011,6 @@ loop_
          Evaluation          
 ;
                        sm =  _space_group_symop.Seitz_matrix
- 
         _space_group_symop.R =  [[sm[0,0],sm[0,1],sm[0,2]],
                               [sm[1,0],sm[1,1],sm[1,2]],
                               [sm[2,0],sm[2,1],sm[2,2]]]
@@ -11413,7 +11414,7 @@ loop_
  
       do i=0,Len(j)-1    {
           c = j[i]
-          If (c not in joneschrs) print 'illegal char in symmetry xyz'
+          If (c not in joneschrs) dummy = print('illegal char in symmetry xyz')
  
           If      (c == ' ') Next
           If      (c == ',') {
@@ -11428,10 +11429,10 @@ loop_
           Else If (c == 'z') s[axis,2] = sign
           Else   {
                If (inum == 0)   m  = AtoI(c)
-               If (inum == 1 and c != '/') print 'illegal num in symmetry xyz'
+               If (inum == 1 and c != '/') dummy = print('illegal num in symmetry xyz')
                If (inum == 2)   {
                                 n  = AtoI(c)
-                     If(n == 5) print 'illegal translation in symmetry xyz'
+                     If(n == 5) dummy = print('illegal translation in symmetry xyz')
                      s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
                      sign      = 1
                }
@@ -11580,7 +11581,7 @@ loop_
                      t  :[List  , Integer]) { # cell translation vector
  
             d  =  t + 5
-         Symop =  `n` + '_' + `d[0]` + `d[1]` + `d[2]`
+         Symop =  repr(n) + '_' + repr(d[0]) + repr(d[1]) + repr(d[2])
      }
 ; 
 
@@ -11834,6 +11835,7 @@ loop_
 
 _name.category_id                       geom_angle
 _name.object_id                         atom_site_label_2
+_name.linked_item_id                    '_atom_site.label'
 _type.purpose                Encode
 _type.source                 Assigned
 _type.container              Single
@@ -16213,8 +16215,7 @@ _description.text
      Category of items recording details about the book-keeping
      by the journal staff when processing a CIF submitted for
      publication.  The creator of a CIF will not normally specify
-     these data items.  The data names are not defined in the
-     dictionary because they are for journal use only.
+     these data items. 
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         JOURNAL
@@ -18032,7 +18033,7 @@ _description.text
 ;
 _name.category_id                       publ_manuscript_incl_extra
 _name.object_id                         item
-_type.purpose                           Link
+_type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Tag
@@ -19563,10 +19564,8 @@ loop_
         xyz  =   a.fract_xyz
  
           Loop  s  as  space_group_symop  {
- 
              sxyz  =   s.R * xyz + s.T
              diff  =   Mod( 99.5 + xyz - sxyz, 1.0) - 0.5
- 
              If ( Norm ( diff ) < 0.1 ) mul +=  1
        }
     _atom_site.site_symmetry_multiplicity =  _space_group.multiplicity / mul
@@ -22045,7 +22044,7 @@ loop_
   _method.purpose
   _method.expression
          Evaluation          
-;
+;\
      With t  as  atom_type_scat
  
     _atom_type_scat.hi_ang_Fox_coeffs  =  \

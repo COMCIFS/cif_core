@@ -2228,13 +2228,13 @@ save_
                                  '_dictionary_audit.date'
                                  '_dictionary_audit.revision']
   [Dictionary  Prohibited]      [ALIAS  CATEGORY  DEFINITION  ENUMERATION  LOOP
-                                 METHOD  NAME  TYPE  UNITS]
+                                 METHOD  NAME  TYPE  IMPORT UNITS]
   [Category  Mandatory]         ['_definition.id'  '_definition.scope'
                                  '_definition.class'  '_name.category_id'
                                  '_name.object_id']
   [Category  Recommended]       ['_category.key_id'  '_category_key.name'
                                  '_description.text']
-  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION  IMPORT  LOOP
+  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION LOOP
                                  TYPE  UNITS]
   [Item  Mandatory]             ['_definition.id'  '_definition.update'
                                  '_name.object_id'  '_name.category_id'
@@ -2522,7 +2522,7 @@ Remove category.parent_id from category definitions.
 Remove definitions for category.parent_id and the CATEGORY_KEY
 and CATEGORY_MANDATORY definitions. Define category.key_id
 ;
-         3.8.08    2011-08-15
+         3.8.09    2011-08-15
 ;
 Add the state "Extend" to the type.purpose" attribute.
 ;
