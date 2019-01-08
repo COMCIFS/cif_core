@@ -598,6 +598,22 @@ save_colour_RGB
      violet_blue                      '[ 138, 043, 226 ]'
      save_
 
+save_database_list
+loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    CAS          'Chemical Abstracts'
+    COD          'Crystallography Open Database'
+    CSD          'Cambridge Structural Database'
+    ICSD         'Inorganic Crystal Structure Database'
+    MDF          'Metals Data File'
+    NDB          'Nucleic Acid Database'
+    PDB          'Protein Data Bank'
+    PDF          'Powder Diffraction File (JCPDS/ICDD)'
+    RCSB         'Research Collaboratory for Structural Bioinformatics'
+    EBI          'European Bioinformatics Institute'
+save_
+
 
 save_element_symbol
 

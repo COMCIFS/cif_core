@@ -1511,9 +1511,11 @@ save_import_details.mode
      entire definition together with any child definitions (in the case
      of categories) found in the target dictionary. The importing
      definition becomes the parent of the imported definition. As a
-     special case, a 'Head' category importing a'Head' category is
+     special case, a 'Head' category importing a 'Head' category is
      equivalent to importing all children of the imported 'Head'
-     category as children of the importing 'Head' category.
+     category as children of the importing 'Head' category. A non-'Head'
+     category may not import a 'Head' category in "Full" mode.
+     
      "Contents" imports only the attributes found in the imported
      definition.
 ;

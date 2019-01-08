@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.09
-_dictionary.date                        2018-04-10
+_dictionary.version                     3.0.10
+_dictionary.date                        2019-01-08
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.11
 _dictionary.namespace                   CifCore
@@ -6301,7 +6301,7 @@ _description.text
      absorption in the specimen mount. The presence of this
      item does not imply that the structure factors have been
      corrected for absorption. For the applied correction see
-     _exptl_absorpt.correction_T_max.
+     _exptl_absorpt.correction_T_min.
 ;
 _name.category_id                       exptl
 _name.object_id                         transmission_factor_min
@@ -16080,6 +16080,120 @@ _type.contents                          Code
 
 save_
 
+save_DATABASE_RELATED
+
+_definition.id          DATABASE_RELATED
+_definition.class       Loop
+_definition.scope       Category
+_definition.update      2019-01-08
+_description.text
+;
+
+    A category of items recording entries in databases that describe
+    the same or related data. Databases wishing to insert their own
+    canonical codes when archiving and delivering data blocks should
+    use items from the DATABASE category.
+    
+;
+_name.category_id       PUBLICATION
+_name.object_id         DATABASE_RELATED
+_category_key.name      '_database_related.id'
+save_
+
+save_database_related.id
+
+_definition.id          '_database_related.id'
+_definition.update      2019-01-08
+_description.text
+;
+       An identifer for this database reference
+;
+_name.category_id       database_related
+_name.object_id         id
+_type.purpose           Key
+_type.source            Recorded
+_type.container         Single
+_type.contents          Text
+save_
+
+save_database_related.database_id
+
+_definition.id          '_database_related.database_id'
+_definition.update      2019-01-08
+_description.text
+;
+       An identifier for the database that contains the
+       related dataset.
+;
+_name.category_id       database_related
+_name.object_id         database_id
+_type.purpose           State
+_type.source            Recorded
+_type.container         Single
+_type.contents          Text
+_import.get [{'save':database_list 'file':templ_enum.cif}]
+save_
+
+save_database_related.entry_code
+
+_definition.id          '_database_related.entry_code'
+_definition.update      2019-01-08
+_description.text
+;
+       The code used by the database referred to in
+       _database_related.database_id to identify the
+       related dataset.
+;
+_name.category_id       database_related
+_name.object_id         entry_code
+_type.purpose           Encode
+_type.source            Recorded
+_type.container         Single
+_type.contents          Text
+
+save_
+
+save_database_related.relation
+_definition.id          '_database_related.relation'
+_definition.update      2019-01-08
+_description.text
+;
+       The general relationship of the data in the data block
+       to the dataset referred to in the database.
+;
+_name.category_id       database_related
+_name.object_id         relation
+_type.purpose           State
+_type.source            Recorded
+_type.container         Single
+_type.contents          Text
+loop_
+   _enumeration_set.state
+   _enumeration_set.details
+   Identical           'The dataset contents are identical'
+   Subset              'The dataset contents are a proper subset of the contents of the data block'
+   Superset            'The dataset contents include the contents of the data block'
+   Derived             'The dataset contents are derivable from the contents of the data block'
+   Common              'The dataset contents share a common source'
+save_
+
+save_database_related.special_details
+_definition.id          '_database_related.special_details'
+_definition.update      2019-01-08
+_description.text                       
+;
+    Information about the external dataset and relationship not encoded
+    elsewhere.
+;
+_name.category_id                       database_related
+_name.object_id                         special_details
+_type.purpose                           Describe
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Text
+
+save_
+
 
 save_DISPLAY
 
@@ -22127,7 +22241,7 @@ _definition.update                      2013-04-17
 _description.text                       
 ;
      List of scattering factors as a function of sin theta on lambda.
-     List has the form ['<stol value>':'<scatfac>', ....] in
+     List has the form [[<stol value 1> <scatfac 1>] [<stol value 2> <scatfac 2>] ....] in
      increments of 0.01, increasing from 0.0.
 ;
 _name.category_id                       atom_type_scat
@@ -24029,4 +24143,8 @@ loop_
 ;
      Rewrote CITATION category description to cover all relevant uses rather than
      only publication-related uses (James Hester).
+;
+         3.0.10    2019-01-08
+;
+     Added DATABASE_RELATED category (James Hester).
 ;
