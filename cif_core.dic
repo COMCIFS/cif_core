@@ -1572,12 +1572,10 @@ loop_
   _alias.definition_id
          '_diffrn_radiation_wavelength_determination'      
          '_diffrn_radiation.wavelength_determination' 
-_definition.update                      2012-11-26
+_definition.update                      2019-01-08
 _description.text                       
 ;
-     Information about the determination of the radiation
-     wavelength that is not conveyed completely by an
-     enumerated value of _diffrn_radiation_wavelength.determination.
+     Method by which the radiation wavelength was determined.
 ;
 _name.category_id                       diffrn_radiation_wavelength
 _name.object_id                         determination
