@@ -3192,13 +3192,12 @@ _definition.id                          '_diffrn_scale_group.code'
 loop_
   _alias.definition_id
          '_diffrn_scale_group_code' 
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2019-01-08
+_description.text
 ;
      Code identifying a specific scale group of reflections (e.g. for
      multi-film or multi-crystal data). The code must match a
-     _diffrn_refln.scale_group_code in the diffrn_refln list.
- 
+     _diffrn_refln.scale_group_code in the DIFFRN_REFLN list.
 ;
 _name.category_id                       diffrn_scale_group
 _name.object_id                         code
@@ -3209,15 +3208,15 @@ _type.container                         Single
 _type.contents                          Code
 loop_
   _description_example.case
-         1         
-         2         
-         3         
-         s1        
-         A         
-         B         
-         c1        
-         c2        
-         c3 
+         1
+         2
+         3
+         s1
+         A
+         B
+         c1
+         c2
+         c3
 
 save_
 
@@ -4888,9 +4887,9 @@ save_reflns.Friedel_coverage
 _definition.id                          '_reflns.Friedel_coverage'
 loop_
   _alias.definition_id
-         '_reflns_Friedel_coverage' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_Friedel_coverage'
+_definition.update                      2019-01-09
+_description.text
 ;
      The proportion of Friedel related reflections present in the number of
      the 'independent reflections' specified by the item _reflns.number_total.
@@ -4899,7 +4898,7 @@ _description.text
  
            [N(Crystal class) - N(Laue symmetry)] / N(Laue symmetry)
  
-     where, working from the @diffrn_refln_ list,
+     where, working from the DIFFRN_REFLN list,
  
          N(Crystal class) is the number of reflections obtained on
              averaging under the symmetry of the crystal class
@@ -4922,7 +4921,7 @@ _description.text
            two inequivalent octants h >= 0, k >=0, l lead to the
            same value as in (c), whereas measurements of the
            two equivalent octants h >= 0, k, l >= 0 will lead to
-           a zero value for @reflns_Friedel_coverage.
+           a zero value for _reflns.Friedel_coverage.
 ;
 _name.category_id                       reflns
 _name.object_id                         Friedel_coverage
@@ -23824,14 +23823,14 @@ save_refine_ls.wR_factor_gt
 _definition.id                          '_refine_ls.wR_factor_gt'
 loop_
   _alias.definition_id
-         '_refine_ls_wR_factor_obs'    
-         '_refine.ls_wR_factor_obs'    
-         '_refine_ls_wR_factor_gt' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_wR_factor_obs'
+         '_refine.ls_wR_factor_obs'
+         '_refine_ls_wR_factor_gt'
+_definition.update                      2019-01-09
+_description.text
 ;
      Weighted residual factors for significantly intense reflections
-     (satisfying @reflns_threshold_expression) included in the refinement.
+     (satisfying _reflns.threshold_expression) included in the refinement.
      The reflections must also satisfy the resolution limits established by
      _refine_ls.d_res_high and _refine_ls.d_res_low.
  
@@ -23841,7 +23840,7 @@ _description.text
  
      Y(meas_gt) = the 'observed' amplitude _refine_ls.structure_factor_coef
      Y(calc)    = the calculated amplitude _refine_ls.structure_factor_coef
-       w       = the least-squares weight
+       w        = the least-squares weight
        and the sum is taken over the specified reflections
 ;
 _name.category_id                       refine_ls
