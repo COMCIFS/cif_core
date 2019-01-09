@@ -772,17 +772,16 @@ save_diffr_counts
 
 save_display_colour
 
-    _definition.update           2012-10-16
+    _definition.update           2019-01-09
     _description.text
 ;
      Integer value between 0 and 255 giving the intensity of a
-     specific colour component (red, green or blue) for the RBG
+     specific colour component (red, green or blue) for the RGB
      display colour code.
-
 ;
     _type.purpose                Number
     _type.source                 Recorded
-    _type.container              Single 
+    _type.container              Single
     _type.contents               Integer
     _enumeration.range           0:255
     _units.code                  none

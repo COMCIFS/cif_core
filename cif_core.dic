@@ -10481,10 +10481,10 @@ _definition.id                          '_space_group.name_H-M_alt'
 loop_
   _alias.definition_id
          '_space_group_name_H-M_alt'
-_definition.update                      2016-05-13
-_description.text                       
+_definition.update                      2019-01-09
+_description.text
 ;
-    _space_group.name_H_M_alt allows for any Hermann-Mauguin symbol
+    _space_group.name_H-M_alt allows for any Hermann-Mauguin symbol
      to be given. The way in which this item is used is determined
      by the user and in general is not intended to be interpreted by
      computer. It may, for example, be used to give one of the
@@ -10517,9 +10517,9 @@ _type.contents                          Text
 loop_
   _description_example.case
   _description_example.detail
-         'P 1 21/m 1'        'space group No. 10'          
-         'P 2/n 2/n 2/n (origin at -1)'          'space group No. 48 origin 2'           
-         'R -3 2/m'          'space group No. 166 rhomb'   
+         'P 1 21/m 1'                   'space group No. 10'
+         'P 2/n 2/n 2/n (origin at -1)' 'space group No. 48 origin 2'
+         'R -3 2/m'                     'space group No. 166 rhomb'
 save_
 
 save_space_group.name_H-M_ref
@@ -13511,11 +13511,11 @@ save_
 save_model_site.display_colour
 
 _definition.id                          '_model_site.display_colour'
-_definition.update                      2013-01-23
-_description.text                       
+_definition.update                      2019-01-09
+_description.text
 ;
      Display colour code assigned to this atom site. Note that the
-     possible colours are enumerated in the colour_RBG list, and
+     possible colours are enumerated in the colour_RGB list, and
      the default code is enumerated in the colour_hue list.
 ;
 _name.category_id                       model_site
@@ -13524,8 +13524,8 @@ _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
-_import.get [{'save':colour_RGB  'file':templ_enum.cif}  
-            {'save':colour_hue  'file':templ_enum.cif}]
+_import.get [{'save':colour_RGB  'file':templ_enum.cif}
+             {'save':colour_hue  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_model_site.type_symbol'
 
 save_
