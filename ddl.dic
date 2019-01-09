@@ -138,14 +138,14 @@ save_category.key_id
 
     _definition.id               '_category.key_id'
     _definition.class            Attribute
-    _definition.update           2011-07-27
+    _definition.update           2019-01-09
     _description.text
 ;
      Tag of a single data item in a Loop category which is the generic key
      to access other items in the category. The value of this
      item must be unique in order to provide unambiguous access to
      a packet (row) in the table of values. This may be assumed to be a function
-     of the datanames listed in category_key.name.
+     of the datanames listed in _category_key.name.
 ;
     _name.category_id            category
     _name.object_id              key_id
@@ -181,14 +181,14 @@ save_category_key.name
 
     _definition.id               '_category_key.name'
     _definition.class            Attribute
-    _definition.update           2014-09-18
+    _definition.update           2019-01-09
     _description.text
 ;
      A minimal list of tag(s) that together constitute a compound key
      to access other items in a Loop category. In other words, the combined values of the
      datanames listed in this loop must be unique, so that unambiguous access
      to a packet (row) in the table of values is possible. The dataname associated with
-     category.key_id is only included in this loop if no other set of datanames can form
+     _category.key_id is only included in this loop if no other set of datanames can form
      a compound key.
 ;
     _name.category_id            category_key
