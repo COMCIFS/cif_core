@@ -22783,17 +22783,17 @@ save_refine_ls.extinction_method
 _definition.id                          '_refine_ls.extinction_method'
 loop_
   _alias.definition_id
-         '_refine_ls_extinction_method'          
-         '_refine.ls_extinction_method' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_extinction_method'
+         '_refine.ls_extinction_method'
+_definition.update                      2019-01-09
+_description.text
 ;
      Description of the extinction correction method applied with the
      data item _refine_ls.extinction_coef. This description should
      include information about the correction method, either 'Becker-
      Coppens' or 'Zachariasen'. The latter is sometimes referred to as
      the 'Larson' method even though it employs Zachariasen's formula.
- 
+
      The Becker-Coppens procedure is referred to as 'type 1' when
      correcting secondary extinction dominated by the mosaic spread;
      as 'type 2' when secondary extinction is dominated by particle
@@ -22805,8 +22805,8 @@ _description.text
      nature of the extinction as 'isotropic' or 'anisotropic'. Note
      that if either the 'mixed' or 'anisotropic' corrections are applied
      the multiple coefficients cannot be contained in the
-     _refine_ls.extinction_coef and must be listed in *.special_details.
- 
+     _refine_ls.extinction_coef and must be listed in _refine.special_details.
+
      Ref:  Becker, P. J. & Coppens, P. (1974). Acta Cryst. A30, 129-153.
            Zachariasen, W. H. (1967). Acta Cryst. 23, 558-564.
            Larson, A. C. (1967). Acta Cryst. 23, 664-665.
@@ -22819,8 +22819,8 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         Zachariasen         
-         'B-C type 2 Gaussian isotropic' 
+         Zachariasen
+         'B-C type 2 Gaussian isotropic'
 
 save_
 
