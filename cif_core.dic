@@ -10483,7 +10483,7 @@ loop_
 _definition.update                      2019-01-09
 _description.text
 ;
-    _space_group.name_H-M_alt allows for any Hermann-Mauguin symbol
+     _space_group.name_H-M_alt allows for any Hermann-Mauguin symbol
      to be given. The way in which this item is used is determined
      by the user and in general is not intended to be interpreted by
      computer. It may, for example, be used to give one of the
@@ -10493,7 +10493,7 @@ _description.text
      setting.
      Each component of the space group name is separated by a
      space or underscore. The use of space is strongly
-     recommended.  The underscore is only retained because it
+     recommended. The underscore is only retained because it
      was used in earlier archived files. It should not be
      used in new CIFs. Subscripts should appear without special
      symbols. Bars should be given as negative signs before the
@@ -10501,7 +10501,7 @@ _description.text
      The commonly used Hermann-Mauguin symbol determines the space
      group type uniquely but a given space group type may be
      described by more than one Hermann-Mauguin symbol. The space
-     group type is best described using _space_group_IT_number.
+     group type is best described using _space_group.IT_number.
      The Hermann-Mauguin symbol may contain information on the
      choice of basis though not on the choice of origin. To
      define the setting uniquely use _space_group.name_Hall or
@@ -14271,12 +14271,12 @@ save_audit_author.address
 _definition.id                          '_audit_author.address'
 loop_
   _alias.definition_id
-         '_audit_author_address' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_audit_author_address'
+_definition.update                      2019-01-09
+_description.text
 ;
      The address of an author of this data block. If there are
-     multiple authors, _audit_author_address is looped with
+     multiple authors, _audit_author.address is looped with
      _audit_author.name.
 ;
 _name.category_id                       audit_author
@@ -14287,13 +14287,12 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         
-;Department
-                                 Institute
-                                 Street
-                                 City and postcode
-                                 COUNTRY 
-; 
+;                       Department
+                        Institute
+                        Street
+                        City and postcode
+                        COUNTRY
+;
 
 save_
 
@@ -14441,9 +14440,9 @@ save_audit_contact_author.address
 _definition.id                          '_audit_contact_author.address'
 loop_
   _alias.definition_id
-         '_audit_contact_author_address' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_audit_contact_author_address'
+_definition.update                      2019-01-09
+_description.text
 ;
      The mailing address of the author of the data block to whom
      correspondence should be addressed.
@@ -14456,13 +14455,12 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         
-;                               Department
-                                Institute
-                                Street
-                                City and postcode
-                                COUNTRY
-; 
+;                       Department
+                        Institute
+                        Street
+                        City and postcode
+                        COUNTRY
+;
 
 save_
 
@@ -17398,12 +17396,12 @@ save_publ_author.address
 _definition.id                          '_publ_author.address'
 loop_
   _alias.definition_id
-         '_publ_author_address' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_publ_author_address'
+_definition.update                      2019-01-09
+_description.text
 ;
      The address of a publication author. If there is more than one
-     author, this will be looped with _publ_author_name.
+     author, this will be looped with _publ_author.name.
 ;
 _name.category_id                       publ_author
 _name.object_id                         address
@@ -17413,13 +17411,12 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         
 ;                       Department
                         Institute
                         Street
                         City and postcode
                         COUNTRY
-; 
+;
 
 save_
 
@@ -17429,14 +17426,14 @@ save_publ_author.email
 _definition.id                          '_publ_author.email'
 loop_
   _alias.definition_id
-         '_publ_author_email' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_publ_author_email'
+_definition.update                      2019-01-09
+_description.text
 ;
      The e-mail address of a publication author. If there is more
-     than one author, this will be looped with _publ_author_name.
+     than one author, this will be looped with _publ_author.name.
      The format of e-mail addresses is given in Section 3.4, Address
-     Specification, of  Internet Message Format, RFC 2822, P. Resnick
+     Specification, of Internet Message Format, RFC 2822, P. Resnick
      (Editor), Network Standards Group, April 2001.
 ;
 _name.category_id                       publ_author
@@ -20146,14 +20143,14 @@ save_atom_site_aniso.label
 _definition.id                          '_atom_site_aniso.label'
 loop_
   _alias.definition_id
-         '_atom_site_aniso_label'      
-         '_atom_site_anisotrop.id' 
-_definition.update                      2013-01-23
-_description.text                       
+         '_atom_site_aniso_label'
+         '_atom_site_anisotrop.id'
+_definition.update                      2019-01-09
+_description.text
 ;
      Anisotropic atomic displacement parameters are usually looped in
      a separate list. If this is the case, this code must match the
-     _atom_site_label of the associated atom in the atom coordinate
+     _atom_site.label of the associated atom in the atom coordinate
      list and conform with the same rules described in _atom_site.label.
 ;
 _name.category_id                       atom_site_aniso
