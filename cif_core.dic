@@ -23273,13 +23273,13 @@ save_refine_ls.number_reflns_gt
 _definition.id                          '_refine_ls.number_reflns_gt'
 loop_
   _alias.definition_id
-         '_refine_ls_number_reflns_gt'           
-         '_refine.ls_number_reflns_obs' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_number_reflns_gt'
+         '_refine.ls_number_reflns_obs'
+_definition.update                      2019-01-09
+_description.text
 ;
      The number of reflections that satisfy the resolution limits
-     established by _refine.ls_d_res_high and _refine.ls_d_res_low
+     established by _refine_ls.d_res_high and _refine_ls.d_res_low
      and the observation limit established by
      _reflns.observed_criterion.
 ;
