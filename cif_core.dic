@@ -9488,12 +9488,12 @@ save_exptl_crystal.density_meas_temp_gt
 _definition.id                          '_exptl_crystal.density_meas_temp_gt'
 loop_
   _alias.definition_id
-         '_exptl_crystal_density_meas_temp_gt' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_exptl_crystal_density_meas_temp_gt'
+_definition.update                      2019-01-09
+_description.text
 ;
      Temperature above which the measured density was determined.
-     This item is used only when exptl_crystal.density_meas_temp
+     This item is used only when _exptl_crystal.density_meas_temp
      cannot be employed. It is intended for use in reporting values
      from databases which would be misleading if reported otherwise.
 ;
@@ -9514,12 +9514,12 @@ save_exptl_crystal.density_meas_temp_lt
 _definition.id                          '_exptl_crystal.density_meas_temp_lt'
 loop_
   _alias.definition_id
-         '_exptl_crystal_density_meas_temp_lt' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_exptl_crystal_density_meas_temp_lt'
+_definition.update                      2019-01-09
+_description.text
 ;
      Temperature below which the measured density was determined.
-     This item is used only when exptl_crystal.density_meas_temp
+     This item is used only when _exptl_crystal.density_meas_temp
      cannot be employed. It is intended for use in reporting values
      from databases which would be misleading if reported otherwise.
 ;
@@ -13940,11 +13940,11 @@ save_valence_param.ref_id
 _definition.id                          '_valence_param.ref_id'
 loop_
   _alias.definition_id
-         '_valence_param_ref_id' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_valence_param_ref_id'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Code linking parameters to the key valence_ref.id key
+     Code linking parameters to the key _valence_ref.id key
      in the reference list in category VALENCE_REF.
 ;
 _name.category_id                       valence_param
@@ -17971,13 +17971,13 @@ save_publ_manuscript.creation
 _definition.id                          '_publ_manuscript.creation'
 loop_
   _alias.definition_id
-         '_publ_manuscript_creation'   
-         '_publ.manuscript_creation' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_publ_manuscript_creation'
+         '_publ.manuscript_creation'
+_definition.update                      2019-01-09
+_description.text
 ;
      A description of the wordprocessor package and computer used to
-     create the manuscript stored as publ_manuscript.processed.
+     create the manuscript stored as _publ_manuscript.processed.
 ;
 _name.category_id                       publ_manuscript
 _name.object_id                         creation
@@ -21478,12 +21478,12 @@ save_
 save_atom_type.element_symbol
 
 _definition.id                          '_atom_type.element_symbol'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2019-01-09
+_description.text
 ;
      Element symbol for of this atom type. The default value is extracted
      from the ion-to-element enumeration_default list using the index
-     value of atom_type.symbol.
+     value of _atom_type.symbol.
 ;
 _name.category_id                       atom_type
 _name.object_id                         element_symbol
@@ -21491,8 +21491,8 @@ _type.purpose                           State
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
-_import.get [{'save':element_symbol  'file':templ_enum.cif}  
-            {'save':ion_to_element  'file':templ_enum.cif}]
+_import.get [{'save':element_symbol  'file':templ_enum.cif}
+             {'save':ion_to_element  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 
 save_
