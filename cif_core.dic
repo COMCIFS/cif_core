@@ -2376,11 +2376,11 @@ save_diffrn_reflns.Laue_measured_fraction_full
 _definition.id                          '_diffrn_reflns.Laue_measured_fraction_full'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_Laue_measured_fraction_full' 
-_definition.update                      2013-01-20
-_description.text                       
+         '_diffrn_reflns_Laue_measured_fraction_full'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Fraction of Laue_group unique reflections (symmetry-independent in
+     Fraction of Laue group unique reflections (symmetry-independent in
      the Laue group) measured out to the resolution given in
      _diffrn_reflns.resolution_full or _diffrn_reflns.theta_full.
      The Laue group always contains a centre of symmetry so that
@@ -4810,11 +4810,11 @@ save_
 save_reflns.apply_dispersion_to_Fcalc
 
 _definition.id                          '_reflns.apply_dispersion_to_Fcalc'
-_definition.update                      2013-04-28
-_description.text                       
+_definition.update                      2019-01-09
+_description.text
 ;
      Yes or No flag on whether the anomalous dispersion scattering
-     components will be applied in the F_complex calculation.
+     components will be applied in the F complex calculation.
      See _refln.F_complex
 ;
 _name.category_id                       reflns
@@ -14083,12 +14083,12 @@ save_audit.block_code
 _definition.id                          '_audit.block_code'
 loop_
   _alias.definition_id
-         '_audit_block_code'           
-         '_audit.revision_id' 
-_definition.update                      2013-04-10
-_description.text                       
+         '_audit_block_code'
+         '_audit.revision_id'
+_definition.update                      2019-01-09
+_description.text
 ;
-     A unique block_code identifier for each revision.
+     A unique block code identifier for each revision.
 ;
 _name.category_id                       audit
 _name.object_id                         block_code
@@ -14098,7 +14098,7 @@ _type.container                         Single
 _type.contents                          Code
 loop_
   _description_example.case
-         TOZ_1991-03-20 
+         TOZ_1991-03-20
 
 save_
 
@@ -15542,11 +15542,11 @@ save_computing.cell_refinement
 _definition.id                          '_computing.cell_refinement'
 loop_
   _alias.definition_id
-         '_computing_cell_refinement' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_computing_cell_refinement'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Brief description of software used for cell_refinement.
+     Brief description of software used for cell refinement.
 ;
 _name.category_id                       computing
 _name.object_id                         cell_refinement
@@ -15556,7 +15556,7 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         'CAD-4 (Enraf-Nonius, 1989)' 
+         'CAD-4 (Enraf-Nonius, 1989)'
 
 save_
 
@@ -15617,11 +15617,11 @@ save_computing.molecular_graphics
 _definition.id                          '_computing.molecular_graphics'
 loop_
   _alias.definition_id
-         '_computing_molecular_graphics' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_computing_molecular_graphics'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Brief description of software used for molecular_graphics.
+     Brief description of software used for molecular graphics.
 ;
 _name.category_id                       computing
 _name.object_id                         molecular_graphics
@@ -15638,11 +15638,11 @@ save_computing.publication_material
 _definition.id                          '_computing.publication_material'
 loop_
   _alias.definition_id
-         '_computing_publication_material' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_computing_publication_material'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Brief description of software used for publication_material.
+     Brief description of software used for publication material.
 ;
 _name.category_id                       computing
 _name.object_id                         publication_material
@@ -15659,11 +15659,11 @@ save_computing.structure_refinement
 _definition.id                          '_computing.structure_refinement'
 loop_
   _alias.definition_id
-         '_computing_structure_refinement' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_computing_structure_refinement'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Brief description of software used for structure_refinement.
+     Brief description of software used for structure refinement.
 ;
 _name.category_id                       computing
 _name.object_id                         structure_refinement
@@ -15673,7 +15673,7 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         'SHELXL93 (Sheldrick, 1993)' 
+         'SHELXL93 (Sheldrick, 1993)'
 
 save_
 
@@ -15683,11 +15683,11 @@ save_computing.structure_solution
 _definition.id                          '_computing.structure_solution'
 loop_
   _alias.definition_id
-         '_computing_structure_solution' 
-_definition.update                      2012-11-29
-_description.text                       
+         '_computing_structure_solution'
+_definition.update                      2019-01-09
+_description.text
 ;
-     Brief description of software used for structure_solution.
+     Brief description of software used for structure solution.
 ;
 _name.category_id                       computing
 _name.object_id                         structure_solution
@@ -15697,7 +15697,7 @@ _type.container                         Single
 _type.contents                          Text
 loop_
   _description_example.case
-         'SHELXS86 (Sheldrick, 1990)' 
+         'SHELXS86 (Sheldrick, 1990)'
 
 save_
 
