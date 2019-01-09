@@ -10885,13 +10885,13 @@ loop_
          '_space_group_symop_id'
          '_symmetry_equiv.pos_site_id'
          '_symmetry_equiv_pos_site_id'
-_definition.update                      2016-05-13
+_definition.update                      2019-01-09
 _description.text 
 ;
      Index identifying each entry in the _space_group_symop.operation_xyz
      list. It is normally the sequence number of the entry in that
      list, and should be identified with the code 'n' in the geometry
-     symmetry codes of the form 'n_klm'. The identity operation
+     symmetry codes of the form 'n_pqr'. The identity operation
      (i.e. _space_group_symop.operation_xyz set to 'x,y,z') should be
      set to 1.
 ;
