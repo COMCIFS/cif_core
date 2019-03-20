@@ -109,7 +109,7 @@ _description.text
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_pressure
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
@@ -211,7 +211,7 @@ _description.text
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_temperature
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Real
@@ -22322,7 +22322,7 @@ _description.text
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_max
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
@@ -22378,7 +22378,7 @@ _description.text
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_min
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
@@ -22439,7 +22439,7 @@ _description.text
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_rms
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
