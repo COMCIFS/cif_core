@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.10
-_dictionary.date                        2019-01-08
+_dictionary.date                        2019-03-26
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.11
 _dictionary.namespace                   CifCore
@@ -14141,21 +14141,22 @@ _definition.id                          '_audit.creation_date'
 loop_
   _alias.definition_id
          '_audit_creation_date' 
-_definition.update                      2012-11-29
+_definition.update                      2019-03-26
 _description.text                       
 ;
-     The date yyyy-mm-dd of each revision to the data.
+     The timestamp of the data revision.
 ;
 _name.category_id                       audit
 _name.object_id                         creation_date
 _type.purpose                           Encode
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Date
+_type.contents                          Datetime
 loop_
   _description_example.case
-         1991-03-20 
-
+         1991-03-20
+         2019-03-26T10:33:06Z
+         2019-03-26T18:33:06.42-08:00
 save_
 
 
