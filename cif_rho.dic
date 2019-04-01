@@ -60,37 +60,37 @@ save_
 
 save_atom_site.label
     _definition.id             '_atom_site.label'
-    _import.get     [{"file":'core_dic' "save":'_atom_site.label'}]
+    _import.get     [{"file":'cif_core.dic' "save":'atom_site.label'}]
      save_
 
 
 save_atom_site.fract_xyz
     _definition.id             '_atom_site.fract_xyz'
-    _import.get     [{"file":'core_dic' "save":'_atom_site.fract_xyz'}]
+    _import.get     [{"file":'cif_core.dic' "save":'atom_site.fract_xyz'}]
      save_
 
 
 save_atom_site.fract_x
     _definition.id             '_atom_site.fract_x'
-    _import.get     [{"file":'core_dic' "save":'_atom_site.fract_x'}]
+    _import.get     [{"file":'cif_core.dic' "save":'atom_site.fract_x'}]
      save_
 
 
 save_atom_site.fract_y
     _definition.id             '_atom_site.fract_y'
-    _import.get     [{"file":'core_dic' "save":'_atom_site.fract_y'}]
+    _import.get     [{"file":'cif_core.dic' "save":'atom_site.fract_y'}]
      save_
 
 
 save_atom_site.fract_z
     _definition.id             '_atom_site.fract_z'
-    _import.get     [{"file":'core_dic' "save":'_atom_site.fract_z'}]
+    _import.get     [{"file":'cif_core.dic' "save":'atom_site.fract_z'}]
      save_
 
 
 save_atom_site.occupancy
     _definition.id             '_atom_site.occupancy'
-    _import.get     [{"file":'core_dic' "save":'_atom_site.occupancy'}]
+    _import.get     [{"file":'cif_core.dic' "save":'atom_site.occupancy'}]
      save_
 
 #===========================================================================
