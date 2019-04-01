@@ -13940,7 +13940,7 @@ _definition.id                          '_valence_param.ref_id'
 loop_
   _alias.definition_id
          '_valence_param_ref_id'
-_definition.update                      2019-01-09
+_definition.update                      2019-04-01
 _description.text
 ;
      Code linking parameters to the key _valence_ref.id key
@@ -13949,7 +13949,7 @@ _description.text
 _name.category_id                       valence_param
 _name.object_id                         ref_id
 _name.linked_item_id                    '_valence_ref.id'
-_type.purpose                           Encode
+_type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
