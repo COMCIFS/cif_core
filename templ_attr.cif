@@ -23,7 +23,7 @@ data_TEMPL_ATTR
 
 save_atom_site_label
 
-    _definition.update           2012-10-16
+    _definition.update           2019-04-01
     _description.text
 ;
      This label is a unique identifier for a particular site in the
@@ -44,7 +44,6 @@ save_atom_site_label
      acceptable and represents the components C, 233, '', and ggg.
      Each label may have a different number of components.
 ;
-    _name.linked_item_id       '_atom_site.label'  
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
