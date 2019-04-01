@@ -2713,7 +2713,7 @@ save_atom_site_occ_special_func.crenel_ortho_eps
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
-    _enumeration_default.value   0.95
+    _enumeration.default         0.95
 
 save_
 
@@ -5212,7 +5212,7 @@ save_atom_sites_axes.matrix
     _type.container              Matrix
     _type.contents               Real
     _type.dimension              '[3,3]'
-    _enumeration_default.value    [[1.0 0.0 0.0]
+    _enumeration.default         [[1.0 0.0 0.0]
                                   [0.0 1.0 0.0]
                                   [0.0 0.0 1.0]]
 
