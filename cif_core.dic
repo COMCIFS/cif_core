@@ -1632,12 +1632,37 @@ _description.text
 ;
 _name.category_id                       diffrn_radiation_wavelength
 _name.object_id                         value
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
 _units.code                             angstroms
+
+save_
+
+
+save_diffrn_radiation_wavelength.value_su
+
+_definition.id                          '_diffrn_radiation_wavelength.value_su'
+loop_
+  _alias.definition_id
+         '_diffrn_radiation_wavelength_su'
+         '_diffrn_radiation_wavelength.wavelength_su'
+_definition.update                      2019-04-01
+_description.text
+;
+     Standard uncertainty of the wavelength of radiation used in diffraction
+     measurements.
+;
+_name.category_id                       diffrn_radiation_wavelength
+_name.object_id                         value_su
+_name.linked_item_id                    '_diffrn_radiation_wavelength.value'
+_type.purpose                           SU
+_type.source                            Related
+_type.container                         Single
+_type.contents                          Real
+_units.code                             none
 
 save_
 
