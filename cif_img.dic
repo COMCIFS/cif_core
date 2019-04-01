@@ -15,7 +15,7 @@ data_CIF_IMG
     _dictionary.title            CIF_IMG
     _dictionary.class            Instance
     _dictionary.version          3.00.02
-    _dictionary.date             2014-07-30
+    _dictionary.date             2019-04-01
     _dictionary.uri              www.iucr.org/cif/dic/cif_img.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifImag
@@ -2812,13 +2812,13 @@ save_
 
 save_diffrn_detector.details
     _definition.id             '_diffrn_detector.details'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_detector.details'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_detector.details'}]
      save_
 
 
 save_diffrn_detector.detector
     _definition.id             '_diffrn_detector.detector'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_detector.description'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_detector.description'}]
      save_
 
 
@@ -2843,7 +2843,7 @@ save_diffrn_detector.diffrn_id
 
 save_diffrn_detector.dtime
     _definition.id             '_diffrn_detector.dtime'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_detector.dtime'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_detector.dtime'}]
      save_
 
 
@@ -2936,7 +2936,7 @@ save_diffrn_detector.number_of_axes
 
 save_diffrn_detector.type
     _definition.id             '_diffrn_detector.type'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_detector.make'}]
+     _import.get  [{"file":'cif_core.dic' "save":'diffrn_detector.make'}]
      save_
 
 
@@ -3236,19 +3236,19 @@ save_
 
 save_diffrn_measurement.device
     _definition.id             '_diffrn_measurement.device'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_measurement.device_class'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_measurement.device_class'}]
      save_
 
 
 save_diffrn_measurement.device_details
     _definition.id             '_diffrn_measurement.device_details'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_measurement.device_details'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_measurement.device_details'}]
      save_
 
 
 save_diffrn_measurement.device_type
     _definition.id             '_diffrn_measurement.device_type'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_measurement.device_make'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_measurement.device_make'}]
      save_
 
 
@@ -3271,7 +3271,7 @@ save_diffrn_measurement.diffrn_id
 
 save_diffrn_measurement.details
     _definition.id             '_diffrn_measurement.details'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_measurement.details'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_measurement.details'}]
      save_
 
 
@@ -3303,7 +3303,7 @@ save_diffrn_measurement.id
 
 save_diffrn_measurement.method
     _definition.id             '_diffrn_measurement.method'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_measurement.method'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_measurement.method'}]
      save_
 
 
@@ -3368,7 +3368,7 @@ save_diffrn_measurement.sample_detector_voffset
 
 save_diffrn_measurement.specimen_support
     _definition.id             '_diffrn_measurement.specimen_support'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_measurement.specimen_support'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_measurement.specimen_support'}]
      save_
 
 
@@ -3514,7 +3514,7 @@ save_
 
 save_diffrn_radiation.collimation
     _definition.id             '_diffrn_radiation.collimation'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.collimation'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.collimation'}]
      save_
 
 
@@ -3626,25 +3626,25 @@ save_diffrn_radiation.div_x_y_source
 
 save_diffrn_radiation.filter_edge
     _definition.id             '_diffrn_radiation.filter_edge'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.filter_edge'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.filter_edge'}]
      save_
 
 
 save_diffrn_radiation.inhomogeneity
     _definition.id             '_diffrn_radiation.inhomogeneity'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.inhomogeneity'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.inhomogeneity'}]
      save_
 
 
 save_diffrn_radiation.monochromator
     _definition.id             '_diffrn_radiation.monochromator'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.monochromator'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.monochromator'}]
      save_
 
 
 save_diffrn_radiation.polarisn_norm
     _definition.id             '_diffrn_radiation.polarisn_norm'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.polarisn_norm'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.polarisn_norm'}]
      save_
 
 
@@ -3673,7 +3673,7 @@ save_diffrn_radiation.polarisn_norm_esd
 
 save_diffrn_radiation.polarisn_ratio
     _definition.id             '_diffrn_radiation.polarisn_ratio'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.polarisn_ratio'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.polarisn_ratio'}]
      save_
 
 
@@ -4070,25 +4070,25 @@ save_diffrn_radiation.polarizn_Stokes_V_esd
 
 save_diffrn_radiation.probe
     _definition.id             '_diffrn_radiation.probe'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.probe'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.probe'}]
      save_
 
 
 save_diffrn_radiation.type
     _definition.id             '_diffrn_radiation.type'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.type'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.type'}]
      save_
 
 
 save_diffrn_radiation.xray_symbol
     _definition.id             '_diffrn_radiation.xray_symbol'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation.xray_symbol'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation.xray_symbol'}]
      save_
 
 
 save_diffrn_radiation.wavelength_id
     _definition.id             '_diffrn_radiation.wavelength_id'
-    _import.get  [{"file":'core_dic' "save":'_diffrn_radiation_wavelength.id'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_radiation_wavelength.id'}]
      save_
 
 
