@@ -12,9 +12,9 @@ data_CIF_RHO
     _dictionary.title            cif_rho
     _dictionary.class            Instance
     _dictionary.version          2.00.01
-    _dictionary.date             2014-06-20
+    _dictionary.date             2019-04-01
     _dictionary.uri              www.iucr.org/cif/dic/cif_rho.dic
-    _dictionary.ddl_conformance  3.11.04
+    _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        CifRho
     _description.text
 ;
@@ -526,7 +526,7 @@ save_atom_rho_multipole.scat_core_table
     _definition.id             '_atom_rho_multipole.scat_core_table'
      loop_
     _alias.definition_id       '_atom_rho_multipole_scat_core_table'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text
 ;
       This table gives the scattering factor for the core electrons
@@ -554,7 +554,7 @@ save_atom_rho_multipole.scat_core_table
     _type.source                 Assigned
     _type.container              Table
     _type.contents               Real
-    _type.dimension              []
+    _type.dimension              '[]'
      save_
 
  
@@ -598,7 +598,7 @@ save_atom_rho_multipole.scat_valence_table
     _definition.id             '_atom_rho_multipole.scat_valence_table'
      loop_
     _alias.definition_id       '_atom_rho_multipole_scat_valence_table'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text
 ;
       This table gives the scattering factor for the valence electrons
@@ -626,7 +626,7 @@ save_atom_rho_multipole.scat_valence_table
     _type.source                 Assigned
     _type.container              Table
     _type.contents               Real
-    _type.dimension              []
+    _type.dimension              '[]'
      save_
 
  
@@ -679,7 +679,7 @@ save_atom_rho_multipole_coeff.list
     _definition.id             '_atom_rho_multipole_coeff.list'
      loop_
     _alias.definition_id       '_atom_rho_multipole_coeff_list'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text             
 ;
       Specifies the multipole population coefficients P(l,m) for
@@ -738,7 +738,7 @@ save_atom_rho_multipole_coeff.list
     _type.source                 Derived
     _type.container              List   
     _type.contents               Real
-    _type.dimension              [27]
+    _type.dimension              '[27]'
      loop_
     _method.purpose
     _method.expression
@@ -1055,7 +1055,7 @@ save_atom_rho_multipole_kappa.list
     _definition.id             '_atom_rho_multipole_kappa.list'
      loop_
     _alias.definition_id       '_atom_rho_multipole_kappa_list'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text             
 ;
       Gives the radial function expansion-contraction coefficients
@@ -1113,7 +1113,7 @@ save_atom_rho_multipole_kappa.list
     _type.source                 Derived
     _type.container              List
     _type.contents               Real
-    _type.dimension              [6] 
+    _type.dimension              '[6]'
      loop_
     _method.purpose
     _method.expression
@@ -1207,7 +1207,7 @@ save_atom_rho_multipole_radial_slater.list
     _definition.id             '_atom_rho_multipole_radial_slater.list'
      loop_
     _alias.definition_id       '_atom_rho_multipole_radial_slater_list'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text             
 ;
       These items are used when the radial dependence of the valence
@@ -1276,7 +1276,7 @@ save_atom_rho_multipole_radial_slater.list
     _type.source                 Derived
     _type.container              List
     _type.contents               Real
-    _type.dimension              [10]
+    _type.dimension              '[10]'
      loop_
     _method.purpose
     _method.expression
