@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.13.1
-    _dictionary.date             2017-10-26
+    _dictionary.date             2019-04-01
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.13.1
@@ -1831,7 +1831,7 @@ save_type.contents
 
     _definition.id               '_type.contents'
     _definition.class            Attribute
-    _definition.update           2013-04-24
+    _definition.update           2019-04-01
     _description.text
 ;
 
@@ -1883,7 +1883,11 @@ save_type.contents
               DateTime
             'A timestamp. Text formats must use date-time or full-date productions of RFC3339 ABNF'
               Version       'version digit string of the form <major>.<version>.<update>'
-              Dimension     'integer limits of an Array/Matrix/List in square brackets'
+              Dimension   '''Size of an Array/Matrix/List expressed as a text
+                             string. The text string itself consists of zero
+                             or more non-negative integers separated by commas
+                             placed within bounding square brackets. Empty
+                             square brackets represent a list of unknown size'''
               Range         'inclusive range of numerical values min:max'
               Count         'unsigned integer number'
               Index         'unsigned non-zero integer number'
@@ -1929,11 +1933,10 @@ save_type.dimension
 
     _definition.id               '_type.dimension'
     _definition.class            Attribute
-    _definition.update           2013-04-17
+    _definition.update           2019-04-01
     _description.text
 ;
-     The dimensions of a list or matrix of elements as a text string
-     within bounding square brackets.
+     The dimensions of a list or matrix of elements expressed as a text string.
 ;
     _name.category_id            type
     _name.object_id              dimension
