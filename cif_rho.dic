@@ -55,7 +55,9 @@ save_ATOM_SITE
 ;
     _name.category_id            RHO_GROUP
     _name.object_id              ATOM_SITE
-    _category.key_list        ['_atom_site.label']
+    loop_
+    _category_key.name
+                                '_atom_site.label'
 save_
 
 save_atom_site.label
@@ -137,7 +139,10 @@ save_ATOM_LOCAL_AXES
 ;
     _name.category_id           RHO_GROUP
     _name.object_id             ATOM_LOCAL_AXES
-    _category.key_list       ['_atom_local_axes.atom_label']
+    loop_
+    _category_key.name
+                                '_atom_local_axes.atom_label'
+
 save_
 
 
@@ -340,7 +345,10 @@ save_ATOM_RHO_MULTIPOLE
 ;
     _name.category_id           RHO_GROUP
     _name.object_id             ATOM_RHO_MULTIPOLE
-    _category.key_list       ['_atom_rho_multipole.atom_label']
+    loop_
+    _category_key.name
+                                '_atom_rho_multipole.atom_label'
+
 save_
  
 save_atom_rho_multipole.atom_label

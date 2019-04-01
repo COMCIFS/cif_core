@@ -74,7 +74,7 @@ save_ARRAY_DATA
     _definition.id              array_data
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the ARRAY_DATA category are the containers for
@@ -94,9 +94,11 @@ save_ARRAY_DATA
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_DATA
-    _category.key_list       ['_array_data.array_id'
-                              '_array_data.binary_id'
-                              '_array_data.variant'] 
+    loop_
+    _category_key.name
+                                '_array_data.array_id'
+                                '_array_data.binary_id'
+                                '_array_data.variant'
 save_
 
 save_array_data.array_id
@@ -449,7 +451,7 @@ save_ARRAY_ELEMENT_SIZE
     _definition.id              array_element_size
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the ARRAY_ELEMENT_SIZE category record the physical
@@ -457,9 +459,11 @@ save_ARRAY_ELEMENT_SIZE
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_ELEMENT_SIZE
-    _category.key_list       ['_array_element_size.array_id'
-                              '_array_element_size.index'
-                              '_array_element_size.variant']  
+    loop_
+    _category_key.name
+                                '_array_element_size.array_id'
+                                '_array_element_size.index'
+                                '_array_element_size.variant'
 save_
 
 save_array_element_size.array_id
@@ -543,7 +547,7 @@ save_ARRAY_INTENSITIES
     _definition.id              ARRAY_INTENSITIES
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the ARRAY_INTENSITIES category record the
@@ -563,9 +567,11 @@ save_ARRAY_INTENSITIES
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_INTENSITIES
-    _category.key_list       ['_array_intensities.array_id'
-                              '_array_intensities.binary_id'
-                              '_array_intensities.variant'] 
+    loop_
+    _category_key.name
+                                '_array_intensities.array_id'
+                                '_array_intensities.binary_id'
+                                '_array_intensities.variant'
 save_
 
 save_array_intensities.array_id
@@ -912,7 +918,7 @@ save_ARRAY_STRUCTURE
     _definition.id              ARRAY_STRUCTURE
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the ARRAY_STRUCTURE category record the organization and
@@ -920,8 +926,10 @@ save_ARRAY_STRUCTURE
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_STRUCTURE
-    _category.key_list       ['_array_structure.id'
-                              '_array_structure.variant'] 
+    loop_
+    _category_key.name
+                                '_array_structure.id'
+                                '_array_structure.variant' 
 save_
 
 save_array_structure.byte_order
@@ -1120,7 +1128,7 @@ save_ARRAY_STRUCTURE_LIST
     _definition.id              ARRAY_STRUCTURE_LIST
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      The ARRAY_STRUCTURE_LIST category record the size
@@ -1129,9 +1137,11 @@ save_ARRAY_STRUCTURE_LIST
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_STRUCTURE_LIST
-    _category.key_list       ['_array_structure_list.array_id'
-                              '_array_structure_list.index'
-                              '_array_structure_list.variant']  
+    loop_
+    _category_key.name
+                                '_array_structure_list.array_id'
+                                '_array_structure_list.index'
+                                '_array_structure_list.variant'
 save_
 
 save_array_structure_list.array_id
@@ -1301,7 +1311,7 @@ save_ARRAY_STRUCTURE_LIST_SECTION
     _definition.id              ARRAY_STRUCTURE_LIST_SECTION
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the ARRAY_STRUCTURE_LIST_SECTION category identify
@@ -1330,10 +1340,12 @@ save_ARRAY_STRUCTURE_LIST_SECTION
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_STRUCTURE_LIST_SECTION
-    _category.key_list       ['_array_structure_list_section.id'
-                              '_array_structure_list_section.array_id'
-                              '_array_structure_list_section.index'
-                              '_array_structure_list_section.variant'] 
+    loop_
+    _category_key.name
+                                '_array_structure_list_section.id'
+                                '_array_structure_list_section.array_id'
+                                '_array_structure_list_section.index'
+                                '_array_structure_list_section.variant'
 save_
 
 save_array_structure_list_section.array_id
@@ -1502,7 +1514,7 @@ save_ARRAY_STRUCTURE_LIST_AXIS
     _definition.id              ARRAY_STRUCTURE_LIST_AXIS
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the ARRAY_STRUCTURE_LIST_AXIS category describe
@@ -1521,9 +1533,11 @@ save_ARRAY_STRUCTURE_LIST_AXIS
 ;
     _name.category_id           ARRAY_GROUP
     _name.object_id             ARRAY_STRUCTURE_LIST_AXIS
-    _category.key_list       ['_array_structure_list_axis.axis_set_id'
-                              '_array_structure_list_axis.axis_id'
-                              '_array_structure_list_axis.variant'] 
+    loop_
+    _category_key.name
+                                '_array_structure_list_axis.axis_set_id'
+                                '_array_structure_list_axis.axis_id'
+                                '_array_structure_list_axis.variant'
 save_
 
 save_array_structure_list_axis.axis_id
@@ -1835,7 +1849,7 @@ save_AXIS
     _definition.id              AXIS
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the AXIS category record the information required
@@ -2099,9 +2113,11 @@ save_AXIS
 ;
     _name.category_id           AXIS_GROUP
     _name.object_id             AXIS
-    _category.key_list       ['_axis.id'
-                              '_axis.equipment'
-                              '_axis.variant'] 
+    loop_
+    _category_key.name
+                                '_axis.id'
+                                '_axis.equipment'
+                                '_axis.variant'
 save_
 
 save_axis.depends_on
@@ -2510,7 +2526,7 @@ save_DIFFRN_DATA_FRAME
     _definition.id              DIFFRN_DATA_FRAME
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the DIFFRN_DATA_FRAME category record
@@ -2522,9 +2538,11 @@ save_DIFFRN_DATA_FRAME
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_DATA_FRAME
-    _category.key_list       ['_diffrn_data_frame.id'
-                              '_diffrn_data_frame.detector_element_id'
-                              '_diffrn_data_frame.variant']  
+    loop_
+    _category_key.name
+                                '_diffrn_data_frame.id'
+                                '_diffrn_data_frame.detector_element_id'
+                                '_diffrn_data_frame.variant'
 save_
 
 save_diffrn_data_frame.array_id
@@ -2796,7 +2814,7 @@ save_DIFFRN_DETECTOR
     _definition.id              DIFFRN_DETECTOR
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_DETECTOR category describe the
@@ -2805,9 +2823,11 @@ save_DIFFRN_DETECTOR
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_DETECTOR
-    _category.key_list       ['_diffrn_detector.diffrn_id'
-                              '_diffrn_detector.id'
-                              '_diffrn_detector.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_detector.diffrn_id'
+                                '_diffrn_detector.id'
+                                '_diffrn_detector.variant'
 save_
 
 save_diffrn_detector.details
@@ -2966,7 +2986,7 @@ save_DIFFRN_DETECTOR_AXIS
     _definition.id              DIFFRN_DETECTOR_AXIS
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_DETECTOR_AXIS category associate
@@ -2974,9 +2994,11 @@ save_DIFFRN_DETECTOR_AXIS
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_DETECTOR_AXIS
-    _category.key_list       ['_diffrn_detector_axis.detector_id'
-                              '_diffrn_detector_axis.axis_id'
-                              '_diffrn_detector_axis.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_detector_axis.detector_id'
+                                '_diffrn_detector_axis.axis_id'
+                                '_diffrn_detector_axis.variant'
 save_
 
 save_diffrn_detector_axis.axis_id
@@ -3045,7 +3067,7 @@ save_DIFFRN_DETECTOR_ELEMENT
     _definition.id              DIFFRN_DETECTOR_ELEMENT
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the DIFFRN_DETECTOR_ELEMENT category record
@@ -3058,9 +3080,11 @@ save_DIFFRN_DETECTOR_ELEMENT
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_DETECTOR_ELEMENT
-    _category.key_list       ['_diffrn_detector_element.id'
-                              '_diffrn_detector_element.detector_id'
-                              '_diffrn_detector_element.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_detector_element.id'
+                                '_diffrn_detector_element.detector_id'
+                                '_diffrn_detector_element.variant'
 save_
 
 save_diffrn_detector_element.id
@@ -3218,7 +3242,7 @@ save_DIFFRN_MEASUREMENT
     _definition.id              DIFFRN_MEASUREMENT
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_MEASUREMENT category record details
@@ -3228,10 +3252,12 @@ save_DIFFRN_MEASUREMENT
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_MEASUREMENT
-    _category.key_list       ['_diffrn_measurement.device'
-                              '_diffrn_measurement.diffrn_id'
-                              '_diffrn_measurement.id'
-                              '_diffrn_measurement.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_measurement.device'
+                                '_diffrn_measurement.diffrn_id'
+                                '_diffrn_measurement.id'
+                                '_diffrn_measurement.variant'
 save_
 
 save_diffrn_measurement.device
@@ -3398,7 +3424,7 @@ save_DIFFRN_MEASUREMENT_AXIS
     _definition.id              DIFFRN_MEASUREMENT_AXIS
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_MEASUREMENT_AXIS category associate
@@ -3406,10 +3432,12 @@ save_DIFFRN_MEASUREMENT_AXIS
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_MEASUREMENT_AXIS
-    _category.key_list  ['_diffrn_measurement_axis.measurement_device'
-                         '_diffrn_measurement_axis.measurement_id'
-                         '_diffrn_measurement_axis.axis_id'
-                         '_diffrn_measurement_axis.variant']
+    loop_
+    _category_key.name
+                                '_diffrn_measurement_axis.measurement_device'
+                                '_diffrn_measurement_axis.measurement_id'
+                                '_diffrn_measurement_axis.axis_id'
+                                '_diffrn_measurement_axis.variant'
 save_
 
 save_diffrn_measurement_axis.axis_id
@@ -3496,7 +3524,7 @@ save_DIFFRN_RADIATION
     _definition.id              DIFFRN_RADIATION
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_RADIATION category describe
@@ -3508,8 +3536,10 @@ save_DIFFRN_RADIATION
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_RADIATION
-    _category.key_list       ['_diffrn_radiation.diffrn_id'
-                              '_diffrn_radiation.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_radiation.diffrn_id'
+                                '_diffrn_radiation.variant'
 save_
 
 save_diffrn_radiation.collimation
@@ -4118,7 +4148,7 @@ save_DIFFRN_REFLN
     _definition.id              DIFFRN_REFLN
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      This category redefinition has been added to extend the key of
@@ -4135,10 +4165,12 @@ save_DIFFRN_REFLN
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_REFLN
-    _category.key_list       ['_diffrn_refln.diffrn_id'
-                              '_diffrn_refln.id'
-                              '_diffrn_refln.frame_id'
-                              '_diffrn_refln.variant']  
+    loop_
+    _category_key.name
+                                '_diffrn_refln.diffrn_id'
+                                '_diffrn_refln.id'
+                                '_diffrn_refln.frame_id'
+                                '_diffrn_refln.variant'
 save_
 
 save_diffrn_refln.frame_id
@@ -4221,7 +4253,7 @@ save_DIFFRN_SCAN
     _definition.id              DIFFRN_SCAN
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_SCAN category describe the parameters 
@@ -4229,8 +4261,10 @@ save_DIFFRN_SCAN
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_SCAN
-    _category.key_list       ['_diffrn_scan.id'
-                              '_diffrn_scan.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_scan.id'
+                                '_diffrn_scan.variant'
 save_
 
 save_diffrn_scan.id
@@ -4438,7 +4472,7 @@ save_DIFFRN_SCAN_AXIS
     _definition.id              DIFFRN_SCAN_AXIS
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
 items in the DIFFRN_SCAN_AXIS category describe the settings of
@@ -4447,9 +4481,11 @@ for particular scans.  Unspecified axes are assumed to be at
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_SCAN_AXIS
-    _category.key_list       ['_diffrn_scan_axis.scan_id'
-                              '_diffrn_scan_axis.axis_id'
-                              '_diffrn_scan_axis.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_scan_axis.scan_id'
+                                '_diffrn_scan_axis.axis_id'
+                                '_diffrn_scan_axis.variant'
 save_
 
 save_diffrn_scan_axis.scan_id
@@ -4760,7 +4796,7 @@ save_DIFFRN_SCAN_FRAME
     _definition.id              DIFFRN_SCAN_FRAME
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_SCAN_FRAME category describe
@@ -4768,9 +4804,11 @@ save_DIFFRN_SCAN_FRAME
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_SCAN_FRAME
-    _category.key_list       ['_diffrn_scan_frame.scan_id'
-                              '_diffrn_scan_frame.frame_id'
-                              '_diffrn_scan_frame.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_scan_frame.scan_id'
+                                '_diffrn_scan_frame.frame_id'
+                                '_diffrn_scan_frame.variant'
 save_
 
 save_diffrn_scan_frame.date
@@ -5185,7 +5223,7 @@ save_DIFFRN_SCAN_FRAME_AXIS
     _definition.id              DIFFRN_SCAN_FRAME_AXIS
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
      Data items in the DIFFRN_SCAN_FRAME_AXIS category describe the
@@ -5197,9 +5235,11 @@ save_DIFFRN_SCAN_FRAME_AXIS
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_SCAN_FRAME_AXIS
-    _category.key_list       ['_diffrn_scan_frame_axis.frame_id'
-                              '_diffrn_scan_frame_axis.axis_id'
-                              '_diffrn_scan_frame_axis.variant']
+    loop_
+    _category_key.name
+                                '_diffrn_scan_frame_axis.frame_id'
+                                '_diffrn_scan_frame_axis.axis_id'
+                                '_diffrn_scan_frame_axis.variant'
 save_
 
 save_diffrn_scan_frame_axis.axis_id
@@ -5452,7 +5492,7 @@ save_DIFFRN_SCAN_FRAME_MONITOR
     _definition.id              DIFFRN_SCAN_FRAME_MONITOR
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the DIFFRN_SCAN_FRAME_MONITOR category record
@@ -5479,11 +5519,13 @@ save_DIFFRN_SCAN_FRAME_MONITOR
 ;
     _name.category_id           DIFFRN_GROUP
     _name.object_id             DIFFRN_SCAN_FRAME_MONITOR
-    _category.key_list       ['_diffrn_scan_frame_monitor.id'
-                              '_diffrn_scan_frame_monitor.detector_id'
-                              '_diffrn_scan_frame_monitor.scan_id'
-                              '_diffrn_scan_frame_monitor.frame_id'
-                              '_diffrn_scan_frame_monitor.variant'] 
+    loop_
+    _category_key.name
+                                '_diffrn_scan_frame_monitor.id'
+                                '_diffrn_scan_frame_monitor.detector_id'
+                                '_diffrn_scan_frame_monitor.scan_id'
+                                '_diffrn_scan_frame_monitor.frame_id'
+                                '_diffrn_scan_frame_monitor.variant'
 save_
 
 save_diffrn_scan_frame_monitor.id
@@ -5645,7 +5687,7 @@ save_MAP
     _definition.id              MAP
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the MAP category record the details of a maps. 
@@ -5658,10 +5700,12 @@ save_MAP
 ;
     _name.category_id           MAP_GROUP
     _name.object_id             MAP
-    _category.key_list       ['_map.id'
-                              '_map.diffrn_id'
-                              '_map.entry_id'
-                              '_map.variant'] 
+    loop_
+    _category_key.name
+                                '_map.id'
+                                '_map.diffrn_id'
+                                '_map.entry_id'
+                                '_map.variant'
 save_
 
 save_map.details
@@ -5764,7 +5808,7 @@ save_MAP_SEGMENT
     _definition.id              MAP_SEGMENT
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the MAP_SEGMENT category record
@@ -5772,9 +5816,11 @@ save_MAP_SEGMENT
 ;
     _name.category_id           MAP_GROUP
     _name.object_id             MAP_SEGMENT
-    _category.key_list       ['_map_segment.id'
-                              '_map_segment.map_id'
-                              '_map_segment.variant'] 
+    loop_
+    _category_key.name
+                                '_map_segment.id'
+                                '_map_segment.map_id'
+                                '_map_segment.variant'
 save_
 
 save_map_segment.array_id
@@ -6001,7 +6047,7 @@ save_VARIANT
     _definition.id              VARIANT
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-07-07
+    _definition.update          2019-04-01
     _description.text
 ;
     Data items in the VARIANT category record the details about 
@@ -6038,9 +6084,11 @@ save_VARIANT
 ;
     _name.category_id           VARIANT_GROUP
     _name.object_id             VARIANT
-    _category.key_list       ['_variant.variant'
-                              '_variant.diffrn_id'
-                              '_variant.entry_id'] 
+    loop_
+    _category_key.name
+                                '_variant.variant'
+                                '_variant.diffrn_id'
+                                '_variant.entry_id'
 save_
 
 save_variant.details
