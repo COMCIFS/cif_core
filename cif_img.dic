@@ -2956,7 +2956,7 @@ save_diffrn_detector.number_of_axes
 
 save_diffrn_detector.type
     _definition.id             '_diffrn_detector.type'
-     _import.get  [{"file":'cif_core.dic' "save":'diffrn_detector.make'}]
+    _import.get  [{"file":'cif_core.dic' "save":'diffrn_detector.make'}]
      save_
 
 
