@@ -9,10 +9,10 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.10
-_dictionary.date                        2019-03-26
+_dictionary.version                     3.0.11
+_dictionary.date                        2019-04-02
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
-_dictionary.ddl_conformance             3.11.11
+_dictionary.ddl_conformance             3.14.0
 _dictionary.namespace                   CifCore
 _description.text                       
 ;
@@ -3292,8 +3292,11 @@ loop_
          '_diffrn_source'    
          '_diffrn_radiation_source'    
          '_diffrn_source.source' 
-_definition.update                      2018-02-26
-_definition.replaced_by                 '_diffrn_source.device'
+_definition.update                      2019-04-02
+loop_
+  _definition_replaced.id
+  _definition_replaced.by
+         1 '_diffrn_source.device'
 _description.text                       
 ;
      The general class of the source of radiation. This is deprecated.
@@ -11250,8 +11253,11 @@ save_symmetry.cell_setting
     _definition.id               '_symmetry.cell_setting'
     loop_
     _alias.definition_id         '_symmetry_cell_setting'
-    _definition.update           2017-06-10
-    _definition.replaced_by      '_space_group.crystal_system'
+    _definition.update           2019-04-02
+    loop_
+    _definition_replaced.id
+    _definition_replaced.by
+                                 1 '_space_group.crystal_system'
     _description.text
 ;              
      This dataname should not be used and is DEPRECATED as it is
@@ -24142,4 +24148,9 @@ loop_
          3.0.10    2019-01-08
 ;
      Added DATABASE_RELATED category (James Hester).
+;
+         3.0.11    2019-04-02
+;
+     Replaced all instances of the _definition.replaced_by with data items
+     from the DEFINITION_REPLACED category.
 ;
