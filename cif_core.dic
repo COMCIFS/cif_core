@@ -19479,7 +19479,13 @@ _definition.id                          '_atom_site.refinement_flags'
 loop_
   _alias.definition_id
          '_atom_site_refinement_flags' 
-_definition.update                      2013-03-08
+_definition.update                      2019-04-02
+loop_
+  _definition_replaced.id
+  _definition_replaced.by
+         1 '_atom_site.refinement_flags_posn'
+         2 '_atom_site.refinement_flags_adp'
+         3 '_atom_site.refinement_flags_occupancy'
 _description.text                       
 ;
      A concatenated series of single-letter codes which indicate the
@@ -24151,6 +24157,11 @@ loop_
 ;
          3.0.11    2019-04-02
 ;
-     Replaced all instances of the _definition.replaced_by with data items
-     from the DEFINITION_REPLACED category.
+     Replaced all instances of the _definition.replaced_by data item with
+     data items from the DEFINITION_REPLACED category.
+
+     Marked the _atom_site.refinement_flags data item as deprecated and
+     replaced by the _atom_site.refinement_flags_posn,
+     _atom_site.refinement_flags_adp and _atom_site.refinement_flags_occupancy
+     data items.
 ;
