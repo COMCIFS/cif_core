@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.10
-_dictionary.date                        2019-04-01
+_dictionary.version                     3.0.11
+_dictionary.date                        2019-04-02
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.11.11
 _dictionary.namespace                   CifCore
@@ -1649,7 +1649,7 @@ loop_
   _alias.definition_id
          '_diffrn_radiation_wavelength_su'
          '_diffrn_radiation_wavelength.wavelength_su'
-_definition.update                      2019-04-01
+_definition.update                      2019-04-02
 _description.text
 ;
      Standard uncertainty of the wavelength of radiation used in diffraction
@@ -24141,4 +24141,11 @@ loop_
          3.0.10    2019-01-08
 ;
      Added DATABASE_RELATED category (James Hester).
+;
+         3.0.11    2019-04-02
+;
+    Removed the _chemical_conn_bond.distance_su data item.
+    Changed the purpose of the diffrn_radiation_wavelength.value data item
+    from 'Number' to 'Measurand'. Added the diffrn_radiation_wavelength.value_su
+    data item.
 ;
