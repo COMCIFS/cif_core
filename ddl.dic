@@ -63,14 +63,14 @@ save_alias.definition_id
 
     _definition.id               '_alias.definition_id'
     _definition.class            Attribute
-    _definition.update           2006-11-16
+    _definition.update           2019-04-02
     _description.text
 ;
      Identifier tag of an aliased definition.
 ;
     _name.category_id            alias
     _name.object_id              definition_id
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Tag
@@ -529,7 +529,7 @@ save_description_example.case
 ;
     _name.category_id            description_example
     _name.object_id              case
-    _type.purpose                Key
+    _type.purpose                Describe
     _type.source                 Assigned
     _type.container              Implied
     _type.contents               Implied
@@ -806,14 +806,14 @@ save_dictionary_audit.version
 
     _definition.id               '_dictionary_audit.version'
     _definition.class            Attribute
-    _definition.update           2011-06-27
+    _definition.update           2019-04-02
     _description.text
 ;
      A unique version identifier for each revision of the dictionary.
 ;
     _name.category_id            dictionary_audit
     _name.object_id              version
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Version
@@ -848,7 +848,7 @@ save_dictionary_valid.application
 
     _definition.id               '_dictionary_valid.application'
     _definition.class            Attribute
-    _definition.update           2013-02-12
+    _definition.update           2019-04-02
     _description.text
 ;
      Provides the information identifying the definition scope (
@@ -859,7 +859,7 @@ save_dictionary_valid.application
 ;
     _name.category_id            dictionary_valid
     _name.object_id              application
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              List
     _type.contents               Code
@@ -974,14 +974,14 @@ save_dictionary_xref.code
 
     _definition.id               '_dictionary_xref.code'
     _definition.class            Attribute
-    _definition.update           2006-11-27
+    _definition.update           2019-04-02
     _description.text
 ;
      A code identifying the cross-referenced dictionary.
 ;
     _name.category_id            dictionary_xref
     _name.object_id              code
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -1109,7 +1109,7 @@ save_enumeration.default
 
     _definition.id               '_enumeration.default'
     _definition.class            Attribute
-    _definition.update           2013-03-08
+    _definition.update           2019-04-02
     _description.text
 ;
      The default value for the defined item if it is not specified explicitly.
@@ -1204,7 +1204,7 @@ save_enumeration_default.index
 ;
     _name.category_id            enumeration_default
     _name.object_id              index
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -1279,14 +1279,14 @@ save_enumeration_set.state
 
     _definition.id               '_enumeration_set.state'
     _definition.class            Attribute
-    _definition.update           2011-06-27
+    _definition.update           2019-04-02
     _description.text
 ;
      Permitted value state for the defined item.
 ;
     _name.category_id            enumeration_set
     _name.object_id              state
-    _type.purpose                Key
+    _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
@@ -1466,7 +1466,7 @@ save_
 save_import_details.order
     _definition.id               '_import_details.order'
     _definition.class            Attribute
-    _definition.update           2015-05-07
+    _definition.update           2019-04-02
     _description.text
 ;
      The order in which the import described by the referenced row should be
@@ -1477,7 +1477,7 @@ save_import_details.order
     _type.container             Single
     _type.contents              Integer
     _type.source                Assigned
-    _type.purpose               Key
+    _type.purpose               Encode
 
 save_
 
@@ -2050,7 +2050,7 @@ save_type.purpose
 
     _definition.id               '_type.purpose'
     _definition.class            Attribute
-    _definition.update           2013-03-06
+    _definition.update           2019-04-02
     _description.text
 ;
      The primary purpose or function the defined data item serves in a
@@ -2109,9 +2109,8 @@ save_type.purpose
 ;
               Key
 ;                  Used to type an item with a value that is unique within
-                   the looped list of these items, and may be used as a
-                   reference "key" to identify a specific packet of items
-                   within the category.
+                   the looped list of these items, and does not contain
+                   encoded information.
 ;
               Link
 ;
@@ -2688,6 +2687,12 @@ Removed 'Measured' as a state for type.source
 ;
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
+;
+         3.13.2    2019-04-02
+;
+   Updated the description of the 'Key' type purpose and changed the
+   purpose of several data items in order to avoid conflicts with
+   the new description.
 ;
          3.14.0    2019-04-02
 ;
