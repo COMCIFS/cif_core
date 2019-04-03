@@ -1632,12 +1632,37 @@ _description.text
 ;
 _name.category_id                       diffrn_radiation_wavelength
 _name.object_id                         value
-_type.purpose                           Number
+_type.purpose                           Measurand
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.0:
 _units.code                             angstroms
+
+save_
+
+
+save_diffrn_radiation_wavelength.value_su
+
+_definition.id                          '_diffrn_radiation_wavelength.value_su'
+loop_
+  _alias.definition_id
+         '_diffrn_radiation_wavelength_su'
+         '_diffrn_radiation_wavelength.wavelength_su'
+_definition.update                      2019-04-02
+_description.text
+;
+     Standard uncertainty of the wavelength of radiation used in diffraction
+     measurements.
+;
+_name.category_id                       diffrn_radiation_wavelength
+_name.object_id                         value_su
+_name.linked_item_id                    '_diffrn_radiation_wavelength.value'
+_type.purpose                           SU
+_type.source                            Related
+_type.container                         Single
+_type.contents                          Real
+_units.code                             none
 
 save_
 
@@ -8756,32 +8781,6 @@ _enumeration.range                      0.0:
 _units.code                             angstroms
 
 save_
-
-
-save_chemical_conn_bond.distance_su
-
-_definition.id                          '_chemical_conn_bond.distance_su'
-loop_
-  _alias.definition_id
-         '_chem_comp_bond.value_dist_esd' 
-_definition.update                      2014-06-12
-_description.text                       
-;
-     The value that should be taken as the target for the chemical
-     bond associated with the specified atoms, expressed as a
-     distance.
-;
-_name.category_id                       chemical_conn_bond
-_name.linked_item_id                    '_chemical_conn_bond.distance'
-_name.object_id                         distance_su
-_type.purpose                           SU
-_type.source                            Derived
-_type.container                         Single
-_type.contents                          Real
-_units.code                             angstroms
-
-save_
-
  
 save_chemical_conn_bond.id
     _definition.id             '_chemical_conn_bond.id'
@@ -24157,6 +24156,10 @@ loop_
 ;
          3.0.11    2019-04-02
 ;
+    Removed the _chemical_conn_bond.distance_su data item.
+    Changed the purpose of the diffrn_radiation_wavelength.value data item
+    from 'Number' to 'Measurand'. Added the diffrn_radiation_wavelength.value_su
+    data item.
      Replaced all instances of the _definition.replaced_by data item with
      data items from the DEFINITION_REPLACED category.
 
