@@ -14,7 +14,7 @@ data_CIF_IMG
     _dictionary.title            CIF_IMG
     _dictionary.class            Instance
     _dictionary.version          3.00.02
-    _dictionary.date             2014-07-30
+    _dictionary.date             2019-04-01
     _dictionary.uri              www.iucr.org/cif/dic/cif_img.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifImag
@@ -2187,7 +2187,7 @@ save_axis.equipment_component
 
 save_axis.offset
     _definition.id             '_axis.offset'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text
 ;
      The three-element vector used to specify the offset to the
@@ -2199,7 +2199,7 @@ save_axis.offset
     _type.source                derived
     _type.container             Matrix
     _type.contents              Real
-    _type.dimension             [3]
+    _type.dimension             '[3]'
     _units.code                 millimetres
      loop_
     _method.purpose
@@ -2397,7 +2397,7 @@ save_axis.type
 
 save_axis.vector
     _definition.id             '_axis.vector'
-    _definition.update           2014-06-20
+    _definition.update           2019-04-01
     _description.text
 ;
      The three-element vector used to specify the direction
@@ -2411,7 +2411,7 @@ save_axis.vector
     _type.source                Derived
     _type.container             Matrix
     _type.contents              Real
-    _type.dimension             [3]
+    _type.dimension             '[3]'
     _units.code                 none
      loop_
     _method.purpose
