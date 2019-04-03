@@ -12,7 +12,7 @@ _dictionary.class                       Instance
 _dictionary.version                     3.0.11
 _dictionary.date                        2019-04-02
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
-_dictionary.ddl_conformance             3.11.11
+_dictionary.ddl_conformance             3.14.0
 _dictionary.namespace                   CifCore
 _description.text                       
 ;
@@ -3317,8 +3317,11 @@ loop_
          '_diffrn_source'    
          '_diffrn_radiation_source'    
          '_diffrn_source.source' 
-_definition.update                      2018-02-26
-_definition.replaced_by                 '_diffrn_source.device'
+_definition.update                      2019-04-02
+loop_
+  _definition_replaced.id
+  _definition_replaced.by
+         1 '_diffrn_source.device'
 _description.text                       
 ;
      The general class of the source of radiation. This is deprecated.
@@ -11249,8 +11252,11 @@ save_symmetry.cell_setting
     _definition.id               '_symmetry.cell_setting'
     loop_
     _alias.definition_id         '_symmetry_cell_setting'
-    _definition.update           2017-06-10
-    _definition.replaced_by      '_space_group.crystal_system'
+    _definition.update           2019-04-02
+    loop_
+    _definition_replaced.id
+    _definition_replaced.by
+                                 1 '_space_group.crystal_system'
     _description.text
 ;              
      This dataname should not be used and is DEPRECATED as it is
@@ -19472,7 +19478,13 @@ _definition.id                          '_atom_site.refinement_flags'
 loop_
   _alias.definition_id
          '_atom_site_refinement_flags' 
-_definition.update                      2013-03-08
+_definition.update                      2019-04-02
+loop_
+  _definition_replaced.id
+  _definition_replaced.by
+         1 '_atom_site.refinement_flags_posn'
+         2 '_atom_site.refinement_flags_adp'
+         3 '_atom_site.refinement_flags_occupancy'
 _description.text                       
 ;
      A concatenated series of single-letter codes which indicate the
@@ -24148,4 +24160,11 @@ loop_
     Changed the purpose of the diffrn_radiation_wavelength.value data item
     from 'Number' to 'Measurand'. Added the diffrn_radiation_wavelength.value_su
     data item.
+     Replaced all instances of the _definition.replaced_by data item with
+     data items from the DEFINITION_REPLACED category.
+
+     Marked the _atom_site.refinement_flags data item as deprecated and
+     replaced by the _atom_site.refinement_flags_posn,
+     _atom_site.refinement_flags_adp and _atom_site.refinement_flags_occupancy
+     data items.
 ;
