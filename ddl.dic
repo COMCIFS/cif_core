@@ -8,11 +8,11 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.13.1
-    _dictionary.date             2017-10-26
+    _dictionary.version          3.14.0
+    _dictionary.date             2019-04-02
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
-    _dictionary.ddl_conformance  3.13.1
+    _dictionary.ddl_conformance  3.14.0
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -298,26 +298,6 @@ save_definition.id
 
 save_
 
-save_definition.replaced_by
-
-    _definition.id               '_definition.replaced_by'
-    _definition.class            Attribute
-    _definition.update           2017-06-10
-    _description.text
-;
-     A dataname that should be used instead of the defined dataname.
-     The defined dataname is deprecated and should not be used.
-;
-    _name.category_id            definition
-    _name.object_id              replaced_by
-    _type.container              Single
-    _type.purpose                Encode
-    _type.contents               Tag
-    _type.source                 Assigned
-
-save_
-
-
 save_definition.scope
 
     _definition.id               '_definition.scope'
@@ -379,6 +359,61 @@ save_definition.xref_code
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
+
+save_
+
+#============================================================================
+
+save_DEFINITION_REPLACED
+
+    _definition.id               DEFINITION_REPLACED
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2019-04-02
+    _description.text
+;
+     Attributes used to describe deprecated and replaced definitions.
+;
+    _name.category_id            DEFINITION
+    _name.object_id              DEFINITION_REPLACED
+    _category_key.name           '_definition_replaced.id'
+
+save_
+
+save_definition_replaced.id
+
+    _definition.id               '_definition_replaced.id'
+    _definition.class            Attribute
+    _definition.update           2019-04-02
+    _description.text
+;
+     An opaque identifier for the replacement.
+;
+    _name.category_id            definition_replaced
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save_definition_replaced.by
+
+    _definition.id               '_definition_replaced.by'
+    _definition.class            Attribute
+    _definition.update           2019-04-02
+    _description.text
+;
+     Name of the data item that should be used instead of the defined data
+     item. The defined data item is deprecated and should not be used.
+;
+    _name.category_id            definition_replaced
+    _name.object_id              by
+    _type.container              Single
+    _type.purpose                Encode
+    _type.contents               Tag
+    _type.source                 Assigned
 
 save_
 
@@ -2650,4 +2685,9 @@ Removed 'Measured' as a state for type.source
 ;
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
+;
+         3.14.0    2019-04-02
+;
+   Replaced the _definition.replaced_by data item with a looped
+   DEFINITION_REPLACED category.
 ;
