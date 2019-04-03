@@ -522,10 +522,12 @@ save_description_example.case
 
     _definition.id               '_description_example.case'
     _definition.class            Attribute
-    _definition.update           2013-03-08
+    _definition.update           2019-04-02
     _description.text
 ;
-     An example case of the defined item.
+     An example case of the defined item. Instances of this data item
+     inherit the container, content and purpose type constraints of
+     the defining item.
 ;
     _name.category_id            description_example
     _name.object_id              case
@@ -2688,8 +2690,10 @@ Removed 'Measured' as a state for type.source
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
-         3.13.2    2019-04-02
+         3.13.2    2019-14-02
 ;
+   Updated the description of the _description_example.case data item.
+
    Updated the description of the 'Key' type purpose and changed the
    purpose of several data items in order to avoid conflicts with
    the new description.
