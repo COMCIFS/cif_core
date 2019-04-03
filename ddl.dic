@@ -2690,16 +2690,14 @@ Removed 'Measured' as a state for type.source
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
-         3.13.2    2019-14-02
+         3.14.0    2019-04-02
 ;
    Updated the description of the _description_example.case data item.
 
    Updated the description of the 'Key' type purpose and changed the
    purpose of several data items in order to avoid conflicts with
    the new description.
-;
-         3.14.0    2019-04-02
-;
+
    Replaced the _definition.replaced_by data item with a looped
    DEFINITION_REPLACED category.
 ;
