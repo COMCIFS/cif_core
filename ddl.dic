@@ -8,11 +8,11 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.13.2
+    _dictionary.version          3.14.0
     _dictionary.date             2019-04-02
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
-    _dictionary.ddl_conformance  3.13.2
+    _dictionary.ddl_conformance  3.14.0
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -298,26 +298,6 @@ save_definition.id
 
 save_
 
-save_definition.replaced_by
-
-    _definition.id               '_definition.replaced_by'
-    _definition.class            Attribute
-    _definition.update           2017-06-10
-    _description.text
-;
-     A dataname that should be used instead of the defined dataname.
-     The defined dataname is deprecated and should not be used.
-;
-    _name.category_id            definition
-    _name.object_id              replaced_by
-    _type.container              Single
-    _type.purpose                Encode
-    _type.contents               Tag
-    _type.source                 Assigned
-
-save_
-
-
 save_definition.scope
 
     _definition.id               '_definition.scope'
@@ -379,6 +359,61 @@ save_definition.xref_code
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
+
+save_
+
+#============================================================================
+
+save_DEFINITION_REPLACED
+
+    _definition.id               DEFINITION_REPLACED
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2019-04-02
+    _description.text
+;
+     Attributes used to describe deprecated and replaced definitions.
+;
+    _name.category_id            DEFINITION
+    _name.object_id              DEFINITION_REPLACED
+    _category_key.name           '_definition_replaced.id'
+
+save_
+
+save_definition_replaced.id
+
+    _definition.id               '_definition_replaced.id'
+    _definition.class            Attribute
+    _definition.update           2019-04-02
+    _description.text
+;
+     An opaque identifier for the replacement.
+;
+    _name.category_id            definition_replaced
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save_definition_replaced.by
+
+    _definition.id               '_definition_replaced.by'
+    _definition.class            Attribute
+    _definition.update           2019-04-02
+    _description.text
+;
+     Name of the data item that should be used instead of the defined data
+     item. The defined data item is deprecated and should not be used.
+;
+    _name.category_id            definition_replaced
+    _name.object_id              by
+    _type.container              Single
+    _type.purpose                Encode
+    _type.contents               Tag
+    _type.source                 Assigned
 
 save_
 
@@ -1831,7 +1866,7 @@ save_type.contents
 
     _definition.id               '_type.contents'
     _definition.class            Attribute
-    _definition.update           2013-04-24
+    _definition.update           2019-04-01
     _description.text
 ;
 
@@ -1883,7 +1918,11 @@ save_type.contents
               DateTime
             'A timestamp. Text formats must use date-time or full-date productions of RFC3339 ABNF'
               Version       'version digit string of the form <major>.<version>.<update>'
-              Dimension     'integer limits of an Array/Matrix/List in square brackets'
+              Dimension   '''Size of an Array/Matrix/List expressed as a text
+                             string. The text string itself consists of zero
+                             or more non-negative integers separated by commas
+                             placed within bounding square brackets. Empty
+                             square brackets represent a list of unknown size'''
               Range         'inclusive range of numerical values min:max'
               Count         'unsigned integer number'
               Index         'unsigned non-zero integer number'
@@ -1929,11 +1968,10 @@ save_type.dimension
 
     _definition.id               '_type.dimension'
     _definition.class            Attribute
-    _definition.update           2013-04-17
+    _definition.update           2019-04-01
     _description.text
 ;
-     The dimensions of a list or matrix of elements as a text string
-     within bounding square brackets.
+     The dimensions of a list or matrix of elements expressed as a text string.
 ;
     _name.category_id            type
     _name.object_id              dimension
@@ -2655,4 +2693,9 @@ Removed 'Measured' as a state for type.source
    Updated the description of the 'Key' type purpose and changed the
    purpose of several data items in order to avoid conflicts with
    the new description.
+;
+         3.14.0    2019-04-02
+;
+   Replaced the _definition.replaced_by data item with a looped
+   DEFINITION_REPLACED category.
 ;
