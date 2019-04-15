@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.11
-_dictionary.date                        2019-04-02
+_dictionary.date                        2019-04-03
 _dictionary.uri                         www.iucr.org/cif/dic/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
 _dictionary.namespace                   CifCore
@@ -3217,7 +3217,7 @@ _definition.id                          '_diffrn_scale_group.code'
 loop_
   _alias.definition_id
          '_diffrn_scale_group_code' 
-_definition.update                      2019-01-08
+_definition.update                      2019-04-03
 _description.text
 ;
      Code identifying a specific scale group of reflections (e.g. for
@@ -3226,7 +3226,6 @@ _description.text
 ;
 _name.category_id                       diffrn_scale_group
 _name.object_id                         code
-_name.linked_item_id                    '_diffrn_refln.scale_group_code'
 _type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single
@@ -3714,7 +3713,7 @@ loop_
   _alias.definition_id
          '_diffrn_standard_refln_code'           
          '_diffrn_standard_refln.diffrn_id' 
-_definition.update                      2012-11-26
+_definition.update                      2019-04-03
 _description.text                       
 ;
      Code identifying a standard reflection used to monitor source
@@ -3723,7 +3722,6 @@ _description.text
 ;
 _name.category_id                       diffrn_standard_refln
 _name.object_id                         code
-_name.linked_item_id                    '_diffrn_refln.standard_code'
 _type.purpose                           Encode
 _type.source                            Assigned
 _type.container                         Single
@@ -11821,7 +11819,7 @@ save_
 save_geom_angle.atom_site_label_2
 
 _definition.id                          '_geom_angle.atom_site_label_2'
-_definition.update                      2016-08-31
+_definition.update                      2019-04-03
 _description.text
 ;
      The unique identifier for the vertex atom of the angle.
@@ -11834,10 +11832,10 @@ loop_
 _name.category_id                       geom_angle
 _name.object_id                         atom_site_label_2
 _name.linked_item_id                    '_atom_site.label'
-_type.purpose                Encode
-_type.source                 Assigned
-_type.container              Single
-_type.contents               Code
+_type.purpose                           Link
+_type.source                            Assigned
+_type.container                         Single
+_type.contents                          Code
 
 save_
 
@@ -13786,7 +13784,7 @@ _definition.id                          '_valence_param.atom_1'
 loop_
   _alias.definition_id
          '_valence_param_atom_1' 
-_definition.update                      2012-12-13
+_definition.update                      2019-04-03
 _description.text                       
 ;
      Atom type symbol for atom 1 forming a bond whose
@@ -13795,7 +13793,7 @@ _description.text
 _name.category_id                       valence_param
 _name.object_id                         atom_1
 _name.linked_item_id                    '_atom_type.symbol'
-_type.purpose                           Encode
+_type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
@@ -13832,7 +13830,7 @@ _definition.id                          '_valence_param.atom_2'
 loop_
   _alias.definition_id
          '_valence_param_atom_2' 
-_definition.update                      2012-12-13
+_definition.update                      2019-04-03
 _description.text                       
 ;
      Atom type symbol for atom 2 forming a bond whose
@@ -13841,7 +13839,7 @@ _description.text
 _name.category_id                       valence_param
 _name.object_id                         atom_2
 _name.linked_item_id                    '_atom_type.symbol'
-_type.purpose                           Encode
+_type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
@@ -13945,7 +13943,7 @@ _definition.id                          '_valence_param.ref_id'
 loop_
   _alias.definition_id
          '_valence_param_ref_id'
-_definition.update                      2019-01-09
+_definition.update                      2019-04-03
 _description.text
 ;
      Code linking parameters to the key _valence_ref.id key
@@ -13954,7 +13952,7 @@ _description.text
 _name.category_id                       valence_param
 _name.object_id                         ref_id
 _name.linked_item_id                    '_valence_ref.id'
-_type.purpose                           Encode
+_type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
@@ -20157,7 +20155,7 @@ loop_
   _alias.definition_id
          '_atom_site_aniso_label'
          '_atom_site_anisotrop.id'
-_definition.update                      2019-01-09
+_definition.update                      2019-04-03
 _description.text
 ;
      Anisotropic atomic displacement parameters are usually looped in
@@ -20168,7 +20166,7 @@ _description.text
 _name.category_id                       atom_site_aniso
 _name.object_id                         label
 _name.linked_item_id                    '_atom_site.label'
-_type.purpose                           Encode
+_type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
@@ -22219,7 +22217,7 @@ _definition.id                          '_atom_type_scat.symbol'
 loop_
   _alias.definition_id
          '_atom_type_scat_symbol' 
-_definition.update                      2013-01-23
+_definition.update                      2019-04-03
 _description.text                       
 ;
      The identity of the atom specie(s) representing this atom type.
@@ -22228,7 +22226,7 @@ _description.text
 _name.category_id                       atom_type_scat
 _name.object_id                         symbol
 _name.linked_item_id                    '_atom_type.symbol'
-_type.purpose                           Encode
+_type.purpose                           Link
 _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Code
@@ -24154,7 +24152,7 @@ loop_
 ;
      Added DATABASE_RELATED category (James Hester).
 ;
-         3.0.11    2019-04-02
+         3.0.11    2019-04-03
 ;
      Removed the _chemical_conn_bond.distance_su data item.
      Changed the purpose of the diffrn_radiation_wavelength.value data item
@@ -24168,4 +24166,11 @@ loop_
      replaced by the _atom_site.refinement_flags_posn,
      _atom_site.refinement_flags_adp and _atom_site.refinement_flags_occupancy
      data items.
+
+     Changed the _type.purpose from 'Encode' to 'Link' in the definitions of
+     the _geom_angle.atom_site_label_2, _valence_param_atom_1,
+     _valence_param_atom_2, _valence_param_ref_id, _atom_site_aniso.label
+     and _atom_type_scat.symbol data items. Removed the _name.linked_item_id
+     data item from the definitions of the _diffrn_scale_group.code and
+     diffrn_standard_refln.code data items.
 ;

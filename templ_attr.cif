@@ -9,10 +9,10 @@ data_TEMPL_ATTR
  
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
-    _dictionary.version          1.4.08 
-    _dictionary.date             2014-06-27
+    _dictionary.version          1.4.09
+    _dictionary.date             2019-04-03
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
-    _dictionary.ddl_conformance  3.11.04
+    _dictionary.ddl_conformance  3.14.0
     _description.text
 ;
      This dictionary contains definition attribute sets that are common
@@ -23,7 +23,7 @@ data_TEMPL_ATTR
 
 save_atom_site_label
 
-    _definition.update           2012-10-16
+    _definition.update           2019-04-03
     _description.text
 ;
      This label is a unique identifier for a particular site in the
@@ -44,7 +44,6 @@ save_atom_site_label
      acceptable and represents the components C, 233, '', and ggg.
      Each label may have a different number of components.
 ;
-    _name.linked_item_id       '_atom_site.label'  
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
@@ -72,14 +71,14 @@ save_restr_label
 
 save_atom_site_id
 
-    _definition.update           2014-06-16
+    _definition.update           2019-04-03
     _description.text
 ;
      This label is a unique identifier for a particular site in the
      asymmetric unit of the crystal unit cell.
 ;
     _name.linked_item_id       '_atom_site.label'
-    _type.purpose                Encode
+    _type.purpose                Link
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
@@ -906,4 +905,12 @@ save_display_colour
 ;
    Added attribute save frame "ms_index"
    Added attribute save frame "matrix_w"
+;
+      1.4.09  2019-04-03
+;
+   Change the '_type.purpose' from 'Encode' to 'Link' in the 'atom_site_id'
+   save frame.
+
+   Removed the '_name.linked_item_id' data item from the 'atom_site_label'
+   save frame.
 ;
