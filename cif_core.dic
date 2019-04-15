@@ -24156,10 +24156,11 @@ loop_
 ;
          3.0.11    2019-04-02
 ;
-    Removed the _chemical_conn_bond.distance_su data item.
-    Changed the purpose of the diffrn_radiation_wavelength.value data item
-    from 'Number' to 'Measurand'. Added the diffrn_radiation_wavelength.value_su
-    data item.
+     Removed the _chemical_conn_bond.distance_su data item.
+     Changed the purpose of the diffrn_radiation_wavelength.value data item
+     from 'Number' to 'Measurand'. Added the diffrn_radiation_wavelength.value_su
+     data item.
+
      Replaced all instances of the _definition.replaced_by data item with
      data items from the DEFINITION_REPLACED category.
 
