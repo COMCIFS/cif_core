@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.14.0
-    _dictionary.date             2019-04-02
+    _dictionary.date             2019-04-03
     _dictionary.uri              
              https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.14.0
@@ -1540,21 +1540,23 @@ save_import_details.mode
 
     _definition.id               '_import_details.mode'
     _definition.class            Attribute
-    _definition.update           2015-05-06
+    _definition.update           2019-04-03
     _description.text
 ;
-     Code identifying how the definition referenced
-     by _import_details.frame_id is to be imported. "Full" imports the
-     entire definition together with any child definitions (in the case
-     of categories) found in the target dictionary. The importing
-     definition becomes the parent of the imported definition. As a
-     special case, a 'Head' category importing a 'Head' category is
-     equivalent to importing all children of the imported 'Head'
-     category as children of the importing 'Head' category. A non-'Head'
-     category may not import a 'Head' category in "Full" mode.
-     
-     "Contents" imports only the attributes found in the imported
-     definition.
+     Code identifying how the definition referenced by
+     _import_details.frame_id is to be imported.
+
+     "Full" imports the entire definition together with any child definitions
+     (in the case of categories) found in the target dictionary. The importing
+     definition becomes the parent of the imported definition. As such, the
+     "Full" mode must only be used in category definitions.
+
+     As a special case, a 'Head' category importing a 'Head' category is
+     equivalent to importing all children of the imported 'Head' category
+     as children of the importing 'Head' category. A 'Head' category can
+     only be imported in "Full" mode and only by another 'Head' category.
+
+     "Contents" imports only the attributes found in the imported definition.
 ;
     _name.category_id            import_details
     _name.object_id              mode
@@ -2690,7 +2692,7 @@ Removed 'Measured' as a state for type.source
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
-         3.14.0    2019-04-02
+         3.14.0    2019-04-03
 ;
    Updated the description of the _description_example.case data item.
 
@@ -2700,4 +2702,6 @@ Removed 'Measured' as a state for type.source
 
    Replaced the _definition.replaced_by data item with a looped
    DEFINITION_REPLACED category.
+
+   Updated the definition of the _import_details.mode data item.
 ;
