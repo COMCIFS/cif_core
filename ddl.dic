@@ -2202,7 +2202,7 @@ save_type.source
 ;               A value or tag used in the construction of looped
                 lists of data. Typically identifying an item whose
                 unique value is the reference key for a loop category
-                and/or an item which as values in common with those
+                and/or an item which has values in common with those
                 of another loop category and is considered a Link
                 between these lists.
 ;
