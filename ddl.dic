@@ -11,7 +11,7 @@ data_DDL_DIC
     _dictionary.version          3.14.0
     _dictionary.date             2019-04-03
     _dictionary.uri              
-             https://github.com/COMCIFS/cif_core/blob/cif2-conversion/ddl.dic
+             https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.14.0
     _dictionary.namespace        DdlDic
     _description.text
