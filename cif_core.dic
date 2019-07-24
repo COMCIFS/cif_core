@@ -12594,10 +12594,10 @@ _definition.id                          '_geom_hbond.angle_DHA'
 loop_
   _alias.definition_id
          '_geom_hbond_angle_DHA' 
-_definition.update                      2012-12-14
-_description.text                       
+_definition.update                      2019-07-24
+_description.text
 ;
-     Angle subtended by the sites listed.
+     Angle subtended by the sites identified by _geom_hbond.id.
      The hydrogen at site H is at the apex of the angle.
 ;
 _name.category_id                       geom_hbond
@@ -12641,11 +12641,11 @@ loop_
   _alias.definition_id
          '_geom_hbond_angle_DHA_su'    
          '_geom_hbond.angle_DHA_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+_definition.update                      2019-07-24
+_description.text
 ;
-     Angle subtended by the sites identifyed in _geom_hbond.id.
-     The hydrogen at site H is at the apex of the angle.
+     The standard uncertainty of the angle subtended by the sites identified
+     by _geom_hbond.id. The hydrogen at site H is at the apex of the angle.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         angle_DHA_su
@@ -24153,7 +24153,7 @@ loop_
 ;
      Added DATABASE_RELATED category (James Hester).
 ;
-         3.0.11    2019-04-03
+         3.0.11    2019-07-24
 ;
      Removed the _chemical_conn_bond.distance_su data item.
      Changed the purpose of the diffrn_radiation_wavelength.value data item
@@ -24174,4 +24174,7 @@ loop_
      and _atom_type_scat.symbol data items. Removed the _name.linked_item_id
      data item from the definitions of the _diffrn_scale_group.code and
      diffrn_standard_refln.code data items.
+
+     Updated the definitions of the _geom_hbond.angle_DHA and
+     _geom_hbond.angle_DHA_su data items.
 ;
