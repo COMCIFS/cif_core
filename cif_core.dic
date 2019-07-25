@@ -6773,11 +6773,11 @@ loop_
   _alias.definition_id
          '_cell_measurement_pressure_su'         
          '_cell_measurement.pressure_esd' 
-_definition.update                      2014-06-08
-_description.text                       
+_definition.update                      2019-07-24
+_description.text
 ;
-     The standard uncertainty value that the temperature of
-     the pressure at which the unit-cell parameters were measured
+     The standard uncertainty of the pressure at which
+     the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
 _name.object_id                         pressure_su
@@ -6873,11 +6873,11 @@ loop_
   _alias.definition_id
          '_cell_measurement_temp_su'   
          '_cell_measurement.temp_esd' 
-_definition.update                      2012-11-22
+_definition.update                      2019-07-24
 _description.text                       
 ;
-     The standard uncertainty value that the temperature of
-      the unit-cell parameters were measured
+     The standard uncertainty of the temperature of at which
+     the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
 _name.object_id                         temperature_su
@@ -24177,4 +24177,7 @@ loop_
 
      Updated the definitions of the _geom_hbond.angle_DHA and
      _geom_hbond.angle_DHA_su data items.
+     
+     Corrected the definitions of the _cell_measurement.temperature_su and
+     _cell_measurement.pressure_su data items.
 ;
