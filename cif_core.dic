@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.11
-_dictionary.date                        2019-04-03
+_dictionary.date                        2019-07-24
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -6773,11 +6773,11 @@ loop_
   _alias.definition_id
          '_cell_measurement_pressure_su'         
          '_cell_measurement.pressure_esd' 
-_definition.update                      2014-06-08
-_description.text                       
+_definition.update                      2019-07-24
+_description.text
 ;
-     The standard uncertainty value that the temperature of
-     the pressure at which the unit-cell parameters were measured
+     The standard uncertainty of the pressure at which
+     the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
 _name.object_id                         pressure_su
@@ -6873,11 +6873,11 @@ loop_
   _alias.definition_id
          '_cell_measurement_temp_su'   
          '_cell_measurement.temp_esd' 
-_definition.update                      2012-11-22
+_definition.update                      2019-07-24
 _description.text                       
 ;
-     The standard uncertainty value that the temperature of
-      the unit-cell parameters were measured
+     The standard uncertainty of the temperature of at which
+     the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
 _name.object_id                         temperature_su
@@ -24153,7 +24153,7 @@ loop_
 ;
      Added DATABASE_RELATED category (James Hester).
 ;
-         3.0.11    2019-04-03
+         3.0.11    2019-07-24
 ;
      Removed the _chemical_conn_bond.distance_su data item.
      Changed the purpose of the diffrn_radiation_wavelength.value data item
@@ -24174,4 +24174,7 @@ loop_
      and _atom_type_scat.symbol data items. Removed the _name.linked_item_id
      data item from the definitions of the _diffrn_scale_group.code and
      diffrn_standard_refln.code data items.
+
+     Corrected the definitions of the _cell_measurement.temperature_su and
+     _cell_measurement.pressure_su data items.
 ;
