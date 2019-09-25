@@ -24,7 +24,7 @@ data_CIF_MS
     _dictionary.formalism        Modulated
     _dictionary.class            Instance
     _dictionary.version          3.2.1
-    _dictionary.date             2019-07-25
+    _dictionary.date             2019-09-25
     _dictionary.uri              http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        ModStruct
@@ -796,7 +796,7 @@ save_
 save_atom_site_displace_Legendre.order
 
     _definition.id               '_atom_site_displace_Legendre.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -807,7 +807,8 @@ save_atom_site_displace_Legendre.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -1665,7 +1666,7 @@ save_
 save_atom_site_displace_xharm.order
 
     _definition.id               '_atom_site_displace_xharm.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -1676,7 +1677,8 @@ save_atom_site_displace_xharm.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -1730,7 +1732,7 @@ save_
 save_atom_site_Fourier_wave_vector.seq_id
 
     _definition.id               '_atom_site_Fourier_wave_vector.seq_id'
-    _definition.update           2017-03-11
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_atom_site_Fourier_wave_vector_seq_id'
@@ -1745,8 +1747,8 @@ save_atom_site_Fourier_wave_vector.seq_id
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Count
-    _enumeration.range           [0:]
+    _type.contents               Integer
+    _enumeration.range           0:
     _enumeration.default         1
 
 save_
@@ -2422,7 +2424,7 @@ save_
 save_atom_site_occ_Legendre.order
 
     _definition.id               '_atom_site_occ_Legendre.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -2433,7 +2435,8 @@ save_atom_site_occ_Legendre.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -2830,7 +2833,7 @@ save_
 save_atom_site_occ_xharm.order
 
     _definition.id               '_atom_site_occ_xharm.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -2841,7 +2844,8 @@ save_atom_site_occ_xharm.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -3508,7 +3512,7 @@ save_
 save_atom_site_rot_Legendre.order
 
     _definition.id               '_atom_site_rot_Legendre.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -3519,7 +3523,8 @@ save_atom_site_rot_Legendre.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -4361,7 +4366,7 @@ save_
 save_atom_site_rot_xharm.order
 
     _definition.id               '_atom_site_rot_xharm.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -4372,7 +4377,8 @@ save_atom_site_rot_xharm.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -4838,7 +4844,7 @@ save_
 save_atom_site_U_Legendre.order
 
     _definition.id               '_atom_site_U_Legendre.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -4849,7 +4855,8 @@ save_atom_site_U_Legendre.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -5125,7 +5132,7 @@ save_
 save_atom_site_U_xharm.order
 
     _definition.id               '_atom_site_U_xharm.order'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -5136,7 +5143,8 @@ save_atom_site_U_xharm.order
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -5221,7 +5229,7 @@ save_
 save_atom_sites_axes.matrix_seq_id
 
     _definition.id               '_atom_sites_axes.matrix_seq_id'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -5233,7 +5241,8 @@ save_atom_sites_axes.matrix_seq_id
     _type.purpose                Key
     _type.source                 Related
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -5683,7 +5692,7 @@ save_
 save_atom_sites_ortho.wave_vector_seq_id
 
     _definition.id               '_atom_sites_ortho.wave_vector_seq_id'
-    _definition.update           2017-03-11
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -5697,8 +5706,8 @@ save_atom_sites_ortho.wave_vector_seq_id
     _type.purpose                Link
     _type.source                 Related
     _type.container              Single
-    _type.contents               Count
-    _enumeration.range           [0:]
+    _type.contents               Integer
+    _enumeration.range           0:
     _enumeration.default         0
 
 save_
@@ -5706,7 +5715,7 @@ save_
 save_atom_sites_ortho.wave_vector_seq_id_list
 
     _definition.id               '_atom_sites_ortho.wave_vector_seq_id_list'
-    _definition.update           2017-03-11
+    _definition.update           2019-09-25
     _description.text                   
 ;
 
@@ -5720,9 +5729,9 @@ save_atom_sites_ortho.wave_vector_seq_id_list
     _type.purpose                Link
     _type.source                 Related
     _type.container              List
-    _type.contents               Count
+    _type.contents               Integer
     _type.dimension              '[]'
-    _enumeration.range           [0:]
+    _enumeration.range           0:
     _enumeration.default         [0]
 
 save_
@@ -5814,7 +5823,7 @@ save_
 save_cell.modulation_dimension
 
     _definition.id               '_cell.modulation_dimension'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_cell_modulation_dimension' 
@@ -5829,7 +5838,7 @@ save_cell.modulation_dimension
     _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           1:8
 
 save_
@@ -7186,7 +7195,7 @@ save_
 save_cell_subsystems.number
 
     _definition.id               '_cell_subsystems.number'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_cell_subsystems_number' 
@@ -7201,7 +7210,7 @@ save_cell_subsystems.number
     _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           2:
 
 save_
@@ -7234,7 +7243,7 @@ save_
 save_cell_wave_vector.seq_id
 
     _definition.id               '_cell_wave_vector.seq_id'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_cell_wave_vector_seq_id' 
@@ -7251,7 +7260,8 @@ save_cell_wave_vector.seq_id
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -8199,7 +8209,7 @@ save_
 save_diffrn_reflns.satellite_order_max
 
     _definition.id               '_diffrn_reflns.satellite_order_max'
-    _definition.update           2014-06-27
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_diffrn_reflns_satellite_order_max' 
@@ -8213,7 +8223,8 @@ save_diffrn_reflns.satellite_order_max
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
+    _enumeration.range           0:
 
 save_
 
@@ -10872,7 +10883,10 @@ loop_
      Returned all additional indices to main dictionary, removed category_id
      from templates(James Hester)
 ;
-         3.2.1    2019-07-25
+         3.2.1    2019-09-25
 ;
-    Corrected a typo in the definition of the _geom_torsion.angle data item.
+     Corrected a typo in the definition of the _geom_torsion.angle data item.
+
+     Changed the content type of multiple data items from 'Count' to 'Integer'
+     and assigned the appropriate enumeration range if needed.
 ;
