@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.11
-_dictionary.date                        2019-07-25
+_dictionary.date                        2019-09-25
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -4721,7 +4721,7 @@ _definition.id                          '_refln.symmetry_epsilon'
 loop_
   _alias.definition_id
          '_refln_symmetry_epsilon' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The symmetry reinforcement factor corresponding to the number of
@@ -4733,7 +4733,7 @@ _name.object_id                         symmetry_epsilon
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:48
 
 save_
@@ -4745,7 +4745,7 @@ _definition.id                          '_refln.symmetry_multiplicity'
 loop_
   _alias.definition_id
          '_refln_symmetry_multiplicity' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The number of reflections symmetry-equivalent under the Laue
@@ -4759,7 +4759,7 @@ _name.object_id                         symmetry_multiplicity
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:48
 
 save_
@@ -8643,7 +8643,7 @@ _definition.id                          '_chemical_conn_atom.number'
 loop_
   _alias.definition_id
          '_chemical_conn_atom_number' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The chemical sequence number to be associated with this atom.
@@ -8653,7 +8653,7 @@ _name.object_id                         number
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -8716,7 +8716,7 @@ loop_
   _alias.definition_id
          '_chemical_conn_bond_atom_1'  
          '_chem_comp_bond.atom_id_1' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index id of first atom in a bond connecting two atom sites.
@@ -8727,7 +8727,7 @@ _name.linked_item_id                    '_chemical_conn_atom.number'
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -8740,7 +8740,7 @@ loop_
   _alias.definition_id
          '_chemical_conn_bond_atom_2'  
          '_chem_comp_bond.atom_id_2' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index id of second atom in a bond connecting two atom sites.
@@ -8751,7 +8751,7 @@ _name.object_id                         atom_2
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -8785,7 +8785,7 @@ save_chemical_conn_bond.id
     _definition.id             '_chemical_conn_bond.id'
      loop_
     _alias.definition_id       '_chemical_conn_bond.id'
-    _definition.update           2012-11-22
+    _definition.update           2019-09-25
     _description.text
 ;
      Bond identifier composed of a list of two sequence indices
@@ -8796,7 +8796,8 @@ save_chemical_conn_bond.id
     _type.purpose                Number
     _type.source                 Derived
     _type.container              List
-    _type.contents               Index
+    _type.contents               Integer
+    _enumeration.range           1:
     _type.dimension              '[2]'
      loop_
     _method.purpose
@@ -10885,7 +10886,7 @@ loop_
          '_space_group_symop_id'
          '_symmetry_equiv.pos_site_id'
          '_symmetry_equiv_pos_site_id'
-_definition.update                      2019-01-09
+_definition.update                      2019-09-25
 _description.text 
 ;
      Index identifying each entry in the _space_group_symop.operation_xyz
@@ -10901,7 +10902,7 @@ _name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 loop_
   _method.purpose
@@ -11481,7 +11482,7 @@ save_
 save_function.SymKey
 
 _definition.id                          '_function.SymKey'
-_definition.update                      2012-12-17
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The function
@@ -11495,7 +11496,7 @@ _name.object_id                         SymKey
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:192
 loop_
   _method.purpose
@@ -13594,7 +13595,7 @@ save_model_site.id
 save_model_site.index
 
 _definition.id                          '_model_site.index'
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index number of an atomic site in the connected molecule.
@@ -13604,7 +13605,7 @@ _name.object_id                         index
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -13632,7 +13633,7 @@ save_
 save_model_site.mole_index
 
 _definition.id                          '_model_site.mole_index'
-_definition.update                      2013-03-09
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index number of a distinct molecules in the cell, not related by
@@ -13643,7 +13644,9 @@ _name.object_id                         mole_index
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
+
 
 save_
 
@@ -13922,7 +13925,7 @@ _definition.id                          '_valence_param.id'
 loop_
   _alias.definition_id
          '_valence_param_id' 
-_definition.update                      2012-12-13
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Unique index loop number of the valence parameter loop.
@@ -13932,7 +13935,7 @@ _name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -15085,7 +15088,7 @@ _definition.id                          '_citation.journal_issue'
 loop_
   _alias.definition_id
          '_citation_journal_issue' 
-_definition.update                      2012-12-11
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Issue number of the journal cited;  relevant for articles.
@@ -15095,7 +15098,7 @@ _name.object_id                         journal_issue
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 loop_
   _description_example.case
@@ -15110,7 +15113,7 @@ _definition.id                          '_citation.journal_volume'
 loop_
   _alias.definition_id
          '_citation_journal_volume' 
-_definition.update                      2012-12-11
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Volume number of the journal cited;  relevant for articles.
@@ -15120,7 +15123,7 @@ _name.object_id                         journal_volume
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 loop_
   _description_example.case
@@ -15385,7 +15388,7 @@ _definition.id                          '_citation_author.ordinal'
 loop_
   _alias.definition_id
          '_citation_author_ordinal' 
-_definition.update                      2012-12-11
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Ordinal code specifies the order of the author's name in the list
@@ -15396,7 +15399,8 @@ _name.object_id                         ordinal
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
 
 save_
 
@@ -15507,7 +15511,7 @@ _definition.id                          '_citation_editor.ordinal'
 loop_
   _alias.definition_id
          '_citation_editor_ordinal' 
-_definition.update                      2014-06-12
+_definition.update                      2019-09-25
 _description.text                       
 ;
      This data item defines the order of the editor's name in the
@@ -15518,7 +15522,8 @@ _name.object_id                         ordinal
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
 
 save_
 
@@ -17086,7 +17091,7 @@ _name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -19064,7 +19069,7 @@ _definition.id                          '_atom_site.chemical_conn_number'
 loop_
   _alias.definition_id
          '_atom_site_chemical_conn_number' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      This number links an atom site to the chemical connectivity list.
@@ -19076,7 +19081,7 @@ _name.linked_item_id                    '_chemical_conn_atom.number'
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -19645,7 +19650,7 @@ loop_
          '_atom_site_site_symmetry_multiplicity'           
          '_atom_site_symmetry_multiplicity'      
          '_atom_site.symmetry_multiplicity' 
-_definition.update                      2013-04-28
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The number of different sites that are generated by the
@@ -19661,7 +19666,7 @@ _name.object_id                         site_symmetry_multiplicity
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:192
 loop_
   _method.purpose
@@ -19690,7 +19695,7 @@ _definition.id                          '_atom_site.site_symmetry_order'
 loop_
   _alias.definition_id
          '_atom_site_site_symmetry_order' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
     The number of times application of the crystallographic symmetry
@@ -19705,7 +19710,7 @@ _name.object_id                         site_symmetry_order
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:48
 
 save_
@@ -21393,7 +21398,7 @@ save_
 save_atom_type.atomic_number
 
 _definition.id                          '_atom_type.atomic_number'
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Atomic number of this atom type.
@@ -21403,7 +21408,8 @@ _name.object_id                         atomic_number
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
 _import.get [{'save':atomic_number  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 
@@ -21464,7 +21470,7 @@ save_
 save_atom_type.electron_count
 
 _definition.id                          '_atom_type.electron_count'
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of electrons in this atom type.
@@ -21474,7 +21480,7 @@ _name.object_id                         electron_count
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _import.get [{'save':electron_count  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 _enumeration.range                      1:
@@ -24153,7 +24159,7 @@ loop_
 ;
      Added DATABASE_RELATED category (James Hester).
 ;
-         3.0.11    2019-07-25
+         3.0.11    2019-09-25
 ;
      Removed the _chemical_conn_bond.distance_su data item.
      Changed the purpose of the diffrn_radiation_wavelength.value data item
@@ -24183,4 +24189,7 @@ loop_
 
      Corrected a typo in the definitions of the _geom_contact.distance and
      _geom_torsion.angle and data items.
+
+     Changed the content type of multiple data items from 'Index' to 'Integer'
+     and assigned the appropriate enumeration range if needed.
 ;
