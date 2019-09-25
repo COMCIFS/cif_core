@@ -14,7 +14,7 @@ data_CIF_IMG
 
     _dictionary.title            CIF_IMG
     _dictionary.class            Instance
-    _dictionary.version          3.00.02
+    _dictionary.version          3.00.03
     _dictionary.date             2019-04-01
     _dictionary.uri              www.iucr.org/cif/dic/cif_img.dic
     _dictionary.ddl_conformance  3.11.04
@@ -6242,7 +6242,24 @@ save_variant.variant_of
     _type.source                Related
     _type.container             Single
     _type.contents              Code
-     save_
+save_
+
+loop_
+  _dictionary_audit.version
+  _dictionary_audit.date
+  _dictionary_audit.revision
+         3.00.01      2014-07-28
+;
+     Initial conversion to DDLm. (Syd Hall)
+;
+         3.00.02      2014-07-30
+;
+     Updated SU items with correct types and links. (Syd Hall)
+;
+         3.00.03      2019-04-01
+;
+     Updated the file to conform to the CIF2 syntax. (Antanas Vaitkus)
+;
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
