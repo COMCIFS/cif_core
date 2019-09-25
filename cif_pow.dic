@@ -14,8 +14,8 @@ data_CIF_POW
     _dictionary.title            CIF_POW
     _dictionary.formalism        Powder
     _dictionary.class            Instance
-    _dictionary.version          2.4
-    _dictionary.date             2017-04-05
+    _dictionary.version          2.4.1
+    _dictionary.date             2019-09-25
     _dictionary.uri              www.iucr.org/cif/dic/cif_pow.dic
     _dictionary.ddl_conformance  3.11.10
     _dictionary.namespace        CifPow
@@ -3127,7 +3127,7 @@ save_
 save__pd_meas.number_of_points
 
     _definition.id               '_pd_meas.number_of_points'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_number_of_points' 
@@ -3141,7 +3141,7 @@ save__pd_meas.number_of_points
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           1:
 
 save_
@@ -3371,7 +3371,7 @@ save_
 save__pd_meas.counts_background
 
     _definition.id               '_pd_meas.counts_background'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_counts_background' 
@@ -3401,7 +3401,7 @@ save__pd_meas.counts_background
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           0:
 
 save_
@@ -3410,7 +3410,7 @@ save_
 save__pd_meas.counts_container
 
     _definition.id               '_pd_meas.counts_container'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_counts_container' 
@@ -3439,7 +3439,7 @@ save__pd_meas.counts_container
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           0:
 
 save_
@@ -3448,7 +3448,7 @@ save_
 save__pd_meas.counts_monitor
 
     _definition.id               '_pd_meas.counts_monitor'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_counts_monitor' 
@@ -3477,7 +3477,7 @@ save__pd_meas.counts_monitor
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           0:
 
 save_
@@ -3486,7 +3486,7 @@ save_
 save__pd_meas.counts_total
 
     _definition.id               '_pd_meas.counts_total'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_counts_total' 
@@ -3516,7 +3516,7 @@ save__pd_meas.counts_total
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           0:
 
 save_
@@ -3760,7 +3760,7 @@ save_
 save__pd_meas.step_count_time
 
     _definition.id               '_pd_meas.step_count_time'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_step_count_time' 
@@ -3775,7 +3775,7 @@ save__pd_meas.step_count_time
     _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           0:
     _units.code                             seconds
 
@@ -3784,7 +3784,7 @@ save_
 save__pd_meas.time_of_flight
 
     _definition.id               '_pd_meas.time_of_flight'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_meas_time_of_flight' 
@@ -3800,7 +3800,7 @@ save__pd_meas.time_of_flight
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           0:
     _units.code                             microseconds
 
@@ -4581,7 +4581,7 @@ save_
 save__pd_proc.number_of_points
 
     _definition.id               '_pd_proc.number_of_points'
-    _definition.update           2014-06-20
+    _definition.update           2019-09-25
     loop_
       _alias.definition_id
           '_pd_proc_number_of_points' 
@@ -4595,7 +4595,7 @@ save__pd_proc.number_of_points
     _type.purpose                Number
     _type.source                 Derived
     _type.container              Single
-    _type.contents               Count
+    _type.contents               Integer
     _enumeration.range           1:
 
 save_
@@ -6126,4 +6126,10 @@ loop_
 ;
      Added definition for _refln.F_meas after consultation with
      PD DMG. (James Hester)
+;
+         2.4.1    2019-09-25
+;
+     Changed the content type of multiple data items from 'Count'
+     to 'Integer' and assigned the appropriate enumeration range
+     if needed.
 ;
