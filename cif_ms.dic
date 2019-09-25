@@ -23,8 +23,8 @@ data_CIF_MS
     _dictionary.title            CIF_MS
     _dictionary.formalism        Modulated
     _dictionary.class            Instance
-    _dictionary.version          3.2
-    _dictionary.date             2019-04-01
+    _dictionary.version          3.2.1
+    _dictionary.date             2019-07-25
     _dictionary.uri              http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        ModStruct
@@ -10806,10 +10806,10 @@ loop_
    _alias.definition_id     
          '_geom_torsion'     
          '_geom_torsion.value' 
-_definition.update                      2012-11-22
+_definition.update                      2019-07-25
 _description.text                       
 ;
-     Angle defined by the sites identifyed in _geom_torsion.id.
+     Angle defined by the sites identified by _geom_torsion.id.
      The torsion-angle definition should be that of Klyne and Prelog.
      The vector direction *_label_2 to *_label_3 is the viewing
      direction, and the torsion angle is the angle of twist required
@@ -10872,5 +10872,7 @@ loop_
      Returned all additional indices to main dictionary, removed category_id
      from templates(James Hester)
 ;
-
-
+         3.2.1    2019-07-25
+;
+    Corrected a typo in the definition of the _geom_torsion.angle data item.
+;
