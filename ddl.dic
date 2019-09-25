@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.14.0
-    _dictionary.date             2019-04-03
+    _dictionary.date             2019-07-25
     _dictionary.uri              
              https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.14.0
@@ -850,7 +850,7 @@ save_dictionary_valid.application
 
     _definition.id               '_dictionary_valid.application'
     _definition.class            Attribute
-    _definition.update           2019-04-02
+    _definition.update           2019-07-25
     _description.text
 ;
      Provides the information identifying the definition scope (
@@ -869,7 +869,7 @@ save_dictionary_valid.application
     loop_
     _method.purpose
     _method.expression
-     Definition
+     Evaluation
 ;
      _dictionary_valid.application
                       = [_dictionary_valid.scope,_dictionary_valid.option]
@@ -2692,7 +2692,7 @@ Removed 'Measured' as a state for type.source
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
-         3.14.0    2019-04-03
+         3.14.0    2019-07-25
 ;
    Updated the description of the _description_example.case data item.
 
@@ -2704,4 +2704,8 @@ Removed 'Measured' as a state for type.source
    DEFINITION_REPLACED category.
 
    Updated the definition of the _import_details.mode data item.
+
+   Changed the purpose of a dREL method in the definition of the
+   _dictionary_valid.application data item from 'Definition' to
+   'Evaluation'.
 ;
