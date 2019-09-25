@@ -746,7 +746,7 @@ save_array_intensities.offset
 
 save_array_intensities.overload
     _definition.id             '_array_intensities.overload'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The saturation intensity level for this data array.
@@ -756,8 +756,9 @@ save_array_intensities.overload
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_array_intensities.pixel_fast_bin_size
@@ -1208,7 +1209,7 @@ save_array_structure_list.axis_set_id
 
 save_array_structure_list.dimension
     _definition.id             '_array_structure_list.dimension'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The number of elements stored in the array structure in
@@ -1219,8 +1220,9 @@ save_array_structure_list.dimension
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_array_structure_list.direction
@@ -3335,7 +3337,7 @@ save_diffrn_measurement.method
 
 save_diffrn_measurement.number_of_axes
     _definition.id             '_diffrn_measurement.number_of_axes'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value of _diffrn_measurement.number_of_axes gives the
@@ -3349,8 +3351,9 @@ save_diffrn_measurement.number_of_axes
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_diffrn_measurement.sample_detector_distance
@@ -4383,7 +4386,7 @@ save_diffrn_scan.frame_id_end
 
 save_diffrn_scan.frames
     _definition.id             '_diffrn_scan.frames'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value is the number of frames in the scan.
@@ -4393,8 +4396,9 @@ save_diffrn_scan.frames
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_diffrn_scan.time_period
@@ -4848,7 +4852,7 @@ save_diffrn_scan_frame.frame_id
 
 save_diffrn_scan_frame.frame_number
     _definition.id             '_diffrn_scan_frame.frame_number'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value of this data item is the number of the frame
@@ -4861,9 +4865,9 @@ save_diffrn_scan_frame.frame_number
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
+    _type.contents              Integer
     _enumeration.range          1:
-     save_
+save_
 
 
 save_diffrn_scan_frame.integration_time
