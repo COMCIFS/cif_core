@@ -6264,11 +6264,15 @@ loop_
          3.00.03      2019-04-01
 ;
      Updated the file to conform to the CIF2 syntax. (Antanas Vaitkus)
-         3.0.04    2019-09-25
+         3.0.04       2019-09-25
 ;
      Changed the content type of the _array_intensities.pixel_slow_bin_size
      and _array_intensities.pixel_fast_bin_size data items from 'Count' to
-     'Real'. (Antanas Vaitkus)
+     'Real'.
+
+     Changed the content type of multiple data items from 'Count'
+     to 'Integer' and assigned the appropriate enumeration range
+     where needed. (Antanas Vaitkus)
 ;
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
