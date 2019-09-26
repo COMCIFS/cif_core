@@ -1870,7 +1870,7 @@ save_type.contents
 
     _definition.id               '_type.contents'
     _definition.class            Attribute
-    _definition.update           2019-04-01
+    _definition.update           2019-09-25
     _description.text
 ;
 
@@ -1928,8 +1928,8 @@ save_type.contents
                              placed within bounding square brackets. Empty
                              square brackets represent a list of unknown size'''
               Range         'inclusive range of numerical values min:max'
-              Count         'unsigned integer number'
-              Index         'unsigned non-zero integer number'
+              Count         'unsigned integer number (deprecated)'
+              Index         'unsigned non-zero integer number (deprecated)'
               Integer       'positive or negative integer number'
               Real          'floating-point real number'
               Imag          'floating-point imaginary number'
@@ -2711,4 +2711,6 @@ Removed 'Measured' as a state for type.source
 
    Changed the content type of the _loop.level data item from
    'Index' to 'Integer'.
+
+   Deprecated the 'Index' and 'Count' content types.
 ;
