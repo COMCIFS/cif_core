@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          3.14.0
-    _dictionary.date             2019-07-25
+    _dictionary.date             2019-09-25
     _dictionary.uri              
              https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/ddl.dic
     _dictionary.ddl_conformance  3.14.0
@@ -1650,7 +1650,7 @@ save_loop.level
 
     _definition.id               '_loop.level'
     _definition.class            Attribute
-    _definition.update           2012-05-07
+    _definition.update           2019-09-25
     _description.text
 ;
      Specifies the level of the loop structure in which a defined
@@ -1661,7 +1661,7 @@ save_loop.level
     _type.purpose                Number
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Index
+    _type.contents               Integer
     _enumeration.default         1
     _enumeration.range           1:
 
@@ -1870,7 +1870,7 @@ save_type.contents
 
     _definition.id               '_type.contents'
     _definition.class            Attribute
-    _definition.update           2019-04-01
+    _definition.update           2019-09-25
     _description.text
 ;
 
@@ -1928,8 +1928,8 @@ save_type.contents
                              placed within bounding square brackets. Empty
                              square brackets represent a list of unknown size'''
               Range         'inclusive range of numerical values min:max'
-              Count         'unsigned integer number'
-              Index         'unsigned non-zero integer number'
+              Count         'unsigned integer number (deprecated)'
+              Index         'unsigned non-zero integer number (deprecated)'
               Integer       'positive or negative integer number'
               Real          'floating-point real number'
               Imag          'floating-point imaginary number'
@@ -2692,7 +2692,7 @@ Removed 'Measured' as a state for type.source
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
-         3.14.0    2019-07-25
+         3.14.0    2019-09-25
 ;
    Updated the description of the _description_example.case data item.
 
@@ -2708,4 +2708,9 @@ Removed 'Measured' as a state for type.source
    Changed the purpose of a dREL method in the definition of the
    _dictionary_valid.application data item from 'Definition' to
    'Evaluation'.
+
+   Changed the content type of the _loop.level data item from
+   'Index' to 'Integer'.
+
+   Deprecated the 'Index' and 'Count' content types.
 ;

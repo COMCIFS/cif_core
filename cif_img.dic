@@ -14,8 +14,8 @@ data_CIF_IMG
 
     _dictionary.title            CIF_IMG
     _dictionary.class            Instance
-    _dictionary.version          3.00.02
-    _dictionary.date             2019-04-01
+    _dictionary.version          3.00.04
+    _dictionary.date             2019-09-25
     _dictionary.uri              www.iucr.org/cif/dic/cif_img.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifImag
@@ -746,7 +746,7 @@ save_array_intensities.offset
 
 save_array_intensities.overload
     _definition.id             '_array_intensities.overload'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The saturation intensity level for this data array.
@@ -756,13 +756,14 @@ save_array_intensities.overload
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_array_intensities.pixel_fast_bin_size
     _definition.id             '_array_intensities.pixel_fast_bin_size'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value of _array_intensities.pixel_fast_bin_size specifies
@@ -780,7 +781,8 @@ save_array_intensities.pixel_fast_bin_size
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
+    _type.contents              Real
+    _enumeration.range          0.0:
     _enumeration.default        1.
     _units.code                 pixels_per_element
      save_
@@ -788,7 +790,7 @@ save_array_intensities.pixel_fast_bin_size
 
 save_array_intensities.pixel_slow_bin_size
     _definition.id             '_array_intensities.pixel_slow_bin_size'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value of _array_intensities.pixel_slow_bin_size specifies
@@ -805,8 +807,8 @@ save_array_intensities.pixel_slow_bin_size
     _name.object_id             pixel_slow_bin_size
     _type.purpose               Number
     _type.source                Derived
-    _type.container             Single
-    _type.contents              Count
+    _type.contents              Real
+    _enumeration.range          0.0:
     _enumeration.default        1.
     _units.code                 pixels_per_element
      save_
@@ -1208,7 +1210,7 @@ save_array_structure_list.axis_set_id
 
 save_array_structure_list.dimension
     _definition.id             '_array_structure_list.dimension'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The number of elements stored in the array structure in
@@ -1219,8 +1221,9 @@ save_array_structure_list.dimension
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_array_structure_list.direction
@@ -3335,7 +3338,7 @@ save_diffrn_measurement.method
 
 save_diffrn_measurement.number_of_axes
     _definition.id             '_diffrn_measurement.number_of_axes'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value of _diffrn_measurement.number_of_axes gives the
@@ -3349,8 +3352,9 @@ save_diffrn_measurement.number_of_axes
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_diffrn_measurement.sample_detector_distance
@@ -4383,7 +4387,7 @@ save_diffrn_scan.frame_id_end
 
 save_diffrn_scan.frames
     _definition.id             '_diffrn_scan.frames'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value is the number of frames in the scan.
@@ -4393,8 +4397,9 @@ save_diffrn_scan.frames
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
-     save_
+    _type.contents              Integer
+    _enumeration.range          0:
+save_
 
 
 save_diffrn_scan.time_period
@@ -4848,7 +4853,7 @@ save_diffrn_scan_frame.frame_id
 
 save_diffrn_scan_frame.frame_number
     _definition.id             '_diffrn_scan_frame.frame_number'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-25
     _description.text
 ;
      The value of this data item is the number of the frame
@@ -4861,9 +4866,9 @@ save_diffrn_scan_frame.frame_number
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
-    _type.contents              Count
+    _type.contents              Integer
     _enumeration.range          1:
-     save_
+save_
 
 
 save_diffrn_scan_frame.integration_time
@@ -6242,7 +6247,33 @@ save_variant.variant_of
     _type.source                Related
     _type.container             Single
     _type.contents              Code
-     save_
+save_
+
+loop_
+  _dictionary_audit.version
+  _dictionary_audit.date
+  _dictionary_audit.revision
+         3.00.01      2014-07-28
+;
+     Initial conversion to DDLm. (Syd Hall)
+;
+         3.00.02      2014-07-30
+;
+     Updated SU items with correct types and links. (Syd Hall)
+;
+         3.00.03      2019-04-01
+;
+     Updated the file to conform to the CIF2 syntax. (Antanas Vaitkus)
+         3.0.04       2019-09-25
+;
+     Changed the content type of the _array_intensities.pixel_slow_bin_size
+     and _array_intensities.pixel_fast_bin_size data items from 'Count' to
+     'Real'.
+
+     Changed the content type of multiple data items from 'Count'
+     to 'Integer' and assigned the appropriate enumeration range
+     where needed. (Antanas Vaitkus)
+;
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
