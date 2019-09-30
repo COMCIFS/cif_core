@@ -15,7 +15,7 @@ data_CIF_IMG
     _dictionary.title            CIF_IMG
     _dictionary.class            Instance
     _dictionary.version          3.00.04
-    _dictionary.date             2019-09-25
+    _dictionary.date             2019-09-30
     _dictionary.uri              www.iucr.org/cif/dic/cif_img.dic
     _dictionary.ddl_conformance  3.11.04
     _dictionary.namespace        CifImag
@@ -4873,7 +4873,7 @@ save_
 
 save_diffrn_scan_frame.integration_time
     _definition.id             '_diffrn_scan_frame.integration_time'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-30
     _description.text
 ;
      The time in seconds to integrate this step of the scan.
@@ -4883,7 +4883,7 @@ save_diffrn_scan_frame.integration_time
      from the value of _diffrn_scan.integration_time.
 ;
     _name.category_id           diffrn_scan_frame
-    _name.object_id             Integeregration_time
+    _name.object_id             integration_time
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
@@ -5612,7 +5612,7 @@ save_diffrn_scan_frame_monitor.scan_id
 
 save_diffrn_scan_frame_monitor.integration_time
     _definition.id        '_diffrn_scan_frame_monitor.integration_time'
-    _definition.update           2014-07-07
+    _definition.update           2019-09-30
     _description.text
 ;
      The precise time for integration of the monitor value given in
@@ -5620,7 +5620,7 @@ save_diffrn_scan_frame_monitor.integration_time
      must be given in _diffrn_scan_frame_monitor.integration_time.
 ;
     _name.category_id           diffrn_scan_frame_monitor
-    _name.object_id             Integeregration_time
+    _name.object_id             integration_time
     _type.purpose               Number
     _type.source                Derived
     _type.container             Single
@@ -6264,7 +6264,7 @@ loop_
          3.00.03      2019-04-01
 ;
      Updated the file to conform to the CIF2 syntax. (Antanas Vaitkus)
-         3.0.04       2019-09-25
+         3.0.04       2019-09-30
 ;
      Changed the content type of the _array_intensities.pixel_slow_bin_size
      and _array_intensities.pixel_fast_bin_size data items from 'Count' to
@@ -6273,6 +6273,10 @@ loop_
      Changed the content type of multiple data items from 'Count'
      to 'Integer' and assigned the appropriate enumeration range
      where needed. (Antanas Vaitkus)
+
+     Corrected a typo in the object ids the _diffrn_scan_frame.integration_time
+     and _diffrn_scan_frame_monitor.integration_time data items.
+     (Antanas Vaitkus)
 ;
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
