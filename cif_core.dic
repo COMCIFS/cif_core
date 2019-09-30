@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.11
-_dictionary.date                        2019-07-25
+_dictionary.date                        2019-09-25
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -2596,7 +2596,7 @@ _definition.id                          '_diffrn_reflns.number'
 loop_
   _alias.definition_id
          '_diffrn_reflns_number' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Total number of measured intensities, excluding reflections that are
@@ -2608,7 +2608,7 @@ _name.object_id                         number
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -2993,7 +2993,7 @@ _definition.id                          '_diffrn_reflns_class.number'
 loop_
   _alias.definition_id
          '_diffrn_reflns_class_number' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of measured intensities for a reflection class, excluding
@@ -3004,7 +3004,7 @@ _name.object_id                         number
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -3593,7 +3593,7 @@ loop_
   _alias.definition_id
          '_diffrn_standards_interval_count'      
          '_diffrn_standards.interval_count' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Reflection count between the standard reflection measurements.
@@ -3603,7 +3603,7 @@ _name.object_id                         interval_count
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -3640,7 +3640,7 @@ loop_
   _alias.definition_id
          '_diffrn_standards_number'    
          '_diffrn_standards.number' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of unique standard reflections used in measurements.
@@ -3650,7 +3650,7 @@ _name.object_id                         number
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -4721,7 +4721,7 @@ _definition.id                          '_refln.symmetry_epsilon'
 loop_
   _alias.definition_id
          '_refln_symmetry_epsilon' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The symmetry reinforcement factor corresponding to the number of
@@ -4733,7 +4733,7 @@ _name.object_id                         symmetry_epsilon
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:48
 
 save_
@@ -4745,7 +4745,7 @@ _definition.id                          '_refln.symmetry_multiplicity'
 loop_
   _alias.definition_id
          '_refln_symmetry_multiplicity' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The number of reflections symmetry-equivalent under the Laue
@@ -4759,7 +4759,7 @@ _name.object_id                         symmetry_multiplicity
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:48
 
 save_
@@ -5167,7 +5167,7 @@ loop_
          '_reflns_number_observed'     
          '_reflns_number_obs'          
          '_reflns.number_obs' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Count of reflections in the REFLN set (not the DIFFRN_REFLN set) which
@@ -5181,7 +5181,7 @@ _name.object_id                         number_gt
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5195,7 +5195,7 @@ loop_
          '_reflns_number_total'        
          '_reflns_number_all'          
          '_reflns.number_all' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of reflections in the REFLN set (not the DIFFRN_REFLN set). It may
@@ -5208,7 +5208,7 @@ _name.object_id                         number_total
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5390,7 +5390,7 @@ loop_
   _alias.definition_id
          '_reflns_class_number_observed'         
          '_reflns_class_number_gt' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Count of reflections in this REFLN class (not the DIFFRN_REFLN set)
@@ -5404,7 +5404,7 @@ _name.object_id                         number_gt
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5416,7 +5416,7 @@ _definition.id                          '_reflns_class.number_total'
 loop_
   _alias.definition_id
          '_reflns_class_number_total' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Count of reflections in this REFLN class (not the DIFFRN_REFLN set). It
@@ -5429,7 +5429,7 @@ _name.object_id                         number_total
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5884,7 +5884,7 @@ _definition.id                          '_reflns_shell.number_measured_all'
 loop_
   _alias.definition_id
          '_reflns_shell_number_measured_all' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Total count of reflections measured for this resolution shell.
@@ -5894,7 +5894,7 @@ _name.object_id                         number_measured_all
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5908,7 +5908,7 @@ loop_
          '_reflns_shell_number_measured_obs'     
          '_reflns_shell.number_measured_obs'     
          '_reflns_shell_number_measured_gt' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of reflections measured for this resolution shell which are
@@ -5919,7 +5919,7 @@ _name.object_id                         number_measured_gt
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5932,7 +5932,7 @@ loop_
   _alias.definition_id
          '_reflns_shell_number_possible'         
          '_reflns_shell.number_possible_all' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Count of symmetry-unique reflections possible in this reflection shell.
@@ -5942,7 +5942,7 @@ _name.object_id                         number_possible
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5954,7 +5954,7 @@ _definition.id                          '_reflns_shell.number_unique_all'
 loop_
   _alias.definition_id
          '_reflns_shell_number_unique_all' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Count of symmetry-unique reflections present in this reflection shell.
@@ -5964,7 +5964,7 @@ _name.object_id                         number_unique_all
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -5978,7 +5978,7 @@ loop_
          '_reflns_shell_number_unique_gt'        
          '_reflns_shell_number_unique_obs'       
          '_reflns_shell.number_unique_obs' 
-_definition.update                      2012-11-26
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of symmetry-unique reflections present in this reflection shell
@@ -5989,7 +5989,7 @@ _name.object_id                         number_unique_gt
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -6190,7 +6190,7 @@ _definition.id                          '_exptl.crystals_number'
 loop_
   _alias.definition_id
          '_exptl_crystals_number' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Total number of crystals used in the measurement of intensities.
@@ -6200,7 +6200,7 @@ _name.object_id                         crystals_number
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -6397,7 +6397,7 @@ _definition.id                          '_cell.formula_units_Z'
 loop_
   _alias.definition_id
          '_cell_formula_units_Z' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The number of the formula units in the unit cell as specified
@@ -6409,7 +6409,7 @@ _name.object_id                         formula_units_Z
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -6823,7 +6823,7 @@ _definition.id                          '_cell_measurement.reflns_used'
 loop_
   _alias.definition_id
          '_cell_measurement_reflns_used' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Total number of reflections used to determine the unit cell.
@@ -6834,7 +6834,7 @@ _name.object_id                         reflns_used
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      3:
 
 save_
@@ -8595,7 +8595,7 @@ _definition.id                          '_chemical_conn_atom.NCA'
 loop_
   _alias.definition_id
          '_chemical_conn_atom_NCA' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Total number of connected atoms excluding terminal hydrogen atoms.
@@ -8605,7 +8605,7 @@ _name.object_id                         NCA
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -8617,7 +8617,7 @@ _definition.id                          '_chemical_conn_atom.NH'
 loop_
   _alias.definition_id
          '_chemical_conn_atom_NH' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Total number of hydrogen atoms attached to this atom,
@@ -8631,7 +8631,7 @@ _name.object_id                         NH
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -8643,7 +8643,7 @@ _definition.id                          '_chemical_conn_atom.number'
 loop_
   _alias.definition_id
          '_chemical_conn_atom_number' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The chemical sequence number to be associated with this atom.
@@ -8653,7 +8653,7 @@ _name.object_id                         number
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -8716,7 +8716,7 @@ loop_
   _alias.definition_id
          '_chemical_conn_bond_atom_1'  
          '_chem_comp_bond.atom_id_1' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index id of first atom in a bond connecting two atom sites.
@@ -8727,7 +8727,7 @@ _name.linked_item_id                    '_chemical_conn_atom.number'
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -8740,7 +8740,7 @@ loop_
   _alias.definition_id
          '_chemical_conn_bond_atom_2'  
          '_chem_comp_bond.atom_id_2' 
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index id of second atom in a bond connecting two atom sites.
@@ -8751,7 +8751,7 @@ _name.object_id                         atom_2
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -8785,7 +8785,7 @@ save_chemical_conn_bond.id
     _definition.id             '_chemical_conn_bond.id'
      loop_
     _alias.definition_id       '_chemical_conn_bond.id'
-    _definition.update           2012-11-22
+    _definition.update           2019-09-25
     _description.text
 ;
      Bond identifier composed of a list of two sequence indices
@@ -8796,7 +8796,8 @@ save_chemical_conn_bond.id
     _type.purpose                Number
     _type.source                 Derived
     _type.container              List
-    _type.contents               Index
+    _type.contents               Integer
+    _enumeration.range           1:
     _type.dimension              '[2]'
      loop_
     _method.purpose
@@ -10449,7 +10450,7 @@ save_space_group.Laue_class
 save_space_group.multiplicity
 
 _definition.id                          '_space_group.multiplicity'
-_definition.update                      2016-05-13
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of unique symmetry elements in the space group.
@@ -10459,7 +10460,7 @@ _name.object_id                         multiplicity
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      1:192
 loop_
   _method.purpose
@@ -10885,7 +10886,7 @@ loop_
          '_space_group_symop_id'
          '_symmetry_equiv.pos_site_id'
          '_symmetry_equiv_pos_site_id'
-_definition.update                      2019-01-09
+_definition.update                      2019-09-25
 _description.text 
 ;
      Index identifying each entry in the _space_group_symop.operation_xyz
@@ -10901,7 +10902,7 @@ _name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 loop_
   _method.purpose
@@ -11481,7 +11482,7 @@ save_
 save_function.SymKey
 
 _definition.id                          '_function.SymKey'
-_definition.update                      2012-12-17
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The function
@@ -11495,7 +11496,7 @@ _name.object_id                         SymKey
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:192
 loop_
   _method.purpose
@@ -12221,7 +12222,7 @@ _definition.id                          '_geom_bond.multiplicity'
 loop_
   _alias.definition_id
          '_geom_bond_multiplicity' 
-_definition.update                      2013-01-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The number of times the given bond appears in the environment
@@ -12235,7 +12236,7 @@ _name.object_id                         multiplicity
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -13594,7 +13595,7 @@ save_model_site.id
 save_model_site.index
 
 _definition.id                          '_model_site.index'
-_definition.update                      2012-11-22
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index number of an atomic site in the connected molecule.
@@ -13604,7 +13605,7 @@ _name.object_id                         index
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -13632,7 +13633,7 @@ save_
 save_model_site.mole_index
 
 _definition.id                          '_model_site.mole_index'
-_definition.update                      2013-03-09
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Index number of a distinct molecules in the cell, not related by
@@ -13643,7 +13644,9 @@ _name.object_id                         mole_index
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
+
 
 save_
 
@@ -13922,7 +13925,7 @@ _definition.id                          '_valence_param.id'
 loop_
   _alias.definition_id
          '_valence_param_id' 
-_definition.update                      2012-12-13
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Unique index loop number of the valence parameter loop.
@@ -13932,7 +13935,7 @@ _name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -15085,7 +15088,7 @@ _definition.id                          '_citation.journal_issue'
 loop_
   _alias.definition_id
          '_citation_journal_issue' 
-_definition.update                      2012-12-11
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Issue number of the journal cited;  relevant for articles.
@@ -15095,7 +15098,7 @@ _name.object_id                         journal_issue
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 loop_
   _description_example.case
@@ -15110,7 +15113,7 @@ _definition.id                          '_citation.journal_volume'
 loop_
   _alias.definition_id
          '_citation_journal_volume' 
-_definition.update                      2012-12-11
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Volume number of the journal cited;  relevant for articles.
@@ -15120,7 +15123,7 @@ _name.object_id                         journal_volume
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 loop_
   _description_example.case
@@ -15385,7 +15388,7 @@ _definition.id                          '_citation_author.ordinal'
 loop_
   _alias.definition_id
          '_citation_author_ordinal' 
-_definition.update                      2012-12-11
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Ordinal code specifies the order of the author's name in the list
@@ -15396,7 +15399,8 @@ _name.object_id                         ordinal
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
 
 save_
 
@@ -15507,7 +15511,7 @@ _definition.id                          '_citation_editor.ordinal'
 loop_
   _alias.definition_id
          '_citation_editor_ordinal' 
-_definition.update                      2014-06-12
+_definition.update                      2019-09-25
 _description.text                       
 ;
      This data item defines the order of the editor's name in the
@@ -15518,7 +15522,8 @@ _name.object_id                         ordinal
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
 
 save_
 
@@ -17086,7 +17091,7 @@ _name.object_id                         id
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -18746,7 +18751,7 @@ _definition.id                          '_atom_site.attached_hydrogens'
 loop_
   _alias.definition_id
          '_atom_site_attached_hydrogens' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of hydrogen atoms attached to the atom at this site
@@ -18758,7 +18763,7 @@ _name.object_id                         attached_hydrogens
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:8
 loop_
   _description_example.case
@@ -19064,7 +19069,7 @@ _definition.id                          '_atom_site.chemical_conn_number'
 loop_
   _alias.definition_id
          '_atom_site_chemical_conn_number' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      This number links an atom site to the chemical connectivity list.
@@ -19076,7 +19081,7 @@ _name.linked_item_id                    '_chemical_conn_atom.number'
 _type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -19645,7 +19650,7 @@ loop_
          '_atom_site_site_symmetry_multiplicity'           
          '_atom_site_symmetry_multiplicity'      
          '_atom_site.symmetry_multiplicity' 
-_definition.update                      2013-04-28
+_definition.update                      2019-09-25
 _description.text                       
 ;
      The number of different sites that are generated by the
@@ -19661,7 +19666,7 @@ _name.object_id                         site_symmetry_multiplicity
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:192
 loop_
   _method.purpose
@@ -19690,7 +19695,7 @@ _definition.id                          '_atom_site.site_symmetry_order'
 loop_
   _alias.definition_id
          '_atom_site_site_symmetry_order' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
     The number of times application of the crystallographic symmetry
@@ -19705,7 +19710,7 @@ _name.object_id                         site_symmetry_order
 _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _enumeration.range                      1:48
 
 save_
@@ -21393,7 +21398,7 @@ save_
 save_atom_type.atomic_number
 
 _definition.id                          '_atom_type.atomic_number'
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Atomic number of this atom type.
@@ -21403,7 +21408,8 @@ _name.object_id                         atomic_number
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
+_enumeration.range                      1:
 _import.get [{'save':atomic_number  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 
@@ -21464,7 +21470,7 @@ save_
 save_atom_type.electron_count
 
 _definition.id                          '_atom_type.electron_count'
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of electrons in this atom type.
@@ -21474,7 +21480,7 @@ _name.object_id                         electron_count
 _type.purpose                           Number
 _type.source                            Assigned
 _type.container                         Single
-_type.contents                          Index
+_type.contents                          Integer
 _import.get [{'save':electron_count  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 _enumeration.range                      1:
@@ -23202,7 +23208,7 @@ loop_
   _alias.definition_id
          '_refine_ls_number_constraints'         
          '_refine.ls_number_constraints' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of constrained (non-refined or dependent) parameters
@@ -23216,7 +23222,7 @@ _name.object_id                         number_constraints
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -23229,7 +23235,7 @@ loop_
   _alias.definition_id
          '_refine_ls_number_parameters'          
          '_refine.ls_number_parameters' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of parameters refined in the least-squares process. If
@@ -23246,7 +23252,7 @@ _name.object_id                         number_parameters
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -23259,7 +23265,7 @@ loop_
   _alias.definition_id
          '_refine_ls_number_reflns'    
          '_refine.ls_number_reflns_all' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of unique reflections used in the least-squares refinement.
@@ -23269,7 +23275,7 @@ _name.object_id                         number_reflns
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -23282,7 +23288,7 @@ loop_
   _alias.definition_id
          '_refine_ls_number_reflns_gt'
          '_refine.ls_number_reflns_obs'
-_definition.update                      2019-01-09
+_definition.update                      2019-09-25
 _description.text
 ;
      The number of reflections that satisfy the resolution limits
@@ -23295,7 +23301,7 @@ _name.object_id                         number_reflns_gt
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      1:
 
 save_
@@ -23308,7 +23314,7 @@ loop_
   _alias.definition_id
          '_refine_ls_number_restraints'          
          '_refine.ls_number_restraints' 
-_definition.update                      2012-11-20
+_definition.update                      2019-09-25
 _description.text                       
 ;
      Number of restrained parameters in the least-squares refinement. These
@@ -23322,7 +23328,7 @@ _name.object_id                         number_restraints
 _type.purpose                           Number
 _type.source                            Recorded
 _type.container                         Single
-_type.contents                          Count
+_type.contents                          Integer
 _enumeration.range                      0:
 
 save_
@@ -24153,7 +24159,7 @@ loop_
 ;
      Added DATABASE_RELATED category (James Hester).
 ;
-         3.0.11    2019-07-25
+         3.0.11    2019-09-25
 ;
      Removed the _chemical_conn_bond.distance_su data item.
      Changed the purpose of the diffrn_radiation_wavelength.value data item
@@ -24183,4 +24189,7 @@ loop_
 
      Corrected a typo in the definitions of the _geom_contact.distance and
      _geom_torsion.angle and data items.
+
+     Changed the content type of multiple data items from 'Index' or 'Count'
+     to 'Integer' and assigned the appropriate enumeration range if needed.
 ;
