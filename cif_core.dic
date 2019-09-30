@@ -11343,23 +11343,23 @@ save_
 save_function.Closest
 
 _definition.id                          '_function.Closest'
-_definition.update                      2012-10-16
+_definition.update                      2019-09-30
 _description.text                       
 ;
      The function
-                   u, d  =  Closest( v, u )
+                   d  =  Closest( v, w )
  
-     returns the real coordinate vector U which is the closest cell-
-     translated occurence of the vector V to the vector W.  D is the
-     cell translation vector required to move V to U.
+     returns the cell translation vector required to obtain the
+     closest cell-translated occurence of the vector V to the vector
+     W.
 ;
 _name.category_id                       function
 _name.object_id                         Closest
 _type.purpose                           Number
 _type.source                            Derived
-_type.container                         List
-_type.contents                          'Matrix(Real,Real,Real)'
-_type.dimension                         '[2]'
+_type.container                         Matrix
+_type.contents                          Real
+_type.dimension                         '[3]'
 loop_
   _method.purpose
   _method.expression
@@ -11369,14 +11369,11 @@ loop_
                        w :[Matrix, Real]) { # target vector
  
             d  =  v - w
-            t  =  Int( Mod( 99.5 + d, 1.0 ) - d )
- 
-            Closest = List ( v+t, t )
+            Closest  =  Int( Mod( 99.5 + d, 1.0 ) - d )
      }
 ; 
 
 save_
-
 
 save_function.SeitzFromJones
 
@@ -13379,7 +13376,8 @@ loop_
                      Loop  s  as  space_group_symop  :ns   {
  
                          axyz      =   s.R * a3 + s.T
-                         bxyz,tran =   Closest (axyz, a2)
+                         tran      =   Closest (axyz, a2)
+                         bxyz      =   axyz + tran
                          cxyz      =  _atom_sites_Cartn_transform.matrix *bxyz
                          d         =   Norm (cxyz - c2)
  
