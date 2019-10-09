@@ -222,7 +222,7 @@ save_definition.class
 
     _definition.id               '_definition.class'
     _definition.class            Attribute
-    _definition.update           2013-03-08
+    _definition.update           2019-10-08
     _description.text
 ;
      The nature and the function of a definition or definitions.
@@ -255,7 +255,7 @@ save_definition.class
                   all other categories in the dictionary.
 ;
               Loop
-;                 Category of items that in a data file must
+;                 Category of items that in a data file may
                   reside in a loop-list with a key item defined.
 ;
               Set
@@ -2692,7 +2692,7 @@ Removed 'Measured' as a state for type.source
    Added 'Implied' container type to allow examples and defaults to adjust
    to the item being defined. Changed relevant attribute definitions. (JRH)
 ;
-         3.14.0    2019-09-25
+         3.14.0    2019-10-08
 ;
    Updated the description of the _description_example.case data item.
 
@@ -2713,4 +2713,8 @@ Removed 'Measured' as a state for type.source
    'Index' to 'Integer'.
 
    Deprecated the 'Index' and 'Count' content types.
+
+   Updated the description of the 'Loop' definition class. The new description
+   allows the child data items to appear in a loop-list instead of strictly
+   requiring it ('must' -> 'may').
 ;
