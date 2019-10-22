@@ -1610,7 +1610,7 @@ data_atom_sites_Cartn_transform_axes
     _name                      '_atom_sites_Cartn_transform_axes'
     _category                    atom_sites
     _type                        char
-    _example                    'a parallel to x; b in the plane of y and z'
+    _example                    'a parallel to x; b in the plane of x and y'
     _definition
 ;              A description of the relative alignment of the crystal cell
                axes to the  Cartesian orthogonal axes as applied in the
