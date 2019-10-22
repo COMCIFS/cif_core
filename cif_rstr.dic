@@ -1072,13 +1072,13 @@ save_restr_equal_angle_class.class_id
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
-
 save_
-
-
-save_restr_equal_angle_class.detail
-
-    _definition.id               '_restr_equal_angle_class.detail'
+ 
+ 
+save_restr_equal_angle_class.details
+    _definition.id             '_restr_equal_angle_class.details'
+     loop_
+    _alias.definition_id       '_restr_equal_angle_class_details'
     _definition.update           2014-06-29
     loop_
       _alias.definition_id
@@ -1090,7 +1090,7 @@ save_restr_equal_angle_class.detail
       are restrained to be equal.
 ;
     _name.category_id            restr_equal_angle_class
-    _name.object_id              detail
+    _name.object_id              details
     _type.purpose                Describe
     _type.source                 Recorded
     _type.container              Single
