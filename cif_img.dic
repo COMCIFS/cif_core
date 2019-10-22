@@ -6273,7 +6273,6 @@ loop_
      Changed the content type of multiple data items from 'Count'
      to 'Integer' and assigned the appropriate enumeration range
      where needed. (Antanas Vaitkus)
-
      Corrected a typo in the object ids the _diffrn_scan_frame.integration_time
      and _diffrn_scan_frame_monitor.integration_time data items.
      (Antanas Vaitkus)

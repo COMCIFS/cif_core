@@ -2713,7 +2713,6 @@ Removed 'Measured' as a state for type.source
    'Index' to 'Integer'.
 
    Deprecated the 'Index' and 'Count' content types.
-
    Updated the description of the 'Loop' definition class. The new description
    allows the child data items to appear in a loop-list instead of strictly
    requiring it ('must' -> 'may').
