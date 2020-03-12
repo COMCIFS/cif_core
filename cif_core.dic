@@ -20726,11 +20726,11 @@ _name.object_id                         mat_11
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
      With c as cell
 
-    _atom_sites_Cartn_transform.mat_11 =  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma)
+    _enumeration.default =  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma)
 ; 
 
 save_
@@ -20749,9 +20749,9 @@ _name.object_id                         mat_12
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition     
 ;
-    _atom_sites_Cartn_transform.mat_12 =  0.
+    _enumeration.default =  0.
 ; 
 
 save_
@@ -20770,9 +20770,9 @@ _name.object_id                         mat_13
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
-    _atom_sites_Cartn_transform.mat_13 =  0.
+    _enumeration.default =  0.
 ; 
 
 save_
@@ -20791,11 +20791,11 @@ _name.object_id                         mat_21
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
      with c as cell
  
-    _atom_sites_Cartn_transform.mat_21 =  -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma)
+    _enumeration.default =  -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma)
 ; 
 
 save_
@@ -20814,11 +20814,11 @@ _name.object_id                         mat_22
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
      With c  as  cell
  
-    _atom_sites_Cartn_transform.mat_22 =  c.length_b * Sind(c.angle_alpha)
+    _enumeration.default =  c.length_b * Sind(c.angle_alpha)
 ; 
 
 save_
@@ -20837,9 +20837,9 @@ _name.object_id                         mat_23
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
-    _atom_sites_Cartn_transform.mat_23 =  0.
+    _enumeration.default =  0.
 ; 
 
 save_
@@ -20858,11 +20858,11 @@ _name.object_id                         mat_31
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
      With c  as  cell
  
-    _atom_sites_Cartn_transform.mat_31 =  c.length_a * Cosd(c.angle_beta)
+    _enumeration.default =  c.length_a * Cosd(c.angle_beta)
 ; 
 
 save_
@@ -20881,11 +20881,11 @@ _name.object_id                         mat_32
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
      With c  as  cell
  
-    _atom_sites_Cartn_transform.mat_32 =  c.length_b * Cosd(c.angle_alpha)
+    _enumeration.default =  c.length_b * Cosd(c.angle_alpha)
 ; 
 
 save_
@@ -20904,9 +20904,9 @@ _name.object_id                         mat_33
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Definition          
 ;
-    _atom_sites_Cartn_transform.mat_33 =  _cell.length_c
+    _enumeration.default =  _cell.length_c
 ; 
 
 save_
