@@ -560,6 +560,7 @@ save_colour_RGB
      blue_sky                         '[ 135, 206, 235 ]'
      blue_steel                       '[ 070, 130, 180 ]'
      turquoise                        '[ 064, 224, 208 ]'
+     colourless                       '[   .,   .,   . ]'
      cyan                             '[ 000, 255, 255 ]'
      cyan_light                       '[ 224, 255, 255 ]'
      green                            '[ 000, 255, 000 ]'
