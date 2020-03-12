@@ -9,8 +9,8 @@ data_COM_VAL
  
     _dictionary.title            COM_VAL
     _dictionary.class            Template
-    _dictionary.version          1.4.05 
-    _dictionary.date             2016-05-09
+    _dictionary.version          1.4.07
+    _dictionary.date             2019-12-09
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  3.11.04
     _description.text
@@ -806,8 +806,8 @@ save_units_code
    'degree_per_minute' "rotation_per_time  'degrees (of arc) per minute'"
 
    'celsius'      "temperature     'degrees (of temperature) Celsius'"
-   'kelvins'      "temperature     'degrees (of temperature) Kelvin'"
-   'kelvins_per_minute' "cooling rate 'degrees Kelvin per minute'"
+   'kelvins'      "temperature     'temperature in kelvins'"
+   'kelvins_per_minute' "cooling rate 'kelvins per minute'"
 
    'electrons'    "electrons              'electrons'"
 
@@ -2145,4 +2145,9 @@ save_colour_hue
       1.4.06  2017-12-12
 ;
    Updated atom symbol list for newly-named elements (James Hester)
+;
+      1.4.07  2019-12-09
+;
+   Updated the human-readable descriptions of the 'kelvins' and
+   'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
