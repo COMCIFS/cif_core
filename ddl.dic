@@ -1161,6 +1161,8 @@ save_enumeration.range
     _description.text
 ;
      The inclusive range of values "from:to" allowed for the defined item.
+     If items have associated SU, the reported value may fall outside
+     these limits.
 ;
     _name.category_id            enumeration
     _name.object_id              range
