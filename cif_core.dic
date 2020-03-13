@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.11
-_dictionary.date                        2019-09-25
+_dictionary.version                     3.0.12
+_dictionary.date                        2020-03-13
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -11978,7 +11978,7 @@ _definition.id                          '_geom_angle.value'
 loop_
   _alias.definition_id           
          '_geom_angle' 
-_definition.update                      2012-12-14
+_definition.update                      2020-03-13
 _description.text                       
 ;
      Angle defined by the atoms located at atom_site_x/site_symmetry_x for
@@ -11990,7 +11990,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      -180.:180.
+_enumeration.range                      0.:180.
 _units.code                             degrees
 loop_
   _method.purpose
@@ -12592,7 +12592,7 @@ _definition.id                          '_geom_hbond.angle_DHA'
 loop_
   _alias.definition_id
          '_geom_hbond_angle_DHA' 
-_definition.update                      2019-07-24
+_definition.update                      2020-03-13
 _description.text
 ;
      Angle subtended by the sites identified by _geom_hbond.id.
@@ -12604,7 +12604,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
-_enumeration.range                      -180.:180.
+_enumeration.range                      0.:180.
 _units.code                             degrees
 loop_
   _method.purpose
@@ -24191,3 +24191,11 @@ loop_
      Changed the content type of multiple data items from 'Index' or 'Count'
      to 'Integer' and assigned the appropriate enumeration range if needed.
 ;
+     3.0.12     2020-03-13
+;
+     Adjusted the ranges of _geom_bond.angle and _geom_hbond.angle_DHA to
+     be 0:180 degrees.
+
+     Changed dREL methods for Cartesian transformation matrix elements 
+     to calculate default values rather than required values.
+; 
