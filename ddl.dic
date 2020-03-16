@@ -1381,7 +1381,7 @@ save_import.get
      loop id as import_details {
          imp_order_list ++= id.order
      }
-     sort(imp_order_list)
+     imp_order_list = sort(imp_order_list)
      final_val = []
      for ord in imp_order_list {
          final_val ++= import_details[ord].single

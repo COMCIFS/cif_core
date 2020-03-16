@@ -10268,55 +10268,6 @@ loop_
          trigonal  
          hexagonal           
          cubic 
-loop_
-  _method.purpose
-  _method.expression
-         Validation          
-;
-    setting = _space_group.crystal_system
-    a   = _cell.length_a
-    b   = _cell.length_b
-    c   = _cell.length_c
-    d   = 0.01
-    alp = _cell.angle_alpha
-    bet = _cell.angle_beta
-    gam = _cell.angle_gamma
-    warn_len = 'Possible mismatch between cell lengths and cell setting'
-    warn_ang = 'Possible mismatch between cell angles and cell setting'
- 
-    If(setting == 'triclinic') {
-      If( Abs(a-b)<d || Abs(a-c)<d || Abs(b-c)<d )          Alert('B', warn_len)
-      If( Abs(alp-90)<d || Abs(bet-90)<d || Abs(gam-90)<d ) Alert('B', warn_ang)
-    }
-    Else If(setting == 'monoclinic') {
-      If(( Abs(a-b)<d && Abs(a-c)<d ) ||
-         ( Abs(a-b)<d && Abs(b-c)<d ) ||
-         ( Abs(a-c)<d && Abs(b-c)<d ))                      Alert('B', warn_len)
-      If( Abs(alp-90)<d && Abs(bet-90)<d && Abs(gam-90)<d ) Alert('B', warn_ang)
-      If(( Abs(alp-90)>d && Abs(bet-90)>d ) ||
-         ( Abs(alp-90)>d && Abs(gam-90)>d ) ||
-         ( Abs(bet-90)>d && Abs(gam-90)>d ) )               Throw( warn_ang)
-    }
-    Else If(setting == 'orthorhombic') {
-      If( Abs(a-b)<d || Abs(a-c)<d || Abs(b-c)<d )          Alert('B',warn_len)
-      If( Abs(alp-90)>d || Abs(bet-90)>d || Abs(gam-90)>d ) Throw( warn_ang)
-    }
-    Else If(setting == 'tetragonal') {
-      If( Abs(a-b)<d && Abs(a-c)<d && Abs(b-c)<d )          Alert('B',warn_len)
-      If( Abs(a-b)>d && Abs(a-c)>d )                        Throw( warn_len)
-      If( Abs(alp-90)>d || Abs(bet-90)>d || Abs(gam-90)>d ) Throw( warn_ang)
-    }
-    Else If(setting == 'trigonal' || setting == 'hexagonal') {
-      If( Abs(a-b)<d && Abs(a-c)<d && Abs(b-c)<d )          Alert('B', warn_len)
-      If( Abs(a-b)>d && Abs(a-c)>d )                        Throw( warn_len)
-      If( Abs(alp-90)<d && Abs(bet-90)<d && Abs(gam-90)<d ) Throw( warn_ang)
-      If( Abs(gam-120)>d || Abs(alp-90)>d || Abs(bet-90)>d) Throw( warn_ang)
-    }
-    Else If(setting == 'cubic') {
-      If( Abs(a-b)>d || Abs(a-c)>d || Abs(b-c)>d )          Throw( warn_len)
-      If( Abs(alp-90)>d || Abs(bet-90)>d || Abs(gam-90)>d ) Throw( warn_ang)
-    }
-; 
 
 save_
 
@@ -24129,4 +24080,6 @@ loop_
      3.0.13     2020-03-16
 ;
      Changed all synthetic identifiers ('id') to be Text, and removed dREL.
+     Validation method for _space_group.crystal_system removed as it contained
+     undefined dREL functions "throw" and "alert".
 ;
