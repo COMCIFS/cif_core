@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.12
-_dictionary.date                        2020-03-13
+_dictionary.version                     3.0.13
+_dictionary.date                        2020-03-16
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -8785,29 +8785,17 @@ save_chemical_conn_bond.id
     _definition.id             '_chemical_conn_bond.id'
      loop_
     _alias.definition_id       '_chemical_conn_bond.id'
-    _definition.update           2019-09-25
+    _definition.update           2020-03-16
     _description.text
 ;
-     Bond identifier composed of a list of two sequence indices
-     specified as _chemical_conn_atom.number values.
+     Unique identifier for the bond.
 ;
     _name.category_id            chemical_conn_bond
     _name.object_id              id
-    _type.purpose                Number
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               Integer
-    _enumeration.range           1:
-    _type.dimension              '[2]'
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-    With  c  as  chemical_conn_bond
- 
-    _chemical_conn_bond.id =  [ c.atom_1, c.atom_2 ]
-;
+    _type.container              Single
+    _type.contents               Text
 save_
  
 save_chemical_conn_bond.type
@@ -11749,6 +11737,15 @@ _name.category_id                       GEOM
 _name.object_id                         GEOM_ANGLE
 _category.key_id                        '_geom_angle.id'
 loop_
+  _category_key.name
+         '_geom_angle.atom_site_label_1'         
+         '_geom_angle.atom_site_label_2'         
+         '_geom_angle.atom_site_label_3'         
+         '_geom_angle.site_symmetry_1'           
+         '_geom_angle.site_symmetry_2'           
+         '_geom_angle.site_symmetry_3' 
+
+loop_
   _method.purpose
   _method.expression
          Evaluation          
@@ -11789,14 +11786,6 @@ loop_
                           .value     =  angle )
      }   }   }
 ; 
-loop_
-  _category_key.name
-         '_geom_angle.atom_site_label_1'         
-         '_geom_angle.atom_site_label_2'         
-         '_geom_angle.atom_site_label_3'         
-         '_geom_angle.site_symmetry_1'           
-         '_geom_angle.site_symmetry_2'           
-         '_geom_angle.site_symmetry_3' 
 
 save_
 
@@ -11876,32 +11865,19 @@ save_geom_angle.id
     _definition.id             '_geom_angle.id'
      loop_
     _alias.definition_id       '_geom_angle.id'
-    _definition.update           2012-11-22
+    _definition.update           2020-03-16
     _description.text
 ;
-     Atom site labels and symmetry operators as pairs for each of the
-     three atom sites which identify the angle. The second label-symop
-     pair in the list identifies the site at the apex of the angle.
+     An arbitrary, unique identifier for the angle formed by the
+     three atoms.
 ;
     _name.category_id            geom_angle
     _name.object_id              id
-    _type.purpose                Composite
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               List
-    _type.dimension              '[3]'
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-     With  a  as  geom_angle
- 
-         _geom_angle.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                            [ a.atom_site_label_2, a.site_symmetry_2 ],
-                            [ a.atom_site_label_3, a.site_symmetry_3 ]]
-;
-     save_
+    _type.container              Single
+    _type.contents               Text
+save_
 
 save_geom_angle.publ_flag
 
@@ -12054,6 +12030,14 @@ _name.category_id                       GEOM
 _name.object_id                         GEOM_BOND
 _category.key_id                        '_geom_bond.id'
 loop_
+  _category_key.name
+         '_geom_bond.atom_site_label_1'          
+         '_geom_bond.atom_site_label_2'          
+         '_geom_bond.site_symmetry_1'  
+         '_geom_bond.site_symmetry_2' 
+
+
+loop_
   _method.purpose
   _method.expression
          Evaluation          
@@ -12079,13 +12063,6 @@ loop_
                       .distance  =  d  )
       }   }
 ; 
-loop_
-  _category_key.name
-         '_geom_bond.atom_site_label_1'          
-         '_geom_bond.atom_site_label_2'          
-         '_geom_bond.site_symmetry_1'  
-         '_geom_bond.site_symmetry_2' 
-
 save_
 
 
@@ -12188,30 +12165,18 @@ save_geom_bond.id
     _definition.id             '_geom_bond.id'
      loop_
     _alias.definition_id       '_geom_bond.id'
-    _definition.update           2012-11-22
+    _definition.update           2020-03-16
     _description.text
 ;
-     Identity of bond distance in terms of the atom site labels and
-     symmetry operators as pairs for each of the two "bonded" atom sites.
+     Unique identifier for the bond.
 ;
     _name.category_id            geom_bond
     _name.object_id              id
-    _type.purpose                Composite
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               List
-    _type.dimension              '[2]'
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-     With  a  as  geom_bond
- 
-           _geom_bond.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                             [ a.atom_site_label_2, a.site_symmetry_2 ]]
-;
-     save_
+    _type.container              Single
+    _type.contents               Text
+save_
 
 save_geom_bond.multiplicity
 
@@ -12333,6 +12298,14 @@ _name.category_id                       GEOM
 _name.object_id                         GEOM_CONTACT
 _category.key_id                        '_geom_contact.id'
 loop_
+  _category_key.name
+         '_geom_contact.atom_site_label_1'       
+         '_geom_contact.atom_site_label_2'       
+         '_geom_contact.site_symmetry_1'         
+         '_geom_contact.site_symmetry_2' 
+
+
+loop_
   _method.purpose
   _method.expression
          Evaluation          
@@ -12369,13 +12342,6 @@ loop_
                                .distance  =  d  )
      }  }  }  }  }  }
 ; 
-loop_
-  _category_key.name
-         '_geom_contact.atom_site_label_1'       
-         '_geom_contact.atom_site_label_2'       
-         '_geom_contact.site_symmetry_1'         
-         '_geom_contact.site_symmetry_2' 
-
 save_
 
 
@@ -12478,19 +12444,17 @@ save_geom_contact.id
     _definition.id             '_geom_contact.id'
      loop_
     _alias.definition_id       '_geom_contact.id'
-    _definition.update           2012-11-22
+    _definition.update           2020-03-16
     _description.text
 ;
-     Atom site labels and symmetry operators as pairs for each of the
-     two atom sites which define the geom_contact bond.
+    A identifier for the contact that is unique within the loop.
 ;
     _name.category_id            geom_contact
     _name.object_id              id
-    _type.purpose                Composite
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               List
-    _type.dimension              '[2]'
+    _type.container              Single
+    _type.contents               Text
      loop_
     _method.purpose
     _method.expression
@@ -12897,32 +12861,18 @@ save_geom_hbond.id
     _definition.id             '_geom_hbond.id'
      loop_
     _alias.definition_id       '_geom_hbond.id'
-    _definition.update           2012-11-22
+    _definition.update           2020-03-16
     _description.text
 ;
-     Atom site labels and symmetry operators as pairs for each of the
-     three atom sites which define the hydrogen angle and distances.
-     Site H is at the apex of the angle.
+     An identifier for the hydrogen bond that is unique within the loop.
 ;
     _name.category_id            geom_hbond
     _name.object_id              id
-    _type.purpose                Composite
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               List
-    _type.dimension              '[3]'
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-     With  a  as  geom_hbond
- 
-         _geom_hbond.id =  [[ a.atom_site_label_D, a.site_symmetry_D ],
-                            [ a.atom_site_label_H, a.site_symmetry_H ],
-                            [ a.atom_site_label_A, a.site_symmetry_A ]]
-;
-     save_
+    _type.container              Single
+    _type.contents               Text
+save_
 
 save_geom_hbond.publ_flag
 
@@ -13009,6 +12959,18 @@ _name.category_id                       GEOM
 _name.object_id                         GEOM_TORSION
 _category.key_id                        '_geom_torsion.id'
 loop_
+  _category_key.name
+         '_geom_torsion.atom_site_label_1'       
+         '_geom_torsion.atom_site_label_2'       
+         '_geom_torsion.atom_site_label_3'       
+         '_geom_torsion.atom_site_label_4'       
+         '_geom_torsion.site_symmetry_1'         
+         '_geom_torsion.site_symmetry_2'         
+         '_geom_torsion.site_symmetry_3'         
+         '_geom_torsion.site_symmetry_4' 
+
+
+loop_
   _method.purpose
   _method.expression
          Evaluation          
@@ -13064,17 +13026,6 @@ loop_
                                .angle     =  angle )
      }   }   }    }
 ; 
-loop_
-  _category_key.name
-         '_geom_torsion.atom_site_label_1'       
-         '_geom_torsion.atom_site_label_2'       
-         '_geom_torsion.atom_site_label_3'       
-         '_geom_torsion.atom_site_label_4'       
-         '_geom_torsion.site_symmetry_1'         
-         '_geom_torsion.site_symmetry_2'         
-         '_geom_torsion.site_symmetry_3'         
-         '_geom_torsion.site_symmetry_4' 
-
 save_
 
 
@@ -13216,29 +13167,15 @@ save_geom_torsion.id
     _definition.update           2012-11-22
     _description.text
 ;
-     Atom site labels and symmetry operators as pairs for each of the
-     four atom sites which define the torsion angle.
+     An identifier for the torsion angle that is unique within its loop.
 ;
     _name.category_id            geom_torsion
     _name.object_id              id
-    _type.purpose                Composite
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               List
-    _type.dimension              '[4]'
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-     With  a  as  geom_torsion
- 
-         _geom_torsion.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                              [ a.atom_site_label_2, a.site_symmetry_2 ],
-                              [ a.atom_site_label_3, a.site_symmetry_3 ],
-                              [ a.atom_site_label_4, a.site_symmetry_4 ]]
-;
-     save_
+    _type.container              Single
+    _type.contents               Text
+save_
 
 save_geom_torsion.publ_flag
 
@@ -13336,6 +13273,12 @@ _name.category_id                       MODEL
 _name.object_id                         MODEL_SITE
 _category.key_id                        '_model_site.id'
 loop_
+  _category_key.name
+         '_model_site.label'           
+         '_model_site.symop' 
+
+
+loop_
   _method.purpose
   _method.expression
          Evaluation          
@@ -13406,11 +13349,6 @@ loop_
                     .mole_index      =  m  )
       }
 ; 
-loop_
-  _category_key.name
-         '_model_site.label'           
-         '_model_site.symop' 
-
 save_
 
 
@@ -13566,29 +13504,18 @@ save_model_site.id
     _definition.id             '_model_site.id'
      loop_
     _alias.definition_id       '_model_site.id'
-    _definition.update           2012-11-22
+    _definition.update           2020-03-16
     _description.text
 ;
-     Identifier of model site in terms of the atom site label and
-     symmetry operator.
+     An identifier for the model site that is unique within its loop.
 ;
     _name.category_id            model_site
     _name.object_id              id
-    _type.purpose                Composite
+    _type.purpose                Key
     _type.source                 Derived
-    _type.container              List
-    _type.contents               List
-    _type.dimension              '[1]'
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-     With m as model_site
- 
-      _model_site.id =   List ( m.label, m.symop )
-;
-     save_
+    _type.container              Single
+    _type.contents               Text
+save_
 
 save_model_site.index
 
@@ -24199,3 +24126,7 @@ loop_
      Changed dREL methods for Cartesian transformation matrix elements 
      to calculate default values rather than required values.
 ; 
+     3.0.13     2020-03-16
+;
+     Changed all synthetic identifiers ('id') to be Text, and removed dREL.
+;
