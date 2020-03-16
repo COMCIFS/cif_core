@@ -12395,10 +12395,10 @@ save_geom_contact.id
     _definition.id             '_geom_contact.id'
      loop_
     _alias.definition_id       '_geom_contact.id'
-    _definition.update           2020-03-16
+    _definition.update           2020-03-17
     _description.text
 ;
-    A identifier for the contact that is unique within the loop.
+    An identifier for the contact that is unique within the loop.
 ;
     _name.category_id            geom_contact
     _name.object_id              id
@@ -12406,17 +12406,7 @@ save_geom_contact.id
     _type.source                 Derived
     _type.container              Single
     _type.contents               Text
-     loop_
-    _method.purpose
-    _method.expression
-     Evaluation
-;
-     With  a  as  geom_contact
- 
-          _geom_contact.id =  [[ a.atom_site_label_1, a.site_symmetry_1 ],
-                               [ a.atom_site_label_2, a.site_symmetry_2 ]]
-;
-     save_
+save_
 
 save_geom_contact.publ_flag
 
