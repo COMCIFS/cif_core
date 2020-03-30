@@ -1978,6 +1978,7 @@ save_type.dimension
     _description.text
 ;
      The dimensions of a list or matrix of elements expressed as a text string.
+     Vectors (row or column) are specified as a Matrix type with a single dimension.
 ;
     _name.category_id            type
     _name.object_id              dimension
