@@ -1859,7 +1859,9 @@ save_type.container
               Array       '''ordered set of numerical values. Operations across arrays are
                              equivalent to operations across elements of the Array.'''
               Matrix      '''ordered set of numerical values for a tensor. Tensor operations such as
-                             dot and cross products, are valid cross matrix objects.'''
+                             dot and cross products, are valid cross matrix objects. A matrix with a
+                             single dimension is interpreted as a row or column vector as required.
+                          '''
               Table         'An unordered set of id:value elements'
               Implied      '''(For use in the attribute dictionary only). Determined by
                              the values of other attributes.'''
@@ -1978,7 +1980,7 @@ save_type.dimension
     _description.text
 ;
      The dimensions of a list or matrix of elements expressed as a text string.
-     Vectors (row or column) are specified as a Matrix type with a single dimension.
+     A Matrix with a single dimension is interpreted as a vector.
 ;
     _name.category_id            type
     _name.object_id              dimension
