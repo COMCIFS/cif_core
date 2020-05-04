@@ -1,0 +1,137 @@
+#\#CIF_2.0
+##############################################################################
+#                                                                            #
+#                      DDLm DDL2 REFERENCE DICTIONARY                        #
+#                                                                            #
+##############################################################################
+data_DDLM_DDL2_DIC
+
+    _dictionary.title            DDLM_DDL2_DIC
+    _dictionary.class            Reference
+    _dictionary.version          0.1.0
+    _dictionary.date             2020-04-29
+    _dictionary.ddl_conformance  3.14.0
+    _dictionary.namespace        DdlDic
+    _description.text
+;
+     This dictionary contains the definitions of extra DDL attributes required
+     in order to capture information expressed in DDL2 dictionaries.
+;
+
+save_DDL2_ATTRIBUTES
+
+    _definition.id               DDL2_ATTRIBUTES
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2020
+    _description.text
+;
+     This category is parent of all other categories in the DDLm-DDL2
+     dictionary. It extends the standard DDLm dictionary.
+;
+    _name.object_id              DDL2_ATTRIBUTES
+    _name.category_id            DDLM_DDL_DIC
+
+    _import.get  [{"file":"ddl.dic" "save":"ATTRIBUTES" "mode":"Contents" "dupl":"Ignore"}]
+save_
+
+#============================================================================
+
+save_DICTIONARY_TYPE
+    _definition.id              dictionary_type
+    _definition.scope           Category
+    _definition.class           Loop
+    _definition.update          2020-04-29
+    _description.text
+;
+
+    DDL2 dictionaries define a global list of types for each dictionary. This category
+    holds information about such global types.
+
+;
+    _name.category_id           DDL2_ATTRIBUTES
+    _name.object_id             dictionary_type
+    _category.key_name          '_dictionary_type.code'
+    
+save_
+
+save_dictionary_type.code
+    _definition.id               '_dictionary_type.code'
+    _definition.class            Attribute
+    _definition.update           2020-04-29
+    _description.text
+;
+
+    A name for the DDL2 type that is described. This should match _item_type_list.code in
+    the related DDL2 dictionary.
+
+;
+
+    _name.category_id            dictionary_type
+    _name.object_id              regex
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save_dictionary_type.construct
+
+    _definition.id               '_dictionary_type.construct'
+    _definition.class            Attribute
+    _definition.update           2020-04-29
+    _description.text
+;
+
+    When a data value can be defined as a pre-determined sequence of
+    characters, or optional characters, or data names (for which the
+    definition is also available), it is specified as a regular
+    expression conforming to the regular expression (REGEX)
+    specifications detailed in the IEEE document P1003.2 Draft 11.2
+    Sept 1991.
+
+;
+
+    _name.category_id            dictionary_type
+    _name.object_id              construct
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+save_type.ddl2_code
+    _definition.id               '_type.ddl2_code'
+    _definition.class            Attribute
+    _definition.update           2020-04-29
+    _description.text
+;
+
+    A name used for this type in a DDL2 dictionary. It must match
+    one of the codes supplied in a dictionary_type loop.
+;
+
+    _name.category_id            type
+    _name.object_id              ddl2_code
+    _type.purpose                Encode
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+
+save_
+
+#=============================================================================
+#  The dictionary's audit trail and creation history.
+#============================================================================
+
+    loop_
+    _dictionary_audit.version
+    _dictionary_audit.date
+    _dictionary_audit.revision
+
+0.1.0      2020-04-30
+;
+Initial version covering item type codes (JRH)
+;
