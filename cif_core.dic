@@ -864,7 +864,7 @@ loop_
 _definition.update                      2013-01-23
 _description.text                       
 ;
-     Mounting method for the crystal specimum during data collection.
+     Mounting method for the crystal specimen during data collection.
 ;
 _name.category_id                       diffrn_measurement
 _name.object_id                         specimen_support
@@ -881,6 +881,44 @@ loop_
 
 save_
 
+save_diffrn_measurement.specimen_attachment_type
+
+_definition.id                '_diffrn_measurement.specimen_attachment_type'
+_definition.update            2020-08-13
+_description.text
+;
+
+    The way in which the sample is attached to the sample holder,
+    including the type of adhesive material used if relevant. The sample
+    holder is usually wholly outside the beam, whereas the attachment
+    method may cause non-sample material to be illuminated. If the
+    attachment method is not included in the list below, 'Other' should be
+    chosen and details provided in
+    _diffrn_measurement.specimen_support
+
+;
+_name.category_id             diffrn_measurement
+_name.object_id               specimen_attachment_type
+_type.contents                Code
+_type.container               Single
+_type.purpose                 State
+_type.source                  Recorded
+
+loop_
+     _enumerated_set.case
+     _enumerated_set.detail
+        epoxy            "An epoxy glue"
+        oil              "An oil"
+        grease           "A type of grease, for example hydrocarbon or silicone grease"
+        frozen_liquid    "A frozen liquid, not water or oil"
+        other            "A method not listed here"
+        ice              "The specimen is frozen in place using water ice"
+        mechanical
+;
+     The specimen is held in place by mechanical forces, e.g. capillary or pressure cell
+;
+
+save_
 
 save_DIFFRN_ORIENT
 
@@ -14181,7 +14219,7 @@ _description.text
 _name.category_id                       audit_author
 _name.object_id                         id
 _type.purpose                           Key
-_type.source                            Recorded
+_type.source                            Related
 _type.container                         Single
 _type.contents                          Code
 
@@ -14417,9 +14455,6 @@ save_
 save_audit_contact_author.id
 
 _definition.id                          '_audit_contact_author.id'
-loop_
-  _alias.definition_id
-         '_publ_author_id_iucr' 
 _definition.update                      2020-08-13
 _description.text                       
 ;
@@ -14429,7 +14464,7 @@ _name.category_id                       audit_contact_author
 _name.object_id                         id
 _name.linked_item_id                    '_audit_author.id'
 _type.purpose                           Key
-_type.source                            Recorded
+_type.source                            Related
 _type.container                         Single
 _type.contents                          Code
 
@@ -17391,7 +17426,7 @@ _description.text
 _name.category_id                       publ_author
 _name.object_id                         id
 _type.purpose                           Key
-_type.source                            Recorded
+_type.source                            Related
 _type.container                         Single
 _type.contents                          Code
 
@@ -17410,7 +17445,7 @@ _name.category_id                       publ_author
 _name.object_id                         id_audit
 _name.linked_item_id                    '_audit_author.id'
 _type.purpose                           Link
-_type.source                            Recorded
+_type.source                            Related
 _type.container                         Single
 _type.contents                          Code
 
@@ -17792,9 +17827,6 @@ save_
 save_publ_contact_author.id
 
 _definition.id                          '_publ_contact_author.id'
-loop_
-  _alias.definition_id
-         '_publ_author_id_iucr' 
 _definition.update                      2020-08-13
 _description.text                       
 ;
@@ -17804,7 +17836,7 @@ _name.category_id                       publ_contact_author
 _name.object_id                         id
 _name.linked_item_id                    '_publ_author.id'
 _type.purpose                           Key
-_type.source                            Recorded
+_type.source                            Related
 _type.container                         Single
 _type.contents                          Code
 
@@ -24168,5 +24200,5 @@ loop_
 ;
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
-     publ_contact_author.
+     publ_contact_author. Added diffrn_measurement.specimen_attachment_type
 ;
