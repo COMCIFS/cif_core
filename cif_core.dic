@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.13
-_dictionary.date                        2020-03-16
+_dictionary.version                     3.0.14
+_dictionary.date                        2020-08-13
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -14135,7 +14135,7 @@ _name.object_id                         AUDIT_AUTHOR
 _category.key_id                        '_audit_author.name'
 loop_
   _category_key.name
-         '_audit_author.name' 
+         '_audit_author.id' 
 
 save_
 
@@ -14170,6 +14170,22 @@ loop_
 
 save_
 
+save_audit_author.id
+
+_definition.id                          '_audit_author.id'
+_definition.update                      2020-08-13
+_description.text                       
+;
+     Arbitrary identifier for this author
+;
+_name.category_id                       audit_author
+_name.object_id                         id
+_type.purpose                           Key
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Code
+
+save_
 
 save_audit_author.name
 
@@ -14304,7 +14320,7 @@ _name.object_id                         AUDIT_CONTACT_AUTHOR
 _category.key_id                        '_audit_contact_author.name'
 loop_
   _category_key.name
-         '_audit_contact_author.name' 
+         '_audit_contact_author.id' 
 
 save_
 
@@ -14398,6 +14414,27 @@ loop_
 
 save_
 
+save_audit_contact_author.id
+
+_definition.id                          '_audit_contact_author.id'
+loop_
+  _alias.definition_id
+         '_publ_author_id_iucr' 
+_definition.update                      2020-08-13
+_description.text                       
+;
+     Arbitrary identifier for this author
+;
+_name.category_id                       audit_contact_author
+_name.object_id                         id
+_name.linked_item_id                    '_audit_author.id'
+_type.purpose                           Key
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Code
+
+save_
+
 save_audit_contact_author.name
 
 _definition.id                          '_audit_contact_author.name'
@@ -14426,7 +14463,6 @@ loop_
          'Van den Bossche, G.' 
 
 save_
-
 
 save_audit_contact_author.phone
 
@@ -17262,7 +17298,7 @@ _name.object_id                         PUBL_AUTHOR
 _category.key_id                        '_publ_author.name'
 loop_
   _category_key.name
-         '_publ_author.name' 
+         '_publ_author.id' 
 
 save_
 
@@ -17344,6 +17380,41 @@ _type.contents                          Text
 
 save_
 
+save_publ_author.id
+
+_definition.id                          '_publ_author.id'
+_definition.update                      2020-08-13
+_description.text                       
+;
+     Arbitrary identifier for this author
+;
+_name.category_id                       publ_author
+_name.object_id                         id
+_type.purpose                           Key
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Code
+
+save_
+
+save_publ_author.id_audit
+
+_definition.id                          '_publ_author.id_audit'
+_definition.update                      2020-08-13
+_description.text                       
+;
+     Identifier corresponding to this author in the audit_author
+     list, if present.
+;
+_name.category_id                       publ_author
+_name.object_id                         id_audit
+_name.linked_item_id                    '_audit_author.id'
+_type.purpose                           Link
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Code
+
+save_
 
 save_publ_author.id_iucr
 
@@ -17625,7 +17696,7 @@ _name.object_id                         PUBL_CONTACT_AUTHOR
 _category.key_id                        '_publ_contact_author.name'
 loop_
   _category_key.name
-         '_publ_contact_author.name' 
+         '_publ_contact_author.id' 
 
 save_
 
@@ -17718,6 +17789,26 @@ _type.contents                          Text
 
 save_
 
+save_publ_contact_author.id
+
+_definition.id                          '_publ_contact_author.id'
+loop_
+  _alias.definition_id
+         '_publ_author_id_iucr' 
+_definition.update                      2020-08-13
+_description.text                       
+;
+     Arbitrary identifier for this author
+;
+_name.category_id                       publ_contact_author
+_name.object_id                         id
+_name.linked_item_id                    '_publ_author.id'
+_type.purpose                           Key
+_type.source                            Recorded
+_type.container                         Single
+_type.contents                          Code
+
+save_
 
 save_publ_contact_author.id_iucr
 
@@ -24072,4 +24163,10 @@ loop_
      Changed all synthetic identifiers ('id') to be Text, and removed dREL.
      Validation method for _space_group.crystal_system removed as it contained
      undefined dREL functions "throw" and "alert".
+;
+     3.0.14     2020-08-13
+;
+     Added opaque author identifiers to audit_author and publ_author as well
+     as relevant linking identifiers to audit_contact_author and 
+     publ_contact_author.
 ;
