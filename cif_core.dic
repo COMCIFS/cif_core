@@ -14225,6 +14225,24 @@ _type.contents                          Code
 
 save_
 
+save_audit_author.id_orcid
+    _definition.id              '_audit_author.id_orcid'
+    _definition.update          2020-08-23
+    _description.text
+;              Identifier in the ORCID Registry of a publication
+               author. ORCID is an open, non-profit, community-driven
+               service to provide a registry of unique researcher
+               identifiers (http://orcid.org).
+;
+    _name.category_id                       audit_author
+    _name.object_id                         id_orcid
+    _type.purpose                           Encode
+    _type.source                            Recorded
+    _type.container                         Single
+    _type.contents                          Code
+    _description_example.case               0000-0003-0391-0002
+save_
+
 save_audit_author.name
 
 _definition.id                          '_audit_author.name'
