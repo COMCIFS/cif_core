@@ -3324,6 +3324,25 @@ _name.object_id                         DIFFRN_SOURCE
 
 save_
 
+save_diffrn_source.beamline_name
+
+_definition.id                       '_diffrn_source.beamline_name'
+_definition.update                   2020-08-23
+_definition
+;
+         The name of the beamline at the synchrotron or other
+         large-scale experimental facility at which the experiment
+         was conducted.
+;
+_name.category_id                    diffrn_source
+_name.object_id                      beamline_name
+_type.contents                       Text
+_type.source                         Recorded
+_type.purpose                        Describe
+_type.container                      Single
+_description_example.case            I19
+
+save_
 
 save_diffrn_source.current
 
@@ -3383,7 +3402,8 @@ loop_
 _definition.update                      2012-11-26
 _description.text                       
 ;
-     A description of special aspects of the source.
+     A description of special aspects of the source not covered by
+     other datanames.
 ;
 _name.category_id                       diffrn_source
 _name.object_id                         details
@@ -3421,6 +3441,28 @@ loop_
 
 save_
 
+save_diffrn_source.facility_name
+
+_definition.id                       '_diffrn_source.facility_name'
+_definition.update                   2020-08-23
+_description.text
+;
+         The name of the synchrotron or other large-scale
+         experimental facility at which the experiment was
+         conducted. Names should conform to the spelling and
+         format used in the 'Light Sources of the World' listing
+         of lightsources.org
+         (https://lightsources.org/lightsources-of-the-world/)
+;
+_name.category_id                    diffrn_source
+_name.object_id                      facility_name
+_type.purpose                        Describe
+_type.source                         Recorded
+_type.contents                       Text
+_type.container                      Single
+_description_example.case            'Diamond Light Source'
+
+save_
 
 save_diffrn_source.make
 
@@ -3433,7 +3475,9 @@ loop_
 _definition.update                      2012-11-26
 _description.text                       
 ;
-     Description of the make, model or name of the source device.
+     Description of the make, model or name of the source device. Large
+     scale facilities should use _diffrn_source.facility_name and
+     _diffrn_source.beamline_name to identify the source of radiation.
 ;
 _name.category_id                       diffrn_source
 _name.object_id                         make
@@ -3441,13 +3485,9 @@ _type.purpose                           Describe
 _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Text
-loop_
-  _description_example.case
-         'NSLS beamline X8C'           
-         'Rigaku RU2012-05-07 ' 
+_description_example.case               'Rigaku RU2012-05-07' 
 
 save_
-
 
 save_diffrn_source.power
 
