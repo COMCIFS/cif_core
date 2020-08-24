@@ -14258,6 +14258,78 @@ loop_
 
 save_
 
+save_AUDIT_AUTHOR_ROLE
+
+_definition.id                          AUDIT_AUTHOR_ROLE
+_definition.scope                       Category
+_definition.class                       Loop
+_definition.update                      2020-08-06
+_description.text
+;
+     The CATEGORY of data items used to describe the role that
+     authors took in the production of the dataset.
+;
+_name.category_id                       AUDIT
+_name.object_id                         AUDIT_AUTHOR_ROLE
+loop_
+  _category_key.name
+         '_audit_author_role.id'
+         '_audit_author_role.role'
+save_
+
+save_audit_author_role.id
+
+_definition.id                          '_audit_author_role.id'
+_definition.update                      2020-08-06
+_description.text
+;
+     Unique identifier for the author for whom a role is identified.
+     This may be repeated where an author took on multiple roles.
+     The identifier for the author is drawn from the list of authors
+     given in the audit_author category.
+;
+_name.category_id                       audit_author_role
+_name.object_id                         id
+_name.linked_item_id                    '_audit_author.id'
+_type.purpose                           Link
+_type.source                            Related
+_type.container                         Single
+_type.contents                          Code
+save_
+
+save_audit_author_role.role
+_definition.id                          '_audit_author_role.role'
+_definition.update                      2020-08-06
+_description.text
+;
+     The role taken by the author identified by _audit_author_role.id,
+     drawn from a predefined list.
+;
+_name.category_id                       audit_author_role
+_name.object_id                         role
+_type.purpose                           State
+_type.source                            Assigned
+_type.container                         Single
+_type.contents                          Text
+loop_
+  _enumeration_set.state
+  _enumeration_set.detail
+        design              'conceived and/or designed the experiment'
+        synthesis           'synthesised the samples'
+        preparation
+;
+              prepared the samples for measurement, e.g. crystallised or 
+              recrystallised the sample
+;
+        characterisation     'performed non-crystallographic measurements on the samples'
+        measurement          'collected and/or reduced diffraction data'
+        analysis             'worked on the structural model'
+        software
+;
+              developed bespoke software for specialised data processing and/or analysis
+;
+        submission           'prepared the final CIF file'
+save_
 
 save_AUDIT_CONFORM
 
