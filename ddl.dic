@@ -406,7 +406,9 @@ save_definition_replaced.by
     _description.text
 ;
      Name of the data item that should be used instead of the defined data
-     item. The defined data item is deprecated and should not be used.
+     item. The defined data item is deprecated and should not be used. A
+     value of '.' signifies that the data item is deprecated, with no
+     replacement.
 ;
     _name.category_id            definition_replaced
     _name.object_id              by
