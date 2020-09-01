@@ -956,6 +956,7 @@ save_DICTIONARY_XREF
     _definition.scope            Category
     _definition.class            Loop
     _definition.update           2013-09-08
+    _definition.replaced_by      .
     _description.text
 ;
      Data items which are used to cross reference other dictionaries that
@@ -977,6 +978,7 @@ save_dictionary_xref.code
     _definition.id               '_dictionary_xref.code'
     _definition.class            Attribute
     _definition.update           2019-04-02
+    _definition.replaced_by      .
     _description.text
 ;
      A code identifying the cross-referenced dictionary.
@@ -996,6 +998,7 @@ save_dictionary_xref.date
     _definition.id               '_dictionary_xref.date'
     _definition.class            Attribute
     _definition.update           2011-06-27
+    _definition.replaced_by      .
     _description.text
 ;
      Date of the cross-referenced dictionary.
@@ -1015,6 +1018,7 @@ save_dictionary_xref.format
     _definition.id               '_dictionary_xref.format'
     _definition.class            Attribute
     _definition.update           2011-06-27
+    _definition.replaced_by      .
     _description.text
 ;
      Format of the cross referenced dictionary.
@@ -1034,6 +1038,7 @@ save_dictionary_xref.name
     _definition.id               '_dictionary_xref.name'
     _definition.class            Attribute
     _definition.update           2011-06-27
+    _definition.replaced_by      .
     _description.text
 ;
      The name and description of the cross-referenced dictionary.
@@ -1053,6 +1058,7 @@ save_dictionary_xref.uri
     _definition.id               '_dictionary_xref.uri'
     _definition.class            Attribute
     _definition.update           2011-06-27
+    _definition.replaced_by      .
     _description.text
 ;
      The source URI of the cross referenced dictionary data.
@@ -1303,6 +1309,7 @@ save_enumeration_set.xref_code
     _definition.id               '_enumeration_set.xref_code'
     _definition.class            Attribute
     _definition.update           2011-06-27
+    _definition.replaced_by      .
     _description.text
 ;
      Identity of the equivalent item in the dictionary
@@ -1323,6 +1330,7 @@ save_enumeration_set.xref_dictionary
     _definition.id               '_enumeration_set.xref_dictionary'
     _definition.class            Attribute
     _definition.update           2011-06-27
+    _definition.replaced_by      .
     _description.text
 ;
      Code identifying the dictionary in the DICTIONARY_XREF
