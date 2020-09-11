@@ -23,7 +23,7 @@ data_COM_VAL
 
 save_H_M_ref
 
-    loop_
+    loop_  this is a bug
         _enumeration_set.state
         _enumeration_set.detail
                'P 1'           '  1  C1.1'
