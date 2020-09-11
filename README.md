@@ -1,5 +1,12 @@
+![CIF syntax check](https://github.com/COMCIFS/cif_syntax_check_action/workflows/CIFSyntaxCheck/badge.svg)
+
+# IUCr Core CIF development repository
+
 This repository is for review and development of the IUCr core CIF
 dictionary and supplementary dictionaries which COMCIFS manages.
 
 Dictionary definitions are described using DDLm attributes, which
 are themselves described in 'ddl.dic'. 
+
+Contributions through Github mechanisms are welcome. Please clone this repository and create a pull request.
+Alternatively, you can contact the COMCIFS secretary or submit through the IUCr website.
