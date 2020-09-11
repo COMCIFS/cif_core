@@ -26,5 +26,5 @@ jobs:
           
       # Check syntax of all CIF files
         - name: check_syntax
-          uses: actions/jamesrhester/cif_syntax_check_action@master
+          uses: jamesrhester/cif_syntax_check_action@master
           id: cif_syntax_check
