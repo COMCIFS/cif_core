@@ -14750,7 +14750,7 @@ loop_
 ;
  loop_
  _audit_support.id
- _audit_support.funding_organization_name
+ _audit_support.funding_organization
  _audit_support.funding_organization_doi
  _audit_support.award_type
  _audit_support.award_number
@@ -14798,9 +14798,9 @@ _type.source                           Assigned
 
 save_
 
-save_audit_support.funding_organization_name
+save_audit_support.funding_organization
 
-_definition.id                         '_audit_support.funding_organization_name'
+_definition.id                         '_audit_support.funding_organization'
 _definition.update                     2020-08-23
 _description.text
 ; 
@@ -14810,7 +14810,7 @@ _description.text
          Registry (https://github.com/CrossRef/open-funder-registry)
 ;
 _name.category_id                       audit_support
-_name.object_id                         funding_organisation_name
+_name.object_id                         funding_organisation
 _type.contents                          Text
 _type.purpose                           Describe
 _type.source                            Recorded
@@ -14861,15 +14861,32 @@ _type.container                        Single
 loop_ 
  _enumeration_set.state
  _enumeration_set.detail
-     award                 'award'
-     bursary               'bursary'
-     contract              'contract'
-     gift                  'gift'
-     grant                 'grant'
-     other                 'other type of award'
-     scholarship           'scholarship'
-     studentship           'studentship'
-
+  gift
+;         Funds were drawn from an unobligated, discretionary source under the
+          control of one of the participants in the research program. This includes
+          prize money and personal funds.
+;
+  grant
+;         Funds were provided by an organization or person outside the research
+          program for the specific purpose of supporting the research, as directed
+          by the primary investigator
+;
+  contract
+;         Funds were provided as part of a contractual agreement not covered by
+          other award types.
+;
+  studentship
+;         Funds were provided specifically to support a student in conducting
+          research, whether directly or indirectly. This category includes
+          scholarships and bursaries where the student is expected to engage
+          in research.
+;
+  other
+;         Other type of support, including financial support not explicitly
+          directed towards research. This category includes scholarships and
+          bursaries for students that cover living expenses while pursuing
+          higher education with no requirement to conduct research.
+;
 save_
 
 save_audit_support.award_number
