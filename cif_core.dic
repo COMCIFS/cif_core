@@ -24034,7 +24034,7 @@ _description.text
      refinement of the structural model.
 ;
 _name.category_id                       REFINE_LS
-_name.object_id                         CLASS
+_name.object_id                         REFINE_LS_CLASS
 _category.key_id                        '_refine_ls_class.code'
 loop_
   _category_key.name
