@@ -3324,10 +3324,10 @@ _name.object_id                         DIFFRN_SOURCE
 
 save_
 
-save_diffrn_source.beamline_name
+save_diffrn_source.beamline
 
-_definition.id                       '_diffrn_source.beamline_name'
-_definition.update                   2020-08-23
+_definition.id                       '_diffrn_source.beamline'
+_definition.update                   2020-09-18
 _definition
 ;
          The name of the beamline at the synchrotron or other
@@ -3335,7 +3335,7 @@ _definition
          was conducted.
 ;
 _name.category_id                    diffrn_source
-_name.object_id                      beamline_name
+_name.object_id                      beamline
 _type.contents                       Text
 _type.source                         Recorded
 _type.purpose                        Describe
@@ -3441,10 +3441,10 @@ loop_
 
 save_
 
-save_diffrn_source.facility_name
+save_diffrn_source.facility
 
-_definition.id                       '_diffrn_source.facility_name'
-_definition.update                   2020-08-23
+_definition.id                       '_diffrn_source.facility'
+_definition.update                   2020-09-18
 _description.text
 ;
          The name of the synchrotron or other large-scale
@@ -3455,7 +3455,7 @@ _description.text
          (https://lightsources.org/lightsources-of-the-world/)
 ;
 _name.category_id                    diffrn_source
-_name.object_id                      facility_name
+_name.object_id                      facility
 _type.purpose                        Describe
 _type.source                         Recorded
 _type.contents                       Text
