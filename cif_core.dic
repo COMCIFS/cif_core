@@ -14361,7 +14361,8 @@ _definition.update                      2020-08-06
 _description.text
 ;
      The role taken by the author identified by _audit_author_role.id,
-     drawn from a predefined list.
+     drawn from a predefined list. Additional details can be provided
+     in _audit_author_role.special_details
 ;
 _name.category_id                       audit_author_role
 _name.object_id                         role
@@ -14387,6 +14388,26 @@ loop_
               developed bespoke software for specialised data processing and/or analysis
 ;
         submission           'prepared the final CIF file'
+        other
+;             none of the listed roles. See _audit_author_role.special_details
+;
+save_
+
+save_audit_author_role.special_details
+
+_definition.id                          '_audit_author_role.special_details'
+_definition.update                      2020-09-17
+_description.text
+;
+     Description of the contribution of the author identified by _audit_author_role.id.
+;
+_name.category_id                       audit_author_role
+_name.object_id                         special_details
+_type.purpose                           Describe
+_type.source                            Assigned
+_type.container                         Single
+_type.contents                          Text
+
 save_
 
 save_AUDIT_CONFORM
