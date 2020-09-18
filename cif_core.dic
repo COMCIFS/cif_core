@@ -14726,6 +14726,204 @@ _type.contents                          Text
 
 save_
 
+save_AUDIT_SUPPORT
+
+_definition.id                           AUDIT_SUPPORT
+_definition.scope                        Category
+_definition.class                        Loop
+_definition.update                       2020-08-23
+_description.text
+;
+        Data items in the AUDIT_SUPPORT category record details about the
+        funding support for the data collected and analysed in the data set.
+;
+_name.category_id                        AUDIT
+_name.object_id                          AUDIT_SUPPORT
+_category.key_id                         '_audit_support.id'
+loop_
+   _category_key.name                    '_audit_support.id'
+
+loop_
+  _description_example.case
+  _description_example.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+ loop_
+ _audit_support.id
+ _audit_support.funding_organization
+ _audit_support.funding_organization_doi
+ _audit_support.award_type
+ _audit_support.award_number
+ _audit_support.award_recipient
+
+ 1 'Engineering and Physical Sciences Research Council'
+ 'https://doi.org/10.13039/501100000266'
+ studentship 'EP-M506515-1' 'E. T. Broadhurst'
+ 2 'Swedish Funding Council'
+ ?
+ grant '2017-05333' 'M. Lightowler'
+ 3 'Wellcome Trust'
+ 'https://doi.org/10.13039/100004440'
+ grant 'WT087658' 'University of Edinburgh EM facility'
+ 4 'Scottish Universities Life Sciences Alliance (SULSA)'
+ ?
+ other ? 'University of Edinburgh EM facility'
+ 5 'Harvard Medical School'
+ 'https://doi.org/10.13039/100006691'
+ ? ? ?
+;
+;
+ Example prepared from funding data published in
+ https://doi.org/10.1107/S2052252519016105
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- -
+
+save_
+
+save_audit_support.id
+_definition.id                        '_audit_support.id'
+_definition.update                     2020-08-23
+_description.text
+; 
+An arbitrary unique identifier for each source of support for
+the data collected and analysed in the data block.
+;
+_name.category_id                      audit_support
+_name.object_id                        id
+_type.contents                         Code
+_type.purpose                          Key
+_type.container                        Single
+_type.source                           Assigned
+
+save_
+
+save_audit_support.funding_organization
+
+_definition.id                         '_audit_support.funding_organization'
+_definition.update                     2020-08-23
+_description.text
+; 
+         The name of the organization providing funding support for
+         the data collected and analysed in the data block. The
+         recommended source for such names is the Open Funder
+         Registry (https://github.com/CrossRef/open-funder-registry)
+;
+_name.category_id                       audit_support
+_name.object_id                         funding_organisation
+_type.contents                          Text
+_type.purpose                           Describe
+_type.source                            Recorded
+_type.container                         Single
+_description_example.case  
+         'National Center for Complementary and Alternative Medicine'
+
+save_
+
+save_audit_support.funding_organization_doi
+
+_definition.id                         '_audit_support.funding_organization_doi'
+_definition.update                     2020-08-23
+_description.text
+; 
+         The Digital Object Identifier (DOI) associated with the
+         Organization providing funding support for
+         the data collected and analysed in the data block. In
+         accordance with CrossRef guidelines, the full URI of
+         the resolved page describing the funding organization
+         should be given (i.e. including the https://doi.org/
+         component).
+;
+
+_name.category_id                      audit_support
+_name.object_id                        funding_organisation_doi
+_type.source                           Recorded
+_type.contents                         Text
+_type.container                        Single
+_type.purpose                          Encode
+_description_example.case              'https://doi.org/10.13039/100000064'
+
+save_
+
+save_audit_support.award_type
+_definition.id                         '_audit_support.award_type'
+_definition.update                     2020-08-23
+_description.text
+; 
+        Type or kind of award.
+;
+_name.category_id                      audit_support
+_name.object_id                        award_type
+_type.purpose                          State
+_type.contents                         Text
+_type.source                           Recorded
+_type.container                        Single
+loop_ 
+ _enumeration_set.state
+ _enumeration_set.detail
+  gift
+;         Funds were drawn from an unobligated, discretionary source under the
+          control of one of the participants in the research program. This includes
+          prize money and personal funds.
+;
+  grant
+;         Funds were provided by an organization or person outside the research
+          program for the specific purpose of supporting the research, as directed
+          by the primary investigator
+;
+  contract
+;         Funds were provided as part of a contractual agreement not covered by
+          other award types.
+;
+  studentship
+;         Funds were provided specifically to support a student in conducting
+          research, whether directly or indirectly. This category includes
+          scholarships and bursaries where the student is expected to engage
+          in research.
+;
+  other
+;         Other type of support, including financial support not explicitly
+          directed towards research. This category includes scholarships and
+          bursaries for students that cover living expenses while pursuing
+          higher education with no requirement to conduct research.
+;
+save_
+
+save_audit_support.award_number
+
+_definition.id                        '_audit_support.award_number'
+_definition.update                     2020-08-23
+_description.text
+; 
+        The award number associated with this source of support.
+;
+_name.category_id                      audit_support
+_name.object_id                        award_number
+_type.contents                         Text
+_type.container                        Single
+_type.purpose                          Describe
+_type.source                           Recorded
+_description_example.case              'FA9550-14-1-0409'
+
+save_
+
+save_audit_support.award_recipient
+_definition.id                         '_audit_support.award_recipient'
+_definition.update                     2020-08-23
+_description.text
+; 
+        The recipient of the support. May be an
+        individual or institution.
+;
+_name.category_id                      audit_support
+_name.object_id                        award_recipient
+_type.contents                         Text
+_type.container                        Single
+_type.purpose                          Describe
+_type.source                           Recorded
+_description_example.case              'Cardiff University'
+
+save_
 
 save_CITATION
 
