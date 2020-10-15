@@ -263,17 +263,6 @@ save_definition.class
                   loopable list). These items may be referenced
                   as a class of items in a dREL methods expression.
 ;
-              Ref-loop
-;                 A category containing one item that identifies the
-                  a category of items that is repeated in a sequence
-                  of save frames. The item, which is specifies as a
-                  as a Ref-table value (see type.container), is looped.
-                  This construction is for loop categories that contain
-                  child categories.
-                  If in the instance file, the child items have only
-                  one set of values, the Ref-loop item need not be used
-                  and child items need not be placed in a save frame.
-;
     _enumeration.default         Datum
 
 save_
@@ -286,8 +275,7 @@ save_definition.id
     _definition.update           2006-11-16
     _description.text
 ;
-     Identifier name of the Item or Category definition contained
-     within a save frame.
+     Identifier name of the Item or Category being defined.
 ;
     _name.category_id            definition
     _name.object_id              id
@@ -348,6 +336,7 @@ save_definition.xref_code
     _definition.id               '_definition.xref_code'
     _definition.class            Attribute
     _definition.update           2006-11-16
+    _definition.replaced_by      .
     _description.text
 ;
      Code identifying the equivalent definition in the dictionary
@@ -919,9 +908,9 @@ save_dictionary_valid.scope
     loop_
     _enumeration_set.state
     _enumeration_set.detail
-              Dictionary    'restriction applies to dictionary definition data frame'
-              Category      'restriction applies to a category definition save frame'
-              Item          'restriction applies to an item definition save frame'
+              Dictionary    'restriction applies to dictionary definition'
+              Category      'restriction applies to a category definition'
+              Item          'restriction applies to an item definition'
 
 save_
 
@@ -1642,45 +1631,6 @@ save_import_details.single_index
 
 #============================================================================
 
-save_LOOP
-
-    _definition.id               LOOP
-    _definition.scope            Category
-    _definition.class            Set
-    _definition.update           2011-06-20
-    _description.text
-;
-     Attributes for looped lists.
-;
-    _name.category_id            ATTRIBUTES
-    _name.object_id              LOOP
-
-save_
-
-
-save_loop.level
-
-    _definition.id               '_loop.level'
-    _definition.class            Attribute
-    _definition.update           2019-09-25
-    _description.text
-;
-     Specifies the level of the loop structure in which a defined
-     item must reside if it used in a looped list.
-;
-    _name.category_id            loop
-    _name.object_id              level
-    _type.purpose                Number
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Integer
-    _enumeration.default         1
-    _enumeration.range           1:
-
-save_
-
-#============================================================================
-
 save_METHOD
 
     _definition.id               METHOD
@@ -1864,9 +1814,8 @@ save_type.container
     _enumeration_set.state
     _enumeration_set.detail
               Single        'single value'
-              Multiple      'values as List or by boolean ,|&!* or range : ops'
               List        '''ordered set of values. Elements need not be of same contents type.'''
-              Array       '''ordered set of numerical values. Operations across arrays are
+              Array       '''ordered set of values of the same type. Operations across arrays are
                              equivalent to operations across elements of the Array.'''
               Matrix      '''ordered set of numerical values for a tensor. Tensor operations such as
                              dot and cross products, are valid cross matrix objects. A matrix with a
@@ -1890,8 +1839,7 @@ save_type.contents
 
      Syntax of the value elements within the container type.  This may
      be a single enumerated code, or, in the case of a list, a
-     comma-delimited sequence of codes, or, if there are alternate
-     types, a boolean-linked (or range) sequence of codes.  The typing
+     comma-delimited sequence of codes.  The typing
      of elements is determined by the replication of the minimum set
      of states declared. Where the definition is of a 'Table'
      container this attribute describes the construction of the value
@@ -1960,8 +1908,6 @@ save_type.contents
     _description_example.detail
             "Integer"            'content is a single or multiple integer(s)'
             "Real,Integer"       'List elements of a real number and an integer'
-            "List(Real,Code)"    'List of Lists of a real number and a code'
-            "Text|Real"          'content is either text OR a real number'
 
 save_
 
@@ -2106,13 +2052,7 @@ save_type.purpose
               Identify
 ;                  >>> Applied ONLY in the DDLm Reference Dictionary <<<
                    Used to type attributes that identify an item tag (or
-                   part thereof), save frame or the URI of an external file.
-;
-              Extend
-;                  *** Used to EXTEND the DDLm Reference Dictionary ***
-                   Used in a definition, residing in the "extensions"
-                   save frame of a domain dictionary, to specify a new
-                   enumeration state using an Evaluation method.
+                   part thereof) or external location.
 ;
               Describe
 ;                  Used to type items with values that are descriptive
@@ -2731,4 +2671,13 @@ Removed 'Measured' as a state for type.source
    Updated the description of the 'Loop' definition class. The new description
    allows the child data items to appear in a loop-list instead of strictly
    requiring it ('must' -> 'may').
+;
+         3.15.0     2020-10-30
+;
+   Deprecated all xref datanames.
+   Removed LOOP category.
+   Removed complex dataname type (Multiple) and type specifications.
+   Removed non-import use of save frames and ref-loops.
+   Allow Arrays to include string types
+   Removed purpose "Extend"
 ;
