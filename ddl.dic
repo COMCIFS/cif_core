@@ -1600,14 +1600,13 @@ save_type.contents
     _description.text
 ;
 
-     Syntax of the value elements within the container type.  This may
-     be a single enumerated code, or, in the case of a list, a
-     comma-delimited sequence of codes.  The typing
-     of elements is determined by the replication of the minimum set
-     of states declared. Where the definition is of a 'Table'
-     container this attribute describes the construction of the value
-     elements within those (Table) values.  The CIF2 characterset
-     referenced below consists of the following Unicode code points:
+     Syntax of the value elements within the container type. Where the
+     definition is of a 'List' or 'Array' type, this attribute
+     describes the contents of each element. Where the definition is
+     of a 'Table' container this attribute describes the construction
+     of the value elements within those (Table) values.  The CIF2
+     characterset referenced below consists of the following Unicode
+     code points:
 
      [U+0009], [U+000A], [U+000D], [U+0020-U+007E], [U+00A0-U+D7FF],
      [U+E000-U+FDCF], [U+FDF0-U+FFFD], [U+10000-U+1FFFD],
@@ -1630,7 +1629,7 @@ save_type.contents
     _name.object_id              contents
     _type.purpose                State
     _type.source                 Assigned
-    _type.container              Multiple
+    _type.container              Single
     _type.contents               Code
     loop_
     _enumeration_set.state
@@ -1668,7 +1667,6 @@ save_type.contents
     _description_example.case
     _description_example.detail
             "Integer"            'content is a single or multiple integer(s)'
-            "Real,Integer"       'List elements of a real number and an integer'
 
 save_
 
@@ -1985,13 +1983,13 @@ save_
                                  '_dictionary_audit.version'
                                  '_dictionary_audit.date'
                                  '_dictionary_audit.revision']
-  [Dictionary  Prohibited]      [ALIAS  DEFINITION  ENUMERATION  LOOP
+  [Dictionary  Prohibited]      [ALIAS  DEFINITION  ENUMERATION CATEGORY_KEY
                                  METHOD  NAME  TYPE  IMPORT UNITS]
   [Category  Mandatory]         ['_definition.id'  '_definition.scope'
                                  '_definition.class'  '_name.category_id'
                                  '_name.object_id']
-  [Category  Recommended]       ['_category_key.name' '_description.text']
-  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION LOOP
+  [Category  Recommended]       [CATEGORY_KEY '_category_key.name' '_description.text']
+  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION
                                  TYPE  UNITS]
   [Item  Mandatory]             ['_definition.id'  '_definition.update'
                                  '_name.object_id'  '_name.category_id'
@@ -1999,7 +1997,7 @@ save_
   [Item  Recommended]           ['_definition.scope'  '_definition.class'
                                  '_type.source'  '_type.purpose'
                                  '_description.text'  '_description.common']
-  [Item  Prohibited]            [DICTIONARY]
+  [Item  Prohibited]            [DICTIONARY CATEGORY_KEY]
 
 #=============================================================================
 #  The dictionary's audit trail and creation history.
