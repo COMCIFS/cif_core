@@ -8,11 +8,11 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          3.14.0
-    _dictionary.date             2019-09-25
+    _dictionary.version          4.0.0
+    _dictionary.date             2020-10-30
     _dictionary.uri              
-             https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/ddl.dic
-    _dictionary.ddl_conformance  3.14.0
+             https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
+    _dictionary.ddl_conformance  4.0.0
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -51,7 +51,6 @@ save_ALIAS
 ;
     _name.category_id            ATTRIBUTES
     _name.object_id              ALIAS
-    _category.key_id             '_alias.definition_id'
     loop_
     _category_key.name
                                  '_alias.definition_id'
@@ -117,59 +116,18 @@ save_
 
 #============================================================================
 
-save_CATEGORY
-
-    _definition.id               CATEGORY
-    _definition.scope            Category
-    _definition.class            Set
-    _definition.update           2013-09-08
-    _description.text
-;
-     The attributes used to specify the properties of a
-     "category" of data items.
-;
-    _name.category_id            ATTRIBUTES
-    _name.object_id              CATEGORY
-
-save_
-
-
-save_category.key_id
-
-    _definition.id               '_category.key_id'
-    _definition.class            Attribute
-    _definition.update           2019-01-09
-    _description.text
-;
-     Tag of a single data item in a Loop category which is the generic key
-     to access other items in the category. The value of this
-     item must be unique in order to provide unambiguous access to
-     a packet (row) in the table of values. This may be assumed to be a function
-     of the datanames listed in _category_key.name.
-;
-    _name.category_id            category
-    _name.object_id              key_id
-    _type.purpose                Identify
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Tag
-
-save_
-
-#============================================================================
-
 save_CATEGORY_KEY
 
     _definition.id               CATEGORY_KEY
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2014-09-18
+    _definition.update           2020-10-29
     _description.text
 ;
      The attributes used to specify (possibly multiple)
      keys for a given category.
 ;
-    _name.category_id            CATEGORY
+    _name.category_id            ATTRIBUTES
     _name.object_id              CATEGORY_KEY
     loop_
        _category_key.name           '_category_key.name'
@@ -187,9 +145,7 @@ save_category_key.name
      A minimal list of tag(s) that together constitute a compound key
      to access other items in a Loop category. In other words, the combined values of the
      datanames listed in this loop must be unique, so that unambiguous access
-     to a packet (row) in the table of values is possible. The dataname associated with
-     _category.key_id is only included in this loop if no other set of datanames can form
-     a compound key.
+     to a packet (row) in the table of values is possible.
 ;
     _name.category_id            category_key
     _name.object_id              name
@@ -263,17 +219,6 @@ save_definition.class
                   loopable list). These items may be referenced
                   as a class of items in a dREL methods expression.
 ;
-              Ref-loop
-;                 A category containing one item that identifies the
-                  a category of items that is repeated in a sequence
-                  of save frames. The item, which is specifies as a
-                  as a Ref-table value (see type.container), is looped.
-                  This construction is for loop categories that contain
-                  child categories.
-                  If in the instance file, the child items have only
-                  one set of values, the Ref-loop item need not be used
-                  and child items need not be placed in a save frame.
-;
     _enumeration.default         Datum
 
 save_
@@ -286,8 +231,7 @@ save_definition.id
     _definition.update           2006-11-16
     _description.text
 ;
-     Identifier name of the Item or Category definition contained
-     within a save frame.
+     Identifier name of the Item or Category being defined.
 ;
     _name.category_id            definition
     _name.object_id              id
@@ -339,26 +283,6 @@ save_definition.update
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Date
-
-save_
-
-
-save_definition.xref_code
-
-    _definition.id               '_definition.xref_code'
-    _definition.class            Attribute
-    _definition.update           2006-11-16
-    _description.text
-;
-     Code identifying the equivalent definition in the dictionary
-     referenced by the DICTIONARY_XREF attributes.
-;
-    _name.category_id            definition
-    _name.object_id              xref_code
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
 
 save_
 
@@ -512,7 +436,6 @@ save_DESCRIPTION_EXAMPLE
 ;
     _name.category_id            DESCRIPTION
     _name.object_id              DESCRIPTION_EXAMPLE
-    _category.key_id             '_description_example.case'
     loop_
     _category_key.name
                                  '_description_example.case'
@@ -840,7 +763,6 @@ save_DICTIONARY_VALID
 ;
     _name.category_id            DICTIONARY
     _name.object_id              DICTIONARY_VALID
-    _category.key_id             '_dictionary_valid.application'
     loop_
     _category_key.name
                                  '_dictionary_valid.application'
@@ -919,9 +841,9 @@ save_dictionary_valid.scope
     loop_
     _enumeration_set.state
     _enumeration_set.detail
-              Dictionary    'restriction applies to dictionary definition data frame'
-              Category      'restriction applies to a category definition save frame'
-              Item          'restriction applies to an item definition save frame'
+              Dictionary    'restriction applies to dictionary definition'
+              Category      'restriction applies to a category definition'
+              Item          'restriction applies to an item definition'
 
 save_
 
@@ -947,130 +869,6 @@ save_dictionary_valid.option
               Recommended   'attribute is usually in definition frame'
               Prohibited    'attribute must not be used in definition frame'
     _enumeration.default         Recommended
-
-save_
-
-#============================================================================
-
-save_DICTIONARY_XREF
-
-    _definition.id               DICTIONARY_XREF
-    _definition.scope            Category
-    _definition.class            Loop
-    _definition.update           2013-09-08
-    _definition.replaced_by      .
-    _description.text
-;
-     Data items which are used to cross reference other dictionaries that
-     have defined the same data items. Data items in this category are NOT
-     used as attributes of individual data items.
-;
-    _name.category_id            DICTIONARY
-    _name.object_id              DICTIONARY_XREF
-    _category.key_id             '_dictionary_xref.code'
-    loop_
-    _category_key.name
-                                 '_dictionary_xref.code'
-
-save_
-
-
-save_dictionary_xref.code
-
-    _definition.id               '_dictionary_xref.code'
-    _definition.class            Attribute
-    _definition.update           2019-04-02
-    _definition.replaced_by      .
-    _description.text
-;
-     A code identifying the cross-referenced dictionary.
-;
-    _name.category_id            dictionary_xref
-    _name.object_id              code
-    _type.purpose                Encode
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
-save_dictionary_xref.date
-
-    _definition.id               '_dictionary_xref.date'
-    _definition.class            Attribute
-    _definition.update           2011-06-27
-    _definition.replaced_by      .
-    _description.text
-;
-     Date of the cross-referenced dictionary.
-;
-    _name.category_id            dictionary_xref
-    _name.object_id              date
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Date
-
-save_
-
-
-save_dictionary_xref.format
-
-    _definition.id               '_dictionary_xref.format'
-    _definition.class            Attribute
-    _definition.update           2011-06-27
-    _definition.replaced_by      .
-    _description.text
-;
-     Format of the cross referenced dictionary.
-;
-    _name.category_id            dictionary_xref
-    _name.object_id              format
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save_dictionary_xref.name
-
-    _definition.id               '_dictionary_xref.name'
-    _definition.class            Attribute
-    _definition.update           2011-06-27
-    _definition.replaced_by      .
-    _description.text
-;
-     The name and description of the cross-referenced dictionary.
-;
-    _name.category_id            dictionary_xref
-    _name.object_id              name
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Text
-
-save_
-
-
-save_dictionary_xref.uri
-
-    _definition.id               '_dictionary_xref.uri'
-    _definition.class            Attribute
-    _definition.update           2011-06-27
-    _definition.replaced_by      .
-    _description.text
-;
-     The source URI of the cross referenced dictionary data.
-;
-    _name.category_id            dictionary_xref
-    _name.object_id              uri
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Uri
 
 save_
 
@@ -1196,7 +994,6 @@ save_ENUMERATION_DEFAULT
 ;
     _name.category_id            ENUMERATION
     _name.object_id              ENUMERATION_DEFAULT
-    _category.key_id             '_enumeration_default.index'
     loop_
     _category_key.name
                                  '_enumeration_default.index'
@@ -1259,7 +1056,6 @@ save_ENUMERATION_SET
 ;
     _name.category_id            ENUMERATION
     _name.object_id              ENUMERATION_SET
-    _category.key_id             '_enumeration_set.state'
     loop_
     _category_key.name
                                  '_enumeration_set.state'
@@ -1302,48 +1098,6 @@ save_enumeration_set.state
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Text
-
-save_
-
-
-save_enumeration_set.xref_code
-
-    _definition.id               '_enumeration_set.xref_code'
-    _definition.class            Attribute
-    _definition.update           2011-06-27
-    _definition.replaced_by      .
-    _description.text
-;
-     Identity of the equivalent item in the dictionary
-     referenced by the DICTIONARY_XREF attributes.
-;
-    _name.category_id            enumeration_set
-    _name.object_id              xref_code
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
-
-save_
-
-
-save_enumeration_set.xref_dictionary
-
-    _definition.id               '_enumeration_set.xref_dictionary'
-    _definition.class            Attribute
-    _definition.update           2011-06-27
-    _definition.replaced_by      .
-    _description.text
-;
-     Code identifying the dictionary in the DICTIONARY_XREF
-     list.
-;
-    _name.category_id            enumeration_set
-    _name.object_id              xref_dictionary
-    _type.purpose                Audit
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Code
 
 save_
 
@@ -1408,7 +1162,6 @@ save_IMPORT_DETAILS
     _name.category_id           IMPORT
     _name.object_id             IMPORT_DETAILS
     _definition.class           Loop
-    _category.key_id            '_import_details.order'
     loop_
         _category_key.name     '_import_details.order'
     _description.text
@@ -1642,45 +1395,6 @@ save_import_details.single_index
 
 #============================================================================
 
-save_LOOP
-
-    _definition.id               LOOP
-    _definition.scope            Category
-    _definition.class            Set
-    _definition.update           2011-06-20
-    _description.text
-;
-     Attributes for looped lists.
-;
-    _name.category_id            ATTRIBUTES
-    _name.object_id              LOOP
-
-save_
-
-
-save_loop.level
-
-    _definition.id               '_loop.level'
-    _definition.class            Attribute
-    _definition.update           2019-09-25
-    _description.text
-;
-     Specifies the level of the loop structure in which a defined
-     item must reside if it used in a looped list.
-;
-    _name.category_id            loop
-    _name.object_id              level
-    _type.purpose                Number
-    _type.source                 Assigned
-    _type.container              Single
-    _type.contents               Integer
-    _enumeration.default         1
-    _enumeration.range           1:
-
-save_
-
-#============================================================================
-
 save_METHOD
 
     _definition.id               METHOD
@@ -1693,7 +1407,6 @@ save_METHOD
 ;
     _name.category_id            ATTRIBUTES
     _name.object_id              METHOD
-    _category.key_id             '_method.purpose'
     loop_
     _category_key.name
                                  '_method.purpose'
@@ -1864,9 +1577,8 @@ save_type.container
     _enumeration_set.state
     _enumeration_set.detail
               Single        'single value'
-              Multiple      'values as List or by boolean ,|&!* or range : ops'
               List        '''ordered set of values. Elements need not be of same contents type.'''
-              Array       '''ordered set of numerical values. Operations across arrays are
+              Array       '''ordered set of values of the same type. Operations across arrays are
                              equivalent to operations across elements of the Array.'''
               Matrix      '''ordered set of numerical values for a tensor. Tensor operations such as
                              dot and cross products, are valid cross matrix objects. A matrix with a
@@ -1888,15 +1600,13 @@ save_type.contents
     _description.text
 ;
 
-     Syntax of the value elements within the container type.  This may
-     be a single enumerated code, or, in the case of a list, a
-     comma-delimited sequence of codes, or, if there are alternate
-     types, a boolean-linked (or range) sequence of codes.  The typing
-     of elements is determined by the replication of the minimum set
-     of states declared. Where the definition is of a 'Table'
-     container this attribute describes the construction of the value
-     elements within those (Table) values.  The CIF2 characterset
-     referenced below consists of the following Unicode code points:
+     Syntax of the value elements within the container type. Where the
+     definition is of a 'List' or 'Array' type, this attribute
+     describes the contents of each element. Where the definition is
+     of a 'Table' container this attribute describes the construction
+     of the value elements within those (Table) values.  The CIF2
+     characterset referenced below consists of the following Unicode
+     code points:
 
      [U+0009], [U+000A], [U+000D], [U+0020-U+007E], [U+00A0-U+D7FF],
      [U+E000-U+FDCF], [U+FDF0-U+FFFD], [U+10000-U+1FFFD],
@@ -1919,7 +1629,7 @@ save_type.contents
     _name.object_id              contents
     _type.purpose                State
     _type.source                 Assigned
-    _type.container              Multiple
+    _type.container              Single
     _type.contents               Code
     loop_
     _enumeration_set.state
@@ -1942,8 +1652,6 @@ save_type.contents
                              placed within bounding square brackets. Empty
                              square brackets represent a list of unknown size'''
               Range         'inclusive range of numerical values min:max'
-              Count         'unsigned integer number (deprecated)'
-              Index         'unsigned non-zero integer number (deprecated)'
               Integer       'positive or negative integer number'
               Real          'floating-point real number'
               Imag          'floating-point imaginary number'
@@ -1959,9 +1667,6 @@ save_type.contents
     _description_example.case
     _description_example.detail
             "Integer"            'content is a single or multiple integer(s)'
-            "Real,Integer"       'List elements of a real number and an integer'
-            "List(Real,Code)"    'List of Lists of a real number and a code'
-            "Text|Real"          'content is either text OR a real number'
 
 save_
 
@@ -2106,13 +1811,7 @@ save_type.purpose
               Identify
 ;                  >>> Applied ONLY in the DDLm Reference Dictionary <<<
                    Used to type attributes that identify an item tag (or
-                   part thereof), save frame or the URI of an external file.
-;
-              Extend
-;                  *** Used to EXTEND the DDLm Reference Dictionary ***
-                   Used in a definition, residing in the "extensions"
-                   save frame of a domain dictionary, to specify a new
-                   enumeration state using an Evaluation method.
+                   part thereof) or external location.
 ;
               Describe
 ;                  Used to type items with values that are descriptive
@@ -2284,14 +1983,13 @@ save_
                                  '_dictionary_audit.version'
                                  '_dictionary_audit.date'
                                  '_dictionary_audit.revision']
-  [Dictionary  Prohibited]      [ALIAS  CATEGORY  DEFINITION  ENUMERATION  LOOP
+  [Dictionary  Prohibited]      [ALIAS  DEFINITION  ENUMERATION CATEGORY_KEY
                                  METHOD  NAME  TYPE  IMPORT UNITS]
   [Category  Mandatory]         ['_definition.id'  '_definition.scope'
                                  '_definition.class'  '_name.category_id'
                                  '_name.object_id']
-  [Category  Recommended]       ['_category.key_id'  '_category_key.name'
-                                 '_description.text']
-  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION LOOP
+  [Category  Recommended]       [CATEGORY_KEY '_category_key.name' '_description.text']
+  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION
                                  TYPE  UNITS]
   [Item  Mandatory]             ['_definition.id'  '_definition.update'
                                  '_name.object_id'  '_name.category_id'
@@ -2299,7 +1997,7 @@ save_
   [Item  Recommended]           ['_definition.scope'  '_definition.class'
                                  '_type.source'  '_type.purpose'
                                  '_description.text'  '_description.common']
-  [Item  Prohibited]            [CATEGORY  DICTIONARY]
+  [Item  Prohibited]            [DICTIONARY CATEGORY_KEY]
 
 #=============================================================================
 #  The dictionary's audit trail and creation history.
@@ -2731,4 +2429,15 @@ Removed 'Measured' as a state for type.source
    Updated the description of the 'Loop' definition class. The new description
    allows the child data items to appear in a loop-list instead of strictly
    requiring it ('must' -> 'may').
+;
+         4.0.0     2020-10-30
+;
+   Removed all xref datanames.
+   Removed LOOP category.
+   Removed complex dataname type (Multiple) and type specifications.
+   Removed non-import use of save frames and ref-loops.
+   Allow Arrays to include string types
+   Removed purpose "Extend"
+   Removed CATEGORY category and category.key_id
+   Removed 'Index' and 'Count' content types
 ;

@@ -13391,9 +13391,9 @@ _name.category_id                       model_site
 _name.object_id                         adp_eigen_system
 _type.purpose                           Measurand
 _type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Real,Real,Real,Real)'
-_type.dimension                         '[3]'
+_type.container                         Array
+_type.contents                          Real
+_type.dimension                         '[3,4]'
 loop_
   _method.purpose
   _method.expression
@@ -22597,8 +22597,8 @@ _name.category_id                       atom_type_scat
 _name.object_id                         versus_stol_list
 _type.purpose                           Number
 _type.source                            Assigned
-_type.container                         List
-_type.contents                          'List(Real,Real)'
+_type.container                         Array
+_type.contents                          Real
 _type.dimension                         '[]'
 _units.code                             none
 
