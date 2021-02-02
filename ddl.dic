@@ -8,11 +8,11 @@ data_DDL_DIC
 
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
-    _dictionary.version          4.0.0
-    _dictionary.date             2020-10-30
+    _dictionary.version          4.0.1
+    _dictionary.date             2021-02-02
     _dictionary.uri              
              https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
-    _dictionary.ddl_conformance  4.0.0
+    _dictionary.ddl_conformance  4.0.1
     _dictionary.namespace        DdlDic
     _description.text
 ;
@@ -1853,13 +1853,18 @@ save_type.purpose
 ;
               Measurand
 ;                  Used to type an item with a numerically estimated value
-                   that has been recorded by measurement or derivation. This
-                   value must be accompanied by its standard uncertainty
-                   (SU) value, expressed either as:
-                     1) appended integers, in parentheses (), at the
-                        precision of the trailing digits,       or
-                     2) a separately defined item with the same name as the
-                        measurand item but with an additional suffix '_su'.
+                   that has been recorded by measurement or derivation. A
+                   data name definition for the standard uncertainty (SU) of
+                   this item must be provided in a separate definition with
+                   _type.purpose of 'SU'. The value of a measurand item
+                   should be accompanied by a value of its associated SU item,
+                   either:
+                     1) integrated with the measurand value in a manner
+                     characteristic of the data format;
+                     or
+                     2) as a separate, explicit value for the associated SU
+                     item.
+                   These alternatives are semantically equivalent.
 ;
               SU
 ;                  Used to type an item with a numerical value that is the
@@ -2440,4 +2445,8 @@ Removed 'Measured' as a state for type.source
    Removed purpose "Extend"
    Removed CATEGORY category and category.key_id
    Removed 'Index' and 'Count' content types
+;
+         4.0.1     2021-02-02
+;
+   Clarified use of 'SU' data items
 ;
