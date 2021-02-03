@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          4.0.1
-    _dictionary.date             2021-02-02
+    _dictionary.date             2021-02-03
     _dictionary.uri              
              https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance  4.0.1
@@ -1175,10 +1175,10 @@ save_import_details.file_id
 
     _definition.id               '_import_details.file_id'
     _definition.class            Attribute
-    _definition.update           2017-07-21
+    _definition.update           2021-02-03
     _description.text
 ;
-     A URI reference as per RFC3986 giving the location of the source dictionary.
+     A URI reference as per RFC 3986 giving the location of the source dictionary.
      When a relative URI is used, the base URI for the URI reference is the
      _dictionary.uri of the importing dictionary.
 ;
@@ -1371,7 +1371,7 @@ save_import_details.single
 
 save_import_details.single_index
     _definition.id             '_import_details.single_index'
-    _definition.update           2015-07-21
+    _definition.update           2021-02-03
     _definition.class            Attribute
     _description.text
 ;
@@ -1385,7 +1385,7 @@ save_import_details.single_index
      loop_
     _enumeration_set.state
     _enumeration_set.detail
-       file         'URI of source dictionary'
+       file         'URI reference as per RFC 3986 giving the location of the source dictionary.'
        version      'version of source dictionary'
        save         'save framecode of source definition'
        mode         'mode for including save frames'
@@ -2446,7 +2446,11 @@ Removed 'Measured' as a state for type.source
    Removed CATEGORY category and category.key_id
    Removed 'Index' and 'Count' content types
 ;
-         4.0.1     2021-02-02
+         4.0.1     2021-02-03
 ;
-   Clarified use of 'SU' data items
+   Clarified use of 'SU' data items.
+
+   Updated the _import_details.single_index data item description
+   to explicitly state that the 'file' index can refer not only to
+   URI, but also to URI reference values.
 ;
