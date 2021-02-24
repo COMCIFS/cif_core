@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.14
-_dictionary.date                        2020-08-13
+_dictionary.version                     3.0.15
+_dictionary.date                        2021-01-06
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -14137,13 +14137,13 @@ save_
 save_audit.schema
 
 _definition.id       '_audit.schema'
-_definition.update   2016-09-08
+_definition.update   2021-01-06
 _name.category_id    audit
 _name.object_id      schema
 _description.text
 ;
 
-     This dataname identifies the type of information contained in the
+     This dataname identifies the structure of information contained in the
      datablock. Software written for one schema will not, in general,
      correctly interpret datafiles written against a different schema.
 
@@ -14168,9 +14168,34 @@ _enumeration_set.state
 _enumeration_set.detail
     Base                'Original Core CIF schema'
    'Space group tables' 'space_group category is looped'
-    Entry               'entry category is defined and looped: information from multiple datablocks in one block'
+    Entry               
+;
+    entry category is defined and looped: multiple experiments 
+    with results may be present
+;
+    Powder              'Multiple compounds (phases) may be present'
+    Modulated           'Multiple subsystems may be present'
+    Experiments         
+;
+    diffrn and exptl_crystal categories are looped: multiple 
+    diffraction measurements on multiple samples may be present
+;
+    Macromolecular      
+;
+    mmCIF equivalent. Only single-key mmCIF categories containing children 
+    of _entry.id are Set categories
+;
+    Raw                 
+;
+    imgCIF equivalent. As for Macromolecular, with the addition of 
+    multiple detectors.
+;
+    Laue                
+;
+    diffrn_radiation is looped: Multiple wavelengths are used.
+;
     Custom              'Examine dictionaries provided in _audit_conform'
-    Local               'Locally modified dictionaries. These datafiles should not be distributed'
+    Local               'Locally modified dictionaries. Datafile not for distribution'
 _enumeration.default    Base
 save_
 
@@ -24550,4 +24575,8 @@ loop_
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
      publ_contact_author. Added diffrn_measurement.specimen_attachment_type
+;
+     3.0.15     2021-01-06
+;
+     Updated the list in _audit.schemas
 ;
