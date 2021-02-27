@@ -9,8 +9,8 @@ data_COM_VAL
  
     _dictionary.title            COM_VAL
     _dictionary.class            Template
-    _dictionary.version          1.4.07
-    _dictionary.date             2019-12-09
+    _dictionary.version          1.4.8
+    _dictionary.date             2021-02-27
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  3.11.04
     _description.text
@@ -835,7 +835,7 @@ save_units_code
 
    'arbitrary'    "arbitrary    'arbitrary system of units'"
 
-    'counts_per_photon' "measure of gain used in iarray detectors"
+    'counts_per_photon' "measure of gain used in array detectors"
 
     save_
 
@@ -2151,4 +2151,8 @@ save_colour_hue
 ;
    Updated the human-readable descriptions of the 'kelvins' and
    'kelvins_per_minute' enumeration states in the _units_code save frame.
+;
+      1.4.8   2021-02-27
+;
+   Corrected a typo in the 'units_code' save frame.
 ;
