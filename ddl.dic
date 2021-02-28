@@ -1233,7 +1233,7 @@ save_
 save_import_details.order
     _definition.id               '_import_details.order'
     _definition.class            Attribute
-    _definition.update           2019-04-02
+    _definition.update           2021-02-28
     _description.text
 ;
      The order in which the import described by the referenced row should be
@@ -1245,6 +1245,7 @@ save_import_details.order
     _type.contents              Integer
     _type.source                Assigned
     _type.purpose               Encode
+    _units.code                 none
 
 save_
 
@@ -2454,4 +2455,7 @@ Removed 'Measured' as a state for type.source
    URI, but also to URI reference values.
 
    Removed the default enumeration value of the _units.code data item.
+
+   Added measurement units to the definition of the _import_details.order
+   data item.
 ;
