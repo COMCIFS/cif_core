@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2021-02-27
+    _dictionary.date             2021-03-01
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  3.14.0
     _description.text
@@ -87,7 +87,7 @@ save_atom_site_id
 
 save_rho_coeff
 
-    _definition.update           2021-02-27
+    _definition.update           2021-03-01
     _description.text
 ;
      Specifies a multipole population coefficients P(l,m) for
@@ -917,7 +917,7 @@ save_display_colour
    Changed the data type in the 'diffr_counts' save frame from 'Count' to
    'Integer'.
 ;
-    1.4.10 2021-02-27
+    1.4.10 2021-03-01
 ;
   Corrected a typo in the description of the 'rho_coeff' save frame.
 ;
