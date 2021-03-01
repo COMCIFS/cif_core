@@ -90,7 +90,7 @@ save_rho_coeff
     _definition.update           2021-03-01
     _description.text
 ;
-     Specifies a multipole population coefficientxs P(l,m) for
+     Specifies a multipole population coefficients P(l,m) for
      the atom identified in atom_rho_multipole.atom_label.
 ;
     _type.purpose                Measurand
@@ -926,8 +926,11 @@ save_display_colour
    Changed the data type in the 'diffr_counts' save frame from 'Count' to
    'Integer'.
 ;
-      1.4.10  2021-03-01
+
+    1.4.10 2021-03-01
 ;
+   Corrected a typo in the description of the 'rho_coeff' save frame.
+
    Added the 'none' measurement units to the 'rho_coeff', 'rho_kappa',
    'rho_slater', 'matrix_pdb', 'matrix_w', 'index_limit_max', 'index_limit_min',
    'ncs_matrix_IJ' and 'rot_matrix_IJ' save frames.
