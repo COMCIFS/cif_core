@@ -1598,7 +1598,7 @@ save_type.contents
 
     _definition.id               '_type.contents'
     _definition.class            Attribute
-    _definition.update           2019-09-25
+    _definition.update           2021-02-27
     _description.text
 ;
 
@@ -1643,10 +1643,10 @@ save_type.contents
                              characters or underscore'''
               Tag         '''case-insensitive CIF2 character sequence with leading 
                              underscore and no ASCII whitespace'''
-              Uri           'A Uniform Resource Identifier per RFC 3986'
+              Uri           'Uniform Resource Identifier reference as defined in RFC 3986 Section 4.1'
               Date          'ISO standard date format <yyyy>-<mm>-<dd>. Use DateTime for all new dictionaries'
               DateTime
-            'A timestamp. Text formats must use date-time or full-date productions of RFC3339 ABNF'
+            'A timestamp. Text formats must use date-time or full-date productions of RFC 3339 ABNF'
               Version       'version digit string of the form <major>.<version>.<update>'
               Dimension   '''Size of an Array/Matrix/List expressed as a text
                              string. The text string itself consists of zero
@@ -2454,6 +2454,9 @@ Removed 'Measured' as a state for type.source
    Updated the _import_details.single_index data item description
    to explicitly state that the 'file' index can refer not only to
    URI, but also to URI reference values.
+
+   Updated the definition of the 'Uri' content type to explicitly state
+   that it allows URI-reference values.
 
    Updated the DICTIONARY_VALID category description to explicitly state
    that the rules only apply to Reference and Instance dictionaries.
