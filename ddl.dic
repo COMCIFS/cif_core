@@ -754,12 +754,13 @@ save_DICTIONARY_VALID
     _definition.id               DICTIONARY_VALID
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2013-09-08
+    _definition.update           2021-03-01
     _description.text
 ;
      Data items which are used to specify the contents of definitions in
      the dictionary in terms of the _definition.scope and the required
-     and prohibited attributes.
+     and prohibited attributes. Validation rules described by data items
+     in this category apply only to Reference and Instance dictionaries.
 ;
     _name.category_id            DICTIONARY
     _name.object_id              DICTIONARY_VALID
@@ -2453,6 +2454,9 @@ Removed 'Measured' as a state for type.source
    Updated the _import_details.single_index data item description
    to explicitly state that the 'file' index can refer not only to
    URI, but also to URI reference values.
+
+   Updated the DICTIONARY_VALID category description to explicitly state
+   that the rules only apply to Reference and Instance dictionaries.
 
    Removed the default enumeration value of the _units.code data item.
 
