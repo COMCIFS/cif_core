@@ -22785,10 +22785,10 @@ save_refine_diff.density_max_su
 _definition.id                          '_refine_diff.density_max_su'
 loop_
   _alias.definition_id
-         '_refine_diff_density_max_su'           
-         '_refine.diff_density_max_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_max_su'
+         '_refine.diff_density_max_esd'
+_definition.update                      2021-03-01
+_description.text
 ;
      Standard Uncertainty of the
      Maximum density value in a difference Fourier map.
@@ -22800,6 +22800,15 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+loop_
+  _method.purpose
+  _method.expression
+         Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
 
 save_
 
@@ -22841,10 +22850,10 @@ save_refine_diff.density_min_su
 _definition.id                          '_refine_diff.density_min_su'
 loop_
   _alias.definition_id
-         '_refine_diff_density_min_su'           
-         '_refine.diff_density_min_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_min_su'
+         '_refine.diff_density_min_esd'
+_definition.update                      2021-03-01
+_description.text
 ;
      Standard Uncertainty of the
      Miniumum density value in a difference Fourier map.
@@ -22856,6 +22865,15 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+loop_
+  _method.purpose
+  _method.expression
+         Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
 
 save_
 
@@ -22902,10 +22920,10 @@ save_refine_diff.density_rms_su
 _definition.id                          '_refine_diff.density_rms_su'
 loop_
   _alias.definition_id
-         '_refine_diff_density_rms_su'           
-         '_refine.diff_density_rms_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_rms_su'
+         '_refine.diff_density_rms_esd'
+_definition.update                      2021-03-01
+_description.text
 ;
      Standard Uncertainty of the
      Root mean square density value in a difference Fourier map.
@@ -22917,6 +22935,15 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+loop_
+  _method.purpose
+  _method.expression
+         Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
 
 save_
 
@@ -24644,5 +24671,9 @@ loop_
      publ_contact_author. Added diffrn_measurement.specimen_attachment_type.
 
      Added the 'none' measurement units to the definitions of multiple
-     data items. 
+     data items.
+
+     Added methods for determining the measurement units to the definitions
+     of the _refine_diff.density_min_su, _refine_diff.density_max_su and
+     _refine_diff.density_rms_su data items.
 ;
