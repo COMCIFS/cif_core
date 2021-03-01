@@ -928,7 +928,7 @@ save_display_colour
 ;
       1.4.10  2021-03-01
 ;
-   Added the 'none' measurement units to the rho_coeff, rho_kappa, rho_slater,
-   matrix_pdb, matrix_w, index_limit_max, index_limit_min, ncs_matrix_IJ and
-   rot_matrix_IJ save frames.
+   Added the 'none' measurement units to the 'rho_coeff', 'rho_kappa',
+   'rho_slater', 'matrix_pdb', 'matrix_w', 'index_limit_max', 'index_limit_min',
+   'ncs_matrix_IJ' and 'rot_matrix_IJ' save frames.
 ;
