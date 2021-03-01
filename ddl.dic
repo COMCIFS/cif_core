@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          4.0.1
-    _dictionary.date             2021-02-03
+    _dictionary.date             2021-03-01
     _dictionary.uri              
              https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance  4.0.1
@@ -1233,7 +1233,7 @@ save_
 save_import_details.order
     _definition.id               '_import_details.order'
     _definition.class            Attribute
-    _definition.update           2019-04-02
+    _definition.update           2021-03-01
     _description.text
 ;
      The order in which the import described by the referenced row should be
@@ -1245,6 +1245,7 @@ save_import_details.order
     _type.contents              Integer
     _type.source                Assigned
     _type.purpose               Encode
+    _units.code                 none
 
 save_
 
@@ -1955,7 +1956,7 @@ save_units.code
 
     _definition.id               '_units.code'
     _definition.class            Attribute
-    _definition.update           2012-01-25
+    _definition.update           2021-03-01
     _description.text
 ;
      A code which identifies the units of measurement.
@@ -1966,7 +1967,6 @@ save_units.code
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
-    _enumeration.default         Arbitrary
 
     _import.get [{'save':units_code  'file':templ_enum.cif}]
 
@@ -2446,11 +2446,16 @@ Removed 'Measured' as a state for type.source
    Removed CATEGORY category and category.key_id
    Removed 'Index' and 'Count' content types
 ;
-         4.0.1     2021-02-03
+         4.0.1     2021-03-01
 ;
    Clarified use of 'SU' data items.
 
    Updated the _import_details.single_index data item description
    to explicitly state that the 'file' index can refer not only to
    URI, but also to URI reference values.
+
+   Removed the default enumeration value of the _units.code data item.
+
+   Added measurement units to the definition of the _import_details.order
+   data item.
 ;
