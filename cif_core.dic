@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.14
-_dictionary.date                        2020-08-13
+_dictionary.date                        2021-03-01
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -3327,8 +3327,8 @@ save_
 save_diffrn_source.beamline
 
 _definition.id                       '_diffrn_source.beamline'
-_definition.update                   2020-09-18
-_definition
+_definition.update                   2021-03-01
+_description.text
 ;
          The name of the beamline at the synchrotron or other
          large-scale experimental facility at which the experiment
@@ -24545,9 +24545,12 @@ loop_
      Validation method for _space_group.crystal_system removed as it contained
      undefined dREL functions "throw" and "alert".
 ;
-     3.0.14     2020-08-13
+     3.0.14     2021-03-01
 ;
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
-     publ_contact_author. Added diffrn_measurement.specimen_attachment_type
+     publ_contact_author. Added diffrn_measurement.specimen_attachment_type.
+
+     Corrected a misspelt data name in the definition of
+     the _diffrn_source.beamline data item.
 ;
