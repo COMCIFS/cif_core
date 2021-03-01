@@ -884,7 +884,7 @@ save_
 save_diffrn_measurement.specimen_attachment_type
 
 _definition.id                '_diffrn_measurement.specimen_attachment_type'
-_definition.update            2020-08-13
+_definition.update            2021-03-01
 _description.text
 ;
 
@@ -905,8 +905,8 @@ _type.purpose                 State
 _type.source                  Recorded
 
 loop_
-     _enumerated_set.case
-     _enumerated_set.detail
+     _enumeration_set.state
+     _enumeration_set.detail
         epoxy            "An epoxy glue"
         oil              "An oil"
         grease           "A type of grease, for example hydrocarbon or silicone grease"
@@ -24551,6 +24551,7 @@ loop_
      as relevant linking identifiers to audit_contact_author and 
      publ_contact_author. Added diffrn_measurement.specimen_attachment_type.
 
-     Corrected a misspelt data name in the definition of
-     the _diffrn_source.beamline data item.
+     Corrected several misspelt data names in the definitions
+     of the _diffrn_measurement.specimen_attachment_type and
+     _diffrn_source.beamline data item.
 ;
