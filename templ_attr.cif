@@ -9,8 +9,8 @@ data_TEMPL_ATTR
  
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
-    _dictionary.version          1.4.09
-    _dictionary.date             2019-09-25
+    _dictionary.version          1.4.10
+    _dictionary.date             2021-03-01
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  3.14.0
     _description.text
@@ -87,7 +87,7 @@ save_atom_site_id
 
 save_rho_coeff
 
-    _definition.update           2014-06-20
+    _definition.update           2021-03-01
     _description.text
 ;
      Specifies a multipole population coefficientxs P(l,m) for
@@ -97,12 +97,13 @@ save_rho_coeff
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _units.code                  none
      save_
 
 
 save_rho_kappa
 
-    _definition.update           2014-06-20
+    _definition.update           2021-03-01
     _description.text
 ;
       A radial function expansion-contraction coefficient
@@ -114,12 +115,13 @@ save_rho_kappa
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _units.code                  none
      save_
 
 
 save_rho_slater
 
-    _definition.update           2014-06-20
+    _definition.update           2021-03-01
     _description.text
 ;
       Items used when the radial dependence of the valence
@@ -131,12 +133,13 @@ save_rho_slater
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _units.code                  none
      save_
 
 
 save_matrix_pdb
 
-    _definition.update           2014-07-02
+    _definition.update           2021-03-01
     _description.text
 ;
      Element of the PDM ORIGX matrix or vector.
@@ -145,12 +148,13 @@ save_matrix_pdb
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
+    _units.code                  none
      save_
 
 
 save_matrix_w
 
-    _definition.update           2014-06-27
+    _definition.update           2021-03-01
     _description.text
 ;
      Element of the matrix W defined by van Smaalen (1991); (1995)
@@ -160,6 +164,7 @@ save_matrix_w
     _type.container              Single
     _type.contents               Real
     _name.category_id            cell_subsystem
+    _units.code                  none
      save_
 
 
@@ -181,7 +186,7 @@ save_ms_index
 
 save_index_limit_max
 
-    _definition.update           2014-06-27
+    _definition.update           2021-03-01
     _description.text
 ;
      Maximum value of the additional Miller indices appearing in 
@@ -191,12 +196,13 @@ save_index_limit_max
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _units.code                  none
      save_
 
 
 save_index_limit_min
 
-    _definition.update           2014-06-27
+    _definition.update           2021-03-01
     _description.text
 ;
      Minimum value of the additional Miller indices appearing in 
@@ -206,6 +212,7 @@ save_index_limit_min
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
+    _units.code                  none
      save_
 
 
@@ -443,7 +450,7 @@ save_Cartn_matrix
 
 save_ncs_matrix_IJ      
 
-    _definition.update          2014-06-12
+    _definition.update          2021-03-01
     _description.text
 ;
      The [I][J] element of the 3x3 matrix component of a
@@ -453,12 +460,13 @@ save_ncs_matrix_IJ
     _type.source                Derived
     _type.container             Single
     _type.contents              Real
+    _units.code                 none
      save_
 
 
 save_rot_matrix_IJ
 
-    _definition.update          2014-06-12
+    _definition.update          2021-03-01
     _description.text
 ;
      The [I][J] element of the matrix used to rotate the subset of the
@@ -475,6 +483,7 @@ save_rot_matrix_IJ
     _type.source                Derived
     _type.container             Single
     _type.contents              Real
+    _units.code                 none
      save_
 
 
@@ -916,4 +925,10 @@ save_display_colour
 
    Changed the data type in the 'diffr_counts' save frame from 'Count' to
    'Integer'.
+;
+      1.4.10  2021-03-01
+;
+   Added the 'none' measurement units to the 'rho_coeff', 'rho_kappa',
+   'rho_slater', 'matrix_pdb', 'matrix_w', 'index_limit_max', 'index_limit_min',
+   'ncs_matrix_IJ' and 'rot_matrix_IJ' save frames.
 ;
