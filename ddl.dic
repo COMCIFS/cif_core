@@ -9,7 +9,7 @@ data_DDL_DIC
     _dictionary.title            DDL_DIC
     _dictionary.class            Reference
     _dictionary.version          4.0.1
-    _dictionary.date             2021-02-27
+    _dictionary.date             2021-03-01
     _dictionary.uri              
              https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance  4.0.1
@@ -754,12 +754,13 @@ save_DICTIONARY_VALID
     _definition.id               DICTIONARY_VALID
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2013-09-08
+    _definition.update           2021-03-01
     _description.text
 ;
      Data items which are used to specify the contents of definitions in
      the dictionary in terms of the _definition.scope and the required
-     and prohibited attributes.
+     and prohibited attributes. Validation rules described by data items
+     in this category apply only to Reference and Instance dictionaries.
 ;
     _name.category_id            DICTIONARY
     _name.object_id              DICTIONARY_VALID
@@ -1233,7 +1234,7 @@ save_
 save_import_details.order
     _definition.id               '_import_details.order'
     _definition.class            Attribute
-    _definition.update           2019-04-02
+    _definition.update           2021-03-01
     _description.text
 ;
      The order in which the import described by the referenced row should be
@@ -1245,6 +1246,7 @@ save_import_details.order
     _type.contents              Integer
     _type.source                Assigned
     _type.purpose               Encode
+    _units.code                 none
 
 save_
 
@@ -1955,7 +1957,7 @@ save_units.code
 
     _definition.id               '_units.code'
     _definition.class            Attribute
-    _definition.update           2012-01-25
+    _definition.update           2021-03-01
     _description.text
 ;
      A code which identifies the units of measurement.
@@ -1966,7 +1968,6 @@ save_units.code
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Code
-    _enumeration.default         Arbitrary
 
     _import.get [{'save':units_code  'file':templ_enum.cif}]
 
@@ -2446,7 +2447,7 @@ Removed 'Measured' as a state for type.source
    Removed CATEGORY category and category.key_id
    Removed 'Index' and 'Count' content types
 ;
-         4.0.1     2021-02-27
+         4.0.1     2021-03-01
 ;
    Clarified use of 'SU' data items.
 
@@ -2456,4 +2457,12 @@ Removed 'Measured' as a state for type.source
 
    Updated the definition of the 'Uri' content type to explicitly state
    that it allows URI-reference values.
+
+   Updated the DICTIONARY_VALID category description to explicitly state
+   that the rules only apply to Reference and Instance dictionaries.
+
+   Removed the default enumeration value of the _units.code data item.
+
+   Added measurement units to the definition of the _import_details.order
+   data item.
 ;
