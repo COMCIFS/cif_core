@@ -17191,12 +17191,12 @@ save_journal_date.accepted
 _definition.id                          '_journal_date.accepted'
 loop_
   _alias.definition_id
-         '_journal_date_accepted'      
-         '_journal.date_accepted' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_accepted'
+         '_journal.date_accepted'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication was accepted.
+     Date when the publication was accepted.
 ;
 _name.category_id                       journal_date
 _name.object_id                         accepted
@@ -17218,7 +17218,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication was received from the coeditor.
+     Date when the publication was received from the coeditor.
 ;
 _name.category_id                       journal_date
 _name.object_id                         from_coeditor
@@ -17240,7 +17240,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication was last sent to the printers.
+     Date when the publication was last sent to the printers.
 ;
 _name.category_id                       journal_date
 _name.object_id                         printers_final
@@ -17262,7 +17262,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication was first sent to the printers.
+     Date when the publication was first sent to the printers.
 ;
 _name.category_id                       journal_date
 _name.object_id                         printers_first
@@ -17284,7 +17284,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication proofs were received.
+     Date when the publication proofs were received.
 ;
 _name.category_id                       journal_date
 _name.object_id                         proofs_in
@@ -17306,7 +17306,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication proofs were sent out.
+     Date when the publication proofs were sent out.
 ;
 _name.category_id                       journal_date
 _name.object_id                         proofs_out
@@ -17328,7 +17328,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the completed copyright was received.
+     Date when the completed copyright was received.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_copyright
@@ -17350,7 +17350,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication was received electronically.
+     Date when the publication was received electronically.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_electronic
@@ -17372,7 +17372,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication was received as hard copy.
+     Date when the publication was received as hard copy.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_hard_copy
@@ -17394,7 +17394,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Date the publication was sent to the coeditor.
+     Date when the publication was sent to the coeditor.
 ;
 _name.category_id                       journal_date
 _name.object_id                         to_coeditor
@@ -24673,5 +24673,5 @@ loop_
      of the _refine_diff.density_min_su, _refine_diff.density_max_su and
      _refine_diff.density_rms_su data items.
 
-    Corrected a few typos in several save frame definitions.
+     Corrected a few typos in several save frame definitions.
 ;
