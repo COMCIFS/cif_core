@@ -19223,9 +19223,9 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Standard uncertainty value for the equivalent isotropic atomic
-     displacement parameter, B(equiv), in angstroms squared, calculated
-     as the geometric mean of the anisotropic atomic displacement parameters.
+     Standard uncertainty of the equivalent isotropic atomic displacement
+     parameter, B(equiv), in angstroms squared, calculated as the geometric
+     mean of the anisotropic atomic displacement parameters.
 ;
 _name.category_id                       atom_site
 _name.object_id                         B_equiv_geom_mean_su
@@ -19285,10 +19285,10 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Standard uncertainty value for the isotropic atomic displacement
-     parameter, or equivalent isotropic atomic displacement parameter,
-     B(equiv), in angstroms squared, calculated from anisotropic
-     temperature factor parameters.
+     Standard uncertainty of the isotropic atomic displacement parameter,
+     or equivalent isotropic atomic displacement parameter, B(equiv),
+     in angstroms squared, calculated from anisotropic temperature
+     factor parameters.
 ;
 _name.category_id                       atom_site
 _name.object_id                         B_iso_or_equiv_su
@@ -19868,7 +19868,7 @@ loop_
 _definition.update                      2021-03-03
 _description.text
 ;
-     Standard uncertainty value for the fraction of the atom type
+     Standard uncertainty of the fraction of the atom type
      present at this site.
 ;
 _name.category_id                       atom_site
