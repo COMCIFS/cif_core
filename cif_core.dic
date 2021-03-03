@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.14
-_dictionary.date                        2021-03-01
+_dictionary.date                        2021-03-03
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -177,13 +177,13 @@ save_diffrn.ambient_pressure_su
 _definition.id                          '_diffrn.ambient_pressure_su'
 loop_
   _alias.definition_id
-         '_diffrn_ambient_pressure_su'           
-         '_diffrn.ambient_pressure_esd' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_diffrn_ambient_pressure_su'
+         '_diffrn.ambient_pressure_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Mean hydrostatic  pressure at which intensities were measured.
+     Standard uncertainty of the mean hydrostatic pressure
+     at which intensities were measured.
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_pressure_su
@@ -306,14 +306,14 @@ save_diffrn.ambient_temperature_su
 _definition.id                          '_diffrn.ambient_temperature_su'
 loop_
   _alias.definition_id
-         '_diffrn_ambient_temperature_su'        
-         '_diffrn_ambient_temp_su'     
-         '_diffrn.ambient_temp_esd' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_diffrn_ambient_temperature_su'
+         '_diffrn_ambient_temp_su'
+         '_diffrn.ambient_temp_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     mean temperature at which intensities were measured.
+     Standard uncertainty of the mean temperature
+     at which intensities were measured.
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_temperature_su
@@ -2475,11 +2475,11 @@ save_diffrn_reflns.Laue_measured_fraction_max
 _definition.id                          '_diffrn_reflns.Laue_measured_fraction_max'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_Laue_measured_fraction_max' 
-_definition.update                      2013-01-20
-_description.text                       
+         '_diffrn_reflns_Laue_measured_fraction_max'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Fraction of Laue-group unique reflections (symmetry-independent in
+     Fraction of Laue group unique reflections (symmetry-independent in
      the Laue group) measured out to the resolution given in
      _diffrn_reflns.resolution_max or _diffrn_reflns.theta_max.
      The Laue group always contains a centre of symmetry so that the
@@ -2990,7 +2990,7 @@ save_diffrn_reflns_class.d_res_low
 _definition.id                          '_diffrn_reflns_class.d_res_low'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_class_d_res_low' 
+         '_diffrn_reflns_class_d_res_low'
 _definition.update                      2012-11-26
 _description.text                       
 ;
@@ -3298,11 +3298,11 @@ save_diffrn_scale_group.I_net
 _definition.id                          '_diffrn_scale_group.I_net'
 loop_
   _alias.definition_id
-         '_diffrn_scale_group_I_net' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_diffrn_scale_group_I_net'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Scale for a specific measurement group of eflections. Is multiplied
+     Scale for a specific measurement group of reflections. Is multiplied
      with the net intensity to place all intensities on a common scale.
 ;
 _name.category_id                       diffrn_scale_group
@@ -4225,13 +4225,13 @@ save_refln.F_meas_su
 _definition.id                          '_refln.F_meas_su'
 loop_
   _alias.definition_id
-         '_refln_F_sigma'    
-         '_refln.F_meas_sigma'         
-         '_refln_F_meas_su' 
-_definition.update                      2013-02-21
-_description.text                       
+         '_refln_F_sigma'
+         '_refln.F_meas_sigma'
+         '_refln_F_meas_su'
+_definition.update                      2021-03-03
+_description.text
 ;
-     The standard uncertainty of the measured structure factor amplitude.
+     Standard uncertainty of the measured structure factor amplitude.
 ;
 _name.category_id                       refln
 _name.object_id                         F_meas_su
@@ -4324,13 +4324,13 @@ save_refln.F_squared_meas_su
 _definition.id                          '_refln.F_squared_meas_su'
 loop_
   _alias.definition_id
-         '_refln_F_squared_sigma'      
-         '_refln.F_squared_sigma'      
-         '_refln_F_squared_meas_su' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_refln_F_squared_sigma'
+         '_refln.F_squared_sigma'
+         '_refln_F_squared_meas_su'
+_definition.update                      2021-03-03
+_description.text
 ;
-     The standard uncertainty of the measured structure factor squared.
+     Standard uncertainty of the measured structure factor squared.
 ;
 _name.category_id                       refln
 _name.object_id                         F_squared_meas_su
@@ -4596,13 +4596,13 @@ save_refln.intensity_meas_su
 _definition.id                          '_refln.intensity_meas_su'
 loop_
   _alias.definition_id
-         '_refln_intensity_meas_su'    
-         '_refln.intensity_sigma'      
-         '_refln_intensity_sigma' 
-_definition.update                      2013-01-23
-_description.text                       
+         '_refln_intensity_meas_su'
+         '_refln.intensity_sigma'
+         '_refln_intensity_sigma'
+_definition.update                      2021-03-03
+_description.text
 ;
-     standard uncertainty of the measured intensity.
+     Standard uncertainty of the measured intensity.
 ;
 _name.category_id                       refln
 _name.object_id                         intensity_meas_su
@@ -4960,12 +4960,12 @@ save_reflns.d_resolution_high
 _definition.id                          '_reflns.d_resolution_high'
 loop_
   _alias.definition_id
-         '_reflns_d_resolution_high' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_d_resolution_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the final REFLN data set.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       reflns
 _name.object_id                         d_resolution_high
@@ -4984,12 +4984,12 @@ save_reflns.d_resolution_low
 _definition.id                          '_reflns.d_resolution_low'
 loop_
   _alias.definition_id
-         '_reflns_d_resolution_low' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_d_resolution_low'
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the final REFLN data set.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       reflns
 _name.object_id                         d_resolution_low
@@ -5412,12 +5412,12 @@ save_reflns_class.d_res_high
 _definition.id                          '_reflns_class.d_res_high'
 loop_
   _alias.definition_id
-         '_reflns_class_d_res_high' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_class_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections in this class.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       reflns_class
 _name.object_id                         d_res_high
@@ -5437,11 +5437,11 @@ _definition.id                          '_reflns_class.d_res_low'
 loop_
   _alias.definition_id
          '_reflns_class_d_res_low' 
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections in this class.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       reflns_class
 _name.object_id                         d_res_low
@@ -5845,12 +5845,12 @@ save_reflns_shell.d_res_high
 _definition.id                          '_reflns_shell.d_res_high'
 loop_
   _alias.definition_id
-         '_reflns_shell_d_res_high' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_shell_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections in this shell.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       reflns_shell
 _name.object_id                         d_res_high
@@ -5900,12 +5900,12 @@ save_reflns_shell.d_res_low
 _definition.id                          '_reflns_shell.d_res_low'
 loop_
   _alias.definition_id
-         '_reflns_shell_d_res_low' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_shell_d_res_low'
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections in this shell.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       reflns_shell
 _name.object_id                         d_res_low
@@ -6876,12 +6876,12 @@ save_cell_measurement.pressure_su
 _definition.id                          '_cell_measurement.pressure_su'
 loop_
   _alias.definition_id
-         '_cell_measurement_pressure_su'         
-         '_cell_measurement.pressure_esd' 
-_definition.update                      2019-07-24
+         '_cell_measurement_pressure_su'
+         '_cell_measurement.pressure_esd'
+_definition.update                      2021-03-03
 _description.text
 ;
-     The standard uncertainty of the pressure at which
+     Standard uncertainty of the pressure at which
      the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
@@ -6977,12 +6977,12 @@ save_cell_measurement.temperature_su
 _definition.id                          '_cell_measurement.temperature_su'
 loop_
   _alias.definition_id
-         '_cell_measurement_temp_su'   
-         '_cell_measurement.temp_esd' 
-_definition.update                      2019-07-24
-_description.text                       
+         '_cell_measurement_temp_su'
+         '_cell_measurement.temp_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     The standard uncertainty of the temperature of at which
+     Standard uncertainty of the temperature of at which
      the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
@@ -7366,14 +7366,14 @@ save_cell.reciprocal_angle_alpha_su
 
 _definition.id                          '_cell.reciprocal_angle_alpha_su'
 loop_
-  _alias.definition_id     
-         '_cell_reciprocal_angle_alpha_su'       
-         '_cell.reciprocal_angle_alpha_esd' 
-_definition.update                      2013-01-18
-_description.text                       
+  _alias.definition_id
+         '_cell_reciprocal_angle_alpha_su'
+         '_cell.reciprocal_angle_alpha_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Reciprocal of the angle between _cell.length_b and _cell.length_c.
+     Standard uncertainty of the reciprocal of the angle
+     between _cell.length_b and _cell.length_c.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_alpha_su
@@ -7427,13 +7427,13 @@ save_cell.reciprocal_angle_beta_su
 _definition.id                          '_cell.reciprocal_angle_beta_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle_beta_su'        
-         '_cell.reciprocal_angle_beta_esd' 
-_definition.update                      2013-01-18
-_description.text                       
+         '_cell_reciprocal_angle_beta_su'
+         '_cell.reciprocal_angle_beta_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Reciprocal of the angle between _cell.length_a and _cell.length_c.
+     Standard uncertainty of the reciprocal of the angle
+     between _cell.length_a and _cell.length_c.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_beta_su
@@ -7487,13 +7487,13 @@ save_cell.reciprocal_angle_gamma_su
 _definition.id                          '_cell.reciprocal_angle_gamma_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle_gamma_su'       
-         '_cell.reciprocal_angle_gamma_esd' 
-_definition.update                      2013-01-18
-_description.text                       
+         '_cell_reciprocal_angle_gamma_su'
+         '_cell.reciprocal_angle_gamma_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Reciprocal of the angle between _cell.length_a and _cell.length_b.
+     Standard uncertainty of the reciprocal of the angle
+     between _cell.length_a and _cell.length_b.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_gamma_su
@@ -7542,12 +7542,12 @@ save_cell.reciprocal_length_a_su
 _definition.id                          '_cell.reciprocal_length_a_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length_a_su'          
-         '_cell.reciprocal_length_a_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_cell_reciprocal_length_a_su'
+         '_cell.reciprocal_length_a_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the reciprocal of the _cell.length_a.
+     Standard uncertainty of the reciprocal of the _cell.length_a.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_a_su
@@ -7595,13 +7595,13 @@ save_cell.reciprocal_length_b_su
 
 _definition.id                          '_cell.reciprocal_length_b_su'
 loop_
-  _alias.definition_id          
-         '_cell_reciprocal_length_b_su'          
-         '_cell.reciprocal_length_b_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+  _alias.definition_id
+         '_cell_reciprocal_length_b_su'
+         '_cell.reciprocal_length_b_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the reciprocal of the _cell.length_b.
+     Standard uncertainty of the reciprocal of the _cell.length_b.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_b_su
@@ -7650,12 +7650,12 @@ save_cell.reciprocal_length_c_su
 _definition.id                          '_cell.reciprocal_length_c_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length_c_su'          
-         '_cell.reciprocal_length_c_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_cell_reciprocal_length_c_su'
+         '_cell.reciprocal_length_c_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the reciprocal of the _cell.length_c.
+     Standard uncertainty of the reciprocal of the _cell.length_c.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_c_su
@@ -8480,13 +8480,13 @@ save_chemical.temperature_decomposition_su
 _definition.id                          '_chemical.temperature_decomposition_su'
 loop_
   _alias.definition_id
-         '_chemical_temperature_decomposition_su'          
-         '_chemical.temperature_decomposition_esd' 
-_definition.update                      2012-12-11
+         '_chemical_temperature_decomposition_su'
+         '_chemical.temperature_decomposition_esd'
+_definition.update                      2021-03-03
 _description.text                       
 ;
-     Standard Uncertainty of the
-     temperature at which a crystalline solid decomposes.
+     Standard uncertainty of the temperature at which
+     a crystalline solid decomposes.
 ;
 _name.category_id                       chemical
 _name.object_id                         temperature_decomposition_su
@@ -8576,13 +8576,13 @@ save_chemical.temperature_sublimation_su
 _definition.id                          '_chemical.temperature_sublimation_su'
 loop_
   _alias.definition_id
-         '_chemical_temperature_sublimation_su'  
-         '_chemical.temperature_sublimation_esd' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_chemical_temperature_sublimation_su'
+         '_chemical.temperature_sublimation_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     temperature at which a crystalline solid sublimates.
+     Standard uncertainty of the temperature at which
+     a crystalline solid sublimates.
 ;
 _name.category_id                       chemical
 _name.object_id                         temperature_sublimation_su
@@ -9400,9 +9400,9 @@ save_exptl_crystal.colour
 _definition.id                          '_exptl_crystal.colour'
 loop_
   _alias.definition_id
-         '_exptl_crystal_colour' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_exptl_crystal_colour'
+_definition.update                      2021-03-03
+_description.text
 ;
      Colour description of a crystal as a list of the allowed
      exptl_crystal_appearance states for general, intensity and hue.
@@ -9416,7 +9416,7 @@ _type.contents                          Code
 _type.dimension                         '[3]'
 loop_
   _description_example.case
-         '[transluscent, pale, green]' 
+         '[translucent, pale, green]'
 loop_
   _method.purpose
   _method.expression
@@ -9542,13 +9542,13 @@ save_exptl_crystal.density_meas_su
 _definition.id                          '_exptl_crystal.density_meas_su'
 loop_
   _alias.definition_id
-         '_exptl_crystal_density_meas_su'        
-         '_exptl_crystal.density_meas_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_exptl_crystal_density_meas_su'
+         '_exptl_crystal.density_meas_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Crystal density measured using standard chemical and physical methods.
+     Standard uncertainty of the crystal density measured
+     using standard chemical and physical methods.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         density_meas_su
@@ -9642,13 +9642,13 @@ save_exptl_crystal.density_meas_temp_su
 _definition.id                          '_exptl_crystal.density_meas_temp_su'
 loop_
   _alias.definition_id
-         '_exptl_crystal_density_meas_temp_su'   
-         '_exptl_crystal.density_meas_temp_esd' 
+         '_exptl_crystal_density_meas_temp_su'
+         '_exptl_crystal.density_meas_temp_esd'
 _definition.update                      2012-11-22
-_description.text                       
+_description.text
 ;
-     Standard Uncertainty of the
-     Temperature at which _exptl_crystal.density_meas was determined.
+     Standard uncertainty of the temperature at
+     which _exptl_crystal.density_meas was determined.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         density_meas_temp_su
@@ -10461,11 +10461,11 @@ loop_
          '_space_group_IT_number'
          '_symmetry.Int_Tables_number'
          '_symmetry_Int_Tables_number'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
      The number as assigned in International Tables for Crystallography
-     Vol A, specifying the proper affine class (i.e. the orientation
+     Vol. A, specifying the proper affine class (i.e. the orientation
      preserving affine class) of space groups (crystallographic space
      group type) to which the space group belongs. This number defines
      the space group type but not the coordinate system expressed.
@@ -10633,8 +10633,8 @@ loop_
          '_space_group_name_Hall'
          '_symmetry_space_group_name_Hall'
          '_symmetry.space_group_name_Hall'
-_definition.update                      2016-05-09
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      Space group symbol defined by Hall. Each component of the
      space group name is separated by a space or an underscore.
@@ -10644,7 +10644,7 @@ _description.text
      should not be used in new CIFs.
      Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525
           [See also International Tables for Crystallography,
-          Vol.B (1993) 1.4 Appendix B]
+          Vol. B (1993) 1.4 Appendix B]
 ;
 _name.category_id                       space_group
 _name.object_id                         name_Hall
@@ -11073,11 +11073,11 @@ save_
 save_space_group_symop.RT
 
 _definition.id                          '_space_group_symop.RT'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
      The TRANSPOSE of the symmetry rotation matrix representing the point
-     group opertions of the space group
+     group operations of the space group
  
                      |  r11  r21  r31  |
               RT  =  |  r12  r22  r32  |
@@ -11404,14 +11404,14 @@ save_
 save_function.Closest
 
 _definition.id                          '_function.Closest'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
      The function
                    d  =  Closest( v, w )
  
      returns the cell translation vector required to obtain the
-     closest cell-translated occurence of the vector V to the vector
+     closest cell-translated occurrence of the vector V to the vector
      W.
 ;
 _name.category_id                       function
@@ -12074,13 +12074,13 @@ save_geom_angle.value_su
 _definition.id                          '_geom_angle.value_su'
 loop_
   _alias.definition_id
-         '_geom_angle_su'    
-         '_geom_angle.value_esd' 
-_definition.update                      2012-12-14
+         '_geom_angle_su'
+         '_geom_angle.value_esd'
+_definition.update                      2021-03-03
 _description.text                       
 ;
-     Standard Uncertainty of the
-     angle defined by the sites identified by _geom_angle.id
+     Standard uncertainty of the angle defined by
+     the sites identified by _geom_angle.id.
 ;
 _name.category_id                       geom_angle
 _name.object_id                         value_su
@@ -12221,13 +12221,13 @@ save_geom_bond.distance_su
 _definition.id                          '_geom_bond.distance_su'
 loop_
   _alias.definition_id
-         '_geom_bond_distance_su'      
-         '_geom_bond.dist_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_bond_distance_su'
+         '_geom_bond.dist_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the intramolecular bond distance
-     between the sites identified by _geom_bond.id
+     Standard uncertainty of the intramolecular bond distance
+     between the sites identified by _geom_bond.id.
 ;
 _name.category_id                       geom_bond
 _name.object_id                         distance_su
@@ -12501,13 +12501,13 @@ save_geom_contact.distance_su
 _definition.id                          '_geom_contact.distance_su'
 loop_
   _alias.definition_id
-         '_geom_contact_distance_su'   
-         '_geom_contact.dist_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_contact_distance_su'
+         '_geom_contact.dist_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the intermolecular distance between
-     the atomic sites identified by _geom_contact.id
+     Standard uncertainty of the intermolecular distance between
+     the atomic sites identified by _geom_contact.id.
 ;
 _name.category_id                       geom_contact
 _name.object_id                         distance_su
@@ -12671,12 +12671,12 @@ save_geom_hbond.angle_DHA_su
 _definition.id                          '_geom_hbond.angle_DHA_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_angle_DHA_su'    
-         '_geom_hbond.angle_DHA_esd' 
-_definition.update                      2019-07-24
+         '_geom_hbond_angle_DHA_su'
+         '_geom_hbond.angle_DHA_esd'
+_definition.update                      2021-03-03
 _description.text
 ;
-     The standard uncertainty of the angle subtended by the sites identified
+     Standard uncertainty of the angle subtended by the sites identified
      by _geom_hbond.id. The hydrogen at site H is at the apex of the angle.
 ;
 _name.category_id                       geom_hbond
@@ -12777,14 +12777,13 @@ save_geom_hbond.distance_DA_su
 _definition.id                          '_geom_hbond.distance_DA_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_distance_DA_su'  
-         '_geom_hbond.dist_DA_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_hbond_distance_DA_su'
+         '_geom_hbond.dist_DA_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     set of data items which specify the distance between the
-     three atom sites identified by _geom_hbond.id.
+     Standard uncertainty of the set of data items which specify
+     the distance between the three atom sites identified by _geom_hbond.id.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         distance_DA_su
@@ -12842,14 +12841,13 @@ save_geom_hbond.distance_DH_su
 _definition.id                          '_geom_hbond.distance_DH_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_distance_DH_su'  
-         '_geom_hbond.dist_DH_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_hbond_distance_DH_su'
+         '_geom_hbond.dist_DH_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     set of data items which specify the distance between the
-     three atom sites identified by _geom_hbond.id.
+     Standard uncertainty of the set of data items which specify
+     the distance between the three atom sites identified by _geom_hbond.id.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         distance_DH_su
@@ -12907,14 +12905,13 @@ save_geom_hbond.distance_HA_su
 _definition.id                          '_geom_hbond.distance_HA_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_distance_HA_su'  
-         '_geom_hbond.dist_HA_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_hbond_distance_HA_su'
+         '_geom_hbond.dist_HA_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     set of data items which specify the distance between the
-     three atom sites identified by _geom_hbond.id.
+     Standard uncertainty of the set of data items which specify
+     the distance between the three atom sites identified by _geom_hbond.id.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         distance_HA_su
@@ -13136,12 +13133,12 @@ save_geom_torsion.angle_su
 _definition.id                          '_geom_torsion.angle_su'
 loop_
   _alias.definition_id
-         '_geom_torsion_su'  
-         '_geom_torsion.value_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_geom_torsion_su'
+         '_geom_torsion.value_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the torsion angle.
+     Standard uncertainty of the torsion angle.
 ;
 _name.category_id                       geom_torsion
 _name.object_id                         angle_su
@@ -13425,10 +13422,10 @@ save_
 save_model_site.adp_eigen_system
 
 _definition.id                          '_model_site.adp_eigen_system'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     The set of three adp eigenvales and associated eigenvectors
+     The set of three adp eigenvalues and associated eigenvectors
      in the form of 4 element List. Each list has the form
  
                    (val, vecX, vecY, vecZ)
@@ -14038,12 +14035,12 @@ save_valence_ref.reference
 _definition.id                          '_valence_ref.reference'
 loop_
   _alias.definition_id
-         '_valence_ref_reference' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_valence_ref_reference'
+_definition.update                      2021-03-03
+_description.text
 ;
      Literature reference from which the valence parameters
-     identified by _valence_param.id were taken
+     identified by _valence_param.id were taken.
 ;
 _name.category_id                       valence_ref
 _name.object_id                         reference
@@ -15236,11 +15233,11 @@ save_citation.database_id_Medline
 _definition.id                          '_citation.database_id_Medline'
 loop_
   _alias.definition_id
-         '_citation_database_id_Medline' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_citation_database_id_Medline'
+_definition.update                      2021-03-03
+_description.text
 ;
-i    Medline accession number categorizing a bibliographic entry.
+     MEDLINE accession number categorizing a bibliographic entry.
 ;
 _name.category_id                       citation
 _name.object_id                         'database_id_Medline'
@@ -16215,12 +16212,12 @@ save_database_code.COD
 _definition.id                          '_database_code.COD'
 loop_
   _alias.definition_id
-         '_database_code_COD'          
-         '_database.code_COD' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_database_code_COD'
+         '_database.code_COD'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Code assigned by Crystallography Open Database (COD).
+     Code assigned by the Crystallography Open Database (COD).
 ;
 _name.category_id                       'database_code'
 _name.object_id                         COD
@@ -16397,12 +16394,12 @@ save_database_code.PDB
 _definition.id                          '_database_code.PDB'
 loop_
   _alias.definition_id
-         '_database_code_PDB'          
-         '_database.code_PDB' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_database_code_PDB'
+         '_database.code_PDB'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Code assigned by the Protein Data Base.
+     Code assigned by the Protein Data Bank.
 ;
 _name.category_id                       'database_code'
 _name.object_id                         PDB
@@ -16458,10 +16455,10 @@ save_
 save_database_related.id
 
 _definition.id          '_database_related.id'
-_definition.update      2019-01-08
+_definition.update      2021-03-03
 _description.text
 ;
-       An identifer for this database reference
+       An identifier for this database reference.
 ;
 _name.category_id       database_related
 _name.object_id         id
@@ -16900,11 +16897,11 @@ save_journal.suppl_publ_number
 _definition.id                          '_journal.suppl_publ_number'
 loop_
   _alias.definition_id
-         '_journal_suppl_publ_number' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_suppl_publ_number'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Number of supplementary publication.
+     Number of the supplementary publication.
 ;
 _name.category_id                       journal
 _name.object_id                         suppl_publ_number
@@ -17216,12 +17213,12 @@ save_journal_date.from_coeditor
 _definition.id                          '_journal_date.from_coeditor'
 loop_
   _alias.definition_id
-         '_journal_date_from_coeditor'           
-         '_journal.date_from_coeditor' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_from_coeditor'
+         '_journal.date_from_coeditor'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication recieved from coeditor.
+     Date the publication was received from the coeditor.
 ;
 _name.category_id                       journal_date
 _name.object_id                         from_coeditor
@@ -17238,12 +17235,12 @@ save_journal_date.printers_final
 _definition.id                          '_journal_date.printers_final'
 loop_
   _alias.definition_id
-         '_journal_date_printers_final'          
-         '_journal.date_printers_final' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_printers_final'
+         '_journal.date_printers_final'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication last sent to the printers.
+     Date the publication was last sent to the printers.
 ;
 _name.category_id                       journal_date
 _name.object_id                         printers_final
@@ -17260,12 +17257,12 @@ save_journal_date.printers_first
 _definition.id                          '_journal_date.printers_first'
 loop_
   _alias.definition_id
-         '_journal_date_printers_first'          
-         '_journal.date_printers_first' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_printers_first'
+         '_journal.date_printers_first'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication first sent to the printers.
+     Date the publication was first sent to the printers.
 ;
 _name.category_id                       journal_date
 _name.object_id                         printers_first
@@ -17282,12 +17279,12 @@ save_journal_date.proofs_in
 _definition.id                          '_journal_date.proofs_in'
 loop_
   _alias.definition_id
-         '_journal_date_proofs_in'     
-         '_journal.date_proofs_in' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_proofs_in'
+         '_journal.date_proofs_in'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication proofs recieved.
+     Date the publication proofs were received.
 ;
 _name.category_id                       journal_date
 _name.object_id                         proofs_in
@@ -17304,12 +17301,12 @@ save_journal_date.proofs_out
 _definition.id                          '_journal_date.proofs_out'
 loop_
   _alias.definition_id
-         '_journal_date_proofs_out'    
-         '_journal.date_proofs_out' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_proofs_out'
+         '_journal.date_proofs_out'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication proofs sent out.
+     Date the publication proofs were sent out.
 ;
 _name.category_id                       journal_date
 _name.object_id                         proofs_out
@@ -17326,12 +17323,12 @@ save_journal_date.recd_copyright
 _definition.id                          '_journal_date.recd_copyright'
 loop_
   _alias.definition_id
-         '_journal_date_recd_copyright'          
-         '_journal.date_recd_copyright' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_recd_copyright'
+         '_journal.date_recd_copyright'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date completed copyright recieved.
+     Date the completed copyright was received.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_copyright
@@ -17348,12 +17345,12 @@ save_journal_date.recd_electronic
 _definition.id                          '_journal_date.recd_electronic'
 loop_
   _alias.definition_id
-         '_journal_date_recd_electronic'         
-         '_journal.date_recd_electronic' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_recd_electronic'
+         '_journal.date_recd_electronic'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date publication recieved electronically.
+     Date the publication was received electronically.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_electronic
@@ -17370,12 +17367,12 @@ save_journal_date.recd_hard_copy
 _definition.id                          '_journal_date.recd_hard_copy'
 loop_
   _alias.definition_id
-         '_journal_date_recd_hard_copy'          
-         '_journal.date_recd_hard_copy' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_recd_hard_copy'
+         '_journal.date_recd_hard_copy'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date publication recieved as hard copy.
+     Date the publication was received as hard copy.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_hard_copy
@@ -17392,12 +17389,12 @@ save_journal_date.to_coeditor
 _definition.id                          '_journal_date.to_coeditor'
 loop_
   _alias.definition_id
-         '_journal_date_to_coeditor'   
-         '_journal.date_to_coeditor' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_to_coeditor'
+         '_journal.date_to_coeditor'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication sent to the coeditor.
+     Date the publication was sent to the coeditor.
 ;
 _name.category_id                       journal_date
 _name.object_id                         to_coeditor
@@ -18092,11 +18089,11 @@ save_publ_body.label
 _definition.id                          '_publ_body.label'
 loop_
   _alias.definition_id
-         '_publ_body_label' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_publ_body_label'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Unigue identifier for each part of the body of the paper.
+     Unique identifier for each part of the body of the paper.
 ;
 _name.category_id                       publ_body
 _name.object_id                         label
@@ -18106,9 +18103,9 @@ _type.container                         Single
 _type.contents                          Code
 loop_
   _description_example.case
-         1         
-         1.1       
-         2.1.3 
+         1
+         1.1
+         2.1.3
 
 save_
 
@@ -19221,15 +19218,14 @@ save_atom_site.B_equiv_geom_mean_su
 _definition.id                          '_atom_site.B_equiv_geom_mean_su'
 loop_
   _alias.definition_id
-         '_atom_site_B_equiv_geom_mean_su'       
-         '_atom_site.B_equiv_geom_mean_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_site_B_equiv_geom_mean_su'
+         '_atom_site.B_equiv_geom_mean_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty value for the
-     Equivalent isotropic atomic displacement parameter, B(equiv),
-     in angstroms squared, calculated as the geometric mean of
-     the anisotropic atomic displacement parameters.
+     Standard uncertainty value for the equivalent isotropic atomic
+     displacement parameter, B(equiv), in angstroms squared, calculated
+     as the geometric mean of the anisotropic atomic displacement parameters.
 ;
 _name.category_id                       atom_site
 _name.object_id                         B_equiv_geom_mean_su
@@ -19284,15 +19280,15 @@ save_atom_site.B_iso_or_equiv_su
 _definition.id                          '_atom_site.B_iso_or_equiv_su'
 loop_
   _alias.definition_id
-         '_atom_site_B_iso_or_equiv_su'          
-         '_atom_site.B_iso_or_equiv_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_site_B_iso_or_equiv_su'
+         '_atom_site.B_iso_or_equiv_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty value for the
-     Isotropic atomic displacement parameter, or equivalent isotropic
-     atomic displacement parameter, B(equiv), in angstroms squared,
-     calculated from anisotropic temperature factor parameters.
+     Standard uncertainty value for the isotropic atomic displacement
+     parameter, or equivalent isotropic atomic displacement parameter,
+     B(equiv), in angstroms squared, calculated from anisotropic
+     temperature factor parameters.
 ;
 _name.category_id                       atom_site
 _name.object_id                         B_iso_or_equiv_su
@@ -19867,13 +19863,13 @@ save_atom_site.occupancy_su
 _definition.id                          '_atom_site.occupancy_su'
 loop_
   _alias.definition_id
-         '_atom_site_occupancy_su'     
-         '_atom_site.occupancy_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_site_occupancy_su'
+         '_atom_site.occupancy_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty value for the
-     The fraction of the atom type present at this site.
+     Standard uncertainty value for the fraction of the atom type
+     present at this site.
 ;
 _name.category_id                       atom_site
 _name.object_id                         occupancy_su
@@ -22787,11 +22783,11 @@ loop_
   _alias.definition_id
          '_refine_diff_density_max_su'
          '_refine.diff_density_max_esd'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     Standard Uncertainty of the
-     Maximum density value in a difference Fourier map.
+     Standard uncertainty of the maximum density value
+     in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_max_su
@@ -22818,12 +22814,12 @@ save_refine_diff.density_min
 _definition.id                          '_refine_diff.density_min'
 loop_
   _alias.definition_id
-         '_refine_diff_density_min'    
-         '_refine.diff_density_min' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_min'
+         '_refine.diff_density_min'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Miniumum density value in a difference Fourier map.
+     Minimum density value in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_min
@@ -22852,11 +22848,11 @@ loop_
   _alias.definition_id
          '_refine_diff_density_min_su'
          '_refine.diff_density_min_esd'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     Standard Uncertainty of the
-     Miniumum density value in a difference Fourier map.
+     Standard uncertainty of the minimum density value
+     in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_min_su
@@ -22922,11 +22918,11 @@ loop_
   _alias.definition_id
          '_refine_diff_density_rms_su'
          '_refine.diff_density_rms_esd'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     Standard Uncertainty of the
-     Root mean square density value in a difference Fourier map.
+     Standard uncertainty of the root mean square density value
+     in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_rms_su
@@ -23026,11 +23022,11 @@ loop_
   _alias.definition_id
          '_refine_ls_abs_structure_Flack_su'
          '_refine.ls_abs_structure_Flack_esd'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     Standard Uncertainty of the
-     The measure of absolute structure as defined by Flack (1983).
+     Standard uncertainty of the measure of absolute structure
+     as defined by Flack (1983).
 ;
 _name.category_id                       refine_ls
 _name.object_id                         abs_structure_Flack_su
@@ -23080,11 +23076,11 @@ loop_
   _alias.definition_id
          '_refine_ls_abs_structure_Rogers_su'
          '_refine.ls_abs_structure_Rogers_esd'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     Standard Uncertainty of the
-     The measure of absolute structure as defined by Rogers (1981).
+     Standard uncertainty of the measure of absolute structure
+     as defined by Rogers (1981).
 ;
 _name.category_id                       refine_ls
 _name.object_id                         abs_structure_Rogers_su
@@ -23103,13 +23099,13 @@ save_refine_ls.d_res_high
 _definition.id                          '_refine_ls.d_res_high'
 loop_
   _alias.definition_id
-         '_refine_ls_d_res_high'       
-         '_refine.ls_d_res_high' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_d_res_high'
+         '_refine.ls_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections used in refinement.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       refine_ls
 _name.object_id                         d_res_high
@@ -23128,13 +23124,13 @@ save_refine_ls.d_res_low
 _definition.id                          '_refine_ls.d_res_low'
 loop_
   _alias.definition_id
-         '_refine_ls_d_res_low'        
-         '_refine.ls_d_res_low' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_d_res_low'
+         '_refine.ls_d_res_low'
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections used in refinement.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       refine_ls
 _name.object_id                         d_res_low
@@ -23193,12 +23189,12 @@ save_refine_ls.extinction_coef_su
 _definition.id                          '_refine_ls.extinction_coef_su'
 loop_
   _alias.definition_id
-         '_refine_ls_extinction_coef_su'         
-         '_refine.ls_extinction_coef_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_extinction_coef_su'
+         '_refine.ls_extinction_coef_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the extinction coefficient
+     Standard uncertainty of the extinction coefficient.
 ;
 _name.category_id                       refine_ls
 _name.object_id                         extinction_coef_su
@@ -23422,12 +23418,12 @@ save_refine_ls.goodness_of_fit_all_su
 _definition.id                          '_refine_ls.goodness_of_fit_all_su'
 loop_
   _alias.definition_id
-         '_refine_ls_goodness_of_fit_all_su'     
-         '_refine.ls_goodness_of_fit_all_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_goodness_of_fit_all_su'
+         '_refine.ls_goodness_of_fit_all_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the Least-squares goodness-of-fit
+     Standard uncertainty of the least-squares goodness-of-fit
      parameter S for all reflections after the final cycle of refinement.
 ;
 _name.category_id                       refine_ls
@@ -23492,13 +23488,13 @@ save_refine_ls.goodness_of_fit_gt_su
 _definition.id                          '_refine_ls.goodness_of_fit_gt_su'
 loop_
   _alias.definition_id
-         '_refine_ls_goodness_of_fit_gt_su'      
-         '_refine.ls_goodness_of_fit_gt_esd'     
-         '_refine.ls_goodness_of_fit_obs_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_goodness_of_fit_gt_su'
+         '_refine.ls_goodness_of_fit_gt_esd'
+         '_refine.ls_goodness_of_fit_obs_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the Least-squares goodness-of-fit
+     Standard uncertainty of the least-squares goodness-of-fit
      parameter S for gt reflections after the final cycle of refinement.
 ;
 _name.category_id                       refine_ls
@@ -24413,12 +24409,12 @@ save_refine_ls_class.d_res_high
 _definition.id                          '_refine_ls_class.d_res_high'
 loop_
   _alias.definition_id
-         '_refine_ls_class_d_res_high' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_class_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections in this class.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       refine_ls_class
 _name.object_id                         d_res_high
@@ -24438,11 +24434,11 @@ _definition.id                          '_refine_ls_class.d_res_low'
 loop_
   _alias.definition_id
          '_refine_ls_class_d_res_low' 
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections in this class.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       refine_ls_class
 _name.object_id                         d_res_low
@@ -24664,7 +24660,7 @@ loop_
      Validation method for _space_group.crystal_system removed as it contained
      undefined dREL functions "throw" and "alert".
 ;
-     3.0.14     2021-03-01
+     3.0.14     2021-03-03
 ;
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
@@ -24676,4 +24672,6 @@ loop_
      Added methods for determining the measurement units to the definitions
      of the _refine_diff.density_min_su, _refine_diff.density_max_su and
      _refine_diff.density_rms_su data items.
+
+    Corrected a few typos in several save frame definitions.
 ;
