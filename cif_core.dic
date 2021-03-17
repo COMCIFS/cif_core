@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.14
-_dictionary.date                        2021-03-01
+_dictionary.date                        2021-03-17
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -6523,8 +6523,8 @@ save_
 save_cell.metric_tensor
 
 _definition.id                          '_cell.metric_tensor'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      The direct space (covariant) metric tensor used to transform
      vectors and coordinates from real (direct) to reciprocal space.
@@ -6536,17 +6536,18 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             angstrom_squared
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      with c  as  cell
  
            _cell.metric_tensor = [[ c.vector_a*c.vector_a, c.vector_a*c.vector_b, c.vector_a*c.vector_c ],
                                   [ c.vector_b*c.vector_a, c.vector_b*c.vector_b, c.vector_b*c.vector_c ],
                                   [ c.vector_c*c.vector_a, c.vector_c*c.vector_b, c.vector_c*c.vector_c ]]
-; 
+;
 
 save_
 
@@ -6554,8 +6555,8 @@ save_
 save_cell.orthogonal_matrix
 
 _definition.id                          '_cell.orthogonal_matrix'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      Orthogonal matrix of the crystal unit cell. Definition uses
      Rollet's axial assignments with cell vectors a,b,c aligned
@@ -6568,17 +6569,18 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With c as cell
     _cell.orthogonal_matrix =   [
           [  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma), 0,                                0 ],
           [ -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma), c.length_b*Sind(c.angle_alpha),   0 ],
           [  c.length_a*Cosd(c.angle_beta),                                c.length_b*Cosd(c.angle_alpha), c.length_c ]]
-; 
+;
 
 save_
 
@@ -7187,8 +7189,8 @@ save_
 save_cell.convert_Uij_to_betaij
 
 _definition.id                          '_cell.convert_Uij_to_betaij'
-_definition.update                      2016-09-08
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      The reciprocal space matrix for converting the U(ij) matrix of
      atomic displacement parameters to a dimensionless beta(IJ) matrix.
@@ -7211,10 +7213,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             reciprocal_angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;\
     With c  as  cell
  
@@ -7230,8 +7233,8 @@ save_
 save_cell.convert_Uiso_to_Uij
 
 _definition.id                          '_cell.convert_Uiso_to_Uij'
-_definition.update                      2016-09-08
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      The reciprocal space matrix for converting the isotropic Uiso
      atomic displacement parameter to the anisotropic matrix Uij.
@@ -7248,10 +7251,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;\
     With c  as  cell
  
@@ -7259,7 +7263,7 @@ loop_
                           [[ 1., Cosd(c.reciprocal_angle_gamma), Cosd(c.reciprocal_angle_beta)  ],
                            [ Cosd(c.reciprocal_angle_gamma), 1., Cosd(c.reciprocal_angle_alpha) ],
                            [ Cosd(c.reciprocal_angle_beta), Cosd(c.reciprocal_angle_alpha), 1.  ]]
-; 
+;
 
 save_
 
@@ -7268,7 +7272,7 @@ save_cell.reciprocal_metric_tensor
 
 _definition.id                          '_cell.reciprocal_metric_tensor'
 _definition.update                      2016-09-08
-_description.text                       
+_description.text
 ;
      The reciprocal (contravariant) metric tensor used to transform
      vectors and coordinates from reciprocal space to real (direct)
@@ -7281,6 +7285,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             reciprocal_angstrom_squared
 loop_
   _method.purpose
   _method.expression
@@ -7299,8 +7304,8 @@ save_
 save_cell.reciprocal_orthogonal_matrix
 
 _definition.id                          '_cell.reciprocal_orthogonal_matrix'
-_definition.update                      2016-09-08
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      Orthogonal matrix of the reciprocal space. The matrix may be
      used to transform the non-orthogonal vector h = (h,k,l) into
@@ -7315,15 +7320,16 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             reciprocal_angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
     _cell.reciprocal_orthogonal_matrix  =  Inverse(
  
                            Transpose( _cell.orthogonal_matrix ))
-; 
+;
 
 save_
 
@@ -7671,8 +7677,8 @@ save_
 save_cell.reciprocal_vector_a
 
 _definition.id                          '_cell.reciprocal_vector_a'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      Reciprocal of the _cell.vector_a.
 ;
@@ -7683,15 +7689,16 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             reciprocal_angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With c  as  cell
  
     _cell.reciprocal_vector_a = c.vector_b ^ c.vector_c / _cell.volume
-; 
+;
 
 save_
 
@@ -7699,8 +7706,8 @@ save_
 save_cell.reciprocal_vector_b
 
 _definition.id                          '_cell.reciprocal_vector_b'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      Reciprocal of the _cell.vector_b.
 ;
@@ -7711,15 +7718,16 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             reciprocal_angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With c  as  cell
  
     _cell.reciprocal_vector_b = c.vector_c ^ c.vector_a / _cell.volume
-; 
+;
 
 save_
 
@@ -7727,8 +7735,8 @@ save_
 save_cell.reciprocal_vector_c
 
 _definition.id                          '_cell.reciprocal_vector_c'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      Reciprocal of the _cell.vector_c.
 ;
@@ -7739,23 +7747,24 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             reciprocal_angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With c  as  cell
  
     _cell.reciprocal_vector_c = c.vector_a ^ c.vector_b / _cell.volume
-; 
+;
 
 save_
 
 save_cell.vector_a
 
 _definition.id                          '_cell.vector_a'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      The cell vector along the x axis.
 ;
@@ -7766,13 +7775,14 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
     _cell.vector_a = _cell.orthogonal_matrix * Matrix([1,0,0])
-; 
+;
 
 save_
 
@@ -7780,8 +7790,8 @@ save_
 save_cell.vector_b
 
 _definition.id                          '_cell.vector_b'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      The cell vector along the y axis.
 ;
@@ -7792,13 +7802,14 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
     _cell.vector_b = _cell.orthogonal_matrix * Matrix([0,1,0])
-; 
+;
 
 save_
 
@@ -7806,8 +7817,8 @@ save_
 save_cell.vector_c
 
 _definition.id                          '_cell.vector_c'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      The cell vector along the z axis.
 ;
@@ -7818,13 +7829,14 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
     _cell.vector_c = _cell.orthogonal_matrix * Matrix([0,0,1])
-; 
+;
 
 save_
 
@@ -11040,8 +11052,8 @@ save_space_group_symop.operation_description
 save_space_group_symop.R
 
 _definition.id                          '_space_group_symop.R'
-_definition.update                      2016-05-13
-_description.text                       
+_definition.update                      2021-03-17
+_description.text
 ;
      A matrix containing the symmetry rotation operations of a space group
  
@@ -11056,16 +11068,17 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
                        sm =  _space_group_symop.Seitz_matrix
         _space_group_symop.R =  [[sm[0,0],sm[0,1],sm[0,2]],
                               [sm[1,0],sm[1,1],sm[1,2]],
                               [sm[2,0],sm[2,1],sm[2,2]]]
-; 
+;
 
 save_
 
@@ -24664,14 +24677,13 @@ loop_
      Validation method for _space_group.crystal_system removed as it contained
      undefined dREL functions "throw" and "alert".
 ;
-     3.0.14     2021-03-01
+     3.0.14     2021-03-17
 ;
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
      publ_contact_author. Added diffrn_measurement.specimen_attachment_type.
 
-     Added the 'none' measurement units to the definitions of multiple
-     data items.
+     Added measurement units to the definitions of multiple data items.
 
      Added methods for determining the measurement units to the definitions
      of the _refine_diff.density_min_su, _refine_diff.density_max_su and
