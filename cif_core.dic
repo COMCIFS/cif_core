@@ -21337,7 +21337,7 @@ _definition.update                      2021-03-01
 _description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     category to Cartesian coordinates. The axial alignments of this
      transformation are described in _atom_sites_Cartn_transform.axes.
      The 3 x 1 translation is defined in _atom_sites_Cartn_transform.vector.
  
@@ -21421,7 +21421,7 @@ _definition.update                      2021-03-01
 _description.text
 ;
      The 3x1 translation is used with _atom_sites_Cartn_transform.matrix
-     used to transform fractional coordinates to Cartesian  coordinates.
+     used to transform fractional coordinates to Cartesian coordinates.
      The axial alignments of this transformation are described in
      _atom_sites_Cartn_transform.axes.
 ;
@@ -21708,7 +21708,7 @@ _definition.update                      2021-03-01
 _description.text
 ;
      The 3x1 translation is used with _atom_sites_fract_transform.matrix
-     used to transform Cartesian coordinates to fractional  coordinates.
+     used to transform Cartesian coordinates to fractional coordinates.
      The axial alignments of this transformation are described in
      _atom_sites_fract_transform.axes.
 ;
