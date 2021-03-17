@@ -13508,7 +13508,7 @@ save_
 save_model_site.Cartn_xyz
 
 _definition.id                          '_model_site.Cartn_xyz'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-17
 _description.text
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
@@ -13520,7 +13520,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
-_units.code                             none
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
@@ -19403,7 +19403,7 @@ save_
 save_atom_site.Cartn_xyz
 
 _definition.id                          '_atom_site.Cartn_xyz'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-17
 _description.text
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
@@ -19415,7 +19415,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
-_units.code                             none
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
@@ -20610,7 +20610,7 @@ save_
 save_atom_site_aniso.matrix_B
 
 _definition.id                          '_atom_site_aniso.matrix_B'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-17
 _description.text
 ;
      The symmetric anisotropic atomic displacement matrix B.
@@ -20622,7 +20622,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
-_units.code                             none
+_units.code                             angstrom_squared
 loop_
   _method.purpose
   _method.expression
@@ -20641,7 +20641,7 @@ save_
 save_atom_site_aniso.matrix_U
 
 _definition.id                          '_atom_site_aniso.matrix_U'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-17
 _description.text
 ;
      The symmetric anisotropic atomic displacement matrix U.
@@ -20653,7 +20653,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
-_units.code                             none
+_units.code                             angstrom_squared
 loop_
   _method.purpose
   _method.expression
@@ -21346,7 +21346,7 @@ save_
 save_atom_sites_Cartn_transform.matrix
 
 _definition.id                          '_atom_sites_Cartn_transform.matrix'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-17
 _description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
@@ -21369,7 +21369,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
-_units.code                             none
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
@@ -21430,7 +21430,7 @@ save_
 save_atom_sites_Cartn_transform.vector
 
 _definition.id                          '_atom_sites_Cartn_transform.vector'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-17
 _description.text
 ;
      The 3x1 translation is used with _atom_sites_Cartn_transform.matrix
@@ -21445,7 +21445,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
-_units.code                             none
+_units.code                             angstroms
 loop_
   _method.purpose
   _method.expression
