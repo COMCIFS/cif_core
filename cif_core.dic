@@ -21087,11 +21087,11 @@ save_ATOM_SITES_CARTN_TRANSFORM
 _definition.id                          ATOM_SITES_CARTN_TRANSFORM
 _definition.scope                       Category
 _definition.class                       Set
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      The CATEGORY of data items used to describe the matrix elements
-     used to transform Cartesion coordinates into fractional coordinates
+     used to transform fractional coordinates into Cartesian coordinates
      of all atom sites in a crystal structure.
 ;
 _name.category_id                       ATOM_SITES
@@ -21333,7 +21333,7 @@ _definition.update                      2021-03-01
 _description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     category to Cartesian coordinates. The axial alignments of this
      transformation are described in _atom_sites_Cartn_transform.axes.
      The 3 x 1 translation is defined in _atom_sites_Cartn_transform.vector.
  
@@ -21417,7 +21417,7 @@ _definition.update                      2021-03-01
 _description.text
 ;
      The 3x1 translation is used with _atom_sites_Cartn_transform.matrix
-     used to transform fractional coordinates to Cartesian  coordinates.
+     used to transform fractional coordinates to Cartesian coordinates.
      The axial alignments of this transformation are described in
      _atom_sites_Cartn_transform.axes.
 ;
@@ -21447,11 +21447,11 @@ save_ATOM_SITES_FRACT_TRANSFORM
 _definition.id                          ATOM_SITES_FRACT_TRANSFORM
 _definition.scope                       Category
 _definition.class                       Set
-_definition.update                      2012-12-11
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      The CATEGORY of data items used to describe the matrix elements
-     used to transform Cartesion coordinates into fractional coordinates
+     used to transform Cartesian coordinates into fractional coordinates
      of all atom sites in a crystal structure.
 ;
 _name.category_id                       ATOM_SITES
@@ -21616,11 +21616,11 @@ save_
 save_atom_sites_fract_transform.matrix
 
 _definition.id                          '_atom_sites_fract_transform.matrix'
-_definition.update                      2021-03-01
+_definition.update                      2021-03-03
 _description.text
 ;
-     Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     Matrix used to transform Cartesian coordinates in the ATOM_SITE
+     category to fractional coordinates. The axial alignments of this
      transformation are described in _atom_sites_fract_transform.axes.
      The 3 x 1 translation is defined in _atom_sites_fract_transform.vector.
  
@@ -21704,7 +21704,7 @@ _definition.update                      2021-03-01
 _description.text
 ;
      The 3x1 translation is used with _atom_sites_fract_transform.matrix
-     used to transform Cartesian coordinates to fractional  coordinates.
+     used to transform Cartesian coordinates to fractional coordinates.
      The axial alignments of this transformation are described in
      _atom_sites_fract_transform.axes.
 ;
@@ -24674,4 +24674,6 @@ loop_
      _refine_diff.density_rms_su data items.
 
      Corrected a few typos in several save frame definitions.
+     Corrected the definitions of the ATOM_SITES_CARTN_TRANSFORM category
+     and the _atom_sites_fract_transform.matrix data item.
 ;

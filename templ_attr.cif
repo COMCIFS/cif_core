@@ -428,7 +428,7 @@ save_Cartn_matrix
     _description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     category to Cartesian coordinates. The axial alignments of this
      transformation are described in _atom_sites_Cartn_transform.axes.
      The 3x1 translation is defined in _atom_sites_Cartn_transform.vector.
 
