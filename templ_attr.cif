@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2021-03-01
+    _dictionary.date             2021-03-18
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  3.14.0
     _description.text
@@ -139,10 +139,10 @@ save_rho_slater
 
 save_matrix_pdb
 
-    _definition.update           2021-03-01
+    _definition.update           2021-03-18
     _description.text
 ;
-     Element of the PDM ORIGX matrix or vector.
+     Element of the PDB ORIGX matrix or vector.
 ;
     _type.purpose                Number
     _type.source                 Derived
@@ -428,7 +428,7 @@ save_Cartn_matrix
     _description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     category to Cartesian coordinates. The axial alignments of this
      transformation are described in _atom_sites_Cartn_transform.axes.
      The 3x1 translation is defined in _atom_sites_Cartn_transform.vector.
 
@@ -557,12 +557,12 @@ save_aniso_BIJ2
 
 save_aniso_BIJ_su
 
-    _definition.update           2014-06-08
+    _definition.update           2021-03-18
     _description.text
 ;
      These are the standard uncertainty values (SU) for the standard 
      form of the Bij anisotropic atomic displacement components (see 
-     _aniso_BIJ. Because these values are TYPE measurand, the su values
+     _aniso_BIJ). Because these values are TYPE measurand, the su values
      may in practice be auto generated as part of the Bij calculation.
 ;
     _type.purpose                SU
@@ -599,12 +599,12 @@ save_aniso_UIJ
 
 save_aniso_UIJ_su
 
-    _definition.update           2014-06-08
+    _definition.update           2021-09-18
     _description.text
 ;
      These are the standard uncertainty values (SU) for the standard 
      form of the Uij anisotropic atomic displacement components (see 
-     _aniso_UIJ. Because these values are TYPE measurand, the su values
+     _aniso_UIJ). Because these values are TYPE measurand, the su values
      may in practice be auto generated as part of the Uij calculation.
 ;
     _type.purpose                SU
@@ -927,9 +927,9 @@ save_display_colour
    'Integer'.
 ;
 
-    1.4.10 2021-03-01
+    1.4.10 2021-03-18
 ;
-   Corrected a typo in the description of the 'rho_coeff' save frame.
+   Corrected a few typos in the descriptions of several save frames.
 
    Added the 'none' measurement units to the 'rho_coeff', 'rho_kappa',
    'rho_slater', 'matrix_pdb', 'matrix_w', 'index_limit_max', 'index_limit_min',

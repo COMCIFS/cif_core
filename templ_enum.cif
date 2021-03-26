@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2021-03-01
+    _dictionary.date             2021-03-18
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  3.11.04
     _description.text
@@ -744,7 +744,7 @@ save_units_code
 
    'none' "dimensionless - e.g. a ratio, factor, weight or scale"
 
-   'coulomb'        "electronic charge in Coulombs"
+   'coulomb'        "electronic charge in coulombs"
    'electron_volts' "electronic charge in electron volts eV"
 
    'metres'       "length    'metres (metres * 10^(0))'"
@@ -789,7 +789,7 @@ save_units_code
    'grams_per_centimetre_cubed' "density 'grams per cubic centimetre'" 
    'kilograms_per_metre_cubed' "density 'kilograms per cubic metre'" 
    'megagrams_per_metre_cubed' "density 'megagrams per cubic metre'" 
-   'angstrom_cubed_per_dalton' "density 'angstrom cubed per Dalton'"
+   'angstrom_cubed_per_dalton' "density 'angstrom cubed per dalton'"
 
    'kilopascals'      "pressure      'kilopascals'"
    'gigapascals'      "pressure      'gigapascals'"
@@ -2152,7 +2152,7 @@ save_colour_hue
    Updated the human-readable descriptions of the 'kelvins' and
    'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-      1.4.8   2021-03-01
+      1.4.8   2021-03-18
 ;
-   Corrected a typo in the 'units_code' save frame.
+   Corrected a few typos in the 'units_code' save frame.
 ;
