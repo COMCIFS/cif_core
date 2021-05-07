@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.14
-_dictionary.date                        2020-08-13
+_dictionary.date                        2021-03-03
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             3.14.0
@@ -177,13 +177,13 @@ save_diffrn.ambient_pressure_su
 _definition.id                          '_diffrn.ambient_pressure_su'
 loop_
   _alias.definition_id
-         '_diffrn_ambient_pressure_su'           
-         '_diffrn.ambient_pressure_esd' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_diffrn_ambient_pressure_su'
+         '_diffrn.ambient_pressure_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Mean hydrostatic  pressure at which intensities were measured.
+     Standard uncertainty of the mean hydrostatic pressure
+     at which intensities were measured.
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_pressure_su
@@ -306,14 +306,14 @@ save_diffrn.ambient_temperature_su
 _definition.id                          '_diffrn.ambient_temperature_su'
 loop_
   _alias.definition_id
-         '_diffrn_ambient_temperature_su'        
-         '_diffrn_ambient_temp_su'     
-         '_diffrn.ambient_temp_esd' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_diffrn_ambient_temperature_su'
+         '_diffrn_ambient_temp_su'
+         '_diffrn.ambient_temp_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     mean temperature at which intensities were measured.
+     Standard uncertainty of the mean temperature
+     at which intensities were measured.
 ;
 _name.category_id                       diffrn
 _name.object_id                         ambient_temperature_su
@@ -884,7 +884,7 @@ save_
 save_diffrn_measurement.specimen_attachment_type
 
 _definition.id                '_diffrn_measurement.specimen_attachment_type'
-_definition.update            2020-08-13
+_definition.update            2021-03-01
 _description.text
 ;
 
@@ -905,8 +905,8 @@ _type.purpose                 State
 _type.source                  Recorded
 
 loop_
-     _enumerated_set.case
-     _enumerated_set.detail
+     _enumeration_set.state
+     _enumeration_set.detail
         epoxy            "An epoxy glue"
         oil              "An oil"
         grease           "A type of grease, for example hydrocarbon or silicone grease"
@@ -1105,8 +1105,8 @@ save_
 save_diffrn_orient_matrix.UBIJ
 
 _definition.id                          '_diffrn_orient_matrix.UBIJ'
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The 3x3 matrix specifying the orientation of the crystal with
      respect to the diffractometer axes.
@@ -1118,10 +1118,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With  o  as  diffrn_orient_matrix
  
@@ -1238,8 +1239,8 @@ save_
 save_diffrn_orient_refln.hkl
 
 _definition.id                          '_diffrn_orient_refln.hkl'
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Miller indices of a reflection used to define the orientation matrix.
 ;
@@ -1250,10 +1251,12 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
+
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With a as diffrn_orient_refln
  
@@ -2008,8 +2011,8 @@ save_
 save_diffrn_refln.hkl
 
 _definition.id                          '_diffrn_refln.hkl'
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Miller indices of a measured reflection. These need not match the
      _refln.hkl values if a transformation of the original measured
@@ -2022,6 +2025,7 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
@@ -2471,11 +2475,11 @@ save_diffrn_reflns.Laue_measured_fraction_max
 _definition.id                          '_diffrn_reflns.Laue_measured_fraction_max'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_Laue_measured_fraction_max' 
-_definition.update                      2013-01-20
-_description.text                       
+         '_diffrn_reflns_Laue_measured_fraction_max'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Fraction of Laue-group unique reflections (symmetry-independent in
+     Fraction of Laue group unique reflections (symmetry-independent in
      the Laue group) measured out to the resolution given in
      _diffrn_reflns.resolution_max or _diffrn_reflns.theta_max.
      The Laue group always contains a centre of symmetry so that the
@@ -2575,8 +2579,8 @@ save_
 save_diffrn_reflns.limit_max
 
 _definition.id                          '_diffrn_reflns.limit_max'
-_definition.update                      2013-01-15
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Maximum Miller indices of measured diffraction reflections.
 ;
@@ -2587,10 +2591,11 @@ _type.source                            Assigned
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With t as diffrn_reflns
  
@@ -2603,10 +2608,10 @@ save_
 save_diffrn_reflns.limit_min
 
 _definition.id                          '_diffrn_reflns.limit_min'
-_definition.update                      2013-01-15
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
-     Minimum Miller indices of meas.ued diffraction reflections.
+     Minimum Miller indices of measured diffraction reflections.
 ;
 _name.category_id                       diffrn_reflns
 _name.object_id                         limit_min
@@ -2615,10 +2620,11 @@ _type.source                            Assigned
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With t as diffrn_reflns
  
@@ -2633,9 +2639,9 @@ save_diffrn_reflns.number
 _definition.id                          '_diffrn_reflns.number'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_number' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_diffrn_reflns_number'
+_definition.update                      2021-03-01
+_description.text
 ;
      Total number of measured intensities, excluding reflections that are
      classed as systematically absent arising from translational symmetry
@@ -2648,6 +2654,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -2983,7 +2990,7 @@ save_diffrn_reflns_class.d_res_low
 _definition.id                          '_diffrn_reflns_class.d_res_low'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_class_d_res_low' 
+         '_diffrn_reflns_class_d_res_low'
 _definition.update                      2012-11-26
 _description.text                       
 ;
@@ -3030,9 +3037,9 @@ save_diffrn_reflns_class.number
 _definition.id                          '_diffrn_reflns_class.number'
 loop_
   _alias.definition_id
-         '_diffrn_reflns_class_number' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_diffrn_reflns_class_number'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of measured intensities for a reflection class, excluding
      the systematic absences arising from centring translations.
@@ -3044,6 +3051,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -3198,8 +3206,8 @@ save_
 save_diffrn_reflns_transf_matrix.TIJ
 
 _definition.id                          '_diffrn_reflns_transf_matrix.TIJ'
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Elements of the matrix used to transform the diffraction reflection
      indices _diffrn_refln.hkl into the _refln.hkl indices.
@@ -3214,10 +3222,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With t as diffrn_reflns_transf_matrix
  
@@ -3289,11 +3298,11 @@ save_diffrn_scale_group.I_net
 _definition.id                          '_diffrn_scale_group.I_net'
 loop_
   _alias.definition_id
-         '_diffrn_scale_group_I_net' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_diffrn_scale_group_I_net'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Scale for a specific measurement group of eflections. Is multiplied
+     Scale for a specific measurement group of reflections. Is multiplied
      with the net intensity to place all intensities on a common scale.
 ;
 _name.category_id                       diffrn_scale_group
@@ -3327,8 +3336,8 @@ save_
 save_diffrn_source.beamline
 
 _definition.id                       '_diffrn_source.beamline'
-_definition.update                   2020-09-18
-_definition
+_definition.update                   2021-03-01
+_description.text
 ;
          The name of the beamline at the synchrotron or other
          large-scale experimental facility at which the experiment
@@ -3669,10 +3678,10 @@ save_diffrn_standard.interval_count
 _definition.id                          '_diffrn_standard.interval_count'
 loop_
   _alias.definition_id
-         '_diffrn_standards_interval_count'      
-         '_diffrn_standards.interval_count' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_diffrn_standards_interval_count'
+         '_diffrn_standards.interval_count'
+_definition.update                      2021-03-01
+_description.text
 ;
      Reflection count between the standard reflection measurements.
 ;
@@ -3683,6 +3692,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -3716,10 +3726,10 @@ save_diffrn_standard.number
 _definition.id                          '_diffrn_standard.number'
 loop_
   _alias.definition_id
-         '_diffrn_standards_number'    
-         '_diffrn_standards.number' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_diffrn_standards_number'
+         '_diffrn_standards.number'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of unique standard reflections used in measurements.
 ;
@@ -3730,6 +3740,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -3815,8 +3826,8 @@ save_
 save_diffrn_standard_refln.hkl
 
 _definition.id                          '_diffrn_standard_refln.hkl'
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Miller indices of a standard reflection.
 ;
@@ -3827,10 +3838,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With d as diffrn_standard_refln
  
@@ -4213,13 +4225,13 @@ save_refln.F_meas_su
 _definition.id                          '_refln.F_meas_su'
 loop_
   _alias.definition_id
-         '_refln_F_sigma'    
-         '_refln.F_meas_sigma'         
-         '_refln_F_meas_su' 
-_definition.update                      2013-02-21
-_description.text                       
+         '_refln_F_sigma'
+         '_refln.F_meas_sigma'
+         '_refln_F_meas_su'
+_definition.update                      2021-03-03
+_description.text
 ;
-     The standard uncertainty of the measured structure factor amplitude.
+     Standard uncertainty of the measured structure factor amplitude.
 ;
 _name.category_id                       refln
 _name.object_id                         F_meas_su
@@ -4312,13 +4324,13 @@ save_refln.F_squared_meas_su
 _definition.id                          '_refln.F_squared_meas_su'
 loop_
   _alias.definition_id
-         '_refln_F_squared_sigma'      
-         '_refln.F_squared_sigma'      
-         '_refln_F_squared_meas_su' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_refln_F_squared_sigma'
+         '_refln.F_squared_sigma'
+         '_refln_F_squared_meas_su'
+_definition.update                      2021-03-03
+_description.text
 ;
-     The standard uncertainty of the measured structure factor squared.
+     Standard uncertainty of the measured structure factor squared.
 ;
 _name.category_id                       refln
 _name.object_id                         F_squared_meas_su
@@ -4345,8 +4357,8 @@ save_
 save_refln.fom
 
 _definition.id                          '_refln.fom'
-_definition.update                      2014-06-12
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The figure of merit m for this reflection.
  
@@ -4364,6 +4376,7 @@ _type.purpose                           Number
 _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
+_units.code                             none
 
 save_
 
@@ -4426,8 +4439,8 @@ save_
 save_refln.hkl
 
 _definition.id                          '_refln.hkl'
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The Miller indices as a reciprocal space vector.
 ;
@@ -4438,10 +4451,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With r  as  refln
  
@@ -4582,13 +4596,13 @@ save_refln.intensity_meas_su
 _definition.id                          '_refln.intensity_meas_su'
 loop_
   _alias.definition_id
-         '_refln_intensity_meas_su'    
-         '_refln.intensity_sigma'      
-         '_refln_intensity_sigma' 
-_definition.update                      2013-01-23
-_description.text                       
+         '_refln_intensity_meas_su'
+         '_refln.intensity_sigma'
+         '_refln_intensity_sigma'
+_definition.update                      2021-03-03
+_description.text
 ;
-     standard uncertainty of the measured intensity.
+     Standard uncertainty of the measured intensity.
 ;
 _name.category_id                       refln
 _name.object_id                         intensity_meas_su
@@ -4798,9 +4812,9 @@ save_refln.symmetry_epsilon
 _definition.id                          '_refln.symmetry_epsilon'
 loop_
   _alias.definition_id
-         '_refln_symmetry_epsilon' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_refln_symmetry_epsilon'
+_definition.update                      2021-03-01
+_description.text
 ;
      The symmetry reinforcement factor corresponding to the number of
      times the reflection indices are generated identically from the
@@ -4813,6 +4827,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:48
+_units.code                             none
 
 save_
 
@@ -4822,9 +4837,9 @@ save_refln.symmetry_multiplicity
 _definition.id                          '_refln.symmetry_multiplicity'
 loop_
   _alias.definition_id
-         '_refln_symmetry_multiplicity' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_refln_symmetry_multiplicity'
+_definition.update                      2021-03-01
+_description.text
 ;
      The number of reflections symmetry-equivalent under the Laue
      symmetry to the present reflection. In the Laue symmetry, Friedel
@@ -4839,6 +4854,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:48
+_units.code                             none
 
 save_
 
@@ -4944,12 +4960,12 @@ save_reflns.d_resolution_high
 _definition.id                          '_reflns.d_resolution_high'
 loop_
   _alias.definition_id
-         '_reflns_d_resolution_high' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_d_resolution_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the final REFLN data set.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       reflns
 _name.object_id                         d_resolution_high
@@ -4968,12 +4984,12 @@ save_reflns.d_resolution_low
 _definition.id                          '_reflns.d_resolution_low'
 loop_
   _alias.definition_id
-         '_reflns_d_resolution_low' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_d_resolution_low'
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the final REFLN data set.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       reflns
 _name.object_id                         d_resolution_low
@@ -5241,12 +5257,12 @@ save_reflns.number_gt
 _definition.id                          '_reflns.number_gt'
 loop_
   _alias.definition_id
-         '_reflns_number_gt'           
-         '_reflns_number_observed'     
-         '_reflns_number_obs'          
+         '_reflns_number_gt'
+         '_reflns_number_observed'
+         '_reflns_number_obs'
          '_reflns.number_obs' 
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Count of reflections in the REFLN set (not the DIFFRN_REFLN set) which
      are significantly intense (see _reflns.threshold_expression). It may
@@ -5261,6 +5277,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -5270,11 +5287,11 @@ save_reflns.number_total
 _definition.id                          '_reflns.number_total'
 loop_
   _alias.definition_id
-         '_reflns_number_total'        
-         '_reflns_number_all'          
-         '_reflns.number_all' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_number_total'
+         '_reflns_number_all'
+         '_reflns.number_all'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of reflections in the REFLN set (not the DIFFRN_REFLN set). It may
      include Friedel equivalent reflections (i.e. those which are equivalent
@@ -5288,6 +5305,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -5394,12 +5412,12 @@ save_reflns_class.d_res_high
 _definition.id                          '_reflns_class.d_res_high'
 loop_
   _alias.definition_id
-         '_reflns_class_d_res_high' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_class_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections in this class.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       reflns_class
 _name.object_id                         d_res_high
@@ -5419,11 +5437,11 @@ _definition.id                          '_reflns_class.d_res_low'
 loop_
   _alias.definition_id
          '_reflns_class_d_res_low' 
-_definition.update                      2012-11-26
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections in this class.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       reflns_class
 _name.object_id                         d_res_low
@@ -5466,10 +5484,10 @@ save_reflns_class.number_gt
 _definition.id                          '_reflns_class.number_gt'
 loop_
   _alias.definition_id
-         '_reflns_class_number_observed'         
-         '_reflns_class_number_gt' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_class_number_observed'
+         '_reflns_class_number_gt'
+_definition.update                      2021-03-01
+_description.text
 ;
      Count of reflections in this REFLN class (not the DIFFRN_REFLN set)
      which are significantly intense (see _reflns.threshold_expression). It may
@@ -5484,6 +5502,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -5493,9 +5512,9 @@ save_reflns_class.number_total
 _definition.id                          '_reflns_class.number_total'
 loop_
   _alias.definition_id
-         '_reflns_class_number_total' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_class_number_total'
+_definition.update                      2021-03-01
+_description.text
 ;
      Count of reflections in this REFLN class (not the DIFFRN_REFLN set). It
      may include Friedel equivalent reflections (those which are equivalent
@@ -5509,6 +5528,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -5825,12 +5845,12 @@ save_reflns_shell.d_res_high
 _definition.id                          '_reflns_shell.d_res_high'
 loop_
   _alias.definition_id
-         '_reflns_shell_d_res_high' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_shell_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections in this shell.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       reflns_shell
 _name.object_id                         d_res_high
@@ -5880,12 +5900,12 @@ save_reflns_shell.d_res_low
 _definition.id                          '_reflns_shell.d_res_low'
 loop_
   _alias.definition_id
-         '_reflns_shell_d_res_low' 
-_definition.update                      2012-11-26
-_description.text                       
+         '_reflns_shell_d_res_low'
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections in this shell.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       reflns_shell
 _name.object_id                         d_res_low
@@ -5961,9 +5981,9 @@ save_reflns_shell.number_measured_all
 _definition.id                          '_reflns_shell.number_measured_all'
 loop_
   _alias.definition_id
-         '_reflns_shell_number_measured_all' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_shell_number_measured_all'
+_definition.update                      2021-03-01
+_description.text
 ;
      Total count of reflections measured for this resolution shell.
 ;
@@ -5974,6 +5994,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -5983,11 +6004,11 @@ save_reflns_shell.number_measured_gt
 _definition.id                          '_reflns_shell.number_measured_gt'
 loop_
   _alias.definition_id
-         '_reflns_shell_number_measured_obs'     
-         '_reflns_shell.number_measured_obs'     
-         '_reflns_shell_number_measured_gt' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_shell_number_measured_obs'
+         '_reflns_shell.number_measured_obs'
+         '_reflns_shell_number_measured_gt'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of reflections measured for this resolution shell which are
      significantly intense (see _reflns.threshold_expression).
@@ -5999,6 +6020,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -6008,10 +6030,10 @@ save_reflns_shell.number_possible
 _definition.id                          '_reflns_shell.number_possible'
 loop_
   _alias.definition_id
-         '_reflns_shell_number_possible'         
-         '_reflns_shell.number_possible_all' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_shell_number_possible'
+         '_reflns_shell.number_possible_all'
+_definition.update                      2021-03-01
+_description.text
 ;
      Count of symmetry-unique reflections possible in this reflection shell.
 ;
@@ -6022,6 +6044,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -6031,9 +6054,9 @@ save_reflns_shell.number_unique_all
 _definition.id                          '_reflns_shell.number_unique_all'
 loop_
   _alias.definition_id
-         '_reflns_shell_number_unique_all' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_shell_number_unique_all'
+_definition.update                      2021-03-01
+_description.text
 ;
      Count of symmetry-unique reflections present in this reflection shell.
 ;
@@ -6044,6 +6067,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -6053,11 +6077,11 @@ save_reflns_shell.number_unique_gt
 _definition.id                          '_reflns_shell.number_unique_gt'
 loop_
   _alias.definition_id
-         '_reflns_shell_number_unique_gt'        
-         '_reflns_shell_number_unique_obs'       
-         '_reflns_shell.number_unique_obs' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_reflns_shell_number_unique_gt'
+         '_reflns_shell_number_unique_obs'
+         '_reflns_shell.number_unique_obs'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of symmetry-unique reflections present in this reflection shell
      which are significantly intense (see _reflns.threshold_expression).
@@ -6069,6 +6093,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -6267,9 +6292,9 @@ save_exptl.crystals_number
 _definition.id                          '_exptl.crystals_number'
 loop_
   _alias.definition_id
-         '_exptl_crystals_number' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_exptl_crystals_number'
+_definition.update                      2021-03-01
+_description.text
 ;
      Total number of crystals used in the measurement of intensities.
 ;
@@ -6280,6 +6305,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -6474,9 +6500,9 @@ save_cell.formula_units_Z
 _definition.id                          '_cell.formula_units_Z'
 loop_
   _alias.definition_id
-         '_cell_formula_units_Z' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_cell_formula_units_Z'
+_definition.update                      2021-03-01
+_description.text
 ;
      The number of the formula units in the unit cell as specified
      by _chemical_formula.structural, _chemical_formula.moiety or
@@ -6489,6 +6515,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -6849,12 +6876,12 @@ save_cell_measurement.pressure_su
 _definition.id                          '_cell_measurement.pressure_su'
 loop_
   _alias.definition_id
-         '_cell_measurement_pressure_su'         
-         '_cell_measurement.pressure_esd' 
-_definition.update                      2019-07-24
+         '_cell_measurement_pressure_su'
+         '_cell_measurement.pressure_esd'
+_definition.update                      2021-03-03
 _description.text
 ;
-     The standard uncertainty of the pressure at which
+     Standard uncertainty of the pressure at which
      the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
@@ -6900,9 +6927,9 @@ save_cell_measurement.reflns_used
 _definition.id                          '_cell_measurement.reflns_used'
 loop_
   _alias.definition_id
-         '_cell_measurement_reflns_used' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_cell_measurement_reflns_used'
+_definition.update                      2021-03-01
+_description.text
 ;
      Total number of reflections used to determine the unit cell.
      The reflections may be specified as cell_measurement_refln items.
@@ -6914,6 +6941,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      3:
+_units.code                             none
 
 save_
 
@@ -6949,12 +6977,12 @@ save_cell_measurement.temperature_su
 _definition.id                          '_cell_measurement.temperature_su'
 loop_
   _alias.definition_id
-         '_cell_measurement_temp_su'   
-         '_cell_measurement.temp_esd' 
-_definition.update                      2019-07-24
-_description.text                       
+         '_cell_measurement_temp_su'
+         '_cell_measurement.temp_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     The standard uncertainty of the temperature of at which
+     Standard uncertainty of the temperature of at which
      the unit-cell parameters were measured.
 ;
 _name.category_id                       cell_measurement
@@ -7068,8 +7096,8 @@ save_
 save_cell_measurement_refln.hkl
 
 _definition.id                          '_cell_measurement_refln.hkl'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Miller indices of a reflection used to measure the unit cell.
 ;
@@ -7080,10 +7108,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With c  as  cell_measurement_refln
  
@@ -7337,14 +7366,14 @@ save_cell.reciprocal_angle_alpha_su
 
 _definition.id                          '_cell.reciprocal_angle_alpha_su'
 loop_
-  _alias.definition_id     
-         '_cell_reciprocal_angle_alpha_su'       
-         '_cell.reciprocal_angle_alpha_esd' 
-_definition.update                      2013-01-18
-_description.text                       
+  _alias.definition_id
+         '_cell_reciprocal_angle_alpha_su'
+         '_cell.reciprocal_angle_alpha_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Reciprocal of the angle between _cell.length_b and _cell.length_c.
+     Standard uncertainty of the reciprocal of the angle
+     between _cell.length_b and _cell.length_c.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_alpha_su
@@ -7398,13 +7427,13 @@ save_cell.reciprocal_angle_beta_su
 _definition.id                          '_cell.reciprocal_angle_beta_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle_beta_su'        
-         '_cell.reciprocal_angle_beta_esd' 
-_definition.update                      2013-01-18
-_description.text                       
+         '_cell_reciprocal_angle_beta_su'
+         '_cell.reciprocal_angle_beta_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Reciprocal of the angle between _cell.length_a and _cell.length_c.
+     Standard uncertainty of the reciprocal of the angle
+     between _cell.length_a and _cell.length_c.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_beta_su
@@ -7458,13 +7487,13 @@ save_cell.reciprocal_angle_gamma_su
 _definition.id                          '_cell.reciprocal_angle_gamma_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_angle_gamma_su'       
-         '_cell.reciprocal_angle_gamma_esd' 
-_definition.update                      2013-01-18
-_description.text                       
+         '_cell_reciprocal_angle_gamma_su'
+         '_cell.reciprocal_angle_gamma_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Reciprocal of the angle between _cell.length_a and _cell.length_b.
+     Standard uncertainty of the reciprocal of the angle
+     between _cell.length_a and _cell.length_b.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_angle_gamma_su
@@ -7513,12 +7542,12 @@ save_cell.reciprocal_length_a_su
 _definition.id                          '_cell.reciprocal_length_a_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length_a_su'          
-         '_cell.reciprocal_length_a_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_cell_reciprocal_length_a_su'
+         '_cell.reciprocal_length_a_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the reciprocal of the _cell.length_a.
+     Standard uncertainty of the reciprocal of the _cell.length_a.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_a_su
@@ -7566,13 +7595,13 @@ save_cell.reciprocal_length_b_su
 
 _definition.id                          '_cell.reciprocal_length_b_su'
 loop_
-  _alias.definition_id          
-         '_cell_reciprocal_length_b_su'          
-         '_cell.reciprocal_length_b_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+  _alias.definition_id
+         '_cell_reciprocal_length_b_su'
+         '_cell.reciprocal_length_b_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the reciprocal of the _cell.length_b.
+     Standard uncertainty of the reciprocal of the _cell.length_b.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_b_su
@@ -7621,12 +7650,12 @@ save_cell.reciprocal_length_c_su
 _definition.id                          '_cell.reciprocal_length_c_su'
 loop_
   _alias.definition_id
-         '_cell_reciprocal_length_c_su'          
-         '_cell.reciprocal_length_c_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_cell_reciprocal_length_c_su'
+         '_cell.reciprocal_length_c_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the reciprocal of the _cell.length_c.
+     Standard uncertainty of the reciprocal of the _cell.length_c.
 ;
 _name.category_id                       cell
 _name.object_id                         reciprocal_length_c_su
@@ -8451,13 +8480,13 @@ save_chemical.temperature_decomposition_su
 _definition.id                          '_chemical.temperature_decomposition_su'
 loop_
   _alias.definition_id
-         '_chemical_temperature_decomposition_su'          
-         '_chemical.temperature_decomposition_esd' 
-_definition.update                      2012-12-11
+         '_chemical_temperature_decomposition_su'
+         '_chemical.temperature_decomposition_esd'
+_definition.update                      2021-03-03
 _description.text                       
 ;
-     Standard Uncertainty of the
-     temperature at which a crystalline solid decomposes.
+     Standard uncertainty of the temperature at which
+     a crystalline solid decomposes.
 ;
 _name.category_id                       chemical
 _name.object_id                         temperature_decomposition_su
@@ -8547,13 +8576,13 @@ save_chemical.temperature_sublimation_su
 _definition.id                          '_chemical.temperature_sublimation_su'
 loop_
   _alias.definition_id
-         '_chemical_temperature_sublimation_su'  
-         '_chemical.temperature_sublimation_esd' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_chemical_temperature_sublimation_su'
+         '_chemical.temperature_sublimation_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     temperature at which a crystalline solid sublimates.
+     Standard uncertainty of the temperature at which
+     a crystalline solid sublimates.
 ;
 _name.category_id                       chemical
 _name.object_id                         temperature_sublimation_su
@@ -8601,9 +8630,9 @@ save_chemical_conn_atom.charge
 _definition.id                          '_chemical_conn_atom.charge'
 loop_
   _alias.definition_id
-         '_chemical_conn_atom_charge' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_chemical_conn_atom_charge'
+_definition.update                      2021-03-01
+_description.text
 ;
      The net integer charge assigned to this atom. This is the
      formal charge assignment normally found in chemical diagrams.
@@ -8615,6 +8644,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      -6:6
+_units.code                             none
 
 save_
 
@@ -8672,9 +8702,9 @@ save_chemical_conn_atom.NCA
 _definition.id                          '_chemical_conn_atom.NCA'
 loop_
   _alias.definition_id
-         '_chemical_conn_atom_NCA' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_chemical_conn_atom_NCA'
+_definition.update                      2021-03-01
+_description.text
 ;
      Total number of connected atoms excluding terminal hydrogen atoms.
 ;
@@ -8685,6 +8715,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -8694,9 +8725,9 @@ save_chemical_conn_atom.NH
 _definition.id                          '_chemical_conn_atom.NH'
 loop_
   _alias.definition_id
-         '_chemical_conn_atom_NH' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_chemical_conn_atom_NH'
+_definition.update                      2021-03-01
+_description.text
 ;
      Total number of hydrogen atoms attached to this atom,
      regardless of whether they are included in the refinement or
@@ -8711,6 +8742,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -8720,9 +8752,9 @@ save_chemical_conn_atom.number
 _definition.id                          '_chemical_conn_atom.number'
 loop_
   _alias.definition_id
-         '_chemical_conn_atom_number' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_chemical_conn_atom_number'
+_definition.update                      2021-03-01
+_description.text
 ;
      The chemical sequence number to be associated with this atom.
 ;
@@ -8733,6 +8765,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -8792,10 +8825,10 @@ save_chemical_conn_bond.atom_1
 _definition.id                          '_chemical_conn_bond.atom_1'
 loop_
   _alias.definition_id
-         '_chemical_conn_bond_atom_1'  
-         '_chem_comp_bond.atom_id_1' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_chemical_conn_bond_atom_1'
+         '_chem_comp_bond.atom_id_1'
+_definition.update                      2021-03-01
+_description.text
 ;
      Index id of first atom in a bond connecting two atom sites.
 ;
@@ -8807,6 +8840,7 @@ _type.source                            Related
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -8816,10 +8850,10 @@ save_chemical_conn_bond.atom_2
 _definition.id                          '_chemical_conn_bond.atom_2'
 loop_
   _alias.definition_id
-         '_chemical_conn_bond_atom_2'  
-         '_chem_comp_bond.atom_id_2' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_chemical_conn_bond_atom_2'
+         '_chem_comp_bond.atom_id_2'
+_definition.update                      2021-03-01
+_description.text
 ;
      Index id of second atom in a bond connecting two atom sites.
 ;
@@ -8831,6 +8865,7 @@ _type.source                            Related
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -9363,9 +9398,9 @@ save_exptl_crystal.colour
 _definition.id                          '_exptl_crystal.colour'
 loop_
   _alias.definition_id
-         '_exptl_crystal_colour' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_exptl_crystal_colour'
+_definition.update                      2021-03-03
+_description.text
 ;
      Colour description of a crystal as a list of the allowed
      exptl_crystal_appearance states for general, intensity and hue.
@@ -9379,7 +9414,7 @@ _type.contents                          Code
 _type.dimension                         '[3]'
 loop_
   _description_example.case
-         '[transluscent, pale, green]' 
+         '[translucent, pale, green]'
 loop_
   _method.purpose
   _method.expression
@@ -9505,13 +9540,13 @@ save_exptl_crystal.density_meas_su
 _definition.id                          '_exptl_crystal.density_meas_su'
 loop_
   _alias.definition_id
-         '_exptl_crystal_density_meas_su'        
-         '_exptl_crystal.density_meas_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_exptl_crystal_density_meas_su'
+         '_exptl_crystal.density_meas_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Crystal density measured using standard chemical and physical methods.
+     Standard uncertainty of the crystal density measured
+     using standard chemical and physical methods.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         density_meas_su
@@ -9605,13 +9640,13 @@ save_exptl_crystal.density_meas_temp_su
 _definition.id                          '_exptl_crystal.density_meas_temp_su'
 loop_
   _alias.definition_id
-         '_exptl_crystal_density_meas_temp_su'   
-         '_exptl_crystal.density_meas_temp_esd' 
+         '_exptl_crystal_density_meas_temp_su'
+         '_exptl_crystal.density_meas_temp_esd'
 _definition.update                      2012-11-22
-_description.text                       
+_description.text
 ;
-     Standard Uncertainty of the
-     Temperature at which _exptl_crystal.density_meas was determined.
+     Standard uncertainty of the temperature at
+     which _exptl_crystal.density_meas was determined.
 ;
 _name.category_id                       exptl_crystal
 _name.object_id                         density_meas_temp_su
@@ -10128,8 +10163,8 @@ save_
 save_exptl_crystal_face.hkl
 
 _definition.id                          '_exptl_crystal_face.hkl'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Miller indices of the crystal face.
 ;
@@ -10140,10 +10175,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With f as exptl_crystal_face
  
@@ -10423,11 +10459,11 @@ loop_
          '_space_group_IT_number'
          '_symmetry.Int_Tables_number'
          '_symmetry_Int_Tables_number'
-_definition.update                      2016-05-09
+_definition.update                      2021-03-03
 _description.text
 ;
      The number as assigned in International Tables for Crystallography
-     Vol A, specifying the proper affine class (i.e. the orientation
+     Vol. A, specifying the proper affine class (i.e. the orientation
      preserving affine class) of space groups (crystallographic space
      group type) to which the space group belongs. This number defines
      the space group type but not the coordinate system expressed.
@@ -10439,6 +10475,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:230
+_units.code                             none
 
 save_
 
@@ -10465,8 +10502,8 @@ save_space_group.Laue_class
 save_space_group.multiplicity
 
 _definition.id                          '_space_group.multiplicity'
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of unique symmetry elements in the space group.
 ;
@@ -10477,10 +10514,11 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:192
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      n =  0
  
@@ -10593,8 +10631,8 @@ loop_
          '_space_group_name_Hall'
          '_symmetry_space_group_name_Hall'
          '_symmetry.space_group_name_Hall'
-_definition.update                      2016-05-09
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      Space group symbol defined by Hall. Each component of the
      space group name is separated by a space or an underscore.
@@ -10604,7 +10642,7 @@ _description.text
      should not be used in new CIFs.
      Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525
           [See also International Tables for Crystallography,
-          Vol.B (1993) 1.4 Appendix B]
+          Vol. B (1993) 1.4 Appendix B]
 ;
 _name.category_id                       space_group
 _name.object_id                         name_Hall
@@ -10901,8 +10939,8 @@ loop_
          '_space_group_symop_id'
          '_symmetry_equiv.pos_site_id'
          '_symmetry_equiv_pos_site_id'
-_definition.update                      2019-09-25
-_description.text 
+_definition.update                      2021-03-01
+_description.text
 ;
      Index identifying each entry in the _space_group_symop.operation_xyz
      list. It is normally the sequence number of the entry in that
@@ -10919,6 +10957,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
@@ -11032,11 +11071,11 @@ save_
 save_space_group_symop.RT
 
 _definition.id                          '_space_group_symop.RT'
-_definition.update                      2016-05-13
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      The TRANSPOSE of the symmetry rotation matrix representing the point
-     group opertions of the space group
+     group operations of the space group
  
                      |  r11  r21  r31  |
               RT  =  |  r12  r22  r32  |
@@ -11049,10 +11088,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
         _space_group_symop.RT =  Transpose (_space_group_symop.R)
 ; 
@@ -11063,8 +11103,8 @@ save_
 save_space_group_symop.Seitz_matrix
 
 _definition.id                          '_space_group_symop.Seitz_matrix'
-_definition.update                      2016-05-13
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      A matrix containing the symmetry operations of a space group
      in 4x4 Seitz format.
@@ -11081,10 +11121,12 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[4,4]'
+_units.code                             none
+
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
    _space_group_symop.Seitz_matrix =  SeitzFromJones (_space_group_symop.operation_xyz)
 ; 
@@ -11095,8 +11137,8 @@ save_
 save_space_group_symop.T
 
 _definition.id                          '_space_group_symop.T'
-_definition.update                      2016-05-13
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      A vector containing the symmetry translation operations of a space group.
 ;
@@ -11107,10 +11149,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
                        sm =  _space_group_symop.Seitz_matrix
  
@@ -11209,7 +11252,7 @@ save_space_group_Wyckoff.letter
 
 save_space_group_Wyckoff.multiplicity
     _definition.id             '_space_group_Wyckoff.multiplicity'
-    _definition.update          2014-06-12
+    _definition.update          2021-03-01
     _description.text
 ;
      The multiplicity of this Wyckoff position as given in
@@ -11226,6 +11269,7 @@ save_space_group_Wyckoff.multiplicity
     _type.source                Assigned
     _type.container             Single
     _type.contents              Integer
+    _units.code                 none
      save_
 
 save_space_group_Wyckoff.site_symmetry
@@ -11358,14 +11402,14 @@ save_
 save_function.Closest
 
 _definition.id                          '_function.Closest'
-_definition.update                      2019-09-30
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      The function
                    d  =  Closest( v, w )
  
      returns the cell translation vector required to obtain the
-     closest cell-translated occurence of the vector V to the vector
+     closest cell-translated occurrence of the vector V to the vector
      W.
 ;
 _name.category_id                       function
@@ -11375,10 +11419,12 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
+
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      Function Closest( v :[Matrix, Real],   # coord vector to be cell translated
                        w :[Matrix, Real]) { # target vector
@@ -11393,8 +11439,8 @@ save_
 save_function.SeitzFromJones
 
 _definition.id                          '_function.SeitzFromJones'
-_definition.update                      2013-04-24
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The function
                    s  =  SeitzFromJones( j )
@@ -11409,10 +11455,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[4,4]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      Function SeitzFromJones( j :[Single, Text])  { # Jones symmetry notation
  
@@ -11458,8 +11505,8 @@ save_
 save_function.SymEquiv
 
 _definition.id                          '_function.SymEquiv'
-_definition.update                      2016-05-13
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The function
                      xyz' =  SymEquiv( symop, xyz )
@@ -11475,10 +11522,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      Function SymEquiv( c :[Single, Symop],    # symop string n_pqr
                         x :[Matrix, Real]   ){  # fract coordinate vector
@@ -11494,8 +11542,8 @@ save_
 save_function.SymKey
 
 _definition.id                          '_function.SymKey'
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The function
                    m  =  SymKey( s )
@@ -11510,10 +11558,11 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:192
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      Function SymKey( s :[Single, Symop])  {  # symop string
  
@@ -11530,8 +11579,8 @@ save_
 save_function.SymLat
 
 _definition.id                          '_function.SymLat'
-_definition.update                      2013-03-10
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The function
                    v  =  SymLat( s )
@@ -11546,10 +11595,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      Function SymLat( s :[Single, Symop])  {  # symop string
  
@@ -12020,13 +12070,13 @@ save_geom_angle.value_su
 _definition.id                          '_geom_angle.value_su'
 loop_
   _alias.definition_id
-         '_geom_angle_su'    
-         '_geom_angle.value_esd' 
-_definition.update                      2012-12-14
+         '_geom_angle_su'
+         '_geom_angle.value_esd'
+_definition.update                      2021-03-03
 _description.text                       
 ;
-     Standard Uncertainty of the
-     angle defined by the sites identified by _geom_angle.id
+     Standard uncertainty of the angle defined by
+     the sites identified by _geom_angle.id.
 ;
 _name.category_id                       geom_angle
 _name.object_id                         value_su
@@ -12167,13 +12217,13 @@ save_geom_bond.distance_su
 _definition.id                          '_geom_bond.distance_su'
 loop_
   _alias.definition_id
-         '_geom_bond_distance_su'      
-         '_geom_bond.dist_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_bond_distance_su'
+         '_geom_bond.dist_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the intramolecular bond distance
-     between the sites identified by _geom_bond.id
+     Standard uncertainty of the intramolecular bond distance
+     between the sites identified by _geom_bond.id.
 ;
 _name.category_id                       geom_bond
 _name.object_id                         distance_su
@@ -12206,9 +12256,9 @@ save_geom_bond.multiplicity
 _definition.id                          '_geom_bond.multiplicity'
 loop_
   _alias.definition_id
-         '_geom_bond_multiplicity' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_geom_bond_multiplicity'
+_definition.update                      2021-03-01
+_description.text
 ;
      The number of times the given bond appears in the environment
      of the atoms labelled _geom_bond.atom_site_label_1. In cases
@@ -12223,6 +12273,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -12444,13 +12495,13 @@ save_geom_contact.distance_su
 _definition.id                          '_geom_contact.distance_su'
 loop_
   _alias.definition_id
-         '_geom_contact_distance_su'   
-         '_geom_contact.dist_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_contact_distance_su'
+         '_geom_contact.dist_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the intermolecular distance between
-     the atomic sites identified by _geom_contact.id
+     Standard uncertainty of the intermolecular distance between
+     the atomic sites identified by _geom_contact.id.
 ;
 _name.category_id                       geom_contact
 _name.object_id                         distance_su
@@ -12612,12 +12663,12 @@ save_geom_hbond.angle_DHA_su
 _definition.id                          '_geom_hbond.angle_DHA_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_angle_DHA_su'    
-         '_geom_hbond.angle_DHA_esd' 
-_definition.update                      2019-07-24
+         '_geom_hbond_angle_DHA_su'
+         '_geom_hbond.angle_DHA_esd'
+_definition.update                      2021-03-03
 _description.text
 ;
-     The standard uncertainty of the angle subtended by the sites identified
+     Standard uncertainty of the angle subtended by the sites identified
      by _geom_hbond.id. The hydrogen at site H is at the apex of the angle.
 ;
 _name.category_id                       geom_hbond
@@ -12718,14 +12769,13 @@ save_geom_hbond.distance_DA_su
 _definition.id                          '_geom_hbond.distance_DA_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_distance_DA_su'  
-         '_geom_hbond.dist_DA_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_hbond_distance_DA_su'
+         '_geom_hbond.dist_DA_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     set of data items which specify the distance between the
-     three atom sites identified by _geom_hbond.id.
+     Standard uncertainty of the set of data items which specify
+     the distance between the three atom sites identified by _geom_hbond.id.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         distance_DA_su
@@ -12783,14 +12833,13 @@ save_geom_hbond.distance_DH_su
 _definition.id                          '_geom_hbond.distance_DH_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_distance_DH_su'  
-         '_geom_hbond.dist_DH_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_hbond_distance_DH_su'
+         '_geom_hbond.dist_DH_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     set of data items which specify the distance between the
-     three atom sites identified by _geom_hbond.id.
+     Standard uncertainty of the set of data items which specify
+     the distance between the three atom sites identified by _geom_hbond.id.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         distance_DH_su
@@ -12848,14 +12897,13 @@ save_geom_hbond.distance_HA_su
 _definition.id                          '_geom_hbond.distance_HA_su'
 loop_
   _alias.definition_id
-         '_geom_hbond_distance_HA_su'  
-         '_geom_hbond.dist_HA_esd' 
-_definition.update                      2012-12-14
-_description.text                       
+         '_geom_hbond_distance_HA_su'
+         '_geom_hbond.dist_HA_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     set of data items which specify the distance between the
-     three atom sites identified by _geom_hbond.id.
+     Standard uncertainty of the set of data items which specify
+     the distance between the three atom sites identified by _geom_hbond.id.
 ;
 _name.category_id                       geom_hbond
 _name.object_id                         distance_HA_su
@@ -13075,12 +13123,12 @@ save_geom_torsion.angle_su
 _definition.id                          '_geom_torsion.angle_su'
 loop_
   _alias.definition_id
-         '_geom_torsion_su'  
-         '_geom_torsion.value_esd' 
-_definition.update                      2012-11-22
-_description.text                       
+         '_geom_torsion_su'
+         '_geom_torsion.value_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the torsion angle.
+     Standard uncertainty of the torsion angle.
 ;
 _name.category_id                       geom_torsion
 _name.object_id                         angle_su
@@ -13362,10 +13410,10 @@ save_
 save_model_site.adp_eigen_system
 
 _definition.id                          '_model_site.adp_eigen_system'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
-     The set of three adp eigenvales and associated eigenvectors
+     The set of three adp eigenvalues and associated eigenvectors
      in the form of 4 element List. Each list has the form
  
                    (val, vecX, vecY, vecZ)
@@ -13379,13 +13427,14 @@ _name.category_id                       model_site
 _name.object_id                         adp_eigen_system
 _type.purpose                           Measurand
 _type.source                            Derived
-_type.container                         List
-_type.contents                          'List(Real,Real,Real,Real)'
-_type.dimension                         '[3]'
+_type.container                         Array
+_type.contents                          Real
+_type.dimension                         '[3,4]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
       A    =  _cell.orthogonal_matrix
       U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
@@ -13400,8 +13449,8 @@ save_
 save_model_site.adp_matrix_beta
 
 _definition.id                          '_model_site.adp_matrix_beta'
-_definition.update                      2013-03-08
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Matrix of dimensionless anisotropic atomic displacement parameters.
 ;
@@ -13412,10 +13461,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      with m as model_site
      a = atom_site[m.label]
@@ -13430,8 +13480,8 @@ save_
 save_model_site.Cartn_xyz
 
 _definition.id                          '_model_site.Cartn_xyz'
-_definition.update                      2012-11-22
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
 ;
@@ -13442,10 +13492,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With  m  as  model_site
  
@@ -13481,8 +13532,8 @@ save_
 save_model_site.fract_xyz
 
 _definition.id                          '_model_site.fract_xyz'
-_definition.update                      2012-12-14
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Vector of fractional atom site coordinates.
 ;
@@ -13493,10 +13544,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
         With  m  as  model_site
  
@@ -13525,8 +13577,8 @@ save_
 save_model_site.index
 
 _definition.id                          '_model_site.index'
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Index number of an atomic site in the connected molecule.
 ;
@@ -13537,6 +13589,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -13563,8 +13616,8 @@ save_
 save_model_site.mole_index
 
 _definition.id                          '_model_site.mole_index'
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Index number of a distinct molecules in the cell, not related by
      symmetry.
@@ -13576,6 +13629,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 
 save_
@@ -13741,8 +13795,8 @@ _definition.id                          '_valence_param.atom_1_valence'
 loop_
   _alias.definition_id
          '_valence_param_atom_1_valence' 
-_definition.update                      2012-12-13
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The formal charge of the atom 1 whose bond
      valence parameters are given in this category.
@@ -13754,6 +13808,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
+_units.code                             none
 
 save_
 
@@ -13787,8 +13842,8 @@ _definition.id                          '_valence_param.atom_2_valence'
 loop_
   _alias.definition_id
          '_valence_param_atom_2_valence' 
-_definition.update                      2012-12-13
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The formal charge of the atom 2 whose bond
      valence parameters are given in this category.
@@ -13800,6 +13855,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Real
 _enumeration.range                      0.:
+_units.code                             none
 
 save_
 
@@ -13854,9 +13910,9 @@ save_valence_param.id
 _definition.id                          '_valence_param.id'
 loop_
   _alias.definition_id
-         '_valence_param_id' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_valence_param_id'
+_definition.update                      2021-03-01
+_description.text
 ;
      Unique index loop number of the valence parameter loop.
 ;
@@ -13867,6 +13923,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -13964,12 +14021,12 @@ save_valence_ref.reference
 _definition.id                          '_valence_ref.reference'
 loop_
   _alias.definition_id
-         '_valence_ref_reference' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_valence_ref_reference'
+_definition.update                      2021-03-03
+_description.text
 ;
      Literature reference from which the valence parameters
-     identified by _valence_param.id were taken
+     identified by _valence_param.id were taken.
 ;
 _name.category_id                       valence_ref
 _name.object_id                         reference
@@ -15162,11 +15219,11 @@ save_citation.database_id_Medline
 _definition.id                          '_citation.database_id_Medline'
 loop_
   _alias.definition_id
-         '_citation_database_id_Medline' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_citation_database_id_Medline'
+_definition.update                      2021-03-03
+_description.text
 ;
-i    Medline accession number categorizing a bibliographic entry.
+     MEDLINE accession number categorizing a bibliographic entry.
 ;
 _name.category_id                       citation
 _name.object_id                         'database_id_Medline'
@@ -15359,9 +15416,9 @@ save_citation.journal_issue
 _definition.id                          '_citation.journal_issue'
 loop_
   _alias.definition_id
-         '_citation_journal_issue' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_citation_journal_issue'
+_definition.update                      2021-03-01
+_description.text
 ;
      Issue number of the journal cited;  relevant for articles.
 ;
@@ -15372,6 +15429,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 loop_
   _description_example.case
          2 
@@ -15384,9 +15442,9 @@ save_citation.journal_volume
 _definition.id                          '_citation.journal_volume'
 loop_
   _alias.definition_id
-         '_citation_journal_volume' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_citation_journal_volume'
+_definition.update                      2021-03-01
+_description.text
 ;
      Volume number of the journal cited;  relevant for articles.
 ;
@@ -15397,6 +15455,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 loop_
   _description_example.case
          174 
@@ -15657,9 +15716,9 @@ save_citation_author.ordinal
 _definition.id                          '_citation_author.ordinal'
 loop_
   _alias.definition_id
-         '_citation_author_ordinal' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_citation_author_ordinal'
+_definition.update                      2021-03-01
+_description.text
 ;
      Ordinal code specifies the order of the author's name in the list
      of authors of the citation.
@@ -15671,6 +15730,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -15778,9 +15838,9 @@ save_citation_editor.ordinal
 _definition.id                          '_citation_editor.ordinal'
 loop_
   _alias.definition_id
-         '_citation_editor_ordinal' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_citation_editor_ordinal'
+_definition.update                      2021-03-01
+_description.text
 ;
      This data item defines the order of the editor's name in the
      list of editors of a citation.
@@ -15792,6 +15852,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -16133,12 +16194,12 @@ save_database_code.COD
 _definition.id                          '_database_code.COD'
 loop_
   _alias.definition_id
-         '_database_code_COD'          
-         '_database.code_COD' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_database_code_COD'
+         '_database.code_COD'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Code assigned by Crystallography Open Database (COD).
+     Code assigned by the Crystallography Open Database (COD).
 ;
 _name.category_id                       'database_code'
 _name.object_id                         COD
@@ -16315,12 +16376,12 @@ save_database_code.PDB
 _definition.id                          '_database_code.PDB'
 loop_
   _alias.definition_id
-         '_database_code_PDB'          
-         '_database.code_PDB' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_database_code_PDB'
+         '_database.code_PDB'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Code assigned by the Protein Data Base.
+     Code assigned by the Protein Data Bank.
 ;
 _name.category_id                       'database_code'
 _name.object_id                         PDB
@@ -16376,10 +16437,10 @@ save_
 save_database_related.id
 
 _definition.id          '_database_related.id'
-_definition.update      2019-01-08
+_definition.update      2021-03-03
 _description.text
 ;
-       An identifer for this database reference
+       An identifier for this database reference.
 ;
 _name.category_id       database_related
 _name.object_id         id
@@ -16558,8 +16619,8 @@ save_
 save_display_colour.RGB
 
 _definition.id                          '_display_colour.RGB'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The red-green-blue intensities, bases 256, for each colour code.
 ;
@@ -16570,10 +16631,11 @@ _type.source                            Derived
 _type.container                         List
 _type.contents                          Integer
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With c  as  display_colour
  
@@ -16817,11 +16879,11 @@ save_journal.suppl_publ_number
 _definition.id                          '_journal.suppl_publ_number'
 loop_
   _alias.definition_id
-         '_journal_suppl_publ_number' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_suppl_publ_number'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Number of supplementary publication.
+     Number of the supplementary publication.
 ;
 _name.category_id                       journal
 _name.object_id                         suppl_publ_number
@@ -16838,9 +16900,9 @@ save_journal.suppl_publ_pages
 _definition.id                          '_journal.suppl_publ_pages'
 loop_
   _alias.definition_id
-         '_journal_suppl_publ_pages' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_suppl_publ_pages'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of pages in the supplementary publication.
 ;
@@ -16851,6 +16913,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -16878,9 +16941,9 @@ save_journal.volume
 _definition.id                          '_journal.volume'
 loop_
   _alias.definition_id
-         '_journal_volume' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_volume'
+_definition.update                      2021-03-01
+_description.text
 ;
      Volume number of the publication.
 ;
@@ -16891,6 +16954,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -16900,9 +16964,9 @@ save_journal.year
 _definition.id                          '_journal.year'
 loop_
   _alias.definition_id
-         '_journal_year' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_year'
+_definition.update                      2021-03-01
+_description.text
 ;
      Year of the publication.
 ;
@@ -16913,6 +16977,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1700:2100
+_units.code                             none
 
 save_
 
@@ -17108,12 +17173,12 @@ save_journal_date.accepted
 _definition.id                          '_journal_date.accepted'
 loop_
   _alias.definition_id
-         '_journal_date_accepted'      
-         '_journal.date_accepted' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_accepted'
+         '_journal.date_accepted'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication was accepted.
+     Date when the publication was accepted.
 ;
 _name.category_id                       journal_date
 _name.object_id                         accepted
@@ -17130,12 +17195,12 @@ save_journal_date.from_coeditor
 _definition.id                          '_journal_date.from_coeditor'
 loop_
   _alias.definition_id
-         '_journal_date_from_coeditor'           
-         '_journal.date_from_coeditor' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_from_coeditor'
+         '_journal.date_from_coeditor'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication recieved from coeditor.
+     Date when the publication was received from the coeditor.
 ;
 _name.category_id                       journal_date
 _name.object_id                         from_coeditor
@@ -17152,12 +17217,12 @@ save_journal_date.printers_final
 _definition.id                          '_journal_date.printers_final'
 loop_
   _alias.definition_id
-         '_journal_date_printers_final'          
-         '_journal.date_printers_final' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_printers_final'
+         '_journal.date_printers_final'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication last sent to the printers.
+     Date when the publication was last sent to the printers.
 ;
 _name.category_id                       journal_date
 _name.object_id                         printers_final
@@ -17174,12 +17239,12 @@ save_journal_date.printers_first
 _definition.id                          '_journal_date.printers_first'
 loop_
   _alias.definition_id
-         '_journal_date_printers_first'          
-         '_journal.date_printers_first' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_printers_first'
+         '_journal.date_printers_first'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication first sent to the printers.
+     Date when the publication was first sent to the printers.
 ;
 _name.category_id                       journal_date
 _name.object_id                         printers_first
@@ -17196,12 +17261,12 @@ save_journal_date.proofs_in
 _definition.id                          '_journal_date.proofs_in'
 loop_
   _alias.definition_id
-         '_journal_date_proofs_in'     
-         '_journal.date_proofs_in' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_proofs_in'
+         '_journal.date_proofs_in'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication proofs recieved.
+     Date when the publication proofs were received.
 ;
 _name.category_id                       journal_date
 _name.object_id                         proofs_in
@@ -17218,12 +17283,12 @@ save_journal_date.proofs_out
 _definition.id                          '_journal_date.proofs_out'
 loop_
   _alias.definition_id
-         '_journal_date_proofs_out'    
-         '_journal.date_proofs_out' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_proofs_out'
+         '_journal.date_proofs_out'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication proofs sent out.
+     Date when the publication proofs were sent out.
 ;
 _name.category_id                       journal_date
 _name.object_id                         proofs_out
@@ -17240,12 +17305,12 @@ save_journal_date.recd_copyright
 _definition.id                          '_journal_date.recd_copyright'
 loop_
   _alias.definition_id
-         '_journal_date_recd_copyright'          
-         '_journal.date_recd_copyright' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_recd_copyright'
+         '_journal.date_recd_copyright'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date completed copyright recieved.
+     Date when the completed copyright was received.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_copyright
@@ -17262,12 +17327,12 @@ save_journal_date.recd_electronic
 _definition.id                          '_journal_date.recd_electronic'
 loop_
   _alias.definition_id
-         '_journal_date_recd_electronic'         
-         '_journal.date_recd_electronic' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_recd_electronic'
+         '_journal.date_recd_electronic'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date publication recieved electronically.
+     Date when the publication was received electronically.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_electronic
@@ -17284,12 +17349,12 @@ save_journal_date.recd_hard_copy
 _definition.id                          '_journal_date.recd_hard_copy'
 loop_
   _alias.definition_id
-         '_journal_date_recd_hard_copy'          
-         '_journal.date_recd_hard_copy' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_recd_hard_copy'
+         '_journal.date_recd_hard_copy'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date publication recieved as hard copy.
+     Date when the publication was received as hard copy.
 ;
 _name.category_id                       journal_date
 _name.object_id                         recd_hard_copy
@@ -17306,12 +17371,12 @@ save_journal_date.to_coeditor
 _definition.id                          '_journal_date.to_coeditor'
 loop_
   _alias.definition_id
-         '_journal_date_to_coeditor'   
-         '_journal.date_to_coeditor' 
-_definition.update                      2012-12-11
-_description.text                       
+         '_journal_date_to_coeditor'
+         '_journal.date_to_coeditor'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Date the publication sent to the coeditor.
+     Date when the publication was sent to the coeditor.
 ;
 _name.category_id                       journal_date
 _name.object_id                         to_coeditor
@@ -17348,9 +17413,9 @@ save_journal_index.id
 _definition.id                          '_journal_index.id'
 loop_
   _alias.definition_id
-         '_journal_index_id' 
-_definition.update                      2013-01-23
-_description.text                       
+         '_journal_index_id'
+_definition.update                      2021-03-01
+_description.text
 ;
      Index number identifier of the JOURNAL_INDEX category.
 ;
@@ -17361,6 +17426,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -18005,11 +18071,11 @@ save_publ_body.label
 _definition.id                          '_publ_body.label'
 loop_
   _alias.definition_id
-         '_publ_body_label' 
-_definition.update                      2012-12-13
-_description.text                       
+         '_publ_body_label'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Unigue identifier for each part of the body of the paper.
+     Unique identifier for each part of the body of the paper.
 ;
 _name.category_id                       publ_body
 _name.object_id                         label
@@ -18019,9 +18085,9 @@ _type.container                         Single
 _type.contents                          Code
 loop_
   _description_example.case
-         1         
-         1.1       
-         2.1.3 
+         1
+         1.1
+         2.1.3
 
 save_
 
@@ -19070,9 +19136,9 @@ save_atom_site.attached_hydrogens
 _definition.id                          '_atom_site.attached_hydrogens'
 loop_
   _alias.definition_id
-         '_atom_site_attached_hydrogens' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_atom_site_attached_hydrogens'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of hydrogen atoms attached to the atom at this site
      excluding any H atoms for which coordinates (measured or calculated)
@@ -19085,6 +19151,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:8
+_units.code                             none
 loop_
   _description_example.case
   _description_example.detail
@@ -19133,15 +19200,14 @@ save_atom_site.B_equiv_geom_mean_su
 _definition.id                          '_atom_site.B_equiv_geom_mean_su'
 loop_
   _alias.definition_id
-         '_atom_site_B_equiv_geom_mean_su'       
-         '_atom_site.B_equiv_geom_mean_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_site_B_equiv_geom_mean_su'
+         '_atom_site.B_equiv_geom_mean_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty value for the
-     Equivalent isotropic atomic displacement parameter, B(equiv),
-     in angstroms squared, calculated as the geometric mean of
-     the anisotropic atomic displacement parameters.
+     Standard uncertainty of the equivalent isotropic atomic displacement
+     parameter, B(equiv), in angstroms squared, calculated as the geometric
+     mean of the anisotropic atomic displacement parameters.
 ;
 _name.category_id                       atom_site
 _name.object_id                         B_equiv_geom_mean_su
@@ -19196,15 +19262,15 @@ save_atom_site.B_iso_or_equiv_su
 _definition.id                          '_atom_site.B_iso_or_equiv_su'
 loop_
   _alias.definition_id
-         '_atom_site_B_iso_or_equiv_su'          
-         '_atom_site.B_iso_or_equiv_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_site_B_iso_or_equiv_su'
+         '_atom_site.B_iso_or_equiv_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty value for the
-     Isotropic atomic displacement parameter, or equivalent isotropic
-     atomic displacement parameter, B(equiv), in angstroms squared,
-     calculated from anisotropic temperature factor parameters.
+     Standard uncertainty of the isotropic atomic displacement parameter,
+     or equivalent isotropic atomic displacement parameter, B(equiv),
+     in angstroms squared, calculated from anisotropic temperature
+     factor parameters.
 ;
 _name.category_id                       atom_site
 _name.object_id                         B_iso_or_equiv_su
@@ -19302,8 +19368,8 @@ save_
 save_atom_site.Cartn_xyz
 
 _definition.id                          '_atom_site.Cartn_xyz'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
 ;
@@ -19314,10 +19380,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
     With a  as  atom_site
  
@@ -19388,9 +19455,9 @@ save_atom_site.chemical_conn_number
 _definition.id                          '_atom_site.chemical_conn_number'
 loop_
   _alias.definition_id
-         '_atom_site_chemical_conn_number' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_atom_site_chemical_conn_number'
+_definition.update                      2021-03-01
+_description.text
 ;
      This number links an atom site to the chemical connectivity list.
      It must match a number specified by _chemical_conn_atom.number.
@@ -19403,6 +19470,7 @@ _type.source                            Related
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -19556,8 +19624,8 @@ save_
 save_atom_site.fract_xyz
 
 _definition.id                          '_atom_site.fract_xyz'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Vector of atom site coordinates projected onto the crystal unit
      cell as fractions of the cell lengths.
@@ -19569,10 +19637,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With a  as  atom_site
  
@@ -19775,13 +19844,13 @@ save_atom_site.occupancy_su
 _definition.id                          '_atom_site.occupancy_su'
 loop_
   _alias.definition_id
-         '_atom_site_occupancy_su'     
-         '_atom_site.occupancy_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_site_occupancy_su'
+         '_atom_site.occupancy_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty value for the
-     The fraction of the atom type present at this site.
+     Standard uncertainty of the fraction of the atom type
+     present at this site.
 ;
 _name.category_id                       atom_site
 _name.object_id                         occupancy_su
@@ -19966,11 +20035,11 @@ save_atom_site.site_symmetry_multiplicity
 _definition.id                          '_atom_site.site_symmetry_multiplicity'
 loop_
   _alias.definition_id
-         '_atom_site_site_symmetry_multiplicity'           
-         '_atom_site_symmetry_multiplicity'      
-         '_atom_site.symmetry_multiplicity' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_atom_site_site_symmetry_multiplicity'
+         '_atom_site_symmetry_multiplicity'
+         '_atom_site.symmetry_multiplicity'
+_definition.update                      2021-03-01
+_description.text
 ;
      The number of different sites that are generated by the
      application of the space-group symmetry to the coordinates
@@ -19987,10 +20056,11 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:192
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With  a  as  atom_site
  
@@ -20013,9 +20083,9 @@ save_atom_site.site_symmetry_order
 _definition.id                          '_atom_site.site_symmetry_order'
 loop_
   _alias.definition_id
-         '_atom_site_site_symmetry_order' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_atom_site_site_symmetry_order'
+_definition.update                      2021-03-01
+_description.text
 ;
     The number of times application of the crystallographic symmetry
     to the coordinates for this site generates the same coordinates.
@@ -20031,6 +20101,7 @@ _type.source                            Derived
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:48
+_units.code                             none
 
 save_
 
@@ -20038,8 +20109,8 @@ save_
 save_atom_site.tensor_beta
 
 _definition.id                          '_atom_site.tensor_beta'
-_definition.update                      2013-04-28
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The symmetric anisotropic atomic displacement tensor beta[I,J]
      appears in a structure factor expression as:
@@ -20058,10 +20129,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With  a  as  atom_site
  
@@ -20502,8 +20574,8 @@ save_
 save_atom_site_aniso.matrix_B
 
 _definition.id                          '_atom_site_aniso.matrix_B'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The symmetric anisotropic atomic displacement matrix B.
 ;
@@ -20514,10 +20586,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With a as atom_site_aniso
  
@@ -20532,8 +20605,8 @@ save_
 save_atom_site_aniso.matrix_U
 
 _definition.id                          '_atom_site_aniso.matrix_U'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The symmetric anisotropic atomic displacement matrix U.
 ;
@@ -20544,10 +20617,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With a as atom_site_aniso
  
@@ -20994,11 +21068,11 @@ save_ATOM_SITES_CARTN_TRANSFORM
 _definition.id                          ATOM_SITES_CARTN_TRANSFORM
 _definition.scope                       Category
 _definition.class                       Set
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      The CATEGORY of data items used to describe the matrix elements
-     used to transform Cartesion coordinates into fractional coordinates
+     used to transform fractional coordinates into Cartesian coordinates
      of all atom sites in a crystal structure.
 ;
 _name.category_id                       ATOM_SITES
@@ -21236,11 +21310,11 @@ save_
 save_atom_sites_Cartn_transform.matrix
 
 _definition.id                          '_atom_sites_Cartn_transform.matrix'
-_definition.update                      2012-12-11
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     category to Cartesian coordinates. The axial alignments of this
      transformation are described in _atom_sites_Cartn_transform.axes.
      The 3 x 1 translation is defined in _atom_sites_Cartn_transform.vector.
  
@@ -21259,10 +21333,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With a as atom_sites_Cartn_transform
  
@@ -21319,11 +21394,11 @@ save_
 save_atom_sites_Cartn_transform.vector
 
 _definition.id                          '_atom_sites_Cartn_transform.vector'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The 3x1 translation is used with _atom_sites_Cartn_transform.matrix
-     used to transform fractional coordinates to Cartesian  coordinates.
+     used to transform fractional coordinates to Cartesian coordinates.
      The axial alignments of this transformation are described in
      _atom_sites_Cartn_transform.axes.
 ;
@@ -21334,10 +21409,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With t as atom_sites_Cartn_transform
  
@@ -21352,11 +21428,11 @@ save_ATOM_SITES_FRACT_TRANSFORM
 _definition.id                          ATOM_SITES_FRACT_TRANSFORM
 _definition.scope                       Category
 _definition.class                       Set
-_definition.update                      2012-12-11
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      The CATEGORY of data items used to describe the matrix elements
-     used to transform Cartesion coordinates into fractional coordinates
+     used to transform Cartesian coordinates into fractional coordinates
      of all atom sites in a crystal structure.
 ;
 _name.category_id                       ATOM_SITES
@@ -21521,11 +21597,11 @@ save_
 save_atom_sites_fract_transform.matrix
 
 _definition.id                          '_atom_sites_fract_transform.matrix'
-_definition.update                      2012-12-11
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
-     Matrix used to transform fractional coordinates in the ATOM_SITE
-     category to Cartesian  coordinates. The axial alignments of this
+     Matrix used to transform Cartesian coordinates in the ATOM_SITE
+     category to fractional coordinates. The axial alignments of this
      transformation are described in _atom_sites_fract_transform.axes.
      The 3 x 1 translation is defined in _atom_sites_fract_transform.vector.
  
@@ -21544,10 +21620,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3,3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With a as atom_sites_fract_transform
  
@@ -21604,11 +21681,11 @@ save_
 save_atom_sites_fract_transform.vector
 
 _definition.id                          '_atom_sites_fract_transform.vector'
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      The 3x1 translation is used with _atom_sites_fract_transform.matrix
-     used to transform Cartesian coordinates to fractional  coordinates.
+     used to transform Cartesian coordinates to fractional coordinates.
      The axial alignments of this transformation are described in
      _atom_sites_fract_transform.axes.
 ;
@@ -21619,10 +21696,11 @@ _type.source                            Derived
 _type.container                         Matrix
 _type.contents                          Real
 _type.dimension                         '[3]'
+_units.code                             none
 loop_
   _method.purpose
   _method.expression
-         Evaluation          
+         Evaluation
 ;
      With t as atom_sites_fract_transform
  
@@ -21717,8 +21795,8 @@ save_
 save_atom_type.atomic_number
 
 _definition.id                          '_atom_type.atomic_number'
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Atomic number of this atom type.
 ;
@@ -21729,6 +21807,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 _import.get [{'save':atomic_number  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 
@@ -21789,8 +21868,8 @@ save_
 save_atom_type.electron_count
 
 _definition.id                          '_atom_type.electron_count'
-_definition.update                      2019-09-25
-_description.text                       
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of electrons in this atom type.
 ;
@@ -21803,6 +21882,7 @@ _type.contents                          Integer
 _import.get [{'save':electron_count  'file':templ_enum.cif}]
 _enumeration.def_index_id               '_atom_type.symbol'
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -21898,9 +21978,9 @@ save_atom_type.oxidation_number
 _definition.id                          '_atom_type.oxidation_number'
 loop_
   _alias.definition_id
-         '_atom_type_oxidation_number' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_atom_type_oxidation_number'
+_definition.update                      2021-03-01
+_description.text
 ;
      Formal oxidation state of this atom type in the structure.
 ;
@@ -21911,6 +21991,7 @@ _type.source                            Assigned
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      -8:8
+_units.code                             none
 
 save_
 
@@ -22578,8 +22659,8 @@ _name.category_id                       atom_type_scat
 _name.object_id                         versus_stol_list
 _type.purpose                           Number
 _type.source                            Assigned
-_type.container                         List
-_type.contents                          'List(Real,Real)'
+_type.container                         Array
+_type.contents                          Real
 _type.dimension                         '[]'
 _units.code                             none
 
@@ -22681,13 +22762,13 @@ save_refine_diff.density_max_su
 _definition.id                          '_refine_diff.density_max_su'
 loop_
   _alias.definition_id
-         '_refine_diff_density_max_su'           
-         '_refine.diff_density_max_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_max_su'
+         '_refine.diff_density_max_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Maximum density value in a difference Fourier map.
+     Standard uncertainty of the maximum density value
+     in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_max_su
@@ -22696,6 +22777,15 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+loop_
+  _method.purpose
+  _method.expression
+         Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
 
 save_
 
@@ -22705,12 +22795,12 @@ save_refine_diff.density_min
 _definition.id                          '_refine_diff.density_min'
 loop_
   _alias.definition_id
-         '_refine_diff_density_min'    
-         '_refine.diff_density_min' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_min'
+         '_refine.diff_density_min'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Miniumum density value in a difference Fourier map.
+     Minimum density value in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_min
@@ -22737,13 +22827,13 @@ save_refine_diff.density_min_su
 _definition.id                          '_refine_diff.density_min_su'
 loop_
   _alias.definition_id
-         '_refine_diff_density_min_su'           
-         '_refine.diff_density_min_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_min_su'
+         '_refine.diff_density_min_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Miniumum density value in a difference Fourier map.
+     Standard uncertainty of the minimum density value
+     in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_min_su
@@ -22752,6 +22842,15 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+loop_
+  _method.purpose
+  _method.expression
+         Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
 
 save_
 
@@ -22798,13 +22897,13 @@ save_refine_diff.density_rms_su
 _definition.id                          '_refine_diff.density_rms_su'
 loop_
   _alias.definition_id
-         '_refine_diff_density_rms_su'           
-         '_refine.diff_density_rms_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_diff_density_rms_su'
+         '_refine.diff_density_rms_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     Root mean square density value in a difference Fourier map.
+     Standard uncertainty of the root mean square density value
+     in a difference Fourier map.
 ;
 _name.category_id                       refine_diff
 _name.object_id                         density_rms_su
@@ -22813,6 +22912,15 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+loop_
+  _method.purpose
+  _method.expression
+         Definition
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
 
 save_
 
@@ -22893,13 +23001,13 @@ save_refine_ls.abs_structure_Flack_su
 _definition.id                          '_refine_ls.abs_structure_Flack_su'
 loop_
   _alias.definition_id
-         '_refine_ls_abs_structure_Flack_su'     
-         '_refine.ls_abs_structure_Flack_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_abs_structure_Flack_su'
+         '_refine.ls_abs_structure_Flack_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     The measure of absolute structure as defined by Flack (1983).
+     Standard uncertainty of the measure of absolute structure
+     as defined by Flack (1983).
 ;
 _name.category_id                       refine_ls
 _name.object_id                         abs_structure_Flack_su
@@ -22908,6 +23016,7 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+_units.code                             none
 
 save_
 
@@ -22946,13 +23055,13 @@ save_refine_ls.abs_structure_Rogers_su
 _definition.id                          '_refine_ls.abs_structure_Rogers_su'
 loop_
   _alias.definition_id
-         '_refine_ls_abs_structure_Rogers_su'    
-         '_refine.ls_abs_structure_Rogers_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_abs_structure_Rogers_su'
+         '_refine.ls_abs_structure_Rogers_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the
-     The measure of absolute structure as defined by Rogers (1981).
+     Standard uncertainty of the measure of absolute structure
+     as defined by Rogers (1981).
 ;
 _name.category_id                       refine_ls
 _name.object_id                         abs_structure_Rogers_su
@@ -22961,6 +23070,7 @@ _type.purpose                           SU
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Real
+_units.code                             none
 
 save_
 
@@ -22970,13 +23080,13 @@ save_refine_ls.d_res_high
 _definition.id                          '_refine_ls.d_res_high'
 loop_
   _alias.definition_id
-         '_refine_ls_d_res_high'       
-         '_refine.ls_d_res_high' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_d_res_high'
+         '_refine.ls_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections used in refinement.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       refine_ls
 _name.object_id                         d_res_high
@@ -22995,13 +23105,13 @@ save_refine_ls.d_res_low
 _definition.id                          '_refine_ls.d_res_low'
 loop_
   _alias.definition_id
-         '_refine_ls_d_res_low'        
-         '_refine.ls_d_res_low' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_d_res_low'
+         '_refine.ls_d_res_low'
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections used in refinement.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       refine_ls
 _name.object_id                         d_res_low
@@ -23060,12 +23170,12 @@ save_refine_ls.extinction_coef_su
 _definition.id                          '_refine_ls.extinction_coef_su'
 loop_
   _alias.definition_id
-         '_refine_ls_extinction_coef_su'         
-         '_refine.ls_extinction_coef_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_extinction_coef_su'
+         '_refine.ls_extinction_coef_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the extinction coefficient
+     Standard uncertainty of the extinction coefficient.
 ;
 _name.category_id                       refine_ls
 _name.object_id                         extinction_coef_su
@@ -23289,12 +23399,12 @@ save_refine_ls.goodness_of_fit_all_su
 _definition.id                          '_refine_ls.goodness_of_fit_all_su'
 loop_
   _alias.definition_id
-         '_refine_ls_goodness_of_fit_all_su'     
-         '_refine.ls_goodness_of_fit_all_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_goodness_of_fit_all_su'
+         '_refine.ls_goodness_of_fit_all_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the Least-squares goodness-of-fit
+     Standard uncertainty of the least-squares goodness-of-fit
      parameter S for all reflections after the final cycle of refinement.
 ;
 _name.category_id                       refine_ls
@@ -23359,13 +23469,13 @@ save_refine_ls.goodness_of_fit_gt_su
 _definition.id                          '_refine_ls.goodness_of_fit_gt_su'
 loop_
   _alias.definition_id
-         '_refine_ls_goodness_of_fit_gt_su'      
-         '_refine.ls_goodness_of_fit_gt_esd'     
-         '_refine.ls_goodness_of_fit_obs_esd' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_goodness_of_fit_gt_su'
+         '_refine.ls_goodness_of_fit_gt_esd'
+         '_refine.ls_goodness_of_fit_obs_esd'
+_definition.update                      2021-03-03
+_description.text
 ;
-     Standard Uncertainty of the Least-squares goodness-of-fit
+     Standard uncertainty of the least-squares goodness-of-fit
      parameter S for gt reflections after the final cycle of refinement.
 ;
 _name.category_id                       refine_ls
@@ -23525,10 +23635,10 @@ save_refine_ls.number_constraints
 _definition.id                          '_refine_ls.number_constraints'
 loop_
   _alias.definition_id
-         '_refine_ls_number_constraints'         
-         '_refine.ls_number_constraints' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_refine_ls_number_constraints'
+         '_refine.ls_number_constraints'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of constrained (non-refined or dependent) parameters
      in the least-squares process. These may be due to symmetry or any
@@ -23543,6 +23653,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -23552,10 +23663,10 @@ save_refine_ls.number_parameters
 _definition.id                          '_refine_ls.number_parameters'
 loop_
   _alias.definition_id
-         '_refine_ls_number_parameters'          
-         '_refine.ls_number_parameters' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_refine_ls_number_parameters'
+         '_refine.ls_number_parameters'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of parameters refined in the least-squares process. If
      possible this number should include the restrained parameters.
@@ -23573,6 +23684,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -23582,10 +23694,10 @@ save_refine_ls.number_reflns
 _definition.id                          '_refine_ls.number_reflns'
 loop_
   _alias.definition_id
-         '_refine_ls_number_reflns'    
-         '_refine.ls_number_reflns_all' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_refine_ls_number_reflns'
+         '_refine.ls_number_reflns_all'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of unique reflections used in the least-squares refinement.
 ;
@@ -23596,6 +23708,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -23607,7 +23720,7 @@ loop_
   _alias.definition_id
          '_refine_ls_number_reflns_gt'
          '_refine.ls_number_reflns_obs'
-_definition.update                      2019-09-25
+_definition.update                      2021-03-01
 _description.text
 ;
      The number of reflections that satisfy the resolution limits
@@ -23622,6 +23735,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      1:
+_units.code                             none
 
 save_
 
@@ -23631,10 +23745,10 @@ save_refine_ls.number_restraints
 _definition.id                          '_refine_ls.number_restraints'
 loop_
   _alias.definition_id
-         '_refine_ls_number_restraints'          
-         '_refine.ls_number_restraints' 
-_definition.update                      2019-09-25
-_description.text                       
+         '_refine_ls_number_restraints'
+         '_refine.ls_number_restraints'
+_definition.update                      2021-03-01
+_description.text
 ;
      Number of restrained parameters in the least-squares refinement. These
      parameters do not directly dependent on another refined parameter. Often
@@ -23649,6 +23763,7 @@ _type.source                            Recorded
 _type.container                         Single
 _type.contents                          Integer
 _enumeration.range                      0:
+_units.code                             none
 
 save_
 
@@ -24275,12 +24390,12 @@ save_refine_ls_class.d_res_high
 _definition.id                          '_refine_ls_class.d_res_high'
 loop_
   _alias.definition_id
-         '_refine_ls_class_d_res_high' 
-_definition.update                      2012-11-20
-_description.text                       
+         '_refine_ls_class_d_res_high'
+_definition.update                      2021-03-03
+_description.text
 ;
      Highest resolution for the reflections in this class.
-     This corresponds to the smallest interpanar d value.
+     This corresponds to the smallest interplanar d value.
 ;
 _name.category_id                       refine_ls_class
 _name.object_id                         d_res_high
@@ -24300,11 +24415,11 @@ _definition.id                          '_refine_ls_class.d_res_low'
 loop_
   _alias.definition_id
          '_refine_ls_class_d_res_low' 
-_definition.update                      2012-11-20
-_description.text                       
+_definition.update                      2021-03-03
+_description.text
 ;
      Lowest resolution for the reflections in this class.
-     This corresponds to the largest interpanar d value.
+     This corresponds to the largest interplanar d value.
 ;
 _name.category_id                       refine_ls_class
 _name.object_id                         d_res_low
@@ -24526,9 +24641,20 @@ loop_
      Validation method for _space_group.crystal_system removed as it contained
      undefined dREL functions "throw" and "alert".
 ;
-     3.0.14     2020-08-13
+     3.0.14     2021-03-03
 ;
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
-     publ_contact_author. Added diffrn_measurement.specimen_attachment_type
+     publ_contact_author. Added diffrn_measurement.specimen_attachment_type.
+
+     Added the 'none' measurement units to the definitions of multiple
+     data items.
+
+     Added methods for determining the measurement units to the definitions
+     of the _refine_diff.density_min_su, _refine_diff.density_max_su and
+     _refine_diff.density_rms_su data items.
+
+     Corrected a few typos in several save frame definitions.
+     Corrected the definitions of the ATOM_SITES_CARTN_TRANSFORM category
+     and the _atom_sites_fract_transform.matrix data item.
 ;
