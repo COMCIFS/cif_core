@@ -8861,9 +8861,7 @@ save_
  
 save_chemical_conn_bond.id
     _definition.id             '_chemical_conn_bond.id'
-     loop_
-    _alias.definition_id       '_chemical_conn_bond.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-05-07
     _description.text
 ;
      Unique identifier for the bond.
@@ -11892,9 +11890,7 @@ save_
 
 save_geom_angle.id
     _definition.id             '_geom_angle.id'
-     loop_
-    _alias.definition_id       '_geom_angle.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-05-07
     _description.text
 ;
      An arbitrary, unique identifier for the angle formed by the
@@ -12192,9 +12188,7 @@ save_
 
 save_geom_bond.id
     _definition.id             '_geom_bond.id'
-     loop_
-    _alias.definition_id       '_geom_bond.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-05-07
     _description.text
 ;
      Unique identifier for the bond.
@@ -12471,8 +12465,6 @@ save_
 
 save_geom_contact.id
     _definition.id             '_geom_contact.id'
-     loop_
-    _alias.definition_id       '_geom_contact.id'
     _definition.update           2020-03-17
     _description.text
 ;
@@ -12878,9 +12870,7 @@ save_
 
 save_geom_hbond.id
     _definition.id             '_geom_hbond.id'
-     loop_
-    _alias.definition_id       '_geom_hbond.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-05-07
     _description.text
 ;
      An identifier for the hydrogen bond that is unique within the loop.
@@ -13181,8 +13171,6 @@ save_
 
 save_geom_torsion.id
     _definition.id             '_geom_torsion.id'
-     loop_
-    _alias.definition_id       '_geom_torsion.id'
     _definition.update           2012-11-22
     _description.text
 ;
@@ -13521,9 +13509,7 @@ save_
 
 save_model_site.id
     _definition.id             '_model_site.id'
-     loop_
-    _alias.definition_id       '_model_site.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-05-07
     _description.text
 ;
      An identifier for the model site that is unique within its loop.
@@ -14614,7 +14600,7 @@ _description.text
 _name.category_id                       audit_contact_author
 _name.object_id                         id
 _name.linked_item_id                    '_audit_author.id'
-_type.purpose                           Key
+_type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
@@ -15591,9 +15577,7 @@ save_
 
 save_citation_author.key
     _definition.id             '_citation_author.key'
-     loop_
-    _alias.definition_id       '_citation_author.key'
-    _definition.update           2012-12-13
+    _definition.update           2021-05-07
     _description.text
 ;
      Value is a unique key to a set of CITATION_AUTHOR items
@@ -15736,9 +15720,7 @@ save_
 
 save_citation_editor.id
     _definition.id             '_citation_editor.id'
-     loop_
-    _alias.definition_id       '_citation_editor.id'
-    _definition.update           2012-12-13
+    _definition.update           2021-05-07
     _description.text
 ;
      Value is a unique key to a set of CITATION_EDITOR items
@@ -18184,7 +18166,7 @@ _description.text
 _name.category_id                       publ_contact_author
 _name.object_id                         id
 _name.linked_item_id                    '_publ_author.id'
-_type.purpose                           Key
+_type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
@@ -19661,8 +19643,7 @@ save_atom_site.label
 _definition.id                          '_atom_site.label'
 loop_
   _alias.definition_id
-         '_atom_site_label'  
-         '_atom_site.id' 
+         '_atom_site_label'
 _import.get [{'save':atom_site_label  'file':templ_attr.cif}]
 _name.category_id                       atom_site
 _name.object_id                         label
