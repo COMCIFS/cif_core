@@ -37,14 +37,3 @@ jobs:
         - name: check_ddlm
           uses: COMCIFS/dictionary_check_action@main
           id: ddlm_check
-  layout:
-    runs-on: ubuntu-latest
-    needs: ddlm
-    steps:
-        - name: checkout
-        - uses: actions/checkout@v2
-        
-        - name: check_layout
-          uses: jamesrhester/cif_dic_layout_check_action@main
-          id: layout_check
-    
