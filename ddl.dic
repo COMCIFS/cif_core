@@ -1978,36 +1978,45 @@ save_
 #============================================================================
 
     loop_
-    _dictionary_valid.application
-    _dictionary_valid.attributes
-  [Dictionary  Mandatory]       ['_dictionary.title'  '_dictionary.class'
-                                 '_dictionary.version'  '_dictionary.date'
-                                 '_dictionary.uri'
-                                 '_dictionary.ddl_conformance'
-                                 '_dictionary.namespace']
-  [Dictionary  Recommended]     ['_description.text'
-                                 '_dictionary_audit.version'
-                                 '_dictionary_audit.date'
-                                 '_dictionary_audit.revision']
-  [Dictionary  Prohibited]      [ALIAS  DEFINITION  ENUMERATION CATEGORY_KEY
-                                 METHOD  NAME  TYPE  IMPORT UNITS]
-  [Category  Mandatory]         ['_definition.id'  '_definition.scope'
-                                 '_definition.class'  '_name.category_id'
-                                 '_name.object_id']
-  [Category  Recommended]       [CATEGORY_KEY '_category_key.name' '_description.text']
-  [Category  Prohibited]        [ALIAS  DICTIONARY  ENUMERATION
-                                 TYPE  UNITS]
-  [Item  Mandatory]             ['_definition.id'  '_definition.update'
-                                 '_name.object_id'  '_name.category_id'
-                                 '_type.container'  '_type.contents']
-  [Item  Recommended]           ['_definition.scope'  '_definition.class'
-                                 '_type.source'  '_type.purpose'
-                                 '_description.text'  '_description.common']
-  [Item  Prohibited]            [DICTIONARY CATEGORY_KEY]
-
-#=============================================================================
-#  The dictionary's audit trail and creation history.
-#============================================================================
+      _dictionary_valid.scope
+      _dictionary_valid.option
+      _dictionary_valid.application
+      _dictionary_valid.attributes
+      Dictionary Mandatory
+         [Dictionary  Mandatory]    ['_dictionary.title'  '_dictionary.class'
+                                     '_dictionary.version'  '_dictionary.date'
+                                     '_dictionary.uri'
+                                     '_dictionary.ddl_conformance'
+                                     '_dictionary.namespace']
+      Dictionary Recommended
+         [Dictionary  Recommended]  ['_description.text'
+                                     '_dictionary_audit.version'
+                                     '_dictionary_audit.date'
+                                     '_dictionary_audit.revision']
+      Dictionary Prohibited
+         [Dictionary  Prohibited]   [ALIAS  DEFINITION  ENUMERATION
+                                     CATEGORY_KEY  METHOD  NAME  TYPE  IMPORT
+                                     UNITS]
+      Category Mandatory
+         [Category  Mandatory]      ['_definition.id'  '_definition.scope'
+                                     '_definition.class'  '_name.category_id'
+                                     '_name.object_id']
+      Category Recommended
+         [Category  Recommended]    [CATEGORY_KEY  '_category_key.name'
+                                     '_description.text']
+      Category Prohibited
+         [Category  Prohibited]     [ALIAS  DICTIONARY  ENUMERATION  TYPE
+                                     UNITS]
+      Item Mandatory
+         [Item  Mandatory]          ['_definition.id'  '_definition.update'
+                                     '_name.object_id'  '_name.category_id'
+                                     '_type.container'  '_type.contents']
+      Item Recommended
+         [Item  Recommended]        ['_definition.scope'  '_definition.class'
+                                     '_type.source'  '_type.purpose'
+                                     '_description.text'  '_description.common']
+      Item Prohibited
+         [Item  Prohibited]         [DICTIONARY  CATEGORY_KEY]
 
     loop_
     _dictionary_audit.version
