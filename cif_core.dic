@@ -13,7 +13,7 @@ _dictionary.version                     3.0.14
 _dictionary.date                        2021-03-03
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
-_dictionary.ddl_conformance             3.14.0
+_dictionary.ddl_conformance             4.0.1
 _dictionary.namespace                   CifCore
 _description.text                       
 ;
@@ -24613,4 +24613,6 @@ loop_
      Corrected a few typos in several save frame definitions.
      Corrected the definitions of the ATOM_SITES_CARTN_TRANSFORM category
      and the _atom_sites_fract_transform.matrix data item.
+
+     Changed the DDL conformance version number from 3.0.14 to 4.0.1.
 ;
