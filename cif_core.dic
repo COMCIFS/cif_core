@@ -10,10 +10,10 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.0.14
-_dictionary.date                        2021-03-03
+_dictionary.date                        2021-06-29
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
-_dictionary.ddl_conformance             3.14.0
+_dictionary.ddl_conformance             4.0.1
 _dictionary.namespace                   CifCore
 _description.text                       
 ;
@@ -484,7 +484,7 @@ save_DIFFRN_ATTENUATOR
 _definition.id                          DIFFRN_ATTENUATOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the attenuators used in the
@@ -492,7 +492,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_ATTENUATOR
-_category.key_id                        '_diffrn_attenuator.code'
 loop_
   _category_key.name
          '_diffrn_attenuator.code' 
@@ -1139,7 +1138,7 @@ save_DIFFRN_ORIENT_REFLN
 _definition.id                          DIFFRN_ORIENT_REFLN
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the reflections used to
@@ -1148,7 +1147,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN_ORIENT
 _name.object_id                         DIFFRN_ORIENT_REFLN
-_category.key_id                        '_diffrn_orient_refln.hkl'
 loop_
   _category_key.name
          '_diffrn_orient_refln.index_h'          
@@ -1565,7 +1563,7 @@ save_DIFFRN_RADIATION_WAVELENGTH
 _definition.id                          DIFFRN_RADIATION_WAVELENGTH
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the wavelength of the
@@ -1575,7 +1573,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN_RADIATION
 _name.object_id                         DIFFRN_RADIATION_WAVELENGTH
-_category.key_id                        '_diffrn_radiation_wavelength.id'
 loop_
   _category_key.name
          '_diffrn_radiation_wavelength.id' 
@@ -1737,7 +1734,7 @@ save_DIFFRN_REFLN
 _definition.id                          DIFFRN_REFLN
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the reflection measurements,
@@ -1745,7 +1742,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_REFLN
-_category.key_id                        '_diffrn_refln.hkl'
 loop_
     _category_key.name                  '_diffrn_refln.hkl'
 
@@ -2868,7 +2864,7 @@ save_DIFFRN_REFLNS_CLASS
 _definition.id                          DIFFRN_REFLNS_CLASS
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify different classes of
@@ -2877,7 +2873,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN_REFLNS
 _name.object_id                         DIFFRN_REFLNS_CLASS
-_category.key_id                        '_diffrn_reflns_class.code'
 loop_
   _category_key.name
          '_diffrn_reflns_class.code' 
@@ -3243,7 +3238,7 @@ save_DIFFRN_SCALE_GROUP
 _definition.id                          DIFFRN_SCALE_GROUP
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the groups of reflections in
@@ -3251,7 +3246,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN
 _name.object_id                         DIFFRN_SCALE_GROUP
-_category.key_id                        '_diffrn_scale_group.code'
 loop_
   _category_key.name
          '_diffrn_scale_group.code' 
@@ -3777,7 +3771,7 @@ save_DIFFRN_STANDARD_REFLN
 _definition.id                          DIFFRN_STANDARD_REFLN
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the "standard" reflections
@@ -3786,7 +3780,6 @@ _description.text
 ;
 _name.category_id                       DIFFRN_STANDARD
 _name.object_id                         DIFFRN_STANDARD_REFLN
-_category.key_id                        '_diffrn_standard_refln.hkl'
 loop_
   _category_key.name
          '_diffrn_standard_refln.index_h'        
@@ -3896,7 +3889,7 @@ save_REFLN
 _definition.id                          REFLN
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe the reflection data
@@ -3904,7 +3897,6 @@ _description.text
 ;
 _name.category_id                       DIFFRACTION
 _name.object_id                         REFLN
-_category.key_id                        '_refln.hkl'
 loop_
   _category_key.name
          '_refln.index_h'    
@@ -5367,7 +5359,7 @@ save_REFLNS_CLASS
 _definition.id                          REFLNS_CLASS
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the properties of reflections
@@ -5375,7 +5367,6 @@ _description.text
 ;
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_CLASS
-_category.key_id                        '_reflns_class.code'
 loop_
   _category_key.name
          '_reflns_class.code' 
@@ -5711,7 +5702,7 @@ save_REFLNS_SCALE
 _definition.id                          REFLNS_SCALE
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the scales needed to place
@@ -5719,7 +5710,6 @@ _description.text
 ;
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_SCALE
-_category.key_id                        '_reflns_scale.group_code'
 loop_
   _category_key.name
          '_reflns_scale.group_code' 
@@ -5823,7 +5813,7 @@ save_REFLNS_SHELL
 _definition.id                          REFLNS_SHELL
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the information about
@@ -5831,7 +5821,6 @@ _description.text
 ;
 _name.category_id                       REFLNS
 _name.object_id                         REFLNS_SHELL
-_category.key_id                        '_reflns_shell.d_res_limits'
 loop_
   _category_key.name
          '_reflns_shell.d_res_low'     
@@ -7075,7 +7064,7 @@ save_CELL_MEASUREMENT_REFLN
 _definition.id                          CELL_MEASUREMENT_REFLN
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe the reflection data
@@ -7083,7 +7072,6 @@ _description.text
 ;
 _name.category_id                       CELL_MEASUREMENT
 _name.object_id                         CELL_MEASUREMENT_REFLN
-_category.key_id                        '_cell_measurement_refln.hkl'
 loop_
   _category_key.name
          '_cell_measurement_refln.index_h'       
@@ -8601,7 +8589,7 @@ save_CHEMICAL_CONN_ATOM
 _definition.id                          CHEMICAL_CONN_ATOM
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which describe the 2D chemical structure of
@@ -8617,7 +8605,6 @@ _description.text
 ;
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_ATOM
-_category.key_id                        '_chemical_conn_atom.number'
 loop_
   _category_key.name
          '_chemical_conn_atom.number' 
@@ -8797,7 +8784,7 @@ save_CHEMICAL_CONN_BOND
 _definition.id                          CHEMICAL_CONN_BOND
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the connections between
@@ -8811,7 +8798,6 @@ _description.text
 ;
 _name.category_id                       CHEMICAL
 _name.object_id                         CHEMICAL_CONN_BOND
-_category.key_id                        '_chemical_conn_bond.id'
 loop_
   _category_key.name
          '_chemical_conn_bond.atom_1'  
@@ -8896,9 +8882,7 @@ save_
  
 save_chemical_conn_bond.id
     _definition.id             '_chemical_conn_bond.id'
-     loop_
-    _alias.definition_id       '_chemical_conn_bond.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-06-29
     _description.text
 ;
      Unique identifier for the bond.
@@ -10092,7 +10076,7 @@ save_EXPTL_CRYSTAL_FACE
 _definition.id                          EXPTL_CRYSTAL_FACE
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items which specify the dimensions of the
@@ -10100,7 +10084,6 @@ _description.text
 ;
 _name.category_id                       EXPTL_CRYSTAL
 _name.object_id                         EXPTL_CRYSTAL_FACE
-_category.key_id                        '_exptl_crystal_face.hkl'
 loop_
   _category_key.name
          '_exptl_crystal_face.index_h'
@@ -10831,7 +10814,7 @@ save_SPACE_GROUP_GENERATOR
 _definition.id                          SPACE_GROUP_GENERATOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2016-05-10
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to list generators for
@@ -10839,7 +10822,6 @@ _description.text
 ;
 _name.category_id                       SPACE_GROUP
 _name.object_id                         space_group_generator
-_category.key_id                        '_space_group_generator.key'
 loop_
   _category_key.name
          '_space_group_generator.key' 
@@ -10917,7 +10899,7 @@ save_SPACE_GROUP_SYMOP
 _definition.id                          SPACE_GROUP_SYMOP
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2016-05-10
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe symmetry equivalent sites
@@ -10925,7 +10907,6 @@ _description.text
 ;
 _name.category_id                       SPACE_GROUP
 _name.object_id                         SPACE_GROUP_SYMOP
-_category.key_id                        '_space_group_symop.id'
 loop_
   _category_key.name
          '_space_group_symop.id' 
@@ -11170,7 +11151,7 @@ save_SPACE_GROUP_WYCKOFF
     _definition.id              SPACE_GROUP_WYCKOFF
     _definition.scope           Category
     _definition.class           Loop
-    _definition.update          2014-06-12
+    _definition.update          2021-06-29
     _description.text
 ;
      Contains information about Wyckoff positions of a space group.
@@ -11180,7 +11161,6 @@ save_SPACE_GROUP_WYCKOFF
 ;
     _name.category_id           SPACE_GROUP
     _name.object_id             SPACE_GROUP_WYCKOFF
-    _category.key_id          '_space_group_Wyckoff.id'
     loop_
     _category_key.name       '_space_group_Wyckoff.id'
 
@@ -11806,7 +11786,7 @@ save_GEOM_ANGLE
 _definition.id                          GEOM_ANGLE
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to specify the geometry angles in the
@@ -11814,7 +11794,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_ANGLE
-_category.key_id                        '_geom_angle.id'
 loop_
   _category_key.name
          '_geom_angle.atom_site_label_1'         
@@ -11942,9 +11921,7 @@ save_
 
 save_geom_angle.id
     _definition.id             '_geom_angle.id'
-     loop_
-    _alias.definition_id       '_geom_angle.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-06-29
     _description.text
 ;
      An arbitrary, unique identifier for the angle formed by the
@@ -12099,7 +12076,7 @@ save_GEOM_BOND
 _definition.id                          GEOM_BOND
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to specify the geometry bonds in the
@@ -12107,7 +12084,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_BOND
-_category.key_id                        '_geom_bond.id'
 loop_
   _category_key.name
          '_geom_bond.atom_site_label_1'          
@@ -12242,9 +12218,7 @@ save_
 
 save_geom_bond.id
     _definition.id             '_geom_bond.id'
-     loop_
-    _alias.definition_id       '_geom_bond.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-06-29
     _description.text
 ;
      Unique identifier for the bond.
@@ -12368,7 +12342,7 @@ save_GEOM_CONTACT
 _definition.id                          GEOM_CONTACT
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to specify the interatomic
@@ -12376,7 +12350,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_CONTACT
-_category.key_id                        '_geom_contact.id'
 loop_
   _category_key.name
          '_geom_contact.atom_site_label_1'       
@@ -12522,9 +12495,7 @@ save_
 
 save_geom_contact.id
     _definition.id             '_geom_contact.id'
-     loop_
-    _alias.definition_id       '_geom_contact.id'
-    _definition.update           2020-03-17
+    _definition.update           2021-06-29
     _description.text
 ;
     An identifier for the contact that is unique within the loop.
@@ -12599,7 +12570,7 @@ save_GEOM_HBOND
 _definition.id                          GEOM_HBOND
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to specify the hydrogen bond
@@ -12607,7 +12578,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_HBOND
-_category.key_id                        '_geom_hbond.id'
 loop_
   _category_key.name
          '_geom_hbond.atom_site_label_D'         
@@ -12926,9 +12896,7 @@ save_
 
 save_geom_hbond.id
     _definition.id             '_geom_hbond.id'
-     loop_
-    _alias.definition_id       '_geom_hbond.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-06-29
     _description.text
 ;
      An identifier for the hydrogen bond that is unique within the loop.
@@ -13016,7 +12984,7 @@ save_GEOM_TORSION
 _definition.id                          GEOM_TORSION
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to specify the torsion angles in the
@@ -13024,7 +12992,6 @@ _description.text
 ;
 _name.category_id                       GEOM
 _name.object_id                         GEOM_TORSION
-_category.key_id                        '_geom_torsion.id'
 loop_
   _category_key.name
          '_geom_torsion.atom_site_label_1'       
@@ -13229,9 +13196,7 @@ save_
 
 save_geom_torsion.id
     _definition.id             '_geom_torsion.id'
-     loop_
-    _alias.definition_id       '_geom_torsion.id'
-    _definition.update           2012-11-22
+    _definition.update           2021-06-29
     _description.text
 ;
      An identifier for the torsion angle that is unique within its loop.
@@ -13330,7 +13295,7 @@ save_MODEL_SITE
 _definition.id                          MODEL_SITE
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe atomic sites and
@@ -13338,7 +13303,6 @@ _description.text
 ;
 _name.category_id                       MODEL
 _name.object_id                         MODEL_SITE
-_category.key_id                        '_model_site.id'
 loop_
   _category_key.name
          '_model_site.label'           
@@ -13573,9 +13537,7 @@ save_
 
 save_model_site.id
     _definition.id             '_model_site.id'
-     loop_
-    _alias.definition_id       '_model_site.id'
-    _definition.update           2020-03-16
+    _definition.update           2021-06-29
     _description.text
 ;
      An identifier for the model site that is unique within its loop.
@@ -13765,14 +13727,13 @@ save_VALENCE_PARAM
 _definition.id                          VALENCE_PARAM
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of items for listing bond valences.
 ;
 _name.category_id                       VALENCE
 _name.object_id                         VALENCE_PARAM
-_category.key_id                        '_valence_param.id'
 loop_
   _category_key.name
          '_valence_param.id' 
@@ -13994,14 +13955,13 @@ save_VALENCE_REF
 _definition.id                          VALENCE_REF
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of items for listing valence references.
 ;
 _name.category_id                       VALENCE
 _name.object_id                         VALENCE_REF
-_category.key_id                        '_valence_ref.id'
 loop_
   _category_key.name
          '_valence_ref.id' 
@@ -14260,14 +14220,13 @@ save_AUDIT_AUTHOR
 _definition.id                          AUDIT_AUTHOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used for author(s) details.
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_AUTHOR
-_category.key_id                        '_audit_author.name'
 loop_
   _category_key.name
          '_audit_author.id' 
@@ -14472,7 +14431,7 @@ save_AUDIT_CONFORM
 _definition.id                          AUDIT_CONFORM
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2012-05-07
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used describe dictionary versions
@@ -14480,7 +14439,6 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_CONFORM
-_category.key_id                        '_audit_conform.dict_name'
 _category_key.name                      '_audit_conform.dict_name'
 
 save_
@@ -14556,14 +14514,13 @@ save_AUDIT_CONTACT_AUTHOR
 _definition.id                          AUDIT_CONTACT_AUTHOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used for contact author(s) details.
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_CONTACT_AUTHOR
-_category.key_id                        '_audit_contact_author.name'
 loop_
   _category_key.name
          '_audit_contact_author.id' 
@@ -14663,7 +14620,7 @@ save_
 save_audit_contact_author.id
 
 _definition.id                          '_audit_contact_author.id'
-_definition.update                      2020-08-13
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Arbitrary identifier for this author
@@ -14671,7 +14628,7 @@ _description.text
 _name.category_id                       audit_contact_author
 _name.object_id                         id
 _name.linked_item_id                    '_audit_author.id'
-_type.purpose                           Key
+_type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
@@ -14743,7 +14700,7 @@ save_AUDIT_LINK
 _definition.id                          AUDIT_LINK
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to record details about the
@@ -14751,7 +14708,6 @@ _description.text
 ;
 _name.category_id                       AUDIT
 _name.object_id                         AUDIT_LINK
-_category.key_id                        '_audit_link.block_code'
 loop_
   _category_key.name
          '_audit_link.block_code' 
@@ -14809,7 +14765,7 @@ save_AUDIT_SUPPORT
 _definition.id                           AUDIT_SUPPORT
 _definition.scope                        Category
 _definition.class                        Loop
-_definition.update                       2020-08-23
+_definition.update                       2021-06-29
 _description.text
 ;
         Data items in the AUDIT_SUPPORT category record details about the
@@ -14817,7 +14773,6 @@ _description.text
 ;
 _name.category_id                        AUDIT
 _name.object_id                          AUDIT_SUPPORT
-_category.key_id                         '_audit_support.id'
 loop_
    _category_key.name                    '_audit_support.id'
 
@@ -15008,7 +14963,7 @@ save_CITATION
 _definition.id                          CITATION
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
         Data items in the CITATION category record details about the
@@ -15017,7 +14972,6 @@ _description.text
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION
-_category.key_id                        '_citation.id'
 loop_
   _category_key.name
          '_citation.id' 
@@ -15633,14 +15587,13 @@ save_CITATION_AUTHOR
 _definition.id                          CITATION_AUTHOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Category of items describing citation author(s) details.
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_AUTHOR
-_category.key_id                        '_citation_author.key'
 loop_
   _category_key.name
          '_citation_author.citation_id'
@@ -15650,9 +15603,7 @@ save_
 
 save_citation_author.key
     _definition.id             '_citation_author.key'
-     loop_
-    _alias.definition_id       '_citation_author.key'
-    _definition.update           2012-12-13
+    _definition.update           2021-06-29
     _description.text
 ;
      Value is a unique key to a set of CITATION_AUTHOR items
@@ -15756,14 +15707,13 @@ save_CITATION_EDITOR
 _definition.id                          CITATION_EDITOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Category of items describing citation editor(s) details.
 ;
 _name.category_id                       PUBLICATION
 _name.object_id                         CITATION_EDITOR
-_category.key_id                        '_citation_editor.id'
 loop_
   _category_key.name
          '_citation_editor.citation_id'
@@ -15796,9 +15746,7 @@ save_
 
 save_citation_editor.id
     _definition.id             '_citation_editor.id'
-     loop_
-    _alias.definition_id       '_citation_editor.id'
-    _definition.update           2012-12-13
+    _definition.update           2021-06-29
     _description.text
 ;
      Value is a unique key to a set of CITATION_EDITOR items
@@ -16569,7 +16517,7 @@ save_DISPLAY_COLOUR
 _definition.id                          DISPLAY_COLOUR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to enumerate the display
@@ -16577,7 +16525,6 @@ _description.text
 ;
 _name.category_id                       DISPLAY
 _name.object_id                         DISPLAY_COLOUR
-_category.key_id                        '_display_colour.hue'
 loop_
   _category_key.name
          '_display_colour.hue' 
@@ -17411,14 +17358,13 @@ save_JOURNAL_INDEX
 _definition.id                          JOURNAL_INDEX
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Category of items describing publication indices.
 ;
 _name.category_id                       JOURNAL
 _name.object_id                         JOURNAL_INDEX
-_category.key_id                        '_journal_index.id'
 loop_
   _category_key.name
          '_journal_index.id' 
@@ -17738,14 +17684,13 @@ save_PUBL_AUTHOR
 _definition.id                          PUBL_AUTHOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Category of data items recording the author information.
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_AUTHOR
-_category.key_id                        '_publ_author.name'
 loop_
   _category_key.name
          '_publ_author.id' 
@@ -17979,7 +17924,7 @@ save_PUBL_BODY
 _definition.id                          PUBL_BODY
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Data items in the PUBL_BODY category permit labelling of
@@ -17992,7 +17937,6 @@ _description.text
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_BODY
-_category.key_id                        '_publ_body.label'
 loop_
   _category_key.name
          '_publ_body.label' 
@@ -18136,14 +18080,13 @@ save_PUBL_CONTACT_AUTHOR
 _definition.id                          PUBL_CONTACT_AUTHOR
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Category of items describing contact author(s) details.
 ;
 _name.category_id                       PUBL
 _name.object_id                         PUBL_CONTACT_AUTHOR
-_category.key_id                        '_publ_contact_author.name'
 loop_
   _category_key.name
          '_publ_contact_author.id' 
@@ -18242,7 +18185,7 @@ save_
 save_publ_contact_author.id
 
 _definition.id                          '_publ_contact_author.id'
-_definition.update                      2020-08-13
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Arbitrary identifier for this author
@@ -18250,7 +18193,7 @@ _description.text
 _name.category_id                       publ_contact_author
 _name.object_id                         id
 _name.linked_item_id                    '_publ_author.id'
-_type.purpose                           Key
+_type.purpose                           Link
 _type.source                            Related
 _type.container                         Single
 _type.contents                          Code
@@ -18452,7 +18395,7 @@ save_PUBL_MANUSCRIPT_INCL_EXTRA
 _definition.id                          PUBL_MANUSCRIPT_INCL_EXTRA
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      Category of data items that allow the authors of a manuscript to
@@ -18466,7 +18409,6 @@ _description.text
 ;
 _name.category_id                       PUBL_MANUSCRIPT
 _name.object_id                         PUBL_MANUSCRIPT_INCL_EXTRA
-_category.key_id                        '_publ_manuscript_incl_extra.item'
 loop_
   _category_key.name
          '_publ_manuscript_incl_extra.item' 
@@ -19100,7 +19042,7 @@ save_ATOM_SITE
 _definition.id                          ATOM_SITE
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe atom site information
@@ -19108,7 +19050,6 @@ _description.text
 ;
 _name.category_id                       ATOM
 _name.object_id                         ATOM_SITE
-_category.key_id                        '_atom_site.label'
 loop_
   _category_key.name
          '_atom_site.label' 
@@ -19730,8 +19671,8 @@ save_atom_site.label
 _definition.id                          '_atom_site.label'
 loop_
   _alias.definition_id
-         '_atom_site_label'  
-         '_atom_site.id' 
+         '_atom_site_label'
+         '_atom_site.id'
 _import.get [{'save':atom_site_label  'file':templ_attr.cif}]
 _name.category_id                       atom_site
 _name.object_id                         label
@@ -20362,7 +20303,7 @@ save_ATOM_SITE_ANISO
 _definition.id                          ATOM_SITE_ANISO
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe the anisotropic
@@ -20370,7 +20311,6 @@ _description.text
 ;
 _name.category_id                       ATOM_SITE
 _name.object_id                         ATOM_SITE_ANISO
-_category.key_id                        '_atom_site_aniso.label'
 loop_
   _category_key.name
          '_atom_site_aniso.label' 
@@ -21734,7 +21674,7 @@ save_ATOM_TYPE
 _definition.id                          ATOM_TYPE
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe atomic type information
@@ -21742,7 +21682,6 @@ _description.text
 ;
 _name.category_id                       ATOM
 _name.object_id                         ATOM_TYPE
-_category.key_id                        '_atom_type.symbol'
 loop_
   _method.purpose
   _method.expression
@@ -22106,7 +22045,7 @@ save_ATOM_TYPE_SCAT
 _definition.id                          ATOM_TYPE_SCAT
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to describe atomic scattering
@@ -22114,7 +22053,6 @@ _description.text
 ;
 _name.category_id                       ATOM_TYPE
 _name.object_id                         ATOM_TYPE_SCAT
-_category.key_id                        '_atom_type_scat.symbol'
 loop_
   _category_key.name
          '_atom_type_scat.symbol' 
@@ -24361,7 +24299,7 @@ save_REFINE_LS_CLASS
 _definition.id                          REFINE_LS_CLASS
 _definition.scope                       Category
 _definition.class                       Loop
-_definition.update                      2013-09-08
+_definition.update                      2021-06-29
 _description.text                       
 ;
      The CATEGORY of data items used to specify information about the
@@ -24369,7 +24307,6 @@ _description.text
 ;
 _name.category_id                       REFINE_LS
 _name.object_id                         REFINE_LS_CLASS
-_category.key_id                        '_refine_ls_class.code'
 loop_
   _category_key.name
          '_refine_ls_class.code' 
@@ -24660,7 +24597,7 @@ loop_
      Validation method for _space_group.crystal_system removed as it contained
      undefined dREL functions "throw" and "alert".
 ;
-     3.0.14     2021-03-03
+     3.0.14     2021-06-29
 ;
      Added opaque author identifiers to audit_author and publ_author as well
      as relevant linking identifiers to audit_contact_author and 
@@ -24676,4 +24613,9 @@ loop_
      Corrected a few typos in several save frame definitions.
      Corrected the definitions of the ATOM_SITES_CARTN_TRANSFORM category
      and the _atom_sites_fract_transform.matrix data item.
+
+     Changed the DDL conformance version number from 3.0.14 to 4.0.1.
+ 
+     Removed all instances of the _category.key_id attribute since it is no
+     longer defined in the DDLm reference dictionary.
 ;

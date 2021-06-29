@@ -1,6 +1,6 @@
-# This is a basic workflow to help you get started with Actions
+# Check that syntax is correct
 
-name: CIFSyntaxCheck
+name: CIFSyntaxandStyleCheck
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -13,8 +13,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  syntax:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -28,3 +27,23 @@ jobs:
         - name: check_syntax
           uses: COMCIFS/cif_syntax_check_action@master
           id: cif_syntax_check
+  ddlm:
+    runs-on: ubuntu-latest
+    needs: syntax
+    steps:
+        - name: checkout
+          uses: actions/checkout@v2
+
+        - name: check_ddlm
+          uses: COMCIFS/dictionary_check_action@main
+          id: ddlm_check
+  layout:
+    runs-on: ubuntu-latest
+    needs: ddlm
+    steps:
+        - name: checkout
+          uses: actions/checkout@v2
+          
+        - name: check_layout
+          uses: jamesrhester/cif_dic_layout_check_action@main
+          id: layout_check
