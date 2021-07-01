@@ -97,7 +97,7 @@ save_rho_coeff
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -115,7 +115,7 @@ save_rho_kappa
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -133,7 +133,7 @@ save_rho_slater
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -148,7 +148,7 @@ save_matrix_pdb
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -164,7 +164,7 @@ save_matrix_w
     _type.container              Single
     _type.contents               Real
     _name.category_id            cell_subsystem
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -196,7 +196,7 @@ save_index_limit_max
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -212,7 +212,7 @@ save_index_limit_min
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -361,7 +361,7 @@ save_fract_coord
     _type.source                 Derived 
     _type.container              Single 
     _type.contents               Real
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -377,7 +377,7 @@ save_fract_coord_su
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -460,7 +460,7 @@ save_ncs_matrix_IJ
     _type.source                Derived
     _type.container             Single
     _type.contents              Real
-    _units.code                 none
+    _units.code                 None
      save_
 
 
@@ -483,7 +483,7 @@ save_rot_matrix_IJ
     _type.source                Derived
     _type.container             Single
     _type.contents              Real
-    _units.code                 none
+    _units.code                 None
      save_
 
 
@@ -509,7 +509,7 @@ save_fract_matrix
     _type.source                 Derived 
     _type.container              Single 
     _type.contents               Real        
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -633,7 +633,7 @@ save_Cromer_Mann_coeff
     _type.container              Single 
     _type.contents               Real 
     _enumeration.def_index_id  '_atom_type.symbol'
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -653,7 +653,7 @@ save_hi_ang_Fox_coeffs
     _type.container              Single 
     _type.contents               Real 
     _enumeration.def_index_id  '_atom_type.symbol'
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -668,7 +668,7 @@ save_Miller_index
     _type.source                 Recorded
     _type.container              Single 
     _type.contents               Integer
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -684,7 +684,7 @@ save_orient_matrix
     _type.source                 Recorded
     _type.container              Single 
     _type.contents               Real        
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -701,7 +701,7 @@ save_transf_matrix
     _type.source                 Recorded 
     _type.container              Single 
     _type.contents               Real        
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -773,7 +773,7 @@ save_diffr_counts
     _type.container              Single 
     _type.contents               Integer
     _enumeration.range           0:
-    _units.code                  none
+    _units.code                  None
      save_
 
 
@@ -791,7 +791,7 @@ save_display_colour
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           0:255
-    _units.code                  none
+    _units.code                  None
      save_
 
 
