@@ -9,8 +9,8 @@ data_CORE_DIC
 
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
-_dictionary.version                     3.0.14
-_dictionary.date                        2021-06-29
+_dictionary.version                     3.1.0
+_dictionary.date                        2021-07-01
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             4.0.1
@@ -13382,31 +13382,24 @@ loop_
 ; 
 save_
 
+save_model_site.adp_eigenvalues
 
-save_model_site.adp_eigen_system
-
-_definition.id                          '_model_site.adp_eigen_system'
-_definition.update                      2021-03-03
+_definition.id                          '_model_site.adp_eigenvalues'
+_definition.update                      2021-07-01
 _description.text
 ;
-     The set of three adp eigenvalues and associated eigenvectors
-     in the form of 4 element List. Each list has the form
- 
-                   (val, vecX, vecY, vecZ)
- 
-     where the vector elements are direction cosines to the orthogonal
-     axes X,Y,Z. The lists are sorted in descending magnitude of val.
-     That is, the list with the largest val is first, and the smallest
-     val is last.
+     The set of three adp eigenvalues for the associated eigenvectors
+     given by _model_site.adp_eigenvectors. The eigenvalues are
+     sorted in order of magnitude with the largest first.
 ;
 _name.category_id                       model_site
-_name.object_id                         adp_eigen_system
+_name.object_id                         adp_eigenvalues
 _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Array
 _type.contents                          Real
-_type.dimension                         '[3,4]'
-_units.code                             none
+_type.dimension                         3
+_units.code                             None
 loop_
   _method.purpose
   _method.expression
@@ -13414,9 +13407,38 @@ loop_
 ;
       A    =  _cell.orthogonal_matrix
       U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
+      _model_site.adp_eigenvalues  =  Eigen( U )[:,0]
  
-      _model_site.adp_eigen_system  =  Eigen( U )
- 
+; 
+
+save_
+
+save_model_site.adp_eigenvectors
+
+_definition.id                          '_model_site.adp_eigenvectors'
+_definition.update                      2021-07-01
+
+_description.text
+;
+     The set of three adp eigenvectors corresponding to the values
+     given in _model_site.adp_eigenvalues.
+;
+_name.category_id                       model_site
+_name.object_id                         adp_eigenvectors
+_type.purpose                           Measurand
+_type.source                            Derived
+_type.container                         Array
+_type.contents                          Real
+_type.dimension                         '[3,3]'
+_units.code                             Angstrom_squared
+loop_
+  _method.purpose
+  _method.expression
+         Evaluation
+;
+      A    =  _cell.orthogonal_matrix
+      U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
+      _model_site.adp_eigenvectors  =  Eigen( U )[:,1:4]
 ; 
 
 save_
@@ -24618,4 +24640,9 @@ loop_
  
      Removed all instances of the _category.key_id attribute since it is no
      longer defined in the DDLm reference dictionary.
+;
+     3.1.0     2021-07-01
+;
+     Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
+     and _model_site.adp_eigenvalues
 ;
