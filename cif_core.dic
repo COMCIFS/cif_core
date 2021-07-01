@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
     _description.text
 ;
     The CIF_CORE dictionary records all the CORE data items defined
-        and used with in the Crystallographic Information Framework (CIF).
+    and used with in the Crystallographic Information Framework (CIF).
 ;
 
 save_CIF_CORE
@@ -147,10 +147,10 @@ save_diffrn.ambient_pressure_gt
     _definition.update            2012-12-13
     _description.text
 ;
-     Mean hydrostatic pressure above which intensities were measured.
-     These items allow for a pressure range to be given.
+    Mean hydrostatic pressure above which intensities were measured.
+    These items allow for a pressure range to be given.
     _diffrn.ambient_pressure should be used in preference to this
-     item when possible.
+    item when possible.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_pressure_gt
@@ -170,10 +170,10 @@ save_diffrn.ambient_pressure_lt
     _definition.update            2012-12-13
     _description.text
 ;
-     Mean hydrostatic pressure below which intensities were measured.
-     These items allow for a pressure range to be given.
+    Mean hydrostatic pressure below which intensities were measured.
+    These items allow for a pressure range to be given.
     _diffrn.ambient_pressure should be used in preference to this
-     item when possible.
+    item when possible.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_pressure_lt
@@ -276,10 +276,10 @@ save_diffrn.ambient_temperature_gt
     _definition.update            2012-12-13
     _description.text
 ;
-     Mean temperature above which intensities were measured.
-     These items allow for a temperature range to be given.
+    Mean temperature above which intensities were measured.
+    These items allow for a temperature range to be given.
     _diffrn.ambient_temperature should be used in preference to
-     this item when possible.
+    this item when possible.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_temperature_gt
@@ -305,10 +305,10 @@ save_diffrn.ambient_temperature_lt
     _definition.update            2012-12-13
     _description.text
 ;
-     Mean temperature below which intensities were measured.
-     These items allow for a temperature range to be given.
+    Mean temperature below which intensities were measured.
+    These items allow for a temperature range to be given.
     _diffrn.ambient_temperature should be used in preference to
-     this item when possible.
+    this item when possible.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_temperature_lt
@@ -437,7 +437,7 @@ save_diffrn.special_details
     _description_example.case
 ;
     The results may not be entirely reliable as the measurement was
-         made during a heat wave when the air-conditioning had failed.
+    made during a heat wave when the air-conditioning had failed.
 ;
 
 save_
@@ -6197,17 +6197,17 @@ save_cell.convert_uij_to_betaij
     _definition.update            2016-09-08
     _description.text
 ;
-     The reciprocal space matrix for converting the U(ij) matrix of
-     atomic displacement parameters to a dimensionless beta(IJ) matrix.
-     The adp factor in a structure factor expression:
+    The reciprocal space matrix for converting the U(ij) matrix of
+    atomic displacement parameters to a dimensionless beta(IJ) matrix.
+    The adp factor in a structure factor expression:
 
-     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-       = exp -       ( beta11 h h + ............ 2 beta23 k l )
+    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
+    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+      = exp -       ( beta11 h h + ............ 2 beta23 k l )
 
     The conversion of the U or B matrices to the beta matrix
 
-         beta =   C U C   =    C B C /8pi**2
+        beta =   C U C   =    C B C /8pi**2
 
     where C is conversion matrix defined here.
 ;
@@ -6240,9 +6240,9 @@ save_cell.convert_uiso_to_uij
     The reciprocal space matrix for converting the isotropic Uiso
     atomic displacement parameter to the anisotropic matrix Uij.
 
-                      | 1            cos(gamma*)   cos(beta*)  |
-     U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
-                      | cos(beta*)   cos(alpha*)   1           |
+                     | 1            cos(gamma*)   cos(beta*)  |
+    U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
+                     | cos(beta*)   cos(alpha*)   1           |
 ;
     _name.category_id             cell
     _name.object_id               convert_Uiso_to_Uij
@@ -7856,13 +7856,13 @@ save_chemical.properties_biological
       _description_example.case
 ;
        diverse biological activities including use as a laxative
-        and strong antibacterial activity against S. aureus and weak
-        activity against cyclooxygenase-1 (COX-1)
+       and strong antibacterial activity against S. aureus and weak
+       activity against cyclooxygenase-1 (COX-1)
 ;
 ;
        antibiotic activity against Bacillus subtilis (ATCC 6051) but no
-        significant activity against Candida albicans (ATCC 14053),
-        Aspergillus flavus (NRRL 6541) & Fusarium verticillioides (NRRL 25457)
+       significant activity against Candida albicans (ATCC 14053),
+       Aspergillus flavus (NRRL 6541) & Fusarium verticillioides (NRRL 25457)
 ;
 ;
        weakly potent lipoxygenase nonredox inhibitor
@@ -7960,7 +7960,7 @@ save_chemical.temperature_decomposition_gt
     _definition.update            2014-07-22
     _description.text
 ;
-     The temperature above which a crystalline solid decomposes.
+    The temperature above which a crystalline solid decomposes.
     _chemical.temperature_decomposition should be used in preference.
 ;
     _name.category_id             chemical
@@ -7981,7 +7981,7 @@ save_chemical.temperature_decomposition_lt
     _definition.update            2012-12-11
     _description.text
 ;
-     The temperature below which a crystalline solid decomposes.
+    The temperature below which a crystalline solid decomposes.
     _chemical.temperature_decomposition should be used in preference.
 ;
     _name.category_id             chemical
@@ -8048,7 +8048,7 @@ save_chemical.temperature_sublimation_gt
     _definition.update            2012-12-11
     _description.text
 ;
-     The temperature above which a crystalline solid sublimates.
+    The temperature above which a crystalline solid sublimates.
     _chemical.temperature_sublimation should be used in preference.
 ;
     _name.category_id             chemical
@@ -8069,7 +8069,7 @@ save_chemical.temperature_sublimation_lt
     _definition.update            2012-12-11
     _description.text
 ;
-     The temperature below which a crystalline solid sublimates.
+    The temperature below which a crystalline solid sublimates.
     _chemical.temperature_sublimation should be used in preference.
 ;
     _name.category_id             chemical
@@ -10348,8 +10348,8 @@ save_space_group_generator.xyz
     _description_example.case     x,1/2-y,1/2+z
     _description_example.detail
 ;
-    c glide reflection through the plane (x,1/4,z)
-              chosen as one of the generators of the space group
+    c glide reflection through the plane (x,1/4,z) chosen as one of
+    the generators of the space group
 ;
 
 save_
@@ -10767,10 +10767,10 @@ save_space_group_wyckoff.site_symmetry
 ;
          2..
 ;
-         Site symmetry for the Wyckoff position 96f in space group No.
-          228, F d -3 c.  The site-symmetry group is isomorphic to the
-          point group 2 with the twofold axis along one of the {100}
-          directions.
+         Site symmetry for the Wyckoff position 96f in space group
+         No. 228, F d -3 c.  The site-symmetry group is isomorphic to
+         the point group 2 with the twofold axis along one of the {100}
+         directions.
 ;
 
 save_
@@ -13175,23 +13175,23 @@ save_audit.block_doi
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
-     the data set publication represented by the current
-     datablock. This can be used as a unique identifier for
-     the datablock so long as the code used is a valid DOI
-     (i.e. begins with a valid publisher prefix assigned by a
-     Registration Agency and a suffix guaranteed to be unique
-     by the publisher) and has had its metadata deposited
-     with a DOI Registration Agency.
+    the data set publication represented by the current
+    datablock. This can be used as a unique identifier for
+    the datablock so long as the code used is a valid DOI
+    (i.e. begins with a valid publisher prefix assigned by a
+    Registration Agency and a suffix guaranteed to be unique
+    by the publisher) and has had its metadata deposited
+    with a DOI Registration Agency.
 
-     A DOI is a unique character string identifying any
-     object of intellectual property. It provides a
-     persistent identifier for an object on a digital network
-     and permits the association of related current data in a
-     structured extensible way. A DOI is an implementation
-     of the Internet concepts of Uniform Resource Name and
-     Universal Resource Locator managed according to the
-     specifications of the International DOI Foundation (see
-     http://www.doi.org).
+    A DOI is a unique character string identifying any
+    object of intellectual property. It provides a
+    persistent identifier for an object on a digital network
+    and permits the association of related current data in a
+    structured extensible way. A DOI is an implementation
+    of the Internet concepts of Uniform Resource Name and
+    Universal Resource Locator managed according to the
+    specifications of the International DOI Foundation
+    (see http://www.doi.org).
 ;
     _name.category_id             audit
     _name.object_id               block_doi
@@ -13359,10 +13359,10 @@ save_audit_author.address
     _description_example.case
 ;
     Department
-                            Institute
-                            Street
-                            City and postcode
-                            COUNTRY
+    Institute
+    Street
+    City and postcode
+    COUNTRY
 ;
 
 save_
@@ -13391,9 +13391,9 @@ save_audit_author.id_orcid
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
-     author. ORCID is an open, non-profit, community-driven
-     service to provide a registry of unique researcher
-     identifiers (http://orcid.org).
+    author. ORCID is an open, non-profit, community-driven
+    service to provide a registry of unique researcher
+    identifiers (http://orcid.org).
 ;
     _name.category_id             audit_author
     _name.object_id               id_orcid
@@ -13666,10 +13666,10 @@ save_audit_contact_author.address
     _description_example.case
 ;
     Department
-                            Institute
-                            Street
-                            City and postcode
-                            COUNTRY
+    Institute
+    Street
+    City and postcode
+    COUNTRY
 ;
 
 save_
@@ -14297,15 +14297,15 @@ save_citation.doi
 ;
     The Digital Object Identifier (DOI) of the cited work.
 
-     A DOI is a unique character string identifying any
-     object of intellectual property. It provides a
-     persistent identifier for an object on a digital network
-     and permits the association of related current data in a
-     structured extensible way. A DOI is an implementation
-     of the Internet concepts of Uniform Resource Name and
-     Universal Resource Locator managed according to the
-     specifications of the International DOI Foundation (see
-     http://www.doi.org).
+    A DOI is a unique character string identifying any
+    object of intellectual property. It provides a
+    persistent identifier for an object on a digital network
+    and permits the association of related current data in a
+    structured extensible way. A DOI is an implementation
+    of the Internet concepts of Uniform Resource Name and
+    Universal Resource Locator managed according to the
+    specifications of the International DOI Foundation
+    (see http://www.doi.org).
 ;
     _name.category_id             citation
     _name.object_id               doi
@@ -14549,11 +14549,10 @@ save_citation.publisher
     _definition.update            2017-09-23
     _description.text
 ;
-    The name of the publisher of the cited work. This
-     should be used for citations of journal articles or
-     datasets (in the latter case the publisher could be a
-     curated database). For books or book chapters use
-     _citation.book_publisher.
+    The name of the publisher of the cited work. This should be used
+    for citations of journal articles or datasets (in the latter case
+    the publisher could be a curated database). For books or book chapters
+    use _citation.book_publisher.
 ;
     _name.category_id             citation
     _name.object_id               publisher
@@ -15061,20 +15060,20 @@ save_database.dataset_doi
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
-     a data set publication associated with the structure
-     described in the current datablock. This should be used
-     for a dataset obtained from a curated database such as
-     CSD or PDB.
+    a data set publication associated with the structure
+    described in the current datablock. This should be used
+    for a dataset obtained from a curated database such as
+    CSD or PDB.
 
-     A DOI is a unique character string identifying any
-     object of intellectual property. It provides a
-     persistent identifier for an object on a digital network
-     and permits the association of related current data in a
-     structured extensible way. A DOI is an implementation
-     of the Internet concepts of Uniform Resource Name and
-     Universal Resource Locator managed according to the
-     specifications of the International DOI Foundation (see
-     http://www.doi.org).
+    A DOI is a unique character string identifying any
+    object of intellectual property. It provides a
+    persistent identifier for an object on a digital network
+    and permits the association of related current data in a
+    structured extensible way. A DOI is an implementation
+    of the Internet concepts of Uniform Resource Name and
+    Universal Resource Locator managed according to the
+    specifications of the International DOI Foundation
+    (see http://www.doi.org).
 ;
     _name.category_id             database
     _name.object_id               dataset_doi
@@ -16714,10 +16713,10 @@ save_publ_author.address
     _description_example.case
 ;
     Department
-                            Institute
-                            Street
-                            City and postcode
-                            COUNTRY
+    Institute
+    Street
+    City and postcode
+    COUNTRY
 ;
 
 save_
@@ -16828,9 +16827,9 @@ save_publ_author.id_orcid
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
-     author. ORCID is an open, non-profit, community-driven
-     service to provide a registry of unique researcher
-     identifiers (http://orcid.org).
+    author. ORCID is an open, non-profit, community-driven
+    service to provide a registry of unique researcher
+    identifiers (http://orcid.org).
 ;
     _name.category_id             publ_author
     _name.object_id               id_orcid
@@ -17089,10 +17088,10 @@ save_publ_contact_author.address
     _description_example.case
 ;
     Department of Chemistry and Biochemistry
-                            University of Guelph
-                            Ontario
-                            Canada
-                            N1G 2W1
+    University of Guelph
+    Ontario
+    Canada
+    N1G 2W1
 ;
 
 save_
@@ -17202,9 +17201,9 @@ save_publ_contact_author.id_orcid
     _description.text
 ;
     Identifier in the ORCID Registry of the author submitting
-     the manuscript and data block. ORCID is an open, non-profit,
-     community-driven service to provide a registry of unique
-     researcher identifiers (http://orcid.org).
+    the manuscript and data block. ORCID is an open, non-profit,
+    community-driven service to provide a registry of unique
+    researcher identifiers (http://orcid.org).
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id_orcid
@@ -21619,7 +21618,7 @@ save_atom_type_scat.hi_ang_fox_coeffs
     The set of Fox et al. coefficients for generating high angle
     X-ray scattering factors. [ c0, c1, c2, c3 ]
     Ref: International Tables for Crystallography, Vol. C
-            (1991) Table 6.1.1.5
+         (1991) Table 6.1.1.5
 ;
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_coeffs
@@ -22284,7 +22283,7 @@ save_refine_ls.extinction_expression
     _description_example.detail
 ;
     Larson, A. C. (1970). "Crystallographic Computing", edited by
-                  F. R. Ahmed. Eq. (22) p. 292.  Copenhagen: Munksgaard.
+    F. R. Ahmed. Eq. (22) p. 292.  Copenhagen: Munksgaard.
 ;
 
 save_
@@ -22361,9 +22360,8 @@ save_refine_ls.f_calc_details
        Gaussian integration using 16 points
 ;
 ;
-       Bessel functions expansion up to 5th
-                                     order. estimated accuracy of Bessel
-                                     function  better than 0.001 electrons
+       Bessel functions expansion up to 5th order. estimated accuracy of
+       Bessel function better than 0.001 electrons
 ;
 
 save_
@@ -23305,9 +23303,9 @@ save_refine_ls.weighting_details
     _description_example.case
 ;
     Sigdel model of Konnert-Hendrickson:
-             Sigdel = Afsig +  Bfsig*(sin(\q)/\l - 1/6)
-             Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
-             Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
+      Sigdel = Afsig +  Bfsig*(sin(\q)/\l - 1/6)
+      Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
+      Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
 ;
 
 save_
