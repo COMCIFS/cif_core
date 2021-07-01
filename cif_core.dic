@@ -13398,7 +13398,7 @@ _type.purpose                           Measurand
 _type.source                            Derived
 _type.container                         Array
 _type.contents                          Real
-_type.dimension                         3
+_type.dimension                         '[3]'
 _units.code                             None
 loop_
   _method.purpose
