@@ -13421,7 +13421,11 @@ _definition.update                      2021-07-01
 _description.text
 ;
      The set of three adp eigenvectors corresponding to the values
-     given in _model_site.adp_eigenvalues.
+     given in _model_site.adp_eigenvalues. The eigenvectors are
+     contained in the rows of a matrix ordered from top to bottom 
+     in order largest to smallest corresponding eigenvalue. The
+     eigenvector elements are direction cosines to the orthogonal
+     axes X,Y,Z.
 ;
 _name.category_id                       model_site
 _name.object_id                         adp_eigenvectors
