@@ -10,7 +10,7 @@ data_CORE_DIC
 _dictionary.title                       CORE_DIC
 _dictionary.class                       Instance
 _dictionary.version                     3.1.0
-_dictionary.date                        2021-07-01
+_dictionary.date                        2021-07-07
 _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
 _dictionary.ddl_conformance             4.0.1
@@ -6512,7 +6512,7 @@ save_
 save_cell.metric_tensor
 
 _definition.id                          '_cell.metric_tensor'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The direct space (covariant) metric tensor used to transform
@@ -6544,7 +6544,7 @@ save_
 save_cell.orthogonal_matrix
 
 _definition.id                          '_cell.orthogonal_matrix'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Orthogonal matrix of the crystal unit cell. Definition uses
@@ -7177,7 +7177,7 @@ save_
 save_cell.convert_Uij_to_betaij
 
 _definition.id                          '_cell.convert_Uij_to_betaij'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The reciprocal space matrix for converting the U(ij) matrix of
@@ -7221,7 +7221,7 @@ save_
 save_cell.convert_Uiso_to_Uij
 
 _definition.id                          '_cell.convert_Uiso_to_Uij'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The reciprocal space matrix for converting the isotropic Uiso
@@ -7259,7 +7259,7 @@ save_
 save_cell.reciprocal_metric_tensor
 
 _definition.id                          '_cell.reciprocal_metric_tensor'
-_definition.update                      2016-09-08
+_definition.update                      2021-07-07
 _description.text
 ;
      The reciprocal (contravariant) metric tensor used to transform
@@ -7292,7 +7292,7 @@ save_
 save_cell.reciprocal_orthogonal_matrix
 
 _definition.id                          '_cell.reciprocal_orthogonal_matrix'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Orthogonal matrix of the reciprocal space. The matrix may be
@@ -7665,7 +7665,7 @@ save_
 save_cell.reciprocal_vector_a
 
 _definition.id                          '_cell.reciprocal_vector_a'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Reciprocal of the _cell.vector_a.
@@ -7694,7 +7694,7 @@ save_
 save_cell.reciprocal_vector_b
 
 _definition.id                          '_cell.reciprocal_vector_b'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Reciprocal of the _cell.vector_b.
@@ -7723,7 +7723,7 @@ save_
 save_cell.reciprocal_vector_c
 
 _definition.id                          '_cell.reciprocal_vector_c'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Reciprocal of the _cell.vector_c.
@@ -7751,7 +7751,7 @@ save_
 save_cell.vector_a
 
 _definition.id                          '_cell.vector_a'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The cell vector along the x axis.
@@ -7778,7 +7778,7 @@ save_
 save_cell.vector_b
 
 _definition.id                          '_cell.vector_b'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The cell vector along the y axis.
@@ -7805,7 +7805,7 @@ save_
 save_cell.vector_c
 
 _definition.id                          '_cell.vector_c'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The cell vector along the z axis.
@@ -11033,7 +11033,7 @@ save_space_group_symop.operation_description
 save_space_group_symop.R
 
 _definition.id                          '_space_group_symop.R'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      A matrix containing the symmetry rotation operations of a space group
@@ -13494,7 +13494,7 @@ save_
 save_model_site.Cartn_xyz
 
 _definition.id                          '_model_site.Cartn_xyz'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
@@ -19365,7 +19365,7 @@ save_
 save_atom_site.Cartn_xyz
 
 _definition.id                          '_atom_site.Cartn_xyz'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Vector of Cartesian (orthogonal angstrom) atom site coordinates.
@@ -20571,7 +20571,7 @@ save_
 save_atom_site_aniso.matrix_B
 
 _definition.id                          '_atom_site_aniso.matrix_B'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The symmetric anisotropic atomic displacement matrix B.
@@ -20602,7 +20602,7 @@ save_
 save_atom_site_aniso.matrix_U
 
 _definition.id                          '_atom_site_aniso.matrix_U'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The symmetric anisotropic atomic displacement matrix U.
@@ -21307,7 +21307,7 @@ save_
 save_atom_sites_Cartn_transform.matrix
 
 _definition.id                          '_atom_sites_Cartn_transform.matrix'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      Matrix used to transform fractional coordinates in the ATOM_SITE
@@ -21391,7 +21391,7 @@ save_
 save_atom_sites_Cartn_transform.vector
 
 _definition.id                          '_atom_sites_Cartn_transform.vector'
-_definition.update                      2021-03-17
+_definition.update                      2021-07-07
 _description.text
 ;
      The 3x1 translation is used with _atom_sites_Cartn_transform.matrix
@@ -24658,7 +24658,7 @@ loop_
      Removed all instances of the _category.key_id attribute since it is no
      longer defined in the DDLm reference dictionary.
 ;
-     3.1.0     2021-07-01
+     3.1.0     2021-07-07
 ;
      Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
      and _model_site.adp_eigenvalues.
