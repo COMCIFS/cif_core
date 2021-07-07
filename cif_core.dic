@@ -13408,7 +13408,6 @@ loop_
       A    =  _cell.orthogonal_matrix
       U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
       _model_site.adp_eigenvalues  =  Eigen( U )[:,0]
- 
 ; 
 
 save_
@@ -13417,7 +13416,6 @@ save_model_site.adp_eigenvectors
 
 _definition.id                          '_model_site.adp_eigenvectors'
 _definition.update                      2021-07-01
-
 _description.text
 ;
      The set of three adp eigenvectors corresponding to the values
@@ -13434,7 +13432,7 @@ _type.source                            Derived
 _type.container                         Array
 _type.contents                          Real
 _type.dimension                         '[3,3]'
-_units.code                             Angstrom_squared
+_units.code                             angstrom_squared
 loop_
   _method.purpose
   _method.expression
@@ -24648,5 +24646,5 @@ loop_
      3.1.0     2021-07-01
 ;
      Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
-     and _model_site.adp_eigenvalues
+     and _model_site.adp_eigenvalues.
 ;
