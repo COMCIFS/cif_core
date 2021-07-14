@@ -1114,7 +1114,7 @@ save_
 
 save_diffrn_orient_matrix.ubij
 
-    _definition.id                '_diffrn_orient_matrix.UBIJ'
+    _definition.id                '_diffrn_orient_matrix.UBij'
     _definition.update            2021-03-01
     _description.text
 ;
@@ -1122,7 +1122,7 @@ save_diffrn_orient_matrix.ubij
     respect to the diffractometer axes.
 ;
     _name.category_id             diffrn_orient_matrix
-    _name.object_id               UBIJ
+    _name.object_id               UBij
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Matrix
@@ -6460,8 +6460,9 @@ save_cell.reciprocal_angle_alpha
 ;
      With c as cell
 
-    _cell.reciprocal_angle_alpha = Acosd(
-(Cosd(c.angle_beta)*Cosd(c.angle_gamma)-Cosd(c.angle_alpha))/(Sind(c.angle_beta)*Sind(c.angle_gamma)))
+    _cell.reciprocal_angle_alpha =
+    Acosd((Cosd(c.angle_beta)*Cosd(c.angle_gamma)-Cosd(c.angle_alpha))/
+    (Sind(c.angle_beta)*Sind(c.angle_gamma)))
 ;
 
 save_
@@ -6516,8 +6517,9 @@ save_cell.reciprocal_angle_beta
 ;
      With c as cell
 
-    _cell.reciprocal_angle_beta = Acosd(
-(Cosd(c.angle_alpha)*Cosd(c.angle_gamma)-Cosd(c.angle_beta))/(Sind(c.angle_alpha)*Sind(c.angle_gamma)))
+    _cell.reciprocal_angle_beta =
+    Acosd((Cosd(c.angle_alpha)*Cosd(c.angle_gamma)-Cosd(c.angle_beta))/
+    (Sind(c.angle_alpha)*Sind(c.angle_gamma)))
 ;
 
 save_
@@ -6572,8 +6574,9 @@ save_cell.reciprocal_angle_gamma
 ;
      With c as cell
 
-    _cell.reciprocal_angle_gamma = Acosd(
-(Cosd(c.angle_alpha)*Cosd(c.angle_beta)-Cosd(c.angle_gamma))/(Sind(c.angle_alpha)*Sind(c.angle_beta)))
+    _cell.reciprocal_angle_gamma =
+    Acosd((Cosd(c.angle_alpha)*Cosd(c.angle_beta)-Cosd(c.angle_gamma))/
+    (Sind(c.angle_alpha)*Sind(c.angle_beta)))
 ;
 
 save_
@@ -10280,7 +10283,7 @@ save_SPACE_GROUP_GENERATOR
     the space group
 ;
     _name.category_id             SPACE_GROUP
-    _name.object_id               space_group_generator
+    _name.object_id               SPACE_GROUP_GENERATOR
     _category_key.name            '_space_group_generator.key'
 
 save_
@@ -12459,7 +12462,6 @@ save_MODEL_SITE
        atomlist ++=   [ls, axyz, cxyz, radb, radc, 0]
     }
 
-
     molelist  = List()
     dmin     =  _geom.bond_distance_min
     m        =  0
@@ -12501,7 +12503,6 @@ save_MODEL_SITE
        If (connect == "no") Break
     }  }
 
-
     For [ls,ax,cx,rb,rc,n,m] in molelist  {
 
        model_site( .label              =  ls[0],
@@ -12534,7 +12535,7 @@ save_model_site.adp_eigenvalues
     _type.container               Array
     _type.dimension               '[3]'
     _type.contents                Real
-    _units.code                   None
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -13216,7 +13217,7 @@ save_audit.creation_date
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Datetime
+    _type.contents                DateTime
 
     loop_
       _description_example.case
