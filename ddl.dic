@@ -1817,7 +1817,6 @@ save_type.indices_referenced_id
     form and construction of the indices of entries in values of the present
     item.
 
-
     Meaningful only when the defined item's _type.container attribute has
     value 'Table', and its _type.indices attribute has value 'ByReference'.
 ;
