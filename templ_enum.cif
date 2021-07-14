@@ -770,9 +770,9 @@ save_units_code
 
    'nanometre_squared'     
    "length_squared 'nanometres squared (metres * 10^( -9))^2'"
-   'angstrom_squared'      
+   'angstrom_squared'
    "length_squared 'angstroms squared  (metres * 10^(-10))^2'"
-   '8pi_angstroms_squared' 
+   '8pi_angstroms_squared'
    "length_squared '8pi^2 * angstroms squared (metres * 10^(-10))^2'"
    'picometre_squared'    
    "length_squared 'picometres squared (metres * 10^(-12))^2'"
@@ -781,7 +781,7 @@ save_units_code
 
    'nanometre_cubed'       
    "length_cubed 'nanometres cubed (metres * 10^( -9))^3'"
-   'angstrom_cubed'        
+   'angstrom_cubed'
    "length_cubed 'angstroms cubed  (metres * 10^(-10))^3'"
    'picometre_cubed'       
    "length_cubed 'picometres cubed (metres * 10^(-12))^3'"
@@ -806,7 +806,7 @@ save_units_code
 
    'degree_per_minute' "rotation_per_time  'degrees (of arc) per minute'"
 
-   'celsius'      "temperature     'degrees (of temperature) Celsius'"
+   'Celsius'      "temperature     'degrees (of temperature) Celsius'"
    'kelvins'      "temperature     'temperature in kelvins'"
    'kelvins_per_minute' "cooling rate 'kelvins per minute'"
 
