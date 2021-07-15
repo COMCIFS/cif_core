@@ -1,4 +1,4 @@
-![CIF syntax check](https://github.com/COMCIFS/cif_syntax_check_action/workflows/CIFSyntaxCheck/badge.svg)
+![CIF syntax check](https://github.com/COMCIFS/cif_core/actions/workflows/main.yml/badge.svg)
 
 # IUCr Core CIF development repository
 
