@@ -18,8 +18,8 @@ data_DDL_DIC
     _description.text
 ;
     This dictionary contains the definitions of attributes that
-         make up the DDLm dictionary definition language. It provides
-         the meta meta data for all CIF dictionaries.
+    make up the DDLm dictionary definition language. It provides
+    the meta meta data for all CIF dictionaries.
 ;
 
 save_ATTRIBUTES
