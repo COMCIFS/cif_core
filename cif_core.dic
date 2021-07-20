@@ -6192,7 +6192,7 @@ save_
 save_cell.convert_uij_to_betaij
 
     _definition.id                '_cell.convert_Uij_to_betaij'
-    _definition.update            2016-09-08
+    _definition.update            2021-07-07
     _description.text
 ;
     The reciprocal space matrix for converting the U(ij) matrix of
@@ -6216,6 +6216,7 @@ save_cell.convert_uij_to_betaij
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6232,7 +6233,7 @@ save_
 save_cell.convert_uiso_to_uij
 
     _definition.id                '_cell.convert_Uiso_to_Uij'
-    _definition.update            2016-09-08
+    _definition.update            2021-07-07
     _description.text
 ;
     The reciprocal space matrix for converting the isotropic Uiso
@@ -6249,6 +6250,7 @@ save_cell.convert_uiso_to_uij
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6375,7 +6377,7 @@ save_
 save_cell.metric_tensor
 
     _definition.id                '_cell.metric_tensor'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     The direct space (covariant) metric tensor used to transform
@@ -6388,6 +6390,7 @@ save_cell.metric_tensor
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   angstrom_squared
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6405,7 +6408,7 @@ save_
 save_cell.orthogonal_matrix
 
     _definition.id                '_cell.orthogonal_matrix'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     Orthogonal matrix of the crystal unit cell. Definition uses
@@ -6419,6 +6422,7 @@ save_cell.orthogonal_matrix
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6758,7 +6762,7 @@ save_
 save_cell.reciprocal_metric_tensor
 
     _definition.id                '_cell.reciprocal_metric_tensor'
-    _definition.update            2016-09-08
+    _definition.update            2021-07-07
     _description.text
 ;
     The reciprocal (contravariant) metric tensor used to transform
@@ -6772,6 +6776,7 @@ save_cell.reciprocal_metric_tensor
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   reciprocal_angstrom_squared
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6793,7 +6798,7 @@ save_
 save_cell.reciprocal_orthogonal_matrix
 
     _definition.id                '_cell.reciprocal_orthogonal_matrix'
-    _definition.update            2016-09-08
+    _definition.update            2021-07-07
     _description.text
 ;
     Orthogonal matrix of the reciprocal space. The matrix may be
@@ -6809,6 +6814,7 @@ save_cell.reciprocal_orthogonal_matrix
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6822,7 +6828,7 @@ save_
 save_cell.reciprocal_vector_a
 
     _definition.id                '_cell.reciprocal_vector_a'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     Reciprocal of the _cell.vector_a.
@@ -6834,6 +6840,7 @@ save_cell.reciprocal_vector_a
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6847,7 +6854,7 @@ save_
 save_cell.reciprocal_vector_b
 
     _definition.id                '_cell.reciprocal_vector_b'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     Reciprocal of the _cell.vector_b.
@@ -6859,6 +6866,7 @@ save_cell.reciprocal_vector_b
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6872,7 +6880,7 @@ save_
 save_cell.reciprocal_vector_c
 
     _definition.id                '_cell.reciprocal_vector_c'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     Reciprocal of the _cell.vector_c.
@@ -6884,6 +6892,7 @@ save_cell.reciprocal_vector_c
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6921,7 +6930,7 @@ save_
 save_cell.vector_a
 
     _definition.id                '_cell.vector_a'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     The cell vector along the x axis.
@@ -6933,6 +6942,7 @@ save_cell.vector_a
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6944,7 +6954,7 @@ save_
 save_cell.vector_b
 
     _definition.id                '_cell.vector_b'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     The cell vector along the y axis.
@@ -6956,6 +6966,7 @@ save_cell.vector_b
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -6967,7 +6978,7 @@ save_
 save_cell.vector_c
 
     _definition.id                '_cell.vector_c'
-    _definition.update            2012-11-22
+    _definition.update            2021-07-07
     _description.text
 ;
     The cell vector along the z axis.
@@ -6979,6 +6990,7 @@ save_cell.vector_c
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -10477,7 +10489,7 @@ save_
 save_space_group_symop.r
 
     _definition.id                '_space_group_symop.R'
-    _definition.update            2016-05-13
+    _definition.update            2021-07-07
     _description.text
 ;
     A matrix containing the symmetry rotation operations of a space group
@@ -10493,6 +10505,7 @@ save_space_group_symop.r
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
+    _units.code                   none
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -12606,7 +12619,7 @@ save_
 save_model_site.cartn_xyz
 
     _definition.id                '_model_site.Cartn_xyz'
-    _definition.update            2021-03-01
+    _definition.update            2021-07-07
     _description.text
 ;
     Vector of Cartesian (orthogonal angstrom) atom site coordinates.
@@ -12618,7 +12631,7 @@ save_model_site.cartn_xyz
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -18310,7 +18323,7 @@ save_
 save_atom_site.cartn_xyz
 
     _definition.id                '_atom_site.Cartn_xyz'
-    _definition.update            2021-03-01
+    _definition.update            2021-07-07
     _description.text
 ;
     Vector of Cartesian (orthogonal angstrom) atom site coordinates.
@@ -18322,7 +18335,7 @@ save_atom_site.cartn_xyz
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -19484,7 +19497,7 @@ save_
 save_atom_site_aniso.matrix_b
 
     _definition.id                '_atom_site_aniso.matrix_B'
-    _definition.update            2021-03-01
+    _definition.update            2021-07-07
     _description.text
 ;
     The symmetric anisotropic atomic displacement matrix B.
@@ -19496,7 +19509,7 @@ save_atom_site_aniso.matrix_b
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstrom_squared
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -19512,7 +19525,7 @@ save_
 save_atom_site_aniso.matrix_u
 
     _definition.id                '_atom_site_aniso.matrix_U'
-    _definition.update            2021-03-01
+    _definition.update            2021-07-07
     _description.text
 ;
     The symmetric anisotropic atomic displacement matrix U.
@@ -19524,7 +19537,7 @@ save_atom_site_aniso.matrix_u
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstrom_squared
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -20333,7 +20346,7 @@ save_
 save_atom_sites_cartn_transform.matrix
 
     _definition.id                '_atom_sites_Cartn_transform.matrix'
-    _definition.update            2021-03-01
+    _definition.update            2021-07-07
     _description.text
 ;
     Matrix used to transform fractional coordinates in the ATOM_SITE
@@ -20356,7 +20369,7 @@ save_atom_sites_cartn_transform.matrix
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -20420,7 +20433,7 @@ save_
 save_atom_sites_cartn_transform.vector
 
     _definition.id                '_atom_sites_Cartn_transform.vector'
-    _definition.update            2021-03-01
+    _definition.update            2021-07-07
     _description.text
 ;
     The 3x1 translation is used with _atom_sites_Cartn_transform.matrix
@@ -20435,7 +20448,7 @@ save_atom_sites_cartn_transform.vector
     _type.container               Matrix
     _type.dimension               '[3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24022,6 +24035,7 @@ save_
        _refine_diff.density_rms_su data items.
 
        Corrected a few typos in several save frame definitions.
+
        Corrected the definitions of the ATOM_SITES_CARTN_TRANSFORM category
        and the _atom_sites_fract_transform.matrix data item.
 
@@ -24037,4 +24051,6 @@ save_
 
        Added additional enumeration values to the _journal_index.type data item
        definition.
+
+       Added measurement units to the definitions of multiple data items.
 ;
