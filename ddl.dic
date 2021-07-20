@@ -2530,6 +2530,8 @@ save_
        Updated the DICTIONARY_VALID category description to explicitly state
        that the rules only apply to Reference and Instance dictionaries.
 
+       Clarified the interpretation of the _dictionary_valid.option data item.
+
        Removed the default enumeration value of the _units.code data item.
 
        Added measurement units to the definition of the _import_details.order
