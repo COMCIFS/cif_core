@@ -787,10 +787,11 @@ save_dictionary_valid.option
 
     _definition.id                '_dictionary_valid.option'
     _definition.class             Attribute
-    _definition.update            2013-03-06
+    _definition.update            2021-07-20
     _description.text
 ;
-    Option codes for applicability of attributes in definitions.
+    Option codes for applicability of attributes in definitions. Attributes
+    not listed as 'Prohibited' for a given scope are allowed in that scope.
 ;
     _name.category_id             dictionary_valid
     _name.object_id               option
