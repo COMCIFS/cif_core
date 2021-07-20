@@ -9,11 +9,11 @@ data_DDL_DIC
 
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
-    _dictionary.version           4.0.1
-    _dictionary.date              2021-03-01
+    _dictionary.version           4.0.2
+    _dictionary.date              2021-07-20
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
-    _dictionary.ddl_conformance   4.0.1
+    _dictionary.ddl_conformance   4.0.2
     _dictionary.namespace         DdlDic
     _description.text
 ;
@@ -720,7 +720,7 @@ save_DICTIONARY_VALID
     _definition.id                DICTIONARY_VALID
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-03-01
+    _definition.update            2021-07-20
     _description.text
 ;
     Data items which are used to specify the contents of definitions in
@@ -730,7 +730,11 @@ save_DICTIONARY_VALID
 ;
     _name.category_id             DICTIONARY
     _name.object_id               DICTIONARY_VALID
-    _category_key.name            '_dictionary_valid.application'
+
+    loop_
+      _category_key.name
+         '_dictionary_valid.scope'
+         '_dictionary_valid.option'
 
 save_
 
@@ -738,14 +742,15 @@ save_dictionary_valid.application
 
     _definition.id                '_dictionary_valid.application'
     _definition.class             Attribute
-    _definition.update            2019-07-25
+    _definition_replaced.id       1
+    _definition_replaced.by       .
+    _definition.update            2021-07-20
     _description.text
 ;
-    Provides the information identifying the definition scope (
-    from the _definition.scope enumeration list) and the validity
-    options (from the _dictionary_valid.option enumeration list),
-    as a two element list. This list signals the validity of applying
-    the attributes given in _dictionary_valid.attributes.
+    Deprecated. Provides the information identifying the definition scope
+    (from the _definition.scope enumeration list) and the validity options
+    (from the _dictionary_valid.option enumeration list), as a two element
+    list.
 ;
     _name.category_id             dictionary_valid
     _name.object_id               application
@@ -2040,43 +2045,31 @@ save_
     loop_
       _dictionary_valid.scope
       _dictionary_valid.option
-      _dictionary_valid.application
       _dictionary_valid.attributes
-      Dictionary Mandatory
-         [Dictionary  Mandatory]    ['_dictionary.title'  '_dictionary.class'
-                                     '_dictionary.version'  '_dictionary.date'
-                                     '_dictionary.uri'
-                                     '_dictionary.ddl_conformance'
-                                     '_dictionary.namespace']
-      Dictionary Recommended
-         [Dictionary  Recommended]  ['_description.text'
-                                     '_dictionary_audit.version'
-                                     '_dictionary_audit.date'
-                                     '_dictionary_audit.revision']
-      Dictionary Prohibited
-         [Dictionary  Prohibited]   [ALIAS  DEFINITION  ENUMERATION
-                                     CATEGORY_KEY  METHOD  NAME  TYPE  IMPORT
-                                     UNITS]
-      Category Mandatory
-         [Category  Mandatory]      ['_definition.id'  '_definition.scope'
-                                     '_definition.class'  '_name.category_id'
-                                     '_name.object_id']
-      Category Recommended
-         [Category  Recommended]    [CATEGORY_KEY  '_category_key.name'
-                                     '_description.text']
-      Category Prohibited
-         [Category  Prohibited]     [ALIAS  DICTIONARY  ENUMERATION  TYPE
-                                     UNITS]
-      Item Mandatory
-         [Item  Mandatory]          ['_definition.id'  '_definition.update'
-                                     '_name.object_id'  '_name.category_id'
-                                     '_type.container'  '_type.contents']
-      Item Recommended
-         [Item  Recommended]        ['_definition.scope'  '_definition.class'
-                                     '_type.source'  '_type.purpose'
-                                     '_description.text'  '_description.common']
-      Item Prohibited
-         [Item  Prohibited]         [DICTIONARY  CATEGORY_KEY]
+         Dictionary  Mandatory    ['_dictionary.title'  '_dictionary.class'
+                                   '_dictionary.version'  '_dictionary.date'
+                                   '_dictionary.uri'
+                                   '_dictionary.ddl_conformance'
+                                   '_dictionary.namespace']
+         Dictionary  Recommended  ['_description.text'
+                                   '_dictionary_audit.version'
+                                   '_dictionary_audit.date'
+                                   '_dictionary_audit.revision']
+         Dictionary  Prohibited   [ALIAS  DEFINITION  ENUMERATION  CATEGORY_KEY
+                                   METHOD  NAME  TYPE  IMPORT  UNITS]
+         Category    Mandatory    ['_definition.id'  '_definition.scope'
+                                   '_definition.class'  '_name.category_id'
+                                   '_name.object_id']
+         Category    Recommended  [CATEGORY_KEY  '_category_key.name'
+                                   '_description.text']
+         Category    Prohibited   [ALIAS  DICTIONARY  ENUMERATION  TYPE  UNITS]
+         Item        Mandatory    ['_definition.id'  '_definition.update'
+                                   '_name.object_id'  '_name.category_id'
+                                   '_type.container'  '_type.contents']
+         Item        Recommended  ['_definition.scope'  '_definition.class'
+                                   '_type.source'  '_type.purpose'
+                                   '_description.text'  '_description.common']
+         Item        Prohibited   [DICTIONARY  CATEGORY_KEY]
 
     loop_
       _dictionary_audit.version
@@ -2538,4 +2531,8 @@ save_
        data item.
 
        Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
+;
+         4.0.2                    2021-07-20
+;
+       Deprecated _dictionary_valid.application.
 ;
