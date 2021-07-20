@@ -744,10 +744,10 @@ save_dictionary_valid.application
     _definition.update            2021-07-20
     _description.text
 ;
-    Deprecated. Provides the information identifying the definition scope (
-    from the _definition.scope enumeration list) and the validity
-    options (from the _dictionary_valid.option enumeration list),
-    as a two element list.
+    Deprecated. Provides the information identifying the definition scope
+    (from the _definition.scope enumeration list) and the validity options
+    (from the _dictionary_valid.option enumeration list), as a two element
+    list.
 ;
     _name.category_id             dictionary_valid
     _name.object_id               application
