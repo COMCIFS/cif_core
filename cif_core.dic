@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-07-07
+    _dictionary.date              2021-07-20
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -4149,7 +4149,7 @@ save_
 save_refln.form_factor_table
 
     _definition.id                '_refln.form_factor_table'
-    _definition.update            2013-04-23
+    _definition.update            2021-07-20
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
@@ -4160,7 +4160,6 @@ save_refln.form_factor_table
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Table
-    _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
     _method.purpose               Evaluation
@@ -24044,7 +24043,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-07-07
+         3.1.0                    2021-07-20
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -24053,4 +24052,8 @@ save_
        definition.
 
        Added measurement units to the definitions of multiple data items.
+
+       Removed the _type.dimension attribute from the definition of
+       the _refln.form_factor_table data item since it is not applicable
+       to the "Table" content type.
 ;
