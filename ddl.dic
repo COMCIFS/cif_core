@@ -392,10 +392,11 @@ save_description.text
 
     _definition.id                '_description.text'
     _definition.class             Attribute
-    _definition.update            2006-11-16
+    _definition.update            2021-07-20
     _description.text
 ;
-    The text description of the defined item.
+    The text description of the defined item, category,
+    or dictionary.
 ;
     _description.common           description
     _name.category_id             description
@@ -412,11 +413,11 @@ save_DESCRIPTION_EXAMPLE
     _definition.id                DESCRIPTION_EXAMPLE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2013-09-08
+    _definition.update            2021-07-20
     _description.text
 ;
-    The attributes of descriptive (non-machine parsable) examples of
-    values of the defined items.
+    Descriptive (non-machine parsable) examples of values of the
+    defined items and categories.
 ;
     _name.category_id             DESCRIPTION
     _name.object_id               DESCRIPTION_EXAMPLE
@@ -428,12 +429,14 @@ save_description_example.case
 
     _definition.id                '_description_example.case'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2021-07-20
     _description.text
 ;
-    An example case of the defined item. Instances of this data item
-    inherit the container, content and purpose type constraints of
-    the defining item.
+    An example case of the defined item or category.  Category example
+    cases present data names and values as they would appear in a
+    CIF-formatted file. Item example cases present values only, which
+    inherit the container, content and purpose type constraints of the
+    defining item.
 ;
     _name.category_id             description_example
     _name.object_id               case
@@ -451,7 +454,7 @@ save_description_example.detail
     _definition.update            2006-11-16
     _description.text
 ;
-    A description of an example case for the defined item.
+    A description of an example case for the defined item or category.
 ;
     _name.category_id             description_example
     _name.object_id               detail
@@ -2511,7 +2514,7 @@ save_
        Removed CATEGORY category and category.key_id
        Removed 'Index' and 'Count' content types
 ;
-         4.0.1                    2021-03-01
+         4.0.1                    2021-07-20
 ;
        Clarified use of 'SU' data items.
 
@@ -2530,4 +2533,6 @@ save_
 
        Added measurement units to the definition of the _import_details.order
        data item.
+
+       Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
 ;
