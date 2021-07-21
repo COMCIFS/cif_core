@@ -20648,7 +20648,7 @@ save_
 save_atom_sites_fract_transform.matrix
 
     _definition.id                '_atom_sites_fract_transform.matrix'
-    _definition.update            2021-03-03
+    _definition.update            2021-07-21
     _description.text
 ;
     Matrix used to transform Cartesian coordinates in the ATOM_SITE
@@ -20671,7 +20671,7 @@ save_atom_sites_fract_transform.matrix
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -20696,7 +20696,7 @@ save_atom_sites_fract_transform.vec_1
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
 
 save_
 
@@ -20712,7 +20712,7 @@ save_atom_sites_fract_transform.vec_2
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
 
 save_
 
@@ -20728,7 +20728,7 @@ save_atom_sites_fract_transform.vec_3
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
 
 save_
 
@@ -24060,4 +24060,12 @@ save_
        Changed the imported save frame in the definitions of
        the _atom_sites_cartn_transform.vec_* data items from
        'Cartn_matrix' to 'Cartn_vector'.
+
+       Changed the imported save frame in the definitions of
+       the _atom_sites_fract_transform.vec_* data items from
+       'fract_matrix' to 'fract_vector'.
+
+       Changed the units of measurement in the definition of
+       the _atom_sites_fract_transform.matrix data item from
+       'none' to 'reciprocal_angstroms'.
 ;
