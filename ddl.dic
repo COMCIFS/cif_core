@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.0.2
-    _dictionary.date              2021-07-20
+    _dictionary.date              2021-07-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.0.2
@@ -2055,8 +2055,9 @@ save_
                                    '_dictionary_audit.version'
                                    '_dictionary_audit.date'
                                    '_dictionary_audit.revision']
-         Dictionary  Prohibited   [ALIAS  CATEGORY_KEY  DEFINITION  ENUMERATION
-                                   IMPORT  METHOD  NAME  TYPE  UNITS]
+         Dictionary  Prohibited   [ALIAS  CATEGORY_KEY  DEFINITION
+                                   DESCRIPTION_EXAMPLE  ENUMERATION IMPORT
+                                   METHOD  NAME  TYPE  UNITS]
          Category    Mandatory    ['_definition.id'  '_definition.scope'
                                    '_definition.class'  '_name.category_id'
                                    '_name.object_id']
@@ -2531,7 +2532,10 @@ save_
 
        Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
 ;
-         4.0.2                    2021-07-20
+         4.0.2                    2021-07-21
 ;
        Deprecated _dictionary_valid.application.
+
+       Marked the DESCRIPTION_EXAMPLE category as prohibited in
+       the 'Dictionary' scope.
 ;
