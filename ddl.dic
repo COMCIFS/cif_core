@@ -2060,8 +2060,7 @@ save_
          Category    Mandatory    ['_definition.id'  '_definition.scope'
                                    '_definition.class'  '_name.category_id'
                                    '_name.object_id']
-         Category    Recommended  [CATEGORY_KEY  '_category_key.name'
-                                   '_description.text']
+         Category    Recommended  ['_category_key.name'  '_description.text']
          Category    Prohibited   [ALIAS  DICTIONARY  ENUMERATION  TYPE  UNITS]
          Item        Mandatory    ['_definition.id'  '_definition.update'
                                    '_name.object_id'  '_name.category_id'
