@@ -2055,8 +2055,8 @@ save_
                                    '_dictionary_audit.version'
                                    '_dictionary_audit.date'
                                    '_dictionary_audit.revision']
-         Dictionary  Prohibited   [ALIAS  DEFINITION  ENUMERATION  CATEGORY_KEY
-                                   METHOD  NAME  TYPE  IMPORT  UNITS]
+         Dictionary  Prohibited   [ALIAS  CATEGORY_KEY  DEFINITION  ENUMERATION
+                                   IMPORT  METHOD  NAME  TYPE  UNITS]
          Category    Mandatory    ['_definition.id'  '_definition.scope'
                                    '_definition.class'  '_name.category_id'
                                    '_name.object_id']
@@ -2068,7 +2068,7 @@ save_
          Item        Recommended  ['_definition.scope'  '_definition.class'
                                    '_type.source'  '_type.purpose'
                                    '_description.text'  '_description.common']
-         Item        Prohibited   [DICTIONARY  CATEGORY_KEY]
+         Item        Prohibited   [CATEGORY_KEY  DICTIONARY]
 
     loop_
       _dictionary_audit.version
