@@ -2056,7 +2056,7 @@ save_
                                    '_dictionary_audit.date'
                                    '_dictionary_audit.revision']
          Dictionary  Prohibited   [ALIAS  CATEGORY_KEY  DEFINITION
-                                   DESCRIPTION_EXAMPLE  ENUMERATION IMPORT
+                                   DESCRIPTION_EXAMPLE  ENUMERATION  IMPORT
                                    METHOD  NAME  TYPE  UNITS]
          Category    Mandatory    ['_definition.id'  '_definition.scope'
                                    '_definition.class'  '_name.category_id'
