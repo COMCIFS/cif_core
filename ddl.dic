@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.0.2
-    _dictionary.date              2021-07-20
+    _dictionary.date              2021-07-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.0.2
@@ -2055,13 +2055,13 @@ save_
                                    '_dictionary_audit.version'
                                    '_dictionary_audit.date'
                                    '_dictionary_audit.revision']
-         Dictionary  Prohibited   [ALIAS  DEFINITION  ENUMERATION  CATEGORY_KEY
-                                   METHOD  NAME  TYPE  IMPORT  UNITS]
+         Dictionary  Prohibited   [ALIAS  CATEGORY_KEY  DEFINITION
+                                   DESCRIPTION_EXAMPLE  ENUMERATION  IMPORT
+                                   METHOD  NAME  TYPE  UNITS]
          Category    Mandatory    ['_definition.id'  '_definition.scope'
                                    '_definition.class'  '_name.category_id'
                                    '_name.object_id']
-         Category    Recommended  [CATEGORY_KEY  '_category_key.name'
-                                   '_description.text']
+         Category    Recommended  ['_category_key.name'  '_description.text']
          Category    Prohibited   [ALIAS  DICTIONARY  ENUMERATION  TYPE  UNITS]
          Item        Mandatory    ['_definition.id'  '_definition.update'
                                    '_name.object_id'  '_name.category_id'
@@ -2069,7 +2069,7 @@ save_
          Item        Recommended  ['_definition.scope'  '_definition.class'
                                    '_type.source'  '_type.purpose'
                                    '_description.text'  '_description.common']
-         Item        Prohibited   [DICTIONARY  CATEGORY_KEY]
+         Item        Prohibited   [CATEGORY_KEY  DICTIONARY]
 
     loop_
       _dictionary_audit.version
@@ -2532,7 +2532,10 @@ save_
 
        Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
 ;
-         4.0.2                    2021-07-20
+         4.0.2                    2021-07-21
 ;
        Deprecated _dictionary_valid.application.
+
+       Marked the DESCRIPTION_EXAMPLE category as prohibited in
+       the 'Dictionary' scope.
 ;
