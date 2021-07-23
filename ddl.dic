@@ -777,7 +777,7 @@ save_dictionary_valid.attributes
 ;
     A list of the attribute names and categories that are assessed
     for application in the item, category and dictionary definitions. A
-    parent attribute category implicitly recursively includes all child 
+    parent attribute category implicitly recursively includes all child
     categories.
 ;
     _name.category_id             dictionary_valid
