@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-07-21
+    _dictionary.date              2021-07-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -3299,12 +3299,12 @@ save_diffrn_source.make
          '_diffrn_source.type'
          '_diffrn_source_type'
 
-    _definition.update            2012-11-26
+    _definition.update            2021-07-26
     _description.text
 ;
-    Description of the make, model or name of the source device. Large
-    scale facilities should use _diffrn_source.facility_name and
-    _diffrn_source.beamline_name to identify the source of radiation.
+    Description of the make, model or name of the source device.
+    Large scale facilities should use _diffrn_source.facility and
+    _diffrn_source.beamline to identify the source of radiation.
 ;
     _name.category_id             diffrn_source
     _name.object_id               make
@@ -24043,7 +24043,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-07-21
+         3.1.0                    2021-07-26
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -24068,4 +24068,6 @@ save_
        Changed the units of measurement in the definition of
        the _atom_sites_fract_transform.matrix data item from
        'none' to 'reciprocal_angstroms'.
+
+       Updated the description of the _diffrn_source.make data item.
 ;
