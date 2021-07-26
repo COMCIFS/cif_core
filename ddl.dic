@@ -772,11 +772,13 @@ save_dictionary_valid.attributes
 
     _definition.id                '_dictionary_valid.attributes'
     _definition.class             Attribute
-    _definition.update            2013-03-06
+    _definition.update            2021-07-21
     _description.text
 ;
     A list of the attribute names and categories that are assessed
-    for application in the item, category and dictionary definitions.
+    for application in the item, category and dictionary definitions. A
+    parent attribute category implicitly recursively includes all child
+    categories.
 ;
     _name.category_id             dictionary_valid
     _name.object_id               attributes
