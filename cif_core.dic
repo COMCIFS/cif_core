@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-07-20
+    _dictionary.date              2021-07-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -20393,7 +20393,7 @@ save_atom_sites_cartn_transform.vec_1
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_vector}]
 
 save_
 
@@ -20409,7 +20409,7 @@ save_atom_sites_cartn_transform.vec_2
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_vector}]
 
 save_
 
@@ -20425,7 +20425,7 @@ save_atom_sites_cartn_transform.vec_3
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_vector}]
 
 save_
 
@@ -20648,7 +20648,7 @@ save_
 save_atom_sites_fract_transform.matrix
 
     _definition.id                '_atom_sites_fract_transform.matrix'
-    _definition.update            2021-03-03
+    _definition.update            2021-07-21
     _description.text
 ;
     Matrix used to transform Cartesian coordinates in the ATOM_SITE
@@ -20671,7 +20671,7 @@ save_atom_sites_fract_transform.matrix
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -20696,7 +20696,7 @@ save_atom_sites_fract_transform.vec_1
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
 
 save_
 
@@ -20712,7 +20712,7 @@ save_atom_sites_fract_transform.vec_2
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
 
 save_
 
@@ -20728,7 +20728,7 @@ save_atom_sites_fract_transform.vec_3
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
 
 save_
 
@@ -24043,7 +24043,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-07-20
+         3.1.0                    2021-07-21
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -24056,4 +24056,16 @@ save_
        Removed the _type.dimension attribute from the definition of
        the _refln.form_factor_table data item since it is not applicable
        to the "Table" content type.
+
+       Changed the imported save frame in the definitions of
+       the _atom_sites_cartn_transform.vec_* data items from
+       'Cartn_matrix' to 'Cartn_vector'.
+
+       Changed the imported save frame in the definitions of
+       the _atom_sites_fract_transform.vec_* data items from
+       'fract_matrix' to 'fract_vector'.
+
+       Changed the units of measurement in the definition of
+       the _atom_sites_fract_transform.matrix data item from
+       'none' to 'reciprocal_angstroms'.
 ;
