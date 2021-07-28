@@ -1863,29 +1863,30 @@ save_type.purpose
       _enumeration_set.detail
          Import
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
-         SPECIAL attribute "_import.get" that is present in dictionaries to
-         instigate the importation of external dictionary definitions.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type the SPECIAL attribute "_import.get" that is present
+         in dictionaries to instigate the importation of external dictionary
+         definitions.
 ;
          Method
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
-         attribute "_method.expression" that is present in dictionary
-         definitions to provide the text method expressing the defined item in
-         terms of other defined items.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type the attribute "_method.expression" that is present
+         in dictionary definitions to provide the text method expressing
+         the defined item in terms of other defined items.
 ;
          Audit
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
-         attributes employed to record the audit definition information
-         (creation date, update version and cross reference codes) of items,
-         categories and files.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type attributes employed to record the audit definition
+         information (creation date, update version and cross reference codes)
+         of items, categories and files.
 ;
          Identify
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
-         attributes that identify an item tag (or part thereof) or external
-         location.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type attributes that identify an item tag (or part thereof)
+         or external location.
 ;
          Describe
 ;
