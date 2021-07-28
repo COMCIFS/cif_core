@@ -1533,12 +1533,12 @@ save_type.container
 
     _definition.id                '_type.container'
     _definition.class             Attribute
-    _definition.update            2013-04-07
+    _definition.update            2021-07-28
     _description.text
 ;
     The CONTAINER type of the defined data item value. 'Implied' may only
-    be used in an attribute dictionary for attributes whose types are linked
-    to the values of other attributes.
+    be used in the DDLm Reference Dictionary for attributes whose types are
+    linked to the values of other attributes.
 ;
     _name.category_id             type
     _name.object_id               container
@@ -1576,8 +1576,8 @@ save_type.container
 ;
          Implied
 ;
-         (For use in the attribute dictionary only). Determined by the values
-         of other attributes.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Determined by the values of other attributes.
 ;
 
     _enumeration.default          Single
@@ -2542,7 +2542,6 @@ save_
        Marked the DESCRIPTION_EXAMPLE category as prohibited in
        the 'Dictionary' scope.
 
-       Updated the descriptions of the _type.dimension data item
-       to be more consistent with the definition of the 'Dimension'
-       content type.
+       Updated the descriptions of the _type.dimension and _type.container
+       data items to be more consistent with the rest of the dictionary.
 ;
