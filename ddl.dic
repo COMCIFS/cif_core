@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.0.2
-    _dictionary.date              2021-07-21
+    _dictionary.date              2021-07-28
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.0.2
@@ -1533,12 +1533,12 @@ save_type.container
 
     _definition.id                '_type.container'
     _definition.class             Attribute
-    _definition.update            2013-04-07
+    _definition.update            2021-07-28
     _description.text
 ;
     The CONTAINER type of the defined data item value. 'Implied' may only
-    be used in an attribute dictionary for attributes whose types are linked
-    to the values of other attributes.
+    be used in the DDLm Reference Dictionary for attributes whose types are
+    linked to the values of other attributes.
 ;
     _name.category_id             type
     _name.object_id               container
@@ -1576,8 +1576,8 @@ save_type.container
 ;
          Implied
 ;
-         (For use in the attribute dictionary only). Determined by the values
-         of other attributes.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Determined by the values of other attributes.
 ;
 
     _enumeration.default          Single
@@ -1736,11 +1736,12 @@ save_type.dimension
 
     _definition.id                '_type.dimension'
     _definition.class             Attribute
-    _definition.update            2019-04-01
+    _definition.update            2021-07-28
     _description.text
 ;
-    The dimensions of a list or matrix of elements expressed as a text string.
-    A Matrix with a single dimension is interpreted as a vector.
+    The dimensions of a list, array or matrix of elements expressed as
+    a text string. A Matrix with a single dimension is interpreted as
+    a vector.
 ;
     _name.category_id             type
     _name.object_id               dimension
@@ -1862,29 +1863,30 @@ save_type.purpose
       _enumeration_set.detail
          Import
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
-         SPECIAL attribute "_import.get" that is present in dictionaries to
-         instigate the importation of external dictionary definitions.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type the SPECIAL attribute "_import.get" that is present
+         in dictionaries to instigate the importation of external dictionary
+         definitions.
 ;
          Method
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
-         attribute "_method.expression" that is present in dictionary
-         definitions to provide the text method expressing the defined item in
-         terms of other defined items.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type the attribute "_method.expression" that is present
+         in dictionary definitions to provide the text method expressing
+         the defined item in terms of other defined items.
 ;
          Audit
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
-         attributes employed to record the audit definition information
-         (creation date, update version and cross reference codes) of items,
-         categories and files.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type attributes employed to record the audit definition
+         information (creation date, update version and cross reference codes)
+         of items, categories and files.
 ;
          Identify
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
-         attributes that identify an item tag (or part thereof) or external
-         location.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Used to type attributes that identify an item tag (or part thereof)
+         or external location.
 ;
          Describe
 ;
@@ -2534,10 +2536,13 @@ save_
 
        Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
 ;
-         4.0.2                    2021-07-21
+         4.0.2                    2021-07-28
 ;
        Deprecated _dictionary_valid.application.
 
        Marked the DESCRIPTION_EXAMPLE category as prohibited in
        the 'Dictionary' scope.
+
+       Updated the descriptions of the _type.dimension and _type.container
+       data items to be more consistent with the rest of the dictionary.
 ;
