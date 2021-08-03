@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-07-26
+    _dictionary.date              2021-08-03
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -1656,7 +1656,7 @@ save_diffrn_radiation_wavelength.value_su
          '_diffrn_radiation_wavelength_su'
          '_diffrn_radiation_wavelength.wavelength_su'
 
-    _definition.update            2019-04-02
+    _definition.update            2021-08-03
     _description.text
 ;
     Standard uncertainty of the wavelength of radiation used in diffraction
@@ -1669,7 +1669,7 @@ save_diffrn_radiation_wavelength.value_su
     _type.source                  Related
     _type.container               Single
     _type.contents                Real
-    _units.code                   none
+    _units.code                   angstroms
 
 save_
 
@@ -24043,7 +24043,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-07-26
+         3.1.0                    2021-08-03
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -24068,6 +24068,10 @@ save_
        Changed the units of measurement in the definition of
        the _atom_sites_fract_transform.matrix data item from
        'none' to 'reciprocal_angstroms'.
+
+       Changed the units of measurement in the definition of
+       the _diffrn_radiation_wavelength.value_su data item from
+       'none' to 'angstroms'.
 
        Updated the description of the _diffrn_source.make data item.
 ;
