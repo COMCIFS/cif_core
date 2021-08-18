@@ -3224,11 +3224,11 @@ save_diffrn_source.details
 
     _definition.id                '_diffrn_source.details'
     _alias.definition_id          '_diffrn_source_details'
-    _definition.update            2012-11-26
+    _definition.update            2021-08-18
     _description.text
 ;
     A description of special aspects of the source not covered by
-    other datanames.
+    other data items.
 ;
     _name.category_id             diffrn_source
     _name.object_id               details
@@ -9107,11 +9107,11 @@ save_exptl_crystal.description
 
     _definition.id                '_exptl_crystal.description'
     _alias.definition_id          '_exptl_crystal_description'
-    _definition.update            2012-11-22
+    _definition.update            2021-08-18
     _description.text
 ;
     Description of the quality and habit of the crystal. The crystal
-    dimensions should be provided using the exptl_crystal.size_* datanames.
+    dimensions should be provided using the exptl_crystal.size_* data items.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               description
@@ -10250,10 +10250,10 @@ save_symmetry.cell_setting
     _definition_replaced.id       1
     _definition_replaced.by       '_space_group.crystal_system'
     _alias.definition_id          '_symmetry_cell_setting'
-    _definition.update            2019-04-02
+    _definition.update            2021-08-18
     _description.text
 ;
-    This dataname should not be used and is DEPRECATED as it is
+    This data item should not be used and is DEPRECATED as it is
     ambiguous.
 
     The original definition is as follows:
@@ -13262,7 +13262,7 @@ save_audit.schema
     _definition.update            2021-08-18
     _description.text
 ;
-    This dataname identifies the type of information contained in the
+    This data item identifies the type of information contained in the
     data block. Software written for one schema will not, in general,
     correctly interpret datafiles written against a different schema.
 

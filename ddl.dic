@@ -129,12 +129,12 @@ save_category_key.name
 
     _definition.id                '_category_key.name'
     _definition.class             Attribute
-    _definition.update            2019-01-09
+    _definition.update            2021-08-18
     _description.text
 ;
     A minimal list of tag(s) that together constitute a compound key
     to access other items in a Loop category. In other words, the combined
-    values of the datanames listed in this loop must be unique, so that
+    values of the data items listed in this loop must be unique, so that
     unambiguous access to a packet (row) in the table of values is possible.
 ;
     _name.category_id             category_key
@@ -550,11 +550,11 @@ save_dictionary.formalism
 
     _definition.id                '_dictionary.formalism'
     _definition.class             Attribute
-    _definition.update            2017-01-25
+    _definition.update            2021-08-18
     _description.text
 ;
     The definitions contained in this dictionary are associated
-    with the value of this attribute. Datanames may only be
+    with the value of this attribute. Data items may only be
     redefined if the value of this attribute is also changed, and
     any such redefinitions must include the original behaviour as
     a particular case.
@@ -1478,10 +1478,10 @@ save_name.linked_item_id
 
     _definition.id                '_name.linked_item_id'
     _definition.class             Attribute
-    _definition.update            2011-12-08
+    _definition.update            2021-08-18
     _description.text
 ;
-    Dataname of an equivalent item which has a
+    Data name of an equivalent item which has a
     common set of values, or, in the definition of a type SU
     item is the name of the associated Measurement item to
     which the standard uncertainty applies.
@@ -1845,7 +1845,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2021-08-18
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -1942,7 +1942,7 @@ save_type.purpose
          SU
 ;
          Used to type an item with a numerical value that is the standard
-         uncertainty of another dataname. The definition of an SU item must
+         uncertainty of another data item. The definition of an SU item must
          include the attribute "_name.linked_item_id" which explicitly
          identifies the associated measurand item. SU values must be
          non-negative.
