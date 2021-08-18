@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-08-03
+    _dictionary.date              2021-08-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -13181,13 +13181,13 @@ save_audit.block_doi
 
     _definition.id                '_audit.block_doi'
     _alias.definition_id          '_audit_block_doi'
-    _definition.update            2017-09-23
+    _definition.update            2021-08-18
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
     the data set publication represented by the current
-    datablock. This can be used as a unique identifier for
-    the datablock so long as the code used is a valid DOI
+    data block. This can be used as a unique identifier for
+    the data block so long as the code used is a valid DOI
     (i.e. begins with a valid publisher prefix assigned by a
     Registration Agency and a suffix guaranteed to be unique
     by the publisher) and has had its metadata deposited
@@ -13259,11 +13259,11 @@ save_
 save_audit.schema
 
     _definition.id                '_audit.schema'
-    _definition.update            2016-09-08
+    _definition.update            2021-08-18
     _description.text
 ;
     This dataname identifies the type of information contained in the
-    datablock. Software written for one schema will not, in general,
+    data block. Software written for one schema will not, in general,
     correctly interpret datafiles written against a different schema.
 
     Specifically, each value of _audit.schema corresponds to a list
@@ -13274,8 +13274,8 @@ save_audit.schema
     multiple packets and do not need to be listed.
 
     The category list for each schema may instead be determined from
-    examination of the dictionaries that this datablock conforms to (see
-    _audit_conform.dict_name).
+    examination of the dictionaries that this data block conforms to
+    (see _audit_conform.dict_name).
 ;
     _name.category_id             audit
     _name.object_id               schema
@@ -13298,7 +13298,7 @@ save_audit.schema
          'Entry'
 ;
          entry category is defined and looped: information from multiple
-         datablocks in one block
+         data blocks in one block
 ;
          'Custom'
 ;
@@ -15066,12 +15066,12 @@ save_database.dataset_doi
 
     _definition.id                '_database.dataset_doi'
     _alias.definition_id          '_database_dataset_doi'
-    _definition.update            2017-09-23
+    _definition.update            2021-08-18
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
     a data set publication associated with the structure
-    described in the current datablock. This should be used
+    described in the current data block. This should be used
     for a dataset obtained from a curated database such as
     CSD or PDB.
 
@@ -17187,11 +17187,11 @@ save_publ_contact_author.id_iucr
 
     _definition.id                '_publ_contact_author.id_iucr'
     _alias.definition_id          '_publ_contact_author_id_iucr'
-    _definition.update            2012-11-29
+    _definition.update            2021-08-18
     _description.text
 ;
     Identifier in the IUCr contact database of the author submitting
-    the manuscript and datablock. This identifier may be available
+    the manuscript and data block. This identifier may be available
     from the World Directory of Crystallographers (http://wdc.iucr.org).
 ;
     _name.category_id             publ_contact_author
@@ -24043,7 +24043,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-08-03
+         3.1.0                    2021-08-18
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -24074,4 +24074,6 @@ save_
        'none' to 'angstroms'.
 
        Updated the description of the _diffrn_source.make data item.
+
+       Unified the spelling of certain words.
 ;
