@@ -22044,12 +22044,12 @@ save_refine_ls.abs_structure_flack
          '_refine_ls_abs_structure_Flack'
          '_refine.ls_abs_structure_Flack'
 
-    _definition.update            2012-11-20
+    _definition.update            2021-08-18
     _description.text
 ;
     The measure of absolute structure as defined by Flack (1983).
-    For centrosymmetric structures, the only permitted value, if the
-    data name is present, is 'inapplicable', represented by '.' .
+    For centrosymmetric structures, the only permitted value, if
+    the data item is present, is 'inapplicable', represented by '.' .
     For noncentrosymmetric structures, the value must lie in the
     99.97% Gaussian confidence interval  -3u =< x =< 1 + 3u and a
     standard uncertainty (e.s.d.) u must be supplied. The

@@ -863,11 +863,11 @@ save_enumeration.def_index_id
 
     _definition.id                '_enumeration.def_index_id'
     _definition.class             Attribute
-    _definition.update            2012-05-07
+    _definition.update            2021-08-18
     _description.text
 ;
-    Specifies the data name with a value used as an index to the
-    DEFAULT enumeration list (in category enumeration_default)
+    Specifies the data name of the item with a value used as an index
+    to the DEFAULT enumeration list (in category enumeration_default)
     in order to select the default enumeration value for the
     defined item. The value of the identified data item must match
     one of the _enumeration_default.index values.
@@ -1931,7 +1931,7 @@ save_type.purpose
          Measurand
 ;
          Used to type an item with a numerically estimated value that has been
-         recorded by measurement or derivation. A data name definition for the
+         recorded by measurement or derivation. A data item definition for the
          standard uncertainty (SU) of this item must be provided in a separate
          definition with _type.purpose of 'SU'. The value of a measurand item
          should be accompanied by a value of its associated SU item, either: 1)
