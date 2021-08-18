@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.0.2
-    _dictionary.date              2021-07-28
+    _dictionary.date              2021-08-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.0.2
@@ -1168,10 +1168,10 @@ save_import_details.frame_id
 
     _definition.id                '_import_details.frame_id'
     _definition.class             Attribute
-    _definition.update            2015-05-06
+    _definition.update            2021-08-18
     _description.text
 ;
-    The framecode of the definition frame to be imported.
+    The save frame code of the definition frame to be imported.
 ;
     _name.category_id             import_details
     _name.object_id               frame_id
@@ -1334,7 +1334,7 @@ save_import_details.single_index
 
     _definition.id                '_import_details.single_index'
     _definition.class             Attribute
-    _definition.update            2021-02-03
+    _definition.update            2021-08-18
     _description.text
 ;
     One of the indices permitted in the entries of values of attribute
@@ -1361,7 +1361,7 @@ save_import_details.single_index
 ;
          save
 ;
-         save framecode of source definition
+         save frame code of source definition
 ;
          mode
 ;
@@ -2536,7 +2536,7 @@ save_
 
        Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
 ;
-         4.0.2                    2021-07-28
+         4.0.2                    2021-08-18
 ;
        Deprecated _dictionary_valid.application.
 
@@ -2545,4 +2545,6 @@ save_
 
        Updated the descriptions of the _type.dimension and _type.container
        data items to be more consistent with the rest of the dictionary.
+
+       Unified the spelling of certain words.
 ;
