@@ -13318,7 +13318,7 @@ save_audit.update_record
 
     _definition.id                '_audit.update_record'
     _alias.definition_id          '_audit_update_record'
-    _definition.update            2012-11-29
+    _definition.update            2021-08-18
     _description.text
 ;
     A description of the revision applied to the data.
@@ -13329,7 +13329,7 @@ save_audit.update_record
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     '1990-07-15 Updated by Co-editor'
+    _description_example.case     'Updated by coeditor'
 
 save_
 
@@ -15954,10 +15954,10 @@ save_JOURNAL_COEDITOR
     _definition.id                JOURNAL_COEDITOR
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-12-11
+    _definition.update            2021-08-18
     _description.text
 ;
-    Category of items recording co-editor details.
+    Category of items recording coeditor details.
 ;
     _name.category_id             JOURNAL
     _name.object_id               JOURNAL_COEDITOR
@@ -17562,10 +17562,10 @@ save_publ_requested.coeditor_name
          '_publ_requested_coeditor_name'
          '_publ.requested_coeditor_name'
 
-    _definition.update            2012-12-13
+    _definition.update            2021-08-18
     _description.text
 ;
-    The name of the Co-editor whom the authors would like to
+    The name of the coeditor whom the authors would like to
     process the submitted manuscript.
 ;
     _name.category_id             publ_requested
