@@ -1,16 +1,16 @@
 #\#CIF_2.0
 ##############################################################################
 #                                                                            #
-#         TEMPLATE DICTIONARY OF COMMONLY USER ENUMERATIONS                  #
+#         TEMPLATE DICTIONARY OF COMMONLY USED ENUMERATIONS                  #
 #                                                                            #
 ##############################################################################
- 
+
 data_COM_VAL
  
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2021-03-18
+    _dictionary.date             2021-08-19
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  3.11.04
     _description.text
@@ -538,67 +538,69 @@ save_Schoenflies
                O.1 O.2 O.3 O.4 O.5 O.6 O.7 O.8
                Td.1 Td.2 Td.3 Td.4 Td.5 Td.6
                Oh.1 Oh.2 Oh.3 Oh.4 Oh.5 Oh.6 Oh.7 Oh.8 Oh.9 Oh.10
-               save_
-               
+
+save_
+
 save_colour_RGB
 
     loop_
-        _enumeration_set.state
-        _enumeration_set.detail
-     black                            '[ 000, 000, 000 ]'
-     white                            '[ 255, 255, 255 ]'
-     grey                             '[ 192, 192, 192 ]'
-     gray                             '[ 192, 192, 192 ]' #prefer 'grey'
-     grey_light                       '[ 211, 211, 211 ]'
-     grey_slate                       '[ 112, 128, 144 ]'
-     grey_steel                       '[ 136, 139, 141 ]'
-     blue                             '[ 000, 000, 255 ]'
-     blue_light                       '[ 176, 224, 230 ]'
-     blue_medium                      '[ 000, 000, 205 ]'
-     blue_dark                        '[ 025, 025, 112 ]'
-     blue_navy                        '[ 000, 000, 128 ]'
-     blue_royal                       '[ 065, 105, 225 ]'
-     blue_sky                         '[ 135, 206, 235 ]'
-     blue_steel                       '[ 070, 130, 180 ]'
-     turquoise                        '[ 064, 224, 208 ]'
-     colourless                       '[   .,   .,   . ]'
-     cyan                             '[ 000, 255, 255 ]'
-     cyan_light                       '[ 224, 255, 255 ]'
-     green                            '[ 000, 255, 000 ]'
-     green_light                      '[ 152, 251, 152 ]'
-     green_dark                       '[ 000, 100, 000 ]'
-     green_sea                        '[ 046, 139, 087 ]'
-     green_lime                       '[ 050, 205, 050 ]'
-     green_olive                      '[ 107, 142, 035 ]'
-     green_khaki                      '[ 240, 230, 140 ]'
-     yellow                           '[ 255, 255, 000 ]'
-     yellow_light                     '[ 255, 255, 224 ]'
-     yellow_gold                      '[ 255, 215, 000 ]'
-     brown                            '[ 165, 042, 042 ]'
-     brown_sienna                     '[ 160, 082, 045 ]'
-     brown_beige                      '[ 245, 245, 220 ]'
-     brown_tan                        '[ 210, 180, 140 ]'
-     salmon                           '[ 250, 128, 114 ]'
-     salmon_light                     '[ 255, 160, 122 ]'
-     salmon_dark                      '[ 233, 150, 122 ]'
-     orange                           '[ 255, 165, 000 ]'
-     orange_dark                      '[ 255, 140, 000 ]'
-     red                              '[ 255, 000, 000 ]'
-     red_coral                        '[ 255, 127, 080 ]'
-     red_tomato                       '[ 255, 099, 071 ]'
-     red_orange                       '[ 255, 069, 000 ]'
-     red_violet                       '[ 219, 112, 147 ]'
-     red_maroon                       '[ 176, 048, 096 ]'
-     pink                             '[ 255, 192, 203 ]'
-     pink_light                       '[ 255, 182, 193 ]'
-     pink_deep                        '[ 255, 020, 147 ]'
-     pink_hot                         '[ 255, 105, 180 ]'
-     violet                           '[ 238, 130, 238 ]'
-     violet_red                       '[ 208, 032, 144 ]'
-     violet_magenta                   '[ 255, 000, 255 ]'
-     violet_dark                      '[ 148, 000, 211 ]'
-     violet_blue                      '[ 138, 043, 226 ]'
-     save_
+      _enumeration_set.state
+      _enumeration_set.detail
+         black                    '[ 000, 000, 000 ]'
+         white                    '[ 255, 255, 255 ]'
+         grey                     '[ 192, 192, 192 ]'
+         gray                     '[ 192, 192, 192 ]' #prefer 'grey'
+         grey_light               '[ 211, 211, 211 ]'
+         grey_slate               '[ 112, 128, 144 ]'
+         grey_steel               '[ 136, 139, 141 ]'
+         blue                     '[ 000, 000, 255 ]'
+         blue_light               '[ 176, 224, 230 ]'
+         blue_medium              '[ 000, 000, 205 ]'
+         blue_dark                '[ 025, 025, 112 ]'
+         blue_navy                '[ 000, 000, 128 ]'
+         blue_royal               '[ 065, 105, 225 ]'
+         blue_sky                 '[ 135, 206, 235 ]'
+         blue_steel               '[ 070, 130, 180 ]'
+         turquoise                '[ 064, 224, 208 ]'
+         colourless               '[   .,   .,   . ]'
+         cyan                     '[ 000, 255, 255 ]'
+         cyan_light               '[ 224, 255, 255 ]'
+         green                    '[ 000, 255, 000 ]'
+         green_light              '[ 152, 251, 152 ]'
+         green_dark               '[ 000, 100, 000 ]'
+         green_sea                '[ 046, 139, 087 ]'
+         green_lime               '[ 050, 205, 050 ]'
+         green_olive              '[ 107, 142, 035 ]'
+         green_khaki              '[ 240, 230, 140 ]'
+         yellow                   '[ 255, 255, 000 ]'
+         yellow_light             '[ 255, 255, 224 ]'
+         yellow_gold              '[ 255, 215, 000 ]'
+         brown                    '[ 165, 042, 042 ]'
+         brown_sienna             '[ 160, 082, 045 ]'
+         brown_beige              '[ 245, 245, 220 ]'
+         brown_tan                '[ 210, 180, 140 ]'
+         salmon                   '[ 250, 128, 114 ]'
+         salmon_light             '[ 255, 160, 122 ]'
+         salmon_dark              '[ 233, 150, 122 ]'
+         orange                   '[ 255, 165, 000 ]'
+         orange_dark              '[ 255, 140, 000 ]'
+         red                      '[ 255, 000, 000 ]'
+         red_coral                '[ 255, 127, 080 ]'
+         red_tomato               '[ 255, 099, 071 ]'
+         red_orange               '[ 255, 069, 000 ]'
+         red_violet               '[ 219, 112, 147 ]'
+         red_maroon               '[ 176, 048, 096 ]'
+         pink                     '[ 255, 192, 203 ]'
+         pink_light               '[ 255, 182, 193 ]'
+         pink_deep                '[ 255, 020, 147 ]'
+         pink_hot                 '[ 255, 105, 180 ]'
+         violet                   '[ 238, 130, 238 ]'
+         violet_red               '[ 208, 032, 144 ]'
+         violet_magenta           '[ 255, 000, 255 ]'
+         violet_dark              '[ 148, 000, 211 ]'
+         violet_blue              '[ 138, 043, 226 ]'
+
+save_
 
 save_database_list
 loop_
@@ -2320,7 +2322,7 @@ save_
    Updated the human-readable descriptions of the 'kelvins' and
    'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-      1.4.8   2021-03-18
+      1.4.8   2021-08-19
 ;
    Corrected a few typos in the 'units_code' save frame.
 
