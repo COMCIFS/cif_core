@@ -551,6 +551,7 @@ save_colour_RGB
      gray                             '[ 192, 192, 192 ]' #prefer 'grey'
      grey_light                       '[ 211, 211, 211 ]'
      grey_slate                       '[ 112, 128, 144 ]'
+     grey_steel                       '[ 136, 139, 141 ]'
      blue                             '[ 000, 000, 255 ]'
      blue_light                       '[ 176, 224, 230 ]'
      blue_medium                      '[ 000, 000, 205 ]'
@@ -2000,7 +2001,7 @@ save_colour_hue
          _enumeration_default.index 
          _enumeration_default.value
      H     white   D     blue_light H1-   white   He    unknown Li    unknown 
-     Li1+  unknown Be    unknown Be2+  unknown B     unknown C     steel_grey
+     Li1+  unknown Be    unknown Be2+  unknown B     unknown C     grey_steel
      N     blue    O     red     O1-   red     F     green   F1-   green   
      Ne    unknown Na    magenta Na1+  magenta Mg    magenta Mg2+  magenta 
      Al    magenta Al3+  magenta Si    unknown Si4+  unknown P     magenta 
@@ -2155,4 +2156,9 @@ save_colour_hue
       1.4.8   2021-03-18
 ;
    Corrected a few typos in the 'units_code' save frame.
+
+   Corrected several discrepancies in the 'colour_hue' save frame.
+   Colour 'steel_grey' was renamed to 'grey_steel'.
+
+   Added the 'grey_steel' colour to the 'colour_RGB' save frame.
 ;
