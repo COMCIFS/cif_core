@@ -2016,59 +2016,59 @@ save_colour_hue
          F                        green
          F1-                      green
          Ne                       ?
-         Na                       magenta
-         Na1+                     magenta
-         Mg                       magenta
-         Mg2+                     magenta
-         Al                       magenta
-         Al3+                     magenta
+         Na                       violet_magenta
+         Na1+                     violet_magenta
+         Mg                       violet_magenta
+         Mg2+                     violet_magenta
+         Al                       violet_magenta
+         Al3+                     violet_magenta
          Si                       ?
          Si4+                     ?
-         P                        magenta
+         P                        violet_magenta
          S                        yellow
          Cl                       green
          Cl1-                     green
          Ar                       ?
-         K                        magenta
-         K1+                      magenta
-         Ca                       magenta
-         Ca2+                     magenta
+         K                        violet_magenta
+         K1+                      violet_magenta
+         Ca                       violet_magenta
+         Ca2+                     violet_magenta
          Sc                       ?
          Sc3+                     ?
-         Ti                       magenta
-         Ti2+                     magenta
-         Ti3+                     magenta
-         Ti4+                     magenta
-         V                        magenta
-         V2+                      magenta
-         V3+                      magenta
-         V5+                      magenta
-         Cr                       magenta
-         Cr2+                     magenta
-         Cr3+                     magenta
-         Mn                       magenta
-         Mn2+                     magenta
-         Mn3+                     magenta
-         Mn4+                     magenta
-         Fe                       magenta
-         Fe2+                     magenta
-         Fe3+                     magenta
-         Co                       magenta
-         Co2+                     magenta
-         Co3+                     magenta
-         Ni                       magenta
-         Ni2+                     magenta
-         Ni3+                     magenta
-         Cu                       magenta
-         Cu1+                     magenta
-         Cu2+                     magenta
-         Zn                       magenta
-         Zn2+                     magenta
-         Ga                       magenta
-         Ga3+                     magenta
-         Ge                       magenta
-         Ge4+                     magenta
-         As                       magenta
+         Ti                       violet_magenta
+         Ti2+                     violet_magenta
+         Ti3+                     violet_magenta
+         Ti4+                     violet_magenta
+         V                        violet_magenta
+         V2+                      violet_magenta
+         V3+                      violet_magenta
+         V5+                      violet_magenta
+         Cr                       violet_magenta
+         Cr2+                     violet_magenta
+         Cr3+                     violet_magenta
+         Mn                       violet_magenta
+         Mn2+                     violet_magenta
+         Mn3+                     violet_magenta
+         Mn4+                     violet_magenta
+         Fe                       violet_magenta
+         Fe2+                     violet_magenta
+         Fe3+                     violet_magenta
+         Co                       violet_magenta
+         Co2+                     violet_magenta
+         Co3+                     violet_magenta
+         Ni                       violet_magenta
+         Ni2+                     violet_magenta
+         Ni3+                     violet_magenta
+         Cu                       violet_magenta
+         Cu1+                     violet_magenta
+         Cu2+                     violet_magenta
+         Zn                       violet_magenta
+         Zn2+                     violet_magenta
+         Ga                       violet_magenta
+         Ga3+                     violet_magenta
+         Ge                       violet_magenta
+         Ge4+                     violet_magenta
+         As                       violet_magenta
          Se                       yellow
          Br                       green
          Br1-                     green
@@ -2085,9 +2085,9 @@ save_colour_hue
          Nb3+                     ?
          Nb5+                     ?
          Mo                       ?
-         Mo3+                     magenta
-         Mo5+                     magenta
-         Mo6+                     magenta
+         Mo3+                     violet_magenta
+         Mo5+                     violet_magenta
+         Mo6+                     violet_magenta
          Tc                       ?
          Ru                       ?
          Ru3+                     ?
@@ -2098,19 +2098,19 @@ save_colour_hue
          Pd                       ?
          Pd2+                     ?
          Pd4+                     ?
-         Ag                       magenta
-         Ag1+                     magenta
-         Ag2+                     magenta
-         Cd                       magenta
-         Cd2+                     magenta
+         Ag                       violet_magenta
+         Ag1+                     violet_magenta
+         Ag2+                     violet_magenta
+         Cd                       violet_magenta
+         Cd2+                     violet_magenta
          In                       ?
          In3+                     ?
-         Sn                       magenta
-         Sn2+                     magenta
-         Sn4+                     magenta
-         Sb                       magenta
-         Sb3+                     magenta
-         Sb5+                     magenta
+         Sn                       violet_magenta
+         Sn2+                     violet_magenta
+         Sn4+                     violet_magenta
+         Sb                       violet_magenta
+         Sb3+                     violet_magenta
+         Sb5+                     violet_magenta
          Te                       ?
          I                        green
          I1-                      green
@@ -2164,24 +2164,24 @@ save_colour_hue
          Ir                       ?
          Ir3+                     ?
          Ir4+                     ?
-         Pt                       magenta
-         Pt2+                     magenta
-         Pt4+                     magenta
-         Au                       magenta
-         Au1+                     magenta
-         Au3+                     magenta
-         Hg                       magenta
-         Hg1+                     magenta
-         Hg2+                     magenta
+         Pt                       violet_magenta
+         Pt2+                     violet_magenta
+         Pt4+                     violet_magenta
+         Au                       violet_magenta
+         Au1+                     violet_magenta
+         Au3+                     violet_magenta
+         Hg                       violet_magenta
+         Hg1+                     violet_magenta
+         Hg2+                     violet_magenta
          Tl                       ?
          TL1+                     ?
          Tl3+                     ?
-         Pb                       magenta
-         Pb2+                     magenta
-         Pb4+                     magenta
-         Bi                       magenta
-         Bi3+                     magenta
-         Bi5+                     magenta
+         Pb                       violet_magenta
+         Pb2+                     violet_magenta
+         Pb4+                     violet_magenta
+         Bi                       violet_magenta
+         Bi3+                     violet_magenta
+         Bi5+                     violet_magenta
          Po                       ?
          At                       ?
          Rn                       ?
@@ -2326,7 +2326,8 @@ save_
 
    Corrected several discrepancies in the 'colour_hue' save frame:
    replaced colour value 'unknown' with CIF special value '?',
-   renamed colour 'steel_grey' to 'grey_steel'.
+   renamed colour 'steel_grey' to 'grey_steel', renamed colour
+   'violet' to 'violet_magenta'.
 
    Added the 'grey_steel' colour to the 'colour_RGB' save frame.
 ;
