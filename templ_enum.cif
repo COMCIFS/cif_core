@@ -647,6 +647,7 @@ save_element_symbol
          Cr                       Chromium
          Cs                       Cesium
          Cu                       Copper
+         D                        Deuterium
          Db                       Dubnium
          Ds                       Darmstadtium
          Dy                       Dysprosium
@@ -2154,4 +2155,6 @@ save_colour_hue
       1.4.8   2021-08-19
 ;
    Corrected a few typos in the 'units_code' save frame.
+
+   Added deuterium (D) to the 'element_symbol' save frame.
 ;
