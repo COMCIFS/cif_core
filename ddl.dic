@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.0.2
-    _dictionary.date              2021-07-28
+    _dictionary.date              2021-08-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.0.2
@@ -129,12 +129,12 @@ save_category_key.name
 
     _definition.id                '_category_key.name'
     _definition.class             Attribute
-    _definition.update            2019-01-09
+    _definition.update            2021-08-18
     _description.text
 ;
     A minimal list of tag(s) that together constitute a compound key
     to access other items in a Loop category. In other words, the combined
-    values of the datanames listed in this loop must be unique, so that
+    values of the data items listed in this loop must be unique, so that
     unambiguous access to a packet (row) in the table of values is possible.
 ;
     _name.category_id             category_key
@@ -550,11 +550,11 @@ save_dictionary.formalism
 
     _definition.id                '_dictionary.formalism'
     _definition.class             Attribute
-    _definition.update            2017-01-25
+    _definition.update            2021-08-18
     _description.text
 ;
     The definitions contained in this dictionary are associated
-    with the value of this attribute. Datanames may only be
+    with the value of this attribute. Data items may only be
     redefined if the value of this attribute is also changed, and
     any such redefinitions must include the original behaviour as
     a particular case.
@@ -863,11 +863,11 @@ save_enumeration.def_index_id
 
     _definition.id                '_enumeration.def_index_id'
     _definition.class             Attribute
-    _definition.update            2012-05-07
+    _definition.update            2021-08-18
     _description.text
 ;
-    Specifies the data name with a value used as an index to the
-    DEFAULT enumeration list (in category enumeration_default)
+    Specifies the data name of the item with a value used as an index
+    to the DEFAULT enumeration list (in category enumeration_default)
     in order to select the default enumeration value for the
     defined item. The value of the identified data item must match
     one of the _enumeration_default.index values.
@@ -1168,10 +1168,10 @@ save_import_details.frame_id
 
     _definition.id                '_import_details.frame_id'
     _definition.class             Attribute
-    _definition.update            2015-05-06
+    _definition.update            2021-08-18
     _description.text
 ;
-    The framecode of the definition frame to be imported.
+    The save frame code of the definition frame to be imported.
 ;
     _name.category_id             import_details
     _name.object_id               frame_id
@@ -1334,7 +1334,7 @@ save_import_details.single_index
 
     _definition.id                '_import_details.single_index'
     _definition.class             Attribute
-    _definition.update            2021-02-03
+    _definition.update            2021-08-18
     _description.text
 ;
     One of the indices permitted in the entries of values of attribute
@@ -1361,7 +1361,7 @@ save_import_details.single_index
 ;
          save
 ;
-         save framecode of source definition
+         save frame code of source definition
 ;
          mode
 ;
@@ -1478,10 +1478,10 @@ save_name.linked_item_id
 
     _definition.id                '_name.linked_item_id'
     _definition.class             Attribute
-    _definition.update            2011-12-08
+    _definition.update            2021-08-18
     _description.text
 ;
-    Dataname of an equivalent item which has a
+    Data name of an equivalent item which has a
     common set of values, or, in the definition of a type SU
     item is the name of the associated Measurement item to
     which the standard uncertainty applies.
@@ -1845,7 +1845,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2021-08-18
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -1931,7 +1931,7 @@ save_type.purpose
          Measurand
 ;
          Used to type an item with a numerically estimated value that has been
-         recorded by measurement or derivation. A data name definition for the
+         recorded by measurement or derivation. A data item definition for the
          standard uncertainty (SU) of this item must be provided in a separate
          definition with _type.purpose of 'SU'. The value of a measurand item
          should be accompanied by a value of its associated SU item, either: 1)
@@ -1942,7 +1942,7 @@ save_type.purpose
          SU
 ;
          Used to type an item with a numerical value that is the standard
-         uncertainty of another dataname. The definition of an SU item must
+         uncertainty of another data item. The definition of an SU item must
          include the attribute "_name.linked_item_id" which explicitly
          identifies the associated measurand item. SU values must be
          non-negative.
@@ -2536,7 +2536,7 @@ save_
 
        Clarified use of DESCRIPTION_EXAMPLE category and _description.text.
 ;
-         4.0.2                    2021-07-28
+         4.0.2                    2021-08-18
 ;
        Deprecated _dictionary_valid.application.
 
@@ -2545,4 +2545,6 @@ save_
 
        Updated the descriptions of the _type.dimension and _type.container
        data items to be more consistent with the rest of the dictionary.
+
+       Unified the spelling of certain words.
 ;
