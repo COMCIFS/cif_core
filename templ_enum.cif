@@ -1992,58 +1992,225 @@ save_hi_ang_Fox_c3
      U4+   0.05060 U6+   0.05060 Np    -0.06566 Np3+  -0.06566 Np4+  -0.06566
      Np6+  -0.06566 Pu    -0.18080 Pu3+  -0.18080 Pu4+  -0.18080 Pu6+  -0.18080
      Am    -0.29112 Cm    -0.40588 Bk    -0.51729 Cf    -0.62981
-     save_
- 
- 
-save_colour_hue                                                         
 
-     loop_        
-         _enumeration_default.index 
-         _enumeration_default.value
-     H     white   D     blue_light H1-   white   He    unknown Li    unknown 
-     Li1+  unknown Be    unknown Be2+  unknown B     unknown C     grey_steel
-     N     blue    O     red     O1-   red     F     green   F1-   green   
-     Ne    unknown Na    magenta Na1+  magenta Mg    magenta Mg2+  magenta 
-     Al    magenta Al3+  magenta Si    unknown Si4+  unknown P     magenta 
-     S     yellow  Cl    green   Cl1-  green   Ar    unknown K     magenta 
-     K1+   magenta Ca    magenta Ca2+  magenta Sc    unknown Sc3+  unknown 
-     Ti    magenta Ti2+  magenta Ti3+  magenta Ti4+  magenta V     magenta 
-     V2+   magenta V3+   magenta V5+   magenta Cr    magenta Cr2+  magenta 
-     Cr3+  magenta Mn    magenta Mn2+  magenta Mn3+  magenta Mn4+  magenta 
-     Fe    magenta Fe2+  magenta Fe3+  magenta Co    magenta Co2+  magenta 
-     Co3+  magenta Ni    magenta Ni2+  magenta Ni3+  magenta Cu    magenta 
-     Cu1+  magenta Cu2+  magenta Zn    magenta Zn2+  magenta Ga    magenta 
-     Ga3+  magenta Ge    magenta Ge4+  magenta As    magenta Se    yellow  
-     Br    green   Br1-  green   Kr    unknown Rb    unknown Rb1+  unknown 
-     Sr    unknown Sr2+  unknown Y     unknown Y3+   unknown Zr    unknown 
-     Zr4+  unknown Nb    unknown Nb3+  unknown Nb5+  unknown Mo    unknown 
-     Mo3+  magenta Mo5+  magenta Mo6+  magenta Tc    unknown Ru    unknown 
-     Ru3+  unknown Ru4+  unknown Rh    unknown Rh3+  unknown Rh4+  unknown 
-     Pd    unknown Pd2+  unknown Pd4+  unknown Ag    magenta Ag1+  magenta 
-     Ag2+  magenta Cd    magenta Cd2+  magenta In    unknown In3+  unknown 
-     Sn    magenta Sn2+  magenta Sn4+  magenta Sb    magenta Sb3+  magenta 
-     Sb5+  magenta Te    unknown I     green   I1-   green   Xe    unknown 
-     Cs    unknown Cs1+  unknown Ba    unknown Ba2+  unknown La    unknown 
-     La3+  unknown Ce    unknown Ce3+  unknown Ce4+  unknown Pr    unknown 
-     Pr3+  unknown Pr4+  unknown Nd    unknown Nd3+  unknown Pm    unknown 
-     Sm    unknown Sm3+  unknown Eu    unknown Eu2+  unknown Eu3+  unknown 
-     Gd    unknown Gd3+  unknown Tb    unknown Tb3+  unknown Dy    unknown 
-     Dy3+  unknown Ho    unknown Ho3+  unknown Er    unknown Er3+  unknown 
-     Tm    unknown Tm3+  unknown Yb    unknown Yb2+  unknown Yb3+  unknown 
-     Lu    unknown Lu3+  unknown Hf    unknown Hf4+  unknown Ta    unknown 
-     Ta5+  unknown W     unknown W6+   unknown Re    unknown Os    unknown 
-     Os4+  unknown Ir    unknown Ir3+  unknown Ir4+  unknown Pt    magenta 
-     Pt2+  magenta Pt4+  magenta Au    magenta Au1+  magenta Au3+  magenta 
-     Hg    magenta Hg1+  magenta Hg2+  magenta Tl    unknown TL1+  unknown 
-     Tl3+  unknown Pb    magenta Pb2+  magenta Pb4+  magenta Bi    magenta 
-     Bi3+  magenta Bi5+  magenta Po    unknown At    unknown Rn    unknown 
-     Fr    unknown Ra    unknown Ra2+  unknown Ac    unknown Ac3+  unknown 
-     Th    unknown Th4+  unknown Pa    unknown U     unknown U3+   unknown 
-     U4+   unknown U6+   unknown Np    unknown Np3+  unknown Np4+  unknown 
-     Np6+  unknown Pu    unknown Pu3+  unknown Pu4+  unknown Pu6+  unknown 
-     Am    unknown Cm    unknown Bk    unknown Cf    unknown 
-     save_
- 
+save_
+
+save_colour_hue
+
+    loop_
+      _enumeration_default.index
+      _enumeration_default.value
+         H                        white
+         D                        blue_light
+         H1-                      white
+         He                       ?
+         Li                       ?
+         Li1+                     ?
+         Be                       ?
+         Be2+                     ?
+         B                        ?
+         C                        grey_steel
+         N                        blue
+         O                        red
+         O1-                      red
+         F                        green
+         F1-                      green
+         Ne                       ?
+         Na                       magenta
+         Na1+                     magenta
+         Mg                       magenta
+         Mg2+                     magenta
+         Al                       magenta
+         Al3+                     magenta
+         Si                       ?
+         Si4+                     ?
+         P                        magenta
+         S                        yellow
+         Cl                       green
+         Cl1-                     green
+         Ar                       ?
+         K                        magenta
+         K1+                      magenta
+         Ca                       magenta
+         Ca2+                     magenta
+         Sc                       ?
+         Sc3+                     ?
+         Ti                       magenta
+         Ti2+                     magenta
+         Ti3+                     magenta
+         Ti4+                     magenta
+         V                        magenta
+         V2+                      magenta
+         V3+                      magenta
+         V5+                      magenta
+         Cr                       magenta
+         Cr2+                     magenta
+         Cr3+                     magenta
+         Mn                       magenta
+         Mn2+                     magenta
+         Mn3+                     magenta
+         Mn4+                     magenta
+         Fe                       magenta
+         Fe2+                     magenta
+         Fe3+                     magenta
+         Co                       magenta
+         Co2+                     magenta
+         Co3+                     magenta
+         Ni                       magenta
+         Ni2+                     magenta
+         Ni3+                     magenta
+         Cu                       magenta
+         Cu1+                     magenta
+         Cu2+                     magenta
+         Zn                       magenta
+         Zn2+                     magenta
+         Ga                       magenta
+         Ga3+                     magenta
+         Ge                       magenta
+         Ge4+                     magenta
+         As                       magenta
+         Se                       yellow
+         Br                       green
+         Br1-                     green
+         Kr                       ?
+         Rb                       ?
+         Rb1+                     ?
+         Sr                       ?
+         Sr2+                     ?
+         Y                        ?
+         Y3+                      ?
+         Zr                       ?
+         Zr4+                     ?
+         Nb                       ?
+         Nb3+                     ?
+         Nb5+                     ?
+         Mo                       ?
+         Mo3+                     magenta
+         Mo5+                     magenta
+         Mo6+                     magenta
+         Tc                       ?
+         Ru                       ?
+         Ru3+                     ?
+         Ru4+                     ?
+         Rh                       ?
+         Rh3+                     ?
+         Rh4+                     ?
+         Pd                       ?
+         Pd2+                     ?
+         Pd4+                     ?
+         Ag                       magenta
+         Ag1+                     magenta
+         Ag2+                     magenta
+         Cd                       magenta
+         Cd2+                     magenta
+         In                       ?
+         In3+                     ?
+         Sn                       magenta
+         Sn2+                     magenta
+         Sn4+                     magenta
+         Sb                       magenta
+         Sb3+                     magenta
+         Sb5+                     magenta
+         Te                       ?
+         I                        green
+         I1-                      green
+         Xe                       ?
+         Cs                       ?
+         Cs1+                     ?
+         Ba                       ?
+         Ba2+                     ?
+         La                       ?
+         La3+                     ?
+         Ce                       ?
+         Ce3+                     ?
+         Ce4+                     ?
+         Pr                       ?
+         Pr3+                     ?
+         Pr4+                     ?
+         Nd                       ?
+         Nd3+                     ?
+         Pm                       ?
+         Sm                       ?
+         Sm3+                     ?
+         Eu                       ?
+         Eu2+                     ?
+         Eu3+                     ?
+         Gd                       ?
+         Gd3+                     ?
+         Tb                       ?
+         Tb3+                     ?
+         Dy                       ?
+         Dy3+                     ?
+         Ho                       ?
+         Ho3+                     ?
+         Er                       ?
+         Er3+                     ?
+         Tm                       ?
+         Tm3+                     ?
+         Yb                       ?
+         Yb2+                     ?
+         Yb3+                     ?
+         Lu                       ?
+         Lu3+                     ?
+         Hf                       ?
+         Hf4+                     ?
+         Ta                       ?
+         Ta5+                     ?
+         W                        ?
+         W6+                      ?
+         Re                       ?
+         Os                       ?
+         Os4+                     ?
+         Ir                       ?
+         Ir3+                     ?
+         Ir4+                     ?
+         Pt                       magenta
+         Pt2+                     magenta
+         Pt4+                     magenta
+         Au                       magenta
+         Au1+                     magenta
+         Au3+                     magenta
+         Hg                       magenta
+         Hg1+                     magenta
+         Hg2+                     magenta
+         Tl                       ?
+         TL1+                     ?
+         Tl3+                     ?
+         Pb                       magenta
+         Pb2+                     magenta
+         Pb4+                     magenta
+         Bi                       magenta
+         Bi3+                     magenta
+         Bi5+                     magenta
+         Po                       ?
+         At                       ?
+         Rn                       ?
+         Fr                       ?
+         Ra                       ?
+         Ra2+                     ?
+         Ac                       ?
+         Ac3+                     ?
+         Th                       ?
+         Th4+                     ?
+         Pa                       ?
+         U                        ?
+         U3+                      ?
+         U4+                      ?
+         U6+                      ?
+         Np                       ?
+         Np3+                     ?
+         Np4+                     ?
+         Np6+                     ?
+         Pu                       ?
+         Pu3+                     ?
+         Pu4+                     ?
+         Pu6+                     ?
+         Am                       ?
+         Cm                       ?
+         Bk                       ?
+         Cf                       ?
+
+save_
 
 #=============================================================================
 #  The dictionary's creation history.
@@ -2157,8 +2324,9 @@ save_colour_hue
 ;
    Corrected a few typos in the 'units_code' save frame.
 
-   Corrected several discrepancies in the 'colour_hue' save frame.
-   Colour 'steel_grey' was renamed to 'grey_steel'.
+   Corrected several discrepancies in the 'colour_hue' save frame:
+   replaced colour value 'unknown' with CIF special value '?',
+   renamed colour 'steel_grey' to 'grey_steel'.
 
    Added the 'grey_steel' colour to the 'colour_RGB' save frame.
 ;
