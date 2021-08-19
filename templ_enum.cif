@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2021-03-18
+    _dictionary.date             2021-08-19
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  3.11.04
     _description.text
@@ -615,126 +615,125 @@ loop_
     EBI          'European Bioinformatics Institute'
 save_
 
-
 save_element_symbol
 
-     loop_
-         _enumeration_set.state
-         _enumeration_set.detail
-               Ac    Actinium
-               Ag    Silver
-               Al    Aluminum
-               Am    Americium
-               Ar    Argon
-               As    Arsenic
-               At    Astatine
-               Au    Gold
-               B     Boron
-               Ba    Barium
-               Be    Beryllium
-               Bh    Bohrium
-               Bi    Bismuth
-               Bk    Berkelium
-               Br    Bromine
-               C     Carbon
-               Ca    Calcium
-               Cd    Cadmium
-               Ce    Cerium
-               Cf    Californium
-               Cl    Chlorine
-               Cm    Curium
-               Cn    Copernicium
-               Co    Cobalt
-               Cr    Chromium
-               Cs    Cesium
-               Cu    Copper
-               Db    Dubnium
-               Ds    Darmstadtium
-               Dy    Dysprosium
-               Er    Erbium
-               Es    Einsteinium
-               Eu    Europium
-               F     Fluorine
-               Fe    Iron
-               Fm    Fermium
-               Fr    Francium
-               Ga    Gallium
-               Gd    Gadolinium
-               Ge    Germanium
-               H     Hydrogen
-               He    Helium
-               Hf    Hafnium
-               Hg    Mercury
-               Ho    Holmium
-               Hs    Hassium
-               I     Iodine
-               In    Indium
-               Ir    Iridium
-               K     Potassium
-               Kr    Krypton
-               La    Lanthanum
-               Li    Lithium
-               Lr    Lawrencium
-               Lu    Lutetium
-               Md    Mendelevium
-               Mg    Magnesium
-               Mn    Manganese
-               Mo    Molybdenum
-               Mt    Meitnerium
-               N     Nitrogen
-               Na    Sodium
-               Ne    Neon
-               Nb    Niobium
-               Nd    Neodymium
-               Ni    Nickel
-               No    Nobelium
-               Np    Neptunium
-               O     Oxygen
-               Os    Osmium
-               P     Phosphorus
-               Pd    Palladium
-               Po    Polonium
-               Pb    Lead
-               Pt    Platinum
-               Pr    Praseodymium
-               Pm    Promethium
-               Pu    Plutonium
-               Pa    Protactinium
-               Ra    Radium
-               Rb    Rubidium
-               Re    Rhenium
-               Rf    Rutherfordium
-               Rg    Roentgenium
-               Rh    Rhodium
-               Rn    Radon
-               Ru    Ruthenium
-               S     Sulfur
-               Sb    Antimony
-               Sc    Scandium
-               Se    Selenium
-               Sg    Seaborgium
-               Si    Silicon
-               Sm    Samarium
-               Sn    Tin
-               Sr    Strontium
-               Ta    Tantalum
-               Tb    Terbium
-               Tc    Technetium
-               Te    Tellurium
-               Th    Thorium
-               Ti    Titanium
-               Tl    Thallium
-               Tm    Thulium
-               U     Uranium
-               V     Vanadium
-               W     Tungsten
-               Xe    Xenon
-               Y     Yttrium
-               Yb    Ytterbium
-               Zn    Zinc
-               Zr    Zirconium
-    save_
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         Ac                       Actinium
+         Ag                       Silver
+         Al                       Aluminum
+         Am                       Americium
+         Ar                       Argon
+         As                       Arsenic
+         At                       Astatine
+         Au                       Gold
+         B                        Boron
+         Ba                       Barium
+         Be                       Beryllium
+         Bh                       Bohrium
+         Bi                       Bismuth
+         Bk                       Berkelium
+         Br                       Bromine
+         C                        Carbon
+         Ca                       Calcium
+         Cd                       Cadmium
+         Ce                       Cerium
+         Cf                       Californium
+         Cl                       Chlorine
+         Cm                       Curium
+         Cn                       Copernicium
+         Co                       Cobalt
+         Cr                       Chromium
+         Cs                       Cesium
+         Cu                       Copper
+         Db                       Dubnium
+         Ds                       Darmstadtium
+         Dy                       Dysprosium
+         Er                       Erbium
+         Es                       Einsteinium
+         Eu                       Europium
+         F                        Fluorine
+         Fe                       Iron
+         Fm                       Fermium
+         Fr                       Francium
+         Ga                       Gallium
+         Gd                       Gadolinium
+         Ge                       Germanium
+         H                        Hydrogen
+         He                       Helium
+         Hf                       Hafnium
+         Hg                       Mercury
+         Ho                       Holmium
+         Hs                       Hassium
+         I                        Iodine
+         In                       Indium
+         Ir                       Iridium
+         K                        Potassium
+         Kr                       Krypton
+         La                       Lanthanum
+         Li                       Lithium
+         Lr                       Lawrencium
+         Lu                       Lutetium
+         Md                       Mendelevium
+         Mg                       Magnesium
+         Mn                       Manganese
+         Mo                       Molybdenum
+         Mt                       Meitnerium
+         N                        Nitrogen
+         Na                       Sodium
+         Ne                       Neon
+         Nb                       Niobium
+         Nd                       Neodymium
+         Ni                       Nickel
+         No                       Nobelium
+         Np                       Neptunium
+         O                        Oxygen
+         Os                       Osmium
+         P                        Phosphorus
+         Pd                       Palladium
+         Po                       Polonium
+         Pb                       Lead
+         Pt                       Platinum
+         Pr                       Praseodymium
+         Pm                       Promethium
+         Pu                       Plutonium
+         Pa                       Protactinium
+         Ra                       Radium
+         Rb                       Rubidium
+         Re                       Rhenium
+         Rf                       Rutherfordium
+         Rg                       Roentgenium
+         Rh                       Rhodium
+         Rn                       Radon
+         Ru                       Ruthenium
+         S                        Sulfur
+         Sb                       Antimony
+         Sc                       Scandium
+         Se                       Selenium
+         Sg                       Seaborgium
+         Si                       Silicon
+         Sm                       Samarium
+         Sn                       Tin
+         Sr                       Strontium
+         Ta                       Tantalum
+         Tb                       Terbium
+         Tc                       Technetium
+         Te                       Tellurium
+         Th                       Thorium
+         Ti                       Titanium
+         Tl                       Thallium
+         Tm                       Thulium
+         U                        Uranium
+         V                        Vanadium
+         W                        Tungsten
+         Xe                       Xenon
+         Y                        Yttrium
+         Yb                       Ytterbium
+         Zn                       Zinc
+         Zr                       Zirconium
 
+save_
 
 save_units_code
 
@@ -2152,7 +2151,7 @@ save_colour_hue
    Updated the human-readable descriptions of the 'kelvins' and
    'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-      1.4.8   2021-03-18
+      1.4.8   2021-08-19
 ;
    Corrected a few typos in the 'units_code' save frame.
 ;
