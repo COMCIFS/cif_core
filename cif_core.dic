@@ -8735,15 +8735,15 @@ save_exptl_absorpt.correction_t_min
          '_exptl_absorpt_correction_T_min'
          '_exptl.absorpt_correction_T_min'
 
-    _definition.update            2012-11-22
+    _definition.update            2021-08-15
     _description.text
 ;
-    Maximum transmission factor for the crystal and radiation applied
+    Minimum transmission factor for the crystal and radiation applied
     to the measured intensities, it includes the correction for
     absorption by the specimen mount and diffractometer as well
     as by the specimen itself. These values give the transmission (T)
     factor by which measured intensities have been REDUCED due to
-    absorption. Sometimes referred to as absorption correction A ori
+    absorption. Sometimes referred to as absorption correction A or
     1/A* (see "Crystal Structure Analysis for Chemists and Biologists"
     by J.P. Glusker et al., Wiley)
 ;
@@ -24076,4 +24076,6 @@ save_
        Updated the description of the _diffrn_source.make data item.
 
        Unified the spelling of certain words.
+       Updated the description of the _diffrn_source.make and
+       _exptl_absorpt.correction_t_min data items.
 ;
