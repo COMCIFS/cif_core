@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-08-18
+    _dictionary.date              2021-08-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -10719,7 +10719,7 @@ save_
 save_space_group_wyckoff.multiplicity
 
     _definition.id                '_space_group_Wyckoff.multiplicity'
-    _definition.update            2021-03-01
+    _definition.update            2021-08-19
     _description.text
 ;
     The multiplicity of this Wyckoff position as given in
@@ -10736,6 +10736,7 @@ save_space_group_wyckoff.multiplicity
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Integer
+    _enumeration.range            1:192
     _units.code                   none
 
 save_
@@ -24043,7 +24044,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-08-18
+         3.1.0                    2021-08-19
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -24073,9 +24074,11 @@ save_
        the _diffrn_radiation_wavelength.value_su data item from
        'none' to 'angstroms'.
 
-       Updated the description of the _diffrn_source.make data item.
-
-       Unified the spelling of certain words.
        Updated the description of the _diffrn_source.make and
        _exptl_absorpt.correction_t_min data items.
+
+       Unified the spelling of certain words.
+
+       Added an enumeration range to the definition of
+       the _space_group_Wyckoff.multiplicity data item.
 ;
