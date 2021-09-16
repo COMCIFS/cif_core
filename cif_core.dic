@@ -491,7 +491,7 @@ save_diffrn_attenuator.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -1617,7 +1617,7 @@ save_diffrn_radiation_wavelength.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     x2
 
 save_
@@ -1791,7 +1791,7 @@ save_diffrn_refln.attenuator_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -1810,7 +1810,7 @@ save_diffrn_refln.class_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -2055,7 +2055,7 @@ save_diffrn_refln.scale_group_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -2212,7 +2212,7 @@ save_diffrn_refln.standard_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -2251,7 +2251,7 @@ save_diffrn_refln.wavelength_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -2777,7 +2777,7 @@ save_diffrn_reflns_class.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     m2
 
 save_
@@ -3100,7 +3100,7 @@ save_diffrn_scale_group.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -3401,7 +3401,7 @@ save_diffrn_source.target
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     _import.get
         [{'file':templ_enum.cif  'save':element_symbol}]
@@ -3633,7 +3633,7 @@ save_diffrn_standard_refln.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     s1
 
 save_
@@ -3857,7 +3857,7 @@ save_refln.class_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -4495,7 +4495,7 @@ save_refln.scale_group_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -4617,7 +4617,7 @@ save_refln.wavelength_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -5076,7 +5076,7 @@ save_reflns_class.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     c1
 
 save_
@@ -5388,7 +5388,7 @@ save_reflns_scale.group_code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -8258,7 +8258,7 @@ save_chemical_conn_atom.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -8861,7 +8861,7 @@ save_exptl_crystal.colour
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[3]'
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     '[translucent, pale, green]'
     _method.purpose               Evaluation
     _method.expression
@@ -9175,7 +9175,7 @@ save_exptl_crystal.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -9426,7 +9426,7 @@ save_exptl_crystal_appearance.hue
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}]
 
@@ -10085,7 +10085,7 @@ save_space_group.name_h-m_ref
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     _import.get                   [{'file':templ_enum.cif  'save':H_M_ref}]
 
@@ -10154,7 +10154,7 @@ save_space_group.name_schoenflies
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     C2h.5
     _description_example.detail   'Schoenflies symbol for space group No. 14'
 
@@ -11033,7 +11033,7 @@ save_geom_angle.atom_site_label_2
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -12745,7 +12745,7 @@ save_model_site.label
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -12846,7 +12846,7 @@ save_model_site.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -12903,7 +12903,7 @@ save_valence_param.atom_1
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -12944,7 +12944,7 @@ save_valence_param.atom_2
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -13044,7 +13044,7 @@ save_valence_param.ref_id
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -13099,7 +13099,7 @@ save_valence_ref.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -13173,7 +13173,7 @@ save_audit.block_code
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _description_example.case     TOZ_1991-03-20
 
 save_
@@ -13854,7 +13854,7 @@ save_audit_link.block_code
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -14346,7 +14346,7 @@ save_citation.id
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -14671,7 +14671,7 @@ save_citation_author.citation_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -14786,7 +14786,7 @@ save_citation_editor.citation_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -15725,7 +15725,7 @@ save_journal.data_validation_number
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -15743,7 +15743,7 @@ save_journal.issue
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -15833,7 +15833,7 @@ save_journal.paper_category
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -15851,7 +15851,7 @@ save_journal.paper_doi
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -15869,7 +15869,7 @@ save_journal.suppl_publ_number
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -15906,7 +15906,7 @@ save_journal.validation_number
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -16826,7 +16826,7 @@ save_publ_author.id_iucr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -18259,7 +18259,7 @@ save_atom_site.calc_attached_atom
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -18491,7 +18491,7 @@ save_atom_site.disorder_assembly
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -18523,7 +18523,7 @@ save_atom_site.disorder_group
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -19100,7 +19100,7 @@ save_atom_site.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -19236,7 +19236,7 @@ save_atom_site.wyckoff_symbol
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -19490,7 +19490,7 @@ save_atom_site_aniso.label
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -19599,7 +19599,7 @@ save_atom_site_aniso.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -20951,7 +20951,7 @@ save_atom_type.element_symbol
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get
@@ -20976,7 +20976,7 @@ save_atom_type.key
     _type.purpose                 Key
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -21106,7 +21106,7 @@ save_atom_type.symbol
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -21715,7 +21715,7 @@ save_atom_type_scat.symbol
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -23489,7 +23489,7 @@ save_refine_ls_class.code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     loop_
       _description_example.case
@@ -23688,7 +23688,7 @@ save_function.atomtype
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
     _method.purpose               Evaluation
     _method.expression
 ;

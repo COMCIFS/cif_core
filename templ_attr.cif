@@ -47,7 +47,7 @@ save_atom_site_label
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Text
      loop_
     _description_example.case   C12     Ca3g28     Fe3+17     H*251
                                 C_a_phe_83_a_0  Zn_Zn_301_A_0
@@ -65,7 +65,7 @@ save_restr_label
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Text
      save_
 
 
@@ -81,7 +81,7 @@ save_atom_site_id
     _type.purpose                Link
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Text
      save_
 
 
@@ -404,7 +404,7 @@ save_label_component
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single 
-    _type.contents               Code 
+    _type.contents               Text 
      save_
 
 save_label_comp
@@ -417,7 +417,7 @@ save_label_comp
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Text
 
 save_
 
