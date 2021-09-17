@@ -24081,4 +24081,6 @@ save_
 
        Added an enumeration range to the definition of
        the _space_group_Wyckoff.multiplicity data item.
+       
+       Fixed text description of _atom_site.U,B_iso_or_equiv.
 ;
