@@ -3401,7 +3401,7 @@ save_diffrn_source.target
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Code
 
     _import.get
         [{'file':templ_enum.cif  'save':element_symbol}]
@@ -8861,7 +8861,7 @@ save_exptl_crystal.colour
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[3]'
-    _type.contents                Text
+    _type.contents                Code
     _description_example.case     '[translucent, pale, green]'
     _method.purpose               Evaluation
     _method.expression
@@ -9426,7 +9426,7 @@ save_exptl_crystal_appearance.hue
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Code
 
     _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}]
 
