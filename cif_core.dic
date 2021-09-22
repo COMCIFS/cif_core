@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-08-19
+    _dictionary.date              2021-09-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -26071,7 +26071,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-08-19
+         3.1.0                    2021-09-22
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26110,4 +26110,6 @@ save_
        the _space_group_Wyckoff.multiplicity data item.
 
        Fixed text description of _atom_site.U,B_iso_or_equiv.
+
+       Added multiple standard uncertainty (SU) data items.
 ;
