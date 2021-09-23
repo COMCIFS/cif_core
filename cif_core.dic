@@ -1173,6 +1173,23 @@ save_diffrn_orient_refln.angle_chi
 
 save_
 
+save_diffrn_orient_refln.angle_chi_su
+
+    _definition.id                '_diffrn_orient_refln.angle_chi_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_orient_refln.angle_chi.
+;
+    _name.category_id             diffrn_orient_refln
+    _name.object_id               angle_chi_su
+    _name.linked_item_id          '_diffrn_orient_refln.angle_chi'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_orient_refln.angle_kappa
 
     _definition.id                '_diffrn_orient_refln.angle_kappa'
@@ -1181,6 +1198,23 @@ save_diffrn_orient_refln.angle_kappa
     _name.object_id               angle_kappa
 
     _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+
+save_
+
+save_diffrn_orient_refln.angle_kappa_su
+
+    _definition.id                '_diffrn_orient_refln.angle_kappa_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_orient_refln.angle_kappa.
+;
+    _name.category_id             diffrn_orient_refln
+    _name.object_id               angle_kappa_su
+    _name.linked_item_id          '_diffrn_orient_refln.angle_kappa'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1195,6 +1229,23 @@ save_diffrn_orient_refln.angle_omega
 
 save_
 
+save_diffrn_orient_refln.angle_omega_su
+
+    _definition.id                '_diffrn_orient_refln.angle_omega_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_orient_refln.angle_omega.
+;
+    _name.category_id             diffrn_orient_refln
+    _name.object_id               angle_omega_su
+    _name.linked_item_id          '_diffrn_orient_refln.angle_omega'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_orient_refln.angle_phi
 
     _definition.id                '_diffrn_orient_refln.angle_phi'
@@ -1203,6 +1254,23 @@ save_diffrn_orient_refln.angle_phi
     _name.object_id               angle_phi
 
     _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+
+save_
+
+save_diffrn_orient_refln.angle_phi_su
+
+    _definition.id                '_diffrn_orient_refln.angle_phi_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_orient_refln.angle_phi.
+;
+    _name.category_id             diffrn_orient_refln
+    _name.object_id               angle_phi_su
+    _name.linked_item_id          '_diffrn_orient_refln.angle_phi'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1217,6 +1285,23 @@ save_diffrn_orient_refln.angle_psi
 
 save_
 
+save_diffrn_orient_refln.angle_psi_su
+
+    _definition.id                '_diffrn_orient_refln.angle_psi_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_orient_refln.angle_psi.
+;
+    _name.category_id             diffrn_orient_refln
+    _name.object_id               angle_psi_su
+    _name.linked_item_id          '_diffrn_orient_refln.angle_psi'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_orient_refln.angle_theta
 
     _definition.id                '_diffrn_orient_refln.angle_theta'
@@ -1225,6 +1310,23 @@ save_diffrn_orient_refln.angle_theta
     _name.object_id               angle_theta
 
     _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+
+save_
+
+save_diffrn_orient_refln.angle_theta_su
+
+    _definition.id                '_diffrn_orient_refln.angle_theta_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_orient_refln.angle_theta.
+;
+    _name.category_id             diffrn_orient_refln
+    _name.object_id               angle_theta_su
+    _name.linked_item_id          '_diffrn_orient_refln.angle_theta'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1825,6 +1927,23 @@ save_diffrn_refln.counts_bg_1
 
 save_
 
+save_diffrn_refln.counts_bg_1_su
+
+    _definition.id                '_diffrn_refln.counts_bg_1_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.counts_bg_1.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               counts_bg_1_su
+    _name.linked_item_id          '_diffrn_refln.counts_bg_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_refln.counts_bg_2
 
     _definition.id                '_diffrn_refln.counts_bg_2'
@@ -1833,6 +1952,23 @@ save_diffrn_refln.counts_bg_2
     _name.object_id               counts_bg_2
 
     _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
+
+save_
+
+save_diffrn_refln.counts_bg_2_su
+
+    _definition.id                '_diffrn_refln.counts_bg_2_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.counts_bg_2.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               counts_bg_2_su
+    _name.linked_item_id          '_diffrn_refln.counts_bg_2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1847,6 +1983,23 @@ save_diffrn_refln.counts_net
 
 save_
 
+save_diffrn_refln.counts_net_su
+
+    _definition.id                '_diffrn_refln.counts_net_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.counts_net.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               counts_net_su
+    _name.linked_item_id          '_diffrn_refln.counts_net'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_refln.counts_peak
 
     _definition.id                '_diffrn_refln.counts_peak'
@@ -1858,6 +2011,23 @@ save_diffrn_refln.counts_peak
 
 save_
 
+save_diffrn_refln.counts_peak_su
+
+    _definition.id                '_diffrn_refln.counts_peak_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.counts_peak.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               counts_peak_su
+    _name.linked_item_id          '_diffrn_refln.counts_peak'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_refln.counts_total
 
     _definition.id                '_diffrn_refln.counts_total'
@@ -1866,6 +2036,23 @@ save_diffrn_refln.counts_total
     _name.object_id               counts_total
 
     _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
+
+save_
+
+save_diffrn_refln.counts_total_su
+
+    _definition.id                '_diffrn_refln.counts_total_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.counts_total.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               counts_total_su
+    _name.linked_item_id          '_diffrn_refln.counts_total'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -3137,6 +3324,23 @@ save_diffrn_scale_group.i_net
 
 save_
 
+save_diffrn_scale_group.i_net_su
+
+    _definition.id                '_diffrn_scale_group.I_net_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_scale_group.I_net.
+;
+    _name.category_id             diffrn_scale_group
+    _name.object_id               I_net_su
+    _name.linked_item_id          '_diffrn_scale_group.I_net'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_DIFFRN_SOURCE
 
     _definition.id                DIFFRN_SOURCE
@@ -3486,6 +3690,23 @@ save_diffrn_standard.decay_percent
 
 save_
 
+save_diffrn_standard.decay_percent_su
+
+    _definition.id                '_diffrn_standard.decay_percent_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_standard.decay_percent.
+;
+    _name.category_id             diffrn_standard
+    _name.object_id               decay_percent_su
+    _name.linked_item_id          '_diffrn_standard.decay_percent'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_diffrn_standard.interval_count
 
     _definition.id                '_diffrn_standard.interval_count'
@@ -3586,6 +3807,23 @@ save_diffrn_standard.scale_su_average
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   none
+
+save_
+
+save_diffrn_standard.scale_su_average_su
+
+    _definition.id                '_diffrn_standard.scale_su_average_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_standard.scale_su_average.
+;
+    _name.category_id             diffrn_standard
+    _name.object_id               scale_su_average_su
+    _name.linked_item_id          '_diffrn_standard.scale_su_average'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -3752,6 +3990,31 @@ save_refln.a_calc
 
 save_
 
+save_refln.a_calc_su
+
+    _definition.id                '_refln.A_calc_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.A_calc.
+;
+    _name.category_id             refln
+    _name.object_id               A_calc_su
+    _name.linked_item_id          '_refln.A_calc'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =
+    "femtometres" Else If (_diffrn_radiation.probe == "electron")
+    _units.code =  "volts" Else
+    _units.code =  "electrons"
+;
+
+save_
+
 save_refln.a_meas
 
     _definition.id                '_refln.A_meas'
@@ -3767,6 +4030,30 @@ save_refln.a_meas
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
+
+save_
+
+save_refln.a_meas_su
+
+    _definition.id                '_refln.A_meas_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.A_meas.
+;
+    _name.category_id             refln
+    _name.object_id               A_meas_su
+    _name.linked_item_id          '_refln.A_meas'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -3810,6 +4097,31 @@ save_refln.b_calc
 
 save_
 
+save_refln.b_calc_su
+
+    _definition.id                '_refln.B_calc_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.B_calc.
+;
+    _name.category_id             refln
+    _name.object_id               B_calc_su
+    _name.linked_item_id          '_refln.B_calc'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =
+    "femtometres" Else If (_diffrn_radiation.probe == "electron")
+    _units.code =  "volts" Else
+    _units.code =  "electrons"
+;
+
+save_
+
 save_refln.b_meas
 
     _definition.id                '_refln.B_meas'
@@ -3825,6 +4137,30 @@ save_refln.b_meas
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
+
+save_
+
+save_refln.b_meas_su
+
+    _definition.id                '_refln.B_meas_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.B_meas.
+;
+    _name.category_id             refln
+    _name.object_id               B_meas_su
+    _name.linked_item_id          '_refln.B_meas'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -3921,6 +4257,31 @@ save_refln.f_calc
 
 save_
 
+save_refln.f_calc_su
+
+    _definition.id                '_refln.F_calc_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.F_calc.
+;
+    _name.category_id             refln
+    _name.object_id               F_calc_su
+    _name.linked_item_id          '_refln.F_calc'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =
+    "femtometres" Else If (_diffrn_radiation.probe == "electron")
+    _units.code =  "volts" Else
+    _units.code =  "electrons"
+;
+
+save_
+
 save_refln.f_complex
 
     _definition.id                '_refln.F_complex'
@@ -3968,6 +4329,31 @@ save_refln.f_complex
                 fc +=  f * t * ExpImag(TwoPi *( h *( s.R * a.fract_xyz + s.T)))
          }  }
                 _refln.F_complex  =   fc / _space_group.multiplicity
+;
+
+save_
+
+save_refln.f_complex_su
+
+    _definition.id                '_refln.F_complex_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.F_complex.
+;
+    _name.category_id             refln
+    _name.object_id               F_complex_su
+    _name.linked_item_id          '_refln.F_complex'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =
+    "femtometres" Else If (_diffrn_radiation.probe == "electron")
+    _units.code =  "volts" Else
+    _units.code =  "electrons"
 ;
 
 save_
@@ -4046,6 +4432,32 @@ save_refln.f_squared_calc
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                         _units.code =  "femtometre_squared"
+    Else If (_diffrn_radiation.probe == "electron")
+                                         _units.code =  "volt_squared"
+    Else                                 _units.code =  "electron_squared"
+;
+
+save_
+
+save_refln.f_squared_calc_su
+
+    _definition.id                '_refln.F_squared_calc_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.F_squared_calc.
+;
+    _name.category_id             refln
+    _name.object_id               F_squared_calc_su
+    _name.linked_item_id          '_refln.F_squared_calc'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -4317,6 +4729,23 @@ save_refln.intensity_calc
 
 save_
 
+save_refln.intensity_calc_su
+
+    _definition.id                '_refln.intensity_calc_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.intensity_calc.
+;
+    _name.category_id             refln
+    _name.object_id               intensity_calc_su
+    _name.linked_item_id          '_refln.intensity_calc'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_refln.intensity_meas
 
     _definition.id                '_refln.intensity_meas'
@@ -4432,6 +4861,23 @@ save_refln.phase_calc
 
 save_
 
+save_refln.phase_calc_su
+
+    _definition.id                '_refln.phase_calc_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.phase_calc.
+;
+    _name.category_id             refln
+    _name.object_id               phase_calc_su
+    _name.linked_item_id          '_refln.phase_calc'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_refln.phase_meas
 
     _definition.id                '_refln.phase_meas'
@@ -4451,6 +4897,23 @@ save_refln.phase_meas
     _type.contents                Real
     _enumeration.range            0.:360.
     _units.code                   degrees
+
+save_
+
+save_refln.phase_meas_su
+
+    _definition.id                '_refln.phase_meas_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refln.phase_meas.
+;
+    _name.category_id             refln
+    _name.object_id               phase_meas_su
+    _name.linked_item_id          '_refln.phase_meas'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -5432,6 +5895,40 @@ save_reflns_scale.meas_f_squared
 
 save_
 
+save_reflns_scale.meas_f_squared_su
+
+    _definition.id                '_reflns_scale.meas_F_squared_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _reflns_scale.meas_F_squared.
+;
+    _name.category_id             reflns_scale
+    _name.object_id               meas_F_squared_su
+    _name.linked_item_id          '_reflns_scale.meas_F_squared'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_reflns_scale.meas_f_su
+
+    _definition.id                '_reflns_scale.meas_F_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _reflns_scale.meas_F.
+;
+    _name.category_id             reflns_scale
+    _name.object_id               meas_F_su
+    _name.linked_item_id          '_reflns_scale.meas_F'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_reflns_scale.meas_intensity
 
     _definition.id                '_reflns_scale.meas_intensity'
@@ -5449,6 +5946,23 @@ save_reflns_scale.meas_intensity
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   none
+
+save_
+
+save_reflns_scale.meas_intensity_su
+
+    _definition.id                '_reflns_scale.meas_intensity_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _reflns_scale.meas_intensity.
+;
+    _name.category_id             reflns_scale
+    _name.object_id               meas_intensity_su
+    _name.linked_item_id          '_reflns_scale.meas_intensity'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -6026,6 +6540,23 @@ save_exptl.transmission_factor_max
 
 save_
 
+save_exptl.transmission_factor_max_su
+
+    _definition.id                '_exptl.transmission_factor_max_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl.transmission_factor_max.
+;
+    _name.category_id             exptl
+    _name.object_id               transmission_factor_max_su
+    _name.linked_item_id          '_exptl.transmission_factor_max'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl.transmission_factor_min
 
     _definition.id                '_exptl.transmission_factor_min'
@@ -6048,6 +6579,23 @@ save_exptl.transmission_factor_min
     _type.contents                Real
     _enumeration.range            0.0:1.0
     _units.code                   none
+
+save_
+
+save_exptl.transmission_factor_min_su
+
+    _definition.id                '_exptl.transmission_factor_min_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl.transmission_factor_min.
+;
+    _name.category_id             exptl
+    _name.object_id               transmission_factor_min_su
+    _name.linked_item_id          '_exptl.transmission_factor_min'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -6229,6 +6777,26 @@ save_cell.convert_uij_to_betaij
 
 save_
 
+save_cell.convert_uij_to_betaij_su
+
+    _definition.id                '_cell.convert_Uij_to_betaij_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.convert_Uij_to_betaij.
+;
+    _name.category_id             cell
+    _name.object_id               convert_Uij_to_betaij_su
+    _name.linked_item_id          '_cell.convert_Uij_to_betaij'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
 save_cell.convert_uiso_to_uij
 
     _definition.id                '_cell.convert_Uiso_to_Uij'
@@ -6261,6 +6829,26 @@ save_cell.convert_uiso_to_uij
     Cosd(c.reciprocal_angle_alpha) ],                        [
     Cosd(c.reciprocal_angle_beta), Cosd(c.reciprocal_angle_alpha), 1.  ]]
 ;
+
+save_
+
+save_cell.convert_uiso_to_uij_su
+
+    _definition.id                '_cell.convert_Uiso_to_Uij_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.convert_Uiso_to_Uij.
+;
+    _name.category_id             cell
+    _name.object_id               convert_Uiso_to_Uij_su
+    _name.linked_item_id          '_cell.convert_Uiso_to_Uij'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -6794,6 +7382,26 @@ save_cell.reciprocal_metric_tensor
 
 save_
 
+save_cell.reciprocal_metric_tensor_su
+
+    _definition.id                '_cell.reciprocal_metric_tensor_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_metric_tensor.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_metric_tensor_su
+    _name.linked_item_id          '_cell.reciprocal_metric_tensor'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstrom_squared
+
+save_
+
 save_cell.reciprocal_orthogonal_matrix
 
     _definition.id                '_cell.reciprocal_orthogonal_matrix'
@@ -6824,6 +7432,26 @@ save_cell.reciprocal_orthogonal_matrix
 
 save_
 
+save_cell.reciprocal_orthogonal_matrix_su
+
+    _definition.id                '_cell.reciprocal_orthogonal_matrix_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_orthogonal_matrix.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_orthogonal_matrix_su
+    _name.linked_item_id          '_cell.reciprocal_orthogonal_matrix'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
 save_cell.reciprocal_vector_a
 
     _definition.id                '_cell.reciprocal_vector_a'
@@ -6847,6 +7475,26 @@ save_cell.reciprocal_vector_a
 
     _cell.reciprocal_vector_a = c.vector_b ^ c.vector_c / _cell.volume
 ;
+
+save_
+
+save_cell.reciprocal_vector_a_su
+
+    _definition.id                '_cell.reciprocal_vector_a_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_vector_a.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_a_su
+    _name.linked_item_id          '_cell.reciprocal_vector_a'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
 
 save_
 
@@ -6876,6 +7524,26 @@ save_cell.reciprocal_vector_b
 
 save_
 
+save_cell.reciprocal_vector_b_su
+
+    _definition.id                '_cell.reciprocal_vector_b_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_vector_b.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_b_su
+    _name.linked_item_id          '_cell.reciprocal_vector_b'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
 save_cell.reciprocal_vector_c
 
     _definition.id                '_cell.reciprocal_vector_c'
@@ -6899,6 +7567,26 @@ save_cell.reciprocal_vector_c
 
     _cell.reciprocal_vector_c = c.vector_a ^ c.vector_b / _cell.volume
 ;
+
+save_
+
+save_cell.reciprocal_vector_c_su
+
+    _definition.id                '_cell.reciprocal_vector_c_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_vector_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_c_su
+    _name.linked_item_id          '_cell.reciprocal_vector_c'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
 
 save_
 
@@ -6950,6 +7638,26 @@ save_cell.vector_a
 
 save_
 
+save_cell.vector_a_su
+
+    _definition.id                '_cell.vector_a_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.vector_a.
+;
+    _name.category_id             cell
+    _name.object_id               vector_a_su
+    _name.linked_item_id          '_cell.vector_a'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
 save_cell.vector_b
 
     _definition.id                '_cell.vector_b'
@@ -6974,6 +7682,26 @@ save_cell.vector_b
 
 save_
 
+save_cell.vector_b_su
+
+    _definition.id                '_cell.vector_b_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.vector_b.
+;
+    _name.category_id             cell
+    _name.object_id               vector_b_su
+    _name.linked_item_id          '_cell.vector_b'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
 save_cell.vector_c
 
     _definition.id                '_cell.vector_c'
@@ -6995,6 +7723,26 @@ save_cell.vector_c
 ;
     _cell.vector_c = _cell.orthogonal_matrix * Matrix([0,0,1])
 ;
+
+save_
+
+save_cell.vector_c_su
+
+    _definition.id                '_cell.vector_c_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.vector_c.
+;
+    _name.category_id             cell
+    _name.object_id               vector_c_su
+    _name.linked_item_id          '_cell.vector_c'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
 
 save_
 
@@ -7376,6 +8124,23 @@ save_cell_measurement_refln.theta
 
 save_
 
+save_cell_measurement_refln.theta_su
+
+    _definition.id                '_cell_measurement_refln.theta_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell_measurement_refln.theta.
+;
+    _name.category_id             cell_measurement_refln
+    _name.object_id               theta_su
+    _name.linked_item_id          '_cell_measurement_refln.theta'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_CHEMICAL
 
     _definition.id                CHEMICAL
@@ -7502,6 +8267,23 @@ save_chemical.enantioexcess_bulk
 
 save_
 
+save_chemical.enantioexcess_bulk_su
+
+    _definition.id                '_chemical.enantioexcess_bulk_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.enantioexcess_bulk.
+;
+    _name.category_id             chemical
+    _name.object_id               enantioexcess_bulk_su
+    _name.linked_item_id          '_chemical.enantioexcess_bulk'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_chemical.enantioexcess_bulk_technique
 
     _definition.id                '_chemical.enantioexcess_bulk_technique'
@@ -7567,6 +8349,23 @@ save_chemical.enantioexcess_crystal
     _type.contents                Real
     _enumeration.range            0.0:1.0
     _units.code                   none
+
+save_
+
+save_chemical.enantioexcess_crystal_su
+
+    _definition.id                '_chemical.enantioexcess_crystal_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.enantioexcess_crystal.
+;
+    _name.category_id             chemical
+    _name.object_id               enantioexcess_crystal_su
+    _name.linked_item_id          '_chemical.enantioexcess_crystal'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -7717,6 +8516,23 @@ save_chemical.melting_point_gt
 
 save_
 
+save_chemical.melting_point_gt_su
+
+    _definition.id                '_chemical.melting_point_gt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.melting_point_gt.
+;
+    _name.category_id             chemical
+    _name.object_id               melting_point_gt_su
+    _name.linked_item_id          '_chemical.melting_point_gt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_chemical.melting_point_lt
 
     _definition.id                '_chemical.melting_point_lt'
@@ -7735,6 +8551,40 @@ save_chemical.melting_point_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
+
+save_
+
+save_chemical.melting_point_lt_su
+
+    _definition.id                '_chemical.melting_point_lt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.melting_point_lt.
+;
+    _name.category_id             chemical
+    _name.object_id               melting_point_lt_su
+    _name.linked_item_id          '_chemical.melting_point_lt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_chemical.melting_point_su
+
+    _definition.id                '_chemical.melting_point_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.melting_point.
+;
+    _name.category_id             chemical
+    _name.object_id               melting_point_su
+    _name.linked_item_id          '_chemical.melting_point'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -7983,6 +8833,23 @@ save_chemical.temperature_decomposition_gt
 
 save_
 
+save_chemical.temperature_decomposition_gt_su
+
+    _definition.id                '_chemical.temperature_decomposition_gt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.temperature_decomposition_gt.
+;
+    _name.category_id             chemical
+    _name.object_id               temperature_decomposition_gt_su
+    _name.linked_item_id          '_chemical.temperature_decomposition_gt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_chemical.temperature_decomposition_lt
 
     _definition.id                '_chemical.temperature_decomposition_lt'
@@ -8001,6 +8868,23 @@ save_chemical.temperature_decomposition_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
+
+save_
+
+save_chemical.temperature_decomposition_lt_su
+
+    _definition.id                '_chemical.temperature_decomposition_lt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.temperature_decomposition_lt.
+;
+    _name.category_id             chemical
+    _name.object_id               temperature_decomposition_lt_su
+    _name.linked_item_id          '_chemical.temperature_decomposition_lt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8071,6 +8955,23 @@ save_chemical.temperature_sublimation_gt
 
 save_
 
+save_chemical.temperature_sublimation_gt_su
+
+    _definition.id                '_chemical.temperature_sublimation_gt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.temperature_sublimation_gt.
+;
+    _name.category_id             chemical
+    _name.object_id               temperature_sublimation_gt_su
+    _name.linked_item_id          '_chemical.temperature_sublimation_gt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_chemical.temperature_sublimation_lt
 
     _definition.id                '_chemical.temperature_sublimation_lt'
@@ -8089,6 +8990,23 @@ save_chemical.temperature_sublimation_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
+
+save_
+
+save_chemical.temperature_sublimation_lt_su
+
+    _definition.id                '_chemical.temperature_sublimation_lt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.temperature_sublimation_lt.
+;
+    _name.category_id             chemical
+    _name.object_id               temperature_sublimation_lt_su
+    _name.linked_item_id          '_chemical.temperature_sublimation_lt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8651,6 +9569,23 @@ save_chemical_formula.weight_meas
 
 save_
 
+save_chemical_formula.weight_meas_su
+
+    _definition.id                '_chemical_formula.weight_meas_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical_formula.weight_meas.
+;
+    _name.category_id             chemical_formula
+    _name.object_id               weight_meas_su
+    _name.linked_item_id          '_chemical_formula.weight_meas'
+    _units.code                   dalton
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_EXPTL_ABSORPT
 
     _definition.id                EXPTL_ABSORPT
@@ -8898,6 +9833,23 @@ save_exptl_crystal.density_diffrn
 
 save_
 
+save_exptl_crystal.density_diffrn_su
+
+    _definition.id                '_exptl_crystal.density_diffrn_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.density_diffrn.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_diffrn_su
+    _name.linked_item_id          '_exptl_crystal.density_diffrn'
+    _units.code                   megagrams_per_metre_cubed
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal.density_meas
 
     _definition.id                '_exptl_crystal.density_meas'
@@ -8968,6 +9920,23 @@ save_exptl_crystal.density_meas_gt
 
 save_
 
+save_exptl_crystal.density_meas_gt_su
+
+    _definition.id                '_exptl_crystal.density_meas_gt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.density_meas_gt.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_meas_gt_su
+    _name.linked_item_id          '_exptl_crystal.density_meas_gt'
+    _units.code                   megagrams_per_metre_cubed
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal.density_meas_lt
 
     _definition.id                '_exptl_crystal.density_meas_lt'
@@ -8989,6 +9958,23 @@ save_exptl_crystal.density_meas_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   megagrams_per_metre_cubed
+
+save_
+
+save_exptl_crystal.density_meas_lt_su
+
+    _definition.id                '_exptl_crystal.density_meas_lt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.density_meas_lt.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_meas_lt_su
+    _name.linked_item_id          '_exptl_crystal.density_meas_lt'
+    _units.code                   megagrams_per_metre_cubed
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9061,6 +10047,23 @@ save_exptl_crystal.density_meas_temp_gt
 
 save_
 
+save_exptl_crystal.density_meas_temp_gt_su
+
+    _definition.id                '_exptl_crystal.density_meas_temp_gt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.density_meas_temp_gt.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_meas_temp_gt_su
+    _name.linked_item_id          '_exptl_crystal.density_meas_temp_gt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal.density_meas_temp_lt
 
     _definition.id                '_exptl_crystal.density_meas_temp_lt'
@@ -9081,6 +10084,23 @@ save_exptl_crystal.density_meas_temp_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
+
+save_
+
+save_exptl_crystal.density_meas_temp_lt_su
+
+    _definition.id                '_exptl_crystal.density_meas_temp_lt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.density_meas_temp_lt.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_meas_temp_lt_su
+    _name.linked_item_id          '_exptl_crystal.density_meas_temp_lt'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9258,6 +10278,23 @@ save_exptl_crystal.size_length
 
 save_
 
+save_exptl_crystal.size_length_su
+
+    _definition.id                '_exptl_crystal.size_length_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.size_length.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               size_length_su
+    _name.linked_item_id          '_exptl_crystal.size_length'
+    _units.code                   millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal.size_max
 
     _definition.id                '_exptl_crystal.size_max'
@@ -9275,6 +10312,23 @@ save_exptl_crystal.size_max
     _type.contents                Real
     _enumeration.range            0.:
     _units.code                   millimetres
+
+save_
+
+save_exptl_crystal.size_max_su
+
+    _definition.id                '_exptl_crystal.size_max_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.size_max.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               size_max_su
+    _name.linked_item_id          '_exptl_crystal.size_max'
+    _units.code                   millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9298,6 +10352,23 @@ save_exptl_crystal.size_mid
 
 save_
 
+save_exptl_crystal.size_mid_su
+
+    _definition.id                '_exptl_crystal.size_mid_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.size_mid.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               size_mid_su
+    _name.linked_item_id          '_exptl_crystal.size_mid'
+    _units.code                   millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal.size_min
 
     _definition.id                '_exptl_crystal.size_min'
@@ -9318,6 +10389,23 @@ save_exptl_crystal.size_min
 
 save_
 
+save_exptl_crystal.size_min_su
+
+    _definition.id                '_exptl_crystal.size_min_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.size_min.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               size_min_su
+    _name.linked_item_id          '_exptl_crystal.size_min'
+    _units.code                   millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal.size_rad
 
     _definition.id                '_exptl_crystal.size_rad'
@@ -9335,6 +10423,23 @@ save_exptl_crystal.size_rad
     _type.contents                Real
     _enumeration.range            0.:
     _units.code                   millimetres
+
+save_
+
+save_exptl_crystal.size_rad_su
+
+    _definition.id                '_exptl_crystal.size_rad_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.size_rad.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               size_rad_su
+    _name.linked_item_id          '_exptl_crystal.size_rad'
+    _units.code                   millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9507,6 +10612,23 @@ save_exptl_crystal_face.diffr_chi
 
 save_
 
+save_exptl_crystal_face.diffr_chi_su
+
+    _definition.id                '_exptl_crystal_face.diffr_chi_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal_face.diffr_chi.
+;
+    _name.category_id             exptl_crystal_face
+    _name.object_id               diffr_chi_su
+    _name.linked_item_id          '_exptl_crystal_face.diffr_chi'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal_face.diffr_kappa
 
     _definition.id                '_exptl_crystal_face.diffr_kappa'
@@ -9515,6 +10637,23 @@ save_exptl_crystal_face.diffr_kappa
     _name.object_id               diffr_kappa
 
     _import.get                   [{'file':templ_attr.cif  'save':face_angle}]
+
+save_
+
+save_exptl_crystal_face.diffr_kappa_su
+
+    _definition.id                '_exptl_crystal_face.diffr_kappa_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal_face.diffr_kappa.
+;
+    _name.category_id             exptl_crystal_face
+    _name.object_id               diffr_kappa_su
+    _name.linked_item_id          '_exptl_crystal_face.diffr_kappa'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9529,6 +10668,23 @@ save_exptl_crystal_face.diffr_phi
 
 save_
 
+save_exptl_crystal_face.diffr_phi_su
+
+    _definition.id                '_exptl_crystal_face.diffr_phi_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal_face.diffr_phi.
+;
+    _name.category_id             exptl_crystal_face
+    _name.object_id               diffr_phi_su
+    _name.linked_item_id          '_exptl_crystal_face.diffr_phi'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_exptl_crystal_face.diffr_psi
 
     _definition.id                '_exptl_crystal_face.diffr_psi'
@@ -9537,6 +10693,23 @@ save_exptl_crystal_face.diffr_psi
     _name.object_id               diffr_psi
 
     _import.get                   [{'file':templ_attr.cif  'save':face_angle}]
+
+save_
+
+save_exptl_crystal_face.diffr_psi_su
+
+    _definition.id                '_exptl_crystal_face.diffr_psi_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal_face.diffr_psi.
+;
+    _name.category_id             exptl_crystal_face
+    _name.object_id               diffr_psi_su
+    _name.linked_item_id          '_exptl_crystal_face.diffr_psi'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9616,6 +10789,23 @@ save_exptl_crystal_face.perp_dist
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   millimetres
+
+save_
+
+save_exptl_crystal_face.perp_dist_su
+
+    _definition.id                '_exptl_crystal_face.perp_dist_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal_face.perp_dist.
+;
+    _name.category_id             exptl_crystal_face
+    _name.object_id               perp_dist_su
+    _name.linked_item_id          '_exptl_crystal_face.perp_dist'
+    _units.code                   millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -11072,6 +12262,26 @@ save_geom_angle.distances
 
 save_
 
+save_geom_angle.distances_su
+
+    _definition.id                '_geom_angle.distances_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _geom_angle.distances.
+;
+    _name.category_id             geom_angle
+    _name.object_id               distances_su
+    _name.linked_item_id          '_geom_angle.distances'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[2]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
 save_geom_angle.id
 
     _definition.id                '_geom_angle.id'
@@ -11477,6 +12687,23 @@ save_geom_bond.valence
     _type.contents                Real
     _enumeration.range            0.:
     _units.code                   electrons
+
+save_
+
+save_geom_bond.valence_su
+
+    _definition.id                '_geom_bond.valence_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _geom_bond.valence.
+;
+    _name.category_id             geom_bond
+    _name.object_id               valence_su
+    _name.linked_item_id          '_geom_bond.valence'
+    _units.code                   electrons
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -12348,6 +13575,26 @@ save_geom_torsion.distances
 
 save_
 
+save_geom_torsion.distances_su
+
+    _definition.id                '_geom_torsion.distances_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _geom_torsion.distances.
+;
+    _name.category_id             geom_torsion
+    _name.object_id               distances_su
+    _name.linked_item_id          '_geom_torsion.distances'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
 save_geom_torsion.id
 
     _definition.id                '_geom_torsion.id'
@@ -12557,6 +13804,26 @@ save_model_site.adp_eigenvalues
 
 save_
 
+save_model_site.adp_eigenvalues_su
+
+    _definition.id                '_model_site.adp_eigenvalues_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _model_site.adp_eigenvalues.
+;
+    _name.category_id             model_site
+    _name.object_id               adp_eigenvalues_su
+    _name.linked_item_id          '_model_site.adp_eigenvalues'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Array
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
 save_model_site.adp_eigenvectors
 
     _definition.id                '_model_site.adp_eigenvectors'
@@ -12588,6 +13855,26 @@ save_model_site.adp_eigenvectors
 
 save_
 
+save_model_site.adp_eigenvectors_su
+
+    _definition.id                '_model_site.adp_eigenvectors_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _model_site.adp_eigenvectors.
+;
+    _name.category_id             model_site
+    _name.object_id               adp_eigenvectors_su
+    _name.linked_item_id          '_model_site.adp_eigenvectors'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Array
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
 save_model_site.adp_matrix_beta
 
     _definition.id                '_model_site.adp_matrix_beta'
@@ -12616,6 +13903,26 @@ save_model_site.adp_matrix_beta
 
 save_
 
+save_model_site.adp_matrix_beta_su
+
+    _definition.id                '_model_site.adp_matrix_beta_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _model_site.adp_matrix_beta.
+;
+    _name.category_id             model_site
+    _name.object_id               adp_matrix_beta_su
+    _name.linked_item_id          '_model_site.adp_matrix_beta'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
 save_model_site.cartn_xyz
 
     _definition.id                '_model_site.Cartn_xyz'
@@ -12639,6 +13946,26 @@ save_model_site.cartn_xyz
 
     _model_site.Cartn_xyz =  _atom_sites_Cartn_transform.matrix * m.fract_xyz
 ;
+
+save_
+
+save_model_site.cartn_xyz_su
+
+    _definition.id                '_model_site.Cartn_xyz_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _model_site.Cartn_xyz.
+;
+    _name.category_id             model_site
+    _name.object_id               Cartn_xyz_su
+    _name.linked_item_id          '_model_site.Cartn_xyz'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
 
 save_
 
@@ -12692,6 +14019,26 @@ save_model_site.fract_xyz
 
     _model_site.fract_xyz =  SymEquiv(m.symop, xyz)
 ;
+
+save_
+
+save_model_site.fract_xyz_su
+
+    _definition.id                '_model_site.fract_xyz_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _model_site.fract_xyz.
+;
+    _name.category_id             model_site
+    _name.object_id               fract_xyz_su
+    _name.linked_item_id          '_model_site.fract_xyz'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -13298,8 +14645,8 @@ save_audit.schema
 ;
          'Entry'
 ;
-         entry category is defined and looped: information from multiple
-         data blocks in one block
+         entry category is defined and looped: information from multiple data
+         blocks in one block
 ;
          'Custom'
 ;
@@ -18346,6 +19693,26 @@ save_atom_site.cartn_xyz
 
 save_
 
+save_atom_site.cartn_xyz_su
+
+    _definition.id                '_atom_site.Cartn_xyz_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_site.Cartn_xyz.
+;
+    _name.category_id             atom_site
+    _name.object_id               Cartn_xyz_su
+    _name.linked_item_id          '_atom_site.Cartn_xyz'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
 save_atom_site.cartn_y
 
     _definition.id                '_atom_site.Cartn_y'
@@ -18587,6 +19954,26 @@ save_atom_site.fract_xyz
 
     _atom_site.fract_xyz =  [a.fract_x, a.fract_y, a.fract_z]
 ;
+
+save_
+
+save_atom_site.fract_xyz_su
+
+    _definition.id                '_atom_site.fract_xyz_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_site.fract_xyz.
+;
+    _name.category_id             atom_site
+    _name.object_id               fract_xyz_su
+    _name.linked_item_id          '_atom_site.fract_xyz'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -19082,6 +20469,26 @@ save_atom_site.tensor_beta
 
 save_
 
+save_atom_site.tensor_beta_su
+
+    _definition.id                '_atom_site.tensor_beta_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_site.tensor_beta.
+;
+    _name.category_id             atom_site
+    _name.object_id               tensor_beta_su
+    _name.linked_item_id          '_atom_site.tensor_beta'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
 save_atom_site.type_symbol
 
     _definition.id                '_atom_site.type_symbol'
@@ -19522,6 +20929,26 @@ save_atom_site_aniso.matrix_b
 
 save_
 
+save_atom_site_aniso.matrix_b_su
+
+    _definition.id                '_atom_site_aniso.matrix_B_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_site_aniso.matrix_B.
+;
+    _name.category_id             atom_site_aniso
+    _name.object_id               matrix_B_su
+    _name.linked_item_id          '_atom_site_aniso.matrix_B'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
 save_atom_site_aniso.matrix_u
 
     _definition.id                '_atom_site_aniso.matrix_U'
@@ -19547,6 +20974,26 @@ save_atom_site_aniso.matrix_u
                       [ a.U_12, a.U_22, a.U_23 ],
                       [ a.U_13, a.U_23, a.U_33 ]]
 ;
+
+save_
+
+save_atom_site_aniso.matrix_u_su
+
+    _definition.id                '_atom_site_aniso.matrix_U_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_site_aniso.matrix_U.
+;
+    _name.category_id             atom_site_aniso
+    _name.object_id               matrix_U_su
+    _name.linked_item_id          '_atom_site_aniso.matrix_U'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
 
 save_
 
@@ -20158,6 +21605,23 @@ save_atom_sites_cartn_transform.mat_11
 
 save_
 
+save_atom_sites_cartn_transform.mat_11_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_11_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_11.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_11_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_11'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.mat_12
 
     _definition.id                '_atom_sites_Cartn_transform.mat_12'
@@ -20180,6 +21644,23 @@ save_atom_sites_cartn_transform.mat_12
 
 save_
 
+save_atom_sites_cartn_transform.mat_12_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_12_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_12.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_12_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_12'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.mat_13
 
     _definition.id                '_atom_sites_Cartn_transform.mat_13'
@@ -20199,6 +21680,23 @@ save_atom_sites_cartn_transform.mat_13
 ;
     _enumeration.default =  0.
 ;
+
+save_
+
+save_atom_sites_cartn_transform.mat_13_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_13_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_13.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_13_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_13'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20227,6 +21725,23 @@ save_atom_sites_cartn_transform.mat_21
 
 save_
 
+save_atom_sites_cartn_transform.mat_21_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_21_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_21.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_21_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_21'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.mat_22
 
     _definition.id                '_atom_sites_Cartn_transform.mat_22'
@@ -20251,6 +21766,23 @@ save_atom_sites_cartn_transform.mat_22
 
 save_
 
+save_atom_sites_cartn_transform.mat_22_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_22_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_22.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_22_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_22'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.mat_23
 
     _definition.id                '_atom_sites_Cartn_transform.mat_23'
@@ -20270,6 +21802,23 @@ save_atom_sites_cartn_transform.mat_23
 ;
     _enumeration.default =  0.
 ;
+
+save_
+
+save_atom_sites_cartn_transform.mat_23_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_23_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_23.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_23_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_23'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20297,6 +21846,23 @@ save_atom_sites_cartn_transform.mat_31
 
 save_
 
+save_atom_sites_cartn_transform.mat_31_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_31_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_31.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_31_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_31'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.mat_32
 
     _definition.id                '_atom_sites_Cartn_transform.mat_32'
@@ -20321,6 +21887,23 @@ save_atom_sites_cartn_transform.mat_32
 
 save_
 
+save_atom_sites_cartn_transform.mat_32_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_32_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_32.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_32_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_32'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.mat_33
 
     _definition.id                '_atom_sites_Cartn_transform.mat_33'
@@ -20340,6 +21923,23 @@ save_atom_sites_cartn_transform.mat_33
 ;
     _enumeration.default =  _cell.length_c
 ;
+
+save_
+
+save_atom_sites_cartn_transform.mat_33_su
+
+    _definition.id                '_atom_sites_Cartn_transform.mat_33_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.mat_33.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               mat_33_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.mat_33'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20382,6 +21982,26 @@ save_atom_sites_cartn_transform.matrix
 
 save_
 
+save_atom_sites_cartn_transform.matrix_su
+
+    _definition.id                '_atom_sites_Cartn_transform.matrix_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.matrix.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               matrix_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.matrix'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
 save_atom_sites_cartn_transform.vec_1
 
     _definition.id                '_atom_sites_Cartn_transform.vec_1'
@@ -20395,6 +22015,23 @@ save_atom_sites_cartn_transform.vec_1
     _name.object_id               vec_1
 
     _import.get                   [{'file':templ_attr.cif  'save':Cartn_vector}]
+
+save_
+
+save_atom_sites_cartn_transform.vec_1_su
+
+    _definition.id                '_atom_sites_Cartn_transform.vec_1_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.vec_1.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               vec_1_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.vec_1'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20414,6 +22051,23 @@ save_atom_sites_cartn_transform.vec_2
 
 save_
 
+save_atom_sites_cartn_transform.vec_2_su
+
+    _definition.id                '_atom_sites_Cartn_transform.vec_2_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.vec_2.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               vec_2_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.vec_2'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_cartn_transform.vec_3
 
     _definition.id                '_atom_sites_Cartn_transform.vec_3'
@@ -20427,6 +22081,23 @@ save_atom_sites_cartn_transform.vec_3
     _name.object_id               vec_3
 
     _import.get                   [{'file':templ_attr.cif  'save':Cartn_vector}]
+
+save_
+
+save_atom_sites_cartn_transform.vec_3_su
+
+    _definition.id                '_atom_sites_Cartn_transform.vec_3_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.vec_3.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               vec_3_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.vec_3'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20456,6 +22127,26 @@ save_atom_sites_cartn_transform.vector
 
     _atom_sites_Cartn_transform.vector =  [ t.vec_1, t.vec_2, t.vec_3 ]
 ;
+
+save_
+
+save_atom_sites_cartn_transform.vector_su
+
+    _definition.id                '_atom_sites_Cartn_transform.vector_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_Cartn_transform.vector.
+;
+    _name.category_id             atom_sites_Cartn_transform
+    _name.object_id               vector_su
+    _name.linked_item_id          '_atom_sites_Cartn_transform.vector'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
 
 save_
 
@@ -20518,6 +22209,23 @@ save_atom_sites_fract_transform.mat_11
 
 save_
 
+save_atom_sites_fract_transform.mat_11_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_11_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_11.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_11_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_11'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_fract_transform.mat_12
 
     _definition.id                '_atom_sites_fract_transform.mat_12'
@@ -20531,6 +22239,23 @@ save_atom_sites_fract_transform.mat_12
     _name.object_id               mat_12
 
     _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+
+save_
+
+save_atom_sites_fract_transform.mat_12_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_12_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_12.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_12_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_12'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20550,6 +22275,23 @@ save_atom_sites_fract_transform.mat_13
 
 save_
 
+save_atom_sites_fract_transform.mat_13_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_13_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_13.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_13_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_13'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_fract_transform.mat_21
 
     _definition.id                '_atom_sites_fract_transform.mat_21'
@@ -20563,6 +22305,23 @@ save_atom_sites_fract_transform.mat_21
     _name.object_id               mat_21
 
     _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+
+save_
+
+save_atom_sites_fract_transform.mat_21_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_21_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_21.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_21_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_21'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20582,6 +22341,23 @@ save_atom_sites_fract_transform.mat_22
 
 save_
 
+save_atom_sites_fract_transform.mat_22_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_22_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_22.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_22_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_22'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_fract_transform.mat_23
 
     _definition.id                '_atom_sites_fract_transform.mat_23'
@@ -20595,6 +22371,23 @@ save_atom_sites_fract_transform.mat_23
     _name.object_id               mat_23
 
     _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+
+save_
+
+save_atom_sites_fract_transform.mat_23_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_23_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_23.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_23_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_23'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20614,6 +22407,23 @@ save_atom_sites_fract_transform.mat_31
 
 save_
 
+save_atom_sites_fract_transform.mat_31_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_31_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_31.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_31_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_31'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_fract_transform.mat_32
 
     _definition.id                '_atom_sites_fract_transform.mat_32'
@@ -20630,6 +22440,23 @@ save_atom_sites_fract_transform.mat_32
 
 save_
 
+save_atom_sites_fract_transform.mat_32_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_32_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_32.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_32_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_32'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_fract_transform.mat_33
 
     _definition.id                '_atom_sites_fract_transform.mat_33'
@@ -20643,6 +22470,23 @@ save_atom_sites_fract_transform.mat_33
     _name.object_id               mat_33
 
     _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+
+save_
+
+save_atom_sites_fract_transform.mat_33_su
+
+    _definition.id                '_atom_sites_fract_transform.mat_33_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.mat_33.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               mat_33_su
+    _name.linked_item_id          '_atom_sites_fract_transform.mat_33'
+    _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20685,6 +22529,26 @@ save_atom_sites_fract_transform.matrix
 
 save_
 
+save_atom_sites_fract_transform.matrix_su
+
+    _definition.id                '_atom_sites_fract_transform.matrix_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.matrix.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               matrix_su
+    _name.linked_item_id          '_atom_sites_fract_transform.matrix'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
 save_atom_sites_fract_transform.vec_1
 
     _definition.id                '_atom_sites_fract_transform.vec_1'
@@ -20698,6 +22562,23 @@ save_atom_sites_fract_transform.vec_1
     _name.object_id               vec_1
 
     _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
+
+save_
+
+save_atom_sites_fract_transform.vec_1_su
+
+    _definition.id                '_atom_sites_fract_transform.vec_1_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.vec_1.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               vec_1_su
+    _name.linked_item_id          '_atom_sites_fract_transform.vec_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20717,6 +22598,23 @@ save_atom_sites_fract_transform.vec_2
 
 save_
 
+save_atom_sites_fract_transform.vec_2_su
+
+    _definition.id                '_atom_sites_fract_transform.vec_2_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.vec_2.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               vec_2_su
+    _name.linked_item_id          '_atom_sites_fract_transform.vec_2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_atom_sites_fract_transform.vec_3
 
     _definition.id                '_atom_sites_fract_transform.vec_3'
@@ -20730,6 +22628,23 @@ save_atom_sites_fract_transform.vec_3
     _name.object_id               vec_3
 
     _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
+
+save_
+
+save_atom_sites_fract_transform.vec_3_su
+
+    _definition.id                '_atom_sites_fract_transform.vec_3_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.vec_3.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               vec_3_su
+    _name.linked_item_id          '_atom_sites_fract_transform.vec_3'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20759,6 +22674,26 @@ save_atom_sites_fract_transform.vector
 
     _atom_sites_fract_transform.vector =  [ t.vec_1, t.vec_2, t.vec_3 ]
 ;
+
+save_
+
+save_atom_sites_fract_transform.vector_su
+
+    _definition.id                '_atom_sites_fract_transform.vector_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_sites_fract_transform.vector.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               vector_su
+    _name.linked_item_id          '_atom_sites_fract_transform.vector'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -20815,6 +22750,23 @@ save_atom_type.analytical_mass_percent
     _type.contents                Real
     _enumeration.range            0.0:100.
     _units.code                   none
+
+save_
+
+save_atom_type.analytical_mass_percent_su
+
+    _definition.id                '_atom_type.analytical_mass_percent_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _atom_type.analytical_mass_percent.
+;
+    _name.category_id             atom_type
+    _name.object_id               analytical_mass_percent_su
+    _name.linked_item_id          '_atom_type.analytical_mass_percent'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -22424,6 +24376,30 @@ save_refine_ls.f_calc_precision
 
 save_
 
+save_refine_ls.f_calc_precision_su
+
+    _definition.id                '_refine_ls.F_calc_precision_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refine_ls.F_calc_precision.
+;
+    _name.category_id             refine_ls
+    _name.object_id               F_calc_precision_su
+    _name.linked_item_id          '_refine_ls.F_calc_precision'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
+;
+
+save_
+
 save_refine_ls.goodness_of_fit_all
 
     _definition.id                '_refine_ls.goodness_of_fit_all'
@@ -22604,6 +24580,23 @@ save_refine_ls.goodness_of_fit_ref
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   none
+
+save_
+
+save_refine_ls.goodness_of_fit_ref_su
+
+    _definition.id                '_refine_ls.goodness_of_fit_ref_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refine_ls.goodness_of_fit_ref.
+;
+    _name.category_id             refine_ls
+    _name.object_id               goodness_of_fit_ref_su
+    _name.linked_item_id          '_refine_ls.goodness_of_fit_ref'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -23089,6 +25082,23 @@ save_refine_ls.restrained_s_all
 
 save_
 
+save_refine_ls.restrained_s_all_su
+
+    _definition.id                '_refine_ls.restrained_S_all_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refine_ls.restrained_S_all.
+;
+    _name.category_id             refine_ls
+    _name.object_id               restrained_S_all_su
+    _name.linked_item_id          '_refine_ls.restrained_S_all'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_refine_ls.restrained_s_gt
 
     _definition.id                '_refine_ls.restrained_S_gt'
@@ -23140,6 +25150,23 @@ save_refine_ls.restrained_s_gt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   none
+
+save_
+
+save_refine_ls.restrained_s_gt_su
+
+    _definition.id                '_refine_ls.restrained_S_gt_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _refine_ls.restrained_S_gt.
+;
+    _name.category_id             refine_ls
+    _name.object_id               restrained_S_gt_su
+    _name.linked_item_id          '_refine_ls.restrained_S_gt'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
