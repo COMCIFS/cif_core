@@ -11855,7 +11855,7 @@ save_
 save_space_group_wyckoff.letter
 
     _definition.id                '_space_group_Wyckoff.letter'
-    _definition.update            2014-06-12
+    _definition.update            2021-09-23
     _description.text
 ;
     The Wyckoff letter associated with this position, as given in
@@ -11874,35 +11874,8 @@ save_space_group_wyckoff.letter
     _type.container               Single
     _type.contents                Text
 
-    loop_
-      _enumeration_set.state
-         a
-         b
-         c
-         d
-         e
-         f
-         g
-         h
-         i
-         j
-         k
-         l
-         m
-         n
-         o
-         p
-         q
-         r
-         s
-         t
-         u
-         v
-         w
-         x
-         y
-         z
-         \a
+    _import.get
+        [{'file':templ_enum.cif  'save':Wyckoff_letter}]
 
 save_
 
@@ -20632,7 +20605,7 @@ save_atom_site.wyckoff_symbol
 
     _definition.id                '_atom_site.Wyckoff_symbol'
     _alias.definition_id          '_atom_site_Wyckoff_symbol'
-    _definition.update            2012-11-20
+    _definition.update            2021-09-23
     _description.text
 ;
     The Wyckoff symbol (letter) as listed in the space-group section
@@ -20640,10 +20613,13 @@ save_atom_site.wyckoff_symbol
 ;
     _name.category_id             atom_site
     _name.object_id               Wyckoff_symbol
-    _type.purpose                 Encode
+    _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
+
+    _import.get
+        [{'file':templ_enum.cif  'save':Wyckoff_letter}]
 
 save_
 
@@ -26112,4 +26088,7 @@ save_
        Fixed text description of _atom_site.U,B_iso_or_equiv.
 
        Added multiple standard uncertainty (SU) data items.
+
+       Restricted the _atom_site.Wyckoff_symbol data item values
+       to a set of case-sensitive enumeration values.
 ;
