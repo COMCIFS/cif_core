@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-09-22
+    _dictionary.date              2021-09-23
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -26071,7 +26071,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-09-22
+         3.1.0                    2021-09-23
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
