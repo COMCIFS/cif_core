@@ -2079,52 +2079,52 @@ save_
       _dictionary_audit.version
       _dictionary_audit.date
       _dictionary_audit.revision
-         3.3.00                   2004-11-09
+         3.3.0                    2004-11-09
 ;
        Change definition.import_id to definition_import.id in many defs.
        Insert category DEFINITION_IMPORT and the items .id, .conflict,
        .protocol and .source.
 ;
-         3.3.01                   2004-11-10
+         3.3.1                    2004-11-10
 ;
        Make further changes to the DEFINITION_IMPORT definitions and
        introduce the DEFINITION_TEMPLATE category.
 ;
-         3.3.02                   2004-11-11
+         3.3.2                    2004-11-11
 ;
        Introduce an IMPORT category containing IMPORT_DICTIONARY,
        IMPORT_DEFINITION, IMPORT_CATEGORY, IMPORT_ATTRIBUTE.
        Change DEFINITION_TEMPLATE to IMPORT_TEMPLATE.
 ;
-         3.3.03                   2004-11-12
+         3.3.3                    2004-11-12
 ;
        Major changes to all the new attributes. Introduce categories
        DEFINITION_CONTEXT.
 ;
-         3.3.04                   2004-11-13
+         3.3.4                    2004-11-13
 ;
        Cleaned up the IMPORT changes and cases of enumerates.
 ;
-         3.3.05                   2004-11-16
+         3.3.5                    2004-11-16
 ;
        Further changes to IMPORT definitions.
 ;
-         3.3.06                   2004-11-18
+         3.3.6                    2004-11-18
 ;
        Some minor correction of typos
 ;
-         3.3.07                   2005-11-22
+         3.3.7                    2005-11-22
 ;
        Changed _dictionary.name to _dictionary.filename
        Changed _dictionary_xref.name to _dictionary_xref.filename
        Added _dictionary.title to describe the common name of the dictionary
 ;
-         3.3.08                   2005-12-12
+         3.3.8                    2005-12-12
 ;
        Changed ddl to ddl_attr
        Added Template and Function to _dictionary.class
 ;
-         3.3.09                   2006-02-02
+         3.3.9                    2006-02-02
 ;
        Add the definition of _dictionary_xref.source.
 ;
@@ -2132,19 +2132,19 @@ save_
 ;
        Add import attribute definitions
 ;
-         3.4.01                   2006-02-12
+         3.4.1                    2006-02-12
 ;
        Remove save frames from dictionary attributes.
        Change the attribute _dictionary.parent_name to _dictionary.parent_id
 ;
-         3.4.02                   2006-02-16
+         3.4.2                    2006-02-16
 ;
        In the import_*.conflict definitions change the enumeration state Unique
        to Ignore, and change the default state to Error.
        In the import_*.missing definitions change default enumeration state to
        Error.
 ;
-         3.5.01                   2006-03-07
+         3.5.1                    2006-03-07
 ;
        Structural changes to the file to conform with the import model 3.
        Move the template file for *.relational_id to com_att.dic
@@ -2152,12 +2152,12 @@ save_
        Move the _codes_ddl.units_code to enum_set.dic and insert the
        import_enum_set.id tuples.
 ;
-         3.5.02                   2006-03-22
+         3.5.2                    2006-03-22
 ;
        Rename _enumeration.default_index_id to _enumeration.def_index_id.
        Correct the attributes _enumeration_default.index and *.value.
 ;
-         3.5.03                   2006-05-09
+         3.5.3                    2006-05-09
 ;
        Reword many of the import attributes.
        Correct the tuple description for import_dictionary.
@@ -2165,7 +2165,7 @@ save_
        Update _dictionary.class definition - change "Template" to "Import".
        Remove _enumeration.scope "open" from _definition_context.domain.
 ;
-         3.6.01                   2006-06-16
+         3.6.1                    2006-06-16
 ;
        Major revamp of TYPE attributes... changed:
           _type.value to _type.contents and expand enumeration list.
@@ -2177,20 +2177,20 @@ save_
        Changed _category.join_set_id to _category.join_cat_id.
        Remove _enumeration.scope definition.
 ;
-         3.6.02                   2006-06-17
+         3.6.2                    2006-06-17
 ;
        Change the states of _type.purpose.
 ;
-         3.6.03                   2006-06-18
+         3.6.3                    2006-06-18
 ;
        Correct _type.contents value in import_dictionary.id.
 ;
-         3.6.04                   2006-06-20
+         3.6.4                    2006-06-20
 ;
        Change state 'Point' to 'Link' in _type.contents definition.
        Add Formula to _type.contents
 ;
-         3.6.05                   2006-06-27
+         3.6.5                    2006-06-27
 ;
        Change all IMPORT attributes and apply.
        Add _dictionary.namespace attribute and apply.
@@ -2198,26 +2198,26 @@ save_
        Add _enumeration_set.scope.
        Add .context to ENUMERATE_SET, ENUMERATE_DEFAULT, DESCRIPTION_EXAMPLE
 ;
-         3.6.06                   2006-07-18
+         3.6.6                    2006-07-18
 ;
        Change the descriptions of the _type.container states.
        The _enumeration_set.scope removed (enumeration.mandatory used).
        In _type_array.dimension change _type.contents to List.
 ;
-         3.6.07                   2006-08-30
+         3.6.7                    2006-08-30
 ;
        Change 'att' to 'sta' in the imports of _type.contents and _units.code.
        Replace states 'vector' and 'matrix' in _type.container with 'array'.
        In _type.purpose change 'model' to 'assigned'; 'observe' to 'observed';
        and 'measure' to 'measured'.
 ;
-         3.6.08                   2006-08-31
+         3.6.8                    2006-08-31
 ;
        Remove the category TYPE_ARRAY and insert _type.dimension
        Replace _description.compact with _description.common
        Replace _description.abbreviated with _description.key_words
 ;
-         3.6.09                   2006-10-31
+         3.6.9                    2006-10-31
 ;
        Remove all attributes and categories referring to 'context'.
 ;
@@ -2226,7 +2226,7 @@ save_
        Replace _method.id with method.purpose.
        Redefine the DICTIONARY_VALID values.
 ;
-         3.7.01                   2006-11-16
+         3.7.1                    2006-11-16
 ;
        Apply _definition.scope changes.
        Add _category.parent_join.
@@ -2234,7 +2234,7 @@ save_
        Add _enumeration_set.xref_dictionary.
        Remove all relational keys.
 ;
-         3.7.02                   2006-12-05
+         3.7.2                    2006-12-05
 ;
        Rewording of description.text in DDL_ATTR and definition.namespace
        Rewording of category_mandatory.item_id
@@ -2243,35 +2243,35 @@ save_
        Corrected examples in type.dimension.
        Remove dictionary.parent_id and dictionary.parent_uri.
 ;
-         3.7.03                   2006-12-21
+         3.7.3                    2006-12-21
 ;
        Default for _category.parent_join is now "No"
 ;
-         3.7.04                   2007-02-06
+         3.7.4                    2007-02-06
 ;
        Change _category_key.item_id to _category_key.generic
        Add _category_key.primitive
 ;
-         3.7.05                   2007-02-08
+         3.7.5                    2007-02-08
 ;
        Change the _type.purpose of _category_key.generic and .primitive
        to Identify
 ;
-         3.7.06                   2007-03-18
+         3.7.6                    2007-03-18
 ;
        Change the description for _name.linked_item_id
 ;
-         3.7.07                   2007-10-11
+         3.7.7                    2007-10-11
 ;
        Correct the _type.dimension assignments to [n[m]].
        Remove _type_array.dimension from _type.dimension definition.
 ;
-         3.7.08                   2008-01-17
+         3.7.8                    2008-01-17
 ;
        Change 'Definition' to 'Evaluation' in import_list.id.
        Changed import.scope entries to leading uc character.
 ;
-         3.7.09                   2008-02-12
+         3.7.9                    2008-02-12
 ;
        Change 'Itm' to 'Def' in import.scope.
 ;
@@ -2303,146 +2303,146 @@ save_
         To     _type.contents    Ctag
         And change the case examples
 ;
-         3.8.01                   2011-06-07
+         3.8.1                    2011-06-07
 ;
        Remove the Tuple and Array enumerations from _type.container
        Change category class enumeration from List to Loop; and change
        all invocations of _category.class in the definitions
        Introduce nested save frames for expressing nested categories.
 ;
-         3.8.02                   2011-06-21
+         3.8.2                    2011-06-21
 ;
        Reconfigure _dictionary_valid attributes into lists, and reset the
        attribute application criteria at the rear of the DDL dictionary.
 ;
-         3.8.03                   2011-06-22
+         3.8.3                    2011-06-22
 ;
        Change IMPORT_LIST to IMPORT_TABLE. Change the IMPORT arguments to
        match this. Change the import_list.id invocations to import_table
        equivalents. Add _enumeration_set.table_tag.
 ;
-         3.8.04                   2011-06-23
+         3.8.4                    2011-06-23
 ;
        Remove IMPORT_TABLE. Change the IMPORT to a set category.
        Insert a import.get attribute to replace import_table.id
        Rename the DDL_ATTR category as ATTRIBUTES
 ;
-         3.8.05                   2011-06-27
+         3.8.5                    2011-06-27
 ;
        Change the _name.category_id value to reflect the parent category.
 ;
-         3.8.06                   2011-06-29
+         3.8.6                    2011-06-29
 ;
        Change Reference in _type.purpose to Ref-key
 ;
-         3.8.07                   2011-06-30
+         3.8.7                    2011-06-30
 ;
        Change Reference in _definition.class to Ref-loop.
        Remove import from type.contents and insert enumeration_set list.
        Insert name.category_id into every category definition.
 ;
-         3.8.08                   2011-07-28
+         3.8.8                    2011-07-28
 ;
        Add name.category_id and name.object_id to category definitions.
        Remove category.parent_id from category definitions.
        Remove definitions for category.parent_id and the CATEGORY_KEY
        and CATEGORY_MANDATORY definitions. Define category.key_id
 ;
-         3.8.09                   2011-08-15
+         3.8.9                    2011-08-15
 ;
        Add the state "Extend" to the type.purpose" attribute.
 ;
-         3.9.01                   2011-12-08
+         3.9.1                    2011-12-08
 ;
        Add types "Array" and "Matrix" to type.container attribute definition.
        Add type "Su" to the type.purpose attribute definition.
 ;
-         3.9.02                   2012-01-25
+         3.9.2                    2012-01-25
 ;
        For import.get change the key "fram" to "save".
 ;
-         3.10.01                  2012-05-07
+         3.10.1                   2012-05-07
 ;
        Revamp the type.purpose states. Remove state "Limit"
        Add the new attribute type.source
        Change dictionary.class "Attribute" to "Reference"
        Removed attribute enumeration_set.construct
 ;
-         3.10.02                  2012-10-16
+         3.10.2                   2012-10-16
 ;
        Correct enum states for type.contents and type.container
 ;
-         3.10.03                  2012-11-20
+         3.10.3                   2012-11-20
 ;
        Remove "Implied" as an enumeration state for type.contents
 ;
-         3.10.04                  2013-02-12
+         3.10.4                   2013-02-12
 ;
        Added missing loop statement to methods of dictionary_valid.application.
        Corrected the definition of the enumeration state 'Code' in
        type.contents.
 ;
-         3.10.05                  2013-02-22
+         3.10.5                   2013-02-22
 ;
        Add state value to enum_set loop of import.get defn as the key
 ;
-         3.10.06                  2013-02-25
+         3.10.6                   2013-02-25
 ;
        Remove the quotes from Multiple string in type.container definition
        Add 'Functions' to the enumeration states of definition.class
 ;
-         3.10.07                  2013-03-03
+         3.10.7                   2013-03-03
 ;
        Added type.contents enum state "Implied" for category key definitions
 ;
-         3.10.08                  2013-03-06
+         3.10.8                   2013-03-06
 ;
        Added various attributes to conform with ALIGN requirements
 ;
-         3.11.01                  2013-04-11
+         3.11.1                   2013-04-11
 ;
        Added type.source to all definitions
        Change type.contents state "Table" to "Pairs"
 ;
-         3.11.02                  2013-04-16
+         3.11.2                   2013-04-16
 ;
        Removed 'Measured' as a state for type.source
 ;
-         3.11.03                  2013-04-24
+         3.11.3                   2013-04-24
 ;
        Changed type.source 'Quantity' to 'Number' or 'Encode'
        State 'Float' in type.contents removed.
 ;
-         3.11.04                  2013-09-08
+         3.11.4                   2013-09-08
 ;
        Attribute _alias.deprecation_date added.
        Attribute _category.key_list      added.
        The attribute _category.key_list added to all Loop category defs.
 ;
-         3.11.05                  2014-09-18
+         3.11.5                   2014-09-18
 ;
        Looped category _category_key replaces _category.key_list
        Added _category_key.name and changed all occurrences of
        _category.key_list to _category_key.name
        Changed _type.source and _type.purpose to Recommended (JRH)
 ;
-         3.11.06                  2015-01-27
+         3.11.6                   2015-01-27
 ;
        Replaced stub category names with full category names in
        _name.category_id and _name.object_id.
        Corrected all _category.key_name to _category_key.name (JRH)
 ;
-         3.11.07                  2015-01-27
+         3.11.7                   2015-01-27
 ;
        Converted to CIF2 format using automatic tool and post-editing for
        presentation (JRH).
 ;
-         3.11.08                  2015-01-28
+         3.11.8                   2015-01-28
 ;
        Created _dictionary_valid.scope and corrected dREL method for
        _dictionary_valid.application.
 ;
-         3.11.09                  2015-05-07
+         3.11.9                   2015-05-07
 ;
        Removed _enumerated.table_id and replaced with ByReference attributes
        _type.contents_referenced_id and _type.indices_referenced_id. Updated
