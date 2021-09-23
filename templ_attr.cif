@@ -649,6 +649,14 @@ save_aniso_UIJ_su
     _units.code                  angstrom_squared
      save_
 
+save_general_su
+
+    _type.purpose                SU
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+
+save_
 
 save_Cromer_Mann_coeff
 
