@@ -6739,12 +6739,12 @@ save_
 save_cell.convert_uij_to_betaij
 
     _definition.id                '_cell.convert_Uij_to_betaij'
-    _definition.update            2021-07-07
+    _definition.update            2021-09-24
     _description.text
 ;
     The reciprocal space matrix for converting the U(ij) matrix of
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
-    The adp factor in a structure factor expression:
+    The ADP factor in a structure factor expression:
 
     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
@@ -13751,16 +13751,16 @@ save_
 
 save_model_site.adp_eigenvalues
 
-    _definition.id                '_model_site.adp_eigenvalues'
-    _definition.update            2021-07-01
+    _definition.id                '_model_site.ADP_eigenvalues'
+    _definition.update            2021-09-24
     _description.text
 ;
-    The set of three adp eigenvalues for the associated eigenvectors
-    given by _model_site.adp_eigenvectors. The eigenvalues are
+    The set of three ADP eigenvalues for the associated eigenvectors
+    given by _model_site.ADP_eigenvectors. The eigenvalues are
     sorted in order of magnitude with the largest first.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvalues
+    _name.object_id               ADP_eigenvalues
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Array
@@ -13771,23 +13771,23 @@ save_model_site.adp_eigenvalues
     _method.expression
 ;
     A    =  _cell.orthogonal_matrix
-    U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
-    _model_site.adp_eigenvalues  =  Eigen( U )[:,0]
+    U    =  A * _model_site.ADP_matrix_beta * Transpose(A) /(2*Pi**2)
+    _model_site.ADP_eigenvalues  =  Eigen( U )[:,0]
 ;
 
 save_
 
 save_model_site.adp_eigenvalues_su
 
-    _definition.id                '_model_site.adp_eigenvalues_su'
-    _definition.update            2021-09-23
+    _definition.id                '_model_site.ADP_eigenvalues_su'
+    _definition.update            2021-09-24
     _description.text
 ;
-    Standard uncertainty of _model_site.adp_eigenvalues.
+    Standard uncertainty of _model_site.ADP_eigenvalues.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvalues_su
-    _name.linked_item_id          '_model_site.adp_eigenvalues'
+    _name.object_id               ADP_eigenvalues_su
+    _name.linked_item_id          '_model_site.ADP_eigenvalues'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Array
@@ -13799,19 +13799,19 @@ save_
 
 save_model_site.adp_eigenvectors
 
-    _definition.id                '_model_site.adp_eigenvectors'
-    _definition.update            2021-07-01
+    _definition.id                '_model_site.ADP_eigenvectors'
+    _definition.update            2021-09-24
     _description.text
 ;
-    The set of three adp eigenvectors corresponding to the values
-    given in _model_site.adp_eigenvalues. The eigenvectors are
+    The set of three ADP eigenvectors corresponding to the values
+    given in _model_site.ADP_eigenvalues. The eigenvectors are
     contained in the rows of a matrix ordered from top to bottom
     in order largest to smallest corresponding eigenvalue. The
     eigenvector elements are direction cosines to the orthogonal
     axes X,Y,Z.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvectors
+    _name.object_id               ADP_eigenvectors
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Array
@@ -13822,23 +13822,23 @@ save_model_site.adp_eigenvectors
     _method.expression
 ;
     A    =  _cell.orthogonal_matrix
-    U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
-    _model_site.adp_eigenvectors  =  Eigen( U )[:,1:4]
+    U    =  A * _model_site.ADP_matrix_beta * Transpose(A) /(2*Pi**2)
+    _model_site.ADP_eigenvectors  =  Eigen( U )[:,1:4]
 ;
 
 save_
 
 save_model_site.adp_eigenvectors_su
 
-    _definition.id                '_model_site.adp_eigenvectors_su'
-    _definition.update            2021-09-23
+    _definition.id                '_model_site.ADP_eigenvectors_su'
+    _definition.update            2021-09-24
     _description.text
 ;
-    Standard uncertainty of _model_site.adp_eigenvectors.
+    Standard uncertainty of _model_site.ADP_eigenvectors.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvectors_su
-    _name.linked_item_id          '_model_site.adp_eigenvectors'
+    _name.object_id               ADP_eigenvectors_su
+    _name.linked_item_id          '_model_site.ADP_eigenvectors'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Array
@@ -13850,14 +13850,14 @@ save_
 
 save_model_site.adp_matrix_beta
 
-    _definition.id                '_model_site.adp_matrix_beta'
-    _definition.update            2021-03-01
+    _definition.id                '_model_site.ADP_matrix_beta'
+    _definition.update            2021-09-24
     _description.text
 ;
     Matrix of dimensionless anisotropic atomic displacement parameters.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_matrix_beta
+    _name.object_id               ADP_matrix_beta
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Matrix
@@ -13871,22 +13871,22 @@ save_model_site.adp_matrix_beta
     a = atom_site[m.label]
     s = space_group_symop[SymKey(m.symop)]
 
-    _model_site.adp_matrix_beta =  s.R * a.tensor_beta * s.RT
+    _model_site.ADP_matrix_beta =  s.R * a.tensor_beta * s.RT
 ;
 
 save_
 
 save_model_site.adp_matrix_beta_su
 
-    _definition.id                '_model_site.adp_matrix_beta_su'
-    _definition.update            2021-09-23
+    _definition.id                '_model_site.ADP_matrix_beta_su'
+    _definition.update            2021-09-24
     _description.text
 ;
-    Standard uncertainty of _model_site.adp_matrix_beta.
+    Standard uncertainty of _model_site.ADP_matrix_beta.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_matrix_beta_su
-    _name.linked_item_id          '_model_site.adp_matrix_beta'
+    _name.object_id               ADP_matrix_beta_su
+    _name.linked_item_id          '_model_site.ADP_matrix_beta'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Matrix
@@ -19383,21 +19383,21 @@ save_
 
 save_atom_site.adp_type
 
-    _definition.id                '_atom_site.adp_type'
+    _definition.id                '_atom_site.ADP_type'
 
     loop_
       _alias.definition_id
-         '_atom_site_adp_type'
+         '_atom_site_ADP_type'
          '_atom_site_thermal_displace_type'
          '_atom_site.thermal_displace_type'
 
-    _definition.update            2012-11-20
+    _definition.update            2021-09-24
     _description.text
 ;
     Code for type of atomic displacement parameters used for the site.
 ;
     _name.category_id             atom_site
-    _name.object_id               adp_type
+    _name.object_id               ADP_type
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
@@ -20162,17 +20162,17 @@ save_atom_site.refinement_flags
       _definition_replaced.id
       _definition_replaced.by
          1                        '_atom_site.refinement_flags_posn'
-         2                        '_atom_site.refinement_flags_adp'
+         2                        '_atom_site.refinement_flags_ADP'
          3                        '_atom_site.refinement_flags_occupancy'
 
     _alias.definition_id          '_atom_site_refinement_flags'
-    _definition.update            2019-04-02
+    _definition.update            2021-09-24
     _description.text
 ;
     A concatenated series of single-letter codes which indicate the
     refinement restraints or constraints applied to this site. This
     item should not be used. It has been replaced by
-    _atom_site.refinement_flags_posn, _adp and _occupancy. It is
+    _atom_site.refinement_flags_posn, _ADP and _occupancy. It is
     retained in this dictionary only to provide compatibility with
     legacy CIFs.
 ;
@@ -20199,16 +20199,16 @@ save_
 
 save_atom_site.refinement_flags_adp
 
-    _definition.id                '_atom_site.refinement_flags_adp'
-    _alias.definition_id          '_atom_site_refinement_flags_adp'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_site.refinement_flags_ADP'
+    _alias.definition_id          '_atom_site_refinement_flags_ADP'
+    _definition.update            2021-09-24
     _description.text
 ;
     A code which indicates the refinement restraints or constraints
     applied to the atomic displacement parameters of this site.
 ;
     _name.category_id             atom_site
-    _name.object_id               refinement_flags_adp
+    _name.object_id               refinement_flags_ADP
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
@@ -20384,7 +20384,7 @@ save_
 save_atom_site.tensor_beta
 
     _definition.id                '_atom_site.tensor_beta'
-    _definition.update            2021-03-01
+    _definition.update            2021-09-24
     _description.text
 ;
     The symmetric anisotropic atomic displacement tensor beta[I,J]
@@ -20392,7 +20392,7 @@ save_atom_site.tensor_beta
 
     t = exp -[ beta11 h h + ............ 2 beta23 k l ]
 
-    It is related to the adp matrices U(IJ) and B(IJ) as follows:
+    It is related to the ADP matrices U(IJ) and B(IJ) as follows:
 
     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
@@ -20412,7 +20412,7 @@ save_atom_site.tensor_beta
 
     label = a.label
 
-    If      (a.adp_type == 'Uani')  {
+    If      (a.ADP_type == 'Uani')  {
         Loop b as atom_site_aniso     {
           If(label == b.label)           {
 
@@ -20420,7 +20420,7 @@ save_atom_site.tensor_beta
               Break
     } } }
 
-    Else If (a.adp_type == 'Bani')  {
+    Else If (a.ADP_type == 'Bani')  {
         Loop b as atom_site_aniso     {
           If(label == b.label)           {
 
@@ -20429,7 +20429,7 @@ save_atom_site.tensor_beta
     } } }
 
     Else                                    {
-        If (a.adp_type == 'Uiso')  U  =  a.U_iso_or_equiv
+        If (a.ADP_type == 'Uiso')  U  =  a.U_iso_or_equiv
         Else                       U  =  a.B_iso_or_equiv / (8 * Pi**2)
 
             UIJ = U * _cell.convert_Uiso_to_Uij
