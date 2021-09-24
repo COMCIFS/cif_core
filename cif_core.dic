@@ -8407,9 +8407,9 @@ save_
 
 save_chemical.identifier_inchi
 
-    _definition.id                '_chemical.identifier_inchi'
-    _alias.definition_id          '_chemical_identifier_inchi'
-    _definition.update            2013-01-18
+    _definition.id                '_chemical.identifier_InChI'
+    _alias.definition_id          '_chemical_identifier_InChI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The IUPAC International Chemical Identifier (InChI) is a
@@ -8421,7 +8421,7 @@ save_chemical.identifier_inchi
          http://www.iupac.org/inchi/
 ;
     _name.category_id             chemical
-    _name.object_id               identifier_inchi
+    _name.object_id               identifier_InChI
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -8434,9 +8434,9 @@ save_
 
 save_chemical.identifier_inchi_key
 
-    _definition.id                '_chemical.identifier_inchi_key'
-    _alias.definition_id          '_chemical_identifier_inchi_key'
-    _definition.update            2013-01-18
+    _definition.id                '_chemical.identifier_InChI_key'
+    _alias.definition_id          '_chemical_identifier_InChI_key'
+    _definition.update            2021-09-24
     _description.text
 ;
     The InChIKey is a compact hashed version of the full InChI
@@ -8445,7 +8445,7 @@ save_chemical.identifier_inchi_key
     http://www.iupac.org/inchi/
 ;
     _name.category_id             chemical
-    _name.object_id               identifier_inchi_key
+    _name.object_id               identifier_InChI_key
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -8457,16 +8457,16 @@ save_
 
 save_chemical.identifier_inchi_version
 
-    _definition.id                '_chemical.identifier_inchi_version'
-    _alias.definition_id          '_chemical_identifier_inchi_version'
-    _definition.update            2013-01-18
+    _definition.id                '_chemical.identifier_InChI_version'
+    _alias.definition_id          '_chemical_identifier_InChI_version'
+    _definition.update            2021-09-24
     _description.text
 ;
     Version number of the InChI standard to which the associated
     chemical identifier string applies.
 ;
     _name.category_id             chemical
-    _name.object_id               identifier_inchi_version
+    _name.object_id               identifier_InChI_version
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
