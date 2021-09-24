@@ -25968,11 +25968,11 @@ save_
       _dictionary_audit.version
       _dictionary_audit.date
       _dictionary_audit.revision
-         3.0.05                   2016-05-13
+         3.0.5                    2016-05-13
 ;
        Merged in most symmetry dictionary definitions (James Hester)
 ;
-         3.0.06                   2016-09-13
+         3.0.6                    2016-09-13
 ;
        Adjusted and removed keys for changes in dREL operation.
        _citation_id added to key list of citation_author (James Hester).
@@ -25980,18 +25980,18 @@ save_
        EXPTL_CRYSTAL to Set type in keeping with current use patterns.
        Removed all child keys of exptl_crystal_id.
 ;
-         3.0.07                   2017-06-10
+         3.0.7                    2017-06-10
 ;
        Added and deprecated symmetry.cell_setting. Removed rhombohedral
        option from dREL method for space_group.crystal_system. (James Hester)
 ;
-         3.0.08                   2017-09-23
+         3.0.8                    2017-09-23
 ;
        Added missing items from DDL1 version: _citation.doi, _audit.block_doi
        _citation.publisher, _database.dataset_doi,
        _publ_contact_author.id_orcid, _publ_author.id_orcid (James Hester)
 ;
-         3.0.09                   2018-04-10
+         3.0.9                    2018-04-10
 ;
        Rewrote CITATION category description to cover all relevant uses rather
        than only publication-related uses (James Hester).
