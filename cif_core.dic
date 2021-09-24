@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-09-23
+    _dictionary.date              2021-09-24
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -23413,8 +23413,8 @@ save_atom_type_scat.dispersion_real
 ;
     With q as atom_type_scat
 
-     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_real_cu
-     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_real_mo
+     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_real_Cu
+     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_real_Mo
 
              _atom_type_scat.dispersion_real = a
 ;
@@ -23423,15 +23423,15 @@ save_
 
 save_atom_type_scat.dispersion_real_cu
 
-    _definition.id                '_atom_type_scat.dispersion_real_cu'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_real_Cu'
+    _definition.update            2021-09-24
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
     for this atom type and Cu K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_real_cu
+    _name.object_id               dispersion_real_Cu
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -23446,15 +23446,15 @@ save_
 
 save_atom_type_scat.dispersion_real_mo
 
-    _definition.id                '_atom_type_scat.dispersion_real_mo'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_real_Mo'
+    _definition.update            2021-09-24
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
     for this atom type and Mo K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_real_mo
+    _name.object_id               dispersion_real_Mo
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -26047,7 +26047,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-09-23
+         3.1.0                    2021-09-24
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26091,4 +26091,6 @@ save_
 
        Restricted the _atom_site.Wyckoff_symbol data item values
        to a set of case-sensitive enumeration values.
+
+       Updated the capitalisation of multiple data items.
 ;
