@@ -16541,14 +16541,14 @@ save_
 
 save_database_code.depnum_ccdc_archive
 
-    _definition.id                '_database_code.depnum_ccdc_archive'
+    _definition.id                '_database_code.depnum_CCDC_archive'
 
     loop_
       _alias.definition_id
-         '_database_code_depnum_ccdc_archive'
-         '_database.code_depnum_ccdc_archive'
+         '_database_code_depnum_CCDC_archive'
+         '_database.code_depnum_CCDC_archive'
 
-    _definition.update            2013-01-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Deposition numbers assigned by the Cambridge Crystallographic
@@ -16556,7 +16556,7 @@ save_database_code.depnum_ccdc_archive
     archived by the CCDC.
 ;
     _name.category_id             database_code
-    _name.object_id               depnum_ccdc_archive
+    _name.object_id               depnum_CCDC_archive
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -16566,14 +16566,14 @@ save_
 
 save_database_code.depnum_ccdc_fiz
 
-    _definition.id                '_database_code.depnum_ccdc_fiz'
+    _definition.id                '_database_code.depnum_CCDC_fiz'
 
     loop_
       _alias.definition_id
-         '_database_code_depnum_ccdc_fiz'
-         '_database.code_depnum_ccdc_fiz'
+         '_database_code_depnum_CCDC_fiz'
+         '_database.code_depnum_CCDC_fiz'
 
-    _definition.update            2013-01-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Deposition numbers assigned by the Fachinformationszentrum
@@ -16581,7 +16581,7 @@ save_database_code.depnum_ccdc_fiz
     archived by the Cambridge Crystallographic Data Centre (CCDC).
 ;
     _name.category_id             database_code
-    _name.object_id               depnum_ccdc_fiz
+    _name.object_id               depnum_CCDC_fiz
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -16591,14 +16591,14 @@ save_
 
 save_database_code.depnum_ccdc_journal
 
-    _definition.id                '_database_code.depnum_ccdc_journal'
+    _definition.id                '_database_code.depnum_CCDC_journal'
 
     loop_
       _alias.definition_id
-         '_database_code_depnum_ccdc_journal'
-         '_database.code_depnum_ccdc_journal'
+         '_database_code_depnum_CCDC_journal'
+         '_database.code_depnum_CCDC_journal'
 
-    _definition.update            2013-01-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Deposition numbers assigned by various journals to files
@@ -16606,7 +16606,7 @@ save_database_code.depnum_ccdc_journal
     Crystallographic Data Centre (CCDC).
 ;
     _name.category_id             database_code
-    _name.object_id               depnum_ccdc_journal
+    _name.object_id               depnum_CCDC_journal
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
