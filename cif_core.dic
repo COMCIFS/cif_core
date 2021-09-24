@@ -23718,12 +23718,12 @@ save_REFINE_DIFF
     _definition.id                REFINE_DIFF
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-20
+    _definition.update            2021-09-24
     _description.text
 ;
     The CATEGORY of data items which specify the electron density limits
     in a difference Fourier map after the structure has been refined. The
-    rms value is with respect to the arithmetic mean density, and is derived
+    RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
 ;
     _name.category_id             REFINE
@@ -23859,12 +23859,12 @@ save_
 
 save_refine_diff.density_rms
 
-    _definition.id                '_refine_diff.density_rms'
+    _definition.id                '_refine_diff.density_RMS'
 
     loop_
       _alias.definition_id
-         '_refine_diff_density_rms'
-         '_refine.diff_density_rms'
+         '_refine_diff_density_RMS'
+         '_refine.diff_density_RMS'
 
     _definition.update            2012-11-20
     _description.text
@@ -23877,7 +23877,7 @@ save_refine_diff.density_rms
     and also for defining suitable contour levels.
 ;
     _name.category_id             refine_diff
-    _name.object_id               density_rms
+    _name.object_id               density_RMS
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Single
@@ -23895,12 +23895,12 @@ save_
 
 save_refine_diff.density_rms_su
 
-    _definition.id                '_refine_diff.density_rms_su'
+    _definition.id                '_refine_diff.density_RMS_su'
 
     loop_
       _alias.definition_id
-         '_refine_diff_density_rms_su'
-         '_refine.diff_density_rms_esd'
+         '_refine_diff_density_RMS_su'
+         '_refine.diff_density_RMS_esd'
 
     _definition.update            2021-03-03
     _description.text
@@ -23909,8 +23909,8 @@ save_refine_diff.density_rms_su
     in a difference Fourier map.
 ;
     _name.category_id             refine_diff
-    _name.object_id               density_rms_su
-    _name.linked_item_id          '_refine_diff.density_rms'
+    _name.object_id               density_RMS_su
+    _name.linked_item_id          '_refine_diff.density_RMS'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               Single
