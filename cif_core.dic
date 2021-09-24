@@ -23314,7 +23314,7 @@ save_atom_type_scat.dispersion_imag
          '_atom_type_scat_dispersion_imag'
          '_atom_type.scat_dispersion_imag'
 
-    _definition.update            2012-11-20
+    _definition.update            2021-09-24
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -23332,8 +23332,8 @@ save_atom_type_scat.dispersion_imag
 ;
     With q as atom_type_scat
 
-     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_imag_cu
-     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_imag_mo
+     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_imag_Cu
+     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_imag_Mo
 
              _atom_type_scat.dispersion_imag = a
 ;
@@ -23342,15 +23342,15 @@ save_
 
 save_atom_type_scat.dispersion_imag_cu
 
-    _definition.id                '_atom_type_scat.dispersion_imag_cu'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_imag_Cu'
+    _definition.update            2021-09-24
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
     for this atom type and Cu K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_imag_cu
+    _name.object_id               dispersion_imag_Cu
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -23365,15 +23365,15 @@ save_
 
 save_atom_type_scat.dispersion_imag_mo
 
-    _definition.id                '_atom_type_scat.dispersion_imag_mo'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_imag_Mo'
+    _definition.update            2021-09-24
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
     for this atom type and Mo K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_imag_mo
+    _name.object_id               dispersion_imag_Mo
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
