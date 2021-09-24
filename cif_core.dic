@@ -18132,9 +18132,9 @@ save_
 
 save_publ_author.id_iucr
 
-    _definition.id                '_publ_author.id_iucr'
-    _alias.definition_id          '_publ_author_id_iucr'
-    _definition.update            2012-12-13
+    _definition.id                '_publ_author.id_IUCr'
+    _alias.definition_id          '_publ_author_id_IUCr'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the IUCr contact database of a publication
@@ -18142,7 +18142,7 @@ save_publ_author.id_iucr
     Directory of Crystallographers (http://wdc.iucr.org).
 ;
     _name.category_id             publ_author
-    _name.object_id               id_iucr
+    _name.object_id               id_IUCr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18506,9 +18506,9 @@ save_
 
 save_publ_contact_author.id_iucr
 
-    _definition.id                '_publ_contact_author.id_iucr'
-    _alias.definition_id          '_publ_contact_author_id_iucr'
-    _definition.update            2021-08-18
+    _definition.id                '_publ_contact_author.id_IUCr'
+    _alias.definition_id          '_publ_contact_author_id_IUCr'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the IUCr contact database of the author submitting
@@ -18516,7 +18516,7 @@ save_publ_contact_author.id_iucr
     from the World Directory of Crystallographers (http://wdc.iucr.org).
 ;
     _name.category_id             publ_contact_author
-    _name.object_id               id_iucr
+    _name.object_id               id_IUCr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
