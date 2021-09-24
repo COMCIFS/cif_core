@@ -9337,7 +9337,7 @@ save_CHEMICAL_FORMULA
     _definition.id                CHEMICAL_FORMULA
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2021-09-24
     _description.text
 ;
     The CATEGORY of data items which specify the composition and chemical
@@ -9378,7 +9378,7 @@ save_CHEMICAL_FORMULA
        Abstracts. This ordering is used in _chemical_formula.moiety
        and _chemical_formula.sum.
 
-          _chemical_formula.iupac      '[Mo (C O)4 (C18 H33 P)2]'
+          _chemical_formula.IUPAC      '[Mo (C O)4 (C18 H33 P)2]'
           _chemical_formula.moiety     'C40 H66 Mo O4 P2'
           _chemical_formula.structural '((C O)4 (P (C6 H11)3)2)Mo'
           _chemical_formula.sum         'C40 H66 Mo O4 P2'
@@ -9411,9 +9411,9 @@ save_
 
 save_chemical_formula.iupac
 
-    _definition.id                '_chemical_formula.iupac'
-    _alias.definition_id          '_chemical_formula_iupac'
-    _definition.update            2012-11-22
+    _definition.id                '_chemical_formula.IUPAC'
+    _alias.definition_id          '_chemical_formula_IUPAC'
+    _definition.update            2021-09-24
     _description.text
 ;
     Formula expressed in conformance with IUPAC rules for inorganic
@@ -9426,7 +9426,7 @@ save_chemical_formula.iupac
          Oxford: Blackwell Scientific Publications.
 ;
     _name.category_id             chemical_formula
-    _name.object_id               iupac
+    _name.object_id               IUPAC
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -9531,11 +9531,11 @@ save_chemical_formula.weight
 
     _definition.id                '_chemical_formula.weight'
     _alias.definition_id          '_chemical_formula_weight'
-    _definition.update            2012-11-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Mass corresponding to the formulae _chemical_formula.structural,
-    *_iupac, *_moiety or *_sum and, together with the Z value and cell
+    *_IUPAC, *_moiety or *_sum and, together with the Z value and cell
     parameters yield the density given as _exptl_crystal.density_diffrn.
 ;
     _name.category_id             chemical_formula
