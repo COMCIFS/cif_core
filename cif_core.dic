@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-09-23
+    _dictionary.date              2021-09-24
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -6739,12 +6739,12 @@ save_
 save_cell.convert_uij_to_betaij
 
     _definition.id                '_cell.convert_Uij_to_betaij'
-    _definition.update            2021-07-07
+    _definition.update            2021-09-24
     _description.text
 ;
     The reciprocal space matrix for converting the U(ij) matrix of
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
-    The adp factor in a structure factor expression:
+    The ADP factor in a structure factor expression:
 
     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
@@ -8407,9 +8407,9 @@ save_
 
 save_chemical.identifier_inchi
 
-    _definition.id                '_chemical.identifier_inchi'
-    _alias.definition_id          '_chemical_identifier_inchi'
-    _definition.update            2013-01-18
+    _definition.id                '_chemical.identifier_InChI'
+    _alias.definition_id          '_chemical_identifier_InChI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The IUPAC International Chemical Identifier (InChI) is a
@@ -8421,7 +8421,7 @@ save_chemical.identifier_inchi
          http://www.iupac.org/inchi/
 ;
     _name.category_id             chemical
-    _name.object_id               identifier_inchi
+    _name.object_id               identifier_InChI
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -8434,9 +8434,9 @@ save_
 
 save_chemical.identifier_inchi_key
 
-    _definition.id                '_chemical.identifier_inchi_key'
-    _alias.definition_id          '_chemical_identifier_inchi_key'
-    _definition.update            2013-01-18
+    _definition.id                '_chemical.identifier_InChI_key'
+    _alias.definition_id          '_chemical_identifier_InChI_key'
+    _definition.update            2021-09-24
     _description.text
 ;
     The InChIKey is a compact hashed version of the full InChI
@@ -8445,7 +8445,7 @@ save_chemical.identifier_inchi_key
     http://www.iupac.org/inchi/
 ;
     _name.category_id             chemical
-    _name.object_id               identifier_inchi_key
+    _name.object_id               identifier_InChI_key
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -8457,16 +8457,16 @@ save_
 
 save_chemical.identifier_inchi_version
 
-    _definition.id                '_chemical.identifier_inchi_version'
-    _alias.definition_id          '_chemical_identifier_inchi_version'
-    _definition.update            2013-01-18
+    _definition.id                '_chemical.identifier_InChI_version'
+    _alias.definition_id          '_chemical_identifier_InChI_version'
+    _definition.update            2021-09-24
     _description.text
 ;
     Version number of the InChI standard to which the associated
     chemical identifier string applies.
 ;
     _name.category_id             chemical
-    _name.object_id               identifier_inchi_version
+    _name.object_id               identifier_InChI_version
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -9337,7 +9337,7 @@ save_CHEMICAL_FORMULA
     _definition.id                CHEMICAL_FORMULA
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2021-09-24
     _description.text
 ;
     The CATEGORY of data items which specify the composition and chemical
@@ -9378,7 +9378,7 @@ save_CHEMICAL_FORMULA
        Abstracts. This ordering is used in _chemical_formula.moiety
        and _chemical_formula.sum.
 
-          _chemical_formula.iupac      '[Mo (C O)4 (C18 H33 P)2]'
+          _chemical_formula.IUPAC      '[Mo (C O)4 (C18 H33 P)2]'
           _chemical_formula.moiety     'C40 H66 Mo O4 P2'
           _chemical_formula.structural '((C O)4 (P (C6 H11)3)2)Mo'
           _chemical_formula.sum         'C40 H66 Mo O4 P2'
@@ -9411,9 +9411,9 @@ save_
 
 save_chemical_formula.iupac
 
-    _definition.id                '_chemical_formula.iupac'
-    _alias.definition_id          '_chemical_formula_iupac'
-    _definition.update            2012-11-22
+    _definition.id                '_chemical_formula.IUPAC'
+    _alias.definition_id          '_chemical_formula_IUPAC'
+    _definition.update            2021-09-24
     _description.text
 ;
     Formula expressed in conformance with IUPAC rules for inorganic
@@ -9426,7 +9426,7 @@ save_chemical_formula.iupac
          Oxford: Blackwell Scientific Publications.
 ;
     _name.category_id             chemical_formula
-    _name.object_id               iupac
+    _name.object_id               IUPAC
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -9531,11 +9531,11 @@ save_chemical_formula.weight
 
     _definition.id                '_chemical_formula.weight'
     _alias.definition_id          '_chemical_formula_weight'
-    _definition.update            2012-11-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Mass corresponding to the formulae _chemical_formula.structural,
-    *_iupac, *_moiety or *_sum and, together with the Z value and cell
+    *_IUPAC, *_moiety or *_sum and, together with the Z value and cell
     parameters yield the density given as _exptl_crystal.density_diffrn.
 ;
     _name.category_id             chemical_formula
@@ -13751,16 +13751,16 @@ save_
 
 save_model_site.adp_eigenvalues
 
-    _definition.id                '_model_site.adp_eigenvalues'
-    _definition.update            2021-07-01
+    _definition.id                '_model_site.ADP_eigenvalues'
+    _definition.update            2021-09-24
     _description.text
 ;
-    The set of three adp eigenvalues for the associated eigenvectors
-    given by _model_site.adp_eigenvectors. The eigenvalues are
+    The set of three ADP eigenvalues for the associated eigenvectors
+    given by _model_site.ADP_eigenvectors. The eigenvalues are
     sorted in order of magnitude with the largest first.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvalues
+    _name.object_id               ADP_eigenvalues
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Array
@@ -13771,23 +13771,23 @@ save_model_site.adp_eigenvalues
     _method.expression
 ;
     A    =  _cell.orthogonal_matrix
-    U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
-    _model_site.adp_eigenvalues  =  Eigen( U )[:,0]
+    U    =  A * _model_site.ADP_matrix_beta * Transpose(A) /(2*Pi**2)
+    _model_site.ADP_eigenvalues  =  Eigen( U )[:,0]
 ;
 
 save_
 
 save_model_site.adp_eigenvalues_su
 
-    _definition.id                '_model_site.adp_eigenvalues_su'
-    _definition.update            2021-09-23
+    _definition.id                '_model_site.ADP_eigenvalues_su'
+    _definition.update            2021-09-24
     _description.text
 ;
-    Standard uncertainty of _model_site.adp_eigenvalues.
+    Standard uncertainty of _model_site.ADP_eigenvalues.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvalues_su
-    _name.linked_item_id          '_model_site.adp_eigenvalues'
+    _name.object_id               ADP_eigenvalues_su
+    _name.linked_item_id          '_model_site.ADP_eigenvalues'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Array
@@ -13799,19 +13799,19 @@ save_
 
 save_model_site.adp_eigenvectors
 
-    _definition.id                '_model_site.adp_eigenvectors'
-    _definition.update            2021-07-01
+    _definition.id                '_model_site.ADP_eigenvectors'
+    _definition.update            2021-09-24
     _description.text
 ;
-    The set of three adp eigenvectors corresponding to the values
-    given in _model_site.adp_eigenvalues. The eigenvectors are
+    The set of three ADP eigenvectors corresponding to the values
+    given in _model_site.ADP_eigenvalues. The eigenvectors are
     contained in the rows of a matrix ordered from top to bottom
     in order largest to smallest corresponding eigenvalue. The
     eigenvector elements are direction cosines to the orthogonal
     axes X,Y,Z.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvectors
+    _name.object_id               ADP_eigenvectors
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Array
@@ -13822,23 +13822,23 @@ save_model_site.adp_eigenvectors
     _method.expression
 ;
     A    =  _cell.orthogonal_matrix
-    U    =  A * _model_site.adp_matrix_beta * Transpose(A) /(2*Pi**2)
-    _model_site.adp_eigenvectors  =  Eigen( U )[:,1:4]
+    U    =  A * _model_site.ADP_matrix_beta * Transpose(A) /(2*Pi**2)
+    _model_site.ADP_eigenvectors  =  Eigen( U )[:,1:4]
 ;
 
 save_
 
 save_model_site.adp_eigenvectors_su
 
-    _definition.id                '_model_site.adp_eigenvectors_su'
-    _definition.update            2021-09-23
+    _definition.id                '_model_site.ADP_eigenvectors_su'
+    _definition.update            2021-09-24
     _description.text
 ;
-    Standard uncertainty of _model_site.adp_eigenvectors.
+    Standard uncertainty of _model_site.ADP_eigenvectors.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_eigenvectors_su
-    _name.linked_item_id          '_model_site.adp_eigenvectors'
+    _name.object_id               ADP_eigenvectors_su
+    _name.linked_item_id          '_model_site.ADP_eigenvectors'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Array
@@ -13850,14 +13850,14 @@ save_
 
 save_model_site.adp_matrix_beta
 
-    _definition.id                '_model_site.adp_matrix_beta'
-    _definition.update            2021-03-01
+    _definition.id                '_model_site.ADP_matrix_beta'
+    _definition.update            2021-09-24
     _description.text
 ;
     Matrix of dimensionless anisotropic atomic displacement parameters.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_matrix_beta
+    _name.object_id               ADP_matrix_beta
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Matrix
@@ -13871,22 +13871,22 @@ save_model_site.adp_matrix_beta
     a = atom_site[m.label]
     s = space_group_symop[SymKey(m.symop)]
 
-    _model_site.adp_matrix_beta =  s.R * a.tensor_beta * s.RT
+    _model_site.ADP_matrix_beta =  s.R * a.tensor_beta * s.RT
 ;
 
 save_
 
 save_model_site.adp_matrix_beta_su
 
-    _definition.id                '_model_site.adp_matrix_beta_su'
-    _definition.update            2021-09-23
+    _definition.id                '_model_site.ADP_matrix_beta_su'
+    _definition.update            2021-09-24
     _description.text
 ;
-    Standard uncertainty of _model_site.adp_matrix_beta.
+    Standard uncertainty of _model_site.ADP_matrix_beta.
 ;
     _name.category_id             model_site
-    _name.object_id               adp_matrix_beta_su
-    _name.linked_item_id          '_model_site.adp_matrix_beta'
+    _name.object_id               ADP_matrix_beta_su
+    _name.linked_item_id          '_model_site.ADP_matrix_beta'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Matrix
@@ -14500,9 +14500,9 @@ save_
 
 save_audit.block_doi
 
-    _definition.id                '_audit.block_doi'
-    _alias.definition_id          '_audit_block_doi'
-    _definition.update            2021-08-18
+    _definition.id                '_audit.block_DOI'
+    _alias.definition_id          '_audit_block_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
@@ -14525,7 +14525,7 @@ save_audit.block_doi
     (see http://www.doi.org).
 ;
     _name.category_id             audit
-    _name.object_id               block_doi
+    _name.object_id               block_DOI
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -14717,8 +14717,8 @@ save_
 
 save_audit_author.id_orcid
 
-    _definition.id                '_audit_author.id_orcid'
-    _definition.update            2020-08-23
+    _definition.id                '_audit_author.id_ORCID'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
@@ -14727,7 +14727,7 @@ save_audit_author.id_orcid
     identifiers (http://orcid.org).
 ;
     _name.category_id             audit_author
-    _name.object_id               id_orcid
+    _name.object_id               id_ORCID
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -15202,7 +15202,7 @@ save_AUDIT_SUPPORT
     _definition.id                AUDIT_SUPPORT
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2021-09-24
     _description.text
 ;
     Data items in the AUDIT_SUPPORT category record details about the
@@ -15219,7 +15219,7 @@ save_AUDIT_SUPPORT
          loop_
          _audit_support.id
          _audit_support.funding_organization
-         _audit_support.funding_organization_doi
+         _audit_support.funding_organization_DOI
          _audit_support.award_type
          _audit_support.award_number
          _audit_support.award_recipient
@@ -15366,8 +15366,8 @@ save_
 
 save_audit_support.funding_organization_doi
 
-    _definition.id                '_audit_support.funding_organization_doi'
-    _definition.update            2020-08-23
+    _definition.id                '_audit_support.funding_organization_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The Digital Object Identifier (DOI) associated with the
@@ -15379,7 +15379,7 @@ save_audit_support.funding_organization_doi
     component).
 ;
     _name.category_id             audit_support
-    _name.object_id               funding_organisation_doi
+    _name.object_id               funding_organisation_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -15621,9 +15621,9 @@ save_
 
 save_citation.doi
 
-    _definition.id                '_citation.doi'
-    _alias.definition_id          '_citation_doi'
-    _definition.update            2017-09-23
+    _definition.id                '_citation.DOI'
+    _alias.definition_id          '_citation_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The Digital Object Identifier (DOI) of the cited work.
@@ -15639,7 +15639,7 @@ save_citation.doi
     (see http://www.doi.org).
 ;
     _name.category_id             citation
-    _name.object_id               doi
+    _name.object_id               DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -16385,9 +16385,9 @@ save_
 
 save_database.dataset_doi
 
-    _definition.id                '_database.dataset_doi'
-    _alias.definition_id          '_database_dataset_doi'
-    _definition.update            2021-08-18
+    _definition.id                '_database.dataset_DOI'
+    _alias.definition_id          '_database_dataset_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
@@ -16407,7 +16407,7 @@ save_database.dataset_doi
     (see http://www.doi.org).
 ;
     _name.category_id             database
-    _name.object_id               dataset_doi
+    _name.object_id               dataset_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -16541,14 +16541,14 @@ save_
 
 save_database_code.depnum_ccdc_archive
 
-    _definition.id                '_database_code.depnum_ccdc_archive'
+    _definition.id                '_database_code.depnum_CCDC_archive'
 
     loop_
       _alias.definition_id
-         '_database_code_depnum_ccdc_archive'
-         '_database.code_depnum_ccdc_archive'
+         '_database_code_depnum_CCDC_archive'
+         '_database.code_depnum_CCDC_archive'
 
-    _definition.update            2013-01-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Deposition numbers assigned by the Cambridge Crystallographic
@@ -16556,7 +16556,7 @@ save_database_code.depnum_ccdc_archive
     archived by the CCDC.
 ;
     _name.category_id             database_code
-    _name.object_id               depnum_ccdc_archive
+    _name.object_id               depnum_CCDC_archive
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -16566,14 +16566,14 @@ save_
 
 save_database_code.depnum_ccdc_fiz
 
-    _definition.id                '_database_code.depnum_ccdc_fiz'
+    _definition.id                '_database_code.depnum_CCDC_fiz'
 
     loop_
       _alias.definition_id
-         '_database_code_depnum_ccdc_fiz'
-         '_database.code_depnum_ccdc_fiz'
+         '_database_code_depnum_CCDC_fiz'
+         '_database.code_depnum_CCDC_fiz'
 
-    _definition.update            2013-01-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Deposition numbers assigned by the Fachinformationszentrum
@@ -16581,7 +16581,7 @@ save_database_code.depnum_ccdc_fiz
     archived by the Cambridge Crystallographic Data Centre (CCDC).
 ;
     _name.category_id             database_code
-    _name.object_id               depnum_ccdc_fiz
+    _name.object_id               depnum_CCDC_fiz
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -16591,14 +16591,14 @@ save_
 
 save_database_code.depnum_ccdc_journal
 
-    _definition.id                '_database_code.depnum_ccdc_journal'
+    _definition.id                '_database_code.depnum_CCDC_journal'
 
     loop_
       _alias.definition_id
-         '_database_code_depnum_ccdc_journal'
-         '_database.code_depnum_ccdc_journal'
+         '_database_code_depnum_CCDC_journal'
+         '_database.code_depnum_CCDC_journal'
 
-    _definition.update            2013-01-22
+    _definition.update            2021-09-24
     _description.text
 ;
     Deposition numbers assigned by various journals to files
@@ -16606,7 +16606,7 @@ save_database_code.depnum_ccdc_journal
     Crystallographic Data Centre (CCDC).
 ;
     _name.category_id             database_code
-    _name.object_id               depnum_ccdc_journal
+    _name.object_id               depnum_CCDC_journal
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -17159,15 +17159,15 @@ save_
 
 save_journal.paper_doi
 
-    _definition.id                '_journal.paper_doi'
-    _alias.definition_id          '_journal_paper_doi'
+    _definition.id                '_journal.paper_DOI'
+    _alias.definition_id          '_journal_paper_DOI'
     _definition.update            2012-12-11
     _description.text
 ;
     DOI of the publication in the journal.
 ;
     _name.category_id             journal
-    _name.object_id               paper_doi
+    _name.object_id               paper_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18132,9 +18132,9 @@ save_
 
 save_publ_author.id_iucr
 
-    _definition.id                '_publ_author.id_iucr'
-    _alias.definition_id          '_publ_author_id_iucr'
-    _definition.update            2012-12-13
+    _definition.id                '_publ_author.id_IUCr'
+    _alias.definition_id          '_publ_author_id_IUCr'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the IUCr contact database of a publication
@@ -18142,7 +18142,7 @@ save_publ_author.id_iucr
     Directory of Crystallographers (http://wdc.iucr.org).
 ;
     _name.category_id             publ_author
-    _name.object_id               id_iucr
+    _name.object_id               id_IUCr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18152,9 +18152,9 @@ save_
 
 save_publ_author.id_orcid
 
-    _definition.id                '_publ_author.id_orcid'
-    _alias.definition_id          '_publ_author_id_orcid'
-    _definition.update            2017-09-23
+    _definition.id                '_publ_author.id_ORCID'
+    _alias.definition_id          '_publ_author_id_ORCID'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
@@ -18163,7 +18163,7 @@ save_publ_author.id_orcid
     identifiers (http://orcid.org).
 ;
     _name.category_id             publ_author
-    _name.object_id               id_orcid
+    _name.object_id               id_ORCID
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18506,9 +18506,9 @@ save_
 
 save_publ_contact_author.id_iucr
 
-    _definition.id                '_publ_contact_author.id_iucr'
-    _alias.definition_id          '_publ_contact_author_id_iucr'
-    _definition.update            2021-08-18
+    _definition.id                '_publ_contact_author.id_IUCr'
+    _alias.definition_id          '_publ_contact_author_id_IUCr'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the IUCr contact database of the author submitting
@@ -18516,7 +18516,7 @@ save_publ_contact_author.id_iucr
     from the World Directory of Crystallographers (http://wdc.iucr.org).
 ;
     _name.category_id             publ_contact_author
-    _name.object_id               id_iucr
+    _name.object_id               id_IUCr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18526,9 +18526,9 @@ save_
 
 save_publ_contact_author.id_orcid
 
-    _definition.id                '_publ_contact_author.id_orcid'
-    _alias.definition_id          '_publ_contact_author_id_orcid'
-    _definition.update            2017-09-23
+    _definition.id                '_publ_contact_author.id_ORCID'
+    _alias.definition_id          '_publ_contact_author_id_ORCID'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the ORCID Registry of the author submitting
@@ -18537,7 +18537,7 @@ save_publ_contact_author.id_orcid
     researcher identifiers (http://orcid.org).
 ;
     _name.category_id             publ_contact_author
-    _name.object_id               id_orcid
+    _name.object_id               id_ORCID
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -19383,21 +19383,21 @@ save_
 
 save_atom_site.adp_type
 
-    _definition.id                '_atom_site.adp_type'
+    _definition.id                '_atom_site.ADP_type'
 
     loop_
       _alias.definition_id
-         '_atom_site_adp_type'
+         '_atom_site_ADP_type'
          '_atom_site_thermal_displace_type'
          '_atom_site.thermal_displace_type'
 
-    _definition.update            2012-11-20
+    _definition.update            2021-09-24
     _description.text
 ;
     Code for type of atomic displacement parameters used for the site.
 ;
     _name.category_id             atom_site
-    _name.object_id               adp_type
+    _name.object_id               ADP_type
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
@@ -20162,17 +20162,17 @@ save_atom_site.refinement_flags
       _definition_replaced.id
       _definition_replaced.by
          1                        '_atom_site.refinement_flags_posn'
-         2                        '_atom_site.refinement_flags_adp'
+         2                        '_atom_site.refinement_flags_ADP'
          3                        '_atom_site.refinement_flags_occupancy'
 
     _alias.definition_id          '_atom_site_refinement_flags'
-    _definition.update            2019-04-02
+    _definition.update            2021-09-24
     _description.text
 ;
     A concatenated series of single-letter codes which indicate the
     refinement restraints or constraints applied to this site. This
     item should not be used. It has been replaced by
-    _atom_site.refinement_flags_posn, _adp and _occupancy. It is
+    _atom_site.refinement_flags_posn, _ADP and _occupancy. It is
     retained in this dictionary only to provide compatibility with
     legacy CIFs.
 ;
@@ -20199,16 +20199,16 @@ save_
 
 save_atom_site.refinement_flags_adp
 
-    _definition.id                '_atom_site.refinement_flags_adp'
-    _alias.definition_id          '_atom_site_refinement_flags_adp'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_site.refinement_flags_ADP'
+    _alias.definition_id          '_atom_site_refinement_flags_ADP'
+    _definition.update            2021-09-24
     _description.text
 ;
     A code which indicates the refinement restraints or constraints
     applied to the atomic displacement parameters of this site.
 ;
     _name.category_id             atom_site
-    _name.object_id               refinement_flags_adp
+    _name.object_id               refinement_flags_ADP
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
@@ -20384,7 +20384,7 @@ save_
 save_atom_site.tensor_beta
 
     _definition.id                '_atom_site.tensor_beta'
-    _definition.update            2021-03-01
+    _definition.update            2021-09-24
     _description.text
 ;
     The symmetric anisotropic atomic displacement tensor beta[I,J]
@@ -20392,7 +20392,7 @@ save_atom_site.tensor_beta
 
     t = exp -[ beta11 h h + ............ 2 beta23 k l ]
 
-    It is related to the adp matrices U(IJ) and B(IJ) as follows:
+    It is related to the ADP matrices U(IJ) and B(IJ) as follows:
 
     t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
@@ -20412,7 +20412,7 @@ save_atom_site.tensor_beta
 
     label = a.label
 
-    If      (a.adp_type == 'Uani')  {
+    If      (a.ADP_type == 'Uani')  {
         Loop b as atom_site_aniso     {
           If(label == b.label)           {
 
@@ -20420,7 +20420,7 @@ save_atom_site.tensor_beta
               Break
     } } }
 
-    Else If (a.adp_type == 'Bani')  {
+    Else If (a.ADP_type == 'Bani')  {
         Loop b as atom_site_aniso     {
           If(label == b.label)           {
 
@@ -20429,7 +20429,7 @@ save_atom_site.tensor_beta
     } } }
 
     Else                                    {
-        If (a.adp_type == 'Uiso')  U  =  a.U_iso_or_equiv
+        If (a.ADP_type == 'Uiso')  U  =  a.U_iso_or_equiv
         Else                       U  =  a.B_iso_or_equiv / (8 * Pi**2)
 
             UIJ = U * _cell.convert_Uiso_to_Uij
@@ -23314,7 +23314,7 @@ save_atom_type_scat.dispersion_imag
          '_atom_type_scat_dispersion_imag'
          '_atom_type.scat_dispersion_imag'
 
-    _definition.update            2012-11-20
+    _definition.update            2021-09-24
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -23332,8 +23332,8 @@ save_atom_type_scat.dispersion_imag
 ;
     With q as atom_type_scat
 
-     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_imag_cu
-     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_imag_mo
+     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_imag_Cu
+     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_imag_Mo
 
              _atom_type_scat.dispersion_imag = a
 ;
@@ -23342,15 +23342,15 @@ save_
 
 save_atom_type_scat.dispersion_imag_cu
 
-    _definition.id                '_atom_type_scat.dispersion_imag_cu'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_imag_Cu'
+    _definition.update            2021-09-24
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
     for this atom type and Cu K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_imag_cu
+    _name.object_id               dispersion_imag_Cu
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -23365,15 +23365,15 @@ save_
 
 save_atom_type_scat.dispersion_imag_mo
 
-    _definition.id                '_atom_type_scat.dispersion_imag_mo'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_imag_Mo'
+    _definition.update            2021-09-24
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
     for this atom type and Mo K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_imag_mo
+    _name.object_id               dispersion_imag_Mo
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -23413,8 +23413,8 @@ save_atom_type_scat.dispersion_real
 ;
     With q as atom_type_scat
 
-     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_real_cu
-     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_real_mo
+     If ( _diffrn_radiation.type[0:2] == 'Cu' ) a = q.dispersion_real_Cu
+     If ( _diffrn_radiation.type[0:2] == 'Mo' ) a = q.dispersion_real_Mo
 
              _atom_type_scat.dispersion_real = a
 ;
@@ -23423,15 +23423,15 @@ save_
 
 save_atom_type_scat.dispersion_real_cu
 
-    _definition.id                '_atom_type_scat.dispersion_real_cu'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_real_Cu'
+    _definition.update            2021-09-24
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
     for this atom type and Cu K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_real_cu
+    _name.object_id               dispersion_real_Cu
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -23446,15 +23446,15 @@ save_
 
 save_atom_type_scat.dispersion_real_mo
 
-    _definition.id                '_atom_type_scat.dispersion_real_mo'
-    _definition.update            2012-11-20
+    _definition.id                '_atom_type_scat.dispersion_real_Mo'
+    _definition.update            2021-09-24
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
     for this atom type and Mo K alpha radiation
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               dispersion_real_mo
+    _name.object_id               dispersion_real_Mo
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -23718,12 +23718,12 @@ save_REFINE_DIFF
     _definition.id                REFINE_DIFF
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-20
+    _definition.update            2021-09-24
     _description.text
 ;
     The CATEGORY of data items which specify the electron density limits
     in a difference Fourier map after the structure has been refined. The
-    rms value is with respect to the arithmetic mean density, and is derived
+    RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
 ;
     _name.category_id             REFINE
@@ -23859,12 +23859,12 @@ save_
 
 save_refine_diff.density_rms
 
-    _definition.id                '_refine_diff.density_rms'
+    _definition.id                '_refine_diff.density_RMS'
 
     loop_
       _alias.definition_id
-         '_refine_diff_density_rms'
-         '_refine.diff_density_rms'
+         '_refine_diff_density_RMS'
+         '_refine.diff_density_RMS'
 
     _definition.update            2012-11-20
     _description.text
@@ -23877,7 +23877,7 @@ save_refine_diff.density_rms
     and also for defining suitable contour levels.
 ;
     _name.category_id             refine_diff
-    _name.object_id               density_rms
+    _name.object_id               density_RMS
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Single
@@ -23895,12 +23895,12 @@ save_
 
 save_refine_diff.density_rms_su
 
-    _definition.id                '_refine_diff.density_rms_su'
+    _definition.id                '_refine_diff.density_RMS_su'
 
     loop_
       _alias.definition_id
-         '_refine_diff_density_rms_su'
-         '_refine.diff_density_rms_esd'
+         '_refine_diff_density_RMS_su'
+         '_refine.diff_density_RMS_esd'
 
     _definition.update            2021-03-03
     _description.text
@@ -23909,8 +23909,8 @@ save_refine_diff.density_rms_su
     in a difference Fourier map.
 ;
     _name.category_id             refine_diff
-    _name.object_id               density_rms_su
-    _name.linked_item_id          '_refine_diff.density_rms'
+    _name.object_id               density_RMS_su
+    _name.linked_item_id          '_refine_diff.density_RMS'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               Single
@@ -26047,7 +26047,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-09-23
+         3.1.0                    2021-09-24
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26091,4 +26091,6 @@ save_
 
        Restricted the _atom_site.Wyckoff_symbol data item values
        to a set of case-sensitive enumeration values.
+
+       Updated the capitalisation of multiple data items.
 ;
