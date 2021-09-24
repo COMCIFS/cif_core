@@ -14500,9 +14500,9 @@ save_
 
 save_audit.block_doi
 
-    _definition.id                '_audit.block_doi'
-    _alias.definition_id          '_audit_block_doi'
-    _definition.update            2021-08-18
+    _definition.id                '_audit.block_DOI'
+    _alias.definition_id          '_audit_block_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
@@ -14525,7 +14525,7 @@ save_audit.block_doi
     (see http://www.doi.org).
 ;
     _name.category_id             audit
-    _name.object_id               block_doi
+    _name.object_id               block_DOI
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -15202,7 +15202,7 @@ save_AUDIT_SUPPORT
     _definition.id                AUDIT_SUPPORT
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2021-09-24
     _description.text
 ;
     Data items in the AUDIT_SUPPORT category record details about the
@@ -15219,7 +15219,7 @@ save_AUDIT_SUPPORT
          loop_
          _audit_support.id
          _audit_support.funding_organization
-         _audit_support.funding_organization_doi
+         _audit_support.funding_organization_DOI
          _audit_support.award_type
          _audit_support.award_number
          _audit_support.award_recipient
@@ -15366,8 +15366,8 @@ save_
 
 save_audit_support.funding_organization_doi
 
-    _definition.id                '_audit_support.funding_organization_doi'
-    _definition.update            2020-08-23
+    _definition.id                '_audit_support.funding_organization_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The Digital Object Identifier (DOI) associated with the
@@ -15379,7 +15379,7 @@ save_audit_support.funding_organization_doi
     component).
 ;
     _name.category_id             audit_support
-    _name.object_id               funding_organisation_doi
+    _name.object_id               funding_organisation_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -15621,9 +15621,9 @@ save_
 
 save_citation.doi
 
-    _definition.id                '_citation.doi'
-    _alias.definition_id          '_citation_doi'
-    _definition.update            2017-09-23
+    _definition.id                '_citation.DOI'
+    _alias.definition_id          '_citation_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The Digital Object Identifier (DOI) of the cited work.
@@ -15639,7 +15639,7 @@ save_citation.doi
     (see http://www.doi.org).
 ;
     _name.category_id             citation
-    _name.object_id               doi
+    _name.object_id               DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -16385,9 +16385,9 @@ save_
 
 save_database.dataset_doi
 
-    _definition.id                '_database.dataset_doi'
-    _alias.definition_id          '_database_dataset_doi'
-    _definition.update            2021-08-18
+    _definition.id                '_database.dataset_DOI'
+    _alias.definition_id          '_database_dataset_DOI'
+    _definition.update            2021-09-24
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
@@ -16407,7 +16407,7 @@ save_database.dataset_doi
     (see http://www.doi.org).
 ;
     _name.category_id             database
-    _name.object_id               dataset_doi
+    _name.object_id               dataset_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -17159,15 +17159,15 @@ save_
 
 save_journal.paper_doi
 
-    _definition.id                '_journal.paper_doi'
-    _alias.definition_id          '_journal_paper_doi'
+    _definition.id                '_journal.paper_DOI'
+    _alias.definition_id          '_journal_paper_DOI'
     _definition.update            2012-12-11
     _description.text
 ;
     DOI of the publication in the journal.
 ;
     _name.category_id             journal
-    _name.object_id               paper_doi
+    _name.object_id               paper_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
