@@ -14717,8 +14717,8 @@ save_
 
 save_audit_author.id_orcid
 
-    _definition.id                '_audit_author.id_orcid'
-    _definition.update            2020-08-23
+    _definition.id                '_audit_author.id_ORCID'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
@@ -14727,7 +14727,7 @@ save_audit_author.id_orcid
     identifiers (http://orcid.org).
 ;
     _name.category_id             audit_author
-    _name.object_id               id_orcid
+    _name.object_id               id_ORCID
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18152,9 +18152,9 @@ save_
 
 save_publ_author.id_orcid
 
-    _definition.id                '_publ_author.id_orcid'
-    _alias.definition_id          '_publ_author_id_orcid'
-    _definition.update            2017-09-23
+    _definition.id                '_publ_author.id_ORCID'
+    _alias.definition_id          '_publ_author_id_ORCID'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
@@ -18163,7 +18163,7 @@ save_publ_author.id_orcid
     identifiers (http://orcid.org).
 ;
     _name.category_id             publ_author
-    _name.object_id               id_orcid
+    _name.object_id               id_ORCID
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -18526,9 +18526,9 @@ save_
 
 save_publ_contact_author.id_orcid
 
-    _definition.id                '_publ_contact_author.id_orcid'
-    _alias.definition_id          '_publ_contact_author_id_orcid'
-    _definition.update            2017-09-23
+    _definition.id                '_publ_contact_author.id_ORCID'
+    _alias.definition_id          '_publ_contact_author_id_ORCID'
+    _definition.update            2021-09-24
     _description.text
 ;
     Identifier in the ORCID Registry of the author submitting
@@ -18537,7 +18537,7 @@ save_publ_contact_author.id_orcid
     researcher identifiers (http://orcid.org).
 ;
     _name.category_id             publ_contact_author
-    _name.object_id               id_orcid
+    _name.object_id               id_ORCID
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
