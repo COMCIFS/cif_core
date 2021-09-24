@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2021-08-19
+    _dictionary.date             2021-09-23
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  3.11.04
     _description.text
@@ -2214,6 +2214,40 @@ save_colour_hue
 
 save_
 
+save_Wyckoff_letter
+
+    loop_
+      _enumeration_set.state
+         a
+         b
+         c
+         d
+         e
+         f
+         g
+         h
+         i
+         j
+         k
+         l
+         m
+         n
+         o
+         p
+         q
+         r
+         s
+         t
+         u
+         v
+         w
+         x
+         y
+         z
+         \a
+
+save_
+
 #=============================================================================
 #  The dictionary's creation history.
 #============================================================================
@@ -2322,7 +2356,7 @@ save_
    Updated the human-readable descriptions of the 'kelvins' and
    'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-      1.4.8   2021-08-19
+      1.4.8   2021-09-23
 ;
    Corrected a few typos in the 'units_code' save frame.
 
@@ -2334,4 +2368,6 @@ save_
    'violet' to 'violet_magenta'.
 
    Added the 'grey_steel' colour to the 'colour_RGB' save frame.
+
+   Added the 'Wyckoff_letter' save frame.
 ;
