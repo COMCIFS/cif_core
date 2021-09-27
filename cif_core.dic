@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-09-24
+    _dictionary.date              2021-09-27
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -15202,7 +15202,7 @@ save_AUDIT_SUPPORT
     _definition.id                AUDIT_SUPPORT
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-09-24
+    _definition.update            2021-09-27
     _description.text
 ;
     Data items in the AUDIT_SUPPORT category record details about the
@@ -15211,44 +15211,36 @@ save_AUDIT_SUPPORT
     _name.category_id             AUDIT
     _name.object_id               AUDIT_SUPPORT
     _category_key.name            '_audit_support.id'
-
+    _description_example.case
+;
     loop_
-      _description_example.case
-      _description_example.detail
-;
-         loop_
-         _audit_support.id
-         _audit_support.funding_organization
-         _audit_support.funding_organization_DOI
-         _audit_support.award_type
-         _audit_support.award_number
-         _audit_support.award_recipient
+    _audit_support.id
+    _audit_support.funding_organization
+    _audit_support.funding_organization_doi
+    _audit_support.award_type
+    _audit_support.award_number
+    _audit_support.award_recipient
 
-         1 'Engineering and Physical Sciences Research Council'
-         'https://doi.org/10.13039/501100000266'
-         studentship 'EP-M506515-1' 'E. T. Broadhurst'
-         2 'Swedish Funding Council'
-         ?
-         grant '2017-05333' 'M. Lightowler'
-         3 'Wellcome Trust'
-         'https://doi.org/10.13039/100004440'
-         grant 'WT087658' 'University of Edinburgh EM facility'
-         4 'Scottish Universities Life Sciences Alliance (SULSA)'
-         ?
-         other ? 'University of Edinburgh EM facility'
-         5 'Harvard Medical School'
-         'https://doi.org/10.13039/100006691'
-         ? ? ?
+    1 'Engineering and Physical Sciences Research Council'
+    'https://doi.org/10.13039/501100000266'
+    studentship 'EP-M506515-1' 'E. T. Broadhurst'
+    2 'Swedish Funding Council'
+    ?
+    grant '2017-05333' 'M. Lightowler'
+    3 'Wellcome Trust'
+    'https://doi.org/10.13039/100004440'
+    grant 'WT087658' 'University of Edinburgh EM facility'
+    4 'Scottish Universities Life Sciences Alliance (SULSA)'
+    ?
+    other ? 'University of Edinburgh EM facility'
+    5 'Harvard Medical School'
+    'https://doi.org/10.13039/100006691'
+    ? ? ?
 ;
+    _description_example.detail
 ;
-         Example prepared from funding data published in
-         https://doi.org/10.1107/S2052252519016105
-;
-;
-         -
-;
-;
-         -
+    Example prepared from funding data published in
+    https://doi.org/10.1107/S2052252519016105
 ;
 
 save_
@@ -26047,7 +26039,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-09-24
+         3.1.0                    2021-09-27
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26093,4 +26085,6 @@ save_
        to a set of case-sensitive enumeration values.
 
        Updated the capitalisation of multiple data items.
+
+       Updated the AUDIT_SUPPORT category example case.
 ;
