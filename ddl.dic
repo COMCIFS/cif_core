@@ -9,11 +9,11 @@ data_DDL_DIC
 
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
-    _dictionary.version           4.0.2
-    _dictionary.date              2021-08-18
+    _dictionary.version           4.1.0
+    _dictionary.date              2021-10-08
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
-    _dictionary.ddl_conformance   4.0.2
+    _dictionary.ddl_conformance   4.1.0
     _dictionary.namespace         DdlDic
     _description.text
 ;
@@ -1588,7 +1588,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2021-02-27
+    _definition.update            2021-10-08
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -2552,4 +2552,9 @@ save_
        data items to be more consistent with the rest of the dictionary.
 
        Unified the spelling of certain words.
+;
+;
+         4.1.0                    2021-10-08
+;
+       Added new 'Word' content type.
 ;
