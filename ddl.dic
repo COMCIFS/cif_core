@@ -1630,6 +1630,11 @@ save_type.contents
 ;
          case-sensitive sequence of CIF2 characters
 ;
+         Word
+;
+         case-sensitive sequence of CIF2 characters containing no ASCII
+         whitespace
+;
          Code
 ;
          case-insensitive sequence of CIF2 characters containing no ASCII
