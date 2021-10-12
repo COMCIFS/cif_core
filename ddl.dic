@@ -2557,6 +2557,6 @@ save_
 ;
        Added new 'Word' content type.
 
-       Removed _description.text from the list of attributes that
+       Removed _description.common from the list of attributes that
        are recommended in the 'Item' scope.
 ;
