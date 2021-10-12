@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2021-10-08
+    _dictionary.date              2021-10-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -2077,7 +2077,7 @@ save_
                                    '_type.container'  '_type.contents']
          Item        Recommended  ['_definition.scope'  '_definition.class'
                                    '_type.source'  '_type.purpose'
-                                   '_description.text'  '_description.common']
+                                   '_description.text']
          Item        Prohibited   [CATEGORY_KEY  DICTIONARY]
 
     loop_
@@ -2553,7 +2553,10 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2021-10-08
+         4.1.0                    2021-10-12
 ;
        Added new 'Word' content type.
+
+       Removed _description.common from the list of attributes that
+       are recommended in the 'Item' scope.
 ;
