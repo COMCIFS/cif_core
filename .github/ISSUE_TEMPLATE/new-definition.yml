@@ -12,7 +12,7 @@ body:
           attributes:
                   label: definition
                   description: "Please define the meaning of the proposed data name. You are welcome to use references as necessary"
-                  placeholder: Example: the number of symmetrically-equivalent orientations of the group
+                  placeholder: "Example: the number of symmetrically-equivalent orientations of the group"
           validations:
                   required: true
         - type: input
