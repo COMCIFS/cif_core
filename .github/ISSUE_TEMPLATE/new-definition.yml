@@ -2,8 +2,7 @@ name: Propose New Definition
 description: Propose a new definition for the Core dictionary
 title: "[Definition]: "
 labels: ["enhancement"]
-assignees:
-        - jamesrhester
+assignees: jamesrhester
 body:
         - type: markdown
           attributes:
@@ -22,13 +21,13 @@ body:
                   placeholder: "Example: atom_site"
           validations:
                   required: true
-         - type: input
-           attributes:
+        - type: input
+          attributes:
                    label: dataname
                    description: Suggested data name (optional)
                    placeholder: _atom_site.number_of_groups
-         - type: dropdown
-           attributes:
+        - type: dropdown
+          attributes:
                    label: type
                    description: type of value
                    options:
@@ -39,10 +38,10 @@ body:
                            - Real
                            - Complex
                            - Other
-           validations:
+          validations:
                    required: true
-         - type: dropdown
-           attributes:
+        - type: dropdown
+          attributes:
                    label: compound
                    description: Single value/Compound value
                    options:
@@ -50,8 +49,8 @@ body:
                            - Array
                            - Matrix
                            - Other
-          - type: textarea
-            attributes: 
+        - type: textarea
+          attributes: 
                     label: comments
                     description: "Please comment on any aspect of this proposal"
                     placeholder: "Example: This is needed for high-temperature work"
