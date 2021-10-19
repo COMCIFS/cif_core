@@ -19,7 +19,7 @@ body:
           attributes:
                   label: category
                   description: which category does this data name belong to?
-                  placeholder: Example: atom_site
+                  placeholder: "Example: atom_site"
           validations:
                   required: true
          - type: input
