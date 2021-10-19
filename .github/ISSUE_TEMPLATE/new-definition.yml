@@ -6,52 +6,53 @@ assignees: jamesrhester
 body:
         - type: markdown
           attributes:
-                  value: "Please fill out the following information"
+                  value: "Thank you for taking the time to propose a definition. Please fill out the following information"
         - type: textarea
           attributes:
-                  label: definition
-                  description: "Please define the meaning of the proposed data name. You are welcome to use references as necessary"
+                  label: Definition
+                  description: |
+                    Please define the meaning of the proposed data name, going into as much detail as necessary. Literature references are welcome. 
                   placeholder: "Example: the number of symmetrically-equivalent orientations of the group"
           validations:
                   required: true
         - type: input
           attributes:
-                  label: category
-                  description: which category does this data name belong to?
-                  placeholder: "Example: atom_site"
+                  label: Looping
+                  description: Give a data name that this data name should be tabulated together with (if looped) or else write 'top level'.
+                  placeholder: "Example: atom_site.label"
           validations:
                   required: true
         - type: input
           attributes:
-                   label: dataname
-                   description: Suggested data name (optional)
+                   label: Dataname
+                   description: Suggested data name
                    placeholder: _atom_site.number_of_groups
         - type: dropdown
           attributes:
-                   label: type
+                   label: Type
                    description: type of value
                    options:
-                           - Word
-                           - Text
-                           - Date
+                           - Word (text with no spaces)
+                           - Text (arbitrary length text)
+                           - Date 
                            - Integer
                            - Real
                            - Complex
-                           - Other
+                           - Other (explain in the comments below) 
           validations:
                    required: true
         - type: dropdown
           attributes:
-                   label: compound
-                   description: Single value/Compound value
+                   label: Compound
+                   description: "Indicate whether or not values of this type are single or compound (e.g. matrices)"
                    options:
-                           - Single
-                           - Array
-                           - Matrix
-                           - Other
+                           - Single (A single value of type given in Type above)
+                           - Array (An array of values of type given in Type above)
+                           - Matrix (A 2-dimensional Array)
+                           - Other (Please indicate in Comments below)
         - type: textarea
           attributes: 
-                    label: comments
+                    label: Comments
                     description: "Please comment on any aspect of this proposal"
                     placeholder: "Example: This is needed for high-temperature work"
 
