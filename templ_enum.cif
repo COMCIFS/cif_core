@@ -2261,7 +2261,7 @@ save_
        Initial version of the TEMPLATES dictionary created from the
        definitions used in CORE_3 dictionary version 3.5.02
 ;
-         1.0.1                    2006-02-12
+         1.1.0                    2006-02-12
 ;
        Remove dictionary attributes from a save frame.
        Change category core_templates to template
@@ -2355,7 +2355,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2021-09-23
+         1.4.8                    2021-10-20
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2371,4 +2371,7 @@ save_
        Added the 'Wyckoff_letter' save frame.
 
        Changed the DDL conformance version number from 3.11.04 to 4.1.0.
+
+       Changed a duplicate version number in the DICTIONARY_AUDIT loop
+       from 1.0.1 to 1.1.0.
 ;
