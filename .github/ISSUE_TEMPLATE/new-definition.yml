@@ -12,21 +12,21 @@ body:
                   label: Definition
                   description: |
                     Please define the meaning of the proposed data name, going into as much detail as necessary. Literature references are welcome. 
-                  placeholder: "Example: the number of symmetrically-equivalent orientations of the group"
+                  placeholder: "Example: The number of symmetrically-equivalent orientations of the group"
           validations:
                   required: true
         - type: input
           attributes:
                   label: Looping
                   description: Give a data name that this data name should be tabulated together with (if looped) or else write 'top level'.
-                  placeholder: "Example: atom_site.label"
+                  placeholder: "Example: _atom_site.label"
           validations:
                   required: true
         - type: input
           attributes:
-                   label: Dataname
+                   label: Data name
                    description: Suggested data name
-                   placeholder: _atom_site.number_of_groups
+                   placeholder: "Example: _atom_site.number_of_groups"
         - type: dropdown
           attributes:
                    label: Type
@@ -38,7 +38,7 @@ body:
                            - Integer
                            - Real
                            - Complex
-                           - Other (explain in the comments below) 
+                           - Other (explain in the Comments below) 
           validations:
                    required: true
         - type: dropdown
@@ -46,14 +46,12 @@ body:
                    label: Compound
                    description: "Indicate whether or not values of this type are single or compound (e.g. matrices)"
                    options:
-                           - Single (A single value of type given in Type above)
-                           - Array (An array of values of type given in Type above)
-                           - Matrix (A 2-dimensional Array)
-                           - Other (Please indicate in Comments below)
+                           - Single (a single value of type given in Type above)
+                           - Array (an array of values of type given in Type above)
+                           - Matrix (a 2-dimensional Array)
+                           - Other (explain in the Comments below)
         - type: textarea
           attributes: 
                     label: Comments
                     description: "Please comment on any aspect of this proposal"
                     placeholder: "Example: This is needed for high-temperature work"
-
-           
