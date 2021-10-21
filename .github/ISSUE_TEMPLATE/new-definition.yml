@@ -17,6 +17,17 @@ body:
                   required: true
         - type: input
           attributes:
+                  label: Example
+                  description: An example value for this data item
+                  placeholder: "Example: O2+"
+          validations:
+                  required: true
+        - type: textarea
+          attributes:
+                  label: Explanation of example
+                  description: Please explain the meaning of the example value, if necessary
+        - type: input
+          attributes:
                   label: Looping
                   description: Name of the data item that should be tabulated together with the proposed item (if looped) or else write 'top level'. 
                   placeholder: "Example: _atom_site.label"
@@ -34,7 +45,7 @@ body:
                    options:
                            - Word (text with no spaces)
                            - Text (arbitrary length text)
-                           - Date 
+                           - DateTime
                            - Integer
                            - Real
                            - Complex
@@ -43,10 +54,10 @@ body:
                    required: true
         - type: dropdown
           attributes:
-                   label: Compound
-                   description: "Indicate whether or not values of this type are single or compound (e.g. matrices)."
+                   label: Data Structure
+                   description: "Indicate whether or not values of this type have special internal structure (e.g. matrices)"
                    options:
-                           - Single (a single value of type given in Type above)
+                           - None (a single value of type given in Type above)
                            - Array (an array of values of type given in Type above)
                            - Matrix (a 2-dimensional Array)
                            - Other (explain in the Comments below)
