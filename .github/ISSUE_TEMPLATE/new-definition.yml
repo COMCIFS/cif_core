@@ -18,14 +18,14 @@ body:
         - type: input
           attributes:
                   label: Example
-                  description: An example value for this data item
+                  description: An example value for this data item.
                   placeholder: "Example: O2+"
           validations:
                   required: true
         - type: textarea
           attributes:
                   label: Explanation of example
-                  description: Please explain the meaning of the example value, if necessary
+                  description: Please explain the meaning of the example value, if necessary.
         - type: input
           attributes:
                   label: Looping
