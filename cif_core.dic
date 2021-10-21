@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-10-20
+    _dictionary.date              2021-10-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.0.1
@@ -11235,7 +11235,7 @@ save_
 save_space_group.name_h-m_ref
 
     _definition.id                '_space_group.name_H-M_ref'
-    _definition.update            2016-05-13
+    _definition.update            2021-10-21
     _description.text
 ;
     The short international Hermann-Mauguin space-group symbol as
@@ -11275,7 +11275,7 @@ save_space_group.name_h-m_ref
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     _import.get                   [{'file':templ_enum.cif  'save':H_M_ref}]
 
@@ -26039,7 +26039,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-10-20
+         3.1.0                    2021-10-21
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26089,4 +26089,7 @@ save_
        Updated the AUDIT_SUPPORT category example case.
 
        Fixed the _exptl_crystal.colour data item example case.
+
+       Changed the content type of the _space_group.name_h-m_ref
+       data item from 'Code' to 'Text'.
 ;
