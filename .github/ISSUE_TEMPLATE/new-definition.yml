@@ -61,6 +61,8 @@ body:
                            - Array (an array of values of type given in Type above)
                            - Matrix (a 2-dimensional Array)
                            - Other (explain in the Comments below)
+          validations:
+                   required: true
         - type: textarea
           attributes: 
                     label: Comments
