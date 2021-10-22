@@ -11,7 +11,7 @@ body:
           attributes:
                   label: Definition
                   description: |
-                    Please define the meaning of the proposed data item, going into as much detail as necessary. Literature references are welcome. 
+                    Please define the meaning of the proposed data item, going into as much detail as necessary. Literature references are welcome.
                   placeholder: "Example: The number of symmetrically-equivalent orientations of the group."
           validations:
                   required: true
@@ -40,9 +40,9 @@ body:
         - type: input
           attributes:
                   label: Looping
-                  description: > 
-                     Name of a data item that should be tabulated together with the proposed item, if looped. 
-                     If only a single value should be contained in a data block, write 'top level'. 
+                  description: >
+                     Name of a data item that should be tabulated together with the proposed item, if looped.
+                     If only a single value should be contained in a data block, write 'top level'.
                   placeholder: "Example: _atom_site.label"
           validations:
                   required: true
@@ -62,7 +62,7 @@ body:
                            - Integer
                            - Real
                            - Complex
-                           - Other (explain in the Comments below) 
+                           - Other (explain in the Comments below)
           validations:
                    required: true
         - type: dropdown
@@ -77,7 +77,7 @@ body:
           validations:
                    required: true
         - type: textarea
-          attributes: 
+          attributes:
                     label: Comments
                     description: "Please comment on any aspect of this proposal."
                     placeholder: "Example: This is needed for high-temperature work."
