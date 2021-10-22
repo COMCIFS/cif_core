@@ -37,6 +37,7 @@ body:
           attributes:
                   label: Explanation of example
                   description: Please explain the meaning of the example value, if necessary.
+                  placeholder: "Example: Oxygen atom with the oxidation state of +2."
         - type: input
           attributes:
                   label: Looping
