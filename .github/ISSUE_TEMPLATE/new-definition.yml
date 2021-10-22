@@ -15,6 +15,17 @@ body:
                   placeholder: "Example: The number of symmetrically-equivalent orientations of the group."
           validations:
                   required: true
+        - type: checkboxes
+          attributes:
+                  label: Restricted values
+                  description: >
+                      Please indicate if this data item's value should be drawn from a predefined list of values
+                  options:
+                      - label: Value should be drawn from a predefined list
+                      - label: Not sure
+                      - label: "No"
+          validations:
+                  required: true
         - type: input
           attributes:
                   label: Example
@@ -29,7 +40,9 @@ body:
         - type: input
           attributes:
                   label: Looping
-                  description: Name of the data item that should be tabulated together with the proposed item (if looped) or else write 'top level'. 
+                  description: > 
+                     Name of a data item that should be tabulated together with the proposed item, if looped. 
+                     If only a single value should be contained in a data block, write 'top level'. 
                   placeholder: "Example: _atom_site.label"
           validations:
                   required: true
@@ -37,7 +50,7 @@ body:
           attributes:
                    label: Data name
                    description: Possible name(s) for the data item.
-                   placeholder: "Example: _atom_site.number_of_groups"
+                   placeholder: "Example: _atom_site.number_of_groups _atom_site.grouping_multiplicity"
         - type: dropdown
           attributes:
                    label: Type
