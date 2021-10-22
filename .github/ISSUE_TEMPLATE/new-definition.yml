@@ -50,7 +50,7 @@ body:
           attributes:
                    label: Data name
                    description: Possible name(s) for the data item.
-                   placeholder: "Example: _atom_site.number_of_groups _atom_site.grouping_multiplicity"
+                   placeholder: "Example: _atom_site.number_of_groups, _atom_site.grouping_multiplicity"
         - type: dropdown
           attributes:
                    label: Type
