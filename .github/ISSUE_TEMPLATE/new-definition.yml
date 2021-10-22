@@ -21,7 +21,7 @@ body:
                   description: >
                       Please indicate if this data item's value should be drawn from a predefined list of values, for
                       example, a list of colours. If the value should be drawn from a predefined list, please suggest
-                      possible values for the list (with explanations as necessary) in **Explanation of Example** below.
+                      possible values for the list (with explanations as necessary) in **Explanation of example** below.
                   options:
                       - label: Value should be drawn from a predefined list
                       - label: Not sure
