@@ -19,13 +19,12 @@ body:
           attributes:
                   label: Restricted values
                   description: >
-                      Please indicate if this data item's value should be drawn from a predefined list of values
+                      Please indicate if this data item's value should be drawn from a predefined list of values, for
+                      example, a list of colours.
                   options:
                       - label: Value should be drawn from a predefined list
                       - label: Not sure
-                      - label: "No"
-          validations:
-                  required: true
+                      - label: Value is not drawn from a predefined list
         - type: input
           attributes:
                   label: Example
