@@ -6,13 +6,13 @@
 ##############################################################################
 
 data_COM_VAL
- 
+
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2021-09-23
+    _dictionary.date             2021-10-20
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
-    _dictionary.ddl_conformance  3.11.04
+    _dictionary.ddl_conformance  4.1.0
     _description.text
 ;
      This dictionary contains commonly used enumeration value sets that
@@ -2252,122 +2252,126 @@ save_
 #  The dictionary's creation history.
 #============================================================================
  
-     loop_
-    _dictionary_audit.version
-    _dictionary_audit.date
-    _dictionary_audit.revision
- 
-      1.0.01   2005-12-12
+    loop_
+      _dictionary_audit.version
+      _dictionary_audit.date
+      _dictionary_audit.revision
+         1.0.1                    2005-12-12
 ;
-   Initial version of the TEMPLATES dictionary created from the 
-   definitions used in CORE_3 dictionary version 3.5.02
+       Initial version of the TEMPLATES dictionary created from the
+       definitions used in CORE_3 dictionary version 3.5.02
 ;
-      1.0.1   2006-02-12
+         1.1.0                    2006-02-12
 ;
-   Remove dictionary attributes from a save frame.
-   Change category core_templates to template
+       Remove dictionary attributes from a save frame.
+       Change category core_templates to template
 ;
-      1.2.01  2006-02-21
+         1.2.1                    2006-02-21
 ;
-   File structure to conform with prototype version dictionaries.
+       File structure to conform with prototype version dictionaries.
 ;
-      1.2.02  2006-03-07
+         1.2.2                    2006-03-07
 ;
-   Added the template _template.relational_id for the ddl3 dictionary.
+       Added the template _template.relational_id for the ddl3 dictionary.
 ;
-      1.2.03  2006-06-20
+         1.2.3                    2006-06-20
 ;
-   Apply DDL 3.6.04 attributes.
+       Apply DDL 3.6.04 attributes.
 ;
-      1.2.04  2006-06-27
+         1.2.4                    2006-06-27
 ;
-   Change filename to com_val.dic.
-   apply DDL 3.6.05 changes.
-   add 'context' and 'method' enumerated lists
-   add 'enumeration_default' blocks to this file
+       Change filename to com_val.dic.
+       apply DDL 3.6.05 changes.
+       add 'context' and 'method' enumerated lists
+       add 'enumeration_default' blocks to this file
 ;
-      1.2.05  2006-08-30
+         1.2.5                    2006-08-30
 ;
-   In type.contents change constrction of Otag to 'ANchar [_]'
+       In type.contents change constrction of Otag to 'ANchar [_]'
 ;
-      1.2.06  2006-11-13
+         1.2.6                    2006-11-13
 ;
-   Remove method and context frames
+       Remove method and context frames
 ;
-      1.2.07  2006-12-14
+         1.2.7                    2006-12-14
 ;
-     Apply DDL3 3.7.01 attributes.
+       Apply DDL3 3.7.01 attributes.
 ;
-      1.2.08  2007-10-11
+         1.2.8                    2007-10-11
 ;
-     Correct definitions of Ctag and Otag in _type.contents
+       Correct definitions of Ctag and Otag in _type.contents
 ;
-      1.2.09  2011-03-25
+         1.2.9                    2011-03-25
 ;
-     Change the syntax of "Filename" in type_contents enumeration set.
+       Change the syntax of "Filename" in type_contents enumeration set.
 ;
-      1.3.01  2011-08-03
+         1.3.1                    2011-08-03
 ;
-     Remove definition.id lines in keeping with nested imports.       
+       Remove definition.id lines in keeping with nested imports.
 ;
-      1.3.02  2011-12-01
+         1.3.2                    2011-12-01
 ;
-  Update the DDL version. No Matrix types present.
+       Update the DDL version. No Matrix types present.
 ;
-      1.3.03  2012-05-07
+         1.3.3                    2012-05-07
 ;
-  Update the DDL version. Change dictionary class to Template
+       Update the DDL version. Change dictionary class to Template
 ;
-      1.3.04  2012-07-08
+         1.3.4                    2012-07-08
 ;
-  Remove type.contents enumeration list
+       Remove type.contents enumeration list
 ;
-      1.3.05  2012-10-16
+         1.3.5                    2012-10-16
 ;
-  Change all element symbols in the ion-to-elemnt default list to Upper
-  and lower case characters (from all upper).
+       Change all element symbols in the ion-to-elemnt default list to Upper
+       and lower case characters (from all upper).
 ;
-      1.4.01  2013-03-08
+         1.4.1                    2013-03-08
 ;
-  Changes arising from alerts issued by ALIGN.
+       Changes arising from alerts issued by ALIGN.
 ;
-      1.4.02  2013-04-16
+         1.4.2                    2013-04-16
 ;
-   Changed type.source 'Measured' to 'Recorded'
+       Changed type.source 'Measured' to 'Recorded'
 ;
-      1.4.03  2014-06-09
+         1.4.3                    2014-06-09
 ;
-   Inserted dummy line at top of each frame; this is skipped on import
+       Inserted dummy line at top of each frame; this is skipped on import
 ;
-      1.4.04  2016-04-01
+         1.4.4                    2016-04-01
 ;
-   Added Bohr magnetons and radians to the units list (James Hester)
+       Added Bohr magnetons and radians to the units list (James Hester)
 ;
-      1.4.05  2016-05-13
-;  
-   Added Schoenflies group list (James Hester)
+         1.4.5                    2016-05-13
 ;
-      1.4.06  2017-12-12
+       Added Schoenflies group list (James Hester)
 ;
-   Updated atom symbol list for newly-named elements (James Hester)
+         1.4.6                    2017-12-12
 ;
-      1.4.07  2019-12-09
+       Updated atom symbol list for newly-named elements (James Hester)
 ;
-   Updated the human-readable descriptions of the 'kelvins' and
-   'kelvins_per_minute' enumeration states in the _units_code save frame.
+         1.4.7                    2019-12-09
 ;
-      1.4.8   2021-09-23
+       Updated the human-readable descriptions of the 'kelvins' and
+       'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-   Corrected a few typos in the 'units_code' save frame.
+         1.4.8                    2021-10-20
+;
+       Corrected a few typos in the 'units_code' save frame.
 
-   Added deuterium (D) to the 'element_symbol' save frame.
+       Added deuterium (D) to the 'element_symbol' save frame.
 
-   Corrected several discrepancies in the 'colour_hue' save frame:
-   replaced colour value 'unknown' with CIF special value '?',
-   renamed colour 'steel_grey' to 'grey_steel', renamed colour
-   'violet' to 'violet_magenta'.
+       Corrected several discrepancies in the 'colour_hue' save frame:
+       replaced colour value 'unknown' with CIF special value '?',
+       renamed colour 'steel_grey' to 'grey_steel', renamed colour
+       'violet' to 'violet_magenta'.
 
-   Added the 'grey_steel' colour to the 'colour_RGB' save frame.
+       Added the 'grey_steel' colour to the 'colour_RGB' save frame.
 
-   Added the 'Wyckoff_letter' save frame.
+       Added the 'Wyckoff_letter' save frame.
+
+       Changed the DDL conformance version number from 3.11.04 to 4.1.0.
+
+       Changed a duplicate version number in the DICTIONARY_AUDIT loop
+       from 1.0.1 to 1.1.0.
 ;

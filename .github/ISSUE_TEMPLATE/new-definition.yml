@@ -1,0 +1,86 @@
+name: Propose a new data item
+description: Propose a new data item for the Core dictionary.
+title: "[New data item]: "
+labels: ["enhancement"]
+assignees: jamesrhester
+body:
+        - type: markdown
+          attributes:
+                  value: "Thank you for taking the time to propose a new data item. Please fill out the following information."
+        - type: textarea
+          attributes:
+                  label: Definition
+                  description: |
+                    Please define the meaning of the proposed data item, going into as much detail as necessary. Literature references are welcome.
+                  placeholder: "Example: The number of symmetrically-equivalent orientations of the group."
+          validations:
+                  required: true
+        - type: dropdown
+          attributes:
+                  label: Restricted values
+                  description: >
+                      Please indicate if this data item's value should be drawn from a predefined list of values, for
+                      example, a list of colours. If the value should be drawn from a predefined list, please suggest
+                      possible values for the list (with explanations as necessary) in **Explanation of example** below.
+                  options:
+                      - Value should be drawn from a predefined list
+                      - Not sure
+                      - Value is not drawn from a predefined list
+          validations:
+                  required: true
+        - type: input
+          attributes:
+                  label: Example
+                  description: An example value for this data item.
+                  placeholder: "Example: O2+"
+          validations:
+                  required: true
+        - type: textarea
+          attributes:
+                  label: Explanation of example
+                  description: Please explain the meaning of the example value, if necessary.
+                  placeholder: "Example: Oxygen atom with the oxidation state of +2."
+        - type: input
+          attributes:
+                  label: Looping
+                  description: >
+                     Name of a data item that should be tabulated together with the proposed item, if looped.
+                     If only a single value should be contained in a data block, write 'top level'.
+                  placeholder: "Example: _atom_site.label"
+          validations:
+                  required: true
+        - type: input
+          attributes:
+                   label: Data name
+                   description: Possible name(s) for the data item.
+                   placeholder: "Example: _atom_site.number_of_groups, _atom_site.group_m"
+        - type: dropdown
+          attributes:
+                   label: Type
+                   description: Type of the data values.
+                   options:
+                           - Word (text with no spaces)
+                           - Text (arbitrary length text)
+                           - DateTime
+                           - Integer
+                           - Real
+                           - Complex
+                           - Other (explain in the Comments below)
+          validations:
+                   required: true
+        - type: dropdown
+          attributes:
+                   label: Data structure
+                   description: "Indicate whether or not values of this type have special internal structure (e.g. matrices)."
+                   options:
+                           - None (a single value of type given in Type above)
+                           - Array (an array of values of type given in Type above)
+                           - Matrix (a 2-dimensional Array)
+                           - Other (explain in the Comments below)
+          validations:
+                   required: true
+        - type: textarea
+          attributes:
+                    label: Comments
+                    description: "Please comment on any aspect of this proposal."
+                    placeholder: "Example: This is needed for high-temperature work."

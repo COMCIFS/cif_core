@@ -9784,7 +9784,7 @@ save_exptl_crystal.colour
 
     _definition.id                '_exptl_crystal.colour'
     _alias.definition_id          '_exptl_crystal_colour'
-    _definition.update            2021-03-03
+    _definition.update            2021-10-20
     _description.text
 ;
     Colour description of a crystal as a list of the allowed
@@ -9797,7 +9797,7 @@ save_exptl_crystal.colour
     _type.container               List
     _type.dimension               '[3]'
     _type.contents                Code
-    _description_example.case     '[translucent, pale, green]'
+    _description_example.case     [translucent  pale  green]
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -11235,7 +11235,7 @@ save_
 save_space_group.name_h-m_ref
 
     _definition.id                '_space_group.name_H-M_ref'
-    _definition.update            2016-05-13
+    _definition.update            2021-10-21
     _description.text
 ;
     The short international Hermann-Mauguin space-group symbol as
@@ -11244,21 +11244,18 @@ save_space_group.name_h-m_ref
     for Crystallography Volume A (2002).
 
     Each component of the space-group name is separated by a
-    space or an underscore character. The use of a space is
-    strongly recommended.  The underscore is only retained
-    because it was used in old CIFs. It should
-    not be used in new CIFs.
+    space character. Subscripts appear without special symbols.
+    Bars are given as negative signs before the numbers to which
+    they apply.
 
-    Subscripts should appear without special symbols. Bars
-    should be given as negative signs before the numbers to which
-    they apply.  The short international Hermann-Mauguin symbol
-    determines the space-group type uniquely. However, the
-    space-group type is better described using
-    _space_group.IT_number or _space_group.name_Schoenflies. The
-    short international Hermann-Mauguin symbol contains no
-    information on the choice of basis or origin. To define the
-    setting uniquely use _space_group.name_Hall, or list the symmetry
-    operations or generators.
+    The short international Hermann-Mauguin symbol determines
+    the space-group type uniquely. However, the space-group
+    type is better described using _space_group.IT_number or
+    _space_group.name_Schoenflies. The short international
+    Hermann-Mauguin symbol contains no information on the
+    choice of basis or origin. To define the setting uniquely
+    use _space_group.name_Hall, or list the symmetry operations
+    or generators.
 
     _space_group.name_H-M_alt may be used to give the
     Hermann-Mauguin symbol corresponding to the setting used.
@@ -11275,7 +11272,7 @@ save_space_group.name_h-m_ref
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
     _import.get                   [{'file':templ_enum.cif  'save':H_M_ref}]
 
@@ -26088,6 +26085,12 @@ save_
 
        Updated the AUDIT_SUPPORT category example case.
 
-       All atomic labels changed to 'Word' type for conformance with
+       Fixed the _exptl_crystal.colour data item example case.
+
+       Changed the content type of the _space_group.name_H-M_ref
+       data item from 'Code' to 'Text' and updated the description
+       to better reflect the formatting of the given enumeration values.
+
+       Changed all atomic labels to 'Word' type for conformance with
        DDL1.
 ;
