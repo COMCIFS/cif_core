@@ -10,10 +10,10 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-09-27
+    _dictionary.date              2021-10-25
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
-    _dictionary.ddl_conformance   4.0.1
+    _dictionary.ddl_conformance   4.1.0
     _dictionary.namespace         CifCore
     _description.text
 ;
@@ -12196,7 +12196,7 @@ save_geom_angle.atom_site_label_2
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14065,7 +14065,7 @@ save_model_site.label
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -19571,7 +19571,7 @@ save_atom_site.calc_attached_atom
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -20865,7 +20865,7 @@ save_atom_site_aniso.label
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -26039,7 +26039,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-09-27
+         3.1.0                    2021-10-25
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26087,4 +26087,7 @@ save_
        Updated the capitalisation of multiple data items.
 
        Updated the AUDIT_SUPPORT category example case.
+
+       All atomic labels changed to 'Word' type for conformance with
+       DDL1.
 ;
