@@ -14349,7 +14349,7 @@ save_valence_param.ref_id
 
     _definition.id                '_valence_param.ref_id'
     _alias.definition_id          '_valence_param_ref_id'
-    _definition.update            2027-10-27
+    _definition.update            2021-10-27
     _description.text
 ;
     Code linking parameters to the key _valence_ref.id key
@@ -14406,7 +14406,7 @@ save_valence_ref.id
 
     _definition.id                '_valence_ref.id'
     _alias.definition_id          '_valence_ref_id'
-    _definition.update            2027-10-27
+    _definition.update            2021-10-27
     _description.text
 ;
     Unique loop code of the valence references.
@@ -19805,7 +19805,7 @@ save_atom_site.disorder_assembly
 
     _definition.id                '_atom_site.disorder_assembly'
     _alias.definition_id          '_atom_site_disorder_assembly'
-    _definition.update            2027-10-27
+    _definition.update            2021-10-27
     _description.text
 ;
     A code which identifies a cluster of atoms that show long range
