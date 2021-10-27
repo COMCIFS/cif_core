@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-10-25
+    _dictionary.date              2021-10-27
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -491,7 +491,7 @@ save_diffrn_attenuator.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -1708,7 +1708,7 @@ save_diffrn_radiation_wavelength.id
          '_diffrn_radiation_wavelength_id'
          '_diffrn_radiation.wavelength_id'
 
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a radiation used in the diffraction measurements.
@@ -1719,7 +1719,7 @@ save_diffrn_radiation_wavelength.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     x2
 
 save_
@@ -1882,7 +1882,7 @@ save_diffrn_refln.attenuator_code
 
     _definition.id                '_diffrn_refln.attenuator_code'
     _alias.definition_id          '_diffrn_refln_attenuator_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying any attenuator setting for this reflection.
@@ -1893,7 +1893,7 @@ save_diffrn_refln.attenuator_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -1901,7 +1901,7 @@ save_diffrn_refln.class_code
 
     _definition.id                '_diffrn_refln.class_code'
     _alias.definition_id          '_diffrn_refln_class_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code for reflection class, if assigned. e.g. modulated structures
@@ -1912,7 +1912,7 @@ save_diffrn_refln.class_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -2231,7 +2231,7 @@ save_diffrn_refln.scale_group_code
 
     _definition.id                '_diffrn_refln.scale_group_code'
     _alias.definition_id          '_diffrn_refln_scale_group_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying the scale applying to this reflection.
@@ -2242,7 +2242,7 @@ save_diffrn_refln.scale_group_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -2386,7 +2386,7 @@ save_diffrn_refln.standard_code
 
     _definition.id                '_diffrn_refln.standard_code'
     _alias.definition_id          '_diffrn_refln_standard_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying reflections measured repeated as standard intensity.
@@ -2399,7 +2399,7 @@ save_diffrn_refln.standard_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -2427,7 +2427,7 @@ save_diffrn_refln.wavelength_id
 
     _definition.id                '_diffrn_refln.wavelength_id'
     _alias.definition_id          '_diffrn_refln_wavelength_id'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying the wavelength in the diffrn_radiation_wavelength list.
@@ -2438,7 +2438,7 @@ save_diffrn_refln.wavelength_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -2954,7 +2954,7 @@ save_diffrn_reflns_class.code
 
     _definition.id                '_diffrn_reflns_class.code'
     _alias.definition_id          '_diffrn_reflns_class_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a reflection class.
@@ -2964,7 +2964,7 @@ save_diffrn_reflns_class.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     m2
 
 save_
@@ -3275,7 +3275,7 @@ save_diffrn_scale_group.code
 
     _definition.id                '_diffrn_scale_group.code'
     _alias.definition_id          '_diffrn_scale_group_code'
-    _definition.update            2019-04-03
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a specific scale group of reflections (e.g. for
@@ -3287,7 +3287,7 @@ save_diffrn_scale_group.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -3594,7 +3594,7 @@ save_diffrn_source.target
 
     _definition.id                '_diffrn_source.target'
     _alias.definition_id          '_diffrn_source_target'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Chemical element symbol for the radiation source target (usually
@@ -3605,7 +3605,7 @@ save_diffrn_source.target
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     _import.get
         [{'file':templ_enum.cif  'save':element_symbol}]
@@ -3859,7 +3859,7 @@ save_diffrn_standard_refln.code
          '_diffrn_standard_refln_code'
          '_diffrn_standard_refln.diffrn_id'
 
-    _definition.update            2019-04-03
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a standard reflection used to monitor source
@@ -3871,7 +3871,7 @@ save_diffrn_standard_refln.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     s1
 
 save_
@@ -4175,7 +4175,7 @@ save_refln.class_code
 
     _definition.id                '_refln.class_code'
     _alias.definition_id          '_refln_class_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying the class to which this reflection has been
@@ -4193,7 +4193,7 @@ save_refln.class_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -5069,7 +5069,7 @@ save_refln.wavelength_id
 
     _definition.id                '_refln.wavelength_id'
     _alias.definition_id          '_refln_wavelength_id'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying the wavelength in DIFFRN_RADIATION_WAVELENGTH list.
@@ -5080,7 +5080,7 @@ save_refln.wavelength_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -5529,7 +5529,7 @@ save_reflns_class.code
 
     _definition.id                '_reflns_class.code'
     _alias.definition_id          '_reflns_class_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a reflection class.
@@ -5539,7 +5539,7 @@ save_reflns_class.code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     c1
 
 save_
@@ -9165,7 +9165,7 @@ save_chemical_conn_atom.type_symbol
 
     _definition.id                '_chemical_conn_atom.type_symbol'
     _alias.definition_id          '_chemical_conn_atom_type_symbol'
-    _definition.update            2012-11-22
+    _definition.update            2021-10-27
     _description.text
 ;
     A code identifying the atom type.
@@ -9176,7 +9176,7 @@ save_chemical_conn_atom.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -10185,7 +10185,7 @@ save_exptl_crystal.id
 
     _definition.id                '_exptl_crystal.id'
     _alias.definition_id          '_exptl_crystal_id'
-    _definition.update            2016-09-07
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a crystal.
@@ -10195,7 +10195,7 @@ save_exptl_crystal.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14152,7 +14152,7 @@ save_
 save_model_site.type_symbol
 
     _definition.id                '_model_site.type_symbol'
-    _definition.update            2012-11-22
+    _definition.update            2021-10-27
     _description.text
 ;
     Code to identify the atom specie(s) occupying this site.
@@ -14163,7 +14163,7 @@ save_model_site.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -14208,7 +14208,7 @@ save_valence_param.atom_1
 
     _definition.id                '_valence_param.atom_1'
     _alias.definition_id          '_valence_param_atom_1'
-    _definition.update            2019-04-03
+    _definition.update            2021-10-27
     _description.text
 ;
     Atom type symbol for atom 1 forming a bond whose
@@ -14220,7 +14220,7 @@ save_valence_param.atom_1
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14249,7 +14249,7 @@ save_valence_param.atom_2
 
     _definition.id                '_valence_param.atom_2'
     _alias.definition_id          '_valence_param_atom_2'
-    _definition.update            2019-04-03
+    _definition.update            2021-10-27
     _description.text
 ;
     Atom type symbol for atom 2 forming a bond whose
@@ -14261,7 +14261,7 @@ save_valence_param.atom_2
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14349,7 +14349,7 @@ save_valence_param.ref_id
 
     _definition.id                '_valence_param.ref_id'
     _alias.definition_id          '_valence_param_ref_id'
-    _definition.update            2019-04-03
+    _definition.update            2027-10-27
     _description.text
 ;
     Code linking parameters to the key _valence_ref.id key
@@ -14361,7 +14361,7 @@ save_valence_param.ref_id
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14406,7 +14406,7 @@ save_valence_ref.id
 
     _definition.id                '_valence_ref.id'
     _alias.definition_id          '_valence_ref_id'
-    _definition.update            2012-12-13
+    _definition.update            2027-10-27
     _description.text
 ;
     Unique loop code of the valence references.
@@ -14416,7 +14416,7 @@ save_valence_ref.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14490,7 +14490,7 @@ save_audit.block_code
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     TOZ_1991-03-20
 
 save_
@@ -15158,7 +15158,7 @@ save_audit_link.block_code
 
     _definition.id                '_audit_link.block_code'
     _alias.definition_id          '_audit_link_block_code'
-    _definition.update            2013-04-18
+    _definition.update            2021-10-27
     _description.text
 ;
     The value of _audit.block_code associated with a data block
@@ -15171,7 +15171,7 @@ save_audit_link.block_code
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -15575,7 +15575,7 @@ save_citation.database_id_csd
 
     _definition.id                '_citation.database_id_CSD'
     _alias.definition_id          '_citation_database_id_CSD'
-    _definition.update            2012-12-11
+    _definition.update            2021-10-27
     _description.text
 ;
     Identifier ('refcode') of the database record in the Cambridge
@@ -15586,7 +15586,7 @@ save_citation.database_id_csd
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -15641,7 +15641,7 @@ save_citation.id
 
     _definition.id                '_citation.id'
     _alias.definition_id          '_citation_id'
-    _definition.update            2012-12-11
+    _definition.update            2021-10-27
     _description.text
 ;
     Unique identifier to the CITATION list. A value of 'primary'
@@ -15655,7 +15655,7 @@ save_citation.id
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -15968,7 +15968,7 @@ save_citation_author.citation_id
 
     _definition.id                '_citation_author.citation_id'
     _alias.definition_id          '_citation_author_citation_id'
-    _definition.update            2012-12-11
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifier in the CITATION data list. The value of must match
@@ -15980,7 +15980,7 @@ save_citation_author.citation_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -16083,7 +16083,7 @@ save_citation_editor.citation_id
 
     _definition.id                '_citation_editor.citation_id'
     _alias.definition_id          '_citation_editor_citation_id'
-    _definition.update            2012-12-11
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifier in the CITATION list. The value must match an
@@ -16095,7 +16095,7 @@ save_citation_editor.citation_id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -17024,7 +17024,7 @@ save_journal.data_validation_number
 
     _definition.id                '_journal.data_validation_number'
     _alias.definition_id          '_journal_data_validation_number'
-    _definition.update            2014-06-12
+    _definition.update            2021-10-27
     _description.text
 ;
     Journal data items are defined by the journal staff.
@@ -17034,7 +17034,7 @@ save_journal.data_validation_number
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -18123,7 +18123,7 @@ save_publ_author.id_iucr
 
     _definition.id                '_publ_author.id_IUCr'
     _alias.definition_id          '_publ_author_id_IUCr'
-    _definition.update            2021-09-24
+    _definition.update            2021-09-27
     _description.text
 ;
     Identifier in the IUCr contact database of a publication
@@ -18135,7 +18135,7 @@ save_publ_author.id_iucr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -18329,7 +18329,7 @@ save_publ_body.label
 
     _definition.id                '_publ_body.label'
     _alias.definition_id          '_publ_body_label'
-    _definition.update            2021-03-03
+    _definition.update            2021-10-27
     _description.text
 ;
     Unique identifier for each part of the body of the paper.
@@ -18339,7 +18339,7 @@ save_publ_body.label
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -18497,7 +18497,7 @@ save_publ_contact_author.id_iucr
 
     _definition.id                '_publ_contact_author.id_IUCr'
     _alias.definition_id          '_publ_contact_author_id_IUCr'
-    _definition.update            2021-09-24
+    _definition.update            2021-10-27
     _description.text
 ;
     Identifier in the IUCr contact database of the author submitting
@@ -18509,7 +18509,7 @@ save_publ_contact_author.id_iucr
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -19805,7 +19805,7 @@ save_atom_site.disorder_assembly
 
     _definition.id                '_atom_site.disorder_assembly'
     _alias.definition_id          '_atom_site_disorder_assembly'
-    _definition.update            2012-11-20
+    _definition.update            2027-10-27
     _description.text
 ;
     A code which identifies a cluster of atoms that show long range
@@ -19820,7 +19820,7 @@ save_atom_site.disorder_assembly
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -19835,7 +19835,7 @@ save_atom_site.disorder_group
 
     _definition.id                '_atom_site.disorder_group'
     _alias.definition_id          '_atom_site_disorder_group'
-    _definition.update            2012-11-20
+    _definition.update            2021-10-27
     _description.text
 ;
     A code that identifies a group of positionally disordered atom
@@ -19852,7 +19852,7 @@ save_atom_site.disorder_group
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -20455,7 +20455,7 @@ save_atom_site.type_symbol
 
     _definition.id                '_atom_site.type_symbol'
     _alias.definition_id          '_atom_site_type_symbol'
-    _definition.update            2012-11-20
+    _definition.update            2021-10-27
     _description.text
 ;
     A code to identify the atom specie(s) occupying this site.
@@ -20469,7 +20469,7 @@ save_atom_site.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -20998,7 +20998,7 @@ save_atom_site_aniso.type_symbol
          '_atom_site_aniso_type_symbol'
          '_atom_site_anisotrop.type_symbol'
 
-    _definition.update            2012-11-20
+    _definition.update            2021-10-27
     _description.text
 ;
     This _atom_type.symbol code links the anisotropic atom parameters to
@@ -21011,7 +21011,7 @@ save_atom_site_aniso.type_symbol
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -22856,7 +22856,7 @@ save_
 save_atom_type.element_symbol
 
     _definition.id                '_atom_type.element_symbol'
-    _definition.update            2019-01-09
+    _definition.update            2021-10-27
     _description.text
 ;
     Element symbol for of this atom type. The default value is extracted
@@ -22868,7 +22868,7 @@ save_atom_type.element_symbol
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get
@@ -22882,7 +22882,7 @@ save_
 save_atom_type.key
 
     _definition.id                '_atom_type.key'
-    _definition.update            2012-11-20
+    _definition.update            2021-10-27
     _description.text
 ;
     Value is a unique key to a set of ATOM_TYPE items
@@ -22893,7 +22893,7 @@ save_atom_type.key
     _type.purpose                 Key
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -23009,7 +23009,7 @@ save_atom_type.symbol
 
     _definition.id                '_atom_type.symbol'
     _alias.definition_id          '_atom_type_symbol'
-    _definition.update            2012-12-21
+    _definition.update            2021-10-27
     _description.text
 ;
     The identity of the atom specie(s) representing this atom type.
@@ -23023,7 +23023,7 @@ save_atom_type.symbol
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -23620,7 +23620,7 @@ save_atom_type_scat.symbol
 
     _definition.id                '_atom_type_scat.symbol'
     _alias.definition_id          '_atom_type_scat_symbol'
-    _definition.update            2019-04-03
+    _definition.update            2021-10-27
     _description.text
 ;
     The identity of the atom specie(s) representing this atom type.
@@ -23632,7 +23632,7 @@ save_atom_type_scat.symbol
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -25470,7 +25470,7 @@ save_refine_ls_class.code
 
     _definition.id                '_refine_ls_class.code'
     _alias.definition_id          '_refine_ls_class_code'
-    _definition.update            2012-11-20
+    _definition.update            2021-10-27
     _description.text
 ;
     Code identifying a certain reflection class.
@@ -25481,7 +25481,7 @@ save_refine_ls_class.code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _description_example.case
@@ -25667,7 +25667,7 @@ save_
 save_function.atomtype
 
     _definition.id                '_function.AtomType'
-    _definition.update            2013-04-17
+    _definition.update            2021-10-27
     _description.text
 ;
     The function
@@ -25680,11 +25680,11 @@ save_function.atomtype
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _method.purpose               Evaluation
     _method.expression
 ;
-    Function AtomType( s :[Single, Code])  {  # atom label
+    Function AtomType( s :[Single, Word])  {  # atom label
 
        m = Len(s)
        n = 1
@@ -26036,7 +26036,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-10-25
+         3.1.0                    2021-10-27
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26091,6 +26091,6 @@ save_
        data item from 'Code' to 'Text' and updated the description
        to better reflect the formatting of the given enumeration values.
 
-       Changed all atomic labels to 'Word' type for conformance with
-       DDL1.
+       Changed legacy case-sensitive data names to 'Word' type for conformance
+       with DDL1.
 ;
