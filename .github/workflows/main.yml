@@ -7,8 +7,13 @@ name: CIFSyntaxandStyleCheck
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+            - '.github/**'
+
   pull_request:
     branches: [ master ]
+    paths-ignore:
+            - '.github/**'
   workflow_dispatch:   
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -40,10 +45,55 @@ jobs:
   layout:
     runs-on: ubuntu-latest
     needs: ddlm
+
     steps:
-        - name: checkout
-          uses: actions/checkout@v2
-          
-        - name: check_layout
-          uses: jamesrhester/cif_dic_layout_check_action@main
-          id: layout_check
+      - name: Get the cache
+        uses: actions/cache@v2
+        id: cache
+        with:
+                 path: ~/.julia
+                 key: ${{ runner.os }}-julia
+                 
+      - name: Install Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+                version: '1.6'
+
+      - name: Install Julia packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+               julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche")'
+
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+                path: main
+      - name: checkout julia tools
+        uses: actions/checkout@v2
+        with:
+                repository: jamesrhester/julia_cif_tools
+                path: julia_cif_tools
+
+      - name: Checkout CIF master files
+        uses: actions/checkout@v2
+        with:
+                repository: COMCIFS/cif_core
+                path: cif_core
+      - name: Diagnostics
+        run: |
+            ls -a
+            pwd
+            which julia
+
+      - name: one_dict_layout
+        run: |
+               julia -e 'using Pkg; Pkg.status()'
+               for file in main/*.dic
+               do      
+                  echo "Checking $file"
+                  julia -O0 ./julia_cif_tools/linter.jl $file cif_core/ddl.dic
+                  if [ $? != 0 ] 
+                  then 
+                    exit 1 ;
+                  fi 
+               done
