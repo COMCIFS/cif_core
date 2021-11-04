@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-10-27
+    _dictionary.date              2021-11-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -4946,7 +4946,7 @@ save_refln.scale_group_code
 
     _definition.id                '_refln.scale_group_code'
     _alias.definition_id          '_refln_scale_group_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-11-04
     _description.text
 ;
     Code identifying the scale (if there is more than one scale) used
@@ -4958,7 +4958,7 @@ save_refln.scale_group_code
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -5840,7 +5840,7 @@ save_reflns_scale.group_code
 
     _definition.id                '_reflns_scale.group_code'
     _alias.definition_id          '_reflns_scale_group_code'
-    _definition.update            2012-11-26
+    _definition.update            2021-11-04
     _description.text
 ;
     Code identifying a reflection scale group. These names need not
@@ -5851,7 +5851,7 @@ save_reflns_scale.group_code
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -9784,7 +9784,7 @@ save_exptl_crystal.colour
 
     _definition.id                '_exptl_crystal.colour'
     _alias.definition_id          '_exptl_crystal_colour'
-    _definition.update            2021-10-20
+    _definition.update            2021-11-04
     _description.text
 ;
     Colour description of a crystal as a list of the allowed
@@ -9796,7 +9796,7 @@ save_exptl_crystal.colour
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[3]'
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     [translucent  pale  green]
     _method.purpose               Evaluation
     _method.expression
@@ -10486,7 +10486,7 @@ save_exptl_crystal_appearance.general
          '_exptl_crystal_colour_lustre'
          '_exptl_crystal.colour_lustre'
 
-    _definition.update            2012-11-22
+    _definition.update            2021-11-04
     _description.text
 ;
     Appearance of the crystal as prescribed state codes. Note that 'dull'
@@ -10497,7 +10497,7 @@ save_exptl_crystal_appearance.general
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -10521,7 +10521,7 @@ save_exptl_crystal_appearance.hue
          '_exptl_crystal_colour_primary'
          '_exptl_crystal.colour_primary'
 
-    _definition.update            2012-11-22
+    _definition.update            2021-11-04
     _description.text
 ;
     Colour hue of the crystals as prescribed state codes.
@@ -10531,7 +10531,7 @@ save_exptl_crystal_appearance.hue
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}]
 
@@ -10546,7 +10546,7 @@ save_exptl_crystal_appearance.intensity
          '_exptl_crystal_colour_modifier'
          '_exptl_crystal.colour_modifier'
 
-    _definition.update            2012-11-22
+    _definition.update            2021-11-04
     _description.text
 ;
     Colour intensity of the crystal as prescribed state codes.
@@ -10556,7 +10556,7 @@ save_exptl_crystal_appearance.intensity
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -14944,7 +14944,7 @@ save_audit_conform.dict_version
 
     _definition.id                '_audit_conform.dict_version'
     _alias.definition_id          '_audit_conform_dict_version'
-    _definition.update            2012-11-29
+    _definition.update            2021-11-04
     _description.text
 ;
     Code for the version of data dictionary defining data names
@@ -14955,7 +14955,7 @@ save_audit_conform.dict_version
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -16514,7 +16514,7 @@ save_database_code.csd
          '_database_code_CSD'
          '_database.code_CSD'
 
-    _definition.update            2012-12-13
+    _definition.update            2021-11-04
     _description.text
 ;
     Code assigned by the Cambridge Structural Database.
@@ -16524,7 +16524,7 @@ save_database_code.csd
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -16681,7 +16681,7 @@ save_database_code.pdb
          '_database_code_PDB'
          '_database.code_PDB'
 
-    _definition.update            2021-03-03
+    _definition.update            2021-11-04
     _description.text
 ;
     Code assigned by the Protein Data Bank.
@@ -16691,7 +16691,7 @@ save_database_code.pdb
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -17042,7 +17042,7 @@ save_journal.issue
 
     _definition.id                '_journal.issue'
     _alias.definition_id          '_journal_issue'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-04
     _description.text
 ;
     Issue identifier within the journal.
@@ -17052,7 +17052,7 @@ save_journal.issue
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -17132,7 +17132,7 @@ save_journal.paper_category
 
     _definition.id                '_journal.paper_category'
     _alias.definition_id          '_journal_paper_category'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-04
     _description.text
 ;
     Category of the publication in the journal.
@@ -17142,7 +17142,7 @@ save_journal.paper_category
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -17168,7 +17168,7 @@ save_journal.suppl_publ_number
 
     _definition.id                '_journal.suppl_publ_number'
     _alias.definition_id          '_journal_suppl_publ_number'
-    _definition.update            2021-03-03
+    _definition.update            2021-11-04
     _description.text
 ;
     Number of the supplementary publication.
@@ -17178,7 +17178,7 @@ save_journal.suppl_publ_number
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -17828,7 +17828,7 @@ save_journal_techeditor.code
          '_journal_techeditor_code'
          '_journal.techeditor_code'
 
-    _definition.update            2012-12-11
+    _definition.update            2021-11-04
     _description.text
 ;
     Code of the technical editor for this publication.
@@ -17838,7 +17838,7 @@ save_journal_techeditor.code
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
 
 save_
 
@@ -18777,7 +18777,7 @@ save_publ_manuscript_incl_extra.item
          '_publ_manuscript_incl_extra_item'
          '_publ_manuscript_incl.extra_item'
 
-    _definition.update            2012-12-13
+    _definition.update            2021-11-04
     _description.text
 ;
     The data name (i.e. Tag) of a specific data item included in the
@@ -18790,7 +18790,7 @@ save_publ_manuscript_incl_extra.item
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Tag
+    _type.contents                Text
 
 save_
 
@@ -26036,7 +26036,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-10-27
+         3.1.0                    2021-11-04
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
