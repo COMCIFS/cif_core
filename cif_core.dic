@@ -18790,7 +18790,7 @@ save_publ_manuscript_incl_extra.item
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Tag
 
 save_
 
