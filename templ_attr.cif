@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2021-10-20
+    _dictionary.date             2021-10-25
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -23,7 +23,7 @@ data_TEMPL_ATTR
 
 save_atom_site_label
 
-    _definition.update           2019-04-03
+    _definition.update           2021-10-25
     _description.text
 ;
      This label is a unique identifier for a particular site in the
@@ -47,7 +47,7 @@ save_atom_site_label
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Word
      loop_
     _description_example.case   C12     Ca3g28     Fe3+17     H*251
                                 C_a_phe_83_a_0  Zn_Zn_301_A_0
@@ -55,7 +55,7 @@ save_atom_site_label
 
 save_restr_label
 
-    _definition.update           2014-06-29
+    _definition.update           2021-10-25
     _description.text
 ;
       Labels of atom sites subtending distance or angle. Atom 2 is the apex for
@@ -65,13 +65,13 @@ save_restr_label
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Word
      save_
 
 
 save_atom_site_id
 
-    _definition.update           2019-04-03
+    _definition.update           2021-10-25
     _description.text
 ;
      This label is a unique identifier for a particular site in the
@@ -81,7 +81,7 @@ save_atom_site_id
     _type.purpose                Link
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Word
      save_
 
 
@@ -383,7 +383,7 @@ save_fract_coord_su
 
 save_label_component
 
-    _definition.update           2012-05-07
+    _definition.update           2021-10-21
     _description.text
 ;
      Component_0 is normally a code which matches identically with
@@ -404,12 +404,12 @@ save_label_component
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single 
-    _type.contents               Code 
+    _type.contents               Word 
      save_
 
 save_label_comp
 
-    _definition.update           2012-05-07
+    _definition.update           2021-10-21
     _description.text
 ;
      See label_component_0 description.
@@ -417,7 +417,7 @@ save_label_comp
     _type.purpose                Encode
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Code
+    _type.contents               Word
 
 save_
 
@@ -966,7 +966,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2021-10-20
+         1.4.10                   2021-10-25
 ;
        Corrected a few typos in the descriptions of several save frames.
 
@@ -983,4 +983,6 @@ save_display_colour
        Added the 'Cartn_vector' and 'fract_vector' save frames.
 
        Changed the DDL conformance version number from 3.14.0 to 4.1.0.
+
+       Changed atomic labels to 'Word' for conformance with DDL1.
 ;
