@@ -1190,7 +1190,9 @@ save_import_details.if_dupl
     _description.text
 ;
     Code identifying the action taken if the requested definition block
-    already exists within the importing dictionary.
+    already exists within the importing dictionary in "Full" mode, or
+    an attribute exists in both the importing dictionary and the
+    requested definition block in "Contents" mode.
 ;
     _name.category_id             import_details
     _name.object_id               if_dupl
