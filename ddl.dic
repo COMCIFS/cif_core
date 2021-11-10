@@ -1204,7 +1204,13 @@ save_import_details.if_dupl
       _enumeration_set.detail
          Ignore
 ;
-         Ignore imported definitions if id conflict.
+         Ignore imported definitions if block identifiers match in "Full" mode.
+         Ignore imported attributes that match attributes already in the
+         importing definition in "Contents" mode.
+         
+         When importing in "Contents" mode, if the ignored attribute belongs to
+         a Loop category, all attributes from that category must be ignored to
+         avoid loop mismatches.
 ;
          Replace
 ;
