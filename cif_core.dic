@@ -25925,5 +25925,5 @@ save_
        with DDL1.
 
        Changed _gt/_lt data names to 'Number' type in accordance with DDL1
-       behaviour, removing associated SU data names.
+       behaviour. Removed associated SU data names.
 ;
