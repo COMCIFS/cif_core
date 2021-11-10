@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-11-04
+    _dictionary.date              2021-11-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -8507,29 +8507,12 @@ save_chemical.melting_point_gt
 ;
     _name.category_id             chemical
     _name.object_id               melting_point_gt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.melting_point_gt_su
-
-    _definition.id                '_chemical.melting_point_gt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.melting_point_gt.
-;
-    _name.category_id             chemical
-    _name.object_id               melting_point_gt_su
-    _name.linked_item_id          '_chemical.melting_point_gt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8545,29 +8528,12 @@ save_chemical.melting_point_lt
 ;
     _name.category_id             chemical
     _name.object_id               melting_point_lt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.melting_point_lt_su
-
-    _definition.id                '_chemical.melting_point_lt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.melting_point_lt.
-;
-    _name.category_id             chemical
-    _name.object_id               melting_point_lt_su
-    _name.linked_item_id          '_chemical.melting_point_lt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8816,7 +8782,7 @@ save_chemical.temperature_decomposition_gt
 
     _definition.id                '_chemical.temperature_decomposition_gt'
     _alias.definition_id          '_chemical_temperature_decomposition_gt'
-    _definition.update            2014-07-22
+    _definition.update            2021-11-09
     _description.text
 ;
     The temperature above which a crystalline solid decomposes.
@@ -8824,29 +8790,12 @@ save_chemical.temperature_decomposition_gt
 ;
     _name.category_id             chemical
     _name.object_id               temperature_decomposition_gt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.temperature_decomposition_gt_su
-
-    _definition.id                '_chemical.temperature_decomposition_gt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.temperature_decomposition_gt.
-;
-    _name.category_id             chemical
-    _name.object_id               temperature_decomposition_gt_su
-    _name.linked_item_id          '_chemical.temperature_decomposition_gt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8854,7 +8803,7 @@ save_chemical.temperature_decomposition_lt
 
     _definition.id                '_chemical.temperature_decomposition_lt'
     _alias.definition_id          '_chemical_temperature_decomposition_lt'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-09
     _description.text
 ;
     The temperature below which a crystalline solid decomposes.
@@ -8862,29 +8811,12 @@ save_chemical.temperature_decomposition_lt
 ;
     _name.category_id             chemical
     _name.object_id               temperature_decomposition_lt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.temperature_decomposition_lt_su
-
-    _definition.id                '_chemical.temperature_decomposition_lt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.temperature_decomposition_lt.
-;
-    _name.category_id             chemical
-    _name.object_id               temperature_decomposition_lt_su
-    _name.linked_item_id          '_chemical.temperature_decomposition_lt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8938,7 +8870,7 @@ save_chemical.temperature_sublimation_gt
 
     _definition.id                '_chemical.temperature_sublimation_gt'
     _alias.definition_id          '_chemical_temperature_sublimation_gt'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-09
     _description.text
 ;
     The temperature above which a crystalline solid sublimates.
@@ -8946,29 +8878,12 @@ save_chemical.temperature_sublimation_gt
 ;
     _name.category_id             chemical
     _name.object_id               temperature_sublimation_gt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.temperature_sublimation_gt_su
-
-    _definition.id                '_chemical.temperature_sublimation_gt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.temperature_sublimation_gt.
-;
-    _name.category_id             chemical
-    _name.object_id               temperature_sublimation_gt_su
-    _name.linked_item_id          '_chemical.temperature_sublimation_gt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -8976,7 +8891,7 @@ save_chemical.temperature_sublimation_lt
 
     _definition.id                '_chemical.temperature_sublimation_lt'
     _alias.definition_id          '_chemical_temperature_sublimation_lt'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-09
     _description.text
 ;
     The temperature below which a crystalline solid sublimates.
@@ -8984,29 +8899,12 @@ save_chemical.temperature_sublimation_lt
 ;
     _name.category_id             chemical
     _name.object_id               temperature_sublimation_lt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.temperature_sublimation_lt_su
-
-    _definition.id                '_chemical.temperature_sublimation_lt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.temperature_sublimation_lt.
-;
-    _name.category_id             chemical
-    _name.object_id               temperature_sublimation_lt_su
-    _name.linked_item_id          '_chemical.temperature_sublimation_lt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9900,7 +9798,7 @@ save_exptl_crystal.density_meas_gt
 
     _definition.id                '_exptl_crystal.density_meas_gt'
     _alias.definition_id          '_exptl_crystal_density_meas_gt'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-09
     _description.text
 ;
     The value above which the density measured using standard
@@ -9911,7 +9809,7 @@ save_exptl_crystal.density_meas_gt
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_gt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
@@ -9920,28 +9818,11 @@ save_exptl_crystal.density_meas_gt
 
 save_
 
-save_exptl_crystal.density_meas_gt_su
-
-    _definition.id                '_exptl_crystal.density_meas_gt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _exptl_crystal.density_meas_gt.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               density_meas_gt_su
-    _name.linked_item_id          '_exptl_crystal.density_meas_gt'
-    _units.code                   megagrams_per_metre_cubed
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
-save_
-
 save_exptl_crystal.density_meas_lt
 
     _definition.id                '_exptl_crystal.density_meas_lt'
     _alias.definition_id          '_exptl_crystal_density_meas_lt'
-    _definition.update            2012-12-11
+    _definition.update            2021-11-09
     _description.text
 ;
     The value below which the density measured using standard
@@ -9952,29 +9833,12 @@ save_exptl_crystal.density_meas_lt
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_lt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   megagrams_per_metre_cubed
-
-save_
-
-save_exptl_crystal.density_meas_lt_su
-
-    _definition.id                '_exptl_crystal.density_meas_lt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _exptl_crystal.density_meas_lt.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               density_meas_lt_su
-    _name.linked_item_id          '_exptl_crystal.density_meas_lt'
-    _units.code                   megagrams_per_metre_cubed
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -10028,7 +9892,7 @@ save_exptl_crystal.density_meas_temp_gt
 
     _definition.id                '_exptl_crystal.density_meas_temp_gt'
     _alias.definition_id          '_exptl_crystal_density_meas_temp_gt'
-    _definition.update            2019-01-09
+    _definition.update            2021-11-09
     _description.text
 ;
     Temperature above which the measured density was determined.
@@ -10038,7 +9902,7 @@ save_exptl_crystal.density_meas_temp_gt
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_temp_gt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
@@ -10047,28 +9911,11 @@ save_exptl_crystal.density_meas_temp_gt
 
 save_
 
-save_exptl_crystal.density_meas_temp_gt_su
-
-    _definition.id                '_exptl_crystal.density_meas_temp_gt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _exptl_crystal.density_meas_temp_gt.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               density_meas_temp_gt_su
-    _name.linked_item_id          '_exptl_crystal.density_meas_temp_gt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
-save_
-
 save_exptl_crystal.density_meas_temp_lt
 
     _definition.id                '_exptl_crystal.density_meas_temp_lt'
     _alias.definition_id          '_exptl_crystal_density_meas_temp_lt'
-    _definition.update            2019-01-09
+    _definition.update            2021-11-09
     _description.text
 ;
     Temperature below which the measured density was determined.
@@ -10078,29 +9925,12 @@ save_exptl_crystal.density_meas_temp_lt
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_temp_lt
-    _type.purpose                 Measurand
+    _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_exptl_crystal.density_meas_temp_lt_su
-
-    _definition.id                '_exptl_crystal.density_meas_temp_lt_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _exptl_crystal.density_meas_temp_lt.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               density_meas_temp_lt_su
-    _name.linked_item_id          '_exptl_crystal.density_meas_temp_lt'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -26036,7 +25866,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-11-04
+         3.1.0                    2021-11-09
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -26093,4 +25923,7 @@ save_
 
        Changed legacy case-sensitive data names to 'Word' type for conformance
        with DDL1.
+
+       Changed _gt/_lt data names to 'Number' type in accordance with DDL1
+       behaviour. Removed associated SU data names.
 ;
