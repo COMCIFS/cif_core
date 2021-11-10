@@ -1191,7 +1191,7 @@ save_import_details.if_dupl
 ;
     Code identifying the action taken if the requested definition block
     already exists within the importing dictionary in "Full" mode, or
-    an attribute exists in both the importing dictionary and the
+    an attribute exists in both the importing definition block and the
     requested definition block in "Contents" mode.
 ;
     _name.category_id             import_details
@@ -1216,7 +1216,8 @@ save_import_details.if_dupl
 ;
          Replace
 ;
-         Replace existing definitions with imported definitions.
+         Replace existing definitions with imported definitions if block
+         identifiers match in "Full" mode.
 
          When importing in "Contents" mode, contents of the two save frames
          should be merged and any duplicate attributes replaced with those from
