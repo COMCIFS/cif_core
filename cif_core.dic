@@ -15599,20 +15599,21 @@ save_citation.journal_issue
 
     _definition.id                '_citation.journal_issue'
     _alias.definition_id          '_citation_journal_issue'
-    _definition.update            2021-03-01
+    _definition.update            2021-11-12
     _description.text
 ;
-    Issue number of the journal cited;  relevant for articles.
+    Issue identifier of the journal cited;  relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_issue
-    _type.purpose                 Number
+    _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            1:
-    _units.code                   none
-    _description_example.case     2
+    _type.contents                Text
+    loop_
+      _description_example.case
+         '2'
+         'Special Issue'
 
 save_
 
@@ -16873,7 +16874,7 @@ save_journal.issue
 
     _definition.id                '_journal.issue'
     _alias.definition_id          '_journal_issue'
-    _definition.update            2021-11-04
+    _definition.update            2021-11-12
     _description.text
 ;
     Issue identifier within the journal.
@@ -16884,6 +16885,10 @@ save_journal.issue
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+    loop_
+      _description_example.case
+         '2'
+         'Special Issue'
 
 save_
 
@@ -25927,6 +25932,6 @@ save_
        Changed _gt/_lt data names to 'Number' type in accordance with DDL1
        behaviour. Removed associated SU data names.
 
-       Homogenised the definitions of _citation.year and _journal.year
-       data items.
+       Homogenised the definitions of _citation.year, _journal.year,
+       _citation.journal_issue, and _journal.issue data items.
 ;
