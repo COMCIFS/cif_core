@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2021-11-09
+    _dictionary.date              2021-11-15
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -429,14 +429,14 @@ save_description_example.case
 
     _definition.id                '_description_example.case'
     _definition.class             Attribute
-    _definition.update            2021-07-20
+    _definition.update            2021-11-15
     _description.text
 ;
-    An example case of the defined item or category.  Category example
-    cases present data names and values as they would appear in a
-    CIF-formatted file. Item example cases present values only, which
-    inherit the container, content and purpose type constraints of the
-    defining item.
+    An example case of the defined item or category. Category example cases
+    present data names and values as they would appear in a CIF-formatted file.
+    Item example cases present values only, which inherit the enumeration range,
+    enumeration set, container, dimension, content and purpose type constraints
+    of the defining item.
 ;
     _name.category_id             description_example
     _name.object_id               case
@@ -885,10 +885,13 @@ save_enumeration.default
 
     _definition.id                '_enumeration.default'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2021-11-15
     _description.text
 ;
     The default value for the defined item if it is not specified explicitly.
+    Value of this attribute inherits the enumeration range, enumeration set,
+    container, dimension, content and purpose type constraints of the defining
+    item.
 ;
     _name.category_id             enumeration
     _name.object_id               default
@@ -2577,7 +2580,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2021-11-09
+         4.1.0                    2021-11-15
 ;
        Added new 'Word' content type.
 
@@ -2585,4 +2588,8 @@ save_
        are recommended in the 'Item' scope.
 
        Clarified use of if_dupl replacement when importing.
+
+       Updated the descriptions of the _enumeration.default and
+       _description_example.case data items to explicitly list
+       all the constraints that they inherit from the defining item.
 ;
