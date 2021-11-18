@@ -5875,6 +5875,23 @@ save_reflns_scale.meas_f
 
 save_
 
+save_reflns_scale.meas_f_su
+
+    _definition.id                '_reflns_scale.meas_F_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _reflns_scale.meas_F.
+;
+    _name.category_id             reflns_scale
+    _name.object_id               meas_F_su
+    _name.linked_item_id          '_reflns_scale.meas_F'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_reflns_scale.meas_f_squared
 
     _definition.id                '_reflns_scale.meas_F_squared'
@@ -5906,23 +5923,6 @@ save_reflns_scale.meas_f_squared_su
     _name.category_id             reflns_scale
     _name.object_id               meas_F_squared_su
     _name.linked_item_id          '_reflns_scale.meas_F_squared'
-    _units.code                   none
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
-save_
-
-save_reflns_scale.meas_f_su
-
-    _definition.id                '_reflns_scale.meas_F_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _reflns_scale.meas_F.
-;
-    _name.category_id             reflns_scale
-    _name.object_id               meas_F_su
-    _name.linked_item_id          '_reflns_scale.meas_F'
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
@@ -8495,6 +8495,23 @@ save_chemical.melting_point
 
 save_
 
+save_chemical.melting_point_su
+
+    _definition.id                '_chemical.melting_point_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _chemical.melting_point.
+;
+    _name.category_id             chemical
+    _name.object_id               melting_point_su
+    _name.linked_item_id          '_chemical.melting_point'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_chemical.melting_point_gt
 
     _definition.id                '_chemical.melting_point_gt'
@@ -8534,23 +8551,6 @@ save_chemical.melting_point_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_chemical.melting_point_su
-
-    _definition.id                '_chemical.melting_point_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _chemical.melting_point.
-;
-    _name.category_id             chemical
-    _name.object_id               melting_point_su
-    _name.linked_item_id          '_chemical.melting_point'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -15610,6 +15610,7 @@ save_citation.journal_issue
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+
     loop_
       _description_example.case
          '2'
@@ -16885,6 +16886,7 @@ save_journal.issue
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+
     loop_
       _description_example.case
          '2'
