@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.1.0
-    _dictionary.date              2021-11-15
+    _dictionary.date              2021-12-01
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -16988,7 +16988,7 @@ save_journal.paper_doi
 
     _definition.id                '_journal.paper_DOI'
     _alias.definition_id          '_journal_paper_DOI'
-    _definition.update            2012-12-11
+    _definition.update            2021-12-01
     _description.text
 ;
     DOI of the publication in the journal.
@@ -16998,7 +16998,8 @@ save_journal.paper_doi
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Text
+    _description_example.case     10.5555/12345678
 
 save_
 
@@ -25873,7 +25874,7 @@ save_
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
 ;
-         3.1.0                    2021-11-15
+         3.1.0                    2021-12-01
 ;
        Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
        and _model_site.adp_eigenvalues.
@@ -25939,4 +25940,7 @@ save_
 
        Added an upper enumeration limit of 192 to the definition of
        the _space_group_symop.id data item.
+
+       Changed the content type of the _journal.paper_doi data item from
+       'Code' to 'Text' and added an example case.
 ;
