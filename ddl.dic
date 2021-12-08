@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2021-11-15
+    _dictionary.date              2021-12-08
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1563,9 +1563,7 @@ save_type.container
     _definition.update            2021-07-28
     _description.text
 ;
-    The CONTAINER type of the defined data item value. 'Implied' may only
-    be used in the DDLm Reference Dictionary for attributes whose types are
-    linked to the values of other attributes.
+    The structure of values for the defined data item.
 ;
     _name.category_id             type
     _name.object_id               container
@@ -1603,8 +1601,9 @@ save_type.container
 ;
          Implied
 ;
-         >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         Determined by the values of other attributes.
+         (DDLm reference dictionary only). The value structure is taken from
+         _type.container in the definition in which the defined attribute
+         appears.
 ;
 
     _enumeration.default          Single
@@ -1730,7 +1729,8 @@ save_type.contents
 ;
          Implied
 ;
-         implied by the context of the attribute
+         The contents are described by the _type.contents attribute in the
+         definition in which the defined attribute appears.
 ;
          ByReference
 ;
@@ -2580,7 +2580,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2021-11-15
+         4.1.0                    2021-12-08
 ;
        Added new 'Word' content type.
 
@@ -2592,4 +2592,6 @@ save_
        Updated the descriptions of the _enumeration.default and
        _description_example.case data items to explicitly list
        all the constraints that they inherit from the defining item.
+
+       Improved wording of "Implied" value descriptors.
 ;
