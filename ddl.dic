@@ -1601,9 +1601,9 @@ save_type.container
 ;
          Implied
 ;
-         (DDLm reference dictionary only). The value structure is taken from
-         _type.container in the definition in which the defined attribute
-         appears.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         The value structure is taken from _type.container in the definition in
+         which the defined attribute appears.
 ;
 
     _enumeration.default          Single
