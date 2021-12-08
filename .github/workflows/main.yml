@@ -62,7 +62,7 @@ jobs:
       - name: Install Julia packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-               julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths")'
+               julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths");Pkg.add("ArgParse")'
 
       - name: checkout
         uses: actions/checkout@v2
