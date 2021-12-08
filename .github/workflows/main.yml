@@ -91,7 +91,7 @@ jobs:
                for file in main/*.dic
                do      
                   echo "Checking $file"
-                  julia -O0 ./julia_cif_tools/linter.jl $file cif_core/ddl.dic
+                  julia -O0 ./julia_cif_tools/linter.jl -i $pwd/main $file cif_core/ddl.dic
                   if [ $? != 0 ] 
                   then 
                     exit 1 ;
