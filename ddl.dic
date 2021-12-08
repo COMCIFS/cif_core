@@ -1560,7 +1560,7 @@ save_type.container
 
     _definition.id                '_type.container'
     _definition.class             Attribute
-    _definition.update            2021-07-28
+    _definition.update            2021-12-08
     _description.text
 ;
     The structure of values for the defined data item.
