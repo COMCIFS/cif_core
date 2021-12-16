@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2021-12-08
+    _dictionary.date              2021-12-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1505,12 +1505,12 @@ save_name.linked_item_id
 
     _definition.id                '_name.linked_item_id'
     _definition.class             Attribute
-    _definition.update            2021-08-18
+    _definition.update            2021-12-16
     _description.text
 ;
     Data name of an equivalent item which has a
     common set of values, or, in the definition of a type SU
-    item is the name of the associated Measurement item to
+    item is the name of the associated measurand item to
     which the standard uncertainty applies.
 ;
     _name.category_id             name
@@ -2580,7 +2580,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2021-12-08
+         4.1.0                    2021-12-16
 ;
        Added new 'Word' content type.
 
@@ -2594,4 +2594,6 @@ save_
        all the constraints that they inherit from the defining item.
 
        Improved wording of "Implied" value descriptors.
+
+       Updated the description of the _name.linked_item_id data item.
 ;
