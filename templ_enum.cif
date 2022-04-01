@@ -753,6 +753,7 @@ save_units_code
    'metres'       "length    'metres (metres * 10^(0))'"
    'centimetres'  "length    'centimetres (metres * 10^( -2))'"
    'millimetres'  "length    'millimetres (metres * 10^( -3))'"
+   'micrometres'  "length    'micrometres (metres * 10^( -6))'"
    'nanometres'   "length    'nanometres  (metres * 10^( -9))'"
    'angstroms'    "length    'angstroms   (metres * 10^(-10))'"
    'picometres'   "length    'picometres  (metres * 10^(-12))'"
@@ -838,7 +839,9 @@ save_units_code
 
    'arbitrary'    "arbitrary    'arbitrary system of units'"
 
-    'counts_per_photon' "measure of gain used in array detectors"
+   'counts_per_photon' "measure of gain used in array detectors"
+   'counts'            "counts from a detector"
+   'photons per second'  "photons registered in one second"
 
     save_
 
