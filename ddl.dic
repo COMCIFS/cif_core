@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2021-10-12
+    _dictionary.date              2021-12-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -429,14 +429,14 @@ save_description_example.case
 
     _definition.id                '_description_example.case'
     _definition.class             Attribute
-    _definition.update            2021-07-20
+    _definition.update            2021-11-15
     _description.text
 ;
-    An example case of the defined item or category.  Category example
-    cases present data names and values as they would appear in a
-    CIF-formatted file. Item example cases present values only, which
-    inherit the container, content and purpose type constraints of the
-    defining item.
+    An example case of the defined item or category. Category example cases
+    present data names and values as they would appear in a CIF-formatted file.
+    Item example cases present values only, which inherit the enumeration range,
+    enumeration set, container, dimension, content and purpose type constraints
+    of the defining item.
 ;
     _name.category_id             description_example
     _name.object_id               case
@@ -885,10 +885,13 @@ save_enumeration.default
 
     _definition.id                '_enumeration.default'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2021-11-15
     _description.text
 ;
     The default value for the defined item if it is not specified explicitly.
+    Value of this attribute inherits the enumeration range, enumeration set,
+    container, dimension, content and purpose type constraints of the defining
+    item.
 ;
     _name.category_id             enumeration
     _name.object_id               default
@@ -1186,11 +1189,13 @@ save_import_details.if_dupl
 
     _definition.id                '_import_details.if_dupl'
     _definition.class             Attribute
-    _definition.update            2015-05-06
+    _definition.update            2021-11-09
     _description.text
 ;
     Code identifying the action taken if the requested definition block
-    already exists within the importing dictionary.
+    already exists within the importing dictionary in "Full" mode, or
+    an attribute exists in both the importing definition block and the
+    requested definition block in "Contents" mode.
 ;
     _name.category_id             import_details
     _name.object_id               if_dupl
@@ -1202,9 +1207,31 @@ save_import_details.if_dupl
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Ignore                   'ignore imported definitions if id conflict'
-         Replace                  'replace existing with imported definitions'
-         Exit                     'issue error exception and exit'
+         Ignore
+;
+         Ignore imported definitions if block identifiers match in "Full" mode.
+         Ignore imported attributes that match attributes already in the
+         importing definition in "Contents" mode.
+
+         When importing in "Contents" mode, if the ignored attribute belongs to
+         a Loop category, all attributes from that category must be ignored to
+         avoid loop mismatches.
+;
+         Replace
+;
+         Replace existing definitions with imported definitions if block
+         identifiers match in "Full" mode.
+
+         When importing in "Contents" mode, contents of the two save frames
+         should be merged and any duplicate attributes replaced with those from
+         the imported save frame. In case the replaced attribute belongs to a
+         Loop category, all attributes from that category must first be removed
+         from the importing save frame to avoid loop mismatches.
+;
+         Exit
+;
+         Issue an error exception and exit.
+;
 
     _enumeration.default          Exit
 
@@ -1478,12 +1505,12 @@ save_name.linked_item_id
 
     _definition.id                '_name.linked_item_id'
     _definition.class             Attribute
-    _definition.update            2021-08-18
+    _definition.update            2021-12-16
     _description.text
 ;
     Data name of an equivalent item which has a
     common set of values, or, in the definition of a type SU
-    item is the name of the associated Measurement item to
+    item is the name of the associated measurand item to
     which the standard uncertainty applies.
 ;
     _name.category_id             name
@@ -1533,12 +1560,10 @@ save_type.container
 
     _definition.id                '_type.container'
     _definition.class             Attribute
-    _definition.update            2021-07-28
+    _definition.update            2021-12-08
     _description.text
 ;
-    The CONTAINER type of the defined data item value. 'Implied' may only
-    be used in the DDLm Reference Dictionary for attributes whose types are
-    linked to the values of other attributes.
+    The structure of values for the defined data item.
 ;
     _name.category_id             type
     _name.object_id               container
@@ -1577,7 +1602,8 @@ save_type.container
          Implied
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         Determined by the values of other attributes.
+         The value structure is taken from _type.container in the definition in
+         which the defined attribute appears.
 ;
 
     _enumeration.default          Single
@@ -1703,7 +1729,8 @@ save_type.contents
 ;
          Implied
 ;
-         implied by the context of the attribute
+         The contents are described by the _type.contents attribute in the
+         definition in which the defined attribute appears.
 ;
          ByReference
 ;
@@ -1869,16 +1896,16 @@ save_type.purpose
          Import
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         Used to type the SPECIAL attribute "_import.get" that is present
-         in dictionaries to instigate the importation of external dictionary
+         Used to type the SPECIAL attribute "_import.get" that is present in
+         dictionaries to instigate the importation of external dictionary
          definitions.
 ;
          Method
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         Used to type the attribute "_method.expression" that is present
-         in dictionary definitions to provide the text method expressing
-         the defined item in terms of other defined items.
+         Used to type the attribute "_method.expression" that is present in
+         dictionary definitions to provide the text method expressing the
+         defined item in terms of other defined items.
 ;
          Audit
 ;
@@ -2553,10 +2580,20 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2021-10-12
+         4.1.0                    2021-12-16
 ;
        Added new 'Word' content type.
 
        Removed _description.common from the list of attributes that
        are recommended in the 'Item' scope.
+
+       Clarified use of if_dupl replacement when importing.
+
+       Updated the descriptions of the _enumeration.default and
+       _description_example.case data items to explicitly list
+       all the constraints that they inherit from the defining item.
+
+       Improved wording of "Implied" value descriptors.
+
+       Updated the description of the _name.linked_item_id data item.
 ;

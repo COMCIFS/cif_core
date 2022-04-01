@@ -52,7 +52,7 @@ jobs:
         id: cache
         with:
                  path: ~/.julia
-                 key: ${{ runner.os }}-julia
+                 key: ${{ runner.os }}-julia-v2
                  
       - name: Install Julia
         uses: julia-actions/setup-julia@v1
