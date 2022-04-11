@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2021-10-20
+    _dictionary.date             2022-04-11
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -753,6 +753,7 @@ save_units_code
    'metres'       "length    'metres (metres * 10^(0))'"
    'centimetres'  "length    'centimetres (metres * 10^( -2))'"
    'millimetres'  "length    'millimetres (metres * 10^( -3))'"
+   'micrometres'  "length    'micrometres (metres * 10^( -6))'"
    'nanometres'   "length    'nanometres  (metres * 10^( -9))'"
    'angstroms'    "length    'angstroms   (metres * 10^(-10))'"
    'picometres'   "length    'picometres  (metres * 10^(-12))'"
@@ -838,7 +839,9 @@ save_units_code
 
    'arbitrary'    "arbitrary    'arbitrary system of units'"
 
-    'counts_per_photon' "measure of gain used in array detectors"
+   'counts_per_photon' "measure of gain used in array detectors"
+   'counts'            "counts from a detector"
+   'photons per second'  "photons registered in one second"
 
     save_
 
@@ -2355,7 +2358,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2021-10-20
+         1.4.8                    2022-04-11
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2374,4 +2377,7 @@ save_
 
        Changed a duplicate version number in the DICTIONARY_AUDIT loop
        from 1.0.1 to 1.1.0.
+
+       Added the 'micrometres', 'counts' and 'photons per second' enumeration
+       states to the 'units_code' save frame.
 ;
