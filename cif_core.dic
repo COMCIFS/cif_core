@@ -9,8 +9,8 @@ data_CORE_DIC
 
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
-    _dictionary.version           3.1.0
-    _dictionary.date              2021-12-01
+    _dictionary.version           3.2.0
+    _dictionary.date              2022-05-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -332,7 +332,7 @@ save_diffrn.crystal_id
     _name.category_id             diffrn
     _name.object_id               crystal_id
     _name.linked_item_id          '_exptl_crystal.id'
-    _type.purpose                 Encode
+    _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -25982,3 +25982,6 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
+         3.2.0                    2022-05-09
+;
+       Added data names to allow mult-data-block expression of data sets.
