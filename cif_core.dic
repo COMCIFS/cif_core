@@ -65,6 +65,7 @@ save_DIFFRN
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN
+    _category_key.name            '_diffrn.id'
 
 save_
 
@@ -319,6 +320,25 @@ save_diffrn.ambient_temperature_lt
 
 save_
 
+save_diffrn.crystal_id
+
+    _definition.id                '_diffrn.crystal_id'
+    _definition.update            2022-05-09
+    _description.text
+;
+    Identifier for the crystal from which diffraction data were
+    collected. This is a pointer to _exptl_crystal.id.
+;
+    _name.category_id             diffrn
+    _name.object_id               crystal_id
+    _name.linked_item_id          '_exptl_crystal.id'
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_diffrn.crystal_support
 
     _definition.id                '_diffrn.crystal_support'
@@ -366,6 +386,24 @@ save_diffrn.crystal_treatment
          'equilibrated in hutch for 24 hours'
          'flash frozen in liquid nitrogen'
          'slow cooled with direct air stream'
+
+save_
+
+save_diffrn.id
+
+    _definition.id                '_diffrn.id'
+    _definition.update            2022-05-09
+    _description.text
+;
+    Unique identifier for a diffraction data set collected under
+    particular diffraction conditions.
+;
+    _name.category_id             diffrn
+    _name.object_id               id
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
