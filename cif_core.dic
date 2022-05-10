@@ -400,7 +400,7 @@ save_diffrn.id
 ;
     _name.category_id             diffrn
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -9713,6 +9713,7 @@ save_EXPTL_CRYSTAL
 ;
     _name.category_id             EXPTL
     _name.object_id               EXPTL_CRYSTAL
+    _category_key.name            '_exptl_crystal.id'
 
 save_
 
@@ -10060,7 +10061,7 @@ save_exptl_crystal.id
 ;
     _name.category_id             exptl_crystal
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
