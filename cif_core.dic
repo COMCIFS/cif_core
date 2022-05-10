@@ -58,7 +58,7 @@ save_DIFFRN
     _definition.id                DIFFRN
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-12-13
+    _definition.update            2022-05-09
     _description.text
 ;
     The CATEGORY of data items used to describe the diffraction experiment.
@@ -9705,7 +9705,7 @@ save_EXPTL_CRYSTAL
     _definition.id                EXPTL_CRYSTAL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2016-09-13
+    _definition.update            2022-05-09
     _description.text
 ;
     The CATEGORY of data items used to specify information about
@@ -10054,7 +10054,7 @@ save_exptl_crystal.id
 
     _definition.id                '_exptl_crystal.id'
     _alias.definition_id          '_exptl_crystal_id'
-    _definition.update            2021-10-27
+    _definition.update            2022-05-09
     _description.text
 ;
     Code identifying a crystal.
@@ -25985,5 +25985,5 @@ save_
 ;
          3.2.0                    2022-05-09
 ;
-       Added data names to allow mult-data-block expression of data sets.
+       Added data names to allow multi-data-block expression of data sets.
 ;
