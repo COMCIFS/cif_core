@@ -26062,7 +26062,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-05-09
+         3.2.0                    2022-05-25
 ;
        Added data names to allow multi-data-block expression of data sets.
 
