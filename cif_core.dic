@@ -1611,9 +1611,9 @@ save_
 save_diffrn_radiation.type
 
     _definition.id                '_diffrn_radiation.type'
-    _alias.definition_id          '_diffrn_radiation_type'
     _definition_replaced.id       1
     _definition_replaced.by       '_diffrn_radiation_wavelength.type'
+    _alias.definition_id          '_diffrn_radiation_type'
     _definition.update            2022-10-04
     _description.text
 ;
@@ -1640,10 +1640,9 @@ save_
 save_diffrn_radiation.xray_symbol
 
     _definition.id                '_diffrn_radiation.xray_symbol'
-    _alias.definition_id          '_diffrn_radiation_xray_symbol'
     _definition_replaced.id       1
     _definition_replaced.by       '_diffrn_radiation_wavelength.xray_symbol'
-
+    _alias.definition_id          '_diffrn_radiation_xray_symbol'
     _definition.update            2022-10-04
     _description.text
 ;
@@ -1769,6 +1768,31 @@ save_diffrn_radiation_wavelength.id
 
 save_
 
+save_diffrn_radiation_wavelength.type
+
+    _definition.id                '_diffrn_radiation_wavelength.type'
+    _definition.update            2022-10-04
+    _description.text
+;
+    Details of the radiation source or energy spectrum.
+;
+    _name.category_id             diffrn_radiation_wavelength
+    _name.object_id               type
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'Mo K\a'
+         'Cu K\a'
+         'Cu K\a~1~'
+         'Cu K-L~2,3~'
+         'white-beam'
+
+save_
+
 save_diffrn_radiation_wavelength.value
 
     _definition.id                '_diffrn_radiation_wavelength.value'
@@ -1817,31 +1841,6 @@ save_diffrn_radiation_wavelength.value_su
     _type.container               Single
     _type.contents                Real
     _units.code                   angstroms
-
-save_
-
-save_diffrn_radiation_wavelength.type
-
-    _definition.id                '_diffrn_radiation_wavelength.type'
-    _definition.update            2022-10-04
-    _description.text
-;
-    Details of the radiation source or energy spectrum.
-;
-    _name.category_id             diffrn_radiation_wavelength
-    _name.object_id               type
-    _type.purpose                 Describe
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-
-    loop_
-      _description_example.case
-         'Mo K\a'
-         'Cu K\a'
-         'Cu K\a~1~'
-         'Cu K-L~2,3~'
-         'white-beam'
 
 save_
 
@@ -26044,6 +26043,6 @@ save_
 ;
        Added data names to allow multi-data-block expression of data sets.
 
-       Deprecated and replaced _diffrn_radiation.type and 
+       Deprecated and replaced _diffrn_radiation.type and
        _diffrn_radiation.xray_symbol.
 ;
