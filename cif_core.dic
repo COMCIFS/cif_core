@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-05-09
+    _dictionary.date              2022-10-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1613,7 +1613,7 @@ save_diffrn_radiation.type
     _definition.id                '_diffrn_radiation.type'
     _alias.definition_id          '_diffrn_radiation_type'
     _definition_replaced.id       1
-    _definition_replaced.by       '_diffn_radiation_wavelength.type'
+    _definition_replaced.by       '_diffrn_radiation_wavelength.type'
     _definition.update            2022-10-04
     _description.text
 ;
@@ -1642,7 +1642,7 @@ save_diffrn_radiation.xray_symbol
     _definition.id                '_diffrn_radiation.xray_symbol'
     _alias.definition_id          '_diffrn_radiation_xray_symbol'
     _definition_replaced.id       1
-    _definition_replaced.by       '_diffn_radiation_wavelength.xray_symbol'
+    _definition_replaced.by       '_diffrn_radiation_wavelength.xray_symbol'
 
     _definition.update            2022-10-04
     _description.text
@@ -26040,7 +26040,10 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-05-09
+         3.2.0                    2022-10-04
 ;
        Added data names to allow multi-data-block expression of data sets.
+
+       Deprecated and replaced _diffrn_radiation.type and 
+       _diffrn_radiation.xray_symbol.
 ;
