@@ -781,7 +781,7 @@ save_units_code
    'picometre_squared'    
    "length_squared 'picometres squared (metres * 10^(-12))^2'"
    'femtometre_squared'    
-   "length_squared 'femtometres squared (metres * 10^(-12))^2'"
+   "length_squared 'femtometres squared (metres * 10^(-15))^2'"
 
    'nanometre_cubed'       
    "length_cubed 'nanometres cubed (metres * 10^( -9))^3'"
@@ -2389,4 +2389,7 @@ save_
        states to the 'units_code' save frame.
 
        Added units for TOF coefficients.
+
+       Corrected the description of the 'femtometre_squared' enumeration state
+       in the 'units_code' save frame.
 ;
