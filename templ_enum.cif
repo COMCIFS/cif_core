@@ -846,6 +846,10 @@ save_units_code
    'counts'            "counts from a detector"
    'photons per second'  "photons registered in one second"
 
+   'microseconds_per_angstrom' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-1))'"
+   'microseconds_per_angstrom_squared' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-2))'"
+   'microseconds_per_angstrom_cubed' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-3))'"
+   'angstroms_per_microsecond'       "TOF coefficient '(metres * 10^(-10)) * (seconds * 10^(-6)^(-1))'"
     save_
 
 
@@ -2383,6 +2387,8 @@ save_
 
        Added the 'micrometres', 'counts' and 'photons per second' enumeration
        states to the 'units_code' save frame.
+
+       Added units for TOF coefficients.
 
        Corrected the description of the 'femtometre_squared' enumeration state
        in the 'units_code' save frame.
