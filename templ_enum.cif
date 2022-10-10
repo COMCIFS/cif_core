@@ -846,6 +846,10 @@ save_units_code
    'counts'            "counts from a detector"
    'photons per second'  "photons registered in one second"
 
+   'microseconds_per_angstrom' "seconds * 10^(-6)/metres * 10^(-10)"
+   'microseconds_per_angstrom_squared' "(seconds * 10^(-6)/(metres * 10^(-10))^2"
+   'microseconds_per_angstrom_cubed' "(seconds * 10^(-6)/(metres * 10^(-10))^3"
+   'angstroms_per_microsecond'       "metres * 10^(-10)/seconds * 10^(-6)"
     save_
 
 
