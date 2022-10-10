@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2022-04-11
+    _dictionary.date             2022-10-11
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -781,7 +781,7 @@ save_units_code
    'picometre_squared'    
    "length_squared 'picometres squared (metres * 10^(-12))^2'"
    'femtometre_squared'    
-   "length_squared 'femtometres squared (metres * 10^(-12))^2'"
+   "length_squared 'femtometres squared (metres * 10^(-15))^2'"
 
    'nanometre_cubed'       
    "length_cubed 'nanometres cubed (metres * 10^( -9))^3'"
@@ -2361,7 +2361,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2022-04-11
+         1.4.8                    2022-10-11
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2383,4 +2383,7 @@ save_
 
        Added the 'micrometres', 'counts' and 'photons per second' enumeration
        states to the 'units_code' save frame.
+
+       Corrected the description of the 'femtometre_squared' enumeration state
+       in the 'units_code' save frame.
 ;
