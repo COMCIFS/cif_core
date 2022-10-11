@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-05-09
+    _dictionary.date              2022-10-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1611,11 +1611,14 @@ save_
 save_diffrn_radiation.type
 
     _definition.id                '_diffrn_radiation.type'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn_radiation_wavelength.type'
     _alias.definition_id          '_diffrn_radiation_type'
-    _definition.update            2013-03-23
+    _definition.update            2022-10-04
     _description.text
 ;
-    Details of the radiation source or energy spectrum.
+    DEPRECATED. Use _diffrn_radiation_wavelength.type. Details of the
+    radiation source or energy spectrum.
 ;
     _name.category_id             diffrn_radiation
     _name.object_id               type
@@ -1637,11 +1640,14 @@ save_
 save_diffrn_radiation.xray_symbol
 
     _definition.id                '_diffrn_radiation.xray_symbol'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn_radiation_wavelength.xray_symbol'
     _alias.definition_id          '_diffrn_radiation_xray_symbol'
-    _definition.update            2012-11-26
+    _definition.update            2022-10-04
     _description.text
 ;
-    IUPAC symbol for the X-ray wavelength for probe radiation.
+    DEPRECATED. Use _diffrn_radiation_wavelength.xray_symbol. IUPAC
+    symbol for the X-ray wavelength for probe radiation.
 ;
     _name.category_id             diffrn_radiation
     _name.object_id               xray_symbol
@@ -1762,6 +1768,31 @@ save_diffrn_radiation_wavelength.id
 
 save_
 
+save_diffrn_radiation_wavelength.type
+
+    _definition.id                '_diffrn_radiation_wavelength.type'
+    _definition.update            2022-10-04
+    _description.text
+;
+    Details of the radiation source or energy spectrum.
+;
+    _name.category_id             diffrn_radiation_wavelength
+    _name.object_id               type
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'Mo K\a'
+         'Cu K\a'
+         'Cu K\a~1~'
+         'Cu K-L~2,3~'
+         'white-beam'
+
+save_
+
 save_diffrn_radiation_wavelength.value
 
     _definition.id                '_diffrn_radiation_wavelength.value'
@@ -1830,6 +1861,31 @@ save_diffrn_radiation_wavelength.wt
     _type.contents                Real
     _enumeration.range            0.0:1.0
     _units.code                   none
+
+save_
+
+save_diffrn_radiation_wavelength.xray_symbol
+
+    _definition.id                '_diffrn_radiation_wavelength.xray_symbol'
+    _definition.update            2022-10-04
+    _description.text
+;
+    IUPAC symbol for the X-ray wavelength for probe radiation.
+;
+    _name.category_id             diffrn_radiation_wavelength
+    _name.object_id               xray_symbol
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         K-L~3~                  'K\a~1~ in older Siegbahn notation'
+         K-L~2~                  'K\a~2~ in older Siegbahn notation'
+         K-M~3~                  'K\b~1~ in older Siegbahn notation'
+         K-L~2,3~                'use where K-L~3~ and K-L~2~ are not resolved'
 
 save_
 
@@ -25983,7 +26039,10 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-05-09
+         3.2.0                    2022-10-04
 ;
        Added data names to allow multi-data-block expression of data sets.
+
+       Deprecated and replaced _diffrn_radiation.type and
+       _diffrn_radiation.xray_symbol.
 ;
