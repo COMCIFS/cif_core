@@ -822,11 +822,11 @@ save_units_code
    'electron_squared'  "electrons-squared    'electrons squared'"
 
    'electrons_per_nanometre_cubed'    
-   "electron-density 'electrons per nanometres cubed (metres * 10^( -9))^3'"
+   "electron-density 'electrons per nanometres cubed (electrons * (metres * 10^( -9))^-3)'"
    'electrons_per_angstrom_cubed'     
-   "electron-density 'electrons per angstroms  cubed (metres * 10^(-10))^3'"
+   "electron-density 'electrons per angstroms  cubed (electrons * (metres * 10^(-10))^-3)'"
    'electrons_per_picometre_cubed'     
-   "electron-density 'electrons per picometres cubed (metres * 10^(-12))^3'"
+   "electron-density 'electrons per picometres cubed (electrons * (metres * 10^(-12))^-3)'"
 
    'dalton'      "standard atomic mass unit"
  
@@ -2390,6 +2390,7 @@ save_
 
        Added units for TOF coefficients.
 
-       Corrected the description of the 'femtometre_squared' enumeration state
-       in the 'units_code' save frame.
+       Corrected the descriptions of the 'electrons_per_nanometre_cubed',
+       'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
+       'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
