@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-10-04
+    _dictionary.date              2022-11-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -19286,6 +19286,206 @@ save_ATOM
 
 save_
 
+save_ATOM_ANALYTICAL
+
+    _definition.id                ATOM_ANALYTICAL
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2022-11-19
+    _description.text
+;
+    The CATEGORY of data items used to describe elemental
+    composition information used in crystallographic
+    structure studies.
+;
+    _name.category_id             ATOM
+    _name.object_id               ATOM_ANALYTICAL
+    _category_key.name            '_atom_analytical.id'
+
+save_
+
+save_atom_analytical.id
+
+    _definition.id                '_atom_analytical.id'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Arbitrary label uniquely identifying a single elemental composition value.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
+save_atom_analytical.meas_id
+
+    _definition.id                '_atom_analytical.meas_id'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Arbitrary label identifying the source of an elemental composition.
+    This code must match the _atom_analytical_source.id of the associated
+    technique in the analytical source list.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               meas_id
+    _name.linked_item_id          '_atom_analytical_source.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
+save_ATOM_ANALYTICAL_SOURCE
+
+    _definition.id                ATOM_ANALYTICAL_SOURCE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2022-11-19
+    _description.text
+;
+    The CATEGORY of data items used to describe the source
+    of elemental composition information used in crystallographic
+    structure studies.
+;
+    _name.category_id             ATOM_ANALYTICAL
+    _name.object_id               ATOM_ANALYTICAL_SOURCE
+    _category_key.name            '_atom_analytical_source.id'
+
+save_
+
+save_atom_analytical_source.equipment_manufacturer
+
+    _definition.id                '_atom_analytical_source.equipment_manufacturer'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Text describing the manufacturer of the equipment used
+    to determine the elemental composition.
+;
+    _name.category_id             atom_analytical_source
+    _name.object_id               equipment_manufacturer
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      "Bruker"
+      "ELEMISSION"
+      "Thermo Fisher Scientific"
+
+save_
+
+save_atom_analytical_source.equipment_model
+
+    _definition.id                '_atom_analytical_source.equipment_model'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Text describing the model of the equipment used
+    to determine the elemental composition.
+;
+    _name.category_id             atom_analytical_source
+    _name.object_id               equipment_model
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      "S2 Puma"
+      "COBRA"
+      "CAP PRO XPS ICP-OES"
+
+save_
+
+save_atom_analytical_source.id
+
+    _definition.id                '_atom_analytical_source.id'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Arbitrary label uniquely identifying the source of an elemental
+    composition value. This value is used by _atom_analytical.meas_id
+    to link individual composition values to their corresponding
+    technique of determination.
+;
+    _name.category_id             atom_analytical_source
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
+save_atom_analytical_source.special_details
+
+    _definition.id                '_atom_analytical_source.special_details'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Text describing the equipment or conditions under which the
+    data were collected that are not able to be captured using
+    _atom_analytical_source.equipment_manufacturer,
+    _atom_analytical_source.equipment_model, or
+    _atom_analytical_source.technique.
+;
+    _name.category_id             atom_analytical_source
+    _name.object_id               special_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_atom_analytical_source.technique
+
+    _definition.id                '_atom_analytical_source.technique'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Text describing the experimental technique used to find
+    the elemental composition.
+;
+    _name.category_id             atom_analytical_source
+    _name.object_id               technique
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+;
+       XRF
+;
+;
+       LIBS
+;
+;
+       Inductively-coupled plasma
+       optical emission spectrometry
+;
+
+save_
+
 save_ATOM_SITE
 
     _definition.id                ATOM_SITE
@@ -26039,10 +26239,13 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-10-04
+         3.2.0                    2022-11-19
 ;
        Added data names to allow multi-data-block expression of data sets.
 
        Deprecated and replaced _diffrn_radiation.type and
        _diffrn_radiation.xray_symbol.
+
+       Added categories and data names to allow for the elemental composition
+       of speciments to be recorded
 ;
