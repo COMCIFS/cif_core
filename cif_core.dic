@@ -19363,7 +19363,8 @@ save_
 
 save_atom_analytical_source.equipment_manufacturer
 
-    _definition.id                '_atom_analytical_source.equipment_manufacturer'
+    _definition.id
+        '_atom_analytical_source.equipment_manufacturer'
     _definition.update            2022-11-18
     _description.text
 
@@ -19380,9 +19381,9 @@ save_atom_analytical_source.equipment_manufacturer
 
     loop_
       _description_example.case
-      "Bruker"
-      "ELEMISSION"
-      "Thermo Fisher Scientific"
+         'Bruker'
+         'ELEMISSION'
+         'Thermo Fisher Scientific'
 
 save_
 
@@ -19405,9 +19406,9 @@ save_atom_analytical_source.equipment_model
 
     loop_
       _description_example.case
-      "S2 Puma"
-      "COBRA"
-      "CAP PRO XPS ICP-OES"
+         'S2 Puma'
+         'COBRA'
+         'CAP PRO XPS ICP-OES'
 
 save_
 
