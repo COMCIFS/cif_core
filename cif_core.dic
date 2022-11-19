@@ -19302,6 +19302,93 @@ save_ATOM_ANALYTICAL
     _name.object_id               ATOM_ANALYTICAL
     _category_key.name            '_atom_analytical.id'
 
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         loop_
+         _atom_analytical.analyte
+         _atom_analytical.meas_id
+         _atom_analytical.chemical_species
+         _atom_analytical.analyte_mass_percent
+         _atom_analytical.chemical_species_mass_percent
+         Si  a 'Si O2'   ?     22.7
+         Al  a 'Al2 O3'  ?     27.4
+         Ti  b 'Ti O2'   ?      2.7
+         Si  c .         10.5  .
+         Si  d Si        11.7  11.7
+;
+;
+         There are three separate determinations of Si content, and one each of Al and Ti.
+         The amount of Al is reported as the mass percent of Al2O3. The equivalent
+         amount of Al is not given. There are four different measurements presented in
+         this table.
+;
+
+save_
+
+save_atom_analytical.analyte
+
+    _definition.id                '_atom_analytical.analyte'
+    _definition.update            2022-11-19
+    _description.text
+;
+    Symbol of the element for which a particular composition
+    refers to, as given by _atom_analytical.analyte_mass_percent.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               analyte
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+    _import.get
+        [{'file':templ_enum.cif  'save':element_symbol}]
+
+save_
+
+save_atom_analytical.analyte_mass_percent
+
+    _definition.id                '_atom_analytical.analyte_mass_percent'
+    _definition.update            2022-11-19
+    _description.text
+;
+    Mass percentage of the analyte element derived from elemental analysis.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               analyte_mass_percent
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:100.
+    _units.code                   none
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _atom_analytical.analyte_mass_percent = dREL to calculate wt% from:
+                                            _atom_analytical.chemical_species and
+                                            _atom_analytical.chemical_species_mass_percent
+;
+
+save_
+
+save_atom_analytical.analyte_mass_percent_su
+
+    _definition.id                '_atom_analytical.analyte_mass_percent_su'
+    _definition.update            2022-11-19
+    _description.text
+;
+    Standard uncertainty of _atom_analytical.analyte_mass_percent.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               analyte_mass_percent_su
+    _name.linked_item_id          '_atom_analytical.analyte_mass_percent'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
 save_
 
 save_atom_analytical.id
@@ -19311,7 +19398,7 @@ save_atom_analytical.id
     _description.text
 
 ;
-    Arbitrary label uniquely identifying a single elemental composition value.
+    Arbitrary label uniquely identifying a single composition value.
 ;
     _name.category_id             atom_analytical
     _name.object_id               id
@@ -19319,6 +19406,97 @@ save_atom_analytical.id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
+save_
+
+save_atom_analytical.chemical_species
+
+    _definition.id                '_atom_analytical.chemical_species'
+    _definition.update            2022-11-19
+    _description.text
+;
+    Chemical formula of the species for which the corresponding
+    _atom_analytical.chemical_species_mass_percent refers.
+
+    The following rules apply in the construction of the formula:
+
+    1. Only recognized element symbols may be used.
+
+    2. The first element corresponds to the analyte. The remaining
+       elements should be given in alphabetic order by symbol.
+
+    3. Each element symbol is followed by a 'count' number. A count of
+       '1' may be omitted.
+
+    4. A space or parenthesis must separate each cluster of (element
+       symbol + count). A formula cannot begin with a paranthesis.
+
+    5. Where a group of elements is enclosed in parentheses, the
+       multiplier for the group must follow the closing parentheses.
+       That is, all element and group multipliers are assumed to be
+       printed as subscripted numbers.
+
+;
+    _name.category_id             atom_analytical
+    _name.object_id               chemical_species
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _atom_analytical.analyte = dREL to extract analyte symbol
+;
+
+    loop_
+      _description_example.case
+         'Fe2 O3'
+         'Li'
+         'Si O2'
+
+save_
+
+save_atom_analytical.chemical_species_mass_percent
+
+    _definition.id                '_atom_analytical.chemical_species_mass_percent'
+    _definition.update            2022-11-19
+    _description.text
+;
+    Mass percentage of the chemical species given in
+    _atom_analytical.chemical_species as derived from elemental analysis.
+
+    This is most often used in elemental compositions determined by XRF, where
+    elements are reported as equivalent mass percentages of their relevant oxide.
+
+    eg: Al is reported as Al2O3, P is reported as P2O5.
+
+;
+    _name.category_id             atom_analytical
+    _name.object_id               chemical_species_mass_percent
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:100.
+    _units.code                   none
+
+save_
+
+save_atom_analytical.chemical_species_mass_percent_su
+
+    _definition.id                '_atom_analytical.chemical_species_mass_percent_su'
+    _definition.update            2022-11-19
+    _description.text
+;
+    Standard uncertainty of _atom_analytical.chemical_species_mass_percent.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               chemical_species_mass_percent_su
+    _name.linked_item_id          '_atom_analytical.chemical_species_mass_percent'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -19358,6 +19536,24 @@ save_ATOM_ANALYTICAL_SOURCE
     _name.category_id             ATOM_ANALYTICAL
     _name.object_id               ATOM_ANALYTICAL_SOURCE
     _category_key.name            '_atom_analytical_source.id'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         loop_
+         _atom_analytical_source.id
+         _atom_analytical_source.technique
+         _atom_analytical_source.equipment_manufacturer
+         _atom_analytical_source.equipment_model
+         a  XRF Hitachi Lab-X5000
+         b  'X-ray fluorescence WDS' Hitachi Lab-X5000
+         c  ICP . .
+         d  EDS . .
+;
+;
+         Four different measurements of elemental composition are enumerated.
+;
 
 save_
 
