@@ -19391,24 +19391,6 @@ save_atom_analytical.analyte_mass_percent_su
 
 save_
 
-save_atom_analytical.id
-
-    _definition.id                '_atom_analytical.id'
-    _definition.update            2022-11-18
-    _description.text
-
-;
-    Arbitrary label uniquely identifying a single composition value.
-;
-    _name.category_id             atom_analytical
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Code
-
-save_
-
 save_atom_analytical.chemical_species
 
     _definition.id                '_atom_analytical.chemical_species'
@@ -19497,6 +19479,24 @@ save_atom_analytical.chemical_species_mass_percent_su
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_atom_analytical.id
+
+    _definition.id                '_atom_analytical.id'
+    _definition.update            2022-11-18
+    _description.text
+
+;
+    Arbitrary label uniquely identifying a single composition value.
+;
+    _name.category_id             atom_analytical
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
 
 save_
 
