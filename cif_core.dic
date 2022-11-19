@@ -19441,7 +19441,7 @@ save_
 save_atom_analytical.chemical_species_mass_percent
 
     _definition.id
-         '_atom_analytical.chemical_species_mass_percent'
+        '_atom_analytical.chemical_species_mass_percent'
     _definition.update            2022-11-19
     _description.text
 ;
@@ -19469,7 +19469,7 @@ save_
 save_atom_analytical.chemical_species_mass_percent_su
 
     _definition.id
-         '_atom_analytical.chemical_species_mass_percent_su'
+        '_atom_analytical.chemical_species_mass_percent_su'
     _definition.update            2022-11-19
     _description.text
 ;
@@ -19478,7 +19478,7 @@ save_atom_analytical.chemical_species_mass_percent_su
     _name.category_id             atom_analytical
     _name.object_id               chemical_species_mass_percent_su
     _name.linked_item_id
-         '_atom_analytical.chemical_species_mass_percent'
+        '_atom_analytical.chemical_species_mass_percent'
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
