@@ -19301,10 +19301,7 @@ save_ATOM_ANALYTICAL
     _name.category_id             ATOM
     _name.object_id               ATOM_ANALYTICAL
     _category_key.name            '_atom_analytical.id'
-
-    loop_
-      _description_example.case
-      _description_example.detail
+    _description_example.case
 ;
          loop_
          _atom_analytical.analyte
@@ -19318,11 +19315,12 @@ save_ATOM_ANALYTICAL
          Si  c .         10.5  .
          Si  d Si        11.7  11.7
 ;
+    _description_example.detail
 ;
-         There are three separate determinations of Si content, and one each of Al and Ti.
-         The amount of Al is reported as the mass percent of Al2O3. The equivalent
-         amount of Al is not given. There are four different measurements presented in
-         this table.
+         There are three separate determinations of Si content, and one each
+         of Al and Ti. The amount of Al is reported as the mass percent of
+         Al2O3. The equivalent amount of Al is not given. There are four
+         different measurements presented in this table.
 ;
 
 save_
@@ -19368,8 +19366,8 @@ save_atom_analytical.analyte_mass_percent
     _method.expression
 ;
     _atom_analytical.analyte_mass_percent = dREL to calculate wt% from:
-                                            _atom_analytical.chemical_species and
-                                            _atom_analytical.chemical_species_mass_percent
+                                         _atom_analytical.chemical_species and
+                                _atom_analytical.chemical_species_mass_percent
 ;
 
 save_
@@ -19425,11 +19423,6 @@ save_atom_analytical.chemical_species
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Text
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _atom_analytical.analyte = dREL to extract analyte symbol
-;
 
     loop_
       _description_example.case
@@ -19437,19 +19430,27 @@ save_atom_analytical.chemical_species
          'Li'
          'Si O2'
 
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _atom_analytical.analyte = dREL to extract analyte symbol
+;
+
 save_
 
 save_atom_analytical.chemical_species_mass_percent
 
-    _definition.id                '_atom_analytical.chemical_species_mass_percent'
+    _definition.id
+         '_atom_analytical.chemical_species_mass_percent'
     _definition.update            2022-11-19
     _description.text
 ;
     Mass percentage of the chemical species given in
     _atom_analytical.chemical_species as derived from elemental analysis.
 
-    This is most often used in elemental compositions determined by XRF, where
-    elements are reported as equivalent mass percentages of their relevant oxide.
+    This is most often used in elemental compositions determined by XRF,
+    where elements are reported as equivalent mass percentages of their
+    relevant oxide.
 
     eg: Al is reported as Al2O3, P is reported as P2O5.
 
@@ -19467,7 +19468,8 @@ save_
 
 save_atom_analytical.chemical_species_mass_percent_su
 
-    _definition.id                '_atom_analytical.chemical_species_mass_percent_su'
+    _definition.id
+         '_atom_analytical.chemical_species_mass_percent_su'
     _definition.update            2022-11-19
     _description.text
 ;
@@ -19475,7 +19477,8 @@ save_atom_analytical.chemical_species_mass_percent_su
 ;
     _name.category_id             atom_analytical
     _name.object_id               chemical_species_mass_percent_su
-    _name.linked_item_id          '_atom_analytical.chemical_species_mass_percent'
+    _name.linked_item_id
+         '_atom_analytical.chemical_species_mass_percent'
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
@@ -19536,10 +19539,7 @@ save_ATOM_ANALYTICAL_SOURCE
     _name.category_id             ATOM_ANALYTICAL
     _name.object_id               ATOM_ANALYTICAL_SOURCE
     _category_key.name            '_atom_analytical_source.id'
-
-    loop_
-      _description_example.case
-      _description_example.detail
+    _description_example.case
 ;
          loop_
          _atom_analytical_source.id
@@ -19551,6 +19551,7 @@ save_ATOM_ANALYTICAL_SOURCE
          c  ICP . .
          d  EDS . .
 ;
+    _description_example.detail
 ;
          Four different measurements of elemental composition are enumerated.
 ;
