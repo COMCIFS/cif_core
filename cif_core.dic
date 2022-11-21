@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-11-19
+    _dictionary.date              2022-11-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -26626,7 +26626,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-11-19
+         3.2.0                    2022-11-21
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26634,5 +26634,5 @@ save_
        _diffrn_radiation.xray_symbol.
 
        Added categories and data names to allow for the elemental composition
-       of speciments to be recorded
+       of specimens to be recorded
 ;
