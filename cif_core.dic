@@ -19304,16 +19304,17 @@ save_ATOM_ANALYTICAL
     _description_example.case
 ;
          loop_
+         _atom_analytical.id
          _atom_analytical.analyte
          _atom_analytical.meas_id
          _atom_analytical.chemical_species
          _atom_analytical.analyte_mass_percent
          _atom_analytical.chemical_species_mass_percent
-         Si  a 'Si O2'   ?     22.7
-         Al  a 'Al2 O3'  ?     27.4
-         Ti  b 'Ti O2'   ?      2.7
-         Si  c .         10.5  .
-         Si  d Si        11.7  11.7
+         1 Si  a 'Si O2'   ?     22.7
+         2 Al  a 'Al2 O3'  ?     27.4
+         3 Ti  b 'Ti O2'   ?      2.7
+         4 Si  c .         10.5  .
+         5 Si  d Si        11.7  11.7
 ;
     _description_example.detail
 ;
@@ -19547,7 +19548,7 @@ save_ATOM_ANALYTICAL_SOURCE
          _atom_analytical_source.equipment_manufacturer
          _atom_analytical_source.equipment_model
          a  XRF Hitachi Lab-X5000
-         b  'X-ray fluorescence WDS' Hitachi Lab-X5000
+         b  'X-ray fluorescence EDS' Hitachi Lab-X5000
          c  ICP . .
          d  EDS . .
 ;
