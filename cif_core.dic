@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-10-04
+    _dictionary.date              2022-11-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -9753,6 +9753,44 @@ save_exptl_absorpt.process_details
          'Tompa analytical'
          'MolEN (Fair, 1990)'
          '(North, Phillips & Mathews, 1968)'
+
+save_
+
+save_exptl_absorpt.special_details
+
+    _definition.id                '_exptl_absorpt.special_details'
+
+    loop_
+      _alias.definition_id
+         '_exptl_absorpt_special_details'
+         '_exptl.absorpt_special_details'
+
+    _definition.update            2022-11-22
+    _description.text
+;
+    Details of the absorption correction process applied to the
+    measured intensities that cannot otherwise be given by other
+    _exptl_absorpt.* data names.
+;
+    _name.category_id             exptl_absorpt
+    _name.object_id               special_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+;
+    X-ray beam inhomogeneity and goniometer imperfection account, by and large,
+    for much of the difference between estimated values of Tmin and Tmax and
+    the _exptl_absorpt_correction_ values.
+;
+;
+    X-ray linear absorption coefficient is wavelength dependent. The value of
+    0.420 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the sample
+    absorption coefficient for a wavelength of 1.5 \%A.
+;
 
 save_
 
@@ -26039,10 +26077,12 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-10-04
+         3.2.0                    2022-11-22
 ;
        Added data names to allow multi-data-block expression of data sets.
 
        Deprecated and replaced _diffrn_radiation.type and
        _diffrn_radiation.xray_symbol.
+
+       Added the _exptl_absorpt.special_details data item
 ;
