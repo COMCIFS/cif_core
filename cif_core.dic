@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-10-04
+    _dictionary.date              2022-11-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -26204,10 +26204,12 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-10-04
+         3.2.0                    2022-11-22
 ;
        Added data names to allow multi-data-block expression of data sets.
 
        Deprecated and replaced _diffrn_radiation.type and
        _diffrn_radiation.xray_symbol.
+
+       Added _diffrn_refln.intensity* data names
 ;
