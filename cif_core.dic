@@ -2460,12 +2460,11 @@ save_diffrn_refln.intensity_total
 ;
     _name.category_id             diffrn_refln
     _name.object_id               intensity_total
-    _type.purpose                 Number
+    _type.purpose                 Measurand
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            0:
-    _units.code                   counts
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
