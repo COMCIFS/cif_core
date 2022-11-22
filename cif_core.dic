@@ -19638,7 +19638,8 @@ save_atom_analytical_extra.mass_loss_percent
 ;
     Mass lost by the specimen during specimen preparation expressed
     as a percentage. The temperature at which the mass loss was recorded
-    is given by _atom_analytical_extra.analysis_temperature.
+    is given by _atom_analytical_extra.analysis_temperature. A mass gain
+    can be represented as a negative value.
 
     This would be used to record mass loss on drying, or mass loss on
     ignitition, during, for example, fusion bead preparation for XRF
@@ -19650,7 +19651,6 @@ save_atom_analytical_extra.mass_loss_percent
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:100.
     _units.code                   none
 
 save_
