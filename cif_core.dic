@@ -9782,14 +9782,14 @@ save_exptl_absorpt.special_details
     loop_
       _description_example.case
 ;
-      X-ray beam inhomogeneity and goniometer imperfection account, by and large,
-      for much of the difference between estimated values of Tmin and Tmax and
-      the _exptl_absorpt_correction_ values.
+       X-ray beam inhomogeneity and goniometer imperfection account, by and
+       large, for much of the difference between estimated values of Tmin and
+       Tmax and the _exptl_absorpt_correction_ values.
 ;
 ;
-      X-ray linear absorption coefficient is wavelength dependent. The value of
-      0.420 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the sample
-      absorption coefficient for a wavelength of 1.5 \%A.
+       X-ray linear absorption coefficient is wavelength dependent. The value
+       of 0.420 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the sample
+       absorption coefficient for a wavelength of 1.5 \%A.
 ;
 
 save_
