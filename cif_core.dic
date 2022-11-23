@@ -2017,7 +2017,8 @@ save_diffrn_refln.counts_bg_1
     _definition.update            2022-11-22
     _description.text
 ;
-    Background scattering 1 for the reflection.
+    The measured background scattering on one side of a diffraction
+    peak when measuring using a point detector.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2044,7 +2045,9 @@ save_diffrn_refln.counts_bg_2
     _definition.update            2022-11-22
     _description.text
 ;
-    Background scattering 2 for the reflection.
+    The measured background counts on the other side of the
+    peak to the measurement of `_diffrn_refln.counts_bg_1`
+    when measuring using a point detector.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2071,9 +2074,7 @@ save_diffrn_refln.counts_net
     _definition.update            2022-11-22
     _description.text
 ;
-    Counts measured in the reflection. Scattering from the
-    background, specimen mounting, and container scattering
-    has been removed.
+    Counts measured in the reflection with background removed.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2100,9 +2101,8 @@ save_diffrn_refln.counts_peak
     _definition.update            2022-11-22
     _description.text
 ;
-    Counts measured in the reflection peak. Total scattering from
-    the specimen with background, specimen mounting, or container
-    scattering included.
+    Counts measured in the reflection peak before subtraction
+    of background.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2129,9 +2129,8 @@ save_diffrn_refln.counts_total
     _definition.update            2022-11-22
     _description.text
 ;
-    Counts measured in the total reflection. Total scattering
-    from the specimen with background, specimen mounting, or
-    container scattering included.
+    Counts measured in the total reflection including background
+    and peak regions.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2278,9 +2277,8 @@ save_diffrn_refln.intensity_bg_1
     _definition.update            2022-11-22
     _description.text
 ;
-    Intensity measurements at the measurement point. This scattering
-    was measured without a specimen, specimen mounting etc., often
-    referred to as the instrument background.
+    The measured background intensity on one side of a diffraction
+    peak when measuring using a point detector.
 
     Use these entries for measurements where intensity values are not
     counts (use _diffrn_refln.counts_* for event-counting measurements
@@ -2320,9 +2318,9 @@ save_diffrn_refln.intensity_bg_2
     _definition.update            2022-11-22
     _description.text
 ;
-    Intensity measurements at the measurement point. This scattering
-    was measured without a specimen, specimen mounting etc., often
-    referred to as the instrument background.
+    The measured background counts on the other side of the
+    peak to the measurement of `_diffrn_refln.intensity_bg_1`
+    when measuring using a point detector.
 
     Use these entries for measurements where intensity values are not
     counts (use _diffrn_refln.counts_* for event-counting measurements
@@ -2407,9 +2405,8 @@ save_diffrn_refln.intensity_peak
     _definition.update            2022-11-22
     _description.text
 ;
-    Intensity measurements at the measurement point. Scattering from
-    the specimen (with background, specimen mounting or container
-    scattering included).
+    Intensity measurements obtained from a diffraction peak before
+    any adjustments for background.
 
     Use these entries for measurements where intensity values are not
     counts (use _diffrn_refln.counts_* for event-counting measurements
