@@ -2046,7 +2046,7 @@ save_diffrn_refln.counts_bg_2
     _description.text
 ;
     The measured background counts on the other side of the
-    peak to the measurement of `_diffrn_refln.counts_bg_1`
+    peak to the measurement of _diffrn_refln.counts_bg_1
     when measuring using a point detector.
 
     Note that counts-per-second values should be converted to
@@ -2074,23 +2074,40 @@ save_diffrn_refln.counts_net
     _definition.update            2022-11-22
     _description.text
 ;
-    Counts measured in the reflection with background removed.
+    Counts measured in the reflection peak after background
+    subtraction.
 
     Note that counts-per-second values should be converted to
     total counts.
 
-    Standard uncertainties should not be quoted for these values.
-    If the standard uncertainties differ from the square root of
-    the number of counts, _diffrn_refln.intensity_* should be used.
+    The value for this data name must be derived from count values.
+    If not, _diffrn_refln.intensity_* should be used.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               counts_net
-    _type.purpose                 Number
-    _type.source                  Recorded
+    _type.purpose                 Measurand
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            0:
     _units.code                   counts
+
+save_
+
+save_diffrn_refln.counts_net_su
+
+    _definition.id                '_diffrn_refln.counts_net_su'
+    _definition.update            2012-12-13
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.counts_net.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               counts_net_su
+    _name.linked_item_id          '_diffrn_refln.counts_net'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -2101,8 +2118,9 @@ save_diffrn_refln.counts_peak
     _definition.update            2022-11-22
     _description.text
 ;
-    Counts measured in the reflection peak before subtraction
-    of background.
+    Counts measured in the reflection peak before background
+    subtraction. That is, the region of interest consists of
+    only the diffraction peak.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2130,7 +2148,9 @@ save_diffrn_refln.counts_total
     _description.text
 ;
     Counts measured in the total reflection including background
-    and peak regions.
+    and peak regions. That is, the region of interest consists of the
+    diffraction peak and an area of background immediately surrounding
+    the peak of interest.
 
     Note that counts-per-second values should be converted to
     total counts.
@@ -2288,7 +2308,7 @@ save_diffrn_refln.intensity_bg_1
     _name.category_id             diffrn_refln
     _name.object_id               intensity_bg_1
     _type.purpose                 Measurand
-    _type.source                  Derived
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   none
@@ -2319,7 +2339,7 @@ save_diffrn_refln.intensity_bg_2
     _description.text
 ;
     The measured background counts on the other side of the
-    peak to the measurement of `_diffrn_refln.intensity_bg_1`
+    peak to the measurement of _diffrn_refln.intensity_bg_1
     when measuring using a point detector.
 
     Use these entries for measurements where intensity values are not
@@ -2361,8 +2381,9 @@ save_diffrn_refln.intensity_net
     _definition.update            2022-11-22
     _description.text
 ;
-    Net intensity calculated from the diffraction counts after the
-    attenuator and standard scales have been applied.
+    Net intensity in the reflection peak calculated from the
+    diffraction counts after the attenuator and standard scales
+    have been applied.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               intensity_net
@@ -2405,8 +2426,9 @@ save_diffrn_refln.intensity_peak
     _definition.update            2022-11-22
     _description.text
 ;
-    Intensity measurements obtained from a diffraction peak before
-    any adjustments for background.
+    Intensity measured in the reflection peak before background
+    subtraction. That is, the region of interest consists of
+    only the diffraction peak.
 
     Use these entries for measurements where intensity values are not
     counts (use _diffrn_refln.counts_* for event-counting measurements
@@ -2446,9 +2468,10 @@ save_diffrn_refln.intensity_total
     _definition.update            2022-11-22
     _description.text
 ;
-    Intensity measurements at the measurement point. Scattering from
-    the specimen (with background, specimen mounting or container
-    scattering included).
+    Intensity measured in the total reflection including background
+    and peak regions. That is, the region of interest consists of the
+    diffraction peak and an area of background immediately surrounding
+    the peak of interest.
 
     Use these entries for measurements where intensity values are not
     counts (use _diffrn_refln.counts_* for event-counting measurements
