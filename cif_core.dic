@@ -19363,13 +19363,6 @@ save_atom_analytical.analyte_mass_percent
     _type.contents                Real
     _enumeration.range            0.0:100.
     _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _atom_analytical.analyte_mass_percent = dREL to calculate wt% from:
-                                         _atom_analytical.chemical_species and
-                                _atom_analytical.chemical_species_mass_percent
-;
 
 save_
 
@@ -19416,7 +19409,6 @@ save_atom_analytical.chemical_species
        multiplier for the group must follow the closing parentheses.
        That is, all element and group multipliers are assumed to be
        printed as subscripted numbers.
-
 ;
     _name.category_id             atom_analytical
     _name.object_id               chemical_species
@@ -19430,12 +19422,7 @@ save_atom_analytical.chemical_species
          'Fe2 O3'
          'Li'
          'Si O2'
-
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _atom_analytical.analyte = dREL to extract analyte symbol
-;
+         'Ca S O4 (H2 O)2'
 
 save_
 
@@ -19451,10 +19438,8 @@ save_atom_analytical.chemical_species_mass_percent
 
     This is most often used in elemental compositions determined by XRF,
     where elements are reported as equivalent mass percentages of their
-    relevant oxide.
-
-    eg: Al is reported as Al2O3, P is reported as P2O5.
-
+    relevant oxide. For example: Al is reported as Al2O3, P is reported
+    as P2O5.
 ;
     _name.category_id             atom_analytical
     _name.object_id               chemical_species_mass_percent
@@ -19491,7 +19476,6 @@ save_atom_analytical.id
     _definition.id                '_atom_analytical.id'
     _definition.update            2022-11-18
     _description.text
-
 ;
     Arbitrary label uniquely identifying a single composition value.
 ;
@@ -19500,7 +19484,7 @@ save_atom_analytical.id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -19509,7 +19493,6 @@ save_atom_analytical.meas_id
     _definition.id                '_atom_analytical.meas_id'
     _definition.update            2022-11-18
     _description.text
-
 ;
     Arbitrary label identifying the source of an elemental composition.
     This code must match the _atom_analytical_source.id of the associated
@@ -19525,36 +19508,35 @@ save_atom_analytical.meas_id
 
 save_
 
-save_ATOM_ANALYTICAL_EXTRA
+save_ATOM_ANALYTICAL_MASS_LOSS
 
-    _definition.id                ATOM_ANALYTICAL_EXTRA
+    _definition.id                ATOM_ANALYTICAL_MASS_LOSS
     _definition.scope             Category
     _definition.class             Loop
     _definition.update            2022-11-21
     _description.text
 ;
     The CATEGORY of data items used to describe information
-    pertaining to mass loss during speciment preparation for
+    pertaining to mass loss during specimen preparation for
     the purposes of determining elemental composition
     information for use in crystallographic structure studies.
 ;
     _name.category_id             ATOM_ANALYTICAL
-    _name.object_id               ATOM_ANALYTICAL_EXTRA
-    _category_key.name            '_atom_analytical_extra.id'
+    _name.object_id               ATOM_ANALYTICAL_MASS_LOSS
+    _category_key.name            '_atom_analytical_mass_loss.id'
     _description_example.case
 ;
          loop_
-         _atom_analytical_extra.id
-         _atom_analytical_extra.meas_id
-         _atom_analytical_extra.mass_loss_percent
-         _atom_analytical_extra.analysis_temperature
+         _atom_analytical_mass_loss.id
+         _atom_analytical_mass_loss.meas_id
+         _atom_analytical_mass_loss.percent
+         _atom_analytical_mass_loss.temperature
          LOD1 a   2  328
          LOI1 a   5  623
          LOI2 a  10 1023
          LOI3 a  15 1373
          LOI4 b   5  673
          LOI5 b  10 1123
-
 ;
     _description_example.detail
 ;
@@ -19568,122 +19550,93 @@ save_ATOM_ANALYTICAL_EXTRA
 
 save_
 
-save_atom_analytical_extra.analysis_temperature
+save_atom_analytical_mass_loss.id
 
-    _definition.id                '_atom_analytical_extra.analysis_temperature'
+    _definition.id                '_atom_analytical_mass_loss.id'
     _definition.update            2022-11-21
     _description.text
-;
-    The temperature, in kelvin, at which the mass loss was recorded
-    as given by _atom_analytical_extra.mass_loss_percent.
-
-    This would be used to record the temperature of drying or ignitition,
-    during, for example, fusion bead preparation for XRF analysis.
-;
-    _name.category_id             atom_analytical_extra
-    _name.object_id               analysis_temperature
-    _type.purpose                 Measurand
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   kelvins
-
-save_
-
-save_atom_analytical_extra.analysis_temperature_su
-
-    _definition.id
-        '_atom_analytical_extra.analysis_temperature_su'
-    _definition.update            2022-11-21
-    _description.text
-;
-    Standard uncertainty of _atom_analytical_extra.analysis_temperature.
-;
-    _name.category_id             atom_analytical_extra
-    _name.object_id               analysis_temperature_su
-    _name.linked_item_id          '_atom_analytical_extra.analysis_temperature'
-    _units.code                   kelvins
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
-save_
-
-save_atom_analytical_extra.id
-
-    _definition.id                '_atom_analytical_extra.id'
-    _definition.update            2022-11-21
-    _description.text
-
 ;
     Arbitrary label uniquely identifying the source of an elemental
     composition value. This value is used by _atom_analytical.meas_id
     to link individual composition values to their corresponding
     technique of determination.
 ;
-    _name.category_id             atom_analytical_extra
+    _name.category_id             atom_analytical_mass_loss
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
-save_atom_analytical_extra.mass_loss_percent
+save_atom_analytical_mass_loss.percent
 
-    _definition.id                '_atom_analytical_extra.mass_loss_percent'
+    _definition.id                '_atom_analytical_mass_loss.percent'
     _definition.update            2022-11-21
     _description.text
 ;
     Mass lost by the specimen during specimen preparation expressed
     as a percentage. The temperature at which the mass loss was recorded
-    is given by _atom_analytical_extra.analysis_temperature. A mass gain
-    can be represented as a negative value.
+    is given by _atom_analytical_mass_loss.temperature. A mass gain
+    is represented by a negative value.
 
-    This would be used to record mass loss on drying, or mass loss on
-    ignitition, during, for example, fusion bead preparation for XRF
-    analysis.
+    This data name would be used to record mass loss on drying, or mass
+    loss on ignitition, during, for example, fusion bead preparation for
+    XRF analysis.
 ;
-    _name.category_id             atom_analytical_extra
-    _name.object_id               mass_loss_percent
+    _name.category_id             atom_analytical_mass_loss
+    _name.object_id               percent
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   none
 
+    loop_
+      _description_example.case
+      _description_example.detail
+         12.5
+;
+         Represents a mass loss of 12.5 wt% upon exposure of the specimen
+         to the temperature given in _atom_analytical_mass_loss.temperature.
+;
+         -7.2
+;
+         Represents a mass gain of 7.2 wt% upon exposure of the specimen
+         to the temperature given in _atom_analytical_mass_loss.temperature.
+;
+
 save_
 
-save_atom_analytical_extra.mass_loss_percent_su
+save_atom_analytical_mass_loss.percent_su
 
-    _definition.id                '_atom_analytical_extra.mass_loss_percent_su'
+    _definition.id                '_atom_analytical_mass_loss.percent_su'
     _definition.update            2022-11-21
     _description.text
 ;
-    Standard uncertainty of _atom_analytical_extra.mass_loss_percent.
+    Standard uncertainty of _atom_analytical_mass_loss.percent.
 ;
-    _name.category_id             atom_analytical_extra
-    _name.object_id               mass_loss_percent_su
-    _name.linked_item_id          '_atom_analytical_extra.mass_loss_percent'
+    _name.category_id             atom_analytical_mass_loss
+    _name.object_id               percent_su
+    _name.linked_item_id          '_atom_analytical_mass_loss.percent'
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
-save_atom_analytical_extra.meas_id
+save_atom_analytical_mass_loss.meas_id
 
-    _definition.id                '_atom_analytical_extra.meas_id'
+    _definition.id                '_atom_analytical_mass_loss.meas_id'
     _definition.update            2022-11-18
     _description.text
-
 ;
     Arbitrary label identifying the source of an elemental composition.
     This code must match the _atom_analytical_source.id of the associated
     technique in the analytical source list.
 ;
-    _name.category_id             atom_analytical_extra
+    _name.category_id             atom_analytical_mass_loss
     _name.object_id               meas_id
     _name.linked_item_id          '_atom_analytical_source.id'
     _type.purpose                 Link
@@ -19693,23 +19646,63 @@ save_atom_analytical_extra.meas_id
 
 save_
 
-save_atom_analytical_extra.special_details
+save_atom_analytical_mass_loss.special_details
 
-    _definition.id                '_atom_analytical_extra.special_details'
+    _definition.id                '_atom_analytical_mass_loss.special_details'
     _definition.update            2022-11-21
     _description.text
-
 ;
-    Text describing the conditions under which the
-    data were collected that are not able to be captured using
-
+    Text describing the conditions under which the data were collected
+    that are not able to be captured using other data names
+    within the ATOM_ANALYTICAL_MASS_LOSS category.
 ;
-    _name.category_id             atom_analytical_extra
+    _name.category_id             atom_analytical_mass_loss
     _name.object_id               special_details
     _type.purpose                 Describe
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+
+save_
+
+save_atom_analytical_mass_loss.temperature
+
+    _definition.id                '_atom_analytical_mass_loss.temperature'
+    _definition.update            2022-11-21
+    _description.text
+;
+    The temperature, in kelvin, at which the mass loss was recorded
+    as given by _atom_analytical_mass_loss.percent.
+
+    This would be used to record the temperature of drying or ignitition,
+    during, for example, fusion bead preparation for XRF analysis.
+;
+    _name.category_id             atom_analytical_mass_loss
+    _name.object_id               temperature
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   kelvins
+
+save_
+
+save_atom_analytical_mass_loss.temperature_su
+
+    _definition.id
+        '_atom_analytical_mass_loss.temperature_su'
+    _definition.update            2022-11-21
+    _description.text
+;
+    Standard uncertainty of _atom_analytical_mass_loss.temperature.
+;
+    _name.category_id             atom_analytical_mass_loss
+    _name.object_id               analysis_temperature_su
+    _name.linked_item_id          '_atom_analytical_mass_loss.temperature'
+    _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -19733,12 +19726,11 @@ save_ATOM_ANALYTICAL_SOURCE
          loop_
          _atom_analytical_source.id
          _atom_analytical_source.technique
-         _atom_analytical_source.equipment_manufacturer
-         _atom_analytical_source.equipment_model
-         a  XRF Hitachi Lab-X5000
-         b  'X-ray fluorescence EDS' Hitachi Lab-X5000
-         c  ICP . .
-         d  EDS . .
+         _atom_analytical_source.equipment_make
+         a  XRF 'Hitachi Lab-X5000'
+         b  'X-ray fluorescence EDS' 'Hitachi Lab-X5000'
+         c  ICP .
+         d  EDS .
 ;
     _description_example.detail
 ;
@@ -19747,19 +19739,18 @@ save_ATOM_ANALYTICAL_SOURCE
 
 save_
 
-save_atom_analytical_source.equipment_manufacturer
+save_atom_analytical_source.equipment_make
 
     _definition.id
-        '_atom_analytical_source.equipment_manufacturer'
+        '_atom_analytical_source.equipment_make'
     _definition.update            2022-11-18
     _description.text
-
 ;
-    Text describing the manufacturer of the equipment used
-    to determine the elemental composition.
+    The make, model or name of the equipment used to determine the
+    elemental composition.
 ;
     _name.category_id             atom_analytical_source
-    _name.object_id               equipment_manufacturer
+    _name.object_id               equipment_make
     _type.purpose                 Describe
     _type.source                  Recorded
     _type.container               Single
@@ -19773,37 +19764,11 @@ save_atom_analytical_source.equipment_manufacturer
 
 save_
 
-save_atom_analytical_source.equipment_model
-
-    _definition.id                '_atom_analytical_source.equipment_model'
-    _definition.update            2022-11-18
-    _description.text
-
-;
-    Text describing the model of the equipment used
-    to determine the elemental composition.
-;
-    _name.category_id             atom_analytical_source
-    _name.object_id               equipment_model
-    _type.purpose                 Describe
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-
-    loop_
-      _description_example.case
-         'S2 Puma'
-         'COBRA'
-         'CAP PRO XPS ICP-OES'
-
-save_
-
 save_atom_analytical_source.id
 
     _definition.id                '_atom_analytical_source.id'
     _definition.update            2022-11-18
     _description.text
-
 ;
     Arbitrary label uniquely identifying the source of an elemental
     composition value. This value is used by _atom_analytical.meas_id
@@ -19815,7 +19780,7 @@ save_atom_analytical_source.id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -19824,12 +19789,10 @@ save_atom_analytical_source.special_details
     _definition.id                '_atom_analytical_source.special_details'
     _definition.update            2022-11-18
     _description.text
-
 ;
     Text describing the equipment or conditions under which the
     data were collected that are not able to be captured using
-    _atom_analytical_source.equipment_manufacturer,
-    _atom_analytical_source.equipment_model, or
+    _atom_analytical_source.equipment_make or
     _atom_analytical_source.technique.
 ;
     _name.category_id             atom_analytical_source
@@ -19839,6 +19802,20 @@ save_atom_analytical_source.special_details
     _type.container               Single
     _type.contents                Text
 
+    loop_
+      _description_example.case
+;
+         XRF utilising a WDS detector system calibrated for the analysis
+         of iron ores.
+;
+;
+         Laser Induced Breakdown Spectroscopy. Measurements carried out
+         by commercial laboratory, report #P90.
+;
+;
+         Detector calibrated following Smith (2018).
+;
+
 save_
 
 save_atom_analytical_source.technique
@@ -19846,10 +19823,13 @@ save_atom_analytical_source.technique
     _definition.id                '_atom_analytical_source.technique'
     _definition.update            2022-11-18
     _description.text
-
 ;
-    Text describing the experimental technique used to find
-    the elemental composition.
+    Succinct text or acronym describing the experimental technique used
+    to find the elemental composition.
+
+    If further details are required to properly describe the experimental
+    technique, or the given acronym is not in common use, use
+    _atom_analytical_source.special_details.
 ;
     _name.category_id             atom_analytical_source
     _name.object_id               technique
@@ -19860,16 +19840,9 @@ save_atom_analytical_source.technique
 
     loop_
       _description_example.case
-;
-       XRF
-;
-;
-       LIBS
-;
-;
-       Inductively-coupled plasma
-       optical emission spectrometry
-;
+         'XRF'
+         'LIBS'
+         'ICP OES'
 
 save_
 
@@ -26634,5 +26607,5 @@ save_
        _diffrn_radiation.xray_symbol.
 
        Added categories and data names to allow for the elemental composition
-       of specimens to be recorded
+       of specimens to be recorded.
 ;
