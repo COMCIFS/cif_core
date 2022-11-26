@@ -2105,7 +2105,7 @@ save_diffrn_refln.counts_net_su
     _name.category_id             diffrn_refln
     _name.object_id               counts_net_su
     _name.linked_item_id          '_diffrn_refln.counts_net'
-    _units.code                   none
+    _units.code                   counts
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
