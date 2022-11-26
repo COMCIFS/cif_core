@@ -19504,7 +19504,7 @@ save_atom_analytical.meas_id
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -19570,6 +19570,26 @@ save_atom_analytical_mass_loss.id
 
 save_
 
+save_atom_analytical_mass_loss.meas_id
+
+    _definition.id                '_atom_analytical_mass_loss.meas_id'
+    _definition.update            2022-11-18
+    _description.text
+;
+    Arbitrary label identifying the source of an elemental composition.
+    This code must match the _atom_analytical_source.id of the associated
+    technique in the analytical source list.
+;
+    _name.category_id             atom_analytical_mass_loss
+    _name.object_id               meas_id
+    _name.linked_item_id          '_atom_analytical_source.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_atom_analytical_mass_loss.percent
 
     _definition.id                '_atom_analytical_mass_loss.percent'
@@ -19626,26 +19646,6 @@ save_atom_analytical_mass_loss.percent_su
 
 save_
 
-save_atom_analytical_mass_loss.meas_id
-
-    _definition.id                '_atom_analytical_mass_loss.meas_id'
-    _definition.update            2022-11-18
-    _description.text
-;
-    Arbitrary label identifying the source of an elemental composition.
-    This code must match the _atom_analytical_source.id of the associated
-    technique in the analytical source list.
-;
-    _name.category_id             atom_analytical_mass_loss
-    _name.object_id               meas_id
-    _name.linked_item_id          '_atom_analytical_source.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Code
-
-save_
-
 save_atom_analytical_mass_loss.special_details
 
     _definition.id                '_atom_analytical_mass_loss.special_details'
@@ -19690,8 +19690,7 @@ save_
 
 save_atom_analytical_mass_loss.temperature_su
 
-    _definition.id
-        '_atom_analytical_mass_loss.temperature_su'
+    _definition.id                '_atom_analytical_mass_loss.temperature_su'
     _definition.update            2022-11-21
     _description.text
 ;
@@ -19741,8 +19740,7 @@ save_
 
 save_atom_analytical_source.equipment_make
 
-    _definition.id
-        '_atom_analytical_source.equipment_make'
+    _definition.id                '_atom_analytical_source.equipment_make'
     _definition.update            2022-11-18
     _description.text
 ;
