@@ -2088,8 +2088,7 @@ save_diffrn_refln.counts_net
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            0:
+    _type.contents                Real
     _units.code                   counts
 
 save_
