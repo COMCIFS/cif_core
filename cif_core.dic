@@ -9769,8 +9769,8 @@ save_exptl_absorpt.special_details
     _description.text
 ;
     Details of the absorption correction process applied to the
-    measured intensities that cannot otherwise be given by other
-    _exptl_absorpt.* data names.
+    measured intensities that cannot otherwise be given using
+    other data items from the EXPTL_ABSORBT category.
 ;
     _name.category_id             exptl_absorpt
     _name.object_id               special_details
