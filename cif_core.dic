@@ -2075,8 +2075,8 @@ save_diffrn_refln.counts_net
     _description.text
 ;
     Counts measured in the reflection peak after background
-    subtraction. If background counts were collected for a different
-    time than peak counts, the background counts must be scaled to
+    subtraction. If background and peak counts were collected
+    for different times, the background counts must be scaled to
     the peak counts prior to subtraction.
 
     Note that counts-per-second values should be converted to
