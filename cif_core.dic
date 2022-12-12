@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-11-29
+    _dictionary.date              2022-12-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -2071,7 +2071,7 @@ save_diffrn_refln.counts_net
 
     _definition.id                '_diffrn_refln.counts_net'
     _alias.definition_id          '_diffrn_refln_counts_net'
-    _definition.update            2022-11-29
+    _definition.update            2022-12-12
     _description.text
 ;
     Counts measured in the reflection peak after background
@@ -9938,6 +9938,56 @@ save_exptl_absorpt.process_details
          'Tompa analytical'
          'MolEN (Fair, 1990)'
          '(North, Phillips & Mathews, 1968)'
+
+save_
+
+save_exptl_absorpt.special_details
+
+    _definition.id                '_exptl_absorpt.special_details'
+    _alias.definition_id          '_exptl_absorpt_special_details'
+    _definition.update            2022-12-03
+    _description.text
+;
+    Details of the absorption correction process applied to the
+    measured intensities that cannot otherwise be given using
+    other data items from the EXPTL_ABSORBT category.
+;
+    _name.category_id             exptl_absorpt
+    _name.object_id               special_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+       X-ray beam inhomogeneity and goniometer imperfection account for much
+       of the difference between estimated values of Tmin and Tmax and the
+       _exptl_absorpt_correction_ values.
+;
+;
+       Text modified from:
+       Petty, Anthony J. et al. Computationally aided design of a high-
+       performance organic semiconductor: the development of a universal
+       crystal engineering core. Chemical Science, 2019
+       https://doi.org/10.1039/C9SC02930C
+       COD 1552381
+;
+;
+       Neutron linear absorption coefficient is wavelength dependent. The value
+       of 0.2216 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the sample
+       absorption coefficient for a neutron wavelength at 1.0 \%A.
+;
+;
+       Text modified from:
+       Lengyel, Jeff et al. Antiferroelectric Phase Transition in a Proton-
+       Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
+       Journal of the American Chemical Society, 2019, 141, 16279-16287
+       https://doi.org/10.1021/jacs.9b04473
+       COD 4127699
+;
 
 save_
 
@@ -26782,14 +26832,16 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-11-29
+         3.2.0                    2022-12-12
 ;
        Added data names to allow multi-data-block expression of data sets.
 
        Deprecated and replaced _diffrn_radiation.type and
        _diffrn_radiation.xray_symbol.
 
-       Added _diffrn_refln.intensity* data names.
+       Added _diffrn_refln.intensity* data items.
+
+       Added the _exptl_absorpt.special_details data item.
 
        Added categories and data names to allow for the elemental composition
        of specimens to be recorded.
