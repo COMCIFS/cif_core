@@ -2082,7 +2082,7 @@ save_diffrn_refln.counts_net
     Note that counts-per-second values should be converted to
     total counts.
 
-    The value for this data name must be derived from count values.
+    The value for this data item must be derived from count values.
     If not, _diffrn_refln.intensity_* should be used.
 ;
     _name.category_id             diffrn_refln
