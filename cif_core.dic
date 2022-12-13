@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-12-03
+    _dictionary.date              2022-12-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -2014,27 +2014,27 @@ save_diffrn_refln.counts_bg_1
 
     _definition.id                '_diffrn_refln.counts_bg_1'
     _alias.definition_id          '_diffrn_refln_counts_bg_1'
-    _name.category_id             diffrn_refln
-    _name.object_id               counts_bg_1
-
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
-
-save_
-
-save_diffrn_refln.counts_bg_1_su
-
-    _definition.id                '_diffrn_refln.counts_bg_1_su'
-    _definition.update            2021-09-23
+    _definition.update            2022-11-22
     _description.text
 ;
-    Standard uncertainty of _diffrn_refln.counts_bg_1.
+    The measured background scattering on one side of a diffraction
+    peak when measuring using a point detector.
+
+    Note that counts-per-second values should be converted to
+    total counts.
+
+    Standard uncertainties should not be quoted for these values.
+    If the standard uncertainties differ from the square root of
+    the number of counts, _diffrn_refln.intensity_* should be used.
 ;
     _name.category_id             diffrn_refln
-    _name.object_id               counts_bg_1_su
-    _name.linked_item_id          '_diffrn_refln.counts_bg_1'
-    _units.code                   none
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _name.object_id               counts_bg_1
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            0:
+    _units.code                   counts
 
 save_
 
@@ -2042,27 +2042,28 @@ save_diffrn_refln.counts_bg_2
 
     _definition.id                '_diffrn_refln.counts_bg_2'
     _alias.definition_id          '_diffrn_refln_counts_bg_2'
-    _name.category_id             diffrn_refln
-    _name.object_id               counts_bg_2
-
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
-
-save_
-
-save_diffrn_refln.counts_bg_2_su
-
-    _definition.id                '_diffrn_refln.counts_bg_2_su'
-    _definition.update            2021-09-23
+    _definition.update            2022-11-22
     _description.text
 ;
-    Standard uncertainty of _diffrn_refln.counts_bg_2.
+    The measured background counts on the other side of the
+    peak to the measurement of _diffrn_refln.counts_bg_1
+    when measuring using a point detector.
+
+    Note that counts-per-second values should be converted to
+    total counts.
+
+    Standard uncertainties should not be quoted for these values.
+    If the standard uncertainties differ from the square root of
+    the number of counts, _diffrn_refln.intensity_* should be used.
 ;
     _name.category_id             diffrn_refln
-    _name.object_id               counts_bg_2_su
-    _name.linked_item_id          '_diffrn_refln.counts_bg_2'
-    _units.code                   none
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _name.object_id               counts_bg_2
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            0:
+    _units.code                   counts
 
 save_
 
@@ -2070,17 +2071,34 @@ save_diffrn_refln.counts_net
 
     _definition.id                '_diffrn_refln.counts_net'
     _alias.definition_id          '_diffrn_refln_counts_net'
+    _definition.update            2022-12-12
+    _description.text
+;
+    Counts measured in the reflection peak after background
+    subtraction. If background and peak counts were collected
+    for different times, the background counts must be scaled to
+    the peak counts prior to subtraction.
+
+    Note that counts-per-second values should be converted to
+    total counts.
+
+    The value for this data item must be derived from count values.
+    If not, _diffrn_refln.intensity_* should be used.
+;
     _name.category_id             diffrn_refln
     _name.object_id               counts_net
-
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   counts
 
 save_
 
 save_diffrn_refln.counts_net_su
 
     _definition.id                '_diffrn_refln.counts_net_su'
-    _definition.update            2021-09-23
+    _definition.update            2012-12-13
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.counts_net.
@@ -2088,7 +2106,7 @@ save_diffrn_refln.counts_net_su
     _name.category_id             diffrn_refln
     _name.object_id               counts_net_su
     _name.linked_item_id          '_diffrn_refln.counts_net'
-    _units.code                   none
+    _units.code                   counts
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
@@ -2098,27 +2116,28 @@ save_diffrn_refln.counts_peak
 
     _definition.id                '_diffrn_refln.counts_peak'
     _alias.definition_id          '_diffrn_refln_counts_peak'
-    _name.category_id             diffrn_refln
-    _name.object_id               counts_peak
-
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
-
-save_
-
-save_diffrn_refln.counts_peak_su
-
-    _definition.id                '_diffrn_refln.counts_peak_su'
-    _definition.update            2021-09-23
+    _definition.update            2022-11-22
     _description.text
 ;
-    Standard uncertainty of _diffrn_refln.counts_peak.
+    Counts measured in the reflection peak before background
+    subtraction. That is, the region of interest consists of
+    only the diffraction peak.
+
+    Note that counts-per-second values should be converted to
+    total counts.
+
+    Standard uncertainties should not be quoted for these values.
+    If the standard uncertainties differ from the square root of
+    the number of counts, _diffrn_refln.intensity_* should be used.
 ;
     _name.category_id             diffrn_refln
-    _name.object_id               counts_peak_su
-    _name.linked_item_id          '_diffrn_refln.counts_peak'
-    _units.code                   none
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _name.object_id               counts_peak
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            0:
+    _units.code                   counts
 
 save_
 
@@ -2126,27 +2145,29 @@ save_diffrn_refln.counts_total
 
     _definition.id                '_diffrn_refln.counts_total'
     _alias.definition_id          '_diffrn_refln_counts_total'
-    _name.category_id             diffrn_refln
-    _name.object_id               counts_total
-
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
-
-save_
-
-save_diffrn_refln.counts_total_su
-
-    _definition.id                '_diffrn_refln.counts_total_su'
-    _definition.update            2021-09-23
+    _definition.update            2022-11-22
     _description.text
 ;
-    Standard uncertainty of _diffrn_refln.counts_total.
+    Counts measured in the total reflection including background
+    and peak regions. That is, the region of interest consists of the
+    diffraction peak and an area of background immediately surrounding
+    the peak of interest.
+
+    Note that counts-per-second values should be converted to
+    total counts.
+
+    Standard uncertainties should not be quoted for these values.
+    If the standard uncertainties differ from the square root of
+    the number of counts, _diffrn_refln.intensity_* should be used.
 ;
     _name.category_id             diffrn_refln
-    _name.object_id               counts_total_su
-    _name.linked_item_id          '_diffrn_refln.counts_total'
-    _units.code                   none
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _name.object_id               counts_total
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            0:
+    _units.code                   counts
 
 save_
 
@@ -2271,23 +2292,106 @@ save_diffrn_refln.index_l
 
 save_
 
-save_diffrn_refln.intensity_net
+save_diffrn_refln.intensity_bg_1
 
-    _definition.id                '_diffrn_refln.intensity_net'
-    _alias.definition_id          '_diffrn_refln_intensity_net'
-    _definition.update            2012-11-26
+    _definition.id                '_diffrn_refln.intensity_bg_1'
+    _definition.update            2022-11-22
     _description.text
 ;
-    Net intensity calculated from the diffraction counts after the
-    attenuator and standard scales have been applied.
+    The measured background intensity on one side of a diffraction
+    peak when measuring using a point detector.
+
+    Use these entries for measurements where intensity values are not
+    counts (use _diffrn_refln.counts_* for event-counting measurements
+    where the standard uncertainty is estimated as the square root of
+    the number of counts).
 ;
     _name.category_id             diffrn_refln
-    _name.object_id               intensity_net
+    _name.object_id               intensity_bg_1
     _type.purpose                 Measurand
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0:
+    _units.code                   none
+
+save_
+
+save_diffrn_refln.intensity_bg_1_su
+
+    _definition.id                '_diffrn_refln.intensity_bg_1_su'
+    _definition.update            2022-11-22
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.intensity_bg_1.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_bg_1_su
+    _name.linked_item_id          '_diffrn_refln.intensity_bg_1'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_diffrn_refln.intensity_bg_2
+
+    _definition.id                '_diffrn_refln.intensity_bg_2'
+    _definition.update            2022-11-22
+    _description.text
+;
+    The measured background counts on the other side of the
+    peak to the measurement of _diffrn_refln.intensity_bg_1
+    when measuring using a point detector.
+
+    Use these entries for measurements where intensity values are not
+    counts (use _diffrn_refln.counts_* for event-counting measurements
+    where the standard uncertainty is estimated as the square root of
+    the number of counts).
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_bg_2
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_diffrn_refln.intensity_bg_2_su
+
+    _definition.id                '_diffrn_refln.intensity_bg_2_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.intensity_bg_2.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_bg_2_su
+    _name.linked_item_id          '_diffrn_refln.intensity_bg_2'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_diffrn_refln.intensity_net
+
+    _definition.id                '_diffrn_refln.intensity_net'
+    _alias.definition_id          '_diffrn_refln_intensity_net'
+    _definition.update            2022-11-22
+    _description.text
+;
+    Net intensity in the reflection peak calculated from the
+    diffraction counts after the attenuator and standard scales
+    have been applied.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_net
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
     _units.code                   none
 
 save_
@@ -2306,18 +2410,99 @@ save_diffrn_refln.intensity_net_su
     _definition.update            2012-12-13
     _description.text
 ;
-    Standard uncertainty of the net intensity calculated from the
-    diffraction counts after the attenuator and standard scales
-    have been applied.
+    Standard uncertainty of _diffrn_refln.intensity_net.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               intensity_net_su
     _name.linked_item_id          '_diffrn_refln.intensity_net'
-    _type.purpose                 SU
-    _type.source                  Related
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_diffrn_refln.intensity_peak
+
+    _definition.id                '_diffrn_refln.intensity_peak'
+    _definition.update            2022-11-22
+    _description.text
+;
+    Intensity measured in the reflection peak before background
+    subtraction. That is, the region of interest consists of
+    only the diffraction peak.
+
+    Use these entries for measurements where intensity values are not
+    counts (use _diffrn_refln.counts_* for event-counting measurements
+    where the standard uncertainty is estimated as the square root of
+    the number of counts).
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_peak
+    _type.purpose                 Measurand
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   none
+
+save_
+
+save_diffrn_refln.intensity_peak_su
+
+    _definition.id                '_diffrn_refln.intensity_peak_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.intensity_peak.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_peak_su
+    _name.linked_item_id          '_diffrn_refln.intensity_peak'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_diffrn_refln.intensity_total
+
+    _definition.id                '_diffrn_refln.intensity_total'
+    _definition.update            2022-11-22
+    _description.text
+;
+    Intensity measured in the total reflection including background
+    and peak regions. That is, the region of interest consists of the
+    diffraction peak and an area of background immediately surrounding
+    the peak of interest.
+
+    Use these entries for measurements where intensity values are not
+    counts (use _diffrn_refln.counts_* for event-counting measurements
+    where the standard uncertainty is estimated as the square root of
+    the number of counts).
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_total
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_diffrn_refln.intensity_total_su
+
+    _definition.id                '_diffrn_refln.intensity_total_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _diffrn_refln.intensity_total.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               intensity_total_su
+    _name.linked_item_id          '_diffrn_refln.intensity_total'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -26647,12 +26832,14 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-12-03
+         3.2.0                    2022-12-12
 ;
        Added data names to allow multi-data-block expression of data sets.
 
        Deprecated and replaced _diffrn_radiation.type and
        _diffrn_radiation.xray_symbol.
+
+       Added _diffrn_refln.intensity* data items.
 
        Added the _exptl_absorpt.special_details data item.
 

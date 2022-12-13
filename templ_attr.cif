@@ -189,7 +189,7 @@ save_index_limit_max
     _definition.update           2021-03-01
     _description.text
 ;
-     Maximum value of the additional Miller indices appearing in 
+     Maximum value of the additional Miller indices appearing in
      _diffrn_reflns.index_m_* and _reflns.index_m_*.
 ;
     _type.purpose                Number
@@ -205,7 +205,7 @@ save_index_limit_min
     _definition.update           2021-03-01
     _description.text
 ;
-     Minimum value of the additional Miller indices appearing in 
+     Minimum value of the additional Miller indices appearing in
      _diffrn_reflns.index_m_* and _reflns.index_m_*.
 ;
     _type.purpose                Number
@@ -246,7 +246,7 @@ save_cell_angle_su
     _units.code                  degrees
      save_
 
- 
+
 save_cell_length
 
     _definition.update           2014-06-08
@@ -276,7 +276,7 @@ save_cell_length_su
     _type.contents               Real
     _units.code                  angstroms
      save_
- 
+
 
 save_site_symmetry
 
@@ -315,7 +315,7 @@ save_site_symmetry
                                  .      'no symmetry or translation to site'
      save_
 
-save_Cartn_coord   
+save_Cartn_coord
 
     _definition.update           2012-05-07
     _description.text
@@ -325,8 +325,8 @@ save_Cartn_coord
      specified by the _atom_sites_Cartn_transform.axes description.
 ;
     _type.purpose                Measurand
-    _type.source                 Derived 
-    _type.container              Single 
+    _type.source                 Derived
+    _type.container              Single
     _type.contents               Real
     _units.code                  angstroms
      save_
@@ -337,7 +337,7 @@ save_Cartn_coord_su
     _definition.update           2014-06-08
     _description.text
 ;
-     Standard uncertainty values of the atom site coordinates 
+     Standard uncertainty values of the atom site coordinates
      in angstroms specified according to a
      set of orthogonal Cartesian axes related to the cell axes as
      specified by the _atom_sites_Cartn_transform.axes description.
@@ -350,7 +350,7 @@ save_Cartn_coord_su
      save_
 
 
-save_fract_coord   
+save_fract_coord
 
     _definition.update           2012-05-07
     _description.text
@@ -358,8 +358,8 @@ save_fract_coord
      Atom site coordinates as fractions of the cell length values.
 ;
     _type.purpose                Measurand
-    _type.source                 Derived 
-    _type.container              Single 
+    _type.source                 Derived
+    _type.container              Single
     _type.contents               Real
     _units.code                  none
      save_
@@ -370,7 +370,7 @@ save_fract_coord_su
     _definition.update           2014-06-08
     _description.text
 ;
-     Standard uncertainty value of the atom site coordinates 
+     Standard uncertainty value of the atom site coordinates
      as fractions of the cell length values.
 ;
     _type.purpose                SU
@@ -403,8 +403,8 @@ save_label_component
 ;
     _type.purpose                Encode
     _type.source                 Assigned
-    _type.container              Single 
-    _type.contents               Word 
+    _type.container              Single
+    _type.contents               Word
      save_
 
 save_label_comp
@@ -465,7 +465,7 @@ save_Cartn_vector
 
 save_
 
-save_ncs_matrix_IJ      
+save_ncs_matrix_IJ
 
     _definition.update          2021-03-01
     _description.text
@@ -567,9 +567,9 @@ save_aniso_BIJ
      directly proportional to B, is preferred.
 ;
     _type.purpose                Measurand
-    _type.source                 Derived 
-    _type.container              Single 
-    _type.contents               Real        
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
     _units.code                  angstrom_squared
      save_
 
@@ -579,7 +579,7 @@ save_aniso_BIJ2
     _definition.update          2014-06-12
     _description.text
 ;
-     The [I][J] tdf elements define the overall anisotropic 
+     The [I][J] tdf elements define the overall anisotropic
      displacement model if one was refined for this structure.
 ;
     _type.purpose               Number
@@ -595,8 +595,8 @@ save_aniso_BIJ_su
     _definition.update           2021-03-18
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard 
-     form of the Bij anisotropic atomic displacement components (see 
+     These are the standard uncertainty values (SU) for the standard
+     form of the Bij anisotropic atomic displacement components (see
      _aniso_BIJ). Because these values are TYPE measurand, the su values
      may in practice be auto generated as part of the Bij calculation.
 ;
@@ -616,18 +616,18 @@ save_aniso_UIJ
      These are the standard anisotropic atomic displacement
      components in angstroms squared which appear in the
      structure factor term:
-     
+
         T = exp{-2pi^2^ sum~i~ [sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
-        
+
      h = the Miller indices
      a* = the reciprocal-space cell lengths
 
      The unique elements of the real symmetric matrix are entered by row.
 ;
-    _type.purpose                Measurand 
-    _type.source                 Derived 
-    _type.container              Single 
-    _type.contents               Real        
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
     _units.code                  angstrom_squared
      save_
 
@@ -637,8 +637,8 @@ save_aniso_UIJ_su
     _definition.update           2021-03-18
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard 
-     form of the Uij anisotropic atomic displacement components (see 
+     These are the standard uncertainty values (SU) for the standard
+     form of the Uij anisotropic atomic displacement components (see
      _aniso_UIJ). Because these values are TYPE measurand, the su values
      may in practice be auto generated as part of the Uij calculation.
 ;
@@ -673,8 +673,8 @@ save_Cromer_Mann_coeff
 ;
     _type.purpose                Number
     _type.source                 Assigned
-    _type.container              Single 
-    _type.contents               Real 
+    _type.container              Single
+    _type.contents               Real
     _enumeration.def_index_id  '_atom_type.symbol'
     _units.code                  none
      save_
@@ -693,8 +693,8 @@ save_hi_ang_Fox_coeffs
 ;
     _type.purpose                Number
     _type.source                 Assigned
-    _type.container              Single 
-    _type.contents               Real 
+    _type.container              Single
+    _type.contents               Real
     _enumeration.def_index_id  '_atom_type.symbol'
     _units.code                  none
      save_
@@ -709,7 +709,7 @@ save_Miller_index
 ;
     _type.purpose                Number
     _type.source                 Recorded
-    _type.container              Single 
+    _type.container              Single
     _type.contents               Integer
     _units.code                  none
      save_
@@ -725,8 +725,8 @@ save_orient_matrix
 ;
     _type.purpose                Number
     _type.source                 Recorded
-    _type.container              Single 
-    _type.contents               Real        
+    _type.container              Single
+    _type.contents               Real
     _units.code                  none
      save_
 
@@ -741,9 +741,9 @@ save_transf_matrix
      into _refln.hkl.
 ;
     _type.purpose                Number
-    _type.source                 Recorded 
-    _type.container              Single 
-    _type.contents               Real        
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
     _units.code                  none
      save_
 
@@ -753,14 +753,14 @@ save_face_angle
     _definition.update           2013-04-15
     _description.text
 ;
-    Diffractometer angle setting when the perpendicular to the specified 
-    crystal face is aligned along a specified direction (e.g. the 
+    Diffractometer angle setting when the perpendicular to the specified
+    crystal face is aligned along a specified direction (e.g. the
     bisector of the incident and reflected beams in an optical goniometer.
 ;
     _type.purpose                Measurand
     _type.source                 Recorded
-    _type.container              Single 
-    _type.contents               Real 
+    _type.container              Single
+    _type.contents               Real
     _enumeration.range           -180.:180.
     _units.code                  degrees
      save_
@@ -776,8 +776,8 @@ save_orient_angle
 ;
     _type.purpose                Measurand
     _type.source                 Recorded
-    _type.container              Single 
-    _type.contents               Real 
+    _type.container              Single
+    _type.contents               Real
     _enumeration.range           -180.:180.
     _units.code                  degrees
      save_
@@ -788,35 +788,16 @@ save_diffr_angle
     _definition.update           2013-04-15
     _description.text
 ;
-     Diffractometer angle at which the intensity is measured. This was 
-     calculated from the specified  orientation matrix and the original 
+     Diffractometer angle at which the intensity is measured. This was
+     calculated from the specified  orientation matrix and the original
      measured cell dimensions before any subsequent transformations.
 ;
     _type.purpose                Number
     _type.source                 Derived
-    _type.container              Single 
-    _type.contents               Real 
+    _type.container              Single
+    _type.contents               Real
     _enumeration.range           -180.:180.
     _units.code                  degrees
-     save_
-
-
-save_diffr_counts
-
-    _definition.update           2019-09-25
-    _description.text
-;
-     The set of data items which specify the diffractometer counts.
-     Background counts before the peak, background after the peak,
-     net counts after background removed, counts for peak scan or position,
-     and the total counts (background plus peak).
-;
-    _type.purpose                Measurand
-    _type.source                 Recorded
-    _type.container              Single 
-    _type.contents               Integer
-    _enumeration.range           0:
-    _units.code                  none
      save_
 
 
