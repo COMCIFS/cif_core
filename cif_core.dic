@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2022-12-12
+    _dictionary.date              2023-01-06
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -2910,7 +2910,7 @@ save_
 save_diffrn_reflns.limit_max
 
     _definition.id                '_diffrn_reflns.limit_max'
-    _definition.update            2021-03-01
+    _definition.update            2023-01-06
     _description.text
 ;
     Maximum Miller indices of measured diffraction reflections.
@@ -2921,7 +2921,7 @@ save_diffrn_reflns.limit_max
     _type.source                  Assigned
     _type.container               Matrix
     _type.dimension               '[3]'
-    _type.contents                Real
+    _type.contents                Integer
     _units.code                   none
     _method.purpose               Evaluation
     _method.expression
@@ -2936,7 +2936,7 @@ save_
 save_diffrn_reflns.limit_min
 
     _definition.id                '_diffrn_reflns.limit_min'
-    _definition.update            2021-03-01
+    _definition.update            2023-01-06
     _description.text
 ;
     Minimum Miller indices of measured diffraction reflections.
@@ -2947,7 +2947,7 @@ save_diffrn_reflns.limit_min
     _type.source                  Assigned
     _type.container               Matrix
     _type.dimension               '[3]'
-    _type.contents                Real
+    _type.contents                Integer
     _units.code                   none
     _method.purpose               Evaluation
     _method.expression
@@ -5663,7 +5663,7 @@ save_reflns.limit_min
     _type.source                  Assigned
     _type.container               Matrix
     _type.dimension               '[3]'
-    _type.contents                Real
+    _type.contents                Integer
     _units.code                   none
     _method.purpose               Evaluation
     _method.expression
@@ -26832,7 +26832,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2022-12-12
+         3.2.0                    2023-01-06
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26845,4 +26845,7 @@ save_
 
        Added categories and data names to allow for the elemental composition
        of specimens to be recorded.
+
+       Changed the content type of the _diffrn_reflns.limit_min and
+       _diffrn_reflns.limit_max data items from Real to Integer.
 ;
