@@ -3989,12 +3989,7 @@ save_
 save_diffrn_standards.interval_count
 
     _definition.id                '_diffrn_standards.interval_count'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_standards_interval_count'
-         '_diffrn_standards.interval_count'
-
+    _alias.definition_id          '_diffrn_standards_interval_count'
     _definition.update            2023-01-10
     _description.text
 ;
@@ -4014,12 +4009,7 @@ save_
 save_diffrn_standards.interval_time
 
     _definition.id                '_diffrn_standards.interval_time'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_standards_interval_time'
-         '_diffrn_standards.interval_time'
-
+    _alias.definition_id          '_diffrn_standards_interval_time'
     _definition.update            2023-01-10
     _description.text
 ;
@@ -4039,12 +4029,7 @@ save_
 save_diffrn_standards.number
 
     _definition.id                '_diffrn_standards.number'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_standards_number'
-         '_diffrn_standards.number'
-
+    _alias.definition_id          '_diffrn_standards_number'
     _definition.update            2023-01-10
     _description.text
 ;
