@@ -253,9 +253,9 @@ save_definition.scope
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Dictionary            'Applies to all defined items in the dictionary.'
-         Category              'Applies to all defined items in the category.'
-         Item                  'Applies to a single item definition.'
+         Dictionary           'Applies to all defined items in the dictionary.'
+         Category             'Applies to all defined items in the category.'
+         Item                 'Applies to a single item definition.'
 
     _enumeration.default          Item
 
@@ -500,10 +500,10 @@ save_dictionary.class
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Reference            'DDLm reference attribute definitions.'
-         Instance             'Domain-specific data instance definitions.'
-         Template             'Domain-specific attribute/enumeration templates.'
-         Function             'Domain-specific method function scripts.'
+         Reference           'DDLm reference attribute definitions.'
+         Instance            'Domain-specific data instance definitions.'
+         Template            'Domain-specific attribute/enumeration templates.'
+         Function            'Domain-specific method function scripts.'
 
     _enumeration.default          Instance
 
@@ -810,9 +810,9 @@ save_dictionary_valid.option
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Mandatory             'Attribute must be present in definition frame.'
-         Recommended           'Attribute is usually in definition frame.'
-         Prohibited            'Attribute must not be used in definition frame.'
+         Mandatory            'Attribute must be present in definition frame.'
+         Recommended          'Attribute is usually in definition frame.'
+         Prohibited           'Attribute must not be used in definition frame.'
 
     _enumeration.default          Recommended
 
@@ -838,9 +838,9 @@ save_dictionary_valid.scope
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Dictionary              'Restriction applies to dictionary definition.'
-         Category                'Restriction applies to a category definition.'
-         Item                    'Restriction applies to an item definition.'
+         Dictionary             'Restriction applies to dictionary definition.'
+         Category               'Restriction applies to a category definition.'
+         Item                   'Restriction applies to an item definition.'
 
 save_
 
@@ -1474,9 +1474,9 @@ save_method.purpose
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Evaluation    'Method evaluates an item from related item values.'
-         Definition    'Method generates attribute value(s) in the definition.'
-         Validation    'Method compares an evaluation with existing item value.'
+         Evaluation   'Method evaluates an item from related item values.'
+         Definition   'Method generates attribute value(s) in the definition.'
+         Validation   'Method compares an evaluation with existing item value.'
 
     _enumeration.default          Evaluation
 
