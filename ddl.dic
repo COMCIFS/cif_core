@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2021-12-16
+    _dictionary.date              2023-01-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -934,12 +934,12 @@ save_enumeration.range
 
     _definition.id                '_enumeration.range'
     _definition.class             Attribute
-    _definition.update            2013-04-17
+    _definition.update            2023-01-09
     _description.text
 ;
-    The inclusive range of values "from:to" allowed for the defined item.
-    If items have associated SU, the reported value may fall outside
-    these limits.
+    The inclusive range of numerical values allowed for the defined item.
+    If the defined item has associated SU values, the reported data values
+    may fall outside these limits.
 ;
     _name.category_id             enumeration
     _name.object_id               range
@@ -947,6 +947,22 @@ save_enumeration.range
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Range
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         -4:10
+;
+         Values must be no less than -4 and no greater than 10.
+;
+         0:
+;
+         Values must be greater than or equal to 0.
+;
+         :3.1415
+;
+         Values must be less than or equal to 3.1415.
+;
 
 save_
 
@@ -1614,7 +1630,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2021-10-08
+    _definition.update            2023-01-09
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -1704,7 +1720,12 @@ save_type.contents
 ;
          Range
 ;
-         inclusive range of numerical values min:max
+         Inclusive range of numerical values expressed using the min:max
+         notation in which the smallest value 'min' and the largest value
+         'max' are separated by a colon character. If 'max' is omitted, then
+         the range includes all values that are greater than or equal to 'min'.
+         If 'min' is omitted, then the range includes all values that are less
+         than or equal to 'max'.
 ;
          Integer
 ;
@@ -2580,7 +2601,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2021-12-16
+         4.1.0                    2023-01-09
 ;
        Added new 'Word' content type.
 
@@ -2596,4 +2617,8 @@ save_
        Improved wording of "Implied" value descriptors.
 
        Updated the description of the _name.linked_item_id data item.
+
+       Clarified that the "Range" content type can describe half-bounded
+       intervals. Added several usage examples of the _enumeration.range
+       attribute.
 ;
