@@ -1729,7 +1729,7 @@ save_type.contents
 ;
          Integer
 ;
-         positive or negative integer number
+         An integer. Positive and negative integers, and zero, are included.
 ;
          Real
 ;
