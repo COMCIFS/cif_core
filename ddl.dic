@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-01-09
+    _dictionary.date              2023-01-11
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1630,7 +1630,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-01-09
+    _definition.update            2023-01-11
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -1729,7 +1729,7 @@ save_type.contents
 ;
          Integer
 ;
-         An integer. Positive and negative integers, and zero, are included.
+         A number from the set of all integers.
 ;
          Real
 ;
@@ -2601,7 +2601,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-01-09
+         4.1.0                    2023-01-11
 ;
        Added new 'Word' content type.
 
@@ -2621,4 +2621,6 @@ save_
        Clarified that the "Range" content type can describe half-bounded
        intervals. Added several usage examples of the _enumeration.range
        attribute.
+
+       Updated definition of "Integer" in _type.contents.
 ;
