@@ -295,7 +295,7 @@ save_site_symmetry
          n refers to the symmetry operation that is applied to the
          coordinates stored in _atom_site.fract_xyz. It must match
          a number given in _space_group_symop.id (or one of its
-         aliases, such as _symmetry_equiv_pos_site_id).
+         aliases).
 
          p, q and r refer to the translations that are subsequently
          applied to the symmetry transformed coordinates to generate
