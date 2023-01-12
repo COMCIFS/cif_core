@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2021-10-25
+    _dictionary.date             2023-01-10
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -280,11 +280,11 @@ save_cell_length_su
 
 save_site_symmetry
 
-    _definition.update           2019-01-09
+    _definition.update           2023-01-10
     _description.text
 ;
-     The set of data items which specify the symmetry operation codes
-     which must be applied to the atom sites involved in the geometry angle.
+     Data item specifying the symmetry operation codes applied to the atom
+     sites involved in a specific geometric configuration.
 
      The symmetry code of each atom site as the symmetry-equivalent position
      number 'n' and the cell translation number 'pqr'. These numbers are
@@ -293,8 +293,9 @@ save_site_symmetry
      The character string n_pqr is composed as follows:
 
          n refers to the symmetry operation that is applied to the
-         coordinates stored in _atom_site.fract_xyz. It must match a
-         number given in _symmetry_equiv.pos_site_id.
+         coordinates stored in _atom_site.fract_xyz. It must match
+         a number given in _space_group_symop.id (or one of its
+         aliases, such as _symmetry_equiv_pos_site_id).
 
          p, q and r refer to the translations that are subsequently
          applied to the symmetry transformed coordinates to generate
@@ -966,4 +967,6 @@ save_display_colour
        Changed the DDL conformance version number from 3.14.0 to 4.1.0.
 
        Changed atomic labels to 'Word' for conformance with DDL1.
+
+       Updated description of _site_symmetry.
 ;
