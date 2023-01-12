@@ -14882,13 +14882,15 @@ save_audit_author.name
 
     _definition.id                '_audit_author.name'
     _alias.definition_id          '_audit_author_name'
-    _definition.update            2012-11-29
+    _definition.update            2023-01-10
     _description.text
 ;
     The name of an author of this data block. If there are multiple
     authors, _audit_author.name is looped with _audit_author.address.
     The family name(s), followed by a comma and including any
     dynastic components, precedes the first name(s) or initial(s).
+    For authors with only one name, provide the full name without
+    abbreviation.
 ;
     _name.category_id             audit_author
     _name.object_id               name
@@ -14906,6 +14908,7 @@ save_audit_author.name
          '''Simonov, Yu.A.'''
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -15230,13 +15233,14 @@ save_audit_contact_author.name
          '_audit_contact_author_name'
          '_audit_contact_author'
 
-    _definition.update            2012-11-29
+    _definition.update            2023-01-10
     _description.text
 ;
     The name of the author of the data block to whom correspondence
     should be addressed. The family name(s), followed by a comma and
     including any dynastic components, precedes the first name(s) or
-    initial(s).
+    initial(s). For authors with only one name, provide the full name
+    without abbreviation.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               name
@@ -15250,6 +15254,7 @@ save_audit_contact_author.name
          "Bleary, Percival R."
          "O'Neil, F.K."
          "Van den Bossche, G."
+         "Chandra"
 
 save_
 
@@ -16160,12 +16165,14 @@ save_citation_author.name
 
     _definition.id                '_citation_author.name'
     _alias.definition_id          '_citation_author_name'
-    _definition.update            2012-12-11
+    _definition.update            2023-01-10
     _description.text
 ;
     Name of citation author; relevant for articles and book chapters.
     The family name(s), followed by a comma and including any
     dynastic components, precedes the first name(s) or initial(s).
+    For authors with only one name, provide the full name without
+    abbreviation.
 ;
     _name.category_id             citation_author
     _name.object_id               name
@@ -16183,6 +16190,7 @@ save_citation_author.name
          '''Simonov, Yu.A'''
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -18318,13 +18326,14 @@ save_publ_author.name
 
     _definition.id                '_publ_author.name'
     _alias.definition_id          '_publ_author_name'
-    _definition.update            2012-12-13
+    _definition.update            2023-01-10
     _description.text
 ;
     The name of a publication author. If there are multiple authors,
     this will be looped with _publ_author.address. The family
     name(s), followed by a comma and including any dynastic
-    components, precedes the first names or initials.
+    components, precedes the first names or initials. For authors
+    with only one name, provide the full name without abbreviation.
 ;
     _name.category_id             publ_author
     _name.object_id               name
@@ -18342,6 +18351,7 @@ save_publ_author.name
          '''Simonov, Yu.A'''
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -26833,6 +26843,10 @@ save_
 
        Changed the content type of the _diffrn_reflns.limit_min and
        _diffrn_reflns.limit_max data items from Real to Integer.
+
+       Updated _audit_author.name, _audit_contact_author.name,
+       _citation_author.name, and _publ_author.name to specify how authors with
+       single names should be handled.
 
        Renamed DIFFRN_STANDARD to DIFFRN_STANDARDS, as well as all data names,
        to retain consistency with the DDL1 dictionary.
