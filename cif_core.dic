@@ -24428,10 +24428,10 @@ save_REFINE_DIFF
     _definition.id                REFINE_DIFF
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2021-09-24
+    _definition.update            2023-01-12
     _description.text
 ;
-    The CATEGORY of data items which specify the electron density limits
+    The CATEGORY of data items which specify the scattering density limits
     in a difference Fourier map after the structure has been refined. The
     RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
