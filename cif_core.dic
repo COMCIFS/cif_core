@@ -10038,12 +10038,12 @@ save_exptl_crystal.colour
          'red'
          'colourless'
 
-    _method.purpose               Evaluation
+    _method.purpose               Definition
     _method.expression
 ;
     With c as exptl_crystal_appearance
 
-     _exptl_crystal.colour = c.general + " " + c.intensity + " " + c.hue
+     _enumeration.default = c.general + " " + c.intensity + " " + c.hue
 ;
 
 save_
