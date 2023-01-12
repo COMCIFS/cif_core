@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-10
+    _dictionary.date              2023-01-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -10012,26 +10012,38 @@ save_exptl_crystal.colour
 
     _definition.id                '_exptl_crystal.colour'
     _alias.definition_id          '_exptl_crystal_colour'
-    _definition.update            2021-11-04
+    _definition.update            2023-01-12
     _description.text
 ;
-    Colour description of a crystal as a list of the allowed
-    exptl_crystal_appearance states for general, intensity and hue.
+    Colour description of the crystal expressed as a combination of
+    the _exptl_crystal_appearance.general,
+    _exptl_crystal_appearance.intensity and _exptl_crystal_appearance.hue
+    data item values separated by sequences of a single space symbol.
+
+    Data items from EXPTL_CRYSTAL_APPEARANCE category should be used in
+    preference to this item when possible.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               colour
     _type.purpose                 Composite
     _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[3]'
-    _type.contents                Word
-    _description_example.case     [translucent  pale  green]
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'translucent pale green'
+         'dark yellow'
+         'metallic blue'
+         'red'
+         'colourless'
+
     _method.purpose               Evaluation
     _method.expression
 ;
-    With  c  as  exptl_crystal_appearance
+    With c as exptl_crystal_appearance
 
-     _exptl_crystal.colour = [ c.general, c.intensity, c.hue ]
+     _exptl_crystal.colour = c.general + " " + c.intensity + " " + c.hue
 ;
 
 save_
@@ -26832,7 +26844,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-10
+         3.2.0                    2023-01-12
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26848,4 +26860,7 @@ save_
 
        Changed the content type of the _diffrn_reflns.limit_min and
        _diffrn_reflns.limit_max data items from Real to Integer.
+
+       Changed the _exptl_crystal.colour data item from a list to a text string
+       to restore compatibility with the DDL1 version of the dictionary.
 ;
