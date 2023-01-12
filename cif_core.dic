@@ -3911,25 +3911,25 @@ save_diffrn_source.voltage
 
 save_
 
-save_DIFFRN_STANDARD
+save_DIFFRN_STANDARDS
 
-    _definition.id                DIFFRN_STANDARD
+    _definition.id                DIFFRN_STANDARDS
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-26
+    _definition.update            2023-01-10
     _description.text
 ;
     The CATEGORY of data items which specify information about the
     standard reflections used in the diffraction measurement process.
 ;
     _name.category_id             DIFFRN
-    _name.object_id               DIFFRN_STANDARD
+    _name.object_id               DIFFRN_STANDARDS
 
 save_
 
-save_diffrn_standard.decay_percent
+save_diffrn_standards.decay_percent
 
-    _definition.id                '_diffrn_standard.decay_percent'
+    _definition.id                '_diffrn_standards.decay_percent'
 
     loop_
       _alias.definition_id
@@ -3937,7 +3937,7 @@ save_diffrn_standard.decay_percent
          '_diffrn_standards.decay_%'
          '_diffrn_standards_decay_percent'
 
-    _definition.update            2013-03-07
+    _definition.update            2023-01-10
     _description.text
 ;
     The percentage decrease in the mean of the intensities for the
@@ -3951,7 +3951,7 @@ save_diffrn_standard.decay_percent
     uncertainties is considered possible.  Thus 0.0(1) would indicate
     a decay of less than 0.3% or an enhancement of less than 0.3%.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               decay_percent
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -3969,38 +3969,33 @@ save_diffrn_standard.decay_percent
 
 save_
 
-save_diffrn_standard.decay_percent_su
+save_diffrn_standards.decay_percent_su
 
-    _definition.id                '_diffrn_standard.decay_percent_su'
-    _definition.update            2021-09-23
+    _definition.id                '_diffrn_standards.decay_percent_su'
+    _definition.update            2023-01-10
     _description.text
 ;
-    Standard uncertainty of _diffrn_standard.decay_percent.
+    Standard uncertainty of _diffrn_standards.decay_percent.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               decay_percent_su
-    _name.linked_item_id          '_diffrn_standard.decay_percent'
+    _name.linked_item_id          '_diffrn_standards.decay_percent'
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
-save_diffrn_standard.interval_count
+save_diffrn_standards.interval_count
 
-    _definition.id                '_diffrn_standard.interval_count'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_standards_interval_count'
-         '_diffrn_standards.interval_count'
-
-    _definition.update            2021-03-01
+    _definition.id                '_diffrn_standards.interval_count'
+    _alias.definition_id          '_diffrn_standards_interval_count'
+    _definition.update            2023-01-10
     _description.text
 ;
     Reflection count between the standard reflection measurements.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               interval_count
     _type.purpose                 Number
     _type.source                  Assigned
@@ -4011,21 +4006,16 @@ save_diffrn_standard.interval_count
 
 save_
 
-save_diffrn_standard.interval_time
+save_diffrn_standards.interval_time
 
-    _definition.id                '_diffrn_standard.interval_time'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_standards_interval_time'
-         '_diffrn_standards.interval_time'
-
-    _definition.update            2012-11-26
+    _definition.id                '_diffrn_standards.interval_time'
+    _alias.definition_id          '_diffrn_standards_interval_time'
+    _definition.update            2023-01-10
     _description.text
 ;
     Time between the standard reflection measurements.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               interval_time
     _type.purpose                 Number
     _type.source                  Assigned
@@ -4036,21 +4026,16 @@ save_diffrn_standard.interval_time
 
 save_
 
-save_diffrn_standard.number
+save_diffrn_standards.number
 
-    _definition.id                '_diffrn_standard.number'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_standards_number'
-         '_diffrn_standards.number'
-
-    _definition.update            2021-03-01
+    _definition.id                '_diffrn_standards.number'
+    _alias.definition_id          '_diffrn_standards_number'
+    _definition.update            2023-01-10
     _description.text
 ;
     Number of unique standard reflections used in measurements.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               number
     _type.purpose                 Number
     _type.source                  Assigned
@@ -4061,9 +4046,9 @@ save_diffrn_standard.number
 
 save_
 
-save_diffrn_standard.scale_su_average
+save_diffrn_standards.scale_su_average
 
-    _definition.id                '_diffrn_standard.scale_su_average'
+    _definition.id                '_diffrn_standards.scale_su_average'
 
     loop_
       _alias.definition_id
@@ -4072,13 +4057,13 @@ save_diffrn_standard.scale_su_average
          '_diffrn_standards.scale_u'
          '_diffrn_standards_scale_u'
 
-    _definition.update            2013-01-20
+    _definition.update            2023-01-10
     _description.text
 ;
     The average standard uncertainty of the individual standard scales
     applied to the intensity data.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               scale_su_average
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -4089,17 +4074,17 @@ save_diffrn_standard.scale_su_average
 
 save_
 
-save_diffrn_standard.scale_su_average_su
+save_diffrn_standards.scale_su_average_su
 
-    _definition.id                '_diffrn_standard.scale_su_average_su'
+    _definition.id                '_diffrn_standards.scale_su_average_su'
     _definition.update            2021-09-23
     _description.text
 ;
-    Standard uncertainty of _diffrn_standard.scale_su_average.
+    Standard uncertainty of _diffrn_standards.scale_su_average.
 ;
-    _name.category_id             diffrn_standard
+    _name.category_id             diffrn_standards
     _name.object_id               scale_su_average_su
-    _name.linked_item_id          '_diffrn_standard.scale_su_average'
+    _name.linked_item_id          '_diffrn_standards.scale_su_average'
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
@@ -4118,7 +4103,7 @@ save_DIFFRN_STANDARD_REFLN
     measured repeatedly to monitor variations in intensity due to source
     flux, environment conditions or crystal quality.
 ;
-    _name.category_id             DIFFRN_STANDARD
+    _name.category_id             DIFFRN_STANDARDS
     _name.object_id               DIFFRN_STANDARD_REFLN
 
     loop_
@@ -14922,13 +14907,15 @@ save_audit_author.name
 
     _definition.id                '_audit_author.name'
     _alias.definition_id          '_audit_author_name'
-    _definition.update            2012-11-29
+    _definition.update            2023-01-10
     _description.text
 ;
     The name of an author of this data block. If there are multiple
     authors, _audit_author.name is looped with _audit_author.address.
     The family name(s), followed by a comma and including any
     dynastic components, precedes the first name(s) or initial(s).
+    For authors with only one name, provide the full name without
+    abbreviation.
 ;
     _name.category_id             audit_author
     _name.object_id               name
@@ -14946,6 +14933,7 @@ save_audit_author.name
          '''Simonov, Yu.A.'''
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -15270,13 +15258,14 @@ save_audit_contact_author.name
          '_audit_contact_author_name'
          '_audit_contact_author'
 
-    _definition.update            2012-11-29
+    _definition.update            2023-01-10
     _description.text
 ;
     The name of the author of the data block to whom correspondence
     should be addressed. The family name(s), followed by a comma and
     including any dynastic components, precedes the first name(s) or
-    initial(s).
+    initial(s). For authors with only one name, provide the full name
+    without abbreviation.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               name
@@ -15290,6 +15279,7 @@ save_audit_contact_author.name
          "Bleary, Percival R."
          "O'Neil, F.K."
          "Van den Bossche, G."
+         "Chandra"
 
 save_
 
@@ -16200,12 +16190,14 @@ save_citation_author.name
 
     _definition.id                '_citation_author.name'
     _alias.definition_id          '_citation_author_name'
-    _definition.update            2012-12-11
+    _definition.update            2023-01-10
     _description.text
 ;
     Name of citation author; relevant for articles and book chapters.
     The family name(s), followed by a comma and including any
     dynastic components, precedes the first name(s) or initial(s).
+    For authors with only one name, provide the full name without
+    abbreviation.
 ;
     _name.category_id             citation_author
     _name.object_id               name
@@ -16223,6 +16215,7 @@ save_citation_author.name
          '''Simonov, Yu.A'''
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -18358,13 +18351,14 @@ save_publ_author.name
 
     _definition.id                '_publ_author.name'
     _alias.definition_id          '_publ_author_name'
-    _definition.update            2012-12-13
+    _definition.update            2023-01-10
     _description.text
 ;
     The name of a publication author. If there are multiple authors,
     this will be looped with _publ_author.address. The family
     name(s), followed by a comma and including any dynastic
-    components, precedes the first names or initials.
+    components, precedes the first names or initials. For authors
+    with only one name, provide the full name without abbreviation.
 ;
     _name.category_id             publ_author
     _name.object_id               name
@@ -18382,6 +18376,7 @@ save_publ_author.name
          '''Simonov, Yu.A'''
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -26873,6 +26868,13 @@ save_
 
        Changed the content type of the _diffrn_reflns.limit_min and
        _diffrn_reflns.limit_max data items from Real to Integer.
+
+       Updated _audit_author.name, _audit_contact_author.name,
+       _citation_author.name, and _publ_author.name to specify how authors with
+       single names should be handled.
+
+       Renamed DIFFRN_STANDARD to DIFFRN_STANDARDS, as well as all data names,
+       to retain consistency with the DDL1 dictionary.
 
        Changed the _exptl_crystal.colour data item from a list to a text string
        to restore compatibility with the DDL1 version of the dictionary.
