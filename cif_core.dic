@@ -10041,9 +10041,22 @@ save_exptl_crystal.colour
     _method.purpose               Definition
     _method.expression
 ;
-    With c as exptl_crystal_appearance
+    default_value = ""
+    With c as exptl_crystal_appearance {
+        if (not Is_missing(c.general))
+            default_value = c.general
+        if (not Is_missing(c.intensity)) {
+            if (len(default_value) > 0) default_value = default_value + " "
+            default_value = default_value + c.intensity
+        }
+        if (not Is_missing(c.hue)) {
+            if (len(default_value) > 0) default_value = default_value + " "
+            default_value = default_value + c.hue
+        }
+    }
 
-     _enumeration.default = c.general + " " + c.intensity + " " + c.hue
+    if (len(default_value) > 0)
+        _enumeration.default = default_value
 ;
 
 save_
