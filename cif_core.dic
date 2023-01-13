@@ -4910,7 +4910,7 @@ save_refln.include_status
          '_refln.observed_status'
          '_refln.status'
 
-    _definition.update            2013-03-07
+    _definition.update            2023-01-13
     _description.text
 ;
     Code indicating how the reflection was included in the refinement
@@ -4926,7 +4926,7 @@ save_refln.include_status
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         o     'ob : within  _reflns.threshold_expression; within d-res limits'
+         o     'ob : within _reflns.threshold_expression; within d-res limits'
          <     'lt : without _reflns.threshold_expression; within d-res limits'
          -     'sa : systematically absent reflection due to symmetry'
          x     'du : deemed unreliable measurement -- not used'
