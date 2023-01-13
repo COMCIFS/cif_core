@@ -14955,7 +14955,7 @@ save_
 save_audit_author_role.role
 
     _definition.id                '_audit_author_role.role'
-    _definition.update            2020-08-06
+    _definition.update            2023-01-13
     _description.text
 ;
     The role taken by the author identified by _audit_author_role.id,
@@ -14982,8 +14982,8 @@ save_audit_author_role.role
 ;
          preparation
 ;
-         prepared the samples for measurement, e.g. crystallised or
-         recrystallised the sample
+         prepared the samples for measurement, e.g. crystallized or
+         recrystallized the sample
 ;
          characterisation
 ;
