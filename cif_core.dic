@@ -24912,13 +24912,13 @@ save_refine_ls.extinction_expression
          '_refine_ls_extinction_expression'
          '_refine.ls_extinction_expression'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     Description of or reference to the extinction-correction equation
     used to apply the data item  _refine_ls.extinction_coef. This
-    information should be sufficient to reproduce the extinction-
-    correction factors applied to the structure factors.
+    information should be sufficient to reproduce the extinction-correction
+    factors applied to the structure factors.
 ;
     _name.category_id             refine_ls
     _name.object_id               extinction_expression
