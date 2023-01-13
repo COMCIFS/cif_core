@@ -1684,7 +1684,7 @@ save_type.contents
 ;
          Name
 ;
-         Case-insensitive sequence of ASCII alpha-numeric characters or
+         Case-insensitive sequence of ASCII alphanumeric characters or
          underscore.
 ;
          Tag
