@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-10
+    _dictionary.date              2023-01-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -97,10 +97,10 @@ save_diffrn.ambient_pressure
 
     _definition.id                '_diffrn.ambient_pressure'
     _alias.definition_id          '_diffrn_ambient_pressure'
-    _definition.update            2012-11-26
+    _definition.update            2023-01-13
     _description.text
 ;
-    Mean hydrostatic  pressure at which intensities were measured.
+    Mean hydrostatic pressure at which intensities were measured.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_pressure
@@ -1719,7 +1719,7 @@ save_diffrn_radiation_wavelength.determination
          '_diffrn_radiation_wavelength_determination'
          '_diffrn_radiation.wavelength_determination'
 
-    _definition.update            2019-01-08
+    _definition.update            2023-01-13
     _description.text
 ;
     Method by which the radiation wavelength was determined.
@@ -1737,7 +1737,7 @@ save_diffrn_radiation_wavelength.determination
          fundamental
              'Fundamental property of matter e.g. MoK\alpha'
          estimated
-             'Estimated  e.g. from monochromator angle or time of flight'
+             'Estimated, e.g. from monochromator angle or time of flight'
          refined
              'Refined using a standard crystal with known cell parameters'
 
@@ -2529,11 +2529,11 @@ save_diffrn_refln.scan_mode
 
     _definition.id                '_diffrn_refln.scan_mode'
     _alias.definition_id          '_diffrn_refln_scan_mode'
-    _definition.update            2012-11-26
+    _definition.update            2023-01-13
     _description.text
 ;
     Code identifying the mode of scanning with a diffractometer.
-    See also  _diffrn_refln.scan_width and _diffrn_refln.scan_mode_backgd.
+    See also _diffrn_refln.scan_width and _diffrn_refln.scan_mode_backgd.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               scan_mode
@@ -3103,11 +3103,11 @@ save_diffrn_reflns.theta_full
 
     _definition.id                '_diffrn_reflns.theta_full'
     _alias.definition_id          '_diffrn_reflns_theta_full'
-    _definition.update            2012-11-26
+    _definition.update            2023-01-13
     _description.text
 ;
     Theta angle at which the count of measured reflections is almost
-    complete.  The fraction of unique reflections measured out to
+    complete. The fraction of unique reflections measured out to
     this angle is given by _diffrn.measured_fraction_theta_full.
 ;
     _name.category_id             diffrn_reflns
@@ -3937,7 +3937,7 @@ save_diffrn_standards.decay_percent
          '_diffrn_standards.decay_%'
          '_diffrn_standards_decay_percent'
 
-    _definition.update            2023-01-10
+    _definition.update            2023-01-13
     _description.text
 ;
     The percentage decrease in the mean of the intensities for the
@@ -3945,10 +3945,10 @@ save_diffrn_standards.decay_percent
     process. This value affords a measure of the overall decay in
     crystal quality during measurement. Negative values only occur in
     exceptional instances where the final intensities are greater than
-    the initial ones.  If no measurable decay has occurred, the
+    the initial ones. If no measurable decay has occurred, the
     standard uncertainty should be quoted to indicate the maximum
-    possible value the decay might have.  A range of 3 standard
-    uncertainties is considered possible.  Thus 0.0(1) would indicate
+    possible value the decay might have. A range of 3 standard
+    uncertainties is considered possible. Thus 0.0(1) would indicate
     a decay of less than 0.3% or an enhancement of less than 0.3%.
 ;
     _name.category_id             diffrn_standards
@@ -8486,12 +8486,12 @@ save_chemical.compound_source
 
     _definition.id                '_chemical.compound_source'
     _alias.definition_id          '_chemical_compound_source'
-    _definition.update            2012-11-22
+    _definition.update            2023-01-13
     _description.text
 ;
     Description of the source of the compound under study, or of the
-    parent  molecule if a simple derivative is studied. This includes
-    the place of  discovery for minerals or the actual source of a
+    parent molecule if a simple derivative is studied. This includes
+    the place of discovery for minerals or the actual source of a
     natural product.
 ;
     _name.category_id             chemical
@@ -9499,7 +9499,7 @@ save_CHEMICAL_FORMULA
     _definition.id                CHEMICAL_FORMULA
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2021-09-24
+    _definition.update            2023-01-13
     _description.text
 ;
     The CATEGORY of data items which specify the composition and chemical
@@ -9510,7 +9510,7 @@ save_CHEMICAL_FORMULA
     _chemical_formula.analytical, *.structural and *.sum. For the
     data item *.moiety the formula construction is broken up into
     residues or moieties, i.e. groups of atoms that form a molecular
-    unit or molecular ion. The  rules given below apply within each
+    unit or molecular ion. The rules given below apply within each
     moiety but different requirements apply to the way that moieties
     are connected (see _chemical_formula.moiety).
 
@@ -9639,17 +9639,17 @@ save_chemical_formula.structural
 
     _definition.id                '_chemical_formula.structural'
     _alias.definition_id          '_chemical_formula_structural'
-    _definition.update            2012-11-22
+    _definition.update            2023-01-13
     _description.text
 ;
     This formula should correspond to the structure as reported, i.e.
     trace elements not included in atom type and atom site lists should
     not be included. See category description for the rules for writing
     chemical formulae for inorganics, organometallics, metal complexes
-    etc., in which  bonded groups are preserved as discrete entities
+    etc., in which bonded groups are preserved as discrete entities
     within parentheses, with post-multipliers as required. The order of
     the elements should give as much information as possible about the
-    chemical structure.  Parentheses may be used and nested as required.
+    chemical structure. Parentheses may be used and nested as required.
     This formula should correspond to the structure as actually reported,
     i.e. trace elements not included in atom-type and atom-site lists
     should not be included (see also _chemical_formula.analytical).
@@ -9753,12 +9753,11 @@ save_EXPTL_ABSORPT
     _definition.id                EXPTL_ABSORPT
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2023-01-13
     _description.text
 ;
     The CATEGORY of data items used to specify the experimental details
-    of the  absorption measurements and corrections to the diffraction
-    data.
+    of the absorption measurements and corrections to the diffraction data.
 ;
     _name.category_id             EXPTL
     _name.object_id               EXPTL_ABSORPT
@@ -9864,12 +9863,12 @@ save_exptl_absorpt.correction_type
          '_exptl_absorpt_correction_type'
          '_exptl.absorpt_correction_type'
 
-    _definition.update            2012-11-22
+    _definition.update            2023-01-13
     _description.text
 ;
     Code identifying the absorption correction type and method.
     The 'empirical' approach should NOT be used if more detailed
-    information on the crystal shape  is available.
+    information on the crystal shape is available.
 ;
     _name.category_id             exptl_absorpt
     _name.object_id               correction_type
@@ -21262,12 +21261,12 @@ save_atom_site.u_iso_or_equiv
 
     _definition.id                '_atom_site.U_iso_or_equiv'
     _alias.definition_id          '_atom_site_U_iso_or_equiv'
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     Isotropic atomic displacement parameter, or equivalent isotropic
-    atomic  displacement parameter, U(equiv), in angstroms squared,
-    calculated from anisotropic atomic displacement  parameters.
+    atomic displacement parameter, U(equiv), in angstroms squared,
+    calculated from anisotropic atomic displacement parameters.
 
        U(equiv) = (1/3) sum~i~[sum~j~(U^ij^ a*~i~ a*~j~ a~i~.a~j~)]
 
@@ -23504,12 +23503,12 @@ save_atom_type.description
 
     _definition.id                '_atom_type.description'
     _alias.definition_id          '_atom_type_description'
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     A description of the atom(s) designated by this atom type. In
     most cases this will be the element name and oxidation state of
-    a single atom  species. For disordered or nonstoichiometric
+    a single atom species. For disordered or nonstoichiometric
     structures it will describe a combination of atom species.
 ;
     _name.category_id             atom_type
@@ -26827,7 +26826,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-10
+         3.2.0                    2023-01-13
 ;
        Added data names to allow multi-data-block expression of data sets.
 
