@@ -5671,14 +5671,14 @@ save_reflns.number_gt
          '_reflns_number_obs'
          '_reflns.number_obs'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Count of reflections in the REFLN set (not the DIFFRN_REFLN set) which
     are significantly intense (see _reflns.threshold_expression). It may
     include Friedel equivalent reflections (i.e. those which are equivalent
     under the Laue symmetry but inequivalent under the crystal class),
-    depending to the nature of the structure and the procedures used.
+    depending on the nature of the structure and the procedures used.
 ;
     _name.category_id             reflns
     _name.object_id               number_gt
@@ -5701,13 +5701,13 @@ save_reflns.number_total
          '_reflns_number_all'
          '_reflns.number_all'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Number of reflections in the REFLN set (not the DIFFRN_REFLN set). It may
     include Friedel equivalent reflections (i.e. those which are equivalent
     under the Laue symmetry but inequivalent under the crystal class),
-    depending to the nature of the structure and the procedures used.
+    depending on the nature of the structure and the procedures used.
 ;
     _name.category_id             reflns
     _name.object_id               number_total
@@ -5878,14 +5878,14 @@ save_reflns_class.number_gt
          '_reflns_class_number_observed'
          '_reflns_class_number_gt'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Count of reflections in this REFLN class (not the DIFFRN_REFLN set)
     which are significantly intense (see _reflns.threshold_expression). It may
     include Friedel equivalent reflections (i.e. those which are equivalent
     under the Laue symmetry but inequivalent under the crystal class),
-    depending to the nature of the structure and the procedures used.
+    depending on the nature of the structure and the procedures used.
 ;
     _name.category_id             reflns_class
     _name.object_id               number_gt
@@ -5902,13 +5902,13 @@ save_reflns_class.number_total
 
     _definition.id                '_reflns_class.number_total'
     _alias.definition_id          '_reflns_class_number_total'
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Count of reflections in this REFLN class (not the DIFFRN_REFLN set). It
     may include Friedel equivalent reflections (those which are equivalent
     under the Laue symmetry but inequivalent under the crystal class),
-    depending to the nature of the structure and the procedures used.
+    depending on the nature of the structure and the procedures used.
 ;
     _name.category_id             reflns_class
     _name.object_id               number_total
