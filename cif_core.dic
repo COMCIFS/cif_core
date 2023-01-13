@@ -1735,7 +1735,7 @@ save_diffrn_radiation_wavelength.determination
       _enumeration_set.state
       _enumeration_set.detail
          fundamental
-             'Fundamental property of matter e.g. MoK\alpha'
+             'Fundamental property of matter, e.g. MoK\a'
          estimated
              'Estimated, e.g. from monochromator angle or time of flight'
          refined
