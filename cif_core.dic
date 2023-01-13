@@ -20275,11 +20275,11 @@ save_atom_site.calc_attached_atom
 
     _definition.id                '_atom_site.calc_attached_atom'
     _alias.definition_id          '_atom_site_calc_attached_atom'
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
-    The _atom_site.label of the atom site to which the 'geometry-
-    calculated' atom site is attached.
+    The _atom_site.label of the atom site to which the 'geometry-calculated'
+    atom site is attached.
 ;
     _name.category_id             atom_site
     _name.object_id               calc_attached_atom
