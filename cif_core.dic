@@ -577,10 +577,10 @@ save_DIFFRN_DETECTOR
     _definition.id                DIFFRN_DETECTOR
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-26
+    _definition.update            2023-01-13
     _description.text
 ;
-    The CATEGORY of data items which specify the detectors used in the
+    The CATEGORY of data items which specify the detectors used
     in the measurement of diffraction intensities.
 ;
     _name.category_id             DIFFRN
