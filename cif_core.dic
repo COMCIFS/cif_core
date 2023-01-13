@@ -9535,7 +9535,7 @@ save_CHEMICAL_FORMULA
        depends on whether or not carbon is present. If carbon is
        present, the order should be: C, then H, then the other
        elements in alphabetical order of their symbol. If carbon is
-       not present, the elements are listed purely in alphabetic order
+       not present, the elements are listed purely in alphabetical order
        of their symbol. This is the 'Hill' system used by Chemical
        Abstracts. This ordering is used in _chemical_formula.moiety
        and _chemical_formula.sum.
@@ -19614,7 +19614,7 @@ save_
 save_atom_analytical.chemical_species
 
     _definition.id                '_atom_analytical.chemical_species'
-    _definition.update            2022-11-19
+    _definition.update            2023-01-13
     _description.text
 ;
     Chemical formula of the species for which the corresponding
@@ -19625,7 +19625,7 @@ save_atom_analytical.chemical_species
     1. Only recognized element symbols may be used.
 
     2. The first element corresponds to the analyte. The remaining
-       elements should be given in alphabetic order by symbol.
+       elements should be given in alphabetical order by symbol.
 
     3. Each element symbol is followed by a 'count' number. A count of
        '1' may be omitted.
