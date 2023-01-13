@@ -6669,7 +6669,7 @@ save_EXPTL
     _definition.id                EXPTL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-01-23
+    _definition.update            2023-01-13
     _description.text
 ;
     The CATEGORY of data items used to specify the experimental work
