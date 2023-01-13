@@ -6669,12 +6669,12 @@ save_EXPTL
     _definition.id                EXPTL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2023-01-23
     _description.text
 ;
     The CATEGORY of data items used to specify the experimental work
     prior to diffraction measurements. These include crystallization
-    crystal measurements and absorption-correction techniques used..
+    crystal measurements and absorption-correction techniques used.
 ;
     _name.category_id             CIF_CORE
     _name.object_id               EXPTL
