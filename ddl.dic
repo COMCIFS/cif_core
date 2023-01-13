@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-01-11
+    _dictionary.date              2023-01-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1630,7 +1630,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-01-11
+    _definition.update            2023-01-13
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -1638,7 +1638,7 @@ save_type.contents
     describes the contents of each element. Where the definition is
     of a 'Table' container this attribute describes the construction
     of the value elements within those (Table) values.  The CIF2
-    characterset referenced below consists of the following Unicode
+    character set referenced below consists of the following Unicode
     code points:
 
     [U+0009], [U+000A], [U+000D], [U+0020-U+007E], [U+00A0-U+D7FF],
@@ -1816,7 +1816,7 @@ save_type.indices
 
     _definition.id                '_type.indices'
     _definition.class             Attribute
-    _definition.update            2015-04-24
+    _definition.update            2023-01-13
     _description.text
 ;
     Used to specify the syntax construction of indices of the entries in the
@@ -1828,7 +1828,7 @@ save_type.indices
 
     Meaningful only when the defined item has _type.container 'Table'.
 
-    See the definition for _type.contents for the characterset definition.
+    See the definition for _type.contents for the character set definition.
 ;
     _name.category_id             type
     _name.object_id               indices
@@ -2516,7 +2516,7 @@ save_
 ;
          3.12.0                   2017-07-13
 ;
-       Clarified charactersets and syntax. Fixed incorrect use of Name in
+       Clarified character sets and syntax. Fixed incorrect use of Name in
        '_definition.replaced_by'.
 ;
          3.13.0                   2017-07-23
@@ -2601,7 +2601,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-01-11
+         4.1.0                    2023-01-13
 ;
        Added new 'Word' content type.
 
