@@ -18782,10 +18782,10 @@ save_publ_manuscript.creation
          '_publ_manuscript_creation'
          '_publ.manuscript_creation'
 
-    _definition.update            2019-01-09
+    _definition.update            2023-01-13
     _description.text
 ;
-    A description of the wordprocessor package and computer used to
+    A description of the word processor package and computer used to
     create the manuscript stored as _publ_manuscript.processed.
 ;
     _name.category_id             publ_manuscript
