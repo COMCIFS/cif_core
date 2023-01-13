@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2023-01-10
+    _dictionary.date             2023-01-13
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -121,11 +121,11 @@ save_rho_kappa
 
 save_rho_slater
 
-    _definition.update           2021-03-01
+    _definition.update           2023-01-13
     _description.text
 ;
       Items used when the radial dependence of the valence
-      electron  density, R(kappa'(l),l,r), of the atom specified in
+      electron density, R(kappa'(l),l,r), of the atom specified in
       atom_rho_multipole.atom_label is expressed as a Slater-type
       function [Hansen & Coppens (1978), equation (3)]
 ;
@@ -948,7 +948,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2021-10-25
+         1.4.10                   2023-01-13
 ;
        Corrected a few typos in the descriptions of several save frames.
 
