@@ -14213,11 +14213,10 @@ save_
 save_model_site.mole_index
 
     _definition.id                '_model_site.mole_index'
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
-    Index number of a distinct molecules in the cell, not related by
-    symmetry.
+    Index number of distinct molecules in the cell, not related by symmetry.
 ;
     _name.category_id             model_site
     _name.object_id               mole_index
