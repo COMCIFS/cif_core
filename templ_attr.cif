@@ -311,9 +311,9 @@ save_site_symmetry
     _type.contents               Symop
      loop_
     _description_example.case
-    _description_example.detail '4'     '4th symmetry operation applied'
+    _description_example.detail '4'     '4th symmetry operation applied.'
                                 '7_645' '7th symm. posn.; +a on x; -b on y'
-                                 .      'no symmetry or translation to site'
+                                 .      'No symmetry or translation to site.'
      save_
 
 save_Cartn_coord
