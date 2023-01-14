@@ -3963,9 +3963,9 @@ save_diffrn_standards.decay_percent
     loop_
       _description_example.case
       _description_example.detail
-         0.5(1)         'represents a decay between 0.2% and 0.8%'
-         -1(1)          'change in standards between 2% decay and 4% rise'
-         0.0(2)         'change in standards between 0.6% decay and 0.6% rise.'
+         0.5(1)         'Represents a decay between 0.2% and 0.8%.'
+         -1(1)          'Change in standards between 2% decay and 4% rise.'
+         0.0(2)         'Change in standards between 0.6% decay and 0.6% rise.'
 
 save_
 
@@ -11032,7 +11032,7 @@ save_space_group.bravais_type
          cF
 
     _description_example.case     aP
-    _description_example.detail   'triclinic (anorthic) primitive lattice'
+    _description_example.detail   'Triclinic (anorthic) primitive lattice.'
 
 save_
 
@@ -11300,9 +11300,9 @@ save_space_group.name_h-m_alt
     loop_
       _description_example.case
       _description_example.detail
-         'P 1 21/m 1'                             'space group No. 10'
-         'P 2/n 2/n 2/n (origin at -1)'           'space group No. 48 origin 2'
-         'R -3 2/m'                               'space group No. 166 rhomb'
+         'P 1 21/m 1'                             'Space group No. 10.'
+         'P 2/n 2/n 2/n (origin at -1)'           'Space group No. 48 origin 2.'
+         'R -3 2/m'                               'Space group No. 166 rhomb.'
 
 save_
 
@@ -11372,7 +11372,7 @@ save_space_group.name_h-m_full
     _type.container               Single
     _type.contents                Text
     _description_example.case     'P 21/n 21/m 21/a'
-    _description_example.detail   'full symbol for Pnma'
+    _description_example.detail   'Full symbol for Pnma.'
 
 save_
 
@@ -11487,7 +11487,7 @@ save_space_group.name_schoenflies
     _type.container               Single
     _type.contents                Code
     _description_example.case     C2h.5
-    _description_example.detail   'Schoenflies symbol for space group No. 14'
+    _description_example.detail   'Schoenflies symbol for space group No. 14.'
 
     _import.get                   [{'file':templ_enum.cif  'save':Schoenflies}]
 
@@ -11688,8 +11688,8 @@ save_space_group_generator.xyz
     _description_example.case     x,1/2-y,1/2+z
     _description_example.detail
 ;
-    c glide reflection through the plane (x,1/4,z) chosen as one of
-    the generators of the space group
+    C glide reflection through the plane (x,1/4,z) chosen as one of
+    the generators of the space group.
 ;
 
 save_
@@ -11812,7 +11812,7 @@ save_space_group_symop.operation_xyz
     _type.contents                Text
     _description_example.case     x,1/2-y,1/2+z
     _description_example.detail
-        'glide reflection through the plane (x,1/4,z) with glide vector (1/2)c'
+        'Glide reflection through the plane (x,1/4,z) with glide vector (1/2)c.'
 
 save_
 
@@ -11972,7 +11972,7 @@ save_space_group_wyckoff.coords_xyz
     _type.contents                Code
     _description_example.case     x,1/2,0
     _description_example.detail
-        'coordinates of Wyckoff site with 2.. symmetry'
+        'Coordinates of Wyckoff site with 2.. symmetry.'
 
 save_
 
@@ -12074,11 +12074,11 @@ save_space_group_wyckoff.site_symmetry
       _description_example.detail
          2.22
 ;
-         position 2b in space group No. 94, P 42 21 2
+         Position 2b in space group No. 94, P 42 21 2.
 ;
          42.2
 ;
-         position 6b in space group No. 222, P n -3 n
+         Position 6b in space group No. 222, P n -3 n.
 ;
          2..
 ;
@@ -15385,7 +15385,7 @@ save_AUDIT_SUPPORT
     _description_example.detail
 ;
     Example prepared from funding data published in
-    https://doi.org/10.1107/S2052252519016105
+    https://doi.org/10.1107/S2052252519016105.
 ;
 
 save_
@@ -20147,9 +20147,9 @@ save_atom_site.attached_hydrogens
     loop_
       _description_example.case
       _description_example.detail
-         2                        'water oxygen'
-         1                        'hydroxyl oxygen'
-         4                        'ammonium nitrogen'
+         2                        'Water oxygen.'
+         1                        'Hydroxyl oxygen.'
+         4                        'Ammonium nitrogen.'
 
 save_
 
@@ -20544,9 +20544,9 @@ save_atom_site.disorder_assembly
     loop_
       _description_example.case
       _description_example.detail
-         A                     'disordered methyl assembly with groups 1 and 2'
-         B                     'disordered sites related by a mirror'
-         S                     'disordered sites independent of symmetry'
+         A                     'Disordered methyl assembly with groups 1 and 2.'
+         B                     'Disordered sites related by a mirror.'
+         S                     'Disordered sites independent of symmetry.'
 
 save_
 
@@ -20576,9 +20576,9 @@ save_atom_site.disorder_group
     loop_
       _description_example.case
       _description_example.detail
-         1                        'unique disordered site in group 1'
-         2                        'unique disordered site in group 2'
-         -1                       'symmetry-independent disordered site'
+         1                        'Unique disordered site in group 1.'
+         2                        'Unique disordered site in group 2.'
+         -1                       'Symmetry-independent disordered site.'
 
 save_
 
@@ -24874,7 +24874,7 @@ save_refine_ls.extinction_coef
     _enumeration.range            0.:
     _units.code                   none
     _description_example.case     3472(52)
-    _description_example.detail   'Zachariasen coefficient r* = 0.347(5)e+04'
+    _description_example.detail   'Zachariasen coefficient r* = 0.347(5)e+04.'
 
 save_
 
