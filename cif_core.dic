@@ -3681,8 +3681,8 @@ save_diffrn_source.description
     _definition.id                '_diffrn_source.description'
 
     loop_
-    _definition_replaced.id
-    _definition_replaced.by
+      _definition_replaced.id
+      _definition_replaced.by
          1                        '_diffrn_source.device'
          2                        '_diffrn_source.details'
 
