@@ -1767,7 +1767,7 @@ save_type.contents
 
     _enumeration.default          Text
     _description_example.case     Integer
-    _description_example.detail   'content is a single or multiple integer(s)'
+    _description_example.detail   'Content is a single or multiple integer(s).'
 
 save_
 

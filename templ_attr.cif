@@ -312,7 +312,7 @@ save_site_symmetry
      loop_
     _description_example.case
     _description_example.detail '4'     '4th symmetry operation applied.'
-                                '7_645' '7th symm. posn.; +a on x; -b on y'
+                                '7_645' '7th symm. posn.; +a on x; -b on y.'
                                  .      'No symmetry or translation to site.'
      save_
 

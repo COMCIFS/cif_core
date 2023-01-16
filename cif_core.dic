@@ -884,32 +884,32 @@ save_diffrn_measurement.specimen_attachment_type
       _enumeration_set.detail
          epoxy
 ;
-         An epoxy glue
+         An epoxy glue.
 ;
          oil
 ;
-         An oil
+         An oil.
 ;
          grease
 ;
-         A type of grease, for example hydrocarbon or silicone grease
+         A type of grease, for example hydrocarbon or silicone grease.
 ;
          frozen_liquid
 ;
-         A frozen liquid, not water or oil
+         A frozen liquid, not water or oil.
 ;
          other
 ;
-         A method not listed here
+         A method not listed here.
 ;
          ice
 ;
-         The specimen is frozen in place using water ice
+         The specimen is frozen in place using water ice.
 ;
          mechanical
 ;
          The specimen is held in place by mechanical forces, e.g. capillary or
-         pressure cell
+         pressure cell.
 ;
 
 save_
@@ -1659,10 +1659,10 @@ save_diffrn_radiation.xray_symbol
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         K-L~3~                  'K\a~1~ in older Siegbahn notation'
-         K-L~2~                  'K\a~2~ in older Siegbahn notation'
-         K-M~3~                  'K\b~1~ in older Siegbahn notation'
-         K-L~2,3~                'use where K-L~3~ and K-L~2~ are not resolved'
+         K-L~3~                 'K\a~1~ in older Siegbahn notation.'
+         K-L~2~                 'K\a~2~ in older Siegbahn notation.'
+         K-M~3~                 'K\b~1~ in older Siegbahn notation.'
+         K-L~2,3~               'Use where K-L~3~ and K-L~2~ are not resolved.'
 
 save_
 
@@ -1735,11 +1735,11 @@ save_diffrn_radiation_wavelength.determination
       _enumeration_set.state
       _enumeration_set.detail
          fundamental
-             'Fundamental property of matter, e.g. MoK\a'
+             'Fundamental property of matter, e.g. MoK\a.'
          estimated
-             'Estimated, e.g. from monochromator angle or time of flight'
+             'Estimated, e.g. from monochromator angle or time of flight.'
          refined
-             'Refined using a standard crystal with known cell parameters'
+             'Refined using a standard crystal with known cell parameters.'
 
 save_
 
@@ -1882,10 +1882,10 @@ save_diffrn_radiation_wavelength.xray_symbol
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         K-L~3~                  'K\a~1~ in older Siegbahn notation'
-         K-L~2~                  'K\a~2~ in older Siegbahn notation'
-         K-M~3~                  'K\b~1~ in older Siegbahn notation'
-         K-L~2,3~                'use where K-L~3~ and K-L~2~ are not resolved'
+         K-L~3~                 'K\a~1~ in older Siegbahn notation.'
+         K-L~2~                 'K\a~2~ in older Siegbahn notation.'
+         K-M~3~                 'K\b~1~ in older Siegbahn notation.'
+         K-L~2,3~               'Use where K-L~3~ and K-L~2~ are not resolved.'
 
 save_
 
@@ -2545,9 +2545,9 @@ save_diffrn_refln.scan_mode
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         om                       'omega scan'
-         ot                       'omega/2theta scan'
-         q                        'Q-scans (arbitrary reciprocal directions)'
+         om                       'Omega scan.'
+         ot                       'Omega/2theta scan.'
+         q                        'Q-scans (arbitrary reciprocal directions).'
 
 save_
 
@@ -2570,8 +2570,8 @@ save_diffrn_refln.scan_mode_backgd
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         st                       'stationary counter background'
-         mo                       'moving counter background'
+         st                       'Stationary counter background.'
+         mo                       'Moving counter background.'
 
 save_
 
@@ -3740,12 +3740,12 @@ save_diffrn_source.device
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         tube                     'sealed X-ray tube'
-         nuclear                  'nuclear reactor'
-         spallation               'spallation source'
-         elect-micro              'electron microscope'
-         rot_anode                'rotating-anode X-ray tube'
-         synch                    'synchrotron'
+         tube                     'Sealed X-ray tube.'
+         nuclear                  'Nuclear reactor.'
+         spallation               'Spallation source.'
+         elect-micro              'Electron microscope.'
+         rot_anode                'Rotating-anode X-ray tube.'
+         synch                    'Synchrotron.'
 
 save_
 
@@ -4926,12 +4926,12 @@ save_refln.include_status
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         o     'ob : within _reflns.threshold_expression; within d-res limits'
-         <     'lt : without _reflns.threshold_expression; within d-res limits'
-         -     'sa : systematically absent reflection due to symmetry'
-         x     'du : deemed unreliable measurement -- not used'
-         h     'hd : above _refine_ls.d_res_high'
-         l     'ld : below _refine_ls.d_res_low'
+         o    'ob : within _reflns.threshold_expression; within d-res limits.'
+         <    'lt : without _reflns.threshold_expression; within d-res limits.'
+         -    'sa : systematically absent reflection due to symmetry.'
+         x    'du : deemed unreliable measurement -- not used.'
+         h    'hd : above _refine_ls.d_res_high.'
+         l    'ld : below _refine_ls.d_res_low.'
 
 save_
 
@@ -5200,9 +5200,9 @@ save_refln.refinement_status
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         incl                     'included in ls process'
-         excl                     'excluded from ls process'
-         extn                     'excluded due to extinction'
+         incl                     'Included in ls process.'
+         excl                     'Excluded from ls process.'
+         extn                     'Excluded due to extinction.'
 
 save_
 
@@ -5389,10 +5389,10 @@ save_reflns.apply_dispersion_to_fcalc
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         yes                      'apply dispersion'
-         y                        'abbreviation for "yes"'
-         no                       'do not apply dispersion'
-         n                        'abbreviation for "no"'
+         yes                      'Apply dispersion.'
+         y                        'Abbreviation for "yes".'
+         no                       'Do not apply dispersion.'
+         n                        'Abbreviation for "no".'
 
 save_
 
@@ -8477,7 +8477,7 @@ save_chemical.absolute_configuration
 ;
          .
 ;
-         inapplicable
+         Inapplicable.
 ;
 
 save_
@@ -9483,14 +9483,14 @@ save_chemical_conn_bond.type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         sing                     'single bond'
-         doub                     'double bond'
-         trip                     'triple bond'
-         quad                     'quadruple bond'
-         arom                     'aromatic bond'
-         poly                     'polymeric bond'
-         delo                     'delocalized double bond'
-         pi                       'pi bond'
+         sing                     'Single bond.'
+         doub                     'Double bond.'
+         trip                     'Triple bond.'
+         quad                     'Quadruple bond.'
+         arom                     'Aromatic bond.'
+         poly                     'Polymeric bond.'
+         delo                     'Delocalized double bond.'
+         pi                       'Pi bond.'
 
 save_
 
@@ -9880,17 +9880,17 @@ save_exptl_absorpt.correction_type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         analytical               'analytical from crystal shape'
-         cylinder                 'cylindrical'
-         empirical                'empirical from intensities'
-         gaussian                 'Gaussian from crystal shape'
-         integration              'integration from crystal shape'
-         multi-scan               'symmetry-related measurements'
-         none                     'no absorption correction applied'
-         numerical                'numerical from crystal shape'
-         psi-scan                 'psi-scan corrections'
-         refdelf                  'refined from delta-F'
-         sphere                   'spherical'
+         analytical               'Analytical from crystal shape.'
+         cylinder                 'Cylindrical.'
+         empirical                'Empirical from intensities.'
+         gaussian                 'Gaussian from crystal shape.'
+         integration              'Integration from crystal shape.'
+         multi-scan               'Symmetry-related measurements.'
+         none                     'No absorption correction applied.'
+         numerical                'Numerical from crystal shape.'
+         psi-scan                 'Psi-scan corrections.'
+         refdelf                  'Refined from delta-F.'
+         sphere                   'Spherical.'
 
 save_
 
@@ -11055,15 +11055,15 @@ save_space_group.centring_type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         P         'primitive            no centring'
+         P         'Primitive            no centring'
          A         'A-face centred       (0,1/2,1/2)'
          B         'B-face centred       (1/2,0,1/2)'
          C         'C-face centred       (1/2,1/2,0)'
-         F         'all faces centred    (0,1/2,1/2), (1/2,0,1/2), (1/2,1/2,0)'
-         I         'body centred         (1/2,1/2,1/2)'
-         R         'rhombohedral obverse centred (2/3,1/3,1/3), (1/3,2/3,2/3)'
-         Rrev      'rhombohedral reverse centred (1/3,2/3,1/3), (2/3,1/3,2/3)'
-         H         'hexagonal centred    (2/3,1/3,0), (1/3,2/3,0)'
+         F         'All faces centred    (0,1/2,1/2), (1/2,0,1/2), (1/2,1/2,0)'
+         I         'Body centred         (1/2,1/2,1/2)'
+         R         'Rhombohedral obverse centred (2/3,1/3,1/3), (1/3,2/3,2/3)'
+         Rrev      'Rhombohedral reverse centred (1/3,2/3,1/3), (2/3,1/3,2/3)'
+         H         'Hexagonal centred    (2/3,1/3,0), (1/3,2/3,0)'
 
 save_
 
@@ -11300,9 +11300,9 @@ save_space_group.name_h-m_alt
     loop_
       _description_example.case
       _description_example.detail
-         'P 1 21/m 1'                             'Space group No. 10.'
-         'P 2/n 2/n 2/n (origin at -1)'           'Space group No. 48 origin 2.'
-         'R -3 2/m'                               'Space group No. 166 rhomb.'
+         'P 1 21/m 1'                            'Space group No. 10.'
+         'P 2/n 2/n 2/n (origin at -1)'          'Space group No. 48 origin 2.'
+         'R -3 2/m'                              'Space group No. 166 rhomb.'
 
 save_
 
@@ -12434,10 +12434,10 @@ save_geom_angle.publ_flag
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         no                       'do not include angle in special list'
-         n                        'abbreviation for "no"'
-         yes                      'do include angle in special list'
-         y                        'abbreviation for "yes"'
+         no                       'Do not include angle in special list.'
+         n                        'Abbreviation for "no".'
+         yes                      'Do include angle in special list.'
+         y                        'Abbreviation for "yes".'
 
     _enumeration.default          no
 
@@ -12751,10 +12751,10 @@ save_geom_bond.publ_flag
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         no                       'do not include bond in special list'
-         n                        'abbreviation for "no"'
-         yes                      'do include bond in special list'
-         y                        'abbreviation for "yes"'
+         no                       'Do not include bond in special list.'
+         n                        'Abbreviation for "no".'
+         yes                      'Do include bond in special list.'
+         y                        'Abbreviation for "yes".'
 
     _enumeration.default          no
 
@@ -13018,10 +13018,10 @@ save_geom_contact.publ_flag
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         no                       'do not include distance in special list'
-         n                        'abbreviation for "no"'
-         yes                      'do include distance in special list'
-         y                        'abbreviation for "yes"'
+         no                       'Do not include distance in special list.'
+         n                        'Abbreviation for "no".'
+         yes                      'Do include distance in special list.'
+         y                        'Abbreviation for "yes".'
 
     _enumeration.default          no
 
@@ -13421,10 +13421,10 @@ save_geom_hbond.publ_flag
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         no                       'do not include bond in special list'
-         n                        'abbreviation for "no"'
-         yes                      'do include bond in special list'
-         y                        'abbreviation for "yes"'
+         no                       'Do not include bond in special list.'
+         n                        'Abbreviation for "no".'
+         yes                      'Do include bond in special list.'
+         y                        'Abbreviation for "yes".'
 
     _enumeration.default          no
 
@@ -13745,10 +13745,10 @@ save_geom_torsion.publ_flag
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         yes                      'publish'
-         y                        'abbreviation for "yes"'
-         no                       'do not publish'
-         n                        'abbreviation for "no"'
+         yes                      'Publish.'
+         y                        'Abbreviation for "yes".'
+         no                       'Do not publish.'
+         n                        'Abbreviation for "no".'
 
     _enumeration.default          no
 
@@ -14750,25 +14750,25 @@ save_audit.schema
       _enumeration_set.detail
          'Base'
 ;
-         Original Core CIF schema
+         Original Core CIF schema.
 ;
          'Space group tables'
 ;
-         space_group category is looped
+         space_group category is looped.
 ;
          'Entry'
 ;
          entry category is defined and looped: information from multiple data
-         blocks in one block
+         blocks in one block.
 ;
          'Custom'
 ;
-         Examine dictionaries provided in _audit_conform
+         Examine dictionaries provided in _audit_conform.
 ;
          'Local'
 ;
          Locally modified dictionaries. These datafiles should not be
-         distributed
+         distributed.
 ;
 
     _enumeration.default          Base
@@ -14974,41 +14974,41 @@ save_audit_author_role.role
       _enumeration_set.detail
          design
 ;
-         conceived and/or designed the experiment
+         Conceived and/or designed the experiment.
 ;
          synthesis
 ;
-         synthesized the samples
+         Synthesized the samples.
 ;
          preparation
 ;
-         prepared the samples for measurement, e.g. crystallized or
-         recrystallized the sample
+         Prepared the samples for measurement, e.g. crystallized or
+         recrystallized the sample.
 ;
          characterisation
 ;
-         performed non-crystallographic measurements on the samples
+         Performed non-crystallographic measurements on the samples.
 ;
          measurement
 ;
-         collected and/or reduced diffraction data
+         Collected and/or reduced diffraction data.
 ;
          analysis
 ;
-         worked on the structural model
+         Worked on the structural model.
 ;
          software
 ;
-         developed bespoke software for specialised data processing and/or
-         analysis
+         Developed bespoke software for specialised data processing and/or
+         analysis.
 ;
          submission
 ;
-         prepared the final CIF file
+         Prepared the final CIF file.
 ;
          other
 ;
-         none of the listed roles. See _audit_author_role.special_details
+         None of the listed roles. See _audit_author_role.special_details.
 ;
 
 save_
@@ -15694,10 +15694,10 @@ save_citation.coordinate_linkage
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         no                       'citation unrelated to current coordinates'
-         n                        'abbreviation for "no"'
-         yes                      'citation related to current coordinates'
-         y                        'abbreviation for "yes"'
+         no                       'Citation unrelated to current coordinates.'
+         n                        'Abbreviation for "no".'
+         yes                      'Citation related to current coordinates.'
+         y                        'Abbreviation for "yes".'
 
 save_
 
@@ -16969,24 +16969,24 @@ save_database_related.relation
       _enumeration_set.detail
          Identical
 ;
-         The dataset contents are identical
+         The dataset contents are identical.
 ;
          Subset
 ;
          The dataset contents are a proper subset of the contents of the data
-         block
+         block.
 ;
          Superset
 ;
-         The dataset contents include the contents of the data block
+         The dataset contents include the contents of the data block.
 ;
          Derived
 ;
-         The dataset contents are derivable from the contents of the data block
+         The dataset contents are derivable from the contents of the data block.
 ;
          Common
 ;
-         The dataset contents share a common source
+         The dataset contents share a common source.
 ;
 
 save_
@@ -17930,10 +17930,10 @@ save_journal_index.type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         O                        'organic formula index'
-         I                        'inorganic formula index'
-         M                        'metal-organic formula index'
-         S                        'subject index'
+         O                        'Organic formula index.'
+         I                        'Inorganic formula index.'
+         M                        'Metal-organic formula index.'
+         S                        'Subject index.'
 
     _enumeration.default          O
 
@@ -18474,13 +18474,13 @@ save_publ_body.format
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         ascii                    'no coding for special symbols'
-         cif                      'CIF convention'
-         latex                    'LaTeX'
-         rtf                      'Rich Text Format'
-         sgml                     'SGML (ISO 8879)'
-         tex                      'TeX'
-         troff                    'troff or nroff'
+         ascii                    'No coding for special symbols.'
+         cif                      'CIF convention.'
+         latex                    'LaTeX.'
+         rtf                      'Rich Text Format.'
+         sgml                     'SGML (ISO 8879).'
+         tex                      'TeX.'
+         troff                    'troff or nroff.'
 
     _enumeration.default          cif
 
@@ -18895,10 +18895,10 @@ save_publ_manuscript_incl_extra.defn
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         yes                      'include item in journal request list'
-         y                        'include item in journal request list'
-         no                       'exclude item in journal request list'
-         n                        'exclude item in journal request list'
+         yes                      'Include item in journal request list.'
+         y                        'Include item in journal request list.'
+         no                       'Exclude item in journal request list.'
+         n                        'Exclude item in journal request list.'
 
     _enumeration.default          yes
 
@@ -18998,27 +18998,27 @@ save_publ_requested.category
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         AD      'Addenda and Errata (Acta C, Acta E)'
-         CI      'CIF-access paper - inorganic (Acta C) (no longer in use)'
-         CM      'CIF-access paper - metal-organic (Acta C) (no longer in use)'
-         CO      'CIF-access paper - organic (Acta C)  (no longer in use)'
-         EI      'Electronic submission - inorganic (Acta E)'
-         EM      'Electronic submission - metal-organic (Acta E)'
-         EO      'Electronic submission - organic (Acta E)'
-         FA      'Full article'
-         FI      'Full submission - inorganic (Acta C)'
-         FM      'Full submission - metal-organic (Acta C)'
-         FO      'Full submission - organic (Acta C)'
-         GI      'Research communications - inorganic compounds (Acta E)'
-         GM      'Research communications - metal-organic compounds (Acta E)'
-         GO      'Research communications - organic compounds (Acta E)'
-         HI      'Data reports - inorganic compounds (Acta E)'
-         HM      'Data reports - metal-organic compounds (Acta E)'
-         HO      'Data reports - organic compounds (Acta E)'
-         QI      'Inorganic compounds (Acta E)'
-         QM      'Metal-organic compounds (Acta E)'
-         QO      'Organic compounds (Acta E)'
-         SC      'Short communication'
+         AD     'Addenda and Errata (Acta C, Acta E).'
+         CI     'CIF-access paper - inorganic (Acta C) (no longer in use).'
+         CM     'CIF-access paper - metal-organic (Acta C) (no longer in use).'
+         CO     'CIF-access paper - organic (Acta C)  (no longer in use).'
+         EI     'Electronic submission - inorganic (Acta E).'
+         EM     'Electronic submission - metal-organic (Acta E).'
+         EO     'Electronic submission - organic (Acta E).'
+         FA     'Full article.'
+         FI     'Full submission - inorganic (Acta C).'
+         FM     'Full submission - metal-organic (Acta C).'
+         FO     'Full submission - organic (Acta C).'
+         GI     'Research communications - inorganic compounds (Acta E).'
+         GM     'Research communications - metal-organic compounds (Acta E).'
+         GO     'Research communications - organic compounds (Acta E).'
+         HI     'Data reports - inorganic compounds (Acta E).'
+         HM     'Data reports - metal-organic compounds (Acta E).'
+         HO     'Data reports - organic compounds (Acta E).'
+         QI     'Inorganic compounds (Acta E).'
+         QM     'Metal-organic compounds (Acta E).'
+         QO     'Organic compounds (Acta E).'
+         SC     'Short communication.'
 
     _enumeration.default          FA
 
@@ -20114,13 +20114,13 @@ save_atom_site.adp_type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Uani                     'anisotropic Uij'
-         Uiso                     'isotropic U'
-         Uovl                     'overall U'
-         Umpe                     'multipole expansion U'
-         Bani                     'anisotropic Bij'
-         Biso                     'isotropic B'
-         Bovl                     'overall B'
+         Uani                     'Anisotropic Uij.'
+         Uiso                     'Isotropic U.'
+         Uovl                     'Overall U.'
+         Umpe                     'Multipole expansion U.'
+         Bani                     'Anisotropic Bij.'
+         Biso                     'Isotropic B.'
+         Bovl                     'Overall B.'
 
 save_
 
@@ -20312,10 +20312,10 @@ save_atom_site.calc_flag
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         d                        'determined from diffraction measurements'
-         calc                     'calculated from molecular geometry'
-         c                        'abbreviation for "calc"'
-         dum                      'dummy site with meaningless coordinates'
+         d                        'Determined from diffraction measurements.'
+         calc                     'Calculated from molecular geometry.'
+         c                        'Abbreviation for "calc".'
+         dum                      'Dummy site with meaningless coordinates.'
 
 save_
 
@@ -20544,9 +20544,9 @@ save_atom_site.disorder_assembly
     loop_
       _description_example.case
       _description_example.detail
-         A                     'Disordered methyl assembly with groups 1 and 2.'
-         B                     'Disordered sites related by a mirror.'
-         S                     'Disordered sites independent of symmetry.'
+         A                    'Disordered methyl assembly with groups 1 and 2.'
+         B                    'Disordered sites related by a mirror.'
+         S                    'Disordered sites independent of symmetry.'
 
 save_
 
@@ -20894,14 +20894,14 @@ save_atom_site.refinement_flags
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         S                       'special position constraint on site'
-         G                       'rigid group refinement of site'
-         R                       'riding-atom site attached to non-riding atom'
-         D                       'distance or angle restraint on site'
-         T                       'thermal displacement constraints'
-         U                       'Uiso or Uij restraint (rigid bond)'
-         P                       'partial occupancy constraint'
-         .                       'no refinement constraints'
+         S                      'Special position constraint on site.'
+         G                      'Rigid group refinement of site.'
+         R                      'Riding-atom site attached to non-riding atom.'
+         D                      'Distance or angle restraint on site.'
+         T                      'Yhermal displacement constraints.'
+         U                      'Uiso or Uij restraint (rigid bond).'
+         P                      'Partial occupancy constraint.'
+         .                      'No refinement constraints.'
 
 save_
 
@@ -20925,10 +20925,10 @@ save_atom_site.refinement_flags_adp
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         .     'no constraints on atomic displacement parameters'
-         T     'special-position constraints on atomic displacement parameters'
-         U     'Uiso or Uij restraint (rigid bond)'
-         TU    'both constraints applied'
+         .    'No constraints on atomic displacement parameters.'
+         T    'Special-position constraints on atomic displacement parameters.'
+         U    'Uiso or Uij restraint (rigid bond).'
+         TU   'Both constraints applied.'
 
 save_
 
@@ -20952,8 +20952,8 @@ save_atom_site.refinement_flags_occupancy
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         .                        'no constraints on site-occupancy parameters'
-         P                        'site-occupancy constraint'
+         .                       'No constraints on site-occupancy parameters.'
+         P                       'Site-occupancy constraint.'
 
 save_
 
@@ -20977,22 +20977,22 @@ save_atom_site.refinement_flags_posn
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         .              'no constraints on positional coordinates'
-         D              'distance or angle restraint on positional coordinates'
-         G              'rigid-group refinement of positional coordinates'
-         R              'riding-atom site attached to non-riding atom'
-         S              'special-position constraint on positional coordinates'
-         DG             'combination of the above constraints'
-         DR             'combination of the above constraints'
-         DS             'combination of the above constraints'
-         GR             'combination of the above constraints'
-         GS             'combination of the above constraints'
-         RS             'combination of the above constraints'
-         DGR            'combination of the above constraints'
-         DGS            'combination of the above constraints'
-         DRS            'combination of the above constraints'
-         GRS            'combination of the above constraints'
-         DGRS           'combination of the above constraints'
+         .             'No constraints on positional coordinates.'
+         D             'Distance or angle restraint on positional coordinates.'
+         G             'Rigid-group refinement of positional coordinates.'
+         R             'Riding-atom site attached to non-riding atom.'
+         S             'Special-position constraint on positional coordinates.'
+         DG            'Combination of the above constraints.'
+         DR            'Combination of the above constraints.'
+         DS            'Combination of the above constraints.'
+         GR            'Combination of the above constraints.'
+         GS            'Combination of the above constraints.'
+         RS            'Combination of the above constraints.'
+         DGR           'Combination of the above constraints.'
+         DGS           'Combination of the above constraints.'
+         DRS           'Combination of the above constraints.'
+         GRS           'Combination of the above constraints.'
+         DGRS          'Combination of the above constraints.'
 
 save_
 
@@ -21997,52 +21997,52 @@ save_atom_sites.solution_hydrogens
       _enumeration_set.detail
          difmap
 ;
-         difference Fourier map
+         Difference Fourier map.
 ;
          vecmap
 ;
-         real-space vector search
+         Real-space vector search.
 ;
          heavy
 ;
-         heavy-atom method
+         Heavy-atom method.
 ;
          direct
 ;
-         structure-invariant direct methods
+         Structure-invariant direct methods.
 ;
          geom
 ;
-         inferred from neighbouring sites
+         Inferred from neighbouring sites.
 ;
          disper
 ;
-         anomalous-dispersion techniques
+         Anomalous-dispersion techniques.
 ;
          isomor
 ;
-         isomorphous structure methods
+         Isomorphous structure methods.
 ;
          mixed
 ;
-         a mixture of "geom" and "difmap"
+         A mixture of "geom" and "difmap".
 ;
          notdet
 ;
-         coordinates were not determined
+         Coordinates were not determined.
 ;
          dual
 ;
-         dual-space method (Sheldrick et al., 2001)
+         Dual-space method (Sheldrick et al., 2001).
 ;
          iterative
 ;
-         iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
-         Acta Cryst. A60, 134-141]
+         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Acta Cryst. A60, 134-141].
 ;
          other
 ;
-         a method not included elsewhere in this list
+         A method not included elsewhere in this list.
 ;
 
 save_
@@ -22079,48 +22079,48 @@ save_atom_sites.solution_primary
       _enumeration_set.detail
          difmap
 ;
-         difference Fourier map
+         Difference Fourier map.
 ;
          vecmap
 ;
-         real-space vector search
+         Real-space vector search.
 ;
          heavy
 ;
-         heavy-atom method
+         Heavy-atom method.
 ;
          direct
 ;
-         structure-invariant direct methods
+         Structure-invariant direct methods.
 ;
          geom
 ;
-         inferred from neighbouring sites
+         Inferred from neighbouring sites.
 ;
          disper
 ;
-         anomalous-dispersion techniques
+         Anomalous-dispersion techniques.
 ;
          isomor
 ;
-         isomorphous structure methods
+         Isomorphous structure methods.
 ;
          notdet
 ;
-         coordinates were not determined
+         Coordinates were not determined.
 ;
          dual
 ;
-         dual-space method (Sheldrick et al., 2001)
+         Dual-space method (Sheldrick et al., 2001).
 ;
          iterative
 ;
-         iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
-         Acta Cryst. A60, 134-141]
+         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Acta Cryst. A60, 134-141].
 ;
          other
 ;
-         a method not included elsewhere in this list
+         A method not included elsewhere in this list.
 ;
 
 save_
@@ -22157,48 +22157,48 @@ save_atom_sites.solution_secondary
       _enumeration_set.detail
          difmap
 ;
-         difference Fourier map
+         Difference Fourier map.
 ;
          vecmap
 ;
-         real-space vector search
+         Real-space vector search.
 ;
          heavy
 ;
-         heavy-atom method
+         Heavy-atom method.
 ;
          direct
 ;
-         structure-invariant direct methods
+         Structure-invariant direct methods.
 ;
          geom
 ;
-         inferred from neighbouring sites
+         Inferred from neighbouring sites.
 ;
          disper
 ;
-         anomalous-dispersion techniques
+         Anomalous-dispersion techniques.
 ;
          isomor
 ;
-         isomorphous structure methods
+         Isomorphous structure methods.
 ;
          notdet
 ;
-         coordinates were not determined
+         Coordinates were not determined.
 ;
          dual
 ;
-         dual-space method (Sheldrick et al., 2001)
+         Dual-space method (Sheldrick et al., 2001).
 ;
          iterative
 ;
-         iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
-         Acta Cryst. A60, 134-141]
+         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Acta Cryst. A60, 134-141].
 ;
          other
 ;
-         a method not included elsewhere in this list
+         A method not included elsewhere in this list.
 ;
 
 save_
@@ -25322,71 +25322,71 @@ save_refine_ls.hydrogen_treatment
       _enumeration_set.detail
          refall
 ;
-         refined all H-atom parameters
+         Refined all H-atom parameters.
 ;
          refxyz
 ;
-         refined H-atom coordinates only
+         Refined H-atom coordinates only.
 ;
          refU
 ;
-         refined H-atom Us only
+         Refined H-atom Us only.
 ;
          noref
 ;
-         no refinement of H-atom parameters
+         No refinement of H-atom parameters.
 ;
          constr
 ;
-         H-atom parameters constrained
+         H-atom parameters constrained.
 ;
          hetero
 ;
          H-atom parameters constrained for H on C, all H-atom parameters
-         refined for H on heteroatoms
+         refined for H on heteroatoms.
 ;
          heteroxyz
 ;
          H-atom parameters constrained for H on C, refined H-atom coordinates
-         only for H on heteroatoms
+         only for H on heteroatoms.
 ;
          heteroU
 ;
          H-atom parameters constrained for H on C, refined H-atom U's only for
-         H on heteroatoms
+         H on heteroatoms.
 ;
          heteronoref
 ;
          H-atom parameters constrained for H on C, no refinement of H-atom
-         parameters for H on heteroatoms
+         parameters for H on heteroatoms.
 ;
          hetero-mixed
 ;
          H-atom parameters constrained for H on C and some heteroatoms, all
-         H-atom parameters refined for H on remaining heteroatoms
+         H-atom parameters refined for H on remaining heteroatoms.
 ;
          heteroxyz-mixed
 ;
          H-atom parameters constrained for H on C and some heteroatoms, refined
-         H-atom coordinates only for H on remaining heteroatoms
+         H-atom coordinates only for H on remaining heteroatoms.
 ;
          heteroU-mixed
 ;
          H-atom parameters constrained for H on C and some heteroatoms, refined
-         H-atom U's only for H on remaining heteroatoms
+         H-atom U's only for H on remaining heteroatoms.
 ;
          heteronoref-mixed
 ;
          H-atom parameters constrained for H on C and some heteroatoms, no
-         refinement of H-atom parameters for H on remaining heteroatoms
+         refinement of H-atom parameters for H on remaining heteroatoms.
 ;
          mixed
 ;
-         some constrained, some independent
+         Some constrained, some independent.
 ;
          undef
 ;
-         H-atom parameters not defined
+         H-atom parameters not defined.
 ;
 
 save_
@@ -25415,12 +25415,12 @@ save_refine_ls.matrix_type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         full                     'full'
-         fullcycle                'full with fixed elements per cycle'
-         atomblock                'block diagonal per atom'
-         userblock                'user-defined blocks'
-         diagonal                 'diagonal elements only'
-         sparse                   'selected elements only'
+         full                     'Full.'
+         fullcycle                'Full with fixed elements per cycle.'
+         atomblock                'Block diagonal per atom.'
+         userblock                'User-defined blocks.'
+         diagonal                 'Diagonal elements only.'
+         sparse                   'Selected elements only.'
 
 save_
 
@@ -26006,9 +26006,9 @@ save_refine_ls.structure_factor_coef
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         F                        'structure factor magnitude'
-         Fsqd                     'structure factor squared'
-         Inet                     'net intensity'
+         F                        'Structure factor magnitude.'
+         Fsqd                     'Structure factor squared.'
+         Inet                     'Net intensity.'
 
 save_
 
@@ -26069,9 +26069,9 @@ save_refine_ls.weighting_scheme
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         sigma                    "based on measured s.u.'s"
-         unit                     "unit or no weights applied"
-         calc                     "calculated weights applied"
+         sigma                    "Based on measured s.u.'s."
+         unit                     "Unit or no weights applied."
+         calc                     "Calculated weights applied."
 
 save_
 
