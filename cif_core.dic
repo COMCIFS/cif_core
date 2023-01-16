@@ -20484,7 +20484,7 @@ save_atom_site.constraints
     _description.text
 ;
     A description of the constraints applied to parameters at this
-    site during refinement. See also _atom_site.refinement_flags
+    site during refinement. See also _atom_site.refinement_flags_*
     and _refine_ls.number_constraints.
 ;
     _name.category_id             atom_site
@@ -20506,11 +20506,11 @@ save_atom_site.description
          '_atom_site_description'
          '_atom_site.details'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     A description of special aspects of this site. See also
-    _atom_site.refinement_flags.
+    _atom_site.refinement_flags_*.
 ;
     _name.category_id             atom_site
     _name.object_id               description
@@ -21002,11 +21002,11 @@ save_atom_site.restraints
 
     _definition.id                '_atom_site.restraints'
     _alias.definition_id          '_atom_site_restraints'
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     A description of restraints applied to specific parameters at
-    this site during refinement. See also _atom_site.refinement_flags
+    this site during refinement. See also _atom_site.refinement_flags_*
     and _refine_ls.number_restraints.
 ;
     _name.category_id             atom_site
@@ -25435,13 +25435,13 @@ save_refine_ls.number_constraints
          '_refine_ls_number_constraints'
          '_refine.ls_number_constraints'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Number of constrained (non-refined or dependent) parameters
     in the least-squares process. These may be due to symmetry or any
     other constraint process (e.g. rigid-body refinement). See also
-    _atom_site.constraints and _atom_site.refinement_flags. A general
+    _atom_site.constraints and _atom_site.refinement_flags_*. A general
     description of constraints may appear in _refine.special_details.
 ;
     _name.category_id             refine_ls
@@ -25549,13 +25549,13 @@ save_refine_ls.number_restraints
          '_refine_ls_number_restraints'
          '_refine.ls_number_restraints'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Number of restrained parameters in the least-squares refinement. These
     parameters do not directly dependent on another refined parameter. Often
     restrained parameters involve geometry or energy dependencies. See also
-    _atom_site.constraints and _atom_site.refinement_flags. A description
+    _atom_site.constraints and _atom_site.refinement_flags_*. A description
     of refinement constraints may appear in _refine.special_details.
 ;
     _name.category_id             refine_ls
