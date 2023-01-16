@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-13
+    _dictionary.date              2023-01-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -10481,10 +10481,10 @@ save_exptl_crystal.size_mid
 
     _definition.id                '_exptl_crystal.size_mid'
     _alias.definition_id          '_exptl_crystal_size_mid'
-    _definition.update            2012-11-22
+    _definition.update            2023-01-16
     _description.text
 ;
-    The median dimension of a crystal.
+    The medial dimension of a crystal.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               size_mid
@@ -26839,7 +26839,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-13
+         3.2.0                    2023-01-16
 ;
        Added data names to allow multi-data-block expression of data sets.
 
