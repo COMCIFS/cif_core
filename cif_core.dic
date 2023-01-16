@@ -21693,11 +21693,11 @@ save_atom_site_aniso.ratio
          '_atom_site_anisotrop.ratio'
          '_atom_site.aniso_ratio'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-16
     _description.text
 ;
-    Ratio of the maximum to minimum eigenvalues of the atomic
-    displacement (thermal) ellipsoids.
+    Ratio of the maximum to minimum eigenvalues of the atomic displacement
+    ellipsoids.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               ratio
