@@ -21719,12 +21719,12 @@ save_atom_site_aniso.type_symbol
          '_atom_site_aniso_type_symbol'
          '_atom_site_anisotrop.type_symbol'
 
-    _definition.update            2021-10-27
+    _definition.update            2023-01-16
     _description.text
 ;
-    This _atom_type.symbol code links the anisotropic atom parameters to
-    the atom type data associated with this site and must match one of
-    the _atom_type.symbol codes in this list.
+    This _atom_type.symbol code links the anisotropic atomic displacement
+    parameters to the atom type data associated with this site and must match
+    one of the _atom_type.symbol codes in this list.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               type_symbol
