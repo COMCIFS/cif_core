@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-12
+    _dictionary.date              2023-01-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -15509,7 +15509,7 @@ save_
 save_audit_support.funding_organization
 
     _definition.id                '_audit_support.funding_organization'
-    _definition.update            2020-08-23
+    _definition.update            2023-01-13
     _description.text
 ;
     The name of the organization providing funding support for
@@ -15518,7 +15518,7 @@ save_audit_support.funding_organization
     Registry (https://github.com/CrossRef/open-funder-registry)
 ;
     _name.category_id             audit_support
-    _name.object_id               funding_organisation
+    _name.object_id               funding_organization
     _type.purpose                 Describe
     _type.source                  Recorded
     _type.container               Single
@@ -15531,7 +15531,7 @@ save_
 save_audit_support.funding_organization_doi
 
     _definition.id                '_audit_support.funding_organization_DOI'
-    _definition.update            2021-09-24
+    _definition.update            2023-01-13
     _description.text
 ;
     The Digital Object Identifier (DOI) associated with the
@@ -15543,7 +15543,7 @@ save_audit_support.funding_organization_doi
     component).
 ;
     _name.category_id             audit_support
-    _name.object_id               funding_organisation_DOI
+    _name.object_id               funding_organization_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -20509,7 +20509,7 @@ save_atom_site.constraints
     _description.text
 ;
     A description of the constraints applied to parameters at this
-    site during refinement. See also _atom_site.refinement_flags
+    site during refinement. See also _atom_site.refinement_flags_*
     and _refine_ls.number_constraints.
 ;
     _name.category_id             atom_site
@@ -20531,11 +20531,11 @@ save_atom_site.description
          '_atom_site_description'
          '_atom_site.details'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     A description of special aspects of this site. See also
-    _atom_site.refinement_flags.
+    _atom_site.refinement_flags_*.
 ;
     _name.category_id             atom_site
     _name.object_id               description
@@ -21027,11 +21027,11 @@ save_atom_site.restraints
 
     _definition.id                '_atom_site.restraints'
     _alias.definition_id          '_atom_site_restraints'
-    _definition.update            2012-11-20
+    _definition.update            2023-01-13
     _description.text
 ;
     A description of restraints applied to specific parameters at
-    this site during refinement. See also _atom_site.refinement_flags
+    this site during refinement. See also _atom_site.refinement_flags_*
     and _refine_ls.number_restraints.
 ;
     _name.category_id             atom_site
@@ -24453,10 +24453,10 @@ save_REFINE_DIFF
     _definition.id                REFINE_DIFF
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2021-09-24
+    _definition.update            2023-01-12
     _description.text
 ;
-    The CATEGORY of data items which specify the electron density limits
+    The CATEGORY of data items which specify the scattering density limits
     in a difference Fourier map after the structure has been refined. The
     RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
@@ -24475,7 +24475,7 @@ save_refine_diff.density_max
          '_refine_diff_density_max'
          '_refine.diff_density_max'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-12
     _description.text
 ;
     Maximum density value in a difference Fourier map.
@@ -24490,9 +24490,11 @@ save_refine_diff.density_max
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24506,7 +24508,7 @@ save_refine_diff.density_max_su
          '_refine_diff_density_max_su'
          '_refine.diff_density_max_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the maximum density value
@@ -24522,9 +24524,11 @@ save_refine_diff.density_max_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24538,7 +24542,7 @@ save_refine_diff.density_min
          '_refine_diff_density_min'
          '_refine.diff_density_min'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Minimum density value in a difference Fourier map.
@@ -24553,9 +24557,11 @@ save_refine_diff.density_min
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24569,7 +24575,7 @@ save_refine_diff.density_min_su
          '_refine_diff_density_min_su'
          '_refine.diff_density_min_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the minimum density value
@@ -24585,9 +24591,11 @@ save_refine_diff.density_min_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24601,7 +24609,7 @@ save_refine_diff.density_rms
          '_refine_diff_density_RMS'
          '_refine.diff_density_RMS'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-12
     _description.text
 ;
     Root mean square density value in a difference Fourier map.
@@ -24621,9 +24629,11 @@ save_refine_diff.density_rms
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24637,7 +24647,7 @@ save_refine_diff.density_rms_su
          '_refine_diff_density_RMS_su'
          '_refine.diff_density_RMS_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the root mean square density value
@@ -24653,9 +24663,11 @@ save_refine_diff.density_rms_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -25448,13 +25460,13 @@ save_refine_ls.number_constraints
          '_refine_ls_number_constraints'
          '_refine.ls_number_constraints'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Number of constrained (non-refined or dependent) parameters
     in the least-squares process. These may be due to symmetry or any
     other constraint process (e.g. rigid-body refinement). See also
-    _atom_site.constraints and _atom_site.refinement_flags. A general
+    _atom_site.constraints and _atom_site.refinement_flags_*. A general
     description of constraints may appear in _refine.special_details.
 ;
     _name.category_id             refine_ls
@@ -25562,13 +25574,13 @@ save_refine_ls.number_restraints
          '_refine_ls_number_restraints'
          '_refine.ls_number_restraints'
 
-    _definition.update            2021-03-01
+    _definition.update            2023-01-13
     _description.text
 ;
     Number of restrained parameters in the least-squares refinement. These
     parameters do not directly dependent on another refined parameter. Often
     restrained parameters involve geometry or energy dependencies. See also
-    _atom_site.constraints and _atom_site.refinement_flags. A description
+    _atom_site.constraints and _atom_site.refinement_flags_*. A description
     of refinement constraints may appear in _refine.special_details.
 ;
     _name.category_id             refine_ls
@@ -26852,7 +26864,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-12
+         3.2.0                    2023-01-13
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26875,6 +26887,14 @@ save_
 
        Renamed DIFFRN_STANDARD to DIFFRN_STANDARDS, as well as all data names,
        to retain consistency with the DDL1 dictionary.
+
+       Fixed dREL names of _audit_support.funding_organization and
+       _audit_support.funding_organization_DOI.
+
+       Corrected the dREL methods responsible for the assignment of units of
+       measurement to the _refine_diff.density_min, _refine_diff.density_min_su,
+       _refine_diff.density_max, _refine_diff.density_max_su,
+       _refine_diff.density_rms and _refine_diff.density_rms_su data items.
 
        Changed the _exptl_crystal.colour data item from a list to a text string
        to restore compatibility with the DDL1 version of the dictionary.
