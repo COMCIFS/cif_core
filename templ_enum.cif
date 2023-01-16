@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2022-10-11
+    _dictionary.date             2023-01-12
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -827,6 +827,9 @@ save_units_code
    "electron-density 'electrons per angstroms  cubed (electrons * (metres * 10^(-10))^(-3))'"
    'electrons_per_picometre_cubed'     
    "electron-density 'electrons per picometres cubed (electrons * (metres * 10^(-12))^(-3))'"
+
+   'femtometres_per_angstrom_cubed'
+   "scattering-length-density 'femtometres per angstroms cubed (10^-6 * (metres * 10^(-10))^(-2))'"
 
    'dalton'      "standard atomic mass unit"
  
@@ -2365,7 +2368,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2022-10-11
+         1.4.8                    2023-01-12
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2385,8 +2388,9 @@ save_
        Changed a duplicate version number in the DICTIONARY_AUDIT loop
        from 1.0.1 to 1.1.0.
 
-       Added the 'micrometres', 'counts' and 'photons per second' enumeration
-       states to the 'units_code' save frame.
+       Added the 'micrometres', 'counts', 'photons per second' and
+       'femtometres_per_angstrom_cubed' enumeration states to the
+       'units_code' save frame.
 
        Added units for TOF coefficients.
 
