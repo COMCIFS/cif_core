@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-13
+    _dictionary.date              2023-01-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -3679,8 +3679,12 @@ save_
 save_diffrn_source.description
 
     _definition.id                '_diffrn_source.description'
-    _definition_replaced.id       1
-    _definition_replaced.by       '_diffrn_source.device'
+
+    loop_
+    _definition_replaced.id
+    _definition_replaced.by
+         1                        '_diffrn_source.device'
+         2                        '_diffrn_source.details'
 
     loop_
       _alias.definition_id
@@ -3688,7 +3692,7 @@ save_diffrn_source.description
          '_diffrn_radiation_source'
          '_diffrn_source.source'
 
-    _definition.update            2019-04-02
+    _definition.update            2023-01-16
     _description.text
 ;
     The general class of the source of radiation. This is deprecated.
@@ -26839,7 +26843,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-13
+         3.2.0                    2023-01-16
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26870,4 +26874,7 @@ save_
        measurement to the _refine_diff.density_min, _refine_diff.density_min_su,
        _refine_diff.density_max, _refine_diff.density_max_su,
        _refine_diff.density_rms and _refine_diff.density_rms_su data items.
+
+       Explicitly added _diffrn_source.details to the list items that replaced
+       _diffrn_source.description.
 ;
