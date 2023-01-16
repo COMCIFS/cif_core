@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-12
+    _dictionary.date              2023-01-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -15484,7 +15484,7 @@ save_
 save_audit_support.funding_organization
 
     _definition.id                '_audit_support.funding_organization'
-    _definition.update            2020-08-23
+    _definition.update            2023-01-13
     _description.text
 ;
     The name of the organization providing funding support for
@@ -15493,7 +15493,7 @@ save_audit_support.funding_organization
     Registry (https://github.com/CrossRef/open-funder-registry)
 ;
     _name.category_id             audit_support
-    _name.object_id               funding_organisation
+    _name.object_id               funding_organization
     _type.purpose                 Describe
     _type.source                  Recorded
     _type.container               Single
@@ -15506,7 +15506,7 @@ save_
 save_audit_support.funding_organization_doi
 
     _definition.id                '_audit_support.funding_organization_DOI'
-    _definition.update            2021-09-24
+    _definition.update            2023-01-13
     _description.text
 ;
     The Digital Object Identifier (DOI) associated with the
@@ -15518,7 +15518,7 @@ save_audit_support.funding_organization_doi
     component).
 ;
     _name.category_id             audit_support
-    _name.object_id               funding_organisation_DOI
+    _name.object_id               funding_organization_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
@@ -26839,7 +26839,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-12
+         3.2.0                    2023-01-13
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26862,6 +26862,9 @@ save_
 
        Renamed DIFFRN_STANDARD to DIFFRN_STANDARDS, as well as all data names,
        to retain consistency with the DDL1 dictionary.
+
+       Fixed dREL names of _audit_support.funding_organization and
+       _audit_support.funding_organization_DOI.
 
        Corrected the dREL methods responsible for the assignment of units of
        measurement to the _refine_diff.density_min, _refine_diff.density_min_su,
