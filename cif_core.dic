@@ -10000,10 +10000,7 @@ save_exptl_crystal.colour
     _definition.update            2023-01-12
     _description.text
 ;
-    Colour description of the crystal expressed as a combination of
-    the _exptl_crystal_appearance.general,
-    _exptl_crystal_appearance.intensity and _exptl_crystal_appearance.hue
-    data item values separated by sequences of a single space symbol.
+    Colour description of the crystal.
 
     Data items from EXPTL_CRYSTAL_APPEARANCE category should be used in
     preference to this item when possible.
@@ -10022,6 +10019,7 @@ save_exptl_crystal.colour
          'metallic blue'
          'red'
          'colourless'
+         'dichroic dark purple/pale blue'
 
     _method.purpose               Definition
     _method.expression
