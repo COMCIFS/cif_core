@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-01-11
+    _dictionary.date              2023-01-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1630,7 +1630,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-01-11
+    _definition.update            2023-01-13
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -1709,7 +1709,13 @@ save_type.contents
 ;
          Version
 ;
-         Version digit string of the form <major>.<version>.<update>
+         Version number string that adheres to the formal grammar provided in
+         the Semantic Versioning specification version 2.0.0. Version strings
+         must take the general form of <major>.<minor>.<patch> and may also
+         contain an optional postfix with additional information such as the
+         pre-release identifier.
+
+         Reference: https://semver.org/spec/v2.0.0.html
 ;
          Dimension
 ;
@@ -2601,7 +2607,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-01-11
+         4.1.0                    2023-01-13
 ;
        Added new 'Word' content type.
 
@@ -2623,4 +2629,8 @@ save_
        attribute.
 
        Updated definition of "Integer" in _type.contents.
+
+       Clarified the definition of the "Version" state in _type.contents
+       by explicitly specifying that is adheres to the formal grammar
+       provided in SemVer version 2.0.0.
 ;
