@@ -24428,10 +24428,10 @@ save_REFINE_DIFF
     _definition.id                REFINE_DIFF
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2021-09-24
+    _definition.update            2023-01-12
     _description.text
 ;
-    The CATEGORY of data items which specify the electron density limits
+    The CATEGORY of data items which specify the scattering density limits
     in a difference Fourier map after the structure has been refined. The
     RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
@@ -24450,7 +24450,7 @@ save_refine_diff.density_max
          '_refine_diff_density_max'
          '_refine.diff_density_max'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-12
     _description.text
 ;
     Maximum density value in a difference Fourier map.
@@ -24465,9 +24465,11 @@ save_refine_diff.density_max
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24481,7 +24483,7 @@ save_refine_diff.density_max_su
          '_refine_diff_density_max_su'
          '_refine.diff_density_max_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the maximum density value
@@ -24497,9 +24499,11 @@ save_refine_diff.density_max_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24513,7 +24517,7 @@ save_refine_diff.density_min
          '_refine_diff_density_min'
          '_refine.diff_density_min'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Minimum density value in a difference Fourier map.
@@ -24528,9 +24532,11 @@ save_refine_diff.density_min
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24544,7 +24550,7 @@ save_refine_diff.density_min_su
          '_refine_diff_density_min_su'
          '_refine.diff_density_min_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the minimum density value
@@ -24560,9 +24566,11 @@ save_refine_diff.density_min_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24576,7 +24584,7 @@ save_refine_diff.density_rms
          '_refine_diff_density_RMS'
          '_refine.diff_density_RMS'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-12
     _description.text
 ;
     Root mean square density value in a difference Fourier map.
@@ -24596,9 +24604,11 @@ save_refine_diff.density_rms
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -24612,7 +24622,7 @@ save_refine_diff.density_rms_su
          '_refine_diff_density_RMS_su'
          '_refine.diff_density_RMS_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the root mean square density value
@@ -24628,9 +24638,11 @@ save_refine_diff.density_rms_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
-    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
-    Else                                            _units.code =  "electrons"
+    # Default units. Applicable to x-ray, electron and gamma radiation.
+    _units.code = "electrons_per_angstrom_cubed"
+
+    If (_diffrn_radiation.probe == "neutron")
+        _units.code = "femtometres_per_angstrom_cubed"
 ;
 
 save_
@@ -26853,4 +26865,9 @@ save_
 
        Fixed dREL names of _audit_support.funding_organization and
        _audit_support.funding_organization_DOI.
+
+       Corrected the dREL methods responsible for the assignment of units of
+       measurement to the _refine_diff.density_min, _refine_diff.density_min_su,
+       _refine_diff.density_max, _refine_diff.density_max_su,
+       _refine_diff.density_rms and _refine_diff.density_rms_su data items.
 ;
