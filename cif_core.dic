@@ -10503,10 +10503,10 @@ save_exptl_crystal.size_mid
 
     _definition.id                '_exptl_crystal.size_mid'
     _alias.definition_id          '_exptl_crystal_size_mid'
-    _definition.update            2012-11-22
+    _definition.update            2023-01-16
     _description.text
 ;
-    The median dimension of a crystal.
+    The medial dimension of a crystal.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               size_mid
