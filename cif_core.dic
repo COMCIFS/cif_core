@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-13
+    _dictionary.date              2023-01-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -20239,12 +20239,12 @@ save_atom_site.b_iso_or_equiv
 
     _definition.id                '_atom_site.B_iso_or_equiv'
     _alias.definition_id          '_atom_site_B_iso_or_equiv'
-    _definition.update            2012-11-20
+    _definition.update            2023-01-16
     _description.text
 ;
     Isotropic atomic displacement parameter, or equivalent isotropic
     atomic displacement parameter, B(equiv), in angstroms squared,
-    calculated from anisotropic temperature factor parameters.
+    calculated from anisotropic atomic displacement parameters.
 
         B(equiv) = (1/3) sum~i~[sum~j~(B^ij^ a*~i~ a*~j~ a~i~.a~j~)]
 
@@ -20277,13 +20277,13 @@ save_atom_site.b_iso_or_equiv_su
          '_atom_site_B_iso_or_equiv_su'
          '_atom_site.B_iso_or_equiv_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-01-16
     _description.text
 ;
     Standard uncertainty of the isotropic atomic displacement parameter,
     or equivalent isotropic atomic displacement parameter, B(equiv),
-    in angstroms squared, calculated from anisotropic temperature
-    factor parameters.
+    in angstroms squared, calculated from anisotropic atomic displacement
+    parameters.
 ;
     _name.category_id             atom_site
     _name.object_id               B_iso_or_equiv_su
@@ -21361,11 +21361,11 @@ save_ATOM_SITE_ANISO
     _definition.id                ATOM_SITE_ANISO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-01-16
     _description.text
 ;
-    The CATEGORY of data items used to describe the anisotropic
-    thermal parameters of the atomic sites in a crystal structure.
+    The CATEGORY of data items used to describe the anisotropic atomic
+    displacement parameters of the atomic sites in a crystal structure.
 ;
     _name.category_id             ATOM_SITE
     _name.object_id               ATOM_SITE_ANISO
@@ -21716,11 +21716,11 @@ save_atom_site_aniso.ratio
          '_atom_site_anisotrop.ratio'
          '_atom_site.aniso_ratio'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-01-16
     _description.text
 ;
-    Ratio of the maximum to minimum eigenvalues of the atomic
-    displacement (thermal) ellipsoids.
+    Ratio of the maximum to minimum eigenvalues of the atomic displacement
+    ellipsoids.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               ratio
@@ -21742,12 +21742,12 @@ save_atom_site_aniso.type_symbol
          '_atom_site_aniso_type_symbol'
          '_atom_site_anisotrop.type_symbol'
 
-    _definition.update            2021-10-27
+    _definition.update            2023-01-16
     _description.text
 ;
-    This _atom_type.symbol code links the anisotropic atom parameters to
-    the atom type data associated with this site and must match one of
-    the _atom_type.symbol codes in this list.
+    This _atom_type.symbol code links the anisotropic atomic displacement
+    parameters to the atom type data associated with this site and must match
+    one of the _atom_type.symbol codes in this list.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               type_symbol
@@ -26862,7 +26862,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-13
+         3.2.0                    2023-01-16
 ;
        Added data names to allow multi-data-block expression of data sets.
 
