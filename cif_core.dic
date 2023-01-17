@@ -9997,26 +9997,49 @@ save_exptl_crystal.colour
 
     _definition.id                '_exptl_crystal.colour'
     _alias.definition_id          '_exptl_crystal_colour'
-    _definition.update            2021-11-04
+    _definition.update            2023-01-12
     _description.text
 ;
-    Colour description of a crystal as a list of the allowed
-    exptl_crystal_appearance states for general, intensity and hue.
+    Colour description of the crystal.
+
+    Data items from EXPTL_CRYSTAL_APPEARANCE category should be used in
+    preference to this item when possible.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               colour
     _type.purpose                 Composite
     _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[3]'
-    _type.contents                Word
-    _description_example.case     [translucent  pale  green]
-    _method.purpose               Evaluation
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'translucent pale green'
+         'dark yellow'
+         'metallic blue'
+         'red'
+         'colourless'
+         'dichroic dark purple/pale blue'
+
+    _method.purpose               Definition
     _method.expression
 ;
-    With  c  as  exptl_crystal_appearance
+    default_value = ""
+    With c as exptl_crystal_appearance {
+        if (not Is_missing(c.general))
+            default_value = c.general
+        if (not Is_missing(c.intensity)) {
+            if (len(default_value) > 0) default_value = default_value + " "
+            default_value = default_value + c.intensity
+        }
+        if (not Is_missing(c.hue)) {
+            if (len(default_value) > 0) default_value = default_value + " "
+            default_value = default_value + c.hue
+        }
+    }
 
-     _exptl_crystal.colour = [ c.general, c.intensity, c.hue ]
+    if (len(default_value) > 0)
+        _enumeration.default = default_value
 ;
 
 save_
@@ -26877,4 +26900,7 @@ save_
 
        Added a disclaimer about the use of the _atom_site_symmetry_multiplicity
        data name.
+
+       Changed the _exptl_crystal.colour data item from a list to a text string
+       to restore compatibility with the DDL1 version of the dictionary.
 ;
