@@ -17388,6 +17388,12 @@ save_journal.paper_pages
     _enumeration.range            1:
     _units.code                   none
 
+    loop_
+      _description_example.case
+         1
+         4
+         13
+
 save_
 
 save_journal.suppl_publ_number
