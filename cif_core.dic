@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-16
+    _dictionary.date              2023-01-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -17347,6 +17347,30 @@ save_journal.paper_doi
 
 save_
 
+save_journal.paper_number
+
+    _definition.id                '_journal.paper_number'
+    _definition.update            2023-01-26
+    _description.text
+;
+    Article number that is used by some journals instead of a page range.
+    Usually applies to electronic-only journals.
+;
+    _name.category_id             journal
+    _name.object_id               paper_number
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         e0222394
+         L041303
+         044501
+
+save_
+
 save_journal.suppl_publ_number
 
     _definition.id                '_journal.suppl_publ_number'
@@ -26864,7 +26888,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-16
+         3.2.0                    2023-01-26
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26901,4 +26925,6 @@ save_
 
        Changed the _exptl_crystal.colour data item from a list to a text string
        to restore compatibility with the DDL1 version of the dictionary.
+
+       Added the journal.paper_number data item.
 ;
