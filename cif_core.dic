@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-16
+    _dictionary.date              2023-01-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -16099,6 +16099,27 @@ save_citation.title
 
 save_
 
+save_citation.url
+
+    _definition.id                '_citation.URL'
+    _definition.update            2023-01-26
+    _description.text
+;
+    The Uniform Resource Locator (URL) of the cited work.
+
+    The _citation.DOI data item should be used in preference to this item when
+    possible.
+;
+    _name.category_id             citation
+    _name.object_id               URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                uri
+    _description_example.case     https://arxiv.org/abs/1203.5146v4
+
+save_
+
 save_citation.year
 
     _definition.id                '_citation.year'
@@ -17346,6 +17367,28 @@ save_journal.paper_doi
     _description_example.case     10.5555/12345678
 
 save_
+
+save_journal.paper_url
+
+    _definition.id                '_journal.paper_URL'
+    _definition.update            2023-01-26
+    _description.text
+;
+    The Uniform Resource Locator (URL) of the publication.
+
+    The _journal.paper_DOI data item should be used in preference to this item
+    when possible.
+;
+    _name.category_id             journal
+    _name.object_id               paper_URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                uri
+    _description_example.case     https://arxiv.org/abs/1203.5146v4
+
+save_
+
 
 save_journal.suppl_publ_number
 
@@ -26864,7 +26907,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-16
+         3.2.0                    2023-01-26
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26901,4 +26944,6 @@ save_
 
        Changed the _exptl_crystal.colour data item from a list to a text string
        to restore compatibility with the DDL1 version of the dictionary.
+
+       Added the _citation.URL and _journal.paper_url data items.
 ;
