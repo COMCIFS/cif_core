@@ -26945,5 +26945,5 @@ save_
        Changed the _exptl_crystal.colour data item from a list to a text string
        to restore compatibility with the DDL1 version of the dictionary.
 
-       Added the _citation.URL and _journal.paper_url data items.
+       Added the _citation.URL and _journal.paper_URL data items.
 ;
