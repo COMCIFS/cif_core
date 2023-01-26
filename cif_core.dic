@@ -16115,7 +16115,7 @@ save_citation.url
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                uri
+    _type.contents                Uri
     _description_example.case     https://arxiv.org/abs/1203.5146v4
 
 save_
@@ -17384,11 +17384,10 @@ save_journal.paper_url
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                uri
+    _type.contents                Uri
     _description_example.case     https://arxiv.org/abs/1203.5146v4
 
 save_
-
 
 save_journal.suppl_publ_number
 
