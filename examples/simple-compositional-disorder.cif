@@ -1,0 +1,131 @@
+##
+# The example file showcases the use of the _atom_site_disorder_assembly and
+# _atom_site_disorder_group data items to describe positional disorder.
+#
+# This file was adapted from COD entry 7705884. The full version of the original
+# file is available at https://www.crystallography.net/cod/7705884.html.
+##
+data_7705884
+loop_
+_publ_author.id
+_publ_author.name
+1 'Li, Ang'
+2 'Chamoreau, Lise-Marie'
+3 'Baptiste, Beno\^it'
+4 'Li, Yanling'
+5 'Journaux, Yves'
+6 'Lisnard, Laurent'
+_publ.section_title
+;
+ Solvothermal synthesis, structure and magnetic properties of heterometallic
+ coordination polymers based on a phenolato-oxamato co-bidentate-tridentate
+ ligand
+;
+_journal.issue                   2
+_journal.name_full               'Dalton transactions'
+_journal.page_first              681
+_journal.page_last               688
+_journal.paper_doi               10.1039/d0dt03269g
+_journal.volume                  50
+_journal.year                    2021
+_chemical_formula.moiety         'C16 H21 Co0.78 Cu Mn0.22 N3 O8'
+_chemical_formula.sum            'C16 H21 Co0.78 Cu Mn0.22 N3 O8'
+_chemical_formula.weight         504.94
+_space_group.crystal_system      monoclinic
+_space_group.IT_number           14
+_space_group.name_Hall           '-P 2ybc'
+_space_group.name_H-M_alt        'P 1 21/c 1'
+_cell.angle_alpha                90
+_cell.angle_beta                 98.2690(10)
+_cell.angle_gamma                90
+_cell.formula_units_Z            4
+_cell.length_a                   15.2626(4)
+_cell.length_b                   8.4325(2)
+_cell.length_c                   16.0027(4)
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 x,y,z
+2 -x,y+1/2,-z+1/2
+3 -x,-y,-z
+4 x,-y-1/2,z-1/2
+loop_
+_atom_site.label
+_atom_site.type_symbol
+_atom_site.fract_x
+_atom_site.fract_y
+_atom_site.fract_z
+_atom_site.U_iso_or_equiv
+_atom_site.adp_type
+_atom_site.occupancy
+_atom_site.site_symmetry_order
+_atom_site.calc_flag
+_atom_site.refinement_flags_posn
+_atom_site.refinement_flags_adp
+_atom_site.refinement_flags_occupancy
+_atom_site.disorder_assembly
+_atom_site.disorder_group
+Cu1 Cu 0.78443(2) 0.88297(4) 0.37825(2) 0.02230(10) Uani 1 1 d . . . . .
+Co1 Co 0.77504(2) 0.66957(4) 0.54249(2) 0.02009(11) Uani 0.78(3) 1 d . . P A 1
+Mn1 Mn 0.77504(2) 0.66957(4) 0.54249(2) 0.02009(11) Uani 0.22(3) 1 d . . P A 2
+O1 O 0.85532(9) 0.95747(19) 0.28965(9) 0.0262(3) Uani 1 1 d . . . . .
+O2 O 0.84868(9) 0.94662(19) 0.14953(8) 0.0254(3) Uani 1 1 d . . . . .
+O3 O 0.69112(9) 0.79461(19) 0.13699(8) 0.0239(3) Uani 1 1 d . . . . .
+O4 O 0.69794(9) 0.79008(19) 0.44406(8) 0.0236(3) Uani 1 1 d . . . . .
+O5 O 0.85288(11) 1.0113(2) 0.46147(9) 0.0313(4) Uani 1 1 d . . . . .
+O6 O 0.84257(11) 0.8802(2) 0.58130(9) 0.0295(4) Uani 1 1 d . . . . .
+O7 O 0.86601(11) 0.6334(2) 0.45262(10) 0.0313(4) Uani 1 1 d . . . . .
+O8 O 0.72180(11) 0.4432(2) 0.50465(10) 0.0330(4) Uani 1 1 d . . . . .
+N1 N 0.70756(11) 0.8015(2) 0.28380(10) 0.0211(4) Uani 1 1 d . . . . .
+N2 N 0.92033(13) 0.4602(2) 0.36422(12) 0.0300(4) Uani 1 1 d . . . . .
+N3 N 0.65546(14) 0.2080(3) 0.52187(15) 0.0411(5) Uani 1 1 d . . . . .
+C1 C 0.81909(13) 0.9180(3) 0.21661(12) 0.0212(4) Uani 1 1 d . . . . .
+C2 C 0.73018(13) 0.8289(2) 0.20900(12) 0.0198(4) Uani 1 1 d . . . . .
+C3 C 0.63267(13) 0.7223(3) 0.30454(13) 0.0220(4) Uani 1 1 d . . . . .
+C4 C 0.56538(15) 0.6514(3) 0.24925(14) 0.0310(5) Uani 1 1 d . . . . .
+H4 H 0.5664 0.6550 0.1913 0.037 Uiso 1 1 calc R . . . .
+C5 C 0.49675(15) 0.5753(3) 0.28094(16) 0.0356(6) Uani 1 1 d . . . . .
+H5 H 0.4522 0.5258 0.2443 0.043 Uiso 1 1 calc R . . . .
+C6 C 0.49443(15) 0.5729(3) 0.36720(16) 0.0341(5) Uani 1 1 d . . . . .
+H6 H 0.4480 0.5220 0.3880 0.041 Uiso 1 1 calc R . . . .
+C7 C 0.56015(15) 0.6453(3) 0.42269(14) 0.0307(5) Uani 1 1 d . . . . .
+H7 H 0.5572 0.6442 0.4803 0.037 Uiso 1 1 calc R . . . .
+C8 C 0.63071(14) 0.7197(3) 0.39244(13) 0.0227(4) Uani 1 1 d . . . . .
+C9 C 0.87010(14) 0.9914(3) 0.54080(13) 0.0259(5) Uani 1 1 d . . . . .
+C10 C 0.92935(18) 1.1145(3) 0.58768(15) 0.0376(6) Uani 1 1 d . . . . .
+H10A H 0.9663 1.1605 0.5504 0.056 Uiso 1 1 calc GR . . . .
+H10B H 0.9658 1.0658 0.6346 0.056 Uiso 1 1 calc GR . . . .
+H10C H 0.8938 1.1958 0.6080 0.056 Uiso 1 1 calc GR . . . .
+C11 C 0.88724(16) 0.4980(3) 0.43243(15) 0.0345(6) Uani 1 1 d . . . . .
+H11 H 0.8788 0.4159 0.4693 0.041 Uiso 1 1 calc R . . . .
+C12 C 0.93672(17) 0.5799(3) 0.30285(15) 0.0339(5) Uani 1 1 d . . . . .
+H12A H 0.8930 0.5711 0.2536 0.051 Uiso 1 1 calc GR . . . .
+H12B H 0.9945 0.5642 0.2873 0.051 Uiso 1 1 calc GR . . . .
+H12C H 0.9335 0.6834 0.3272 0.051 Uiso 1 1 calc GR . . . .
+C13 C 0.9411(2) 0.2972(3) 0.3451(2) 0.0471(7) Uani 1 1 d . . . . .
+H13A H 1.0036 0.2873 0.3442 0.071 Uiso 1 1 calc GR . . . .
+H13B H 0.9096 0.2684 0.2910 0.071 Uiso 1 1 calc GR . . . .
+H13C H 0.9238 0.2283 0.3876 0.071 Uiso 1 1 calc GR . . . .
+C14 C 0.70103(16) 0.3351(3) 0.54919(16) 0.0349(6) Uani 1 1 d . . . . .
+H14 H 0.7189 0.3435 0.6071 0.042 Uiso 1 1 calc R . . . .
+C15 C 0.6232(3) 0.1909(4) 0.4325(2) 0.0685(10) Uani 1 1 d . . . . .
+H15A H 0.5605 0.2089 0.4228 0.103 Uiso 1 1 calc GR . . . .
+H15B H 0.6357 0.0857 0.4145 0.103 Uiso 1 1 calc GR . . . .
+H15C H 0.6522 0.2668 0.4011 0.103 Uiso 1 1 calc GR . . . .
+C16 C 0.6323(2) 0.0858(4) 0.5784(2) 0.0627(9) Uani 1 1 d . . . . .
+H16A H 0.6608 0.1074 0.6347 0.094 Uiso 1 1 calc GR . . . .
+H16B H 0.6515 -0.0154 0.5604 0.094 Uiso 1 1 calc GR . . . .
+H16C H 0.5693 0.0844 0.5775 0.094 Uiso 1 1 calc GR . . . .
+loop_
+_atom_type.symbol
+_atom_type.description
+_atom_type.scat_dispersion_real
+_atom_type.scat_dispersion_imag
+_atom_type.scat_source
+C C 0.0181 0.0091 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+H H 0.0000 0.0000 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Co Co -2.3653 3.6143 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Cu Cu -1.9646 0.5888 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Mn Mn -0.5299 2.8052 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+N N 0.0311 0.0180 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+O O 0.0492 0.0322 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
