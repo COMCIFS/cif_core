@@ -1,0 +1,140 @@
+##
+# The example file showcases the use of the _atom_site_disorder_assembly and
+# _atom_site_disorder_group data items to describe complex positional disorder.
+# Disorder assembly "A" has two groups which describe two different molecular
+# entities that consist of multiple atoms (group "1" -- ClO4, group 2 -- NO3).
+#
+# This file was adapted from COD entry 7228512. The full version of the original
+# file is available at https://www.crystallography.net/cod/7228512.html.
+##
+data_7228512
+loop_
+_publ_author.id
+_publ_author.name
+1 'Benniston, A. C.'
+2 'Melnic, Silvia'
+3 'Waddell, Paul G.'
+4 'Sova, Sergiu'
+_publ.section_title
+;
+ Evolution of Manganese-Calcium Cluster Structures based on Nitrogen and
+ Oxygen Donor Ligands
+;
+_journal.name_full               CrystEngComm
+_journal.paper_doi               10.1039/C7CE00931C
+_journal.year                    2017
+_chemical_formula.moiety         'C36 H36 Ca2 Cl0.8 Mn2 N9.2 O18.8, C3 H6 O'
+_chemical_formula.sum            'C39 H42 Ca2 Cl0.8 Mn2 N9.2 O19.8'
+_chemical_formula.weight         1174.82
+_space_group.crystal_system      triclinic
+_space_group.IT_number           2
+_space_group.name_Hall           '-P 1'
+_space_group.name_H-M_alt        'P -1'
+_cell.angle_alpha                61.595(6)
+_cell.angle_beta                 79.180(5)
+_cell.angle_gamma                68.553(5)
+_cell.formula_units_Z            1
+_cell.length_a                   10.5975(6)
+_cell.length_b                   11.4166(7)
+_cell.length_c                   11.7527(6)
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 x,y,z
+2 -x,-y,-z
+loop_
+_atom_site.label
+_atom_site.type_symbol
+_atom_site.fract_x
+_atom_site.fract_y
+_atom_site.fract_z
+_atom_site.U_iso_or_equiv
+_atom_site.adp_type
+_atom_site.occupancy
+_atom_site.site_symmetry_order
+_atom_site.calc_flag
+_atom_site.refinement_flags_posn
+_atom_site.refinement_flags_adp
+_atom_site.refinement_flags_occupancy
+_atom_site.disorder_assembly
+_atom_site.disorder_group
+Mn1 Mn 0.59596(4) 0.33918(5) 0.54227(5) 0.02461(16) Uani 1 1 d . U . . .
+Ca1 Ca 0.72008(6) 0.57076(7) 0.57318(6) 0.03058(18) Uani 1 1 d . U . . .
+O1 O 0.4482(2) 0.2730(2) 0.5895(2) 0.0296(5) Uani 1 1 d . U . . .
+O2 O 0.7497(2) 0.3970(2) 0.5044(2) 0.0295(5) Uani 1 1 d . U . . .
+O3 O 0.4913(2) 0.4908(2) 0.3885(2) 0.0272(5) Uani 1 1 d . U . . .
+O4 O 0.8198(2) 0.6620(3) 0.6788(3) 0.0507(7) Uani 1 1 d . U . . .
+O5 O 0.6118(3) 0.7747(3) 0.6230(3) 0.0480(7) Uani 1 1 d . U . . .
+O6 O 0.7057(3) 0.8304(4) 0.7299(4) 0.0676(9) Uani 1 1 d . U . . .
+N1 N 0.6583(3) 0.1809(3) 0.7235(3) 0.0290(6) Uani 1 1 d . U . . .
+N2 N 0.7301(3) 0.2029(3) 0.4524(3) 0.0303(6) Uani 1 1 d . U . . .
+N3 N 0.3452(3) 0.5626(3) 0.1883(3) 0.0357(6) Uani 1 1 d . U . . .
+N4 N 0.7123(3) 0.7575(3) 0.6778(3) 0.0400(7) Uani 1 1 d . U . . .
+C1 C 0.5803(3) 0.0958(3) 0.7761(3) 0.0312(7) Uani 1 1 d . U . . .
+C2 C 0.6125(4) -0.0221(4) 0.8948(3) 0.0395(8) Uani 1 1 d . U . . .
+H2 H 0.5579 -0.0819 0.9309 0.047 Uiso 1 1 calc R . . . .
+C3 C 0.7232(4) -0.0514(4) 0.9590(4) 0.0456(9) Uani 1 1 d . U . . .
+H3 H 0.7463 -0.1323 1.0398 0.055 Uiso 1 1 calc R . . . .
+C4 C 0.8021(4) 0.0372(4) 0.9060(4) 0.0436(9) Uani 1 1 d . U . . .
+H4 H 0.8781 0.0193 0.9507 0.052 Uiso 1 1 calc R . . . .
+C5 C 0.7676(3) 0.1514(4) 0.7872(3) 0.0337(7) Uani 1 1 d . U . . .
+H5 H 0.8223 0.2111 0.7491 0.040 Uiso 1 1 calc R . . . .
+C6 C 0.4627(3) 0.1392(3) 0.6956(3) 0.0339(7) Uani 1 1 d . U . . .
+H6A H 0.4769 0.0692 0.6636 0.041 Uiso 1 1 calc R . . . .
+H6B H 0.3787 0.1423 0.7494 0.041 Uiso 1 1 calc R . . . .
+C7 C 0.8487(3) 0.2277(4) 0.4161(3) 0.0323(7) Uani 1 1 d . U . . .
+C8 C 0.9499(4) 0.1554(4) 0.3570(4) 0.0408(8) Uani 1 1 d . U . . .
+H8 H 1.0335 0.1744 0.3308 0.049 Uiso 1 1 calc R . . . .
+C9 C 0.9261(4) 0.0554(4) 0.3372(4) 0.0447(9) Uani 1 1 d . U . . .
+H9 H 0.9938 0.0046 0.2970 0.054 Uiso 1 1 calc R . . . .
+C10 C 0.8042(4) 0.0294(4) 0.3757(4) 0.0418(8) Uani 1 1 d . U . . .
+H10 H 0.7866 -0.0391 0.3626 0.050 Uiso 1 1 calc R . . . .
+C11 C 0.7086(4) 0.1044(4) 0.4333(3) 0.0368(8) Uani 1 1 d . U . . .
+H11 H 0.6246 0.0864 0.4607 0.044 Uiso 1 1 calc R . . . .
+C12 C 0.8642(3) 0.3391(4) 0.4415(4) 0.0397(8) Uani 1 1 d . U . . .
+H12A H 0.9448 0.2978 0.4955 0.048 Uiso 1 1 calc R . . . .
+H12B H 0.8802 0.4153 0.3582 0.048 Uiso 1 1 calc R . . . .
+C13 C 0.4652(3) 0.5853(3) 0.1572(3) 0.0326(7) Uani 1 1 d . U . . .
+C14 C 0.5068(4) 0.6536(4) 0.0301(3) 0.0380(8) Uani 1 1 d . U . . .
+H14 H 0.5935 0.6660 0.0122 0.046 Uiso 1 1 calc R . . . .
+C15 C 0.4223(4) 0.7033(4) -0.0700(4) 0.0454(9) Uani 1 1 d . U . . .
+H15 H 0.4488 0.7504 -0.1575 0.054 Uiso 1 1 calc R . . . .
+C16 C 0.2967(4) 0.6820(4) -0.0382(4) 0.0498(9) Uani 1 1 d . U . . .
+H16 H 0.2348 0.7158 -0.1042 0.060 Uiso 1 1 calc R . . . .
+C17 C 0.2631(4) 0.6120(4) 0.0890(4) 0.0450(9) Uani 1 1 d . U . . .
+H17 H 0.1774 0.5973 0.1088 0.054 Uiso 1 1 calc R . . . .
+C18 C 0.5595(3) 0.5283(4) 0.2660(3) 0.0324(7) Uani 1 1 d . U . . .
+H18A H 0.6339 0.4445 0.2668 0.039 Uiso 1 1 calc R . . . .
+H18B H 0.6002 0.6000 0.2510 0.039 Uiso 1 1 calc R . . . .
+Cl1 Cl 0.9257(4) 0.6983(6) 0.2917(4) 0.0366(8) Uani 0.4018 1 d D U P A 1
+O10 O 0.8533(14) 0.7012(17) 0.4085(12) 0.0526(17) Uani 0.4018 1 d D U P A 1
+O11 O 1.0618(14) 0.609(2) 0.324(2) 0.0559(19) Uani 0.4018 1 d D U P A 1
+O12 O 0.9277(15) 0.8407(10) 0.2085(13) 0.0608(12) Uani 0.4018 1 d D U P A 1
+O13 O 0.8595(8) 0.6533(8) 0.2354(7) 0.0608(12) Uani 0.4018 1 d D U P A 1
+O7 O 0.8379(9) 0.6913(11) 0.3778(8) 0.0526(17) Uani 0.5982 1 d D U P A 2
+O8 O 1.0518(10) 0.5928(13) 0.3514(13) 0.0559(19) Uani 0.5982 1 d D U P A 2
+O9 O 0.9458(10) 0.8000(7) 0.2082(9) 0.0608(12) Uani 0.5982 1 d D U P A 2
+N5 N 0.9448(11) 0.6904(14) 0.3119(11) 0.0366(8) Uani 0.5982 1 d D U P A 2
+O14 O 0.8488(8) 0.4940(11) 0.1033(8) 0.105(3) Uani 0.5 1 d . U P B -1
+C19 C 0.945(4) 0.6422(18) -0.031(4) 0.108(4) Uani 0.5 1 d D U P B -1
+H19A H 0.8549 0.7052 -0.0654 0.162 Uiso 0.5 1 calc GR . P B -1
+H19B H 1.0109 0.6495 -0.1034 0.162 Uiso 0.5 1 calc GR . P B -1
+H19C H 0.9716 0.6690 0.0262 0.162 Uiso 0.5 1 calc GR . P B -1
+C20 C 0.9432(9) 0.5067(11) 0.0360(8) 0.065(2) Uani 0.5 1 d D U P B -1
+C21 C 1.029(4) 0.3767(18) 0.050(4) 0.108(4) Uani 0.5 1 d D U P B -1
+H21A H 1.0774 0.3861 -0.0324 0.162 Uiso 0.5 1 calc GR . P B -1
+H21B H 0.9761 0.3133 0.0737 0.162 Uiso 0.5 1 calc GR . P B -1
+H21C H 1.0945 0.3383 0.1174 0.162 Uiso 0.5 1 calc GR . P B -1
+loop_
+_atom_type.symbol
+_atom_type.description
+_atom_type.scat_dispersion_real
+_atom_type.scat_dispersion_imag
+_atom_type.scat_source
+C C 0.0181 0.0091 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+H H 0.0000 0.0000 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Ca Ca 0.3641 1.2855 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Cl Cl 0.3639 0.7018 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+Mn Mn -0.5299 2.8052 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+N N 0.0311 0.0180 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+O O 0.0492 0.0322 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
