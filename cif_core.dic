@@ -16099,6 +16099,27 @@ save_citation.title
 
 save_
 
+save_citation.url
+
+    _definition.id                '_citation.URL'
+    _definition.update            2023-01-26
+    _description.text
+;
+    The Uniform Resource Locator (URL) of the cited work.
+
+    The _citation.DOI data item should be used in preference to this item when
+    possible.
+;
+    _name.category_id             citation
+    _name.object_id               URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Uri
+    _description_example.case     https://arxiv.org/abs/1203.5146v4
+
+save_
+
 save_citation.year
 
     _definition.id                '_citation.year'
@@ -17344,6 +17365,27 @@ save_journal.paper_doi
     _type.container               Single
     _type.contents                Text
     _description_example.case     10.5555/12345678
+
+save_
+
+save_journal.paper_url
+
+    _definition.id                '_journal.paper_URL'
+    _definition.update            2023-01-26
+    _description.text
+;
+    The Uniform Resource Locator (URL) of the publication.
+
+    The _journal.paper_DOI data item should be used in preference to this item
+    when possible.
+;
+    _name.category_id             journal
+    _name.object_id               paper_URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Uri
+    _description_example.case     https://arxiv.org/abs/1203.5146v4
 
 save_
 
@@ -26935,4 +26977,6 @@ save_
        Updated the descriptions of the _atom_site.disorder_assembly and
        _atom_site.disorder_group data items to also apply to compositional
        disorder.
+
+       Added the _citation.URL and _journal.paper_URL data items.
 ;
