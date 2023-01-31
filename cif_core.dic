@@ -754,10 +754,15 @@ save_
 save_cell.diffrn_id
 
     _definition.id                '_cell.diffrn_id'
-    _definition.update            2022-05-25
+    _definition.update            2023-02-01
     _description.text
 ;
-    A pointer to the diffraction conditions used for cell measurement.
+    A pointer to the diffraction conditions to which this cell has been applied,
+    for example, to locate and extract diffraction peaks. These will normally be
+    the same conditions as those under which the cell was measured, but some
+    legacy data sets may have used a cell measured under differing conditions, in
+    which case those conditions should be indicated using
+    `_cell_measurement.condition_id`
 ;
     _name.category_id             cell
     _name.object_id               diffrn_id
@@ -1732,13 +1737,39 @@ save_CELL_MEASUREMENT
 
 save_
 
+save_cell_measurement.condition_id
+
+    _definition.id                '_cell_measurement.condition_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction conditions used for cell measurement,
+    where different to the diffraction conditions used for data 
+    collection.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               condition_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = _cell_measurement.diffrn_id
+;
+
+save_
+
 save_cell_measurement.diffrn_id
 
     _definition.id                '_cell_measurement.diffrn_id'
-    _definition.update            2022-05-25
+    _definition.update            2023-02-01
     _description.text
 ;
-    A pointer to the diffraction conditions used for cell measurement.
+    A pointer to the diffraction experiment to which the measured cell
+    has been applied.
 ;
     _name.category_id             cell_measurement
     _name.object_id               diffrn_id
@@ -2010,7 +2041,8 @@ save_cell_measurement_refln.diffrn_id
     _definition.update            2022-05-25
     _description.text
 ;
-    A pointer to the diffraction conditions used for cell measurement.
+    A pointer to the diffraction data collection to which this cell measurement
+    applies.
 ;
     _name.category_id             cell_measurement_refln
     _name.object_id               diffrn_id
