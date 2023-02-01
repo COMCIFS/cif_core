@@ -762,7 +762,7 @@ save_cell.diffrn_id
     the same conditions as those under which the cell was measured, but some
     legacy data sets may have used a cell measured under differing conditions, in
     which case those conditions should be indicated using
-    `_cell_measurement.condition_id`
+    _cell_measurement.condition_id.
 ;
     _name.category_id             cell
     _name.object_id               diffrn_id
