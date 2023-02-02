@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-29
+    _dictionary.date              2023-02-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -8511,7 +8511,7 @@ save_chemical.enantioexcess_bulk
 
     _definition.id                '_chemical.enantioexcess_bulk'
     _alias.definition_id          '_chemical_enantioexcess_bulk'
-    _definition.update            2013-01-18
+    _definition.update            2023-02-02
     _description.text
 ;
     The enantioexcess of the bulk material from which the crystals
@@ -8522,7 +8522,7 @@ save_chemical.enantioexcess_bulk
     and bulk must be the same.
     Ref: Moss G. P. et al. (1996). Basic Terminology of
          Stereochemistry. Pure Appl. Chem., 68, 2193-2222.
-         http://www.chem.qmul.ac.uk/iupac/stereo/index.html
+         https://iupac.qmul.ac.uk/stereo/
 ;
     _name.category_id             chemical
     _name.object_id               enantioexcess_bulk
@@ -8597,7 +8597,7 @@ save_chemical.enantioexcess_crystal
 
     _definition.id                '_chemical.enantioexcess_crystal'
     _alias.definition_id          '_chemical_enantioexcess_crystal'
-    _definition.update            2013-01-18
+    _definition.update            2023-02-02
     _description.text
 ;
     The enantioexcess of the crystal used for the diffraction
@@ -8607,7 +8607,7 @@ save_chemical.enantioexcess_crystal
     (Moss et al., 1996).
     Ref: Moss G. P. et al. (1996). Basic Terminology of
          Stereochemistry. Pure Appl. Chem., 68, 2193-2222.
-         http://www.chem.qmul.ac.uk/iupac/stereo/index.html
+         https://iupac.qmul.ac.uk/stereo/
 ;
     _name.category_id             chemical
     _name.object_id               enantioexcess_crystal
@@ -26940,7 +26940,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-29
+         3.2.0                    2023-02-02
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26986,4 +26986,7 @@ save_
        disorder.
 
        Added the _citation.URL and _journal.paper_URL data items.
+
+       Updated the references in definitions of the _chemical.enantioexcess_bulk
+       and _chemical.enantioexcess_crystal data items.
 ;
