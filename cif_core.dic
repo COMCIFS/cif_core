@@ -8677,7 +8677,7 @@ save_chemical.identifier_inchi
 
     _definition.id                '_chemical.identifier_InChI'
     _alias.definition_id          '_chemical_identifier_InChI'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The IUPAC International Chemical Identifier (InChI) is a
@@ -8693,7 +8693,7 @@ save_chemical.identifier_inchi
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
     _description_example.case
         InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H'
     _description_example.detail   naphthalene
@@ -8704,7 +8704,7 @@ save_chemical.identifier_inchi_key
 
     _definition.id                '_chemical.identifier_InChI_key'
     _alias.definition_id          '_chemical_identifier_InChI_key'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The InChIKey is a compact hashed version of the full InChI
@@ -8717,7 +8717,7 @@ save_chemical.identifier_inchi_key
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
     _description_example.case     InChIKey=OROGSEYTTFOCAN-DNJOTXNNBG
     _description_example.detail   codeine
 
