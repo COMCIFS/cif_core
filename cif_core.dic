@@ -8520,8 +8520,9 @@ save_chemical.enantioexcess_bulk
     Enantioexcess is defined in the IUPAC Recommendations
     (Moss et al., 1996). The composition of the crystal
     and bulk must be the same.
-    Ref: Moss G. P. et al. (1996). Basic Terminology of
-         Stereochemistry. Pure Appl. Chem., 68, 2193-2222.
+    Ref: Moss G. P. et al. (1996). Basic Terminology of Stereochemistry.
+         Pure Appl. Chem., 68, 2193-2222.
+         https://doi.org/10.1351/pac199668122193
          https://iupac.qmul.ac.uk/stereo/
 ;
     _name.category_id             chemical
@@ -8605,8 +8606,9 @@ save_chemical.enantioexcess_crystal
     1.0 indicates that the crystal is enantiomerically pure.
     Enantioexcess is defined in the IUPAC Recommendations
     (Moss et al., 1996).
-    Ref: Moss G. P. et al. (1996). Basic Terminology of
-         Stereochemistry. Pure Appl. Chem., 68, 2193-2222.
+    Ref: Moss G. P. et al. (1996). Basic Terminology of Stereochemistry.
+         Pure Appl. Chem., 68, 2193-2222.
+         https://doi.org/10.1351/pac199668122193
          https://iupac.qmul.ac.uk/stereo/
 ;
     _name.category_id             chemical
