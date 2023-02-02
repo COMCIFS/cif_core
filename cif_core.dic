@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-26
+    _dictionary.date              2023-02-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -3679,8 +3679,12 @@ save_
 save_diffrn_source.description
 
     _definition.id                '_diffrn_source.description'
-    _definition_replaced.id       1
-    _definition_replaced.by       '_diffrn_source.device'
+
+    loop_
+      _definition_replaced.id
+      _definition_replaced.by
+         1                        '_diffrn_source.device'
+         2                        '_diffrn_source.details'
 
     loop_
       _alias.definition_id
@@ -3688,7 +3692,7 @@ save_diffrn_source.description
          '_diffrn_radiation_source'
          '_diffrn_source.source'
 
-    _definition.update            2019-04-02
+    _definition.update            2023-01-16
     _description.text
 ;
     The general class of the source of radiation. This is deprecated.
@@ -16099,6 +16103,27 @@ save_citation.title
 
 save_
 
+save_citation.url
+
+    _definition.id                '_citation.URL'
+    _definition.update            2023-01-26
+    _description.text
+;
+    The Uniform Resource Locator (URL) of the cited work.
+
+    The _citation.DOI data item should be used in preference to this item when
+    possible.
+;
+    _name.category_id             citation
+    _name.object_id               URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Uri
+    _description_example.case     https://arxiv.org/abs/1203.5146v4
+
+save_
+
 save_citation.year
 
     _definition.id                '_citation.year'
@@ -17350,7 +17375,7 @@ save_
 save_journal.paper_number
 
     _definition.id                '_journal.paper_number'
-    _definition.update            2023-01-26
+    _definition.update            2023-02-02
     _description.text
 ;
     Article number that is used by some journals instead of a page range.
@@ -17374,7 +17399,7 @@ save_
 save_journal.paper_pages
 
     _definition.id                '_journal.paper_pages'
-    _definition.update            2023-01-26
+    _definition.update            2023-02-02
     _description.text
 ;
     Number of pages in the journal article.
@@ -17393,6 +17418,27 @@ save_journal.paper_pages
          1
          4
          13
+
+save_
+
+save_journal.paper_url
+
+    _definition.id                '_journal.paper_URL'
+    _definition.update            2023-01-26
+    _description.text
+;
+    The Uniform Resource Locator (URL) of the publication.
+
+    The _journal.paper_DOI data item should be used in preference to this item
+    when possible.
+;
+    _name.category_id             journal
+    _name.object_id               paper_URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Uri
+    _description_example.case     https://arxiv.org/abs/1203.5146v4
 
 save_
 
@@ -20596,15 +20642,14 @@ save_atom_site.disorder_assembly
 
     _definition.id                '_atom_site.disorder_assembly'
     _alias.definition_id          '_atom_site_disorder_assembly'
-    _definition.update            2021-10-27
+    _definition.update            2023-01-29
     _description.text
 ;
-    A code which identifies a cluster of atoms that show long range
-    positional disorder but are locally ordered. Within each such
-    cluster of atoms, _atom_site.disorder_group is used to identify
-    the sites that are simultaneously occupied. This field is only
-    needed if there is more than one cluster of disordered atoms
-    showing independent local order.
+    A code which identifies a cluster of atoms that show long range disorder
+    but are locally ordered. Within each such cluster of atoms,
+    _atom_site.disorder_group is used to identify the sites that are
+    simultaneously occupied. This field is only needed if there is more than
+    one cluster of disordered atoms showing independent local order.
 ;
     _name.category_id             atom_site
     _name.object_id               disorder_assembly
@@ -20616,9 +20661,23 @@ save_atom_site.disorder_assembly
     loop_
       _description_example.case
       _description_example.detail
-         A                    'Disordered methyl assembly with groups 1 and 2.'
-         B                    'Disordered sites related by a mirror.'
-         S                    'Disordered sites independent of symmetry.'
+         A
+;
+         Disordered methyl assembly with groups 1 and 2.
+;
+         B
+;
+         Disordered sites related by a mirror.
+;
+         C
+;
+         Assembly with groups that describe alternative compositions of a
+         compositionally disordered site.
+;
+         S
+;
+         Disordered sites independent of symmetry.
+;
 
 save_
 
@@ -20626,17 +20685,20 @@ save_atom_site.disorder_group
 
     _definition.id                '_atom_site.disorder_group'
     _alias.definition_id          '_atom_site_disorder_group'
-    _definition.update            2021-10-27
+    _definition.update            2023-01-29
     _description.text
 ;
-    A code that identifies a group of positionally disordered atom
-    sites that are locally simultaneously occupied. Atoms that are
-    positionally disordered over two or more sites (e.g. the H
-    atoms of a methyl group that exists in two orientations) can
-    be assigned to two or more groups. Sites belonging to the same
-    group are simultaneously occupied, but those belonging to
-    different groups are not. A minus prefix (e.g. "-1") is used to
-    indicate sites disordered about a special position.
+    A code that identifies a group of disordered atom sites that are locally
+    simultaneously occupied. Atoms that are positionally disordered over two or
+    more sites (e.g. the H atoms of a methyl group that exists in two
+    orientations) should be assigned to two or more groups. Similarly, atoms
+    that describe a specific alternative composition of a compositionally
+    disordered site should be assigned to a distinct disorder group (e.g. a site
+    that is partially occupied by Mg and Mn atoms should be described by
+    assigning the Mg atom to one group and the Mn atom to another group). Sites
+    belonging to the same group are simultaneously occupied, but those belonging
+    to different groups are not. A minus prefix (e.g. "-1") is used to indicate
+    sites disordered about a special position.
 ;
     _name.category_id             atom_site
     _name.object_id               disorder_group
@@ -20648,9 +20710,23 @@ save_atom_site.disorder_group
     loop_
       _description_example.case
       _description_example.detail
-         1                        'Unique disordered site in group 1.'
-         2                        'Unique disordered site in group 2.'
-         -1                       'Symmetry-independent disordered site.'
+         1
+;
+         Unique disordered site in group 1.
+;
+         2
+;
+         Unique disordered site in group 2.
+;
+         3
+;
+         Group describes a specific alternative composition of a compositionally
+         disordered site.
+;
+         -1
+;
+         Symmetry-independent disordered site.'
+;
 
 save_
 
@@ -26913,7 +26989,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-26
+         3.2.0                    2023-02-02
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26945,11 +27021,20 @@ save_
        _refine_diff.density_max, _refine_diff.density_max_su,
        _refine_diff.density_rms and _refine_diff.density_rms_su data items.
 
+       Explicitly added _diffrn_source.details to the list items that replaced
+       _diffrn_source.description.
+
        Added a disclaimer about the use of the _atom_site_symmetry_multiplicity
        data name.
 
        Changed the _exptl_crystal.colour data item from a list to a text string
        to restore compatibility with the DDL1 version of the dictionary.
+
+       Updated the descriptions of the _atom_site.disorder_assembly and
+       _atom_site.disorder_group data items to also apply to compositional
+       disorder.
+
+       Added the _citation.URL and _journal.paper_URL data items.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
 ;
