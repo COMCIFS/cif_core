@@ -8513,7 +8513,7 @@ save_chemical.enantioexcess_bulk
 
     _definition.id                '_chemical.enantioexcess_bulk'
     _alias.definition_id          '_chemical_enantioexcess_bulk'
-    _definition.update            2013-01-18
+    _definition.update            2023-02-02
     _description.text
 ;
     The enantioexcess of the bulk material from which the crystals
@@ -8522,9 +8522,10 @@ save_chemical.enantioexcess_bulk
     Enantioexcess is defined in the IUPAC Recommendations
     (Moss et al., 1996). The composition of the crystal
     and bulk must be the same.
-    Ref: Moss G. P. et al. (1996). Basic Terminology of
-         Stereochemistry. Pure Appl. Chem., 68, 2193-2222.
-         http://www.chem.qmul.ac.uk/iupac/stereo/index.html
+    Ref: Moss G. P. et al. (1996). Basic Terminology of Stereochemistry.
+         Pure Appl. Chem., 68, 2193-2222.
+         https://doi.org/10.1351/pac199668122193
+         https://iupac.qmul.ac.uk/stereo/
 ;
     _name.category_id             chemical
     _name.object_id               enantioexcess_bulk
@@ -8599,7 +8600,7 @@ save_chemical.enantioexcess_crystal
 
     _definition.id                '_chemical.enantioexcess_crystal'
     _alias.definition_id          '_chemical_enantioexcess_crystal'
-    _definition.update            2013-01-18
+    _definition.update            2023-02-02
     _description.text
 ;
     The enantioexcess of the crystal used for the diffraction
@@ -8607,9 +8608,10 @@ save_chemical.enantioexcess_crystal
     1.0 indicates that the crystal is enantiomerically pure.
     Enantioexcess is defined in the IUPAC Recommendations
     (Moss et al., 1996).
-    Ref: Moss G. P. et al. (1996). Basic Terminology of
-         Stereochemistry. Pure Appl. Chem., 68, 2193-2222.
-         http://www.chem.qmul.ac.uk/iupac/stereo/index.html
+    Ref: Moss G. P. et al. (1996). Basic Terminology of Stereochemistry.
+         Pure Appl. Chem., 68, 2193-2222.
+         https://doi.org/10.1351/pac199668122193
+         https://iupac.qmul.ac.uk/stereo/
 ;
     _name.category_id             chemical
     _name.object_id               enantioexcess_crystal
@@ -27039,8 +27041,10 @@ save_
 
        Added the _citation.URL and _journal.paper_URL data items.
 
+       Updated the references in definitions of the _chemical.enantioexcess_bulk
+       and _chemical.enantioexcess_crystal data items.
+
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
-
 ;
