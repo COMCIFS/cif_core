@@ -8430,14 +8430,16 @@ save_chemical.absolute_configuration
 
     _definition.id                '_chemical.absolute_configuration'
     _alias.definition_id          '_chemical_absolute_configuration'
-    _definition.update            2012-11-22
+    _definition.update            2023-02-02
     _description.text
 ;
     Necessary conditions for this assignment are given by
-         Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55,
-                      908-915. (http://www.iucr.org/paper?sh0129)
-         Flack, H. D. & Bernardinelli, G. (2000). J. Appl. Cryst.
-                      33, 1143-1148. (http://www.iucr.org/paper?ks0021)
+         Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
+                https://doi.org/10.1107/S0108767399004262
+                https://www.iucr.org/paper?sh0129
+         Flack, H. D. & Bernardinelli, G. (2000). J. Appl. Cryst. 33, 1143-1148.
+                https://doi.org/10.1107/S0021889800007184
+                https://www.iucr.org/paper?ks0021
 ;
     _name.category_id             chemical
     _name.object_id               absolute_configuration
@@ -8679,7 +8681,7 @@ save_chemical.identifier_inchi
 
     _definition.id                '_chemical.identifier_InChI'
     _alias.definition_id          '_chemical_identifier_InChI'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The IUPAC International Chemical Identifier (InChI) is a
@@ -8688,7 +8690,8 @@ save_chemical.identifier_inchi
     and to facilitate the search for such information in databases
     and on the web.
     Ref: McNaught, A. (2006). Chem. Int. (IUPAC), 28 (6), 12-14.
-         http://www.iupac.org/inchi/
+         https://doi.org/10.1515/ci.2006.28.6.12
+         https://www.iupac.org/inchi/
 ;
     _name.category_id             chemical
     _name.object_id               identifier_InChI
@@ -8706,13 +8709,13 @@ save_chemical.identifier_inchi_key
 
     _definition.id                '_chemical.identifier_InChI_key'
     _alias.definition_id          '_chemical_identifier_InChI_key'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The InChIKey is a compact hashed version of the full InChI
     (IUPAC International Chemical Identifier), designed to allow
     for easy web searches of chemical compounds. See
-    http://www.iupac.org/inchi/
+    https://www.iupac.org/inchi/
 ;
     _name.category_id             chemical
     _name.object_id               identifier_InChI_key
@@ -10319,7 +10322,7 @@ save_exptl_crystal.f_000
 
     _definition.id                '_exptl_crystal.F_000'
     _alias.definition_id          '_exptl_crystal_F_000'
-    _definition.update            2012-11-22
+    _definition.update            2023-02-02
     _description.text
 ;
     Number of electrons in the crystal unit cell contributing to F(000).
@@ -10336,7 +10339,7 @@ save_exptl_crystal.f_000
     the effective number of electrons in the unit cell; for neutrons,
     non-dispersive F(000) (which may be negative) counts the total
     nuclear scattering power in the unit cell. See
-       http://reference.iucr.org/dictionary/F(000)
+       https://dictionary.iucr.org/F(000)
 ;
     _name.category_id             exptl_crystal
     _name.object_id               F_000
@@ -14671,7 +14674,7 @@ save_audit.block_doi
 
     _definition.id                '_audit.block_DOI'
     _alias.definition_id          '_audit_block_DOI'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
@@ -14691,7 +14694,7 @@ save_audit.block_doi
     of the Internet concepts of Uniform Resource Name and
     Universal Resource Locator managed according to the
     specifications of the International DOI Foundation
-    (see http://www.doi.org).
+    (see https://www.doi.org/).
 ;
     _name.category_id             audit
     _name.object_id               block_DOI
@@ -14887,13 +14890,13 @@ save_
 save_audit_author.id_orcid
 
     _definition.id                '_audit_author.id_ORCID'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
     author. ORCID is an open, non-profit, community-driven
     service to provide a registry of unique researcher
-    identifiers (http://orcid.org).
+    identifiers (https://orcid.org/).
 ;
     _name.category_id             audit_author
     _name.object_id               id_ORCID
@@ -15789,7 +15792,7 @@ save_citation.doi
 
     _definition.id                '_citation.DOI'
     _alias.definition_id          '_citation_DOI'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The Digital Object Identifier (DOI) of the cited work.
@@ -15802,7 +15805,7 @@ save_citation.doi
     of the Internet concepts of Uniform Resource Name and
     Universal Resource Locator managed according to the
     specifications of the International DOI Foundation
-    (see http://www.doi.org).
+    (see https://www.doi.org/).
 ;
     _name.category_id             citation
     _name.object_id               DOI
@@ -16580,7 +16583,7 @@ save_database.dataset_doi
 
     _definition.id                '_database.dataset_DOI'
     _alias.definition_id          '_database_dataset_DOI'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
@@ -16597,7 +16600,7 @@ save_database.dataset_doi
     of the Internet concepts of Uniform Resource Name and
     Universal Resource Locator managed according to the
     specifications of the International DOI Foundation
-    (see http://www.doi.org).
+    (see https://www.doi.org/).
 ;
     _name.category_id             database
     _name.object_id               dataset_DOI
@@ -17371,6 +17374,55 @@ save_journal.paper_doi
     _type.container               Single
     _type.contents                Text
     _description_example.case     10.5555/12345678
+
+save_
+
+save_journal.paper_number
+
+    _definition.id                '_journal.paper_number'
+    _definition.update            2023-02-02
+    _description.text
+;
+    Article number that is used by some journals instead of a page range.
+    Usually applies to electronic-only journals.
+;
+    _name.category_id             journal
+    _name.object_id               paper_number
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         e0222394
+         L041303
+         044501
+
+save_
+
+save_journal.paper_pages
+
+    _definition.id                '_journal.paper_pages'
+    _definition.update            2023-02-02
+    _description.text
+;
+    Number of pages in the journal article.
+;
+    _name.category_id             journal
+    _name.object_id               paper_pages
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:
+    _units.code                   none
+
+    loop_
+      _description_example.case
+         1
+         4
+         13
 
 save_
 
@@ -18353,12 +18405,12 @@ save_publ_author.id_iucr
 
     _definition.id                '_publ_author.id_IUCr'
     _alias.definition_id          '_publ_author_id_IUCr'
-    _definition.update            2021-09-27
+    _definition.update            2023-02-02
     _description.text
 ;
     Identifier in the IUCr contact database of a publication
     author.  This identifier may be available from the World
-    Directory of Crystallographers (http://wdc.iucr.org).
+    Directory of Crystallographers (https://wdc.iucr.org/).
 ;
     _name.category_id             publ_author
     _name.object_id               id_IUCr
@@ -18373,13 +18425,13 @@ save_publ_author.id_orcid
 
     _definition.id                '_publ_author.id_ORCID'
     _alias.definition_id          '_publ_author_id_ORCID'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     Identifier in the ORCID Registry of a publication
     author. ORCID is an open, non-profit, community-driven
     service to provide a registry of unique researcher
-    identifiers (http://orcid.org).
+    identifiers (https://orcid.org/).
 ;
     _name.category_id             publ_author
     _name.object_id               id_ORCID
@@ -18729,12 +18781,12 @@ save_publ_contact_author.id_iucr
 
     _definition.id                '_publ_contact_author.id_IUCr'
     _alias.definition_id          '_publ_contact_author_id_IUCr'
-    _definition.update            2021-10-27
+    _definition.update            2023-02-02
     _description.text
 ;
     Identifier in the IUCr contact database of the author submitting
     the manuscript and data block. This identifier may be available
-    from the World Directory of Crystallographers (http://wdc.iucr.org).
+    from the World Directory of Crystallographers (https://wdc.iucr.org/).
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id_IUCr
@@ -18749,13 +18801,13 @@ save_publ_contact_author.id_orcid
 
     _definition.id                '_publ_contact_author.id_ORCID'
     _alias.definition_id          '_publ_contact_author_id_ORCID'
-    _definition.update            2021-09-24
+    _definition.update            2023-02-02
     _description.text
 ;
     Identifier in the ORCID Registry of the author submitting
     the manuscript and data block. ORCID is an open, non-profit,
     community-driven service to provide a registry of unique
-    researcher identifiers (http://orcid.org).
+    researcher identifiers (https://orcid.org/).
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id_ORCID
@@ -26991,4 +27043,8 @@ save_
 
        Updated the references in definitions of the _chemical.enantioexcess_bulk
        and _chemical.enantioexcess_crystal data items.
+
+       Changed the scheme part in multiple URLs from 'http' to 'https'.
+
+       Added the _journal.paper_number and _journal.paper_pages data items.
 ;
