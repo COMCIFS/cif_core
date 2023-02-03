@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-02
+    _dictionary.date              2023-02-03
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -17002,7 +17002,7 @@ save_
 save_database_related.relation
 
     _definition.id                '_database_related.relation'
-    _definition.update            2019-01-08
+    _definition.update            2023-02-03
     _description.text
 ;
     The general relationship of the data in the data block
@@ -17038,6 +17038,13 @@ save_database_related.relation
          Common
 ;
          The dataset contents share a common source.
+;
+         Other
+;
+         The dataset contents are related to the contents of the data block in
+         a way not included elsewhere in this list. In case this value is used,
+         it is strongly recommended to also provide the specifics of the
+         relationship using the _database_related.special_details data item.
 ;
 
 save_
@@ -26992,7 +26999,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-02
+         3.2.0                    2023-02-03
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27049,4 +27056,7 @@ save_
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Added the 'Other' state to the enumeration set of the
+       _database_related.relation data item.
 ;
