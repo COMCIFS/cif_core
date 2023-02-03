@@ -8698,7 +8698,7 @@ save_chemical.identifier_inchi
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
     _description_example.case
         InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H'
     _description_example.detail   naphthalene
@@ -8722,7 +8722,7 @@ save_chemical.identifier_inchi_key
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
     _description_example.case     InChIKey=OROGSEYTTFOCAN-DNJOTXNNBG
     _description_example.detail   codeine
 
@@ -9454,7 +9454,7 @@ save_
 save_chemical_conn_bond.id
 
     _definition.id                '_chemical_conn_bond.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
     Unique identifier for the bond.
@@ -9464,7 +9464,7 @@ save_chemical_conn_bond.id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -12011,7 +12011,7 @@ save_
 save_space_group_wyckoff.id
 
     _definition.id                '_space_group_Wyckoff.id'
-    _definition.update            2014-06-12
+    _definition.update            2023-02-02
     _description.text
 ;
     An arbitrary code that is unique to a particular Wyckoff position.
@@ -12021,7 +12021,7 @@ save_space_group_wyckoff.id
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -12431,18 +12431,17 @@ save_
 save_geom_angle.id
 
     _definition.id                '_geom_angle.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
-    An arbitrary, unique identifier for the angle formed by the
-    three atoms.
+    An arbitrary, unique identifier for the angle formed by the three atoms.
 ;
     _name.category_id             geom_angle
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -12725,7 +12724,7 @@ save_
 save_geom_bond.id
 
     _definition.id                '_geom_bond.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
     Unique identifier for the bond.
@@ -12735,7 +12734,7 @@ save_geom_bond.id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -13015,7 +13014,7 @@ save_
 save_geom_contact.id
 
     _definition.id                '_geom_contact.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
     An identifier for the contact that is unique within the loop.
@@ -13025,7 +13024,7 @@ save_geom_contact.id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -13418,7 +13417,7 @@ save_
 save_geom_hbond.id
 
     _definition.id                '_geom_hbond.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
     An identifier for the hydrogen bond that is unique within the loop.
@@ -13428,7 +13427,7 @@ save_geom_hbond.id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -13744,7 +13743,7 @@ save_
 save_geom_torsion.id
 
     _definition.id                '_geom_torsion.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
     An identifier for the torsion angle that is unique within its loop.
@@ -13754,7 +13753,7 @@ save_geom_torsion.id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -14191,7 +14190,7 @@ save_
 save_model_site.id
 
     _definition.id                '_model_site.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
     An identifier for the model site that is unique within its loop.
@@ -14201,7 +14200,7 @@ save_model_site.id
     _type.purpose                 Key
     _type.source                  Derived
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -14873,17 +14872,17 @@ save_
 save_audit_author.id
 
     _definition.id                '_audit_author.id'
-    _definition.update            2020-08-13
+    _definition.update            2023-02-02
     _description.text
 ;
-    Arbitrary identifier for this author
+    Arbitrary identifier for this author.
 ;
     _name.category_id             audit_author
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14966,7 +14965,7 @@ save_
 save_audit_author_role.id
 
     _definition.id                '_audit_author_role.id'
-    _definition.update            2020-08-06
+    _definition.update            2023-02-02
     _description.text
 ;
     Unique identifier for the author for whom a role is identified.
@@ -14980,7 +14979,7 @@ save_audit_author_role.id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -15239,10 +15238,10 @@ save_
 save_audit_contact_author.id
 
     _definition.id                '_audit_contact_author.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
-    Arbitrary identifier for this author
+    Arbitrary identifier for this author.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               id
@@ -15250,7 +15249,7 @@ save_audit_contact_author.id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -15560,7 +15559,7 @@ save_
 save_audit_support.id
 
     _definition.id                '_audit_support.id'
-    _definition.update            2020-08-23
+    _definition.update            2023-02-02
     _description.text
 ;
     An arbitrary unique identifier for each source of support for
@@ -15571,7 +15570,7 @@ save_audit_support.id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -15635,17 +15634,17 @@ save_citation.book_id_isbn
 
     _definition.id                '_citation.book_id_ISBN'
     _alias.definition_id          '_citation_book_id_ISBN'
-    _definition.update            2012-12-11
+    _definition.update            2023-02-02
     _description.text
 ;
-    International Standard Book Number (ISBN) for book chap. cited.
+    International Standard Book Number (ISBN) for book chapter cited.
 ;
     _name.category_id             citation
     _name.object_id               book_id_ISBN
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Code
 
 save_
 
@@ -15827,7 +15826,7 @@ save_citation.id
     Unique identifier to the CITATION list. A value of 'primary'
     should be used to indicate the citation that the author(s)
     consider to be the most pertinent to the contents of the data
-    block.  Note that this item need not be a number;  it can be
+    block. Note that this item need not be a number; it can be
     any unique identifier.
 ;
     _name.category_id             citation
@@ -15934,7 +15933,7 @@ save_citation.journal_id_issn
     _description.text
 ;
     The International Standard Serial Number (ISSN) code assigned to
-    the journal cited;  relevant for journal articles.
+    the journal cited. Relevant for journal articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_id_ISSN
@@ -16947,18 +16946,17 @@ save_
 save_database_related.database_id
 
     _definition.id                '_database_related.database_id'
-    _definition.update            2019-01-08
+    _definition.update            2023-02-02
     _description.text
 ;
-    An identifier for the database that contains the
-    related dataset.
+    An identifier for the database that contains the related dataset.
 ;
     _name.category_id             database_related
     _name.object_id               database_id
     _type.purpose                 State
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
     _import.get
         [{'file':templ_enum.cif  'save':database_list}]
@@ -16987,7 +16985,7 @@ save_
 save_database_related.id
 
     _definition.id                '_database_related.id'
-    _definition.update            2021-03-03
+    _definition.update            2023-02-02
     _description.text
 ;
     An identifier for this database reference.
@@ -16997,7 +16995,7 @@ save_database_related.id
     _type.purpose                 Key
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
 
 save_
 
@@ -18368,28 +18366,28 @@ save_
 save_publ_author.id
 
     _definition.id                '_publ_author.id'
-    _definition.update            2020-08-13
+    _definition.update            2023-02-02
     _description.text
 ;
-    Arbitrary identifier for this author
+    Arbitrary identifier for this author.
 ;
     _name.category_id             publ_author
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
 save_publ_author.id_audit
 
     _definition.id                '_publ_author.id_audit'
-    _definition.update            2020-08-13
+    _definition.update            2023-02-02
     _description.text
 ;
-    Identifier corresponding to this author in the audit_author
-    list, if present.
+    Identifier corresponding to this author in the AUDIT_AUTHOR category list,
+    if present.
 ;
     _name.category_id             publ_author
     _name.object_id               id_audit
@@ -18397,7 +18395,7 @@ save_publ_author.id_audit
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -18409,8 +18407,8 @@ save_publ_author.id_iucr
     _description.text
 ;
     Identifier in the IUCr contact database of a publication
-    author.  This identifier may be available from the World
-    Directory of Crystallographers (https://wdc.iucr.org/).
+    author. This identifier may be available from the World
+    Directory of Crystallographers (http://wdc.iucr.org).
 ;
     _name.category_id             publ_author
     _name.object_id               id_IUCr
@@ -18762,10 +18760,10 @@ save_
 save_publ_contact_author.id
 
     _definition.id                '_publ_contact_author.id'
-    _definition.update            2021-06-29
+    _definition.update            2023-02-02
     _description.text
 ;
-    Arbitrary identifier for this author
+    Arbitrary identifier for this author.
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id
@@ -18773,7 +18771,7 @@ save_publ_contact_author.id
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -18814,7 +18812,7 @@ save_publ_contact_author.id_orcid
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Code
     _description_example.case     0000-0003-0391-0002
 
 save_
@@ -27040,6 +27038,8 @@ save_
        disorder.
 
        Added the _citation.URL and _journal.paper_URL data items.
+
+       Changed the content type of multiple id data items.
 
        Updated URL of the Open Funder Registry repository.
 
