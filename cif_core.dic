@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-01-29
+    _dictionary.date              2023-02-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -17372,6 +17372,55 @@ save_journal.paper_doi
 
 save_
 
+save_journal.paper_number
+
+    _definition.id                '_journal.paper_number'
+    _definition.update            2023-02-02
+    _description.text
+;
+    Article number that is used by some journals instead of a page range.
+    Usually applies to electronic-only journals.
+;
+    _name.category_id             journal
+    _name.object_id               paper_number
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         e0222394
+         L041303
+         044501
+
+save_
+
+save_journal.paper_pages
+
+    _definition.id                '_journal.paper_pages'
+    _definition.update            2023-02-02
+    _description.text
+;
+    Number of pages in the journal article.
+;
+    _name.category_id             journal
+    _name.object_id               paper_pages
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:
+    _units.code                   none
+
+    loop_
+      _description_example.case
+         1
+         4
+         13
+
+save_
+
 save_journal.paper_url
 
     _definition.id                '_journal.paper_URL'
@@ -26940,7 +26989,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-01-29
+         3.2.0                    2023-02-02
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -26986,4 +27035,6 @@ save_
        disorder.
 
        Added the _citation.URL and _journal.paper_URL data items.
+
+       Added the _journal.paper_number and _journal.paper_pages data items.
 ;
