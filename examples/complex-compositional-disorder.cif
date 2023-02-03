@@ -1,6 +1,6 @@
 ##
-# The example file showcases the use of the _atom_site_disorder_assembly and
-# _atom_site_disorder_group data items to describe complex positional disorder.
+# The example file showcases the use of the _atom_site.disorder_assembly and
+# _atom_site.disorder_group data items to describe complex positional disorder.
 # Disorder assembly "A" has two groups which describe two different molecular
 # entities that consist of multiple atoms (group "1" -- ClO4, group 2 -- NO3).
 #
