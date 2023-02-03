@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-02
+    _dictionary.date              2023-02-03
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -20198,7 +20198,7 @@ save_ATOM_SITE
     _definition.id                ATOM_SITE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-02-03
     _description.text
 ;
     The CATEGORY of data items used to describe atom site information
@@ -20207,6 +20207,36 @@ save_ATOM_SITE
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
     _category_key.name            '_atom_site.label'
+    _description_example.case
+;
+    loop_
+      _atom_site.label
+      _atom_site.occupancy
+      _atom_site.disorder_assembly
+      _atom_site.disorder_group
+        C1     1      .     .
+        H11A   .5     M     1
+        H12A   .5     M     1
+        H13A   .5     M     1
+        H11B   .5     M     2
+        H12B   .5     M     2
+        H13B   .5     M     2
+;
+    _description_example.detail
+;
+    A hypothetical example to a description of positional disorder. Assembly 'M'
+    describes a methyl group with two configurations '1' and '2':
+
+                        H11B    H11A      H13B
+                          .      |      .
+                            .    |    .
+                              .  |  .
+                                 C1 --------C2---
+                               / .  \
+                             /   .    \
+                           /     .      \
+                        H12A    H12B    H13A
+;
 
 save_
 
@@ -26992,7 +27022,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-02
+         3.2.0                    2023-02-03
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27049,4 +27079,6 @@ save_
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Added several examples to the ATOM_SITE category.
 ;
