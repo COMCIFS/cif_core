@@ -15514,13 +15514,13 @@ save_
 save_audit_support.funding_organization
 
     _definition.id                '_audit_support.funding_organization'
-    _definition.update            2023-01-13
+    _definition.update            2023-02-02
     _description.text
 ;
     The name of the organization providing funding support for
     the data collected and analysed in the data block. The
-    recommended source for such names is the Open Funder
-    Registry (https://github.com/CrossRef/open-funder-registry)
+    recommended source for such names is the Open Funder Registry
+    (https://gitlab.com/crossref/open_funder_registry).
 ;
     _name.category_id             audit_support
     _name.object_id               funding_organization
@@ -27040,6 +27040,8 @@ save_
        disorder.
 
        Added the _citation.URL and _journal.paper_URL data items.
+
+       Updated URL of the Open Funder Registry repository.
 
        Updated the references in definitions of the _chemical.enantioexcess_bulk
        and _chemical.enantioexcess_crystal data items.
