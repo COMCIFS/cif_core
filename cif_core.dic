@@ -16940,6 +16940,31 @@ save_DATABASE_RELATED
     _name.category_id             PUBLICATION
     _name.object_id               DATABASE_RELATED
     _category_key.name            '_database_related.id'
+    _description_example.case
+;
+    loop_
+      _database_related.id
+      _database_related.database_id
+      _database_related.entry_code
+      _database_related.relation
+      _database_related.special_details
+       1 CAS 58-55-9  Other     'Describes the same compound.'
+       2 COD 2006182  Identical .
+       3 CSD BAPLOT01 Identical .
+;
+    _description_example.detail
+;
+    The loop relates a specific instance of a theophylline crystal structure
+    to corresponding entries in the COD and CSD crystallographic databases
+    as well as to the general description of the theophyline compound in the
+    CAS registry.
+
+    This example loop could potentially be added to the CIF file that is
+    provided as supplementary material for the following publication:
+      Ebisuzaki, Y. et al. (1997). Acta Crystallographica, Section C:
+      Crystal Structure Communications, 53(6), 777-779.
+      https://doi.org/10.1107/S0108270197001960
+;
 
 save_
 
@@ -27058,5 +27083,6 @@ save_
        Added the _journal.paper_number and _journal.paper_pages data items.
 
        Added the 'Other' state to the enumeration set of the
-       _database_related.relation data item.
+       _database_related.relation data item. Added a usage example to
+       the DATABASE_RELATED category.
 ;
