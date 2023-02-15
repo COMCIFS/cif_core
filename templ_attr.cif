@@ -1029,5 +1029,5 @@ save_display_colour
 
        Updated description of _site_symmetry.
 
-       Added _atom_site_aniso.matrix_beta and _atom_site_aniso.beta_*.
+       Added descriptions for aniso_betaIJ, aniso_betaIJ2, and aniso_betaIJ_su.
 ;
