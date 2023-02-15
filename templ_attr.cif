@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2023-01-13
+    _dictionary.date             2023-02-15
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -1007,7 +1007,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2023-01-13
+         1.4.10                   2023-02-15
 ;
        Corrected a few typos in the descriptions of several save frames.
 
@@ -1028,4 +1028,6 @@ save_display_colour
        Changed atomic labels to 'Word' for conformance with DDL1.
 
        Updated description of _site_symmetry.
+
+       Added _atom_site_aniso.matrix_beta and _atom_site_aniso.beta_*.
 ;
