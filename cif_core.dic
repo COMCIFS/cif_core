@@ -21727,12 +21727,13 @@ save_
 save_atom_site_aniso.beta_11_su
 
     _definition.id                '_atom_site_aniso.beta_11_su'
-    _alias.definition_id          '_atom_site_aniso_B_11_su'
+    _alias.definition_id          '_atom_site_aniso_beta_11_su'
     _name.category_id             atom_site_aniso
     _name.object_id               beta_11_su
     _name.linked_item_id          '_atom_site_aniso.beta_11'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+    _import.get
+        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
 
 save_
 
@@ -21750,12 +21751,13 @@ save_
 save_atom_site_aniso.beta_12_su
 
     _definition.id                '_atom_site_aniso.beta_12_su'
-    _alias.definition_id          '_atom_site_aniso_B_12_su'
+    _alias.definition_id          '_atom_site_aniso_beta_12_su'
     _name.category_id             atom_site_aniso
     _name.object_id               beta_12_su
     _name.linked_item_id          '_atom_site_aniso.beta_12'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+    _import.get
+        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
 
 save_
 
@@ -21773,12 +21775,13 @@ save_
 save_atom_site_aniso.beta_13_su
 
     _definition.id                '_atom_site_aniso.beta_13_su'
-    _alias.definition_id          '_atom_site_aniso_B_13_su'
+    _alias.definition_id          '_atom_site_aniso_beta_13_su'
     _name.category_id             atom_site_aniso
     _name.object_id               beta_13_su
     _name.linked_item_id          '_atom_site_aniso.beta_13'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+    _import.get
+        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
 
 save_
 
@@ -21796,12 +21799,13 @@ save_
 save_atom_site_aniso.beta_22_su
 
     _definition.id                '_atom_site_aniso.beta_22_su'
-    _alias.definition_id          '_atom_site_aniso_B_22_su'
+    _alias.definition_id          '_atom_site_aniso_beta_22_su'
     _name.category_id             atom_site_aniso
     _name.object_id               beta_22_su
     _name.linked_item_id          '_atom_site_aniso.beta_22'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+    _import.get
+        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
 
 save_
 
@@ -21819,12 +21823,13 @@ save_
 save_atom_site_aniso.beta_23_su
 
     _definition.id                '_atom_site_aniso.beta_23_su'
-    _alias.definition_id          '_atom_site_aniso_B_23_su'
+    _alias.definition_id          '_atom_site_aniso_beta_23_su'
     _name.category_id             atom_site_aniso
     _name.object_id               beta_23_su
     _name.linked_item_id          '_atom_site_aniso.beta_23'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+    _import.get
+        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
 
 save_
 
@@ -21842,12 +21847,13 @@ save_
 save_atom_site_aniso.beta_33_su
 
     _definition.id                '_atom_site_aniso.beta_33_su'
-    _alias.definition_id          '_atom_site_aniso_B_33_su'
+    _alias.definition_id          '_atom_site_aniso_beta_33_su'
     _name.category_id             atom_site_aniso
     _name.object_id               beta_33_su
     _name.linked_item_id          '_atom_site_aniso.beta_33'
 
-    _import.get                [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+    _import.get
+        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
 
 save_
 

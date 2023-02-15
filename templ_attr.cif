@@ -657,7 +657,7 @@ save_aniso_betaIJ_su
 ;
      These are the standard uncertainty values (SU) for the standard
      form of the beta_ij anisotropic atomic displacement components (see
-     _aniso_betaIJ). Because these values are TYPE measurand, the su values
+     aniso_betaIJ). Because these values are TYPE measurand, the su values
      may in practice be auto generated as part of the beta_ij calculation.
 ;
     _type.purpose                SU
