@@ -609,6 +609,65 @@ save_aniso_BIJ_su
      save_
 
 
+save_aniso_betaIJ
+
+    _definition.update           2023-02-15
+    _description.text
+;
+     These are the standard unitless anisotropic atomic displacement components
+     which appear in the structure factor term:
+
+         T = exp{-1 sum~i~ [ sum~j~ (beta^ij^ h~i~ h~j~) ] }
+
+     h = the Miller indices
+     The unique elements of the real symmetric matrix are entered by row.
+
+     The IUCr Commission on Nomenclature recommends against the use
+     of beta for reporting atomic displacement parameters. U, being
+     directly proportional to B, is preferred.
+;
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  none
+     save_
+
+
+save_aniso_betaIJ2
+
+    _definition.update          2023-02-15
+    _description.text
+;
+     The [I][J] tdf elements define the overall anisotropic
+     displacement model if one was refined for this structure.
+;
+    _type.purpose               Number
+    _type.source                Derived
+    _type.container             Single
+    _type.contents              Real
+    _units.code                 none
+     save_
+
+
+save_aniso_betaIJ_su
+
+    _definition.update           2023-02-15
+    _description.text
+;
+     These are the standard uncertainty values (SU) for the standard
+     form of the beta_ij anisotropic atomic displacement components (see
+     _aniso_betaIJ). Because these values are TYPE measurand, the su values
+     may in practice be auto generated as part of the beta_ij calculation.
+;
+    _type.purpose                SU
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  none
+     save_
+
+
 save_aniso_UIJ
 
     _definition.update           2013-03-08
