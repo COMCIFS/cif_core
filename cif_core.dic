@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-15
+    _dictionary.date              2023-02-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -21935,10 +21935,10 @@ save_
 save_atom_site_aniso.matrix_beta
 
     _definition.id                '_atom_site_aniso.matrix_beta'
-    _definition.update            2023-02-15
+    _definition.update            2023-02-16
     _description.text
 ;
-    The symmetric anisotropic atomic displacement matrix beta.
+    The symmetric anisotropic atomic displacement matrix \b.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               matrix_beta
@@ -27184,7 +27184,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-15
+         3.2.0                    2023-02-16
 ;
        Added data names to allow multi-data-block expression of data sets.
 
