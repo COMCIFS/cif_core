@@ -570,7 +570,7 @@ save_aniso_BIJ
 
      Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770–781.
+     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -633,7 +633,7 @@ save_aniso_betaIJ
 
      Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770–781.
+     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -697,7 +697,7 @@ save_aniso_UIJ
 
      Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770–781.
+     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
