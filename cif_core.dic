@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-02
+    _dictionary.date              2023-02-06
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -861,23 +861,22 @@ save_
 save_diffrn_measurement.specimen_attachment_type
 
     _definition.id                '_diffrn_measurement.specimen_attachment_type'
-    _definition.update            2021-03-01
+    _definition.update            2023-02-06
     _description.text
 ;
     The way in which the sample is attached to the sample holder,
     including the type of adhesive material used if relevant. The sample
     holder is usually wholly outside the beam, whereas the attachment
     method may cause non-sample material to be illuminated. If the
-    attachment method is not included in the list below, 'Other' should be
-    chosen and details provided in
-    _diffrn_measurement.specimen_support
+    attachment method is not included in the list below, 'other' should be
+    chosen and details provided in _diffrn_measurement.specimen_support.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               specimen_attachment_type
     _type.purpose                 State
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -11495,7 +11494,7 @@ save_
 save_space_group.name_schoenflies
 
     _definition.id                '_space_group.name_Schoenflies'
-    _definition.update            2014-06-12
+    _definition.update            2023-02-06
     _description.text
 ;
     The Schoenflies symbol as listed in International Tables for
@@ -11517,7 +11516,7 @@ save_space_group.name_schoenflies
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     C2h.5
     _description_example.detail   'Schoenflies symbol for space group No. 14.'
 
@@ -14117,7 +14116,7 @@ save_
 save_model_site.display_colour
 
     _definition.id                '_model_site.display_colour'
-    _definition.update            2019-01-09
+    _definition.update            2023-02-06
     _description.text
 ;
     Display colour code assigned to this atom site. Note that the
@@ -14129,7 +14128,7 @@ save_model_site.display_colour
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_model_site.type_symbol'
 
     _import.get                   [
@@ -17118,7 +17117,7 @@ save_
 save_display_colour.hue
 
     _definition.id                '_display_colour.hue'
-    _definition.update            2012-05-07
+    _definition.update            2023-02-06
     _description.text
 ;
     Colour hue as an enumerated code.
@@ -17128,7 +17127,7 @@ save_display_colour.hue
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}]
 
@@ -23682,7 +23681,7 @@ save_
 save_atom_type.display_colour
 
     _definition.id                '_atom_type.display_colour'
-    _definition.update            2012-11-20
+    _definition.update            2023-02-06
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
@@ -23694,7 +23693,7 @@ save_atom_type.display_colour
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get                   [
@@ -26992,7 +26991,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-02
+         3.2.0                    2023-02-06
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27049,4 +27048,6 @@ save_
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Updated several definitions with enumeration values to be case-sensitive.
 ;
