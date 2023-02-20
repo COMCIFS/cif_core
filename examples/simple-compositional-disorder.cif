@@ -1,6 +1,6 @@
 ##
-# The example file showcases the use of the _atom_site_disorder_assembly and
-# _atom_site_disorder_group data items to describe positional disorder.
+# The example file showcases the use of the _atom_site.disorder_assembly and
+# _atom_site.disorder_group data items to describe positional disorder.
 # Disorder assembly "A" has two groups which describe two different atoms
 # (group "1" -- Co, group 2 -- Mn).
 #
