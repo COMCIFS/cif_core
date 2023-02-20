@@ -21090,7 +21090,7 @@ save_atom_site.refinement_flags
          G                      'Rigid group refinement of site.'
          R                      'Riding-atom site attached to non-riding atom.'
          D                      'Distance or angle restraint on site.'
-         T                      'Yhermal displacement constraints.'
+         T                      'Thermal displacement constraints.'
          U                      'Uiso or Uij restraint (rigid bond).'
          P                      'Partial occupancy constraint.'
          .                      'No refinement constraints.'
