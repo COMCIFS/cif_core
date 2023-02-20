@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-03
+    _dictionary.date              2023-02-06
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -861,23 +861,22 @@ save_
 save_diffrn_measurement.specimen_attachment_type
 
     _definition.id                '_diffrn_measurement.specimen_attachment_type'
-    _definition.update            2021-03-01
+    _definition.update            2023-02-06
     _description.text
 ;
     The way in which the sample is attached to the sample holder,
     including the type of adhesive material used if relevant. The sample
     holder is usually wholly outside the beam, whereas the attachment
     method may cause non-sample material to be illuminated. If the
-    attachment method is not included in the list below, 'Other' should be
-    chosen and details provided in
-    _diffrn_measurement.specimen_support
+    attachment method is not included in the list below, 'other' should be
+    chosen and details provided in _diffrn_measurement.specimen_support.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               specimen_attachment_type
     _type.purpose                 State
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -11495,7 +11494,7 @@ save_
 save_space_group.name_schoenflies
 
     _definition.id                '_space_group.name_Schoenflies'
-    _definition.update            2014-06-12
+    _definition.update            2023-02-06
     _description.text
 ;
     The Schoenflies symbol as listed in International Tables for
@@ -11517,7 +11516,7 @@ save_space_group.name_schoenflies
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     C2h.5
     _description_example.detail   'Schoenflies symbol for space group No. 14.'
 
@@ -14116,7 +14115,7 @@ save_
 save_model_site.display_colour
 
     _definition.id                '_model_site.display_colour'
-    _definition.update            2019-01-09
+    _definition.update            2023-02-06
     _description.text
 ;
     Display colour code assigned to this atom site. Note that the
@@ -14128,7 +14127,7 @@ save_model_site.display_colour
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_model_site.type_symbol'
 
     _import.get                   [
@@ -16891,6 +16890,31 @@ save_DATABASE_RELATED
     _name.category_id             PUBLICATION
     _name.object_id               DATABASE_RELATED
     _category_key.name            '_database_related.id'
+    _description_example.case
+;
+    loop_
+      _database_related.id
+      _database_related.database_id
+      _database_related.entry_code
+      _database_related.relation
+      _database_related.special_details
+       1 CAS 58-55-9  Other     'Describes the same compound.'
+       2 COD 2006182  Identical .
+       3 CSD BAPLOT01 Identical .
+;
+    _description_example.detail
+;
+    The loop relates a specific instance of a theophylline crystal structure
+    to corresponding entries in the COD and CSD crystallographic databases
+    as well as to the general description of the theophyline compound in the
+    CAS registry.
+
+    This example loop could potentially be added to the CIF file that is
+    provided as supplementary material for the following publication:
+      Ebisuzaki, Y. et al. (1997). Acta Crystallographica, Section C:
+      Crystal Structure Communications, 53(6), 777-779.
+      https://doi.org/10.1107/S0108270197001960
+;
 
 save_
 
@@ -16953,7 +16977,7 @@ save_
 save_database_related.relation
 
     _definition.id                '_database_related.relation'
-    _definition.update            2019-01-08
+    _definition.update            2023-02-03
     _description.text
 ;
     The general relationship of the data in the data block
@@ -16989,6 +17013,13 @@ save_database_related.relation
          Common
 ;
          The dataset contents share a common source.
+;
+         Other
+;
+         The dataset contents are related to the contents of the data block in
+         a way not included elsewhere in this list. In case this value is used,
+         it is strongly recommended to also provide the specifics of the
+         relationship using the _database_related.special_details data item.
 ;
 
 save_
@@ -17069,7 +17100,7 @@ save_
 save_display_colour.hue
 
     _definition.id                '_display_colour.hue'
-    _definition.update            2012-05-07
+    _definition.update            2023-02-06
     _description.text
 ;
     Colour hue as an enumerated code.
@@ -17079,7 +17110,7 @@ save_display_colour.hue
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}]
 
@@ -20149,7 +20180,7 @@ save_ATOM_SITE
     _definition.id                ATOM_SITE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-02-03
     _description.text
 ;
     The CATEGORY of data items used to describe atom site information
@@ -20158,6 +20189,65 @@ save_ATOM_SITE
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
     _category_key.name            '_atom_site.label'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+       loop_
+         _atom_site.label
+         _atom_site.occupancy
+         _atom_site.disorder_assembly
+         _atom_site.disorder_group
+          C1     1      .     .
+          H11A   .5     M     1
+          H12A   .5     M     1
+          H13A   .5     M     1
+          H11B   .5     M     2
+          H12B   .5     M     2
+          H13B   .5     M     2
+;
+;
+       A hypothetical example of a positional disorder description. Disorder
+       assembly 'M' describes a methyl group with two alternative configurations
+       '1' and '2':
+
+                          H11B    H11A      H13B
+                            .      |      .
+                              .    |    .
+                                .  |  .
+                                   C1 --------C2---
+                                 / .  \
+                               /   .    \
+                             /     .      \
+                          H12A    H12B    H13A
+;
+;
+       loop_
+         _atom_site.label
+         _atom_site.type_symbol
+         _atom_site.fract_x
+         _atom_site.fract_y
+         _atom_site.fract_z
+         _atom_site.occupancy
+         _atom_site.disorder_assembly
+         _atom_site.disorder_group
+          Cu1 Cu 0.78443(2) 0.88297(4) 0.37825(2)  1       . .
+          Co1 Co 0.77504(2) 0.66957(4) 0.54249(2)  0.78(3) A 1
+          Mn1 Mn 0.77504(2) 0.66957(4) 0.54249(2)  0.22(3) A 2
+          O1   O 0.85532(9) 0.95747(19) 0.28965(9) 1       . .
+          O2   O 0.84868(9) 0.94662(19) 0.14953(8) 1       . .
+          # ...
+;
+;
+       An example of a compositional disorder description. Disorder assembly 'A'
+       describes a site that is simultaneously occupied by Co and Mn atoms which
+       are assigned to disorder group '1' and disorder group '2' respectively.
+
+       The example was created based on data from:
+           Li, Ang et al. (2021). Dalton Transactions, 50(2), 681-688.
+           https://doi.org/10.1039/d0dt03269g
+;
 
 save_
 
@@ -23633,7 +23723,7 @@ save_
 save_atom_type.display_colour
 
     _definition.id                '_atom_type.display_colour'
-    _definition.update            2012-11-20
+    _definition.update            2023-02-06
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
@@ -23645,7 +23735,7 @@ save_atom_type.display_colour
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get                   [
@@ -26943,7 +27033,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-03
+         3.2.0                    2023-02-06
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27000,6 +27090,14 @@ save_
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Added the 'Other' state to the enumeration set of the
+       _database_related.relation data item. Added a usage example to
+       the DATABASE_RELATED category.
+
+       Added several examples to the ATOM_SITE category.
+
+       Updated several definitions with enumeration values to be case-sensitive.
 
        Removed the _citation_author.key and _citation_editor.id data items.
 ;
