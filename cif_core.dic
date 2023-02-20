@@ -27000,4 +27000,6 @@ save_
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Removed the _citation_author.key and _citation_editor.id data items.
 ;
