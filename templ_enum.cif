@@ -795,6 +795,9 @@ save_units_code
    'megagrams_per_metre_cubed' "density 'megagrams per cubic metre'" 
    'angstrom_cubed_per_dalton' "density 'angstrom cubed per dalton'"
 
+   'millimetres_squared_per_gram' "mass absorption 'square millimetres per gram'" 
+   'centimetres_squared_per_gram' "mass absorption 'square centimetres per gram'" 
+
    'kilopascals'      "pressure      'kilopascals'"
    'gigapascals'      "pressure      'gigapascals'"
 

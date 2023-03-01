@@ -44,7 +44,7 @@ jobs:
           id: ddlm_check
   layout:
     runs-on: ubuntu-latest
-    needs: ddlm
+    needs: syntax
 
     steps:
       - name: Get the cache
