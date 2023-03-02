@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-06
+    _dictionary.date              2023-03-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -6871,14 +6871,15 @@ save_CELL
     _definition.id                CELL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2023-03-02
     _description.text
 ;
     The CATEGORY of data items used to describe the parameters of
-    the crystal unit cell and their measurement.
+    the crystal unit cell.
 ;
-    _name.category_id             EXPTL
+    _name.category_id             DIFFRN
     _name.object_id               CELL
+    _category_key.name            '_cell.diffrn_id'
 
 save_
 
@@ -7116,6 +7117,29 @@ save_cell.convert_uiso_to_uij_su
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   none
+
+save_
+
+save_cell.diffrn_id
+
+    _definition.id                '_cell.diffrn_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction conditions to which this cell has been applied,
+    for example, to locate and extract diffraction peaks. These will normally be
+    the same conditions as those under which the cell was measured, but some
+    legacy data sets may have used a cell measured under differing conditions,
+    in which case those conditions should be indicated using
+    `_cell_measurement.condition_id`
+;
+    _name.category_id             cell
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -8070,26 +8094,75 @@ save_CELL_MEASUREMENT
     _definition.id                CELL_MEASUREMENT
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2022-05-25
     _description.text
 ;
-    The CATEGORY of data items used to describe the angles between
-    the axes in the crystal unit cell.
+    The CATEGORY of data items used to describe the measurement of
+    the cell parameters.
 ;
     _name.category_id             CELL
     _name.object_id               CELL_MEASUREMENT
+    _category_key.name            '_cell_measurement.diffrn_id'
+
+save_
+
+save_cell_measurement.condition_id
+
+    _definition.id                '_cell_measurement.condition_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction conditions used for cell measurement,
+    where different to the diffraction conditions used for data 
+    collection.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               condition_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = _cell_measurement.diffrn_id
+;
+
+save_
+
+save_cell_measurement.diffrn_id
+
+    _definition.id                '_cell_measurement.diffrn_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction experiment to which the measured cell
+    has been applied.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
 save_cell_measurement.pressure
 
     _definition.id                '_cell_measurement.pressure'
+    _definition_replaced.by       '_diffrn.ambient_pressure'
     _alias.definition_id          '_cell_measurement_pressure'
-    _definition.update            2012-11-22
+    _definition.update            2022-05-25
     _description.text
 ;
+    **DEPRECATED**
+
     The pressure at which the unit-cell parameters were measured
     (not the pressure used to synthesize the sample).
+    Replaced by '_diffrn.ambient_pressure'
 ;
     _name.category_id             cell_measurement
     _name.object_id               pressure
@@ -8105,15 +8178,18 @@ save_
 save_cell_measurement.pressure_su
 
     _definition.id                '_cell_measurement.pressure_su'
+    _definition_replaced.by       '_diffrn.ambient_pressure_su'
 
     loop_
       _alias.definition_id
          '_cell_measurement_pressure_su'
          '_cell_measurement.pressure_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2022-05-22
     _description.text
 ;
+    ** DEPRECATED **
+
     Standard uncertainty of the pressure at which
     the unit-cell parameters were measured.
 ;
@@ -8131,11 +8207,16 @@ save_
 save_cell_measurement.radiation
 
     _definition.id                '_cell_measurement.radiation'
+    _definition_replaced.by       .
     _alias.definition_id          '_cell_measurement_radiation'
-    _definition.update            2012-11-22
+    _definition.update            2022-05-22
     _description.text
 ;
+    ** DEPRECATED **
+
     Description of the radiation used to measure the unit-cell data.
+    Items from the DIFFRN_RADIATION category should be used instead
+    of this item.
 ;
     _name.category_id             cell_measurement
     _name.object_id               radiation
@@ -8176,6 +8257,7 @@ save_
 save_cell_measurement.temperature
 
     _definition.id                '_cell_measurement.temperature'
+    _definition_replaced.by       '_diffrn.ambient_temperature'
 
     loop_
       _alias.definition_id
@@ -8183,11 +8265,14 @@ save_cell_measurement.temperature
          '_cell_measurement_temp'
          '_cell_measurement.temp'
 
-    _definition.update            2012-11-22
+    _definition.update            2022-05-25
     _description.text
 ;
+    ** DEPRECATED **
+
     The temperature at which the unit-cell parameters were measured
     (not the temperature of synthesis).
+    _diffrn.ambient_temperature should be used instead of this item.
 ;
     _name.category_id             cell_measurement
     _name.object_id               temperature
@@ -8203,15 +8288,18 @@ save_
 save_cell_measurement.temperature_su
 
     _definition.id                '_cell_measurement.temperature_su'
+    _definition_replaced.by       '_diffrn.ambient_temperature_su'
 
     loop_
       _alias.definition_id
          '_cell_measurement_temp_su'
          '_cell_measurement.temp_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2022-05-22
     _description.text
 ;
+    ** DEPRECATED **
+
     Standard uncertainty of the temperature of at which
     the unit-cell parameters were measured.
 ;
@@ -8271,13 +8359,16 @@ save_
 save_cell_measurement.wavelength
 
     _definition.id                '_cell_measurement.wavelength'
+    _definition_replaced.by       '_diffrn_radiation_wavelength.value'
     _alias.definition_id          '_cell_measurement_wavelength'
-    _definition.update            2012-11-22
+    _definition.update            2022-05-25
     _description.text
 ;
+    ** DEPRECATED **
+
     Wavelength of the radiation used to measure the unit cell.
-    If this is not specified, the wavelength is assumed to be the
-    same as that given in _diffrn_radiation_wavelength.value
+    Items from the _diffrn_radiation_wavelength category should
+    be used instead of this item.
 ;
     _name.category_id             cell_measurement
     _name.object_id               wavelength
@@ -27033,7 +27124,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-06
+         3.2.0                    2023-03-02
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27100,4 +27191,8 @@ save_
        Updated several definitions with enumeration values to be case-sensitive.
 
        Removed the _citation_author.key and _citation_editor.id data items.
+
+       Reparented CELL to DIFFRN category and added key data names to allow
+       multiple cells for different diffraction conditions. Deprecated
+       _cell_measurement.temperature,pressure data names.
 ;
