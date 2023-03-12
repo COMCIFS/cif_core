@@ -1,0 +1,44 @@
+#\#CIF_2.0
+##
+# Represents an experiment where the cell measurement was performed under
+# different conditions to the data collection.
+#
+# In this case both measurements are presented in a single data block.
+# The 'cell-measurement-separate-blocks.cif' example file conveys the same
+# information using two separate data blocks.
+##
+
+data_main_and_cell_measurement
+
+_cell.length_a                         11.520(12)
+_cell.length_b                         11.210(11)
+_cell.length_c                         4.920(5)
+_cell.angle_alpha                      90.00000
+_cell.angle_beta                       90.8331(5)
+_cell.angle_gamma                      90.00000
+_cell.volume                           635.3(11)
+_cell.formula_units_Z                  4
+
+loop_
+_cell_measurement.diffrn_id
+_cell_measurement.condition_id
+_cell_measurement.theta_max
+_cell_measurement.theta_min
+_cell_measurement.reflns_used
+1 2 50.5 10.1 20
+2 2 50.4 10.0 30
+
+loop_
+_diffrn.id
+_diffrn.ambient_temperature
+_diffrn.ambient_pressure
+1 293 10
+2 290 10
+
+loop_
+_diffrn_radiation.diffrn_id
+_diffrn_radiation.type
+_diffrn_radiation_wavelength.value
+_diffrn_radiation.probe
+1 'Cu K\a' 1.5418 x-ray
+2 'Mo K\a' 0.701 x-ray
