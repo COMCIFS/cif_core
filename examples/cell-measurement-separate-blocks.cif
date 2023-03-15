@@ -46,9 +46,10 @@ _diffrn_radiation.type                'Mo K\a' # Different radiation type
 _diffrn_radiation_wavelength.value     0.701
 _diffrn_radiation.probe                x-ray
 
-# Some items from the cell measurement category have different
-# values from those provided in the main data collection block.
-# _cell_measurement.condition_id       2
+# Any _cell_measurement items in this data block would relate to the
+# determination of a unit cell used for any diffraction data presented
+# in this data block.
+_cell_measurement.condition_id         2   #default value
 _cell_measurement.theta_max            50.4
 _cell_measurement.theta_min            10.0
 _cell_measurement.reflns_used          30
