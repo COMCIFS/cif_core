@@ -10,6 +10,11 @@
 
 data_main_and_cell_measurement
 
+# When combining information that by default is distributed over several
+# data blocks, _audit.schema should take a non-default value
+
+_audit.schema                          Custom
+
 _cell.length_a                         11.520(12)
 _cell.length_b                         11.210(11)
 _cell.length_c                         4.920(5)
