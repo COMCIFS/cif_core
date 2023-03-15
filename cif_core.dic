@@ -1784,6 +1784,7 @@ save_
 save_cell_measurement.pressure
 
     _definition.id                '_cell_measurement.pressure'
+    _definition_replaced.id       1
     _definition_replaced.by       '_diffrn.ambient_pressure'
     _alias.definition_id          '_cell_measurement_pressure'
     _definition.update            2022-05-25
@@ -1809,6 +1810,7 @@ save_
 save_cell_measurement.pressure_su
 
     _definition.id                '_cell_measurement.pressure_su'
+    _definition_replaced.id       1
     _definition_replaced.by       '_diffrn.ambient_pressure_su'
 
     loop_
@@ -1838,6 +1840,7 @@ save_
 save_cell_measurement.radiation
 
     _definition.id                '_cell_measurement.radiation'
+    _definition_replaced.id       1
     _definition_replaced.by       .
     _alias.definition_id          '_cell_measurement_radiation'
     _definition.update            2022-05-22
@@ -1888,6 +1891,7 @@ save_
 save_cell_measurement.temperature
 
     _definition.id                '_cell_measurement.temperature'
+    _definition_replaced.id       1
     _definition_replaced.by       '_diffrn.ambient_temperature'
 
     loop_
@@ -1919,6 +1923,7 @@ save_
 save_cell_measurement.temperature_su
 
     _definition.id                '_cell_measurement.temperature_su'
+    _definition_replaced.id       1
     _definition_replaced.by       '_diffrn.ambient_temperature_su'
 
     loop_
@@ -1990,6 +1995,7 @@ save_
 save_cell_measurement.wavelength
 
     _definition.id                '_cell_measurement.wavelength'
+    _definition_replaced.id       1
     _definition_replaced.by       '_diffrn_radiation_wavelength.value'
     _alias.definition_id          '_cell_measurement_wavelength'
     _definition.update            2022-05-25
