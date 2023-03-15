@@ -6,7 +6,7 @@
 # In this case certain cell measurement conditions that differ from the data
 # collection conditions are recorded using a very limited set of data items
 # from the CELL_MEASUREMENT category. As a result, this file simply cannot fully
-# convey the information provided in the 'cell-measurement-separate-blocks.cif'
+# convey the information provided in the 'cell-measurement-multi-block.cif'
 # example file.
 #
 # Most items from the CELL_MEASUREMENT category have now been deprecated and

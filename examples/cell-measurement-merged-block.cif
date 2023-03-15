@@ -4,7 +4,7 @@
 # different conditions to the data collection.
 #
 # In this case both measurements are presented in a single data block.
-# The 'cell-measurement-separate-blocks.cif' example file conveys the same
+# The 'cell-measurement-multi-block.cif' example file conveys the same
 # information using two separate data blocks.
 ##
 
