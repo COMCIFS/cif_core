@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-02-16
+    _dictionary.date              2023-03-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -497,6 +497,1645 @@ save_diffrn.symmetry_description
 
 save_
 
+save_CELL
+
+    _definition.id                CELL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-03-02
+    _description.text
+;
+    The CATEGORY of data items used to describe the parameters of
+    the crystal unit cell.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               CELL
+    _category_key.name            '_cell.diffrn_id'
+
+save_
+
+save_cell.angle_alpha
+
+    _definition.id                '_cell.angle_alpha'
+    _alias.definition_id          '_cell_angle_alpha'
+    _name.category_id             cell
+    _name.object_id               angle_alpha
+
+    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
+
+save_
+
+save_cell.angle_alpha_su
+
+    _definition.id                '_cell.angle_alpha_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_angle_alpha_su'
+         '_cell.angle_alpha_esd'
+
+    _name.category_id             cell
+    _name.object_id               angle_alpha_su
+    _name.linked_item_id          '_cell.angle_alpha'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':cell_angle_su}]
+
+save_
+
+save_cell.angle_beta
+
+    _definition.id                '_cell.angle_beta'
+    _alias.definition_id          '_cell_angle_beta'
+    _name.category_id             cell
+    _name.object_id               angle_beta
+
+    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
+
+save_
+
+save_cell.angle_beta_su
+
+    _definition.id                '_cell.angle_beta_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_angle.beta_su'
+         '_cell_angle_beta_su'
+         '_cell.angle_beta_esd'
+
+    _name.category_id             cell
+    _name.object_id               angle_beta_su
+    _name.linked_item_id          '_cell.angle_beta'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':cell_angle_su}]
+
+save_
+
+save_cell.angle_gamma
+
+    _definition.id                '_cell.angle_gamma'
+    _alias.definition_id          '_cell_angle_gamma'
+    _name.category_id             cell
+    _name.object_id               angle_gamma
+
+    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
+
+save_
+
+save_cell.angle_gamma_su
+
+    _definition.id                '_cell.angle_gamma_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_angle.gamma_su'
+         '_cell_angle_gamma_su'
+         '_cell.angle_gamma_esd'
+
+    _name.category_id             cell
+    _name.object_id               angle_gamma_su
+    _name.linked_item_id          '_cell.angle_gamma'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':cell_angle_su}]
+
+save_
+
+save_cell.atomic_mass
+
+    _definition.id                '_cell.atomic_mass'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Atomic mass of the contents of the unit cell. This calculated
+    from the atom sites present in the ATOM_TYPE list, rather than
+    the ATOM_SITE lists of atoms in the refined model.
+;
+    _name.category_id             cell
+    _name.object_id               atomic_mass
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   dalton
+    _method.purpose               Evaluation
+    _method.expression
+;
+    mass = 0.
+
+    Loop t as atom_type  {
+
+                   mass += t.number_in_cell * t.atomic_mass
+    }
+      _cell.atomic_mass = mass
+;
+
+save_
+
+save_cell.convert_uij_to_betaij
+
+    _definition.id                '_cell.convert_Uij_to_betaij'
+    _definition.update            2021-09-24
+    _description.text
+;
+    The reciprocal space matrix for converting the U(ij) matrix of
+    atomic displacement parameters to a dimensionless beta(IJ) matrix.
+    The ADP factor in a structure factor expression:
+
+    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
+    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+      = exp -       ( beta11 h h + ............ 2 beta23 k l )
+
+    The conversion of the U or B matrices to the beta matrix
+
+        beta =   C U C   =    C B C /8pi**2
+
+    where C is conversion matrix defined here.
+;
+    _name.category_id             cell
+    _name.object_id               convert_Uij_to_betaij
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With c  as  cell
+
+    _cell.convert_Uij_to_betaij =                              1.4142 * Pi *
+    Matrix([[ c.reciprocal_length_a, 0, 0 ],
+                [ 0, c.reciprocal_length_b, 0 ],
+                    [ 0, 0, c.reciprocal_length_c ]])
+;
+
+save_
+
+save_cell.convert_uij_to_betaij_su
+
+    _definition.id                '_cell.convert_Uij_to_betaij_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.convert_Uij_to_betaij.
+;
+    _name.category_id             cell
+    _name.object_id               convert_Uij_to_betaij_su
+    _name.linked_item_id          '_cell.convert_Uij_to_betaij'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.convert_uiso_to_uij
+
+    _definition.id                '_cell.convert_Uiso_to_Uij'
+    _definition.update            2021-07-07
+    _description.text
+;
+    The reciprocal space matrix for converting the isotropic Uiso
+    atomic displacement parameter to the anisotropic matrix Uij.
+
+                     | 1            cos(gamma*)   cos(beta*)  |
+    U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
+                     | cos(beta*)   cos(alpha*)   1           |
+;
+    _name.category_id             cell
+    _name.object_id               convert_Uiso_to_Uij
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   none
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With c  as  cell
+
+    _cell.convert_Uiso_to_Uij =                           [[ 1.,
+    Cosd(c.reciprocal_angle_gamma), Cosd(c.reciprocal_angle_beta)  ],
+                 [ Cosd(c.reciprocal_angle_gamma), 1.,
+    Cosd(c.reciprocal_angle_alpha) ],                        [
+    Cosd(c.reciprocal_angle_beta), Cosd(c.reciprocal_angle_alpha), 1.  ]]
+;
+
+save_
+
+save_cell.convert_uiso_to_uij_su
+
+    _definition.id                '_cell.convert_Uiso_to_Uij_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.convert_Uiso_to_Uij.
+;
+    _name.category_id             cell
+    _name.object_id               convert_Uiso_to_Uij_su
+    _name.linked_item_id          '_cell.convert_Uiso_to_Uij'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_cell.diffrn_id
+
+    _definition.id                '_cell.diffrn_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction conditions to which this cell has been applied,
+    for example, to locate and extract diffraction peaks. These will normally be
+    the same conditions as those under which the cell was measured, but some
+    legacy data sets may have used a cell measured under differing conditions,
+    in which case those conditions should be indicated using
+    `_cell_measurement.condition_id`
+;
+    _name.category_id             cell
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_cell.formula_units_z
+
+    _definition.id                '_cell.formula_units_Z'
+    _alias.definition_id          '_cell_formula_units_Z'
+    _definition.update            2021-03-01
+    _description.text
+;
+    The number of the formula units in the unit cell as specified
+    by _chemical_formula.structural, _chemical_formula.moiety or
+    _chemical_formula.sum.
+;
+    _name.category_id             cell
+    _name.object_id               formula_units_Z
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:
+    _units.code                   none
+
+save_
+
+save_cell.length_a
+
+    _definition.id                '_cell.length_a'
+    _alias.definition_id          '_cell_length_a'
+    _name.category_id             cell
+    _name.object_id               length_a
+
+    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
+
+save_
+
+save_cell.length_a_su
+
+    _definition.id                '_cell.length_a_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_length_a_su'
+         '_cell.length_a_esd'
+
+    _name.category_id             cell
+    _name.object_id               length_a_su
+    _name.linked_item_id          '_cell.length_a'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':cell_length_su}]
+
+save_
+
+save_cell.length_b
+
+    _definition.id                '_cell.length_b'
+    _alias.definition_id          '_cell_length_b'
+    _name.category_id             cell
+    _name.object_id               length_b
+
+    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
+
+save_
+
+save_cell.length_b_su
+
+    _definition.id                '_cell.length_b_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_length_b_su'
+         '_cell.length_b_esd'
+
+    _name.category_id             cell
+    _name.object_id               length_b_su
+    _name.linked_item_id          '_cell.length_b'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':cell_length_su}]
+
+save_
+
+save_cell.length_c
+
+    _definition.id                '_cell.length_c'
+    _alias.definition_id          '_cell_length_c'
+    _name.category_id             cell
+    _name.object_id               length_c
+
+    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
+
+save_
+
+save_cell.length_c_su
+
+    _definition.id                '_cell.length_c_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_length_c_su'
+         '_cell.length_c_esd'
+
+    _name.category_id             cell
+    _name.object_id               length_c_su
+    _name.linked_item_id          '_cell.length_c'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':cell_length_su}]
+
+save_
+
+save_cell.metric_tensor
+
+    _definition.id                '_cell.metric_tensor'
+    _definition.update            2021-07-07
+    _description.text
+;
+    The direct space (covariant) metric tensor used to transform
+    vectors and coordinates from real (direct) to reciprocal space.
+;
+    _name.category_id             cell
+    _name.object_id               metric_tensor
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+    _method.purpose               Evaluation
+    _method.expression
+;
+    with c  as  cell
+
+          _cell.metric_tensor = [[ c.vector_a*c.vector_a,
+    c.vector_a*c.vector_b, c.vector_a*c.vector_c ],
+     [ c.vector_b*c.vector_a, c.vector_b*c.vector_b, c.vector_b*c.vector_c ],
+                               [ c.vector_c*c.vector_a, c.vector_c*c.vector_b,
+    c.vector_c*c.vector_c ]]
+;
+
+save_
+
+save_cell.orthogonal_matrix
+
+    _definition.id                '_cell.orthogonal_matrix'
+    _definition.update            2021-07-07
+    _description.text
+;
+    Orthogonal matrix of the crystal unit cell. Definition uses
+    Rollet's axial assignments with cell vectors a,b,c aligned
+    with orthogonal axes X,Y,Z so that c||Z and b in plane YZ.
+;
+    _name.category_id             cell
+    _name.object_id               orthogonal_matrix
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c as cell
+    _cell.orthogonal_matrix =   [
+          [  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma), 0,
+                                 0 ],       [
+    -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma),
+    c.length_b*Sind(c.angle_alpha),   0 ],       [
+    c.length_a*Cosd(c.angle_beta),
+    c.length_b*Cosd(c.angle_alpha), c.length_c ]]
+;
+
+save_
+
+save_cell.reciprocal_angle_alpha
+
+    _definition.id                '_cell.reciprocal_angle_alpha'
+    _alias.definition_id          '_cell_reciprocal_angle_alpha'
+    _definition.update            2013-01-18
+    _description.text
+;
+    Reciprocal of the angle between _cell.length_b and _cell.length_c.
+    Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+         New York: John Wiley & Sons Inc.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_angle_alpha
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:180.
+    _units.code                   degrees
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c as cell
+
+    _cell.reciprocal_angle_alpha =
+    Acosd((Cosd(c.angle_beta)*Cosd(c.angle_gamma)-Cosd(c.angle_alpha))/
+    (Sind(c.angle_beta)*Sind(c.angle_gamma)))
+;
+
+save_
+
+save_cell.reciprocal_angle_alpha_su
+
+    _definition.id                '_cell.reciprocal_angle_alpha_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_reciprocal_angle_alpha_su'
+         '_cell.reciprocal_angle_alpha_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the reciprocal of the angle
+    between _cell.length_b and _cell.length_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_angle_alpha_su
+    _name.linked_item_id          '_cell.reciprocal_angle_alpha'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
+
+save_
+
+save_cell.reciprocal_angle_beta
+
+    _definition.id                '_cell.reciprocal_angle_beta'
+    _alias.definition_id          '_cell_reciprocal_angle_beta'
+    _definition.update            2013-01-18
+    _description.text
+;
+    Reciprocal of the angle between _cell.length_a and _cell.length_c.
+    Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+         New York: John Wiley & Sons Inc.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_angle_beta
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:180.
+    _units.code                   degrees
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c as cell
+
+    _cell.reciprocal_angle_beta =
+    Acosd((Cosd(c.angle_alpha)*Cosd(c.angle_gamma)-Cosd(c.angle_beta))/
+    (Sind(c.angle_alpha)*Sind(c.angle_gamma)))
+;
+
+save_
+
+save_cell.reciprocal_angle_beta_su
+
+    _definition.id                '_cell.reciprocal_angle_beta_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_reciprocal_angle_beta_su'
+         '_cell.reciprocal_angle_beta_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the reciprocal of the angle
+    between _cell.length_a and _cell.length_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_angle_beta_su
+    _name.linked_item_id          '_cell.reciprocal_angle_beta'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
+
+save_
+
+save_cell.reciprocal_angle_gamma
+
+    _definition.id                '_cell.reciprocal_angle_gamma'
+    _alias.definition_id          '_cell_reciprocal_angle_gamma'
+    _definition.update            2016-09-09
+    _description.text
+;
+    Reciprocal of the angle between _cell.length_a and _cell.length_b.
+    Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+         New York: John Wiley & Sons Inc.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_angle_gamma
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:180.
+    _units.code                   degrees
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c as cell
+
+    _cell.reciprocal_angle_gamma =
+    Acosd((Cosd(c.angle_alpha)*Cosd(c.angle_beta)-Cosd(c.angle_gamma))/
+    (Sind(c.angle_alpha)*Sind(c.angle_beta)))
+;
+
+save_
+
+save_cell.reciprocal_angle_gamma_su
+
+    _definition.id                '_cell.reciprocal_angle_gamma_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_reciprocal_angle_gamma_su'
+         '_cell.reciprocal_angle_gamma_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the reciprocal of the angle
+    between _cell.length_a and _cell.length_b.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_angle_gamma_su
+    _name.linked_item_id          '_cell.reciprocal_angle_gamma'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
+
+save_
+
+save_cell.reciprocal_length_a
+
+    _definition.id                '_cell.reciprocal_length_a'
+    _alias.definition_id          '_cell_reciprocal_length_a'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Reciprocal of the _cell.length_a.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_length_a
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.reciprocal_length_a = Norm ( _cell.reciprocal_vector_a )
+;
+
+save_
+
+save_cell.reciprocal_length_a_su
+
+    _definition.id                '_cell.reciprocal_length_a_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_reciprocal_length_a_su'
+         '_cell.reciprocal_length_a_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the reciprocal of the _cell.length_a.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_length_a_su
+    _name.linked_item_id          '_cell.reciprocal_length_a'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.reciprocal_length_b
+
+    _definition.id                '_cell.reciprocal_length_b'
+    _alias.definition_id          '_cell_reciprocal_length_b'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Reciprocal of the _cell.length_b.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_length_b
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.reciprocal_length_b = Norm ( _cell.reciprocal_vector_b )
+;
+
+save_
+
+save_cell.reciprocal_length_b_su
+
+    _definition.id                '_cell.reciprocal_length_b_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_reciprocal_length_b_su'
+         '_cell.reciprocal_length_b_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the reciprocal of the _cell.length_b.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_length_b_su
+    _name.linked_item_id          '_cell.reciprocal_length_b'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.reciprocal_length_c
+
+    _definition.id                '_cell.reciprocal_length_c'
+    _alias.definition_id          '_cell_reciprocal_length_c'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Reciprocal of the _cell.length_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_length_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.reciprocal_length_c = Norm ( _cell.reciprocal_vector_c )
+;
+
+save_
+
+save_cell.reciprocal_length_c_su
+
+    _definition.id                '_cell.reciprocal_length_c_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_reciprocal_length_c_su'
+         '_cell.reciprocal_length_c_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the reciprocal of the _cell.length_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_length_c_su
+    _name.linked_item_id          '_cell.reciprocal_length_c'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.reciprocal_metric_tensor
+
+    _definition.id                '_cell.reciprocal_metric_tensor'
+    _definition.update            2021-07-07
+    _description.text
+;
+    The reciprocal (contravariant) metric tensor used to transform
+    vectors and coordinates from reciprocal space to real (direct)
+    space.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_metric_tensor
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstrom_squared
+    _method.purpose               Evaluation
+    _method.expression
+;
+     with c as cell
+    _cell.reciprocal_metric_tensor = [
+         [ c.reciprocal_vector_a*c.reciprocal_vector_a,
+    c.reciprocal_vector_a*c.reciprocal_vector_b,
+    c.reciprocal_vector_a*c.reciprocal_vector_c ],      [
+    c.reciprocal_vector_b*c.reciprocal_vector_a,
+    c.reciprocal_vector_b*c.reciprocal_vector_b,
+    c.reciprocal_vector_b*c.reciprocal_vector_c ],      [
+    c.reciprocal_vector_c*c.reciprocal_vector_a,
+    c.reciprocal_vector_c*c.reciprocal_vector_b,
+    c.reciprocal_vector_c*c.reciprocal_vector_c ]]
+;
+
+save_
+
+save_cell.reciprocal_metric_tensor_su
+
+    _definition.id                '_cell.reciprocal_metric_tensor_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_metric_tensor.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_metric_tensor_su
+    _name.linked_item_id          '_cell.reciprocal_metric_tensor'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstrom_squared
+
+save_
+
+save_cell.reciprocal_orthogonal_matrix
+
+    _definition.id                '_cell.reciprocal_orthogonal_matrix'
+    _definition.update            2021-07-07
+    _description.text
+;
+    Orthogonal matrix of the reciprocal space. The matrix may be
+    used to transform the non-orthogonal vector h = (h,k,l) into
+    the orthogonal indices p = (p,q,r)
+
+                    M h = p
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_orthogonal_matrix
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.reciprocal_orthogonal_matrix  =  Inverse(
+
+                           Transpose( _cell.orthogonal_matrix ))
+;
+
+save_
+
+save_cell.reciprocal_orthogonal_matrix_su
+
+    _definition.id                '_cell.reciprocal_orthogonal_matrix_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_orthogonal_matrix.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_orthogonal_matrix_su
+    _name.linked_item_id          '_cell.reciprocal_orthogonal_matrix'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3,3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.reciprocal_vector_a
+
+    _definition.id                '_cell.reciprocal_vector_a'
+    _definition.update            2021-07-07
+    _description.text
+;
+    Reciprocal of the _cell.vector_a.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_a
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c  as  cell
+
+    _cell.reciprocal_vector_a = c.vector_b ^ c.vector_c / _cell.volume
+;
+
+save_
+
+save_cell.reciprocal_vector_a_su
+
+    _definition.id                '_cell.reciprocal_vector_a_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_vector_a.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_a_su
+    _name.linked_item_id          '_cell.reciprocal_vector_a'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.reciprocal_vector_b
+
+    _definition.id                '_cell.reciprocal_vector_b'
+    _definition.update            2021-07-07
+    _description.text
+;
+    Reciprocal of the _cell.vector_b.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_b
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c  as  cell
+
+    _cell.reciprocal_vector_b = c.vector_c ^ c.vector_a / _cell.volume
+;
+
+save_
+
+save_cell.reciprocal_vector_b_su
+
+    _definition.id                '_cell.reciprocal_vector_b_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_vector_b.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_b_su
+    _name.linked_item_id          '_cell.reciprocal_vector_b'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.reciprocal_vector_c
+
+    _definition.id                '_cell.reciprocal_vector_c'
+    _definition.update            2021-07-07
+    _description.text
+;
+    Reciprocal of the _cell.vector_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+     With c  as  cell
+
+    _cell.reciprocal_vector_c = c.vector_a ^ c.vector_b / _cell.volume
+;
+
+save_
+
+save_cell.reciprocal_vector_c_su
+
+    _definition.id                '_cell.reciprocal_vector_c_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.reciprocal_vector_c.
+;
+    _name.category_id             cell
+    _name.object_id               reciprocal_vector_c_su
+    _name.linked_item_id          '_cell.reciprocal_vector_c'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_cell.special_details
+
+    _definition.id                '_cell.special_details'
+
+    loop_
+      _alias.definition_id
+         '_cell_special_details'
+         '_cell.details'
+
+    _definition.update            2012-11-22
+    _description.text
+;
+    Description of special aspects of the cell choice, noting
+    possible alternative settings.
+;
+    _name.category_id             cell
+    _name.object_id               special_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_cell.vector_a
+
+    _definition.id                '_cell.vector_a'
+    _definition.update            2021-07-07
+    _description.text
+;
+    The cell vector along the x axis.
+;
+    _name.category_id             cell
+    _name.object_id               vector_a
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.vector_a = _cell.orthogonal_matrix * Matrix([1,0,0])
+;
+
+save_
+
+save_cell.vector_a_su
+
+    _definition.id                '_cell.vector_a_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.vector_a.
+;
+    _name.category_id             cell
+    _name.object_id               vector_a_su
+    _name.linked_item_id          '_cell.vector_a'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_cell.vector_b
+
+    _definition.id                '_cell.vector_b'
+    _definition.update            2021-07-07
+    _description.text
+;
+    The cell vector along the y axis.
+;
+    _name.category_id             cell
+    _name.object_id               vector_b
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.vector_b = _cell.orthogonal_matrix * Matrix([0,1,0])
+;
+
+save_
+
+save_cell.vector_b_su
+
+    _definition.id                '_cell.vector_b_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.vector_b.
+;
+    _name.category_id             cell
+    _name.object_id               vector_b_su
+    _name.linked_item_id          '_cell.vector_b'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_cell.vector_c
+
+    _definition.id                '_cell.vector_c'
+    _definition.update            2021-07-07
+    _description.text
+;
+    The cell vector along the z axis.
+;
+    _name.category_id             cell
+    _name.object_id               vector_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+    _method.purpose               Evaluation
+    _method.expression
+;
+    _cell.vector_c = _cell.orthogonal_matrix * Matrix([0,0,1])
+;
+
+save_
+
+save_cell.vector_c_su
+
+    _definition.id                '_cell.vector_c_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell.vector_c.
+;
+    _name.category_id             cell
+    _name.object_id               vector_c_su
+    _name.linked_item_id          '_cell.vector_c'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_cell.volume
+
+    _definition.id                '_cell.volume'
+    _alias.definition_id          '_cell_volume'
+    _definition.update            2013-03-07
+    _description.text
+;
+    Volume of the crystal unit cell.
+;
+    _name.category_id             cell
+    _name.object_id               volume
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   angstrom_cubed
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With c  as  cell
+
+    _cell.volume =  c.vector_a * ( c.vector_b ^ c.vector_c )
+;
+
+save_
+
+save_cell.volume_su
+
+    _definition.id                '_cell.volume_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_volume_su'
+         '_cell.volume_esd'
+
+    _definition.update            2014-06-08
+    _description.text
+;
+    Standard uncertainty of the volume of the crystal unit cell.
+;
+    _name.category_id             cell
+    _name.object_id               volume_su
+    _name.linked_item_id          '_cell.volume'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstrom_cubed
+
+save_
+
+save_CELL_MEASUREMENT
+
+    _definition.id                CELL_MEASUREMENT
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2022-05-25
+    _description.text
+;
+    The CATEGORY of data items used to describe the measurement of
+    the cell parameters.
+;
+    _name.category_id             CELL
+    _name.object_id               CELL_MEASUREMENT
+    _category_key.name            '_cell_measurement.diffrn_id'
+
+save_
+
+save_cell_measurement.condition_id
+
+    _definition.id                '_cell_measurement.condition_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction conditions used for cell measurement,
+    where different to the diffraction conditions used for data
+    collection.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               condition_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = _cell_measurement.diffrn_id
+;
+
+save_
+
+save_cell_measurement.diffrn_id
+
+    _definition.id                '_cell_measurement.diffrn_id'
+    _definition.update            2023-02-01
+    _description.text
+;
+    A pointer to the diffraction experiment to which the measured cell
+    has been applied.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_cell_measurement.pressure
+
+    _definition.id                '_cell_measurement.pressure'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn.ambient_pressure'
+    _alias.definition_id          '_cell_measurement_pressure'
+    _definition.update            2022-05-25
+    _description.text
+;
+    **DEPRECATED**
+
+    The pressure at which the unit-cell parameters were measured
+    (not the pressure used to synthesize the sample).
+    Replaced by '_diffrn.ambient_pressure'
+;
+    _name.category_id             cell_measurement
+    _name.object_id               pressure
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   kilopascals
+
+save_
+
+save_cell_measurement.pressure_su
+
+    _definition.id                '_cell_measurement.pressure_su'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn.ambient_pressure_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_measurement_pressure_su'
+         '_cell_measurement.pressure_esd'
+
+    _definition.update            2022-05-22
+    _description.text
+;
+    ** DEPRECATED **
+
+    Standard uncertainty of the pressure at which
+    the unit-cell parameters were measured.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               pressure_su
+    _name.linked_item_id          '_cell_measurement.pressure'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   kilopascals
+
+save_
+
+save_cell_measurement.radiation
+
+    _definition.id                '_cell_measurement.radiation'
+    _definition_replaced.id       1
+    _definition_replaced.by       .
+    _alias.definition_id          '_cell_measurement_radiation'
+    _definition.update            2022-05-22
+    _description.text
+;
+    ** DEPRECATED **
+
+    Description of the radiation used to measure the unit-cell data.
+    Items from the DIFFRN_RADIATION category should be used instead
+    of this item.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               radiation
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'neutron'
+         'X-ray tube'
+         'synchrotron'
+
+save_
+
+save_cell_measurement.reflns_used
+
+    _definition.id                '_cell_measurement.reflns_used'
+    _alias.definition_id          '_cell_measurement_reflns_used'
+    _definition.update            2021-03-01
+    _description.text
+;
+    Total number of reflections used to determine the unit cell.
+    The reflections may be specified as cell_measurement_refln items.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               reflns_used
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            3:
+    _units.code                   none
+
+save_
+
+save_cell_measurement.temperature
+
+    _definition.id                '_cell_measurement.temperature'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn.ambient_temperature'
+
+    loop_
+      _alias.definition_id
+         '_cell_measurement_temperature'
+         '_cell_measurement_temp'
+         '_cell_measurement.temp'
+
+    _definition.update            2022-05-25
+    _description.text
+;
+    ** DEPRECATED **
+
+    The temperature at which the unit-cell parameters were measured
+    (not the temperature of synthesis).
+    _diffrn.ambient_temperature should be used instead of this item.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               temperature
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   kelvins
+
+save_
+
+save_cell_measurement.temperature_su
+
+    _definition.id                '_cell_measurement.temperature_su'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn.ambient_temperature_su'
+
+    loop_
+      _alias.definition_id
+         '_cell_measurement_temp_su'
+         '_cell_measurement.temp_esd'
+
+    _definition.update            2022-05-22
+    _description.text
+;
+    ** DEPRECATED **
+
+    Standard uncertainty of the temperature of at which
+    the unit-cell parameters were measured.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               temperature_su
+    _name.linked_item_id          '_cell_measurement.temperature'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   kelvins
+
+save_
+
+save_cell_measurement.theta_max
+
+    _definition.id                '_cell_measurement.theta_max'
+    _alias.definition_id          '_cell_measurement_theta_max'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Maximum theta scattering angle of reflections used to measure
+    the crystal unit cell.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               theta_max
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:90.0
+    _units.code                   degrees
+
+save_
+
+save_cell_measurement.theta_min
+
+    _definition.id                '_cell_measurement.theta_min'
+    _alias.definition_id          '_cell_measurement_theta_min'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Minimum theta scattering angle of reflections used to measure
+    the crystal unit cell.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               theta_min
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:90.0
+    _units.code                   degrees
+
+save_
+
+save_cell_measurement.wavelength
+
+    _definition.id                '_cell_measurement.wavelength'
+    _definition_replaced.id       1
+    _definition_replaced.by       '_diffrn_radiation_wavelength.value'
+    _alias.definition_id          '_cell_measurement_wavelength'
+    _definition.update            2022-05-25
+    _description.text
+;
+    ** DEPRECATED **
+
+    Wavelength of the radiation used to measure the unit cell.
+    Items from the _diffrn_radiation_wavelength category should
+    be used instead of this item.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               wavelength
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   angstroms
+
+save_
+
+save_CELL_MEASUREMENT_REFLN
+
+    _definition.id                CELL_MEASUREMENT_REFLN
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2021-06-29
+    _description.text
+;
+    The CATEGORY of data items used to describe the reflection data
+    used in the measurement of the crystal unit cell.
+;
+    _name.category_id             CELL_MEASUREMENT
+    _name.object_id               CELL_MEASUREMENT_REFLN
+
+    loop_
+      _category_key.name
+         '_cell_measurement_refln.index_h'
+         '_cell_measurement_refln.index_k'
+         '_cell_measurement_refln.index_l'
+
+save_
+
+save_cell_measurement_refln.hkl
+
+    _definition.id                '_cell_measurement_refln.hkl'
+    _definition.update            2021-03-01
+    _description.text
+;
+    Miller indices of a reflection used to measure the unit cell.
+;
+    _name.category_id             cell_measurement_refln
+    _name.object_id               hkl
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Integer
+    _units.code                   none
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With c  as  cell_measurement_refln
+
+    _cell_measurement_refln.hkl = [c.index_h, c.index_k, c.index_l]
+;
+
+save_
+
+save_cell_measurement_refln.index_h
+
+    _definition.id                '_cell_measurement_refln.index_h'
+    _alias.definition_id          '_cell_measurement_refln_index_h'
+    _name.category_id             cell_measurement_refln
+    _name.object_id               index_h
+
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
+
+save_
+
+save_cell_measurement_refln.index_k
+
+    _definition.id                '_cell_measurement_refln.index_k'
+    _alias.definition_id          '_cell_measurement_refln_index_k'
+    _name.category_id             cell_measurement_refln
+    _name.object_id               index_k
+
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
+
+save_
+
+save_cell_measurement_refln.index_l
+
+    _definition.id                '_cell_measurement_refln.index_l'
+    _alias.definition_id          '_cell_measurement_refln_index_l'
+    _name.category_id             cell_measurement_refln
+    _name.object_id               index_l
+
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
+
+save_
+
+save_cell_measurement_refln.theta
+
+    _definition.id                '_cell_measurement_refln.theta'
+    _alias.definition_id          '_cell_measurement_refln_theta'
+    _definition.update            2012-11-22
+    _description.text
+;
+    Theta angle of reflection used to measure the crystal unit cell.
+;
+    _name.category_id             cell_measurement_refln
+    _name.object_id               theta
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:90.0
+    _units.code                   degrees
+
+save_
+
+save_cell_measurement_refln.theta_su
+
+    _definition.id                '_cell_measurement_refln.theta_su'
+    _definition.update            2021-09-23
+    _description.text
+;
+    Standard uncertainty of _cell_measurement_refln.theta.
+;
+    _name.category_id             cell_measurement_refln
+    _name.object_id               theta_su
+    _name.linked_item_id          '_cell_measurement_refln.theta'
+    _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
 save_DIFFRN_ATTENUATOR
 
     _definition.id                DIFFRN_ATTENUATOR
@@ -861,23 +2500,22 @@ save_
 save_diffrn_measurement.specimen_attachment_type
 
     _definition.id                '_diffrn_measurement.specimen_attachment_type'
-    _definition.update            2021-03-01
+    _definition.update            2023-02-06
     _description.text
 ;
     The way in which the sample is attached to the sample holder,
     including the type of adhesive material used if relevant. The sample
     holder is usually wholly outside the beam, whereas the attachment
     method may cause non-sample material to be illuminated. If the
-    attachment method is not included in the list below, 'Other' should be
-    chosen and details provided in
-    _diffrn_measurement.specimen_support
+    attachment method is not included in the list below, 'other' should be
+    chosen and details provided in _diffrn_measurement.specimen_support.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               specimen_attachment_type
     _type.purpose                 State
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     loop_
       _enumeration_set.state
@@ -6867,1548 +8505,6 @@ save_exptl.transmission_factor_min_su
 
 save_
 
-save_CELL
-
-    _definition.id                CELL
-    _definition.scope             Category
-    _definition.class             Set
-    _definition.update            2012-11-22
-    _description.text
-;
-    The CATEGORY of data items used to describe the parameters of
-    the crystal unit cell and their measurement.
-;
-    _name.category_id             EXPTL
-    _name.object_id               CELL
-
-save_
-
-save_cell.angle_alpha
-
-    _definition.id                '_cell.angle_alpha'
-    _alias.definition_id          '_cell_angle_alpha'
-    _name.category_id             cell
-    _name.object_id               angle_alpha
-
-    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
-
-save_
-
-save_cell.angle_alpha_su
-
-    _definition.id                '_cell.angle_alpha_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_angle_alpha_su'
-         '_cell.angle_alpha_esd'
-
-    _name.category_id             cell
-    _name.object_id               angle_alpha_su
-    _name.linked_item_id          '_cell.angle_alpha'
-
-    _import.get
-        [{'file':templ_attr.cif  'save':cell_angle_su}]
-
-save_
-
-save_cell.angle_beta
-
-    _definition.id                '_cell.angle_beta'
-    _alias.definition_id          '_cell_angle_beta'
-    _name.category_id             cell
-    _name.object_id               angle_beta
-
-    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
-
-save_
-
-save_cell.angle_beta_su
-
-    _definition.id                '_cell.angle_beta_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_angle.beta_su'
-         '_cell_angle_beta_su'
-         '_cell.angle_beta_esd'
-
-    _name.category_id             cell
-    _name.object_id               angle_beta_su
-    _name.linked_item_id          '_cell.angle_beta'
-
-    _import.get
-        [{'file':templ_attr.cif  'save':cell_angle_su}]
-
-save_
-
-save_cell.angle_gamma
-
-    _definition.id                '_cell.angle_gamma'
-    _alias.definition_id          '_cell_angle_gamma'
-    _name.category_id             cell
-    _name.object_id               angle_gamma
-
-    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
-
-save_
-
-save_cell.angle_gamma_su
-
-    _definition.id                '_cell.angle_gamma_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_angle.gamma_su'
-         '_cell_angle_gamma_su'
-         '_cell.angle_gamma_esd'
-
-    _name.category_id             cell
-    _name.object_id               angle_gamma_su
-    _name.linked_item_id          '_cell.angle_gamma'
-
-    _import.get
-        [{'file':templ_attr.cif  'save':cell_angle_su}]
-
-save_
-
-save_cell.atomic_mass
-
-    _definition.id                '_cell.atomic_mass'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Atomic mass of the contents of the unit cell. This calculated
-    from the atom sites present in the ATOM_TYPE list, rather than
-    the ATOM_SITE lists of atoms in the refined model.
-;
-    _name.category_id             cell
-    _name.object_id               atomic_mass
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:
-    _units.code                   dalton
-    _method.purpose               Evaluation
-    _method.expression
-;
-    mass = 0.
-
-    Loop t as atom_type  {
-
-                   mass += t.number_in_cell * t.atomic_mass
-    }
-      _cell.atomic_mass = mass
-;
-
-save_
-
-save_cell.convert_uij_to_betaij
-
-    _definition.id                '_cell.convert_Uij_to_betaij'
-    _definition.update            2021-09-24
-    _description.text
-;
-    The reciprocal space matrix for converting the U(ij) matrix of
-    atomic displacement parameters to a dimensionless beta(IJ) matrix.
-    The ADP factor in a structure factor expression:
-
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-      = exp -       ( beta11 h h + ............ 2 beta23 k l )
-
-    The conversion of the U or B matrices to the beta matrix
-
-        beta =   C U C   =    C B C /8pi**2
-
-    where C is conversion matrix defined here.
-;
-    _name.category_id             cell
-    _name.object_id               convert_Uij_to_betaij
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With c  as  cell
-
-    _cell.convert_Uij_to_betaij =                              1.4142 * Pi *
-    Matrix([[ c.reciprocal_length_a, 0, 0 ],
-                [ 0, c.reciprocal_length_b, 0 ],
-                    [ 0, 0, c.reciprocal_length_c ]])
-;
-
-save_
-
-save_cell.convert_uij_to_betaij_su
-
-    _definition.id                '_cell.convert_Uij_to_betaij_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.convert_Uij_to_betaij.
-;
-    _name.category_id             cell
-    _name.object_id               convert_Uij_to_betaij_su
-    _name.linked_item_id          '_cell.convert_Uij_to_betaij'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.convert_uiso_to_uij
-
-    _definition.id                '_cell.convert_Uiso_to_Uij'
-    _definition.update            2021-07-07
-    _description.text
-;
-    The reciprocal space matrix for converting the isotropic Uiso
-    atomic displacement parameter to the anisotropic matrix Uij.
-
-                     | 1            cos(gamma*)   cos(beta*)  |
-    U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
-                     | cos(beta*)   cos(alpha*)   1           |
-;
-    _name.category_id             cell
-    _name.object_id               convert_Uiso_to_Uij
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With c  as  cell
-
-    _cell.convert_Uiso_to_Uij =                           [[ 1.,
-    Cosd(c.reciprocal_angle_gamma), Cosd(c.reciprocal_angle_beta)  ],
-                 [ Cosd(c.reciprocal_angle_gamma), 1.,
-    Cosd(c.reciprocal_angle_alpha) ],                        [
-    Cosd(c.reciprocal_angle_beta), Cosd(c.reciprocal_angle_alpha), 1.  ]]
-;
-
-save_
-
-save_cell.convert_uiso_to_uij_su
-
-    _definition.id                '_cell.convert_Uiso_to_Uij_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.convert_Uiso_to_Uij.
-;
-    _name.category_id             cell
-    _name.object_id               convert_Uiso_to_Uij_su
-    _name.linked_item_id          '_cell.convert_Uiso_to_Uij'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   none
-
-save_
-
-save_cell.formula_units_z
-
-    _definition.id                '_cell.formula_units_Z'
-    _alias.definition_id          '_cell_formula_units_Z'
-    _definition.update            2021-03-01
-    _description.text
-;
-    The number of the formula units in the unit cell as specified
-    by _chemical_formula.structural, _chemical_formula.moiety or
-    _chemical_formula.sum.
-;
-    _name.category_id             cell
-    _name.object_id               formula_units_Z
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            1:
-    _units.code                   none
-
-save_
-
-save_cell.length_a
-
-    _definition.id                '_cell.length_a'
-    _alias.definition_id          '_cell_length_a'
-    _name.category_id             cell
-    _name.object_id               length_a
-
-    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
-
-save_
-
-save_cell.length_a_su
-
-    _definition.id                '_cell.length_a_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_length_a_su'
-         '_cell.length_a_esd'
-
-    _name.category_id             cell
-    _name.object_id               length_a_su
-    _name.linked_item_id          '_cell.length_a'
-
-    _import.get
-        [{'file':templ_attr.cif  'save':cell_length_su}]
-
-save_
-
-save_cell.length_b
-
-    _definition.id                '_cell.length_b'
-    _alias.definition_id          '_cell_length_b'
-    _name.category_id             cell
-    _name.object_id               length_b
-
-    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
-
-save_
-
-save_cell.length_b_su
-
-    _definition.id                '_cell.length_b_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_length_b_su'
-         '_cell.length_b_esd'
-
-    _name.category_id             cell
-    _name.object_id               length_b_su
-    _name.linked_item_id          '_cell.length_b'
-
-    _import.get
-        [{'file':templ_attr.cif  'save':cell_length_su}]
-
-save_
-
-save_cell.length_c
-
-    _definition.id                '_cell.length_c'
-    _alias.definition_id          '_cell_length_c'
-    _name.category_id             cell
-    _name.object_id               length_c
-
-    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
-
-save_
-
-save_cell.length_c_su
-
-    _definition.id                '_cell.length_c_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_length_c_su'
-         '_cell.length_c_esd'
-
-    _name.category_id             cell
-    _name.object_id               length_c_su
-    _name.linked_item_id          '_cell.length_c'
-
-    _import.get
-        [{'file':templ_attr.cif  'save':cell_length_su}]
-
-save_
-
-save_cell.metric_tensor
-
-    _definition.id                '_cell.metric_tensor'
-    _definition.update            2021-07-07
-    _description.text
-;
-    The direct space (covariant) metric tensor used to transform
-    vectors and coordinates from real (direct) to reciprocal space.
-;
-    _name.category_id             cell
-    _name.object_id               metric_tensor
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   angstrom_squared
-    _method.purpose               Evaluation
-    _method.expression
-;
-    with c  as  cell
-
-          _cell.metric_tensor = [[ c.vector_a*c.vector_a,
-    c.vector_a*c.vector_b, c.vector_a*c.vector_c ],
-     [ c.vector_b*c.vector_a, c.vector_b*c.vector_b, c.vector_b*c.vector_c ],
-                               [ c.vector_c*c.vector_a, c.vector_c*c.vector_b,
-    c.vector_c*c.vector_c ]]
-;
-
-save_
-
-save_cell.orthogonal_matrix
-
-    _definition.id                '_cell.orthogonal_matrix'
-    _definition.update            2021-07-07
-    _description.text
-;
-    Orthogonal matrix of the crystal unit cell. Definition uses
-    Rollet's axial assignments with cell vectors a,b,c aligned
-    with orthogonal axes X,Y,Z so that c||Z and b in plane YZ.
-;
-    _name.category_id             cell
-    _name.object_id               orthogonal_matrix
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c as cell
-    _cell.orthogonal_matrix =   [
-          [  c.length_a*Sind(c.angle_beta)*Sind(c.reciprocal_angle_gamma), 0,
-                                 0 ],       [
-    -c.length_a*Sind(c.angle_beta)*Cosd(c.reciprocal_angle_gamma),
-    c.length_b*Sind(c.angle_alpha),   0 ],       [
-    c.length_a*Cosd(c.angle_beta),
-    c.length_b*Cosd(c.angle_alpha), c.length_c ]]
-;
-
-save_
-
-save_cell.reciprocal_angle_alpha
-
-    _definition.id                '_cell.reciprocal_angle_alpha'
-    _alias.definition_id          '_cell_reciprocal_angle_alpha'
-    _definition.update            2013-01-18
-    _description.text
-;
-    Reciprocal of the angle between _cell.length_b and _cell.length_c.
-    Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
-         New York: John Wiley & Sons Inc.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_angle_alpha
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:180.
-    _units.code                   degrees
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c as cell
-
-    _cell.reciprocal_angle_alpha =
-    Acosd((Cosd(c.angle_beta)*Cosd(c.angle_gamma)-Cosd(c.angle_alpha))/
-    (Sind(c.angle_beta)*Sind(c.angle_gamma)))
-;
-
-save_
-
-save_cell.reciprocal_angle_alpha_su
-
-    _definition.id                '_cell.reciprocal_angle_alpha_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_reciprocal_angle_alpha_su'
-         '_cell.reciprocal_angle_alpha_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the reciprocal of the angle
-    between _cell.length_b and _cell.length_c.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_angle_alpha_su
-    _name.linked_item_id          '_cell.reciprocal_angle_alpha'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   degrees
-
-save_
-
-save_cell.reciprocal_angle_beta
-
-    _definition.id                '_cell.reciprocal_angle_beta'
-    _alias.definition_id          '_cell_reciprocal_angle_beta'
-    _definition.update            2013-01-18
-    _description.text
-;
-    Reciprocal of the angle between _cell.length_a and _cell.length_c.
-    Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
-         New York: John Wiley & Sons Inc.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_angle_beta
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:180.
-    _units.code                   degrees
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c as cell
-
-    _cell.reciprocal_angle_beta =
-    Acosd((Cosd(c.angle_alpha)*Cosd(c.angle_gamma)-Cosd(c.angle_beta))/
-    (Sind(c.angle_alpha)*Sind(c.angle_gamma)))
-;
-
-save_
-
-save_cell.reciprocal_angle_beta_su
-
-    _definition.id                '_cell.reciprocal_angle_beta_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_reciprocal_angle_beta_su'
-         '_cell.reciprocal_angle_beta_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the reciprocal of the angle
-    between _cell.length_a and _cell.length_c.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_angle_beta_su
-    _name.linked_item_id          '_cell.reciprocal_angle_beta'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   degrees
-
-save_
-
-save_cell.reciprocal_angle_gamma
-
-    _definition.id                '_cell.reciprocal_angle_gamma'
-    _alias.definition_id          '_cell_reciprocal_angle_gamma'
-    _definition.update            2016-09-09
-    _description.text
-;
-    Reciprocal of the angle between _cell.length_a and _cell.length_b.
-    Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
-         New York: John Wiley & Sons Inc.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_angle_gamma
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:180.
-    _units.code                   degrees
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c as cell
-
-    _cell.reciprocal_angle_gamma =
-    Acosd((Cosd(c.angle_alpha)*Cosd(c.angle_beta)-Cosd(c.angle_gamma))/
-    (Sind(c.angle_alpha)*Sind(c.angle_beta)))
-;
-
-save_
-
-save_cell.reciprocal_angle_gamma_su
-
-    _definition.id                '_cell.reciprocal_angle_gamma_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_reciprocal_angle_gamma_su'
-         '_cell.reciprocal_angle_gamma_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the reciprocal of the angle
-    between _cell.length_a and _cell.length_b.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_angle_gamma_su
-    _name.linked_item_id          '_cell.reciprocal_angle_gamma'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   degrees
-
-save_
-
-save_cell.reciprocal_length_a
-
-    _definition.id                '_cell.reciprocal_length_a'
-    _alias.definition_id          '_cell_reciprocal_length_a'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Reciprocal of the _cell.length_a.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_length_a
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.reciprocal_length_a = Norm ( _cell.reciprocal_vector_a )
-;
-
-save_
-
-save_cell.reciprocal_length_a_su
-
-    _definition.id                '_cell.reciprocal_length_a_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_reciprocal_length_a_su'
-         '_cell.reciprocal_length_a_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the reciprocal of the _cell.length_a.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_length_a_su
-    _name.linked_item_id          '_cell.reciprocal_length_a'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.reciprocal_length_b
-
-    _definition.id                '_cell.reciprocal_length_b'
-    _alias.definition_id          '_cell_reciprocal_length_b'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Reciprocal of the _cell.length_b.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_length_b
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.reciprocal_length_b = Norm ( _cell.reciprocal_vector_b )
-;
-
-save_
-
-save_cell.reciprocal_length_b_su
-
-    _definition.id                '_cell.reciprocal_length_b_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_reciprocal_length_b_su'
-         '_cell.reciprocal_length_b_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the reciprocal of the _cell.length_b.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_length_b_su
-    _name.linked_item_id          '_cell.reciprocal_length_b'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.reciprocal_length_c
-
-    _definition.id                '_cell.reciprocal_length_c'
-    _alias.definition_id          '_cell_reciprocal_length_c'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Reciprocal of the _cell.length_c.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_length_c
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.:
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.reciprocal_length_c = Norm ( _cell.reciprocal_vector_c )
-;
-
-save_
-
-save_cell.reciprocal_length_c_su
-
-    _definition.id                '_cell.reciprocal_length_c_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_reciprocal_length_c_su'
-         '_cell.reciprocal_length_c_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the reciprocal of the _cell.length_c.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_length_c_su
-    _name.linked_item_id          '_cell.reciprocal_length_c'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.reciprocal_metric_tensor
-
-    _definition.id                '_cell.reciprocal_metric_tensor'
-    _definition.update            2021-07-07
-    _description.text
-;
-    The reciprocal (contravariant) metric tensor used to transform
-    vectors and coordinates from reciprocal space to real (direct)
-    space.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_metric_tensor
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstrom_squared
-    _method.purpose               Evaluation
-    _method.expression
-;
-     with c as cell
-    _cell.reciprocal_metric_tensor = [
-         [ c.reciprocal_vector_a*c.reciprocal_vector_a,
-    c.reciprocal_vector_a*c.reciprocal_vector_b,
-    c.reciprocal_vector_a*c.reciprocal_vector_c ],      [
-    c.reciprocal_vector_b*c.reciprocal_vector_a,
-    c.reciprocal_vector_b*c.reciprocal_vector_b,
-    c.reciprocal_vector_b*c.reciprocal_vector_c ],      [
-    c.reciprocal_vector_c*c.reciprocal_vector_a,
-    c.reciprocal_vector_c*c.reciprocal_vector_b,
-    c.reciprocal_vector_c*c.reciprocal_vector_c ]]
-;
-
-save_
-
-save_cell.reciprocal_metric_tensor_su
-
-    _definition.id                '_cell.reciprocal_metric_tensor_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.reciprocal_metric_tensor.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_metric_tensor_su
-    _name.linked_item_id          '_cell.reciprocal_metric_tensor'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstrom_squared
-
-save_
-
-save_cell.reciprocal_orthogonal_matrix
-
-    _definition.id                '_cell.reciprocal_orthogonal_matrix'
-    _definition.update            2021-07-07
-    _description.text
-;
-    Orthogonal matrix of the reciprocal space. The matrix may be
-    used to transform the non-orthogonal vector h = (h,k,l) into
-    the orthogonal indices p = (p,q,r)
-
-                    M h = p
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_orthogonal_matrix
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.reciprocal_orthogonal_matrix  =  Inverse(
-
-                           Transpose( _cell.orthogonal_matrix ))
-;
-
-save_
-
-save_cell.reciprocal_orthogonal_matrix_su
-
-    _definition.id                '_cell.reciprocal_orthogonal_matrix_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.reciprocal_orthogonal_matrix.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_orthogonal_matrix_su
-    _name.linked_item_id          '_cell.reciprocal_orthogonal_matrix'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.reciprocal_vector_a
-
-    _definition.id                '_cell.reciprocal_vector_a'
-    _definition.update            2021-07-07
-    _description.text
-;
-    Reciprocal of the _cell.vector_a.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_vector_a
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c  as  cell
-
-    _cell.reciprocal_vector_a = c.vector_b ^ c.vector_c / _cell.volume
-;
-
-save_
-
-save_cell.reciprocal_vector_a_su
-
-    _definition.id                '_cell.reciprocal_vector_a_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.reciprocal_vector_a.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_vector_a_su
-    _name.linked_item_id          '_cell.reciprocal_vector_a'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.reciprocal_vector_b
-
-    _definition.id                '_cell.reciprocal_vector_b'
-    _definition.update            2021-07-07
-    _description.text
-;
-    Reciprocal of the _cell.vector_b.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_vector_b
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c  as  cell
-
-    _cell.reciprocal_vector_b = c.vector_c ^ c.vector_a / _cell.volume
-;
-
-save_
-
-save_cell.reciprocal_vector_b_su
-
-    _definition.id                '_cell.reciprocal_vector_b_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.reciprocal_vector_b.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_vector_b_su
-    _name.linked_item_id          '_cell.reciprocal_vector_b'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.reciprocal_vector_c
-
-    _definition.id                '_cell.reciprocal_vector_c'
-    _definition.update            2021-07-07
-    _description.text
-;
-    Reciprocal of the _cell.vector_c.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_vector_c
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-     With c  as  cell
-
-    _cell.reciprocal_vector_c = c.vector_a ^ c.vector_b / _cell.volume
-;
-
-save_
-
-save_cell.reciprocal_vector_c_su
-
-    _definition.id                '_cell.reciprocal_vector_c_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.reciprocal_vector_c.
-;
-    _name.category_id             cell
-    _name.object_id               reciprocal_vector_c_su
-    _name.linked_item_id          '_cell.reciprocal_vector_c'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   reciprocal_angstroms
-
-save_
-
-save_cell.special_details
-
-    _definition.id                '_cell.special_details'
-
-    loop_
-      _alias.definition_id
-         '_cell_special_details'
-         '_cell.details'
-
-    _definition.update            2012-11-22
-    _description.text
-;
-    Description of special aspects of the cell choice, noting
-    possible alternative settings.
-;
-    _name.category_id             cell
-    _name.object_id               special_details
-    _type.purpose                 Describe
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-
-save_
-
-save_cell.vector_a
-
-    _definition.id                '_cell.vector_a'
-    _definition.update            2021-07-07
-    _description.text
-;
-    The cell vector along the x axis.
-;
-    _name.category_id             cell
-    _name.object_id               vector_a
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.vector_a = _cell.orthogonal_matrix * Matrix([1,0,0])
-;
-
-save_
-
-save_cell.vector_a_su
-
-    _definition.id                '_cell.vector_a_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.vector_a.
-;
-    _name.category_id             cell
-    _name.object_id               vector_a_su
-    _name.linked_item_id          '_cell.vector_a'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   angstroms
-
-save_
-
-save_cell.vector_b
-
-    _definition.id                '_cell.vector_b'
-    _definition.update            2021-07-07
-    _description.text
-;
-    The cell vector along the y axis.
-;
-    _name.category_id             cell
-    _name.object_id               vector_b
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.vector_b = _cell.orthogonal_matrix * Matrix([0,1,0])
-;
-
-save_
-
-save_cell.vector_b_su
-
-    _definition.id                '_cell.vector_b_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.vector_b.
-;
-    _name.category_id             cell
-    _name.object_id               vector_b_su
-    _name.linked_item_id          '_cell.vector_b'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   angstroms
-
-save_
-
-save_cell.vector_c
-
-    _definition.id                '_cell.vector_c'
-    _definition.update            2021-07-07
-    _description.text
-;
-    The cell vector along the z axis.
-;
-    _name.category_id             cell
-    _name.object_id               vector_c
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _cell.vector_c = _cell.orthogonal_matrix * Matrix([0,0,1])
-;
-
-save_
-
-save_cell.vector_c_su
-
-    _definition.id                '_cell.vector_c_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell.vector_c.
-;
-    _name.category_id             cell
-    _name.object_id               vector_c_su
-    _name.linked_item_id          '_cell.vector_c'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   angstroms
-
-save_
-
-save_cell.volume
-
-    _definition.id                '_cell.volume'
-    _alias.definition_id          '_cell_volume'
-    _definition.update            2013-03-07
-    _description.text
-;
-    Volume of the crystal unit cell.
-;
-    _name.category_id             cell
-    _name.object_id               volume
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   angstrom_cubed
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With c  as  cell
-
-    _cell.volume =  c.vector_a * ( c.vector_b ^ c.vector_c )
-;
-
-save_
-
-save_cell.volume_su
-
-    _definition.id                '_cell.volume_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_volume_su'
-         '_cell.volume_esd'
-
-    _definition.update            2014-06-08
-    _description.text
-;
-    Standard uncertainty of the volume of the crystal unit cell.
-;
-    _name.category_id             cell
-    _name.object_id               volume_su
-    _name.linked_item_id          '_cell.volume'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   angstrom_cubed
-
-save_
-
-save_CELL_MEASUREMENT
-
-    _definition.id                CELL_MEASUREMENT
-    _definition.scope             Category
-    _definition.class             Set
-    _definition.update            2012-11-22
-    _description.text
-;
-    The CATEGORY of data items used to describe the angles between
-    the axes in the crystal unit cell.
-;
-    _name.category_id             CELL
-    _name.object_id               CELL_MEASUREMENT
-
-save_
-
-save_cell_measurement.pressure
-
-    _definition.id                '_cell_measurement.pressure'
-    _alias.definition_id          '_cell_measurement_pressure'
-    _definition.update            2012-11-22
-    _description.text
-;
-    The pressure at which the unit-cell parameters were measured
-    (not the pressure used to synthesize the sample).
-;
-    _name.category_id             cell_measurement
-    _name.object_id               pressure
-    _type.purpose                 Measurand
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   kilopascals
-
-save_
-
-save_cell_measurement.pressure_su
-
-    _definition.id                '_cell_measurement.pressure_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_measurement_pressure_su'
-         '_cell_measurement.pressure_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the pressure at which
-    the unit-cell parameters were measured.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               pressure_su
-    _name.linked_item_id          '_cell_measurement.pressure'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   kilopascals
-
-save_
-
-save_cell_measurement.radiation
-
-    _definition.id                '_cell_measurement.radiation'
-    _alias.definition_id          '_cell_measurement_radiation'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Description of the radiation used to measure the unit-cell data.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               radiation
-    _type.purpose                 Describe
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-
-    loop_
-      _description_example.case
-         'neutron'
-         'X-ray tube'
-         'synchrotron'
-
-save_
-
-save_cell_measurement.reflns_used
-
-    _definition.id                '_cell_measurement.reflns_used'
-    _alias.definition_id          '_cell_measurement_reflns_used'
-    _definition.update            2021-03-01
-    _description.text
-;
-    Total number of reflections used to determine the unit cell.
-    The reflections may be specified as cell_measurement_refln items.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               reflns_used
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            3:
-    _units.code                   none
-
-save_
-
-save_cell_measurement.temperature
-
-    _definition.id                '_cell_measurement.temperature'
-
-    loop_
-      _alias.definition_id
-         '_cell_measurement_temperature'
-         '_cell_measurement_temp'
-         '_cell_measurement.temp'
-
-    _definition.update            2012-11-22
-    _description.text
-;
-    The temperature at which the unit-cell parameters were measured
-    (not the temperature of synthesis).
-;
-    _name.category_id             cell_measurement
-    _name.object_id               temperature
-    _type.purpose                 Measurand
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   kelvins
-
-save_
-
-save_cell_measurement.temperature_su
-
-    _definition.id                '_cell_measurement.temperature_su'
-
-    loop_
-      _alias.definition_id
-         '_cell_measurement_temp_su'
-         '_cell_measurement.temp_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the temperature of at which
-    the unit-cell parameters were measured.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               temperature_su
-    _name.linked_item_id          '_cell_measurement.temperature'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   kelvins
-
-save_
-
-save_cell_measurement.theta_max
-
-    _definition.id                '_cell_measurement.theta_max'
-    _alias.definition_id          '_cell_measurement_theta_max'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Maximum theta scattering angle of reflections used to measure
-    the crystal unit cell.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               theta_max
-    _type.purpose                 Number
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:90.0
-    _units.code                   degrees
-
-save_
-
-save_cell_measurement.theta_min
-
-    _definition.id                '_cell_measurement.theta_min'
-    _alias.definition_id          '_cell_measurement_theta_min'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Minimum theta scattering angle of reflections used to measure
-    the crystal unit cell.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               theta_min
-    _type.purpose                 Number
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:90.0
-    _units.code                   degrees
-
-save_
-
-save_cell_measurement.wavelength
-
-    _definition.id                '_cell_measurement.wavelength'
-    _alias.definition_id          '_cell_measurement_wavelength'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Wavelength of the radiation used to measure the unit cell.
-    If this is not specified, the wavelength is assumed to be the
-    same as that given in _diffrn_radiation_wavelength.value
-;
-    _name.category_id             cell_measurement
-    _name.object_id               wavelength
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   angstroms
-
-save_
-
-save_CELL_MEASUREMENT_REFLN
-
-    _definition.id                CELL_MEASUREMENT_REFLN
-    _definition.scope             Category
-    _definition.class             Loop
-    _definition.update            2021-06-29
-    _description.text
-;
-    The CATEGORY of data items used to describe the reflection data
-    used in the measurement of the crystal unit cell.
-;
-    _name.category_id             CELL_MEASUREMENT
-    _name.object_id               CELL_MEASUREMENT_REFLN
-
-    loop_
-      _category_key.name
-         '_cell_measurement_refln.index_h'
-         '_cell_measurement_refln.index_k'
-         '_cell_measurement_refln.index_l'
-
-save_
-
-save_cell_measurement_refln.hkl
-
-    _definition.id                '_cell_measurement_refln.hkl'
-    _definition.update            2021-03-01
-    _description.text
-;
-    Miller indices of a reflection used to measure the unit cell.
-;
-    _name.category_id             cell_measurement_refln
-    _name.object_id               hkl
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Integer
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With c  as  cell_measurement_refln
-
-    _cell_measurement_refln.hkl = [c.index_h, c.index_k, c.index_l]
-;
-
-save_
-
-save_cell_measurement_refln.index_h
-
-    _definition.id                '_cell_measurement_refln.index_h'
-    _alias.definition_id          '_cell_measurement_refln_index_h'
-    _name.category_id             cell_measurement_refln
-    _name.object_id               index_h
-
-    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
-
-save_
-
-save_cell_measurement_refln.index_k
-
-    _definition.id                '_cell_measurement_refln.index_k'
-    _alias.definition_id          '_cell_measurement_refln_index_k'
-    _name.category_id             cell_measurement_refln
-    _name.object_id               index_k
-
-    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
-
-save_
-
-save_cell_measurement_refln.index_l
-
-    _definition.id                '_cell_measurement_refln.index_l'
-    _alias.definition_id          '_cell_measurement_refln_index_l'
-    _name.category_id             cell_measurement_refln
-    _name.object_id               index_l
-
-    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
-
-save_
-
-save_cell_measurement_refln.theta
-
-    _definition.id                '_cell_measurement_refln.theta'
-    _alias.definition_id          '_cell_measurement_refln_theta'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Theta angle of reflection used to measure the crystal unit cell.
-;
-    _name.category_id             cell_measurement_refln
-    _name.object_id               theta
-    _type.purpose                 Measurand
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:90.0
-    _units.code                   degrees
-
-save_
-
-save_cell_measurement_refln.theta_su
-
-    _definition.id                '_cell_measurement_refln.theta_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _cell_measurement_refln.theta.
-;
-    _name.category_id             cell_measurement_refln
-    _name.object_id               theta_su
-    _name.linked_item_id          '_cell_measurement_refln.theta'
-    _units.code                   degrees
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
-save_
-
 save_CHEMICAL
 
     _definition.id                CHEMICAL
@@ -9956,30 +10052,30 @@ save_exptl_absorpt.special_details
       _description_example.case
       _description_example.detail
 ;
-       X-ray beam inhomogeneity and goniometer imperfection account for much
-       of the difference between estimated values of Tmin and Tmax and the
-       _exptl_absorpt_correction_ values.
+         X-ray beam inhomogeneity and goniometer imperfection account for much
+         of the difference between estimated values of Tmin and Tmax and the
+         _exptl_absorpt_correction_ values.
 ;
 ;
-       Text modified from:
-       Petty, Anthony J. et al. Computationally aided design of a high-
-       performance organic semiconductor: the development of a universal
-       crystal engineering core. Chemical Science, 2019
-       https://doi.org/10.1039/C9SC02930C
-       COD 1552381
+         Text modified from:
+         Petty, Anthony J. et al. Computationally aided design of a high-
+         performance organic semiconductor: the development of a universal
+         crystal engineering core. Chemical Science, 2019
+         https://doi.org/10.1039/C9SC02930C
+         COD 1552381
 ;
 ;
-       Neutron linear absorption coefficient is wavelength dependent. The value
-       of 0.2216 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the sample
-       absorption coefficient for a neutron wavelength at 1.0 \%A.
+         Neutron linear absorption coefficient is wavelength dependent. The
+         value of 0.2216 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the
+         sample absorption coefficient for a neutron wavelength at 1.0 \%A.
 ;
 ;
-       Text modified from:
-       Lengyel, Jeff et al. Antiferroelectric Phase Transition in a Proton-
-       Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
-       Journal of the American Chemical Society, 2019, 141, 16279-16287
-       https://doi.org/10.1021/jacs.9b04473
-       COD 4127699
+         Text modified from:
+         Lengyel, Jeff et al. Antiferroelectric Phase Transition in a Proton-
+         Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
+         Journal of the American Chemical Society, 2019, 141, 16279-16287
+         https://doi.org/10.1021/jacs.9b04473
+         COD 4127699
 ;
 
 save_
@@ -11495,7 +11591,7 @@ save_
 save_space_group.name_schoenflies
 
     _definition.id                '_space_group.name_Schoenflies'
-    _definition.update            2014-06-12
+    _definition.update            2023-02-06
     _description.text
 ;
     The Schoenflies symbol as listed in International Tables for
@@ -11517,7 +11613,7 @@ save_space_group.name_schoenflies
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _description_example.case     C2h.5
     _description_example.detail   'Schoenflies symbol for space group No. 14.'
 
@@ -11663,18 +11759,17 @@ save_
 save_space_group_generator.key
 
     _definition.id                '_space_group_generator.key'
-    _definition.update            2016-05-10
+    _definition.update            2023-02-03
     _description.text
 ;
-    Arbitrary identifier for each entry in the _space_group_generator.xyz
-    list.
+    Arbitrary identifier for each entry in the _space_group_generator.xyz list.
 ;
     _name.category_id             space_group_generator
     _name.object_id               key
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
@@ -14117,7 +14212,7 @@ save_
 save_model_site.display_colour
 
     _definition.id                '_model_site.display_colour'
-    _definition.update            2019-01-09
+    _definition.update            2023-02-06
     _description.text
 ;
     Display colour code assigned to this atom site. Note that the
@@ -14129,7 +14224,7 @@ save_model_site.display_colour
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_model_site.type_symbol'
 
     _import.get                   [
@@ -16187,30 +16282,6 @@ save_citation_author.citation_id
 
 save_
 
-save_citation_author.key
-
-    _definition.id                '_citation_author.key'
-    _definition.update            2021-06-29
-    _description.text
-;
-    Value is a unique key to a set of CITATION_AUTHOR items
-    in a looped list.
-;
-    _name.category_id             citation_author
-    _name.object_id               key
-    _type.purpose                 Key
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Implied
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _citation_author.key =
-    [_citation_author.citation_id,_citation_author.ordinal]
-;
-
-save_
-
 save_citation_author.name
 
     _definition.id                '_citation_author.name'
@@ -16302,30 +16373,6 @@ save_citation_editor.citation_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
-
-save_
-
-save_citation_editor.id
-
-    _definition.id                '_citation_editor.id'
-    _definition.update            2021-06-29
-    _description.text
-;
-    Value is a unique key to a set of CITATION_EDITOR items
-    in a looped list.
-;
-    _name.category_id             citation_editor
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Implied
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _citation_editor.id =
-    [_citation_editor.citation_id,_citation_editor.ordinal]
-;
 
 save_
 
@@ -16940,6 +16987,31 @@ save_DATABASE_RELATED
     _name.category_id             PUBLICATION
     _name.object_id               DATABASE_RELATED
     _category_key.name            '_database_related.id'
+    _description_example.case
+;
+    loop_
+      _database_related.id
+      _database_related.database_id
+      _database_related.entry_code
+      _database_related.relation
+      _database_related.special_details
+       1 CAS 58-55-9  Other     'Describes the same compound.'
+       2 COD 2006182  Identical .
+       3 CSD BAPLOT01 Identical .
+;
+    _description_example.detail
+;
+    The loop relates a specific instance of a theophylline crystal structure
+    to corresponding entries in the COD and CSD crystallographic databases
+    as well as to the general description of the theophyline compound in the
+    CAS registry.
+
+    This example loop could potentially be added to the CIF file that is
+    provided as supplementary material for the following publication:
+      Ebisuzaki, Y. et al. (1997). Acta Crystallographica, Section C:
+      Crystal Structure Communications, 53(6), 777-779.
+      https://doi.org/10.1107/S0108270197001960
+;
 
 save_
 
@@ -17002,7 +17074,7 @@ save_
 save_database_related.relation
 
     _definition.id                '_database_related.relation'
-    _definition.update            2019-01-08
+    _definition.update            2023-02-03
     _description.text
 ;
     The general relationship of the data in the data block
@@ -17038,6 +17110,13 @@ save_database_related.relation
          Common
 ;
          The dataset contents share a common source.
+;
+         Other
+;
+         The dataset contents are related to the contents of the data block in
+         a way not included elsewhere in this list. In case this value is used,
+         it is strongly recommended to also provide the specifics of the
+         relationship using the _database_related.special_details data item.
 ;
 
 save_
@@ -17118,7 +17197,7 @@ save_
 save_display_colour.hue
 
     _definition.id                '_display_colour.hue'
-    _definition.update            2012-05-07
+    _definition.update            2023-02-06
     _description.text
 ;
     Colour hue as an enumerated code.
@@ -17128,7 +17207,7 @@ save_display_colour.hue
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
     _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}]
 
@@ -19652,25 +19731,25 @@ save_ATOM_ANALYTICAL
     _category_key.name            '_atom_analytical.id'
     _description_example.case
 ;
-         loop_
-         _atom_analytical.id
-         _atom_analytical.analyte
-         _atom_analytical.meas_id
-         _atom_analytical.chemical_species
-         _atom_analytical.analyte_mass_percent
-         _atom_analytical.chemical_species_mass_percent
-         1 Si  a 'Si O2'   ?     22.7
-         2 Al  a 'Al2 O3'  ?     27.4
-         3 Ti  b 'Ti O2'   ?      2.7
-         4 Si  c .         10.5  .
-         5 Si  d Si        11.7  11.7
+    loop_
+    _atom_analytical.id
+    _atom_analytical.analyte
+    _atom_analytical.meas_id
+    _atom_analytical.chemical_species
+    _atom_analytical.analyte_mass_percent
+    _atom_analytical.chemical_species_mass_percent
+    1 Si  a 'Si O2'   ?     22.7
+    2 Al  a 'Al2 O3'  ?     27.4
+    3 Ti  b 'Ti O2'   ?      2.7
+    4 Si  c .         10.5  .
+    5 Si  d Si        11.7  11.7
 ;
     _description_example.detail
 ;
-         There are three separate determinations of Si content, and one each
-         of Al and Ti. The amount of Al is reported as the mass percent of
-         Al2O3. The equivalent amount of Al is not given. There are four
-         different measurements presented in this table.
+    There are three separate determinations of Si content, and one each
+    of Al and Ti. The amount of Al is reported as the mass percent of
+    Al2O3. The equivalent amount of Al is not given. There are four
+    different measurements presented in this table.
 ;
 
 save_
@@ -19875,26 +19954,26 @@ save_ATOM_ANALYTICAL_MASS_LOSS
     _category_key.name            '_atom_analytical_mass_loss.id'
     _description_example.case
 ;
-         loop_
-         _atom_analytical_mass_loss.id
-         _atom_analytical_mass_loss.meas_id
-         _atom_analytical_mass_loss.percent
-         _atom_analytical_mass_loss.temperature
-         LOD1 a   2  328
-         LOI1 a   5  623
-         LOI2 a  10 1023
-         LOI3 a  15 1373
-         LOI4 b   5  673
-         LOI5 b  10 1123
+    loop_
+    _atom_analytical_mass_loss.id
+    _atom_analytical_mass_loss.meas_id
+    _atom_analytical_mass_loss.percent
+    _atom_analytical_mass_loss.temperature
+    LOD1 a   2  328
+    LOI1 a   5  623
+    LOI2 a  10 1023
+    LOI3 a  15 1373
+    LOI4 b   5  673
+    LOI5 b  10 1123
 ;
     _description_example.detail
 ;
-         Four mass-loss percentages are given for measurement 'a', and two
-         for measurement 'b'. The mass losses were recorded after exposing
-         the specimen to the listed temperatures. The mass lost at a lower
-         temperature for the same measurement should be included in the
-         higher temperatures; that is, for measurement 'a', the total mass
-         loss after four measurements is 15 wt%, not (2+5+10+15) wt%.
+    Four mass-loss percentages are given for measurement 'a', and two
+    for measurement 'b'. The mass losses were recorded after exposing
+    the specimen to the listed temperatures. The mass lost at a lower
+    temperature for the same measurement should be included in the
+    higher temperatures; that is, for measurement 'a', the total mass
+    loss after four measurements is 15 wt%, not (2+5+10+15) wt%.
 ;
 
 save_
@@ -20071,18 +20150,18 @@ save_ATOM_ANALYTICAL_SOURCE
     _category_key.name            '_atom_analytical_source.id'
     _description_example.case
 ;
-         loop_
-         _atom_analytical_source.id
-         _atom_analytical_source.technique
-         _atom_analytical_source.equipment_make
-         a  XRF 'Hitachi Lab-X5000'
-         b  'X-ray fluorescence EDS' 'Hitachi Lab-X5000'
-         c  ICP .
-         d  EDS .
+    loop_
+    _atom_analytical_source.id
+    _atom_analytical_source.technique
+    _atom_analytical_source.equipment_make
+    a  XRF 'Hitachi Lab-X5000'
+    b  'X-ray fluorescence EDS' 'Hitachi Lab-X5000'
+    c  ICP .
+    d  EDS .
 ;
     _description_example.detail
 ;
-         Four different measurements of elemental composition are enumerated.
+    Four different measurements of elemental composition are enumerated.
 ;
 
 save_
@@ -20152,15 +20231,15 @@ save_atom_analytical_source.special_details
     loop_
       _description_example.case
 ;
-         XRF utilising a WDS detector system calibrated for the analysis
-         of iron ores.
+       XRF utilising a WDS detector system calibrated for the analysis
+       of iron ores.
 ;
 ;
-         Laser Induced Breakdown Spectroscopy. Measurements carried out
-         by commercial laboratory, report #P90.
+       Laser Induced Breakdown Spectroscopy. Measurements carried out
+       by commercial laboratory, report #P90.
 ;
 ;
-         Detector calibrated following Smith (2018).
+       Detector calibrated following Smith (2018).
 ;
 
 save_
@@ -20198,7 +20277,7 @@ save_ATOM_SITE
     _definition.id                ATOM_SITE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-02-03
     _description.text
 ;
     The CATEGORY of data items used to describe atom site information
@@ -20207,6 +20286,66 @@ save_ATOM_SITE
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
     _category_key.name            '_atom_site.label'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         loop_
+           _atom_site.label
+           _atom_site.occupancy
+           _atom_site.disorder_assembly
+           _atom_site.disorder_group
+            C1     1      .     .
+            H11A   .5     M     1
+            H12A   .5     M     1
+            H13A   .5     M     1
+            H11B   .5     M     2
+            H12B   .5     M     2
+            H13B   .5     M     2
+;
+;
+         A hypothetical example of a positional disorder description. Disorder
+         assembly 'M' describes a methyl group with two alternative
+         configurations '1' and '2':
+
+                            H11B    H11A      H13B
+                              .      |      .
+                                .    |    .
+                                  .  |  .
+                                     C1 --------C2---
+                                   / .  \
+                                 /   .    \
+                               /     .      \
+                            H12A    H12B    H13A
+;
+;
+         loop_
+           _atom_site.label
+           _atom_site.type_symbol
+           _atom_site.fract_x
+           _atom_site.fract_y
+           _atom_site.fract_z
+           _atom_site.occupancy
+           _atom_site.disorder_assembly
+           _atom_site.disorder_group
+            Cu1 Cu 0.78443(2) 0.88297(4) 0.37825(2)  1       . .
+            Co1 Co 0.77504(2) 0.66957(4) 0.54249(2)  0.78(3) A 1
+            Mn1 Mn 0.77504(2) 0.66957(4) 0.54249(2)  0.22(3) A 2
+            O1   O 0.85532(9) 0.95747(19) 0.28965(9) 1       . .
+            O2   O 0.84868(9) 0.94662(19) 0.14953(8) 1       . .
+            # ...
+;
+;
+         An example of a compositional disorder description. Disorder assembly
+         'A' describes a site that is simultaneously occupied by Co and Mn
+         atoms which are assigned to disorder group '1' and disorder group '2'
+         respectively.
+
+         The example was created based on data from:
+             Li, Ang et al. (2021). Dalton Transactions, 50(2), 681-688.
+             https://doi.org/10.1039/d0dt03269g
+;
 
 save_
 
@@ -21049,7 +21188,7 @@ save_atom_site.refinement_flags
          G                      'Rigid group refinement of site.'
          R                      'Riding-atom site attached to non-riding atom.'
          D                      'Distance or angle restraint on site.'
-         T                      'Yhermal displacement constraints.'
+         T                      'Thermal displacement constraints.'
          U                      'Uiso or Uij restraint (rigid bond).'
          P                      'Partial occupancy constraint.'
          .                      'No refinement constraints.'
@@ -23874,7 +24013,7 @@ save_
 save_atom_type.display_colour
 
     _definition.id                '_atom_type.display_colour'
-    _definition.update            2012-11-20
+    _definition.update            2023-02-06
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
@@ -23886,7 +24025,7 @@ save_atom_type.display_colour
     _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get                   [
@@ -27184,7 +27323,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-02-16
+         3.2.0                    2023-03-02
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27241,6 +27380,20 @@ save_
        Changed the scheme part in multiple URLs from 'http' to 'https'.
 
        Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Added the 'Other' state to the enumeration set of the
+       _database_related.relation data item. Added a usage example to
+       the DATABASE_RELATED category.
+
+       Added several examples to the ATOM_SITE category.
+
+       Updated several definitions with enumeration values to be case-sensitive.
+
+       Removed the _citation_author.key and _citation_editor.id data items.
+
+       Reparented CELL to DIFFRN category and added key data names to allow
+       multiple cells for different diffraction conditions. Deprecated
+       _cell_measurement.temperature,pressure data names.
 
        Added _atom_site_aniso.matrix_beta and _atom_site_aniso.beta_* data
        items.

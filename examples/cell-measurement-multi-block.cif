@@ -1,0 +1,57 @@
+#\#CIF_2.0
+##
+# Represents an experiment where the cell measurement was performed under
+# different conditions to the data collection.
+#
+# In this case the measurements are presented in two separate data blocks.
+# This file conveys slightly more information on the differences of measurement
+# conditions than the single block 'cell-measurement-single-block.cif' example
+# file that uses deprecated data items from the CELL_MEASUREMENT category.
+##
+data_main_collection
+ 
+_cell.length_a                         11.520(12)
+_cell.length_b                         11.210(11)
+_cell.length_c                         4.920(5)
+_cell.angle_alpha                      90.00000
+_cell.angle_beta                       90.8331(5)
+_cell.angle_gamma                      90.00000
+_cell.volume                           635.3(11)
+_cell.formula_units_Z                  4
+##
+# Cell measurement details are provided in another data block.
+##
+_cell_measurement.condition_id         2
+_cell_measurement.theta_max            50.5
+_cell_measurement.theta_min            10.1
+_cell_measurement.reflns_used          20 
+
+_diffrn.id                                  1
+_diffrn.ambient_temperature            293
+_diffrn.ambient_pressure               10
+_diffrn_radiation.type                'Cu K\a'
+_diffrn_radiation_wavelength.value     1.5418
+_diffrn_radiation.probe                x-ray
+
+# Atom site coordinates and results would be provided in this data block,
+# but are removed for brevity in this example.
+
+# ...
+
+data_cell_measurement
+ 
+_diffrn.id                             2
+_diffrn.ambient_temperature            290     # Different temperature.
+_diffrn.ambient_pressure               10
+
+_diffrn_radiation.type                'Mo K\a' # Different radiation type.
+_diffrn_radiation_wavelength.value     0.701
+_diffrn_radiation.probe                x-ray
+
+# Any _cell_measurement items in this data block would relate to the
+# determination of a unit cell used for any diffraction data presented
+# in this data block.
+_cell_measurement.condition_id         2   # Default value.
+_cell_measurement.theta_max            50.4
+_cell_measurement.theta_min            10.0
+_cell_measurement.reflns_used          30
