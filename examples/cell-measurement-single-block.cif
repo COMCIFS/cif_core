@@ -1,0 +1,53 @@
+#\#CIF_2.0
+##
+# Represents an experiment where the cell measurement was performed under
+# different conditions to the data collection.
+#
+# In this case certain cell measurement conditions that differ from the data
+# collection conditions are recorded using a very limited set of data items
+# from the CELL_MEASUREMENT category. As a result, this file simply cannot fully
+# convey the information provided in the 'cell-measurement-multi-block.cif'
+# example file.
+#
+# Most items from the CELL_MEASUREMENT category have now been deprecated and
+# the multi-block approach should be used in newly created files as it allows
+# to describe cell measurements in more detail using data items from various
+# categories such as DIFFR, DIFFRN_SOURCE and DIFFR_RADIATION. However, the
+# deprecated data items may still be encountered in archival copies of older
+# CIF files.
+##
+data_main_collection
+ 
+_cell.length_a                         11.520(12)
+_cell.length_b                         11.210(11)
+_cell.length_c                         4.920(5)
+_cell.angle_alpha                      90.00000
+_cell.angle_beta                       90.8331(5)
+_cell.angle_gamma                      90.00000
+_cell.volume                           635.3(11)
+_cell.formula_units_Z                  4
+##
+# The CELL_MEASUREMENT category is only capable of conveying differences in
+# measurement temperature, pressure, radiation type and wavelength, but no
+# other aspects of the experiment that may also differ.
+##
+# BEGIN DEPRECATED ITEMS
+_cell_measurement.temperature          290
+_cell_measurement.pressure             10.1
+_cell_measurement.radiation            'Mo K\a'
+_cell_measurement.wavelength           0.701
+# END DEPRECATED ITEMS
+_cell_measurement.theta_max            50.4
+_cell_measurement.theta_min            10.0
+_cell_measurement.reflns_used          30
+
+_diffrn.ambient_temperature            293
+_diffrn.ambient_pressure               10
+_diffrn_radiation.type                 'Cu K\a'
+_diffrn_radiation_wavelength.value     1.5418
+_diffrn_radiation.probe                x-ray
+
+# Atom site coordinates and results would be provided in this data block,
+# but are removed for brevity in this example.
+
+# ...
