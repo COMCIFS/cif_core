@@ -14978,6 +14978,11 @@ save_audit_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = Current_Row(audit_author) + 1
+;
 
 save_
 
@@ -18456,6 +18461,11 @@ save_publ_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = Current_Row(publ_author) + 1
+;
 
 save_
 
