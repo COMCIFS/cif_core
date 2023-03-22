@@ -15350,6 +15350,25 @@ save_audit_contact_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    with aca as audit_contact_author
+    count = 0
+    target = 0
+    loop aa as audit_author {
+        if (aca.name == aa.name) {
+            count++
+            target = aa.id
+            }
+        }
+    if (count == 0 || count > 1) {
+        _enumeration.default = missing
+        }
+    else {
+        _enumeration.default = target
+    }
+;
 
 save_
 
@@ -18861,6 +18880,25 @@ save_publ_contact_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    with pca as publ_contact_author
+    count = 0
+    target = 0
+    loop pa as publ_author {
+        if (pca.name == pa.name) {
+            count++
+            target = pa.id
+            }
+        }
+    if (count == 0 || count > 1) {
+        _enumeration.default = missing
+        }
+    else {
+        _enumeration.default = target
+    }
+;
 
 save_
 
