@@ -18885,18 +18885,18 @@ save_publ_contact_author.id
 ;
     with pca as publ_contact_author
     count = 0
-    target = 0
+    target = ''
     loop pa as publ_author {
         if (pca.name == pa.name) {
             count++
             target = pa.id
             }
         }
-    if (count == 0 || count > 1) {
-        _enumeration.default = missing
+    if (count == 1) {
+        _enumeration.default = target
         }
     else {
-        _enumeration.default = target
+        _enumeration.default = missing
     }
 ;
 
