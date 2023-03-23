@@ -15362,11 +15362,11 @@ save_audit_contact_author.id
             target = aa.id
             }
         }
-    if (count == 0 || count > 1) {
-        _enumeration.default = missing
+    if (count == 1) {
+        _enumeration.default = target
         }
     else {
-        _enumeration.default = target
+        _enumeration.default = missing
     }
 ;
 
