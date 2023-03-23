@@ -15355,7 +15355,7 @@ save_audit_contact_author.id
 ;
     with aca as audit_contact_author
     count = 0
-    target = 0
+    target = ''
     loop aa as audit_author {
         if (aca.name == aa.name) {
             count++
