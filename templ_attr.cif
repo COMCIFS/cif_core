@@ -643,22 +643,6 @@ save_aniso_betaIJ
      save_
 
 
-save_aniso_betaIJ2
-
-    _definition.update          2023-02-15
-    _description.text
-;
-     The [I][J] tdf elements define the overall anisotropic
-     displacement model if one was refined for this structure.
-;
-    _type.purpose               Number
-    _type.source                Derived
-    _type.container             Single
-    _type.contents              Real
-    _units.code                 none
-     save_
-
-
 save_aniso_betaIJ_su
 
     _definition.update           2023-02-15
@@ -1044,6 +1028,6 @@ save_display_colour
 
        Updated description of _site_symmetry.
 
-       Added descriptions for aniso_betaIJ, aniso_betaIJ2, and aniso_betaIJ_su.
+       Added descriptions for aniso_betaIJ, and aniso_betaIJ_su.
        Updated descriptions of aniso_BIJ and aniso_UIJ
 ;
