@@ -11869,7 +11869,7 @@ save_space_group_symop.id
     _method.purpose               Evaluation
     _method.expression
 ;
-    _space_group_symop.id = Current_Row() + 1
+    _space_group_symop.id = Current_row(_space_group_symop.id) + 1
 ;
 
 save_
