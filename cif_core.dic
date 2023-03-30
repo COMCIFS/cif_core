@@ -11869,7 +11869,7 @@ save_space_group_symop.id
     _method.purpose               Evaluation
     _method.expression
 ;
-    _space_group_symop.id = Current_Row(space_group_symop) + 1
+    _space_group_symop.id = Current_row(space_group_symop) + 1
 ;
 
 save_
@@ -14981,7 +14981,7 @@ save_audit_author.id
     _method.purpose               Definition
     _method.expression
 ;
-    _enumeration.default = Current_Row(audit_author) + 1
+    _enumeration.default = Unique_id(audit_author.id)
 ;
 
 save_
@@ -18483,7 +18483,7 @@ save_publ_author.id
     _method.purpose               Definition
     _method.expression
 ;
-    _enumeration.default = Current_Row(publ_author) + 1
+    _enumeration.default = Unique_id(publ_author.id)
 ;
 
 save_
