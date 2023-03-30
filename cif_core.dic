@@ -11869,7 +11869,7 @@ save_space_group_symop.id
     _method.purpose               Evaluation
     _method.expression
 ;
-    _space_group_symop.id = Current_Row(space_group_symop) + 1
+    _space_group_symop.id = Current_row(space_group_symop.id) + 1
 ;
 
 save_
@@ -14978,6 +14978,11 @@ save_audit_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = Unique_id(audit_author.id)
+;
 
 save_
 
@@ -15345,6 +15350,25 @@ save_audit_contact_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    with aca as audit_contact_author
+    count = 0
+    target = ''
+    loop aa as audit_author {
+        if (aca.name == aa.name) {
+            count++
+            target = aa.id
+            }
+        }
+    if (count == 1) {
+        _enumeration.default = target
+        }
+    else {
+        _enumeration.default = missing
+    }
+;
 
 save_
 
@@ -18456,6 +18480,11 @@ save_publ_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = Unique_id(publ_author.id)
+;
 
 save_
 
@@ -18851,6 +18880,25 @@ save_publ_contact_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    with pca as publ_contact_author
+    count = 0
+    target = ''
+    loop pa as publ_author {
+        if (pca.name == pa.name) {
+            count++
+            target = pa.id
+            }
+        }
+    if (count == 1) {
+        _enumeration.default = target
+        }
+    else {
+        _enumeration.default = missing
+    }
+;
 
 save_
 
