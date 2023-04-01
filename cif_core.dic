@@ -20381,6 +20381,7 @@ save_atom_site.adp_type
          Bani                     'Anisotropic Bij.'
          Biso                     'Isotropic B.'
          Bovl                     'Overall B.'
+         betaani                  'Anisotropic betaij.'
 
 save_
 
