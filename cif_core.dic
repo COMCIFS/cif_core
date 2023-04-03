@@ -27094,7 +27094,7 @@ save_
 
        Added diffrn_measurement.specimen_attachment_type.
 
-       Changed the DDL conformance version number from 3.0.14 to 4.0.1.
+       Changed to DDL version 4.
 
        Removed all instances of the _category.key_id attribute since it is no
        longer defined in the DDLm reference dictionary.
