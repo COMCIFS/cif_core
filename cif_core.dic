@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-03-02
+    _dictionary.date              2023-04-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -15939,7 +15939,7 @@ save_citation.id
 
     _definition.id                '_citation.id'
     _alias.definition_id          '_citation_id'
-    _definition.update            2021-10-27
+    _definition.update            2023-04-04
     _description.text
 ;
     Unique identifier to the CITATION list. A value of 'primary'
@@ -15961,6 +15961,16 @@ save_citation.id
          1
          2
          3
+
+    _method.purpose               Definition
+    _method.expression
+;
+    if (len(citation) == 1) {
+        _enumeration.default = "primary"
+    } else {
+        _enumeration.default = missing
+    }
+;
 
 save_
 
@@ -27179,7 +27189,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-03-02
+         3.2.0                    2023-04-04
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27250,4 +27260,6 @@ save_
        Reparented CELL to DIFFRN category and added key data names to allow
        multiple cells for different diffraction conditions. Deprecated
        _cell_measurement.temperature,pressure data names.
+
+       Added a dREL definition method for the _citation.id data item.
 ;
