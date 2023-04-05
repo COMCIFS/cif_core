@@ -3390,15 +3390,15 @@ save_diffrn_radiation_wavelength.id
          '_diffrn_radiation_wavelength_id'
          '_diffrn_radiation.wavelength_id'
 
-    _definition.update            2021-10-27
+    _definition.update            2023-04-04
     _description.text
 ;
-    Code identifying a radiation used in the diffraction measurements.
+    Code identifying the radiation used in the diffraction measurements.
     This is linked to _diffrn_refln.wavelength_id and _refln.wavelength_id
 ;
     _name.category_id             diffrn_radiation_wavelength
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -27260,6 +27260,9 @@ save_
        Reparented CELL to DIFFRN category and added key data names to allow
        multiple cells for different diffraction conditions. Deprecated
        _cell_measurement.temperature,pressure data names.
+
+       Changed the purpose of the _diffrn_radiation_wavelength.id data item
+       from 'Encode' to 'Key'.
 
        Added a dREL definition method for the _citation.id data item.
 ;
