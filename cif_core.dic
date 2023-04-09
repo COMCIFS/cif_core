@@ -24801,13 +24801,13 @@ save_atom_type_scat.hi_ang_fox_coeffs
 
 save_
 
-save_atom_type_scat.inv_Mott-Bethe_coefs
+save_atom_type_scat.inv_Mott_Bethe_coefs
 
-    _definition.id                '_atom_type_scat.inv_Mott-Bethe_coefs'
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
     _definition.update            2023-04-09
     _description.text
 ;
-    The set of Gaussian coefficients for use in the inverse Mott-Bethe
+    The set of Gaussian coefficients for use in the inverse Mott_Bethe
     relationship for generating X-ray scattering factors:
     [ c_1, d_1, c_2, d_2, ... , c_N, d_N, e ].
 
@@ -24818,7 +24818,7 @@ save_atom_type_scat.inv_Mott-Bethe_coefs
     number.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott-Bethe_coefs
+    _name.object_id               inv_Mott_Bethe_coefs
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Matrix
@@ -24828,17 +24828,17 @@ save_atom_type_scat.inv_Mott-Bethe_coefs
 
 save_
 
-save_atom_type_scat.inv_Mott-Bethe_coefs_su
+save_atom_type_scat.inv_Mott_Bethe_coefs_su
 
-    _definition.id                '_atom_type_scat.inv_Mott-Bethe_coefs_su'
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
     _definition.update            2023-04-09
     _description.text
 ;
-    Standard uncertainty of _atom_type_scat.inv_Mott-Bethe_coefs.
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott-Bethe_coefs_su
-    _name.linked_item_id          '_atom_type_scat.inv_Mott-Bethe_coefs'
+    _name.object_id               inv_Mott_Bethe_coefs_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_coefs'
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               Matrix
@@ -24847,19 +24847,19 @@ save_atom_type_scat.inv_Mott-Bethe_coefs_su
 
 save_
 
-save_atom_type_scat.inv_Mott-Bethe_lower_limit
+save_atom_type_scat.inv_Mott_Bethe_lower_limit
 
-    _definition.id                '_atom_type_scat.inv_Mott-Bethe_lower_limit'
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_lower_limit'
     _definition.update            2023-04-09
     _description.text
 ;
     The inclusive lower limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.inv_Mott-Bethe_coefs.
+    See _atom_type_scat.inv_Mott_Bethe_coefs.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott-Bethe_lower_limit
+    _name.object_id               inv_Mott_Bethe_lower_limit
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Single
@@ -24868,19 +24868,19 @@ save_atom_type_scat.inv_Mott-Bethe_lower_limit
 
 save_
 
-save_atom_type_scat.inv_Mott-Bethe_upper_limit
+save_atom_type_scat.inv_Mott_Bethe_upper_limit
 
-    _definition.id                '_atom_type_scat.inv_Mott-Bethe_upper_limit'
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_upper_limit'
     _definition.update            2023-04-09
     _description.text
 ;
     The exclusive upper limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.inv_Mott-Bethe_coefs.
+    See _atom_type_scat.inv_Mott_Bethe_coefs.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott-Bethe_upper_limit
+    _name.object_id               inv_Mott_Bethe_upper_limit
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Single
@@ -27516,6 +27516,6 @@ save_
        from 'Encode' to 'Key'.
 
        Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
-       inv_Mott-Bethe_coefs to allow for an arbitrary number of coefficients in
+       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
