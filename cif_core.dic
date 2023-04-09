@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-04-04
+    _dictionary.date              2023-04-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -27440,7 +27440,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-04-04
+         3.2.0                    2023-04-09
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27514,4 +27514,8 @@ save_
 
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
+
+       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
+       inv_Mott-Bethe_coefs to allow for an arbitrary number of coefficients in
+       the definition of form factors.
 ;
