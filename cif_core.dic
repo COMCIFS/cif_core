@@ -24637,7 +24637,7 @@ save_atom_type_scat.Gaussian_coefs
     _description.text
 ;
     The set of Gaussian coefficients for generating X-ray scattering factors:
-    [ a_1, b_1, a_2, b_2, ... , a_N, b_N, c ].
+    [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
 
     f(s; Z) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:N)
 
@@ -24809,7 +24809,7 @@ save_atom_type_scat.inv_Mott_Bethe_coefs
 ;
     The set of Gaussian coefficients for use in the inverse Mott_Bethe
     relationship for generating X-ray scattering factors:
-    [ c_1, d_1, c_2, d_2, ... , c_N, d_N, e ].
+    [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
 
     f(s; Z) =
     Z - 8 * Pi * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
