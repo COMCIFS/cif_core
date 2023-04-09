@@ -24299,7 +24299,7 @@ save_atom_type_scat.cromer_mann_coeffs
     _description.text
 ;
     The set of Cromer-Mann coefficients for generating X-ray scattering
-    factors. [ a1, b1, a2, b2, a3, b3, a4, b4, c]
+    factors. [ c, a1, b1, a2, b2, a3, b3, a4, b4 ]
     Ref: International Tables for Crystallography, Vol. C
             (1991) Table 6.1.1.4
 ;
