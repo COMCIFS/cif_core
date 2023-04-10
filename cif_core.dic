@@ -24722,6 +24722,129 @@ save_atom_type_scat.versus_stol_list
 
 save_
 
+save_ATOM_TYPE_SCAT_TABLE
+
+    _definition.id                ATOM_TYPE_SCAT_TABLE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2023-04-10
+    _description.text
+
+    The CATEGORY of data items used to describe list atomic scattering factor
+    values for use in crystallographic structure studies.
+;
+    _name.category_id             ATOM_TYPE
+    _name.object_id               ATOM_TYPE_SCAT_TABLE
+
+    loop_
+      _category_key.name
+         '_atom_type_scat_table.stol'
+         '_atom_type_scat_table.symbol'
+
+    _description_example.case
+;
+        loop_
+        _atom_type_scat_table.symbol
+        _atom_type_scat_table.stol
+        _atom_type_scat_table.scat_value
+        Ac  0.00  89.00000
+        Ac  0.01  88.91457
+        Ac  0.02  88.66288
+        #...
+        Ac  4.00   8.24987
+        Ac  5.00   5.98858
+        Ac  6.00   4.90623
+        O   0.00   8.00000
+        O   0.01   7.99171
+        O   0.02   7.96693
+        #...
+        O   4.00   0.13431
+        O   5.00   0.06740
+        O   6.00   0.03670
+;
+    _description_example.detail
+;
+        A listing of the scattering factors for Ac and O in the range
+        (0, 6.00) reciprocal angstroms.
+;
+save_
+
+save_atom_type_scat_table.scat_value
+
+    _definition.id                '_atom_type_scat_table.scat_value'
+    _definition.update            2023-04-10
+    _description.text
+;
+    The value of the scattering factor of a particular atom-type at a particular
+    stol value.
+;
+    _name.category_id             atom_type_scat_table
+    _name.object_id               scat_value
+    _type.purpose                 Measurand
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   'electrons'
+
+save_
+
+save_atom_type_scat_table.scat_value_su
+
+    _definition.id                '_atom_type_scat_table.scat_value_su'
+    _definition.update            2023-04-10
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat_table.scat_value.
+;
+    _name.category_id             atom_type_scat_table
+    _name.object_id               scat_value_su
+    _name.linked_item_id          '_atom_type_scat_table.scat_value'
+    _units.code                   'electrons'
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_atom_type_scat_table.stol
+
+    _definition.id                '_atom_type_scat_table.stol'
+    _definition.update            2023-04-10
+    _description.text
+;
+    The value of sin theta over lambda for which the accompanying atom symbol
+    and scattering factor value correspond to.
+
+    A regularly spaced grid is strongly recommended.
+;
+    _name.category_id             atom_type_scat_table
+    _name.object_id               stol
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   'reciprocal_angstroms'
+
+save_
+
+save_atom_type_scat_table.symbol
+
+    _definition.id                '_atom_type_scat_table.symbol'
+    _definition.update            2023-04-10
+    _description.text
+;
+    The identity of the atom specie(s) representing this atom type.
+    See _atom_type.symbol for further details.
+;
+    _name.category_id             atom_type_scat_table
+    _name.object_id               symbol
+    _name.linked_item_id          '_atom_type.symbol'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_REFINE
 
     _definition.id                REFINE
@@ -27254,4 +27377,7 @@ save_
 
        Reverted _atom_type_scat.versus_stol_list to a text-type to regain
        compatibility with DDL1 dictionary.
+
+       Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
+       scattering factor values with respect to sin theta over lambda.
 ;
