@@ -24559,7 +24559,7 @@ save_atom_type_scat.exponential_polynomial_coefs
     _name.object_id               exponential_polynomial_coefs
     _type.purpose                 Measurand
     _type.source                  Derived
-    _type.container               Matrix
+    _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
@@ -24580,7 +24580,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
     _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coefs'
     _type.purpose                 SU
     _type.source                  Derived
-    _type.container               Matrix
+    _type.container               List
     _type.contents                Real
     _units.code                   none
 
@@ -24647,7 +24647,7 @@ save_atom_type_scat.Gaussian_coefs
     _name.object_id               Gaussian_coefs
     _type.purpose                 Measurand
     _type.source                  Derived
-    _type.container               Matrix
+    _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
@@ -24667,7 +24667,7 @@ save_atom_type_scat.Gaussian_coefs_su
     _name.linked_item_id          '_atom_type_scat.Gaussian_coefs'
     _type.purpose                 SU
     _type.source                  Derived
-    _type.container               Matrix
+    _type.container               List
     _type.contents                Real
     _units.code                   none
 
@@ -24821,7 +24821,7 @@ save_atom_type_scat.inv_Mott_Bethe_coefs
     _name.object_id               inv_Mott_Bethe_coefs
     _type.purpose                 Measurand
     _type.source                  Derived
-    _type.container               Matrix
+    _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
@@ -24841,7 +24841,7 @@ save_atom_type_scat.inv_Mott_Bethe_coefs_su
     _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_coefs'
     _type.purpose                 SU
     _type.source                  Derived
-    _type.container               Matrix
+    _type.container               List
     _type.contents                Real
     _units.code                   none
 
