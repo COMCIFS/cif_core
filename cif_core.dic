@@ -24807,7 +24807,7 @@ save_atom_type_scat.inv_Mott_Bethe_coefs
     _definition.update            2023-04-09
     _description.text
 ;
-    The set of Gaussian coefficients for use in the inverse Mott_Bethe
+    The set of Gaussian coefficients for use in the inverse Mott-Bethe
     relationship for generating X-ray scattering factors:
     [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
 
