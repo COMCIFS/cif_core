@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.2.0
-    _dictionary.date              2023-04-04
+    _dictionary.date              2023-04-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -24706,21 +24706,19 @@ save_atom_type_scat.versus_stol_list
          '_atom_type_scat_versus_stol_list'
          '_atom_type.scat_versus_stol_list'
 
-    _definition.update            2013-04-17
+    _definition.update            2023-04-10
     _description.text
 ;
-    List of scattering factors as a function of sin theta on lambda.
-    List has the form [[<stol value 1> <scatfac 1>] [<stol value 2> <scatfac
-    2>] ....] in increments of 0.01, increasing from 0.0.
+    A table of scattering factors as a function of sin theta over lambda. This
+    table should be well-commented to indicate the items present. Regularly
+    formatted lists are strongly recommended.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               versus_stol_list
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Array
-    _type.dimension               '[]'
-    _type.contents                Real
-    _units.code                   none
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -27179,7 +27177,7 @@ save_
        Changed the content type of the _journal.paper_doi data item from
        'Code' to 'Text' and added an example case.
 ;
-         3.2.0                    2023-04-04
+         3.2.0                    2023-04-10
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27253,4 +27251,7 @@ save_
 
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
+
+       Reverted _atom_type_scat.versus_stol_list to a text-type to regain
+       compatibility with DDL1 dictionary.
 ;
