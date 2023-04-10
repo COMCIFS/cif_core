@@ -24775,7 +24775,7 @@ save_atom_type_scat_table.scat_value
     _definition.update            2023-04-10
     _description.text
 ;
-    The value of the scattering factor of a particular atom-type at a particular
+    The value of the scattering factor of a particular atom type at a particular
     stol value.
 ;
     _name.category_id             atom_type_scat_table
