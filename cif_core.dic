@@ -24729,7 +24729,7 @@ save_ATOM_TYPE_SCAT_TABLE
     _definition.class             Loop
     _definition.update            2023-04-10
     _description.text
-
+;
     The CATEGORY of data items used to describe list atomic scattering factor
     values for use in crystallographic structure studies.
 ;
