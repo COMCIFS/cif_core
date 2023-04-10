@@ -24784,7 +24784,7 @@ save_atom_type_scat_table.scat_value
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _units.code                   'electrons'
+    _units.code                   electrons
 
 save_
 
@@ -24799,7 +24799,7 @@ save_atom_type_scat_table.scat_value_su
     _name.category_id             atom_type_scat_table
     _name.object_id               scat_value_su
     _name.linked_item_id          '_atom_type_scat_table.scat_value'
-    _units.code                   'electrons'
+    _units.code                   electrons
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
@@ -24822,7 +24822,7 @@ save_atom_type_scat_table.stol
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _units.code                   'reciprocal_angstroms'
+    _units.code                   reciprocal_angstroms
 
 save_
 
