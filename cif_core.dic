@@ -2497,7 +2497,7 @@ save_diffrn_measurement.method
 
 save_
 
-save_
+save_diffrn_measurement.specimen_attachment_type
 
     _definition.id                '_diffrn_measurement.specimen_attachment_type'
     _definition.update            2023-02-06
