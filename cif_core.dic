@@ -2497,7 +2497,7 @@ save_diffrn_measurement.method
 
 save_
 
-save_diffrn_measurement.specimen_attachment_type
+save_
 
     _definition.id                '_diffrn_measurement.specimen_attachment_type'
     _definition.update            2023-02-06
@@ -27088,11 +27088,11 @@ save_
 ;
          3.0.14                   2021-06-29
 ;
-       Added opaque author identifiers to audit_author and publ_author as well
-       as relevant linking identifiers to audit_contact_author and
-       publ_contact_author.
+       Added opaque author identifiers to AUDIT_AUTHOR and PUBL_AUTHOR as well
+       as relevant linking identifiers to AUDIT_CONTACT_AUTHOR and
+       PUBL_CONTACT_AUTHOR.
 
-       Added diffrn_measurement.specimen_attachment_type.
+       Added _diffrn_measurement.specimen_attachment_type.
 
        Changed to DDL version 4.
 
