@@ -1,7 +1,14 @@
+#\#CIF_2.0
 # This file contains the full changelogs from the DICTIONARY_AUDIT category loop
 # at the end of the cif_core.dic file. Released cif_core.dic files include
 # a summarised form of these changes. This file is intended purely for developer 
 # information and is not guaranteed to be parseable.
+data_changelog
+
+loop_
+_dictionary_audit.version
+_dictionary_audit.date
+_dictionary_audit.revision
 
 3.0.14                   2021-06-29
 ;
