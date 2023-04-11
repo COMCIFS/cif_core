@@ -1,4 +1,4 @@
-# This file contains the full changelogs from the dictionary_audit items
+# This file contains the full changelogs from the DICTIONARY_AUDIT category loop
 # at the end of the cif_core.dic file. Released cif_core.dic files include
 # a summarised form of these changes. This file is intended purely for developer 
 # information and is not guaranteed to be parseable.
