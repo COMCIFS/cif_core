@@ -1865,8 +1865,8 @@ save_hi_ang_Fox_c1
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     -.5     D     -.5     H1-   -.5     He    -3.433  Li    -2.4366
-     Li1+  -2.4366 Be    -1.9459 Be2+  -1.9459 B     -1.8556 C     -1.56760
+     H     -.5      D     -.5      H1-   -.5      He    -3.433   Li    -2.4366
+     Li1+  -2.4366  Be    -1.9459  Be2+  -1.9459  B     -1.8556  C     -1.56760
      N     -1.20190 O     -0.83742 O1-   -0.83742 F     -0.63203 F1-   -0.63203
      Ne    -0.50221 Na    -0.26294 Na1+  -0.26294 Mg    -0.13144 Mg2+  -0.13144
      Al    -0.08756 Al3+  -0.08756 Si    -0.09888 Si4+  -0.09888 P     -0.21262
@@ -1880,8 +1880,8 @@ save_hi_ang_Fox_c1
      Cu1+  -1.65500 Cu2+  -1.65500 Zn    -1.45100 Zn2+  -1.45100 Ga    -1.23910
      Ga3+  -1.23910 Ge    -1.02230 Ge4+  -1.02230 As    -0.81038 Se    -0.61110
      Br    -0.43308 Br1-  -0.43308 Kr    -0.27244 Rb    -0.14328 Rb1+  -0.14328
-     Sr    -0.04770 Sr2+  -0.04770 Y     0.01935 Y3+   0.01935 Zr    0.08618
-     Zr4+  0.08618 Nb    0.05381 Nb3+  0.05381 Nb5+  0.05381 Mo    -0.00655
+     Sr    -0.04770 Sr2+  -0.04770 Y      0.01935 Y3+    0.01935 Zr     0.08618
+     Zr4+   0.08618 Nb     0.05381 Nb3+   0.05381 Nb5+   0.05381 Mo    -0.00655
      Mo3+  -0.00655 Mo5+  -0.00655 Mo6+  -0.00655 Tc    -0.05737 Ru    -0.15040
      Ru3+  -0.15040 Ru4+  -0.15040 Rh    -0.25906 Rh3+  -0.25906 Rh4+  -0.25906
      Pd    -0.39137 Pd2+  -0.39137 Pd4+  -0.39137 Ag    -0.56119 Ag1+  -0.56119
@@ -2398,6 +2398,6 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 
-       Altered hi_ang_Fox_c2 and hi_ang_Fox_c2 values to have them be the
+       Altered hi_ang_Fox_c2 and hi_ang_Fox_c3 values to have them be the
        correct magnitude, rather than their 10x and 100x values, respectively.
 ;
