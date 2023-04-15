@@ -1,0 +1,180 @@
+#\#CIF_2.0
+# This file contains the full changelogs from the DICTIONARY_AUDIT category loop
+# at the end of the cif_core.dic file. Released cif_core.dic files include
+# a summarised form of these changes. This file is intended purely for developer 
+# information and is not guaranteed to be parseable.
+data_changelog
+
+loop_
+_dictionary_audit.version
+_dictionary_audit.date
+_dictionary_audit.revision
+
+3.0.14                   2021-06-29
+;
+       Added opaque author identifiers to audit_author and publ_author as well
+       as relevant linking identifiers to audit_contact_author and
+       publ_contact_author. Added diffrn_measurement.specimen_attachment_type.
+
+       Added the 'none' measurement units to the definitions of multiple
+       data items.
+
+       Added methods for determining the measurement units to the definitions
+       of the _refine_diff.density_min_su, _refine_diff.density_max_su and
+       _refine_diff.density_rms_su data items.
+
+       Corrected a few typos in several save frame definitions.
+
+       Corrected the definitions of the ATOM_SITES_CARTN_TRANSFORM category
+       and the _atom_sites_fract_transform.matrix data item.
+
+       Changed the DDL conformance version number from 3.0.14 to 4.0.1.
+
+       Removed all instances of the _category.key_id attribute since it is no
+       longer defined in the DDLm reference dictionary.
+;
+         3.1.0                    2021-12-01
+;
+       Replaced _model_site.adp_eigen_system with _model_site.adp_eigenvectors
+       and _model_site.adp_eigenvalues.
+
+       Added additional enumeration values to the _journal_index.type data item
+       definition.
+
+       Added measurement units to the definitions of multiple data items.
+
+       Removed the _type.dimension attribute from the definition of
+       the _refln.form_factor_table data item since it is not applicable
+       to the "Table" content type.
+
+       Changed the imported save frame in the definitions of
+       the _atom_sites_cartn_transform.vec_* data items from
+       'Cartn_matrix' to 'Cartn_vector'.
+
+       Changed the imported save frame in the definitions of
+       the _atom_sites_fract_transform.vec_* data items from
+       'fract_matrix' to 'fract_vector'.
+
+       Changed the units of measurement in the definition of
+       the _atom_sites_fract_transform.matrix data item from
+       'none' to 'reciprocal_angstroms'.
+
+       Changed the units of measurement in the definition of
+       the _diffrn_radiation_wavelength.value_su data item from
+       'none' to 'angstroms'.
+
+       Updated the description of the _diffrn_source.make and
+       _exptl_absorpt.correction_t_min data items.
+
+       Unified the spelling of certain words.
+
+       Added an enumeration range to the definition of
+       the _space_group_Wyckoff.multiplicity data item.
+
+       Fixed text description of _atom_site.U,B_iso_or_equiv.
+
+       Added multiple standard uncertainty (SU) data items.
+
+       Restricted the _atom_site.Wyckoff_symbol data item values
+       to a set of case-sensitive enumeration values.
+
+       Updated the capitalisation of multiple data items.
+
+       Updated the AUDIT_SUPPORT category example case.
+
+       Fixed the _exptl_crystal.colour data item example case.
+
+       Changed the content type of the _space_group.name_H-M_ref
+       data item from 'Code' to 'Text' and updated the description
+       to better reflect the formatting of the given enumeration values.
+
+       Changed legacy case-sensitive data names to 'Word' type for conformance
+       with DDL1.
+
+       Changed _gt/_lt data names to 'Number' type in accordance with DDL1
+       behaviour. Removed associated SU data names.
+
+       Homogenised the definitions of _citation.year, _journal.year,
+       _citation.journal_issue, and _journal.issue data items.
+
+       Added an upper enumeration limit of 192 to the definition of
+       the _space_group_symop.id data item.
+
+       Changed the content type of the _journal.paper_doi data item from
+       'Code' to 'Text' and added an example case.
+;
+         3.2.0                    2023-04-04
+;
+       Added data names to allow multi-data-block expression of data sets.
+
+       Deprecated and replaced _diffrn_radiation.type and
+       _diffrn_radiation.xray_symbol.
+
+       Added _diffrn_refln.intensity* data items.
+
+       Added the _exptl_absorpt.special_details data item.
+
+       Added categories and data names to allow for the elemental composition
+       of specimens to be recorded.
+
+       Changed the content type of the _diffrn_reflns.limit_min and
+       _diffrn_reflns.limit_max data items from Real to Integer.
+
+       Updated _audit_author.name, _audit_contact_author.name,
+       _citation_author.name, and _publ_author.name to specify how authors with
+       single names should be handled.
+
+       Renamed DIFFRN_STANDARD to DIFFRN_STANDARDS, as well as all data names,
+       to retain consistency with the DDL1 dictionary.
+
+       Fixed dREL names of _audit_support.funding_organization and
+       _audit_support.funding_organization_DOI.
+
+       Corrected the dREL methods responsible for the assignment of units of
+       measurement to the _refine_diff.density_min, _refine_diff.density_min_su,
+       _refine_diff.density_max, _refine_diff.density_max_su,
+       _refine_diff.density_rms and _refine_diff.density_rms_su data items.
+
+       Explicitly added _diffrn_source.details to the list items that replaced
+       _diffrn_source.description.
+
+       Added a disclaimer about the use of the _atom_site_symmetry_multiplicity
+       data name.
+
+       Changed the _exptl_crystal.colour data item from a list to a text string
+       to restore compatibility with the DDL1 version of the dictionary.
+
+       Updated the descriptions of the _atom_site.disorder_assembly and
+       _atom_site.disorder_group data items to also apply to compositional
+       disorder.
+
+       Added the _citation.URL and _journal.paper_URL data items.
+
+       Changed the content type of multiple id data items.
+
+       Updated URL of the Open Funder Registry repository.
+
+       Updated the references in definitions of the _chemical.enantioexcess_bulk
+       and _chemical.enantioexcess_crystal data items.
+
+       Changed the scheme part in multiple URLs from 'http' to 'https'.
+
+       Added the _journal.paper_number and _journal.paper_pages data items.
+
+       Added the 'Other' state to the enumeration set of the
+       _database_related.relation data item. Added a usage example to
+       the DATABASE_RELATED category.
+
+       Added several examples to the ATOM_SITE category.
+
+       Updated several definitions with enumeration values to be case-sensitive.
+
+       Removed the _citation_author.key and _citation_editor.id data items.
+
+       Reparented CELL to DIFFRN category and added key data names to allow
+       multiple cells for different diffraction conditions. Deprecated
+       _cell_measurement.temperature,pressure data names.
+
+       Changed the purpose of the _diffrn_radiation_wavelength.id data item
+       from 'Encode' to 'Key'.
+;
