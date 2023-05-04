@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-04-14
+    _dictionary.date             2023-05-04
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -2368,7 +2368,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2023-01-12
+         1.4.8                    2023-05-04
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2400,4 +2400,6 @@ save_
 
        Altered hi_ang_Fox_c2 and hi_ang_Fox_c3 values to have them be the
        correct magnitude, rather than their 10x and 100x values, respectively.
+
+       Corrected atom codes in several save frames.
 ;
