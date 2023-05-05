@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-04-14
+    _dictionary.date             2023-05-04
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -953,7 +953,7 @@ save_electron_count
      Bi3+  80      Bi5+  78      Po    84      At    85      Rn    86
      Fr    87      Ra    88      Ra2+  86      Ac    89      Ac3+  86
      Th    90      Th4+  86      Pa    91      U     92      U3+   89
-     U4+   88      U6+   84      Np    93      Np3+  90      Np4+  89
+     U4+   88      U6+   86      Np    93      Np3+  90      Np4+  89
      Np6+  87      Pu    94      Pu3+  91      Pu4+  90      Pu6+  88
      Am    95      Cm    96      Bk    97      Cf    98
      save_
@@ -2368,7 +2368,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2023-01-12
+         1.4.8                    2023-05-04
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2400,4 +2400,6 @@ save_
 
        Altered hi_ang_Fox_c2 and hi_ang_Fox_c3 values to have them be the
        correct magnitude, rather than their 10x and 100x values, respectively.
+
+       Corrected the electron count of U6+ in the 'electron_count' save frame.
 ;
