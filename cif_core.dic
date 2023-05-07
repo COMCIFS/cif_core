@@ -24730,8 +24730,8 @@ save_ATOM_TYPE_SCAT_TABLE
     _definition.update            2023-04-10
     _description.text
 ;
-    The CATEGORY of data items used to describe list atomic scattering factor
-    values for use in crystallographic structure studies.
+    The CATEGORY of data items used to list atomic scattering factor values for
+    use in crystallographic structure studies.
 ;
     _name.category_id             ATOM_TYPE
     _name.object_id               ATOM_TYPE_SCAT_TABLE
