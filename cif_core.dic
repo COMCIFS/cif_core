@@ -23885,7 +23885,7 @@ save_atom_type.display_colour
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get                   [
-                                   {'file':templ_enum.cif  'save':colour_rgb}
+                                   {'file':templ_enum.cif  'save':colour_RGB}
                                    {'file':templ_enum.cif  'save':colour_hue}
                                   ]
 
