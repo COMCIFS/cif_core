@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-05-04
+    _dictionary.date             2023-05-12
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -659,6 +659,7 @@ save_element_symbol
          Eu                       Europium
          F                        Fluorine
          Fe                       Iron
+         Fl                       Flerovium
          Fm                       Fermium
          Fr                       Francium
          Ga                       Gallium
@@ -679,6 +680,8 @@ save_element_symbol
          Li                       Lithium
          Lr                       Lawrencium
          Lu                       Lutetium
+         Lv                       Livermorium
+         Mc                       Moscovium
          Md                       Mendelevium
          Mg                       Magnesium
          Mn                       Manganese
@@ -686,23 +689,25 @@ save_element_symbol
          Mt                       Meitnerium
          N                        Nitrogen
          Na                       Sodium
-         Ne                       Neon
          Nb                       Niobium
          Nd                       Neodymium
+         Ne                       Neon
+         Nh                       Nihonium
          Ni                       Nickel
          No                       Nobelium
          Np                       Neptunium
          O                        Oxygen
+         Og                       Oganesson
          Os                       Osmium
          P                        Phosphorus
-         Pd                       Palladium
-         Po                       Polonium
-         Pb                       Lead
-         Pt                       Platinum
-         Pr                       Praseodymium
-         Pm                       Promethium
-         Pu                       Plutonium
          Pa                       Protactinium
+         Pb                       Lead
+         Pd                       Palladium
+         Pm                       Promethium
+         Po                       Polonium
+         Pr                       Praseodymium
+         Pt                       Platinum
+         Pu                       Plutonium
          Ra                       Radium
          Rb                       Rubidium
          Re                       Rhenium
@@ -728,6 +733,7 @@ save_element_symbol
          Ti                       Titanium
          Tl                       Thallium
          Tm                       Thulium
+         Ts                       Tennessine
          U                        Uranium
          V                        Vanadium
          W                        Tungsten
@@ -2402,5 +2408,9 @@ save_
        correct magnitude, rather than their 10x and 100x values, respectively.
 
        Corrected atom codes in several save frames.
+
        Corrected the electron count of U6+ in the 'electron_count' save frame.
+
+       Added Flerovium (Fl), Livermorium (Lv), Moscovium (Mc), Nihonium (Nh),
+       Oganesson (Og), and Tennessine (Ts) to the 'element_symbol' save frame.
 ;
