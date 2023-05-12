@@ -316,7 +316,7 @@ save_site_symmetry
                                  .      'No symmetry or translation to site.'
      save_
 
-save_Cartn_coord
+save_cartn_coord
 
     _definition.update           2012-05-07
     _description.text
@@ -333,7 +333,7 @@ save_Cartn_coord
      save_
 
 
-save_Cartn_coord_su
+save_cartn_coord_su
 
     _definition.update           2014-06-08
     _description.text
@@ -422,7 +422,7 @@ save_label_comp
 
 save_
 
-save_Cartn_matrix
+save_cartn_matrix
 
     _definition.update            2021-07-21
     _description.text
@@ -448,7 +448,7 @@ save_Cartn_matrix
 
 save_
 
-save_Cartn_vector
+save_cartn_vector
 
     _definition.update            2021-07-21
     _description.text
@@ -466,7 +466,7 @@ save_Cartn_vector
 
 save_
 
-save_ncs_matrix_IJ
+save_ncs_matrix_ij
 
     _definition.update          2021-03-01
     _description.text
@@ -482,7 +482,7 @@ save_ncs_matrix_IJ
 
 save_
 
-save_rot_matrix_IJ
+save_rot_matrix_ij
 
     _definition.update          2021-03-01
     _description.text
@@ -549,7 +549,7 @@ save_fract_vector
 
 save_
 
-save_aniso_BIJ
+save_aniso_bij
 
     _definition.update           2013-03-08
     _description.text
@@ -575,7 +575,7 @@ save_aniso_BIJ
      save_
 
 
-save_aniso_BIJ2
+save_aniso_bij2
 
     _definition.update          2014-06-12
     _description.text
@@ -591,7 +591,7 @@ save_aniso_BIJ2
      save_
 
 
-save_aniso_BIJ_su
+save_aniso_bij_su
 
     _definition.update           2021-03-18
     _description.text
@@ -609,7 +609,7 @@ save_aniso_BIJ_su
      save_
 
 
-save_aniso_UIJ
+save_aniso_uij
 
     _definition.update           2013-03-08
     _description.text
@@ -633,7 +633,7 @@ save_aniso_UIJ
      save_
 
 
-save_aniso_UIJ_su
+save_aniso_uij_su
 
     _definition.update           2021-03-18
     _description.text
@@ -659,7 +659,7 @@ save_general_su
 
 save_
 
-save_Cromer_Mann_coeff
+save_cromer_mann_coeff
 
     _definition.update           2012-11-29
     _description.text
@@ -681,7 +681,7 @@ save_Cromer_Mann_coeff
      save_
 
 
-save_hi_ang_Fox_coeffs
+save_hi_ang_fox_coeffs
 
     _definition.update           2012-11-29
     _description.text
@@ -701,7 +701,7 @@ save_hi_ang_Fox_coeffs
      save_
 
 
-save_Miller_index
+save_miller_index
 
     _definition.update           2013-04-16
     _description.text

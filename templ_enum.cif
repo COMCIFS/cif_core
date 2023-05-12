@@ -21,7 +21,7 @@ data_COM_VAL
 
 #---------------------------------------------------------------------------
 
-save_H_M_ref
+save_h_m_ref
 
     loop_
         _enumeration_set.state
@@ -496,7 +496,7 @@ save_ref_set
                '230:-I 4bd 2c 3'     'Oh.10  I a -3 d'
       save_
 
-save_Schoenflies
+save_schoenflies
      loop_
     _enumeration_set.state
                C1.1 Ci.1
@@ -541,7 +541,7 @@ save_Schoenflies
 
 save_
 
-save_colour_RGB
+save_colour_rgb
 
     loop_
       _enumeration_set.state
@@ -1360,7 +1360,7 @@ save_dispersion_imag_mo
      save_
 
 
-save_Cromer_Mann_a1
+save_cromer_mann_a1
 
      loop_
          _enumeration_default.index
@@ -1410,7 +1410,7 @@ save_Cromer_Mann_a1
      save_
 
 
-save_Cromer_Mann_b1
+save_cromer_mann_b1
 
      loop_
          _enumeration_default.index
@@ -1460,7 +1460,7 @@ save_Cromer_Mann_b1
      save_
 
 
-save_Cromer_Mann_a2
+save_cromer_mann_a2
 
      loop_
          _enumeration_default.index
@@ -1510,7 +1510,7 @@ save_Cromer_Mann_a2
      save_
 
 
-save_Cromer_Mann_b2
+save_cromer_mann_b2
 
      loop_
          _enumeration_default.index
@@ -1560,7 +1560,7 @@ save_Cromer_Mann_b2
      save_
 
 
-save_Cromer_Mann_a3
+save_cromer_mann_a3
 
      loop_
          _enumeration_default.index
@@ -1610,7 +1610,7 @@ save_Cromer_Mann_a3
      save_
 
 
-save_Cromer_Mann_b3
+save_cromer_mann_b3
 
      loop_
          _enumeration_default.index
@@ -1660,7 +1660,7 @@ save_Cromer_Mann_b3
      save_
 
 
-save_Cromer_Mann_a4
+save_cromer_mann_a4
 
      loop_
          _enumeration_default.index
@@ -1710,7 +1710,7 @@ save_Cromer_Mann_a4
      save_
 
 
-save_Cromer_Mann_b4
+save_cromer_mann_b4
 
      loop_
          _enumeration_default.index
@@ -1760,7 +1760,7 @@ save_Cromer_Mann_b4
      save_
 
 
-save_Cromer_Mann_c
+save_cromer_mann_c
 
      loop_
          _enumeration_default.index
@@ -1810,7 +1810,7 @@ save_Cromer_Mann_c
      save_
 
 
-save_hi_ang_Fox_c0
+save_hi_ang_fox_c0
 
      loop_
          _enumeration_default.index
@@ -1860,7 +1860,7 @@ save_hi_ang_Fox_c0
      save_
 
 
-save_hi_ang_Fox_c1
+save_hi_ang_fox_c1
 
      loop_
          _enumeration_default.index
@@ -1910,7 +1910,7 @@ save_hi_ang_Fox_c1
      save_
 
 
-save_hi_ang_Fox_c2
+save_hi_ang_fox_c2
 
      loop_
          _enumeration_default.index
@@ -1960,7 +1960,7 @@ save_hi_ang_Fox_c2
      save_
 
 
-save_hi_ang_Fox_c3
+save_hi_ang_fox_c3
 
      loop_
          _enumeration_default.index
@@ -2227,7 +2227,7 @@ save_colour_hue
 
 save_
 
-save_Wyckoff_letter
+save_wyckoff_letter
 
     loop_
       _enumeration_set.state
