@@ -2408,6 +2408,7 @@ save_
        correct magnitude, rather than their 10x and 100x values, respectively.
 
        Corrected atom codes in several save frames.
+
        Corrected the electron count of U6+ in the 'electron_count' save frame.
 
        Added Flerovium (Fl), Livermorium (Lv), Moscovium (Mc), Nihonium (Nh),
