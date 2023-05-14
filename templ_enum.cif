@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-05-12
+    _dictionary.date             2023-05-14
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -1128,7 +1128,7 @@ save_length_neutron
      S     2.847   Cl    9.577   Cl1-  9.577   Ar    1.909   K     3.71
      K1+   3.71    Ca    4.90    Ca2+  4.90    Sc    12.29   Sc3+  12.29
      Ti    -3.438  Ti2+  -3.438  Ti3+  -3.438  Ti4+  -3.438  V     -0.3824
-     V2+   -0.382  V3+   -0.382  V5+   -0.382  Cr    3.635   Cr2+  3.635
+     V2+   -0.3824 V3+   -0.3824 V5+   -0.3824 Cr    3.635   Cr2+  3.635
      Cr3+  3.635   Mn    -3.73   Mn2+  -3.73   Mn3+  -3.73   Mn4+  -3.73
      Fe    9.54    Fe2+  9.54    Fe3+  9.54    Co    2.50    Co2+  2.50
      Co3+  2.50    Ni    10.3    Ni2+  10.3    Ni3+  10.3    Cu    7.718
@@ -2374,7 +2374,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2023-05-04
+         1.4.8                    2023-05-14
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2413,4 +2413,7 @@ save_
 
        Added Flerovium (Fl), Livermorium (Lv), Moscovium (Mc), Nihonium (Nh),
        Oganesson (Og), and Tennessine (Ts) to the 'element_symbol' save frame.
+
+       Updated the values for V2+, V3+ and V5+ in the 'length_neutron' save
+       frame to match those of V.
 ;
