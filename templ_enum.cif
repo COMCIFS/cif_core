@@ -1117,6 +1117,8 @@ save_radius_bond
 
 save_length_neutron
 
+    _units.code                   femtometres
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
