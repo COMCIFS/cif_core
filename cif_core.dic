@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-04-12
+    _dictionary.date              2023-05-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -24058,10 +24058,10 @@ save_atom_type.radius_contact
     _type.contents                Real
     _enumeration.range            0.0:5.0
     _units.code                   angstroms
-    _method.purpose               Evaluation
+    _method.purpose               Definition
     _method.expression
 ;
-    _atom_type.radius_contact =  _atom_type.radius_bond + 1.25
+    _enumeration.default = _atom_type.radius_bond + 1.25
 ;
 
 save_
@@ -25389,7 +25389,7 @@ save_refine_ls.f_calc_precision
 
     _definition.id                '_refine_ls.F_calc_precision'
     _alias.definition_id          '_refine_ls_F_calc_precision'
-    _definition.update            2013-01-21
+    _definition.update            2023-05-14
     _description.text
 ;
     Estimate of the precision resulting from the numerical
@@ -27143,8 +27143,11 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-04-12
+         3.3.0                    2023-05-14
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
+
+        Rewrote the _atom_type.radius_contact evaluation method as a definition
+        method.
 ;
