@@ -18,7 +18,7 @@ data_CORE_DIC
     _description.text
 ;
     The CIF_CORE dictionary records all the CORE data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
 
 save_CIF_CORE
@@ -46,7 +46,7 @@ save_DIFFRACTION
     _description.text
 ;
     The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
     _name.object_id               DIFFRACTION
@@ -14717,7 +14717,7 @@ save_PUBLICATION
     _description.text
 ;
     The DICTIONARY group encompassing the CORE PUBLICATION data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
     _name.object_id               PUBLICATION
@@ -19739,7 +19739,7 @@ save_STRUCTURE
     _description.text
 ;
     The DICTIONARY group encompassing the CORE STRUCTURE data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
     _name.object_id               STRUCTURE
@@ -26729,7 +26729,7 @@ save_FUNCTION
     _description.text
 ;
     The crystallographic functions the invoked in the definition
-    methods of CORE STRUCTURE data items defined and used with in
+    methods of CORE STRUCTURE data items defined and used within
     the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
