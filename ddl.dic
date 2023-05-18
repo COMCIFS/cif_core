@@ -2661,7 +2661,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-01-13
+         4.1.0                    2023-05-18
 ;
        Added new 'Word' content type.
 
@@ -2687,4 +2687,7 @@ save_
        Clarified the definition of the "Version" state in _type.contents
        by explicitly specifying that is adheres to the formal grammar
        provided in SemVer version 2.0.0.
+
+       Added _enumeration.def_index_ids and _enumeration_default.indexes to
+       allow default values to be dependent on multiple keys.
 ;
