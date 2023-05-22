@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-05-14
+    _dictionary.date              2023-05-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -23963,6 +23963,29 @@ save_atom_type.key
 
 save_
 
+save_atom_type.mass_number
+
+    _definition.id                '_atom_type.mass_number'
+    _definition.update            2023-05-22
+    _description.text
+;
+    Mass number of this atom type.
+
+    Used to denote a specific isotope. The default value indicates that the
+    element represents a natural isotopic abundance.
+;
+    _name.category_id             atom_type
+    _name.object_id               mass_number
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:
+    _enumeration.default          .
+    _units.code                   none
+
+save_
+
 save_atom_type.number_in_cell
 
     _definition.id                '_atom_type.number_in_cell'
@@ -27143,11 +27166,13 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-05-14
+         3.3.0                    2023-05-22
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
 
         Rewrote the _atom_type.radius_contact evaluation method as a definition
         method.
+
+        Added _atom_type.mass_number to record specific isotope identities.
 ;
