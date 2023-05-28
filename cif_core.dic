@@ -23981,7 +23981,6 @@ save_atom_type.mass_number
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            1:
-    _enumeration.default          .
     _units.code                   none
 
 save_
