@@ -23971,8 +23971,8 @@ save_atom_type.mass_number
 ;
     Mass number of this atom type.
 
-    Used to denote a specific isotope. Special value '.' (inapplicable)
-    indicates that the element represents a natural isotopic abundance.
+    Used to denote a specific isotope. Special value '.' indicates
+    that the element is present in natural isotopic abundance.
 ;
     _name.category_id             atom_type
     _name.object_id               mass_number
