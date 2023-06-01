@@ -23810,7 +23810,7 @@ save_atom_type.atomic_mass
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   dalton
 
     _import.get                   [{'file':templ_enum.cif  'save':atomic_mass}]
