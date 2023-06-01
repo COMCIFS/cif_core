@@ -27274,7 +27274,7 @@ save_
 
        Rewrote the _atom_type.radius_contact evaluation method as a definition
        method.
-        
+
        Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
        scattering factor values with respect to sin theta over lambda.
 ;
