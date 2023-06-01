@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-05-14
+    _dictionary.date             2023-06-01
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -2294,4 +2294,8 @@ save_
 
        Updated the values for V2+, V3+ and V5+ in the 'length_neutron' save
        frame to match those of V.
+
+       Altered key of atomic_number, atomic_mass, dispersion_real_Cu,
+       dispersion_imag_Cu, dispersion_real_Mo, and dispersion_imag_Mo to be
+       keyed on _atom_type.element_symbol.
 ;
