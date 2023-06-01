@@ -24564,6 +24564,179 @@ save_atom_type_scat.dispersion_source
 
 save_
 
+save_atom_type_scat.exponential_polynomial_coefs
+
+    _definition.id                '_atom_type_scat.exponential_polynomial_coefs'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The set of polynomial coefficients for generating X-ray scattering factors:
+    [ a_0, a_1, ... , a_N ].
+
+    f(s; Z) = exp(Sum( a~i~ * s^i^), i=0:N))
+
+    where s = sin(theta)/lambda.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_coefs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.exponential_polynomial_coefs_su
+
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_coefs_su'
+    _definition.update            2023-04-09
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.exponential_polynomial_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_coefs_su
+    _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coefs'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.exponential_polynomial_lower_limit
+
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_lower_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The inclusive lower limit of s for which the corresponding exponential
+    polynomial coefficients are valid.
+
+    See _atom_type_scat.exponential_polynomial_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_lower_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.exponential_polynomial_upper_limit
+
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_upper_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The exclusive upper limit of s for which the corresponding exponential
+    polynomial coefficients are valid.
+
+    See _atom_type_scat.exponential_polynomial_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_upper_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.Gaussian_coefs
+
+    _definition.id                '_atom_type_scat.Gaussian_coefs'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The set of Gaussian coefficients for generating X-ray scattering factors:
+    [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
+
+    f(s; Z) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:N)
+
+    where s = sin(theta)/lambda.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_coefs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.Gaussian_coefs_su
+
+    _definition.id                '_atom_type_scat.Gaussian_coefs_su'
+    _definition.update            2023-04-09
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_coefs_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_coefs'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.Gaussian_lower_limit
+
+    _definition.id                '_atom_type_scat.Gaussian_lower_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The inclusive lower limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.Gaussian_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_lower_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.Gaussian_upper_limit
+
+    _definition.id                '_atom_type_scat.Gaussian_upper_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The exclusive upper limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.Gaussian_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_upper_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
 save_atom_type_scat.hi_ang_fox_c0
 
     _definition.id                '_atom_type_scat.hi_ang_Fox_c0'
@@ -24647,6 +24820,94 @@ save_atom_type_scat.hi_ang_fox_coeffs
     _atom_type_scat.hi_ang_Fox_coeffs  =
     [t.hi_ang_Fox_c0,t.hi_ang_Fox_c1,t.hi_ang_Fox_c2,t.hi_ang_Fox_c3]
 ;
+
+save_
+
+save_atom_type_scat.inv_Mott_Bethe_coefs
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The set of Gaussian coefficients for use in the inverse Mott-Bethe
+    relationship for generating X-ray scattering factors:
+    [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
+
+    f(s; Z) =
+    Z - 8 * Pi * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
+
+    where s = sin(theta)/lambda, a~0~ is the Bohr radius, and Z is the atomic
+    number.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_coefs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.inv_Mott_Bethe_coefs_su
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
+    _definition.update            2023-04-09
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_coefs_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_coefs'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.inv_Mott_Bethe_lower_limit
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_lower_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The inclusive lower limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.inv_Mott_Bethe_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_lower_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.inv_Mott_Bethe_upper_limit
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_upper_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The exclusive upper limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.inv_Mott_Bethe_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_upper_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
 
 save_
 
@@ -27135,7 +27396,7 @@ save_
 
        Numerous improvements to types and harmonisation of spelling.
 ;
-         3.2.0                    2023-04-04
+         3.2.0                    2023-04-09
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27164,6 +27425,10 @@ save_
 
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
+
+       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
+       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
+       the definition of form factors.
 ;
          3.3.0                    2023-05-22
 ;
