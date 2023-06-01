@@ -24652,7 +24652,7 @@ save_atom_type_scat.exponential_polynomial_upper_limit
 
 save_
 
-save_atom_type_scat.Gaussian_coefs
+save_atom_type_scat.gaussian_coefs
 
     _definition.id                '_atom_type_scat.Gaussian_coefs'
     _definition.update            2023-04-09
@@ -24676,7 +24676,7 @@ save_atom_type_scat.Gaussian_coefs
 
 save_
 
-save_atom_type_scat.Gaussian_coefs_su
+save_atom_type_scat.gaussian_coefs_su
 
     _definition.id                '_atom_type_scat.Gaussian_coefs_su'
     _definition.update            2023-04-09
@@ -24695,7 +24695,7 @@ save_atom_type_scat.Gaussian_coefs_su
 
 save_
 
-save_atom_type_scat.Gaussian_lower_limit
+save_atom_type_scat.gaussian_lower_limit
 
     _definition.id                '_atom_type_scat.Gaussian_lower_limit'
     _definition.update            2023-04-09
@@ -24716,7 +24716,7 @@ save_atom_type_scat.Gaussian_lower_limit
 
 save_
 
-save_atom_type_scat.Gaussian_upper_limit
+save_atom_type_scat.gaussian_upper_limit
 
     _definition.id                '_atom_type_scat.Gaussian_upper_limit'
     _definition.update            2023-04-09
@@ -24823,7 +24823,7 @@ save_atom_type_scat.hi_ang_fox_coeffs
 
 save_
 
-save_atom_type_scat.inv_Mott_Bethe_coefs
+save_atom_type_scat.inv_mott_bethe_coefs
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
     _definition.update            2023-04-09
@@ -24850,7 +24850,7 @@ save_atom_type_scat.inv_Mott_Bethe_coefs
 
 save_
 
-save_atom_type_scat.inv_Mott_Bethe_coefs_su
+save_atom_type_scat.inv_mott_bethe_coefs_su
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
     _definition.update            2023-04-09
@@ -24869,7 +24869,7 @@ save_atom_type_scat.inv_Mott_Bethe_coefs_su
 
 save_
 
-save_atom_type_scat.inv_Mott_Bethe_lower_limit
+save_atom_type_scat.inv_mott_bethe_lower_limit
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_lower_limit'
     _definition.update            2023-04-09
@@ -24890,7 +24890,7 @@ save_atom_type_scat.inv_Mott_Bethe_lower_limit
 
 save_
 
-save_atom_type_scat.inv_Mott_Bethe_upper_limit
+save_atom_type_scat.inv_mott_bethe_upper_limit
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_upper_limit'
     _definition.update            2023-04-09
