@@ -24427,7 +24427,7 @@ save_atom_type_scat.dispersion_imag_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24508,7 +24508,7 @@ save_atom_type_scat.dispersion_real_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
