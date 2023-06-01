@@ -870,49 +870,32 @@ save_atomic_number
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     01      D     01      H1-   01      He    02      Li    03
-     Li1+  03      Be    04      Be2+  04      B     05      C     06
-     N     07      O     08      O1-   08      F     09      F1-   09
-     Ne    10      Na    11      Na1+  11      Mg    12      Mg2+  12
-     Al    13      Al3+  13      Si    14      Si4+  14      P     15
-     S     16      Cl    17      Cl1-  17      Ar    18      K     19
-     K1+   19      Ca    20      Ca2+  20      Sc    21      Sc3+  21
-     Ti    22      Ti2+  22      Ti3+  22      Ti4+  22      V     23
-     V2+   23      V3+   23      V5+   23      Cr    24      Cr2+  24
-     Cr3+  24      Mn    25      Mn2+  25      Mn3+  25      Mn4+  25
-     Fe    26      Fe2+  26      Fe3+  26      Co    27      Co2+  27
-     Co3+  27      Ni    28      Ni2+  28      Ni3+  28      Cu    29
-     Cu1+  29      Cu2+  29      Zn    30      Zn2+  30      Ga    31
-     Ga3+  31      Ge    32      Ge4+  32      As    33      Se    34
-     Br    35      Br1-  35      Kr    36      Rb    37      Rb1+  37
-     Sr    38      Sr2+  38      Y     39      Y3+   39      Zr    40
-     Zr4+  40      Nb    41      Nb3+  41      Nb5+  41      Mo    42
-     Mo3+  42      Mo5+  42      Mo6+  42      Tc    43      Ru    44
-     Ru3+  44      Ru4+  44      Rh    45      Rh3+  45      Rh4+  45
-     Pd    46      Pd2+  46      Pd4+  46      Ag    47      Ag1+  47
-     Ag2+  47      Cd    48      Cd2+  48      In    49      In3+  49
-     Sn    50      Sn2+  50      Sn4+  50      Sb    51      Sb3+  51
-     Sb5+  51      Te    52      I     53      I1-   53      Xe    54
-     Cs    55      Cs1+  55      Ba    56      Ba2+  56      La    57
-     La3+  57      Ce    58      Ce3+  58      Ce4+  58      Pr    59
-     Pr3+  59      Pr4+  59      Nd    60      Nd3+  60      Pm    61
-     Sm    62      Sm3+  62      Eu    63      Eu2+  63      Eu3+  63
-     Gd    64      Gd3+  64      Tb    65      Tb3+  65      Dy    66
-     Dy3+  66      Ho    67      Ho3+  67      Er    68      Er3+  68
-     Tm    69      Tm3+  69      Yb    70      Yb2+  70      Yb3+  70
-     Lu    71      Lu3+  71      Hf    72      Hf4+  72      Ta    73
-     Ta5+  73      W     74      W6+   74      Re    75      Os    76
-     Os4+  76      Ir    77      Ir3+  77      Ir4+  77      Pt    78
-     Pt2+  78      Pt4+  78      Au    79      Au1+  79      Au3+  79
-     Hg    80      Hg1+  80      Hg2+  80      Tl    81      Tl1+  81
-     Tl3+  81      Pb    82      Pb2+  82      Pb4+  82      Bi    83
-     Bi3+  83      Bi5+  83      Po    84      At    85      Rn    86
-     Fr    87      Ra    88      Ra2+  88      Ac    89      Ac3+  89
-     Th    90      Th4+  90      Pa    91      U     92      U3+   92
-     U4+   92      U6+   92      Np    93      Np3+  93      Np4+  93
-     Np6+  93      Pu    94      Pu3+  94      Pu4+  94      Pu6+  94
-     Am    95      Cm    96      Bk    97      Cf    98
-     save_
+    H    1    D    1    He   2    Li   3    Be     4
+    B    5    C    6    N    7    O    8    F      9
+    Ne  10    Na  11    Mg  12    Al  13    Si    14
+    P   15    S   16    Cl  17    Ar  18    K     19
+    Ca  20    Sc  21    Ti  22    V   23    Cr    24
+    Mn  25    Fe  26    Co  27    Ni  28    Cu    29
+    Zn  30    Ga  31    Ge  32    As  33    Se    34
+    Br  35    Kr  36    Rb  37    Sr  38    Y     39
+    Zr  40    Nb  41    Mo  42    Tc  43    Ru    44
+    Rh  45    Pd  46    Ag  47    Cd  48    In    49
+    Sn  50    Sb  51    Te  52    I   53    Xe    54
+    Cs  55    Ba  56    La  57    Ce  58    Pr    59
+    Nd  60    Pm  61    Sm  62    Eu  63    Gd    64
+    Tb  65    Dy  66    Ho  67    Er  68    Tm    69
+    Yb  70    Lu  71    Hf  72    Ta  73    W     74
+    Re  75    Os  76    Ir  77    Pt  78    Au    79
+    Hg  80    Tl  81    Pb  82    Bi  83    Po    84
+    At  85    Rn  86    Fr  87    Ra  88    Ac    89
+    Th  90    Pa  91    U   92    Np  93    Pu    94
+    Am  95    Cm  96    Bk  97    Cf  98    Es    99
+    Fm 100    Md 101    No 102    Lr 103    Rf   104
+    Db 105    Sg 106    Bh 107    Hs 108    Mt   109
+    Ds 110    Rg 111    Cn 112    Nh 113    Fl   114
+    Mc 115    Lv 116    Ts 117    Og 118
+
+save_
 
 
 save_electron_count

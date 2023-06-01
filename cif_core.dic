@@ -23820,7 +23820,7 @@ save_
 save_atom_type.atomic_number
 
     _definition.id                '_atom_type.atomic_number'
-    _definition.update            2021-03-01
+    _definition.update            2023-06-01
     _description.text
 ;
     Atomic number of this atom type.
@@ -23832,7 +23832,7 @@ save_atom_type.atomic_number
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            1:
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
