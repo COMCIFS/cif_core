@@ -24761,12 +24761,12 @@ save_ATOM_TYPE_SCAT_TABLE
     loop_
       _category_key.name
          '_atom_type_scat_table.stol'
-         '_atom_type_scat_table.symbol'
+         '_atom_type_scat_table.type_symbol'
 
     _description_example.case
 ;
         loop_
-        _atom_type_scat_table.symbol
+        _atom_type_scat_table.type_symbol
         _atom_type_scat_table.stol
         _atom_type_scat_table.scat_value
         Ac  0.00  89.00000
@@ -24848,9 +24848,9 @@ save_atom_type_scat_table.stol
 
 save_
 
-save_atom_type_scat_table.symbol
+save_atom_type_scat_table.type_symbol
 
-    _definition.id                '_atom_type_scat_table.symbol'
+    _definition.id                '_atom_type_scat_table.type_symbol'
     _definition.update            2023-04-10
     _description.text
 ;
@@ -24858,7 +24858,7 @@ save_atom_type_scat_table.symbol
     See _atom_type.symbol for further details.
 ;
     _name.category_id             atom_type_scat_table
-    _name.object_id               symbol
+    _name.object_id               type_symbol
     _name.linked_item_id          '_atom_type.symbol'
     _type.purpose                 Link
     _type.source                  Assigned
