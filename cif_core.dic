@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-05-22
+    _dictionary.date              2023-06-01
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -23799,7 +23799,7 @@ save_
 save_atom_type.atomic_mass
 
     _definition.id                '_atom_type.atomic_mass'
-    _definition.update            2012-11-20
+    _definition.update            2023-06-01
     _description.text
 ;
     Mass of this atom type.
@@ -24415,7 +24415,7 @@ save_
 save_atom_type_scat.dispersion_imag_cu
 
     _definition.id                '_atom_type_scat.dispersion_imag_Cu'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -24438,7 +24438,7 @@ save_
 save_atom_type_scat.dispersion_imag_mo
 
     _definition.id                '_atom_type_scat.dispersion_imag_Mo'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -24496,7 +24496,7 @@ save_
 save_atom_type_scat.dispersion_real_cu
 
     _definition.id                '_atom_type_scat.dispersion_real_Cu'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -24519,7 +24519,7 @@ save_
 save_atom_type_scat.dispersion_real_mo
 
     _definition.id                '_atom_type_scat.dispersion_real_Mo'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -27165,7 +27165,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-05-22
+         3.3.0                    2023-06-01
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27174,4 +27174,9 @@ save_
         method.
 
         Added _atom_type.mass_number to record specific isotope identities.
+
+        Changed enumeration of _atom_type.atomic_number, _atom_type.atomic_mass,
+        _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
+        _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
+        to be defaulted on _atom_type.element_symbol.
 ;
