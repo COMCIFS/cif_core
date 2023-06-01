@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-05-14
+    _dictionary.date              2023-05-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -23963,6 +23963,28 @@ save_atom_type.key
 
 save_
 
+save_atom_type.mass_number
+
+    _definition.id                '_atom_type.mass_number'
+    _definition.update            2023-05-22
+    _description.text
+;
+    Mass number of this atom type.
+
+    Used to denote a specific isotope. Special value '.' indicates
+    that the element is present in natural isotopic abundance.
+;
+    _name.category_id             atom_type
+    _name.object_id               mass_number
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:
+    _units.code                   none
+
+save_
+
 save_atom_type.number_in_cell
 
     _definition.id                '_atom_type.number_in_cell'
@@ -27267,7 +27289,7 @@ save_
        Reverted _atom_type_scat.versus_stol_list to a text-type to regain
        compatibility with DDL1 dictionary.
 ;
-         3.3.0                    2023-05-14
+         3.3.0                    2023-05-22
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27277,4 +27299,6 @@ save_
         
        Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
        scattering factor values with respect to sin theta over lambda.
+
+        Added _atom_type.mass_number to record specific isotope identities.
 ;
