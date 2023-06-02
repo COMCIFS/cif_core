@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-05-22
+    _dictionary.date              2023-06-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -27509,7 +27509,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-05-22
+         3.3.0                    2023-06-02
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27518,4 +27518,6 @@ save_
         method.
 
         Added _atom_type.mass_number to record specific isotope identities.
+
+        Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 ;
