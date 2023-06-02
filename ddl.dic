@@ -1076,6 +1076,62 @@ save_enumeration_set.state
 
 save_
 
+save_ENUMERATION_SOURCE
+
+    _definition.id                ENUMERATION_SOURCE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2023-06-02
+    _description.text
+;
+    Loop of the reference or source material for the corresponding default
+    enumeration values indexed to a data item by the item
+    _enumeration.def_index_ids.
+;
+    _name.category_id             ENUMERATION
+    _name.object_id               ENUMERATION_SOURCE
+    _category_key.name            '_enumeration_source.id'
+
+save_
+
+save_enumeration_source.id
+
+    _definition.id                '_enumeration_source.id'
+    _definition.class             Attribute
+    _definition.update            2023-06-01
+    _description.text
+;
+    A code to uniquely identify each piece of reference material used in
+    setting the values of _enumeration_default.value.
+;
+    _name.category_id             enumeration_source
+    _name.object_id               index
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_enumeration_source.reference
+
+    _definition.id                '_enumeration_source.reference'
+    _definition.class             Attribute
+    _definition.update            2023-06-02
+    _description.text
+;
+    Bibliographic information sufficient to identify the source material of
+    the the associated values of _enumeration_default.value.
+;
+    _name.category_id             enumeration_source
+    _name.object_id               reference
+    _type.purpose                 Describe
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
 save_IMPORT
 
     _definition.id                IMPORT
