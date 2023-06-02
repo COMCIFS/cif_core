@@ -26,23 +26,21 @@ save_atom_site_label
     _definition.update            2021-10-25
     _description.text
 ;
-     This label is a unique identifier for a particular site in the
-     asymmetric unit of the crystal unit cell. It is made up of
-     components, _atom_site.label_component_0 to *_6, which may be
-     specified as separate data items. Component 0 usually matches one
-     of the specified _atom_type.symbol codes. This is not mandatory
-     if an _atom_site.type_symbol item is included in the atom site
-     list. The _atom_site.type_symbol always takes precedence over
-     an _atom_site.label in the identification of the atom type. The
-     label components 1 to 6 are optional, and normally only
-     components 0 and 1 are used. Note that components 0 and 1 are
-     concatenated, while all other components, if specified, are
-     separated by an underline character. Underline separators are
-     only used if higher-order components exist. If an intermediate
-     component is not used it may be omitted provided the underline
-     separators are inserted. For example the label 'C233__ggg' is
-     acceptable and represents the components C, 233, '', and ggg.
-     Each label may have a different number of components.
+     This label is a unique identifier for a particular site in the asymmetric
+     unit of the crystal unit cell. It is made up of components,
+     _atom_site.label_component_0 to *_6, which may be specified as separate
+     data items. Component 0 usually matches one of the specified
+     _atom_type.symbol codes. This is not mandatory if an _atom_site.type_symbol
+     item is included in the atom site list. The _atom_site.type_symbol always
+     takes precedence over an _atom_site.label in the identification of the atom
+     type. The label components 1 to 6 are optional, and normally only
+     components 0 and 1 are used. Note that components 0 and 1 are concatenated,
+     while all other components, if specified, are separated by an underline
+     character. Underline separators are only used if higher-order components
+     exist. If an intermediate component is not used it may be omitted provided
+     the underline separators are inserted. For example the label 'C233__ggg' is
+     acceptable and represents the components C, 233, '', and ggg. Each label
+     may have a different number of components.
 ;
     _type.purpose                 Encode
     _type.source                  Assigned
@@ -81,8 +79,8 @@ save_atom_site_id
     _definition.update            2021-10-25
     _description.text
 ;
-     This label is a unique identifier for a particular site in the
-     asymmetric unit of the crystal unit cell.
+     This label is a unique identifier for a particular site in the asymmetric
+     unit of the crystal unit cell.
 ;
     _name.linked_item_id          '_atom_site.label'
     _type.purpose                 Link
@@ -97,8 +95,8 @@ save_rho_coeff
     _definition.update            2021-03-01
     _description.text
 ;
-     Specifies a multipole population coefficients P(l,m) for
-     the atom identified in atom_rho_multipole.atom_label.
+     Specifies a multipole population coefficients P(l,m) for the atom
+     identified in atom_rho_multipole.atom_label.
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -131,10 +129,10 @@ save_rho_slater
     _definition.update            2023-01-13
     _description.text
 ;
-      Items used when the radial dependence of the valence
-      electron density, R(kappa'(l),l,r), of the atom specified in
-      atom_rho_multipole.atom_label is expressed as a Slater-type
-      function [Hansen & Coppens (1978), equation (3)]
+      Items used when the radial dependence of the valence electron density,
+      R(kappa'(l),l,r), of the atom specified in _atom_rho_multipole.atom_label
+      is expressed as a Slater-type function; see
+      [Hansen & Coppens (1978), equation (3)]
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -180,8 +178,8 @@ save_ms_index
     _definition.update            2014-06-27
     _description.text
 ;
-     Additional Miller indices needed to write the reciprocal vector
-     in the definition of _diffrn_refln_index.m_list,
+     Additional Miller indices needed to write the reciprocal vector in the
+     definition of _diffrn_refln_index.m_list,
      _diffrn_standard_refln.index_m_list, _exptl_crystal_face.index_m_list.
 ;
     _type.purpose                 Number
@@ -331,9 +329,9 @@ save_cartn_coord
     _definition.update            2012-05-07
     _description.text
 ;
-     The atom site coordinates in angstroms specified according to a
-     set of orthogonal Cartesian axes related to the cell axes as
-     specified by the _atom_sites_Cartn_transform.axes description.
+     The atom site coordinates in angstroms specified according to a set of
+     orthogonal Cartesian axes related to the cell axes as specified by the
+     _atom_sites_Cartn_transform.axes description.
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -348,10 +346,9 @@ save_cartn_coord_su
     _definition.update            2014-06-08
     _description.text
 ;
-     Standard uncertainty values of the atom site coordinates
-     in angstroms specified according to a
-     set of orthogonal Cartesian axes related to the cell axes as
-     specified by the _atom_sites_Cartn_transform.axes description.
+     Standard uncertainty values of the atom site coordinates, in angstroms,
+     specified according to a set of orthogonal Cartesian axes related to the
+     cell axes as specified by the _atom_sites_Cartn_transform.axes description.
 ;
     _type.purpose                 SU
     _type.source                  Derived
@@ -381,8 +378,8 @@ save_fract_coord_su
     _definition.update            2014-06-08
     _description.text
 ;
-     Standard uncertainty value of the atom site coordinates
-     as fractions of the cell length values.
+     Standard uncertainty value of the atom site coordinates as fractions of the
+     cell length values.
 ;
     _type.purpose                 SU
     _type.source                  Derived
@@ -397,20 +394,20 @@ save_label_component
     _definition.update            2021-10-21
     _description.text
 ;
-     Component_0 is normally a code which matches identically with
-     one of the _atom_type.symbol codes. If this is the case then the
-     rules governing the _atom_type.symbol code apply. If, however,
-     the data item _atom_site.type_symbol is also specified in the
-     atom site list, component 0 need not match this symbol or adhere
-     to any of the _atom_type.symbol rules.
-     Component_1 is referred to as the "atom number". When component 0
-     is the atom type code, it is used to number the sites with the
-     same atom type. This component code must start with at least one
-     digit which is not followed by a + or - sign (to distinguish it
-     from the component 0 rules).
-     Components_2 to 6 contain the identifier, residue, sequence,
-     asymmetry identifier and alternate codes, respectively. These
-     codes may be composed of any characters except an underline.
+     Component_0 is normally a code which matches identically with one of the
+     _atom_type.symbol codes. If this is the case then the rules governing the
+     _atom_type.symbol code apply. If, however, the data item
+     _atom_site.type_symbol is also specified in the atom site list, component 0
+     need not match this symbol or adhere to any of the _atom_type.symbol rules.
+
+     Component_1 is referred to as the "atom number". When component 0 is the
+     atom type code, it is used to number the sites with the same atom type.
+     This component code must start with at least one digit which is not
+     followed by a + or - sign (to distinguish it from the component 0 rules).
+
+     Components_2 to 6 contain the identifier, residue, sequence, asymmetry
+     identifier and alternate codes, respectively. These codes may be composed
+     of any characters except an underline.
 ;
     _type.purpose                 Encode
     _type.source                  Assigned
@@ -482,8 +479,8 @@ save_ncs_matrix_ij
     _definition.update            2021-03-01
     _description.text
 ;
-     The [I][J] element of the 3x3 matrix component of a
-     non-crystallographic symmetry operation.
+     The [I][J] element of the 3x3 matrix component of a non-crystallographic
+     symmetry operation.
 ;
     _type.purpose                 Number
     _type.source                  Derived
@@ -596,8 +593,8 @@ save_aniso_bij2
     _definition.update            2014-06-12
     _description.text
 ;
-     The [I][J] tdf elements define the overall anisotropic
-     displacement model if one was refined for this structure.
+     The [I][J] tdf elements define the overall anisotropic displacement model
+     if one was refined for this structure.
 ;
     _type.purpose                 Number
     _type.source                  Derived
@@ -612,10 +609,10 @@ save_aniso_bij_su
     _definition.update            2021-03-18
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
-     form of the B^ij^ anisotropic atomic displacement components (see
-     aniso_BIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the B^ij^ calculation.
+     These are the standard uncertainty values (SU) for the standard form of the
+     B^ij^ anisotropic atomic displacement components (see aniso_bij). Because
+     these values are TYPE measurand, the su values may in practice be auto
+     generated as part of the B^ij^ calculation.
 ;
     _type.purpose                 SU
     _type.source                  Derived
@@ -639,8 +636,8 @@ save_aniso_betaij
 
      The unique elements of the real symmetric matrix are entered by row.
 
-     The IUCr Commission on Nomenclature recommends against the use
-     of \b for reporting atomic displacement parameters; U is preferred [1].
+     The IUCr Commission on Nomenclature recommends against the use of \b for
+     reporting atomic displacement parameters; U is preferred [1].
 
      Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
 
@@ -659,10 +656,10 @@ save_aniso_betaij_su
     _definition.update            2023-02-15
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
-     form of the \b^ij^ anisotropic atomic displacement components (see
-     aniso_betaIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the \b^ij^ calculation.
+     These are the standard uncertainty values (SU) for the standard form of the
+     \b^ij^ anisotropic atomic displacement components (see aniso_betaij).
+     Because these values are TYPE measurand, the su values may in practice be
+     auto generated as part of the \b^ij^ calculation.
 ;
     _type.purpose                 SU
     _type.source                  Derived
@@ -707,10 +704,10 @@ save_aniso_uij_su
     _definition.update             2021-03-18
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
-     form of the U^ij^ anisotropic atomic displacement components (see
-     aniso_UIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the U^ij^ calculation.
+     These are the standard uncertainty values (SU) for the standard form of the
+     U^ij^ anisotropic atomic displacement components (see aniso_uij). Because
+     these values are TYPE measurand, the su values may in practice be auto
+     generated as part of the U^ij^ calculation.
 ;
     _type.purpose                 SU
     _type.source                  Derived
@@ -734,8 +731,8 @@ save_cromer_mann_coeff
     _definition.update            2012-11-29
     _description.text
 ;
-     The set of data items used to define Cromer-Mann coefficients
-     for generation of X-ray scattering factors.
+     The set of data items used to define Cromer-Mann coefficients for
+     generation of X-ray scattering factors.
 
         Ref: International Tables for X-ray Crystallography, Vol. IV
              (1974) Table 2.2B
@@ -756,8 +753,8 @@ save_hi_ang_fox_coeffs
     _definition.update            2012-11-29
     _description.text
 ;
-    The set of data items used to define Fox et al.  coefficients
-     for generation of high angle (s >2.0) X-ray scattering factors.
+    The set of data items used to define Fox et al. coefficients for generation
+    of high angle (s > 2.0) X-ray scattering factors.
 
         Ref: International Tables for Crystallography, Vol. C
              (1991) Table 6.1.1.5
@@ -791,8 +788,8 @@ save_orient_matrix
     _definition.update            2012-05-07
     _description.text
 ;
-     The set of data items which specify the elements of the matrix of
-     the orientation of the crystal axes to the diffractometer goniometer.
+     The set of data items which specify the elements of the matrix of the
+     orientation of the crystal axes to the diffractometer goniometer.
 ;
     _type.purpose                 Number
     _type.source                  Recorded
@@ -807,9 +804,8 @@ save_transf_matrix
     _definition.update            2012-05-07
     _description.text
 ;
-     The set of data items which specify the elements of the matrix
-     used to transform the reflection indices _diffrn_refln.hkl
-     into _refln.hkl.
+     The set of data items which specify the elements of the matrix used to
+     transform the reflection indices _diffrn_refln.hkl into _refln.hkl.
 ;
     _type.purpose                 Number
     _type.source                  Recorded
@@ -824,9 +820,9 @@ save_face_angle
     _definition.update            2013-04-15
     _description.text
 ;
-    Diffractometer angle setting when the perpendicular to the specified
-    crystal face is aligned along a specified direction (e.g. the
-    bisector of the incident and reflected beams in an optical goniometer.
+    Diffractometer angle setting when the perpendicular to the specified crystal
+    face is aligned along a specified direction (e.g. the bisector of the
+    incident and reflected beams in an optical goniometer.
 ;
     _type.purpose                 Measurand
     _type.source                  Recorded
@@ -877,9 +873,8 @@ save_display_colour
     _definition.update            2019-01-09
     _description.text
 ;
-     Integer value between 0 and 255 giving the intensity of a
-     specific colour component (red, green or blue) for the RGB
-     display colour code.
+     Integer value between 0 and 255 giving the intensity of a specific colour
+     component (red, green or blue) for the RGB display colour code.
 ;
     _type.purpose                 Number
     _type.source                  Recorded
