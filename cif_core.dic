@@ -21908,7 +21908,7 @@ save_atom_site_aniso.beta_11
     _name.category_id             atom_site_aniso
     _name.object_id               beta_11
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ}]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
 
 save_
 
@@ -21921,7 +21921,7 @@ save_atom_site_aniso.beta_11_su
     _name.linked_item_id          '_atom_site_aniso.beta_11'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
 
 save_
 
@@ -21932,7 +21932,7 @@ save_atom_site_aniso.beta_12
     _name.category_id             atom_site_aniso
     _name.object_id               beta_12
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ}]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
 
 save_
 
@@ -21945,7 +21945,7 @@ save_atom_site_aniso.beta_12_su
     _name.linked_item_id          '_atom_site_aniso.beta_12'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
 
 save_
 
@@ -21956,7 +21956,7 @@ save_atom_site_aniso.beta_13
     _name.category_id             atom_site_aniso
     _name.object_id               beta_13
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ}]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
 
 save_
 
@@ -21969,7 +21969,7 @@ save_atom_site_aniso.beta_13_su
     _name.linked_item_id          '_atom_site_aniso.beta_13'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
 
 save_
 
@@ -21980,7 +21980,7 @@ save_atom_site_aniso.beta_22
     _name.category_id             atom_site_aniso
     _name.object_id               beta_22
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ}]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
 
 save_
 
@@ -21993,7 +21993,7 @@ save_atom_site_aniso.beta_22_su
     _name.linked_item_id          '_atom_site_aniso.beta_22'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
 
 save_
 
@@ -22004,7 +22004,7 @@ save_atom_site_aniso.beta_23
     _name.category_id             atom_site_aniso
     _name.object_id               beta_23
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ}]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
 
 save_
 
@@ -22017,7 +22017,7 @@ save_atom_site_aniso.beta_23_su
     _name.linked_item_id          '_atom_site_aniso.beta_23'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
 
 save_
 
@@ -22028,7 +22028,7 @@ save_atom_site_aniso.beta_33
     _name.category_id             atom_site_aniso
     _name.object_id               beta_33
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaIJ}]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
 
 save_
 
@@ -22041,7 +22041,7 @@ save_atom_site_aniso.beta_33_su
     _name.linked_item_id          '_atom_site_aniso.beta_33'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaIJ_su}]
+        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
 
 save_
 

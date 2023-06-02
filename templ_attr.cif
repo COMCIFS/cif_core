@@ -614,7 +614,7 @@ save_aniso_bij_su
      save_
 
 
-save_aniso_betaIJ
+save_aniso_betaij
 
     _definition.update           2023-02-16
     _description.text
@@ -643,7 +643,7 @@ save_aniso_betaIJ
      save_
 
 
-save_aniso_betaIJ_su
+save_aniso_betaij_su
 
     _definition.update           2023-02-15
     _description.text
@@ -661,7 +661,7 @@ save_aniso_betaIJ_su
      save_
 
 
-save_aniso_UIJ
+save_aniso_uij
 
     _definition.update           2023-02-16
     _description.text
