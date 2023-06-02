@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-01-13
+    _dictionary.date              2023-06-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -712,6 +712,125 @@ save_dictionary_audit.version
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Version
+
+save_
+
+save_DICTIONARY_AUTHOR
+
+    _definition.id                DICTIONARY_AUTHOR
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2023-06-02
+    _description.text
+;
+    The CATEGORY of data items used for dictionary author(s) details.
+;
+    _name.category_id             DICTIONARY
+    _name.object_id               DICTIONARY_AUTHOR
+    _category_key.name            '_dictionary_author.id'
+
+save_
+
+save_dictionary_author.address
+
+    _definition.id                '_audit_author.address'
+    _definition.update            2023-06-02
+    _description.text
+;
+    The address of an author of this dictionary. If there are
+    multiple authors, _dictionary_author.address is looped with
+    _dictionary_author.name.
+;
+    _name.category_id             dictionary_author
+    _name.object_id               address
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case
+;
+    Department
+    Institute
+    Street
+    City and postcode
+    COUNTRY
+;
+
+save_
+
+save_dictionary_author.id
+
+    _definition.id                '_dictionary_author.id'
+    _definition.update            2023-06-02
+    _description.text
+;
+    Arbitrary identifier for this author.
+;
+    _name.category_id             dictionary_author
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = Unique_id(dictionary_author.id)
+;
+
+save_
+
+save_dictionary_author.id_orcid
+
+    _definition.id                '_dictionary_author.id_ORCID'
+    _definition.update            2023-06-02
+    _description.text
+;
+    Identifier in the ORCID Registry of a publication
+    author. ORCID is an open, non-profit, community-driven
+    service to provide a registry of unique researcher
+    identifiers (https://orcid.org/).
+;
+    _name.category_id             dictionary_author
+    _name.object_id               id_ORCID
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Code
+    _description_example.case     0000-0003-0391-0002
+
+save_
+
+save_dictionary_author.name
+
+    _definition.id                '_dictionary_author.name'
+    _definition.update            2023-06-02
+    _description.text
+;
+    The name of an author of this dictionary. If there are multiple authors,
+    _dictionary_author.name is looped with _dictionary_author.address.
+    The family name(s), followed by a comma and including any
+    dynastic components, precedes the first name(s) or initial(s).
+    For authors with only one name, provide the full name without
+    abbreviation.
+;
+    _name.category_id             dictionary_author
+    _name.object_id               name
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         '''Bleary, Percival R.'''
+         '''O'Neil, F.K.'''
+         '''Van den Bossche, G.'''
+         '''Yang, D.-L.'''
+         '''Simonov, Yu.A.'''
+         '''M\"uller, H.A.'''
+         '''Ross II, C.R.'''
+         '''Chandra'''
 
 save_
 
@@ -2607,7 +2726,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-01-13
+         4.1.0                    2023-06-02
 ;
        Added new 'Word' content type.
 
@@ -2633,4 +2752,7 @@ save_
        Clarified the definition of the "Version" state in _type.contents
        by explicitly specifying that is adheres to the formal grammar
        provided in SemVer version 2.0.0.
+
+       Added DICTIONARY_AUTHOR to allow details of dictionary authors to be
+       recorded.
 ;
