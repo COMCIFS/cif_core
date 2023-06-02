@@ -1125,7 +1125,7 @@ save_enumeration_source.id
     setting the values of _enumeration_default.value.
 ;
     _name.category_id             enumeration_source
-    _name.object_id               index
+    _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
