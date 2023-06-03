@@ -867,6 +867,8 @@ save_units_code
 
 save_atomic_number
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -916,6 +918,8 @@ save_atomic_number
 
 
 save_electron_count
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1017,6 +1021,8 @@ save_ion_to_element
 
 save_atomic_mass
 
+    _units.code                   dalton
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1066,6 +1072,8 @@ save_atomic_mass
 
 
 save_radius_bond
+
+    _units.code                   angstroms
 
      loop_
          _enumeration_default.index
@@ -1169,6 +1177,8 @@ save_length_neutron
 
 save_dispersion_real_cu
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1220,6 +1230,8 @@ save_dispersion_real_cu
 
 save_dispersion_imag_cu
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1269,6 +1281,8 @@ save_dispersion_imag_cu
 
 
 save_dispersion_real_mo
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1320,6 +1334,8 @@ save_dispersion_real_mo
 
 save_dispersion_imag_mo
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1369,6 +1385,8 @@ save_dispersion_imag_mo
 
 
 save_cromer_mann_a1
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1420,6 +1438,8 @@ save_cromer_mann_a1
 
 save_cromer_mann_b1
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1469,6 +1489,8 @@ save_cromer_mann_b1
 
 
 save_cromer_mann_a2
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1520,6 +1542,8 @@ save_cromer_mann_a2
 
 save_cromer_mann_b2
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1569,6 +1593,8 @@ save_cromer_mann_b2
 
 
 save_cromer_mann_a3
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1620,6 +1646,8 @@ save_cromer_mann_a3
 
 save_cromer_mann_b3
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1670,7 +1698,9 @@ save_cromer_mann_b3
 
 save_cromer_mann_a4
 
-     loop_
+    _units.code                   none
+
+    loop_
          _enumeration_default.index
          _enumeration_default.value
      H     .04081  D     .04081  H1-   .116973 He    0.178   Li    .4653
@@ -1719,6 +1749,8 @@ save_cromer_mann_a4
 
 
 save_cromer_mann_b4
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1770,6 +1802,8 @@ save_cromer_mann_b4
 
 save_cromer_mann_c
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1819,6 +1853,8 @@ save_cromer_mann_c
 
 
 save_hi_ang_fox_c0
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
@@ -1870,6 +1906,8 @@ save_hi_ang_fox_c0
 
 save_hi_ang_fox_c1
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1920,6 +1958,8 @@ save_hi_ang_fox_c1
 
 save_hi_ang_fox_c2
 
+    _units.code                   none
+
      loop_
          _enumeration_default.index
          _enumeration_default.value
@@ -1969,6 +2009,8 @@ save_hi_ang_fox_c2
 
 
 save_hi_ang_fox_c3
+
+    _units.code                   none
 
      loop_
          _enumeration_default.index
