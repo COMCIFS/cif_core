@@ -24603,6 +24603,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               List
+    _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
 
@@ -24690,6 +24691,7 @@ save_atom_type_scat.gaussian_coefs_su
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               List
+    _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
 
@@ -24864,6 +24866,7 @@ save_atom_type_scat.inv_mott_bethe_coefs_su
     _type.purpose                 SU
     _type.source                  Derived
     _type.container               List
+    _type.dimension               '[]'
     _type.contents                Real
     _units.code                   none
 
