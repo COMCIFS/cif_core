@@ -1138,7 +1138,8 @@ save_ENUMERATION_SOURCE
          International Tables of Crystallography.
 ;
 ;
-         _enumeration_source.reference  'doi:10.1107/S2053273322010944 Table S4'
+         _enumeration_source.reference
+             'https://doi.org/10.1107/S2053273322010944, Table S4'
 
          loop_
          _enumeration_default.index
