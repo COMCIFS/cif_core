@@ -24145,6 +24145,7 @@ save_atom_type_scat.cromer_mann_a1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a1
+    _units.code                   none
 
     _import.get
         [
@@ -24165,6 +24166,7 @@ save_atom_type_scat.cromer_mann_a2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a2
+    _units.code                   none
 
     _import.get
         [
@@ -24185,6 +24187,7 @@ save_atom_type_scat.cromer_mann_a3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a3
+    _units.code                   none
 
     _import.get
         [
@@ -24205,6 +24208,7 @@ save_atom_type_scat.cromer_mann_a4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a4
+    _units.code                   none
 
     _import.get
         [
@@ -24225,6 +24229,7 @@ save_atom_type_scat.cromer_mann_b1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b1
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24245,6 +24250,7 @@ save_atom_type_scat.cromer_mann_b2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b2
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24265,6 +24271,7 @@ save_atom_type_scat.cromer_mann_b3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b3
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24285,6 +24292,7 @@ save_atom_type_scat.cromer_mann_b4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b4
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24305,6 +24313,7 @@ save_atom_type_scat.cromer_mann_c
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_c
+    _units.code                   none
 
     _import.get
         [
