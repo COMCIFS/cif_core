@@ -669,8 +669,8 @@ save_cromer_mann_coeff
 
     f(s) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:4)
 
-    where s = sin(theta)/lambda and theta is the diffraction angle and lambda
-    is the wavelength of the incident radiation in angstroms.
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength of
+    the incident radiation in angstroms.
 
         Ref: International Tables for X-ray Crystallography, Vol. IV
              (1974) Table 2.2B
@@ -695,8 +695,8 @@ save_hi_ang_fox_coeffs
 
     f(s) = exp(Sum( c~i~ * s^i^, i=0:3))
 
-    where s = sin(theta)/lambda and theta is the diffraction angle and lambda
-    is the wavelength of the incident radiation in angstroms.
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength of
+    the incident radiation in angstroms.
 
         Ref: International Tables for Crystallography, Vol. C
              (1991) Table 6.1.1.5
