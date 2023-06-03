@@ -696,7 +696,6 @@ save_hi_ang_fox_coeffs
     _type.container              Single
     _type.contents               Real
     _enumeration.def_index_id  '_atom_type.symbol'
-    _units.code                  none
      save_
 
 

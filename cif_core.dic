@@ -24751,6 +24751,7 @@ save_atom_type_scat.hi_ang_fox_c0
     _definition.id                '_atom_type_scat.hi_ang_Fox_c0'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c0
+    _units.code                   none
 
     _import.get
         [
@@ -24765,6 +24766,7 @@ save_atom_type_scat.hi_ang_fox_c1
     _definition.id                '_atom_type_scat.hi_ang_Fox_c1'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c1
+    _units.code                   angstroms
 
     _import.get
         [
@@ -24779,6 +24781,7 @@ save_atom_type_scat.hi_ang_fox_c2
     _definition.id                '_atom_type_scat.hi_ang_Fox_c2'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c2
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24793,6 +24796,7 @@ save_atom_type_scat.hi_ang_fox_c3
     _definition.id                '_atom_type_scat.hi_ang_Fox_c3'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c3
+    _units.code                   angstrom_cubed
 
     _import.get
         [
