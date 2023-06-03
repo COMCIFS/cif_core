@@ -1104,12 +1104,55 @@ save_ENUMERATION_SOURCE
     _definition.update            2023-06-02
     _description.text
 ;
-    Attributes used to record the original sources of the default values 
+    Attributes used to record the original sources of the default values
     enumerated using the ENUMERATION_DEFAULT category.
 ;
     _name.category_id             ENUMERATION
     _name.object_id               ENUMERATION_SOURCE
     _category_key.name            '_enumeration_source.id'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         loop_
+         _enumeration_source.id
+         _enumeration_source.reference
+         a "International Tables Vol. C Table 4.4.4.1 2nd ed."
+         b "International Tables Vol. H Table 4.3.2.1 1st ed."
+
+         loop_
+         _enumeration_default.index
+         _enumeration_default.value
+         _enumeration_default.source_id
+         H   1  a
+         H-  2  a
+         He  2  b
+         #...
+;
+;
+         There are two sources for the default values given in the enumeration.
+         Entries marked with 'a' come from Table 4.4.4.1 in the 2nd edition of
+         Volume C of the International Tables of Crystallography. Entries marked
+         with 'b' come from Table 4.3.2.1 in the 1st edition of Volume H of the
+         International Tables of Crystallography.
+;
+;
+         _enumeration_source.reference  'doi:10.1107/S2053273322010944 Table S4'
+
+         loop_
+         _enumeration_default.index
+         _enumeration_default.value
+         He  0.8733928
+         Li  1.129319
+         Be  1.592162
+         #...
+;
+;
+         There is a single source for all default values given in the
+         enumeration. All entries can be found in Table S4 of the material
+         referenced by the given DOI.
+;
 
 save_
 
