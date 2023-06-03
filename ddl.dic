@@ -1104,9 +1104,8 @@ save_ENUMERATION_SOURCE
     _definition.update            2023-06-02
     _description.text
 ;
-    Loop of the reference or source material for the corresponding default
-    enumeration values indexed to a data item by the item
-    _enumeration.def_index_ids.
+    Attributes used to record the original sources of the default values 
+    enumerated using the ENUMERATION_DEFAULT category.
 ;
     _name.category_id             ENUMERATION
     _name.object_id               ENUMERATION_SOURCE
