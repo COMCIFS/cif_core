@@ -682,11 +682,15 @@ save_cromer_mann_coeff
 
 save_hi_ang_fox_coeffs
 
-    _definition.update           2012-11-29
+    _definition.update           2023-06-03
     _description.text
 ;
     The set of data items used to define Fox et al.  coefficients
-     for generation of high angle (s >2.0) X-ray scattering factors.
+     for generation of high angle (2.0 < s < 6.0) X-ray scattering factors.
+
+    f(s) = exp(Sum( c~i~ * s^i^, i=0:3))
+
+    where s = sin(theta)/lambda.
 
         Ref: International Tables for Crystallography, Vol. C
              (1991) Table 6.1.1.5
