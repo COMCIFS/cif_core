@@ -954,7 +954,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2023-01-13
+         1.4.10                   2023-06-03
 ;
        Corrected a few typos in the descriptions of several save frames.
 
@@ -975,4 +975,6 @@ save_display_colour
        Changed atomic labels to 'Word' for conformance with DDL1.
 
        Updated description of _site_symmetry.
+
+       Updated descriptions of cromer_mann_coeff and hi_ang_fox_coeffs.
 ;
