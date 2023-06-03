@@ -1140,8 +1140,8 @@ save_enumeration_source.reference
     _definition.update            2023-06-02
     _description.text
 ;
-    Bibliographic information sufficient to identify the source material of
-    the the associated values of _enumeration_default.value.
+    Bibliographic information sufficient to identify the original source of
+    the associated _enumeration_default.value attribute values.
 ;
     _name.category_id             enumeration_source
     _name.object_id               reference
