@@ -1121,8 +1121,8 @@ save_enumeration_source.id
     _definition.update            2023-06-01
     _description.text
 ;
-    A code to uniquely identify each piece of reference material used in
-    setting the values of _enumeration_default.value.
+    A unique identifier of the source material from which the
+    _enumeration_default.value attribute values were taken.
 ;
     _name.category_id             enumeration_source
     _name.object_id               id
