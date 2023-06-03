@@ -1008,9 +1008,9 @@ save_enumeration_default.source_id
     _definition.update            2023-06-02
     _description.text
 ;
-    A code to identify the source material relevant to the
-    _enumeration_default.value. This code must match a corresponding
-    _enumeration_source.id.
+    An identifier which corresponds to an entry in the ENUMERATION_SOURCE
+    category loop. Used to provide a reference to the original source of
+    a specific enumeration value.
 ;
     _name.category_id             enumeration_default
     _name.object_id               source_id
