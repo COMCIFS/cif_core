@@ -2438,7 +2438,7 @@ save_diffrn_measurement.device_details
     _type.container               Single
     _type.contents                Text
     _description_example.case
-        'commercial goniometer modified locally to allow for 90° \t arc'
+        'commercial goniometer modified locally to allow for 90° θ arc'
 
 save_
 
