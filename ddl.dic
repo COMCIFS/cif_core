@@ -723,7 +723,7 @@ save_DICTIONARY_AUTHOR
     _definition.update            2023-06-02
     _description.text
 ;
-    The CATEGORY of data items used for dictionary author(s) details.
+    Attributes used to record the dictionary author information.
 ;
     _name.category_id             DICTIONARY
     _name.object_id               DICTIONARY_AUTHOR
