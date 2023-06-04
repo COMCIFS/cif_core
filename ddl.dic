@@ -1173,11 +1173,6 @@ save_enumeration_source.id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration.default = Unique_id(enumeration_source.id)
-;
 
 save_
 
