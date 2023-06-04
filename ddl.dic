@@ -823,11 +823,6 @@ save_dictionary_author.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration.default = Unique_id(dictionary_author.id)
-;
 
 save_
 
