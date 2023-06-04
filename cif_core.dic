@@ -645,13 +645,13 @@ save_cell.convert_uij_to_betaij
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
     The ADP factor in a structure factor expression:
 
-    t = exp -2π^2^ ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25 ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-      = exp -      ( beta11 h h + ............ 2 beta23 k l )
+    t = exp - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* )
+    t = exp - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* )
+      = exp -       ( β11 h h + ............ 2 β23 k l )
 
-    The conversion of the U or B matrices to the beta matrix
+    The conversion of the U or B matrices to the β matrix
 
-        beta =   C U C   =    C B C /8π^2^
+        β =   C U C   =    C B C /8π^2^
 
     where C is conversion matrix defined here.
 ;
@@ -705,9 +705,9 @@ save_cell.convert_uiso_to_uij
     The reciprocal space matrix for converting the isotropic Uiso
     atomic displacement parameter to the anisotropic matrix Uij.
 
-                     | 1            cos(gamma*)   cos(beta*)  |
+                     | 1            cos(gamma*)   cos(β*)  |
     U[i,j]  = Uiso * | cos(gamma*)  1             cos(α*) |
-                     | cos(beta*)   cos(α*)   1           |
+                     | cos(β*)   cos(α*)   1           |
 ;
     _name.category_id             cell
     _name.object_id               convert_Uiso_to_Uij
@@ -21440,12 +21440,12 @@ save_atom_site.tensor_beta
     The symmetric anisotropic atomic displacement tensor beta[I,J]
     appears in a structure factor expression as:
 
-    t = exp -[ beta11 h h + ............ 2 beta23 k l ]
+    t = exp - [ β11 h h + ............ 2 β23 k l ]
 
     It is related to the ADP matrices U(IJ) and B(IJ) as follows:
 
-    t = exp - 2π^2^ ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+    t = exp - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* )
+    t = exp - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* )
 ;
     _name.category_id             atom_site
     _name.object_id               tensor_beta
