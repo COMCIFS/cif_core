@@ -6447,8 +6447,8 @@ save_refln.fom
     The figure of merit m for this reflection.
 
         int P~α~ exp(i*α) dα
-    m = --------------------------------
-              int P~α~ dα
+    m = --------------------
+            int P~α~ dα
 
     P~α~ = the probability that the phase angle α is correct
 
