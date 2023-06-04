@@ -107,8 +107,8 @@ save_rho_kappa
     _description.text
 ;
       A radial function expansion-contraction coefficient
-      (kappa    = atom_rho_multipole_kappa.base and
-      kappa'(l) = atom_rho_multipole_kappa.prime[l])
+      (κ     = atom_rho_multipole_kappa.base and
+       κ'(l) = atom_rho_multipole_kappa.prime[l])
       for the atom specified in atom_rho_multipole.atom_label.
 ;
     _type.purpose                Measurand
@@ -125,7 +125,7 @@ save_rho_slater
     _description.text
 ;
       Items used when the radial dependence of the valence
-      electron density, R(kappa'(l),l,r), of the atom specified in
+      electron density, R(κ'(l),l,r), of the atom specified in
       atom_rho_multipole.atom_label is expressed as a Slater-type
       function [Hansen & Coppens (1978), equation (3)]
 ;
