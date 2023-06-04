@@ -2381,7 +2381,7 @@ save_diffrn_measurement.details
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     '440 frames of 0.25\%'
+    _description_example.case     '440 frames of 0.25°'
 
 save_
 
@@ -2411,7 +2411,7 @@ save_diffrn_measurement.device_class
       _description_example.case
          'three-circle diffractometer'
          'four-circle diffractometer'
-         '\k-geometry diffractometer'
+         'κ-geometry diffractometer'
          'oscillation camera'
          'precession camera'
 
@@ -2438,7 +2438,7 @@ save_diffrn_measurement.device_details
     _type.container               Single
     _type.contents                Text
     _description_example.case
-        'commercial goniometer modified locally to allow for 90\% \t arc'
+        'commercial goniometer modified locally to allow for 90° \t arc'
 
 save_
 
@@ -2493,7 +2493,7 @@ save_diffrn_measurement.method
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     'profile data from \q/2\q scans'
+    _description_example.case     'profile data from θ/2θ scans'
 
 save_
 
@@ -3267,9 +3267,9 @@ save_diffrn_radiation.type
 
     loop_
       _description_example.case
-         'Mo K\a'
-         'Cu K\a'
-         'Cu K\a~1~'
+         'Mo Kα'
+         'Cu Kα'
+         'Cu Kα~1~'
          'Cu K-L~2,3~'
          'white-beam'
 
@@ -3297,9 +3297,9 @@ save_diffrn_radiation.xray_symbol
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         K-L~3~                 'K\a~1~ in older Siegbahn notation.'
-         K-L~2~                 'K\a~2~ in older Siegbahn notation.'
-         K-M~3~                 'K\b~1~ in older Siegbahn notation.'
+         K-L~3~                 'Kα~1~ in older Siegbahn notation.'
+         K-L~2~                 'Kα~2~ in older Siegbahn notation.'
+         K-M~3~                 'Kβ~1~ in older Siegbahn notation.'
          K-L~2,3~               'Use where K-L~3~ and K-L~2~ are not resolved.'
 
 save_
@@ -3373,7 +3373,7 @@ save_diffrn_radiation_wavelength.determination
       _enumeration_set.state
       _enumeration_set.detail
          fundamental
-             'Fundamental property of matter, e.g. MoK\a.'
+             'Fundamental property of matter, e.g. MoKα.'
          estimated
              'Estimated, e.g. from monochromator angle or time of flight.'
          refined
@@ -3423,9 +3423,9 @@ save_diffrn_radiation_wavelength.type
 
     loop_
       _description_example.case
-         'Mo K\a'
-         'Cu K\a'
-         'Cu K\a~1~'
+         'Mo Kα'
+         'Cu Kα'
+         'Cu Kα~1~'
          'Cu K-L~2,3~'
          'white-beam'
 
@@ -3520,9 +3520,9 @@ save_diffrn_radiation_wavelength.xray_symbol
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         K-L~3~                 'K\a~1~ in older Siegbahn notation.'
-         K-L~2~                 'K\a~2~ in older Siegbahn notation.'
-         K-M~3~                 'K\b~1~ in older Siegbahn notation.'
+         K-L~3~                 'Kα~1~ in older Siegbahn notation.'
+         K-L~2~                 'Kα~2~ in older Siegbahn notation.'
+         K-M~3~                 'Kβ~1~ in older Siegbahn notation.'
          K-L~2,3~               'Use where K-L~3~ and K-L~2~ are not resolved.'
 
 save_
@@ -9007,7 +9007,7 @@ save_chemical.optical_rotation
     The optical rotation in solution of the compound is
     specified in the following format:
 
-       '[\a]^TEMP^~WAVE~ = SORT (c = CONC, SOLV)'
+       '[α]^TEMP^~WAVE~ = SORT (c = CONC, SOLV)'
 
     where: TEMP is the temperature of the measurement in degrees Celsius,
            WAVE is an indication of the wavelength of the light
@@ -9015,7 +9015,7 @@ save_chemical.optical_rotation
            CONC is the concentration of the solution given as the
                 mass of the substance in g in 100 ml of solution,
            SORT is the signed value (preceded by a + or a - sign)
-                of 100.\a/(l.c), where \a is the signed optical
+                of 100.α/(l.c), where α is the signed optical
                 rotation in degrees measured in a cell of length l in
                 dm and c is the value of CONC in g, and
            SOLV is the chemical formula of the solvent.
@@ -9026,7 +9026,7 @@ save_chemical.optical_rotation
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     '[\a]^25^~D~ = +108 (c = 3.42, CHCl~3~)'
+    _description_example.case     '[α]^25^~D~ = +108 (c = 3.42, CHCl~3~)'
 
 save_
 
@@ -10067,7 +10067,7 @@ save_exptl_absorpt.special_details
 ;
          Neutron linear absorption coefficient is wavelength dependent. The
          value of 0.2216 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the
-         sample absorption coefficient for a neutron wavelength at 1.0 \%A.
+         sample absorption coefficient for a neutron wavelength at 1.0 Å.
 ;
 ;
          Text modified from:
@@ -12128,7 +12128,7 @@ save_space_group_wyckoff.letter
 ;
     The Wyckoff letter associated with this position, as given in
     International Tables for Crystallography Volume A. The
-    enumeration value '\a' corresponds to the Greek letter 'alpha'
+    enumeration value 'α' corresponds to the Greek letter 'alpha'
     used in International Tables.
 
     Ref: International Tables for Crystallography (2002). Volume A,
@@ -15035,7 +15035,7 @@ save_audit_author.name
          '''Van den Bossche, G.'''
          '''Yang, D.-L.'''
          '''Simonov, Yu.A.'''
-         '''M\"uller, H.A.'''
+         '''Müller, H.A.'''
          '''Ross II, C.R.'''
          '''Chandra'''
 
@@ -16333,7 +16333,7 @@ save_citation_author.name
          '''Van den Bossche, G.'''
          '''Yang, D.-L.'''
          '''Simonov, Yu.A'''
-         '''M\"uller, H.A.'''
+         '''Müller, H.A.'''
          '''Ross II, C.R.'''
          '''Chandra'''
 
@@ -16430,7 +16430,7 @@ save_citation_editor.name
          '''Van den Bossche, G.'''
          '''Yang, D.-L.'''
          '''Simonov, Yu.A'''
-         '''M\"uller, H.A.'''
+         '''Müller, H.A.'''
          '''Ross II, C.R.'''
 
 save_
@@ -18576,7 +18576,7 @@ save_publ_author.name
          '''Van den Bossche, G.'''
          '''Yang, D.-L.'''
          '''Simonov, Yu.A'''
-         '''M\"uller, H.A.'''
+         '''Müller, H.A.'''
          '''Ross II, C.R.'''
          '''Chandra'''
 
@@ -22321,7 +22321,7 @@ save_atom_sites.solution_hydrogens
     *_hydrogens code identifies how the hydrogen sites were located.
 
     Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Us\'on, I. (2001). Ab initio phasing.
+         Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -22379,7 +22379,7 @@ save_atom_sites.solution_hydrogens
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
          Acta Cryst. A60, 134-141].
 ;
          other
@@ -22403,7 +22403,7 @@ save_atom_sites.solution_primary
     *_hydrogens code identifies how the hydrogen sites were located.
 
     Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Us\'on, I. (2001). Ab initio phasing.
+         Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -22457,7 +22457,7 @@ save_atom_sites.solution_primary
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
          Acta Cryst. A60, 134-141].
 ;
          other
@@ -22481,7 +22481,7 @@ save_atom_sites.solution_secondary
     *_hydrogens code identifies how the hydrogen sites were located.
 
     Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Us\'on, I. (2001). Ab initio phasing.
+         Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -22535,7 +22535,7 @@ save_atom_sites.solution_secondary
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
          Acta Cryst. A60, 134-141].
 ;
          other
@@ -26662,7 +26662,7 @@ save_refine_ls.weighting_details
     _description_example.case
 ;
     Sigdel model of Konnert-Hendrickson:
-      Sigdel = Afsig +  Bfsig*(sin(\q)/\l - 1/6)
+      Sigdel = Afsig +  Bfsig*(sin(θ)/λ - 1/6)
       Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
       Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
 ;

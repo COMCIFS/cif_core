@@ -2263,7 +2263,7 @@ save_wyckoff_letter
          x
          y
          z
-         \a
+         α
 
 save_
 
