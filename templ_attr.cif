@@ -665,7 +665,7 @@ save_cromer_mann_coeff
     _description.text
 ;
     The set of data items used to define Cromer-Mann coefficients for generation
-    of X-ray scattering factors (0.0 < s < 2.0).
+    of X-ray scattering factors (0.0 < s < 2.0 \%A^-1^).
 
     f(s) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:4)
 
@@ -691,7 +691,7 @@ save_hi_ang_fox_coeffs
     _description.text
 ;
     The set of data items used to define Fox et al. coefficients for generation
-    of high angle (2.0 < s < 6.0) X-ray scattering factors.
+    of high angle (2.0 < s < 6.0 \%A^-1^) X-ray scattering factors.
 
     f(s) = exp(Sum( c~i~ * s^i^, i=0:3))
 
