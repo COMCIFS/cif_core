@@ -705,9 +705,9 @@ save_cell.convert_uiso_to_uij
     The reciprocal space matrix for converting the isotropic Uiso
     atomic displacement parameter to the anisotropic matrix Uij.
 
-                     | 1            cos(gamma*)   cos(β*)  |
-    U[i,j]  = Uiso * | cos(gamma*)  1             cos(α*) |
-                     | cos(β*)   cos(α*)   1           |
+                     | 1        cos(γ*)  cos(β*) |
+    U[i,j]  = Uiso * | cos(γ*)  1        cos(α*) |
+                     | cos(β*)  cos(α*)  1       |
 ;
     _name.category_id             cell
     _name.object_id               convert_Uiso_to_Uij
