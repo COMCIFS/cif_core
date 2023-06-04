@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-05-22
+    _dictionary.date              2023-06-03
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -6242,7 +6242,7 @@ save_
 save_refln.f_complex_su
 
     _definition.id                '_refln.F_complex_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-06-03
     _description.text
 ;
     Standard uncertainty of _refln.F_complex.
@@ -6250,9 +6250,10 @@ save_refln.f_complex_su
     _name.category_id             refln
     _name.object_id               F_complex_su
     _name.linked_item_id          '_refln.F_complex'
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Complex
     _method.purpose               Definition
     _method.expression
 ;
@@ -27430,7 +27431,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-05-22
+         3.3.0                    2023-06-03
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27439,4 +27440,6 @@ save_
         method.
 
         Added _atom_type.mass_number to record specific isotope identities.
+
+        Corrected the content type of the _refln.F_complex_su attribute.
 ;
