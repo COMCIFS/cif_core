@@ -706,8 +706,8 @@ save_cell.convert_uiso_to_uij
     atomic displacement parameter to the anisotropic matrix Uij.
 
                      | 1            cos(gamma*)   cos(beta*)  |
-    U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
-                     | cos(beta*)   cos(alpha*)   1           |
+    U[i,j]  = Uiso * | cos(gamma*)  1             cos(α*) |
+                     | cos(beta*)   cos(α*)   1           |
 ;
     _name.category_id             cell
     _name.object_id               convert_Uiso_to_Uij
@@ -6446,13 +6446,13 @@ save_refln.fom
 ;
     The figure of merit m for this reflection.
 
-        int P~alpha~ exp(i*alpha) dalpha
+        int P~α~ exp(i*α) dα
     m = --------------------------------
-              int P~alpha~ dalpha
+              int P~α~ dα
 
-    P~a~ = the probability that the phase angle a is correct
+    P~α~ = the probability that the phase angle α is correct
 
-    int is taken over the range alpha = 0 to 2 π.
+    int is taken over the range α = 0 to 2 π.
 ;
     _name.category_id             refln
     _name.object_id               fom
@@ -24419,7 +24419,7 @@ save_atom_type_scat.dispersion_imag_cu
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Cu
@@ -24442,7 +24442,7 @@ save_atom_type_scat.dispersion_imag_mo
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Mo
@@ -24500,7 +24500,7 @@ save_atom_type_scat.dispersion_real_cu
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Cu
@@ -24523,7 +24523,7 @@ save_atom_type_scat.dispersion_real_mo
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Mo
