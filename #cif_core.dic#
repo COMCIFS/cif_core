@@ -645,13 +645,13 @@ save_cell.convert_uij_to_betaij
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
     The ADP factor in a structure factor expression:
 
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-      = exp -       ( beta11 h h + ............ 2 beta23 k l )
+    t = exp -2π^2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
+    t = exp - 0.25 ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+      = exp -      ( beta11 h h + ............ 2 beta23 k l )
 
     The conversion of the U or B matrices to the beta matrix
 
-        beta =   C U C   =    C B C /8pi**2
+        beta =   C U C   =    C B C /8π**2
 
     where C is conversion matrix defined here.
 ;
