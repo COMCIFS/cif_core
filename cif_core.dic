@@ -645,13 +645,13 @@ save_cell.convert_uij_to_betaij
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
     The ADP factor in a structure factor expression:
 
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-      = exp -       ( beta11 h h + ............ 2 beta23 k l )
+    t = exp -2π^2^ ( U11    h h a* a* + ...... 2 U23    k l b* c* )
+    t = exp - 0.25 ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+      = exp -      ( beta11 h h + ............ 2 beta23 k l )
 
     The conversion of the U or B matrices to the beta matrix
 
-        beta =   C U C   =    C B C /8pi**2
+        beta =   C U C   =    C B C /8π^2^
 
     where C is conversion matrix defined here.
 ;
@@ -6452,7 +6452,7 @@ save_refln.fom
 
     P~a~ = the probability that the phase angle a is correct
 
-    int is taken over the range alpha = 0 to 2 pi.
+    int is taken over the range alpha = 0 to 2 π.
 ;
     _name.category_id             refln
     _name.object_id               fom
@@ -20533,7 +20533,7 @@ save_atom_site.b_iso_or_equiv
 
     a     = the real-space cell vectors
     a*    = the reciprocal-space cell lengths
-    B^ij^ = 8 pi^2^ U^ij^
+    B^ij^ = 8 π^2^ U^ij^
     Ref: Fischer, R. X. & Tillmanns, E. (1988). Acta Cryst. C44, 775-776.
 
     The IUCr Commission on Nomenclature recommends against the use
@@ -21444,7 +21444,7 @@ save_atom_site.tensor_beta
 
     It is related to the ADP matrices U(IJ) and B(IJ) as follows:
 
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
+    t = exp - 2π^2^ ( U11    h h a* a* + ...... 2 U23    k l b* c* )
     t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
 ;
     _name.category_id             atom_site
@@ -24834,7 +24834,7 @@ save_atom_type_scat.inv_mott_bethe_coefs
     [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
 
     f(s; Z) =
-    Z - 8 * Pi * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
+    Z - 8 * π * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
 
     where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z is the atomic number.
 ;
