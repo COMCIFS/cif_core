@@ -27440,7 +27440,7 @@ save_
 
         Added _atom_type.mass_number to record specific isotope identities.
 
-        Changed enumeration of _atom_type.atomic_number, _atom_type.atomic_mass,
+        Changed enumeration of _atom_type.atomic_number,
         _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
         _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
         to be defaulted on _atom_type.element_symbol.
