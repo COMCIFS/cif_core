@@ -23799,7 +23799,7 @@ save_
 save_atom_type.atomic_mass
 
     _definition.id                '_atom_type.atomic_mass'
-    _definition.update            2023-06-01
+    _definition.update            2012-11-20
     _description.text
 ;
     Mass of this atom type.
