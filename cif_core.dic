@@ -2381,7 +2381,7 @@ save_diffrn_measurement.details
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     '440 frames of 0.25° '
+    _description_example.case     '440 frames of 0.25°'
 
 save_
 
