@@ -1086,11 +1086,6 @@ save_enumeration_defaults.index
     _type.container               Array
     _type.dimension               '[]'
     _type.contents                Code
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration_defaults.index = [ _enumeration_default.index ]
-;
 
 save_
 
@@ -1111,11 +1106,6 @@ save_enumeration_defaults.value
     _type.source                  Assigned
     _type.container               Implied
     _type.contents                Implied
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration_defaults.value = _enumeration_default.value
-;
 
 save_
 
