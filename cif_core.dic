@@ -24146,6 +24146,7 @@ save_atom_type_scat.cromer_mann_a1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a1
+    _units.code                   none
 
     _import.get
         [
@@ -24166,6 +24167,7 @@ save_atom_type_scat.cromer_mann_a2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a2
+    _units.code                   none
 
     _import.get
         [
@@ -24186,6 +24188,7 @@ save_atom_type_scat.cromer_mann_a3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a3
+    _units.code                   none
 
     _import.get
         [
@@ -24206,6 +24209,7 @@ save_atom_type_scat.cromer_mann_a4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a4
+    _units.code                   none
 
     _import.get
         [
@@ -24226,6 +24230,7 @@ save_atom_type_scat.cromer_mann_b1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b1
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24246,6 +24251,7 @@ save_atom_type_scat.cromer_mann_b2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b2
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24266,6 +24272,7 @@ save_atom_type_scat.cromer_mann_b3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b3
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24286,6 +24293,7 @@ save_atom_type_scat.cromer_mann_b4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b4
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24306,6 +24314,7 @@ save_atom_type_scat.cromer_mann_c
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_c
+    _units.code                   none
 
     _import.get
         [
@@ -24576,7 +24585,8 @@ save_atom_type_scat.exponential_polynomial_coefs
 
     f(s; Z) = exp(Sum( a~i~ * s^i^), i=0:N))
 
-    where s = sin(theta)/lambda.
+    where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
+    the wavelength of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               exponential_polynomial_coefs
@@ -24665,7 +24675,8 @@ save_atom_type_scat.gaussian_coefs
 
     f(s; Z) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:N)
 
-    where s = sin(theta)/lambda.
+    where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
+    the wavelength of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_coefs
@@ -24745,6 +24756,7 @@ save_atom_type_scat.hi_ang_fox_c0
     _definition.id                '_atom_type_scat.hi_ang_Fox_c0'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c0
+    _units.code                   none
 
     _import.get
         [
@@ -24759,6 +24771,7 @@ save_atom_type_scat.hi_ang_fox_c1
     _definition.id                '_atom_type_scat.hi_ang_Fox_c1'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c1
+    _units.code                   angstroms
 
     _import.get
         [
@@ -24773,6 +24786,7 @@ save_atom_type_scat.hi_ang_fox_c2
     _definition.id                '_atom_type_scat.hi_ang_Fox_c2'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c2
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24787,6 +24801,7 @@ save_atom_type_scat.hi_ang_fox_c3
     _definition.id                '_atom_type_scat.hi_ang_Fox_c3'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c3
+    _units.code                   angstrom_cubed
 
     _import.get
         [
@@ -24840,7 +24855,8 @@ save_atom_type_scat.inv_mott_bethe_coefs
     Z - 8 * Pi * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
 
     where s = sin(theta)/lambda, a~0~ is the Bohr radius, and Z is the atomic
-    number.
+    number. theta is the diffraction angle and lambda is the wavelength of the
+    incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               inv_Mott_Bethe_coefs
