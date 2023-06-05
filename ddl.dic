@@ -731,33 +731,6 @@ save_DICTIONARY_AUTHOR
 
 save_
 
-save_dictionary_author.address
-
-    _definition.id                '_audit_author.address'
-    _definition.update            2023-06-02
-    _description.text
-;
-    The address of an author of this dictionary. If there are
-    multiple authors, _dictionary_author.address is looped with
-    _dictionary_author.name.
-;
-    _name.category_id             dictionary_author
-    _name.object_id               address
-    _type.purpose                 Describe
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-    _description_example.case
-;
-    Department
-    Institute
-    Street
-    City and postcode
-    COUNTRY
-;
-
-save_
-
 save_dictionary_author.email
 
     _definition.id                '_dictionary_author.email'
@@ -780,32 +753,6 @@ save_dictionary_author.email
       _description_example.case
          name@host.domain.country
          bm@iucr.org
-
-save_
-
-save_dictionary_author.fax
-
-    _definition.id                '_dictionary_author.fax'
-    _definition.update            2023-06-02
-    _description.text
-;
-    Facsimile telephone number of an author of the dictionary.
-    The recommended style is the international dialing prefix, followed
-    by the area code in parentheses, followed by the local number with
-    no spaces. The earlier convention of including the international
-    dialing prefix in parentheses is no longer recommended.
-;
-    _name.category_id             dictionary_author
-    _name.object_id               fax
-    _type.purpose                 Encode
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-
-    loop_
-      _description_example.case
-         12(34)9477334
-         12()349477334
 
 save_
 
@@ -877,34 +824,6 @@ save_dictionary_author.name
          '''M\"uller, H.A.'''
          '''Ross II, C.R.'''
          '''Chandra'''
-
-save_
-
-save_dictionary_author.phone
-
-    _definition.id                '_dictionary_author.phone'
-    _definition.update            2023-06-02
-    _description.text
-;
-    Telephone number of an author of the dictionary.
-    The recommended style is the international dialing prefix,
-    followed by the area code in parentheses, followed by the
-    local number and any extension number prefixed by 'x', with
-    no spaces. The earlier convention of including the international
-    dialing prefix in parentheses is no longer recommended.
-;
-    _name.category_id             dictionary_author
-    _name.object_id               phone
-    _type.purpose                 Encode
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Text
-
-    loop_
-      _description_example.case
-         12(34)9477330
-         12()349477330
-         12(34)9477330x5543
 
 save_
 
