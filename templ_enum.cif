@@ -751,6 +751,7 @@ save_units_code
          _enumeration_set.state
          _enumeration_set.detail
 
+   .      "no unit(s) supplied; i.e. the user must derive the correct unit(s)."
    'none' "dimensionless - e.g. a ratio, factor, weight or scale"
 
    'coulomb'        "electronic charge in coulombs"
