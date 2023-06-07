@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-06-01
+    _dictionary.date              2023-06-07
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -1085,7 +1085,7 @@ save_enumeration_defaults.index
     _type.source                  Assigned
     _type.container               Array
     _type.dimension               '[]'
-    _type.contents                Code
+    _type.contents                Inherited
 
 save_
 
@@ -1717,7 +1717,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-01-13
+    _definition.update            2023-06-07
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -1851,7 +1851,17 @@ save_type.contents
          The contents have the same form as those of the attribute referenced
          by _type.contents_referenced_id.
 ;
+         Inherited
+;
+         >>> Applied ONLY in a DDLm Attribute Dictionary <<<
+         For use only with List, Array, Matrix, or Table data values in the DDLm
+         attribute dictionary. The data type of each value in such a compound
+         value is the same as that of the data name to which each value is
+         directly related.
 
+         The description text of the Inherited type must include rules on
+         establishing the units of any indiviudal value in the compound data.
+;
     _enumeration.default          Text
     _description_example.case     Integer
     _description_example.detail   'Content is a single or multiple integer(s).'
@@ -2694,7 +2704,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-06-01
+         4.1.0                    2023-06-07
 ;
        Added new 'Word' content type.
 
@@ -2723,4 +2733,6 @@ save_
 
        Added _enumeration.def_index_ids and ENUMERATION_DEFAULTS to
        allow default values to be dependent on multiple keys.
+
+       Added 'Inherited' as an enumeration value to _type.contents.
 ;
