@@ -16019,7 +16019,7 @@ save_citation.id
 
     _definition.id                '_citation.id'
     _alias.definition_id          '_citation_id'
-    _definition.update            2021-10-27
+    _definition.update            2023-04-04
     _description.text
 ;
     Unique identifier to the CITATION list. A value of 'primary'
@@ -16041,6 +16041,16 @@ save_citation.id
          1
          2
          3
+
+    _method.purpose               Definition
+    _method.expression
+;
+    if (len(citation) == 1) {
+        _enumeration.default = "primary"
+    } else {
+        _enumeration.default = missing
+    }
+;
 
 save_
 
@@ -27533,6 +27543,8 @@ save_
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
+
+       Added a dREL definition method for the _citation.id data item.
 
         Rewrote the _atom_type.radius_contact evaluation method as a definition
         method.
