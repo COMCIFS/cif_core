@@ -1114,6 +1114,26 @@ save_enumeration_default.index
 
 save_
 
+save_enumeration_default.source_id
+
+    _definition.id                '_enumeration_default.source_id'
+    _definition.update            2023-06-02
+    _description.text
+;
+    An identifier which corresponds to an entry in the ENUMERATION_SOURCE
+    category loop. Used to provide a reference to the original source of
+    a specific enumeration value.
+;
+    _name.category_id             enumeration_default
+    _name.object_id               source_id
+    _name.linked_item_id          '_enumeration_source.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_enumeration_default.value
 
     _definition.id                '_enumeration_default.value'
@@ -1182,6 +1202,105 @@ save_enumeration_set.state
     _name.category_id             enumeration_set
     _name.object_id               state
     _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_ENUMERATION_SOURCE
+
+    _definition.id                ENUMERATION_SOURCE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2023-06-02
+    _description.text
+;
+    Attributes used to record the original sources of the default values
+    enumerated using the ENUMERATION_DEFAULT category.
+;
+    _name.category_id             ENUMERATION
+    _name.object_id               ENUMERATION_SOURCE
+    _category_key.name            '_enumeration_source.id'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         loop_
+         _enumeration_source.id
+         _enumeration_source.reference
+         a "International Tables Vol. C Table 4.4.4.1 2nd ed."
+         b "International Tables Vol. H Table 4.3.2.1 1st ed."
+
+         loop_
+         _enumeration_default.index
+         _enumeration_default.value
+         _enumeration_default.source_id
+         H   1  a
+         H-  2  a
+         He  2  b
+         #...
+;
+;
+         There are two sources for the default values given in the enumeration.
+         Entries marked with 'a' come from Table 4.4.4.1 in the 2nd edition of
+         Volume C of the International Tables of Crystallography. Entries marked
+         with 'b' come from Table 4.3.2.1 in the 1st edition of Volume H of the
+         International Tables of Crystallography.
+;
+;
+         _enumeration_source.reference
+             'https://doi.org/10.1107/S2053273322010944, Table S4'
+
+         loop_
+         _enumeration_default.index
+         _enumeration_default.value
+         He  0.8733928
+         Li  1.129319
+         Be  1.592162
+         #...
+;
+;
+         There is a single source for all default values given in the
+         enumeration. All entries can be found in Table S4 of the material
+         referenced by the given DOI.
+;
+
+save_
+
+save_enumeration_source.id
+
+    _definition.id                '_enumeration_source.id'
+    _definition.class             Attribute
+    _definition.update            2023-06-02
+    _description.text
+;
+    A unique identifier of the source material from which the
+    _enumeration_default.value attribute values were taken.
+;
+    _name.category_id             enumeration_source
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_enumeration_source.reference
+
+    _definition.id                '_enumeration_source.reference'
+    _definition.class             Attribute
+    _definition.update            2023-06-02
+    _description.text
+;
+    Bibliographic information sufficient to identify the original source of
+    the associated _enumeration_default.value attribute values.
+;
+    _name.category_id             enumeration_source
+    _name.object_id               reference
+    _type.purpose                 Describe
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Text
@@ -2745,6 +2864,9 @@ save_
        Clarified the definition of the "Version" state in _type.contents
        by explicitly specifying that is adheres to the formal grammar
        provided in SemVer version 2.0.0.
+
+       Added ENUMERATION_SOURCE and _enumeration_default.source_id to allow the
+       source of default enumeration values to be recorded.
 
        Added DICTIONARY_AUTHOR to allow details of dictionary authors to be
        recorded.
