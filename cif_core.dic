@@ -12,7 +12,7 @@ data_CORE_DIC
     _dictionary.version           3.2.0
     _dictionary.date              2023-04-04
     _dictionary.uri
-        https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
+        https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_3.2.0.dic
     _dictionary.ddl_conformance   4.1.0
     _dictionary.namespace         CifCore
     _description.text
