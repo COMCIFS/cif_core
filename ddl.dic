@@ -2084,7 +2084,7 @@ save_type.contents
 ;
          Inherited
 ;
-         >>> Applied ONLY in a DDLm Attribute Dictionary <<<
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
          For use only with List, Array, Matrix, or Table data values in the DDLm
          attribute dictionary. The data type of each value in such a compound
          value is the same as that of the data name to which each value is
