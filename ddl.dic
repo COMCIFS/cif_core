@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-01-13
+    _dictionary.date              2023-06-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -2089,10 +2089,13 @@ save_units.code
 
     _definition.id                '_units.code'
     _definition.class             Attribute
-    _definition.update            2021-03-01
+    _definition.update            2023-06-10
     _description.text
 ;
     A code which identifies the units of measurement.
+
+    'unspecified' is used only for List, Array, Matrix, or Table data types
+    where the constituent values have differing units.
 ;
     _name.category_id             units
     _name.object_id               code
@@ -2607,7 +2610,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-01-13
+         4.1.0                    2023-06-10
 ;
        Added new 'Word' content type.
 
@@ -2633,4 +2636,7 @@ save_
        Clarified the definition of the "Version" state in _type.contents
        by explicitly specifying that is adheres to the formal grammar
        provided in SemVer version 2.0.0.
+
+       Added 'unspecified' as a valid units.code for compound data types where
+       the constituent values have differing units.
 ;
