@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-05-14
+    _dictionary.date             2023-06-01
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -873,49 +873,32 @@ save_atomic_number
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     01      D     01      H1-   01      He    02      Li    03
-     Li1+  03      Be    04      Be2+  04      B     05      C     06
-     N     07      O     08      O1-   08      F     09      F1-   09
-     Ne    10      Na    11      Na1+  11      Mg    12      Mg2+  12
-     Al    13      Al3+  13      Si    14      Si4+  14      P     15
-     S     16      Cl    17      Cl1-  17      Ar    18      K     19
-     K1+   19      Ca    20      Ca2+  20      Sc    21      Sc3+  21
-     Ti    22      Ti2+  22      Ti3+  22      Ti4+  22      V     23
-     V2+   23      V3+   23      V5+   23      Cr    24      Cr2+  24
-     Cr3+  24      Mn    25      Mn2+  25      Mn3+  25      Mn4+  25
-     Fe    26      Fe2+  26      Fe3+  26      Co    27      Co2+  27
-     Co3+  27      Ni    28      Ni2+  28      Ni3+  28      Cu    29
-     Cu1+  29      Cu2+  29      Zn    30      Zn2+  30      Ga    31
-     Ga3+  31      Ge    32      Ge4+  32      As    33      Se    34
-     Br    35      Br1-  35      Kr    36      Rb    37      Rb1+  37
-     Sr    38      Sr2+  38      Y     39      Y3+   39      Zr    40
-     Zr4+  40      Nb    41      Nb3+  41      Nb5+  41      Mo    42
-     Mo3+  42      Mo5+  42      Mo6+  42      Tc    43      Ru    44
-     Ru3+  44      Ru4+  44      Rh    45      Rh3+  45      Rh4+  45
-     Pd    46      Pd2+  46      Pd4+  46      Ag    47      Ag1+  47
-     Ag2+  47      Cd    48      Cd2+  48      In    49      In3+  49
-     Sn    50      Sn2+  50      Sn4+  50      Sb    51      Sb3+  51
-     Sb5+  51      Te    52      I     53      I1-   53      Xe    54
-     Cs    55      Cs1+  55      Ba    56      Ba2+  56      La    57
-     La3+  57      Ce    58      Ce3+  58      Ce4+  58      Pr    59
-     Pr3+  59      Pr4+  59      Nd    60      Nd3+  60      Pm    61
-     Sm    62      Sm3+  62      Eu    63      Eu2+  63      Eu3+  63
-     Gd    64      Gd3+  64      Tb    65      Tb3+  65      Dy    66
-     Dy3+  66      Ho    67      Ho3+  67      Er    68      Er3+  68
-     Tm    69      Tm3+  69      Yb    70      Yb2+  70      Yb3+  70
-     Lu    71      Lu3+  71      Hf    72      Hf4+  72      Ta    73
-     Ta5+  73      W     74      W6+   74      Re    75      Os    76
-     Os4+  76      Ir    77      Ir3+  77      Ir4+  77      Pt    78
-     Pt2+  78      Pt4+  78      Au    79      Au1+  79      Au3+  79
-     Hg    80      Hg1+  80      Hg2+  80      Tl    81      Tl1+  81
-     Tl3+  81      Pb    82      Pb2+  82      Pb4+  82      Bi    83
-     Bi3+  83      Bi5+  83      Po    84      At    85      Rn    86
-     Fr    87      Ra    88      Ra2+  88      Ac    89      Ac3+  89
-     Th    90      Th4+  90      Pa    91      U     92      U3+   92
-     U4+   92      U6+   92      Np    93      Np3+  93      Np4+  93
-     Np6+  93      Pu    94      Pu3+  94      Pu4+  94      Pu6+  94
-     Am    95      Cm    96      Bk    97      Cf    98
-     save_
+    H    1    D    1    He   2    Li   3    Be     4
+    B    5    C    6    N    7    O    8    F      9
+    Ne  10    Na  11    Mg  12    Al  13    Si    14
+    P   15    S   16    Cl  17    Ar  18    K     19
+    Ca  20    Sc  21    Ti  22    V   23    Cr    24
+    Mn  25    Fe  26    Co  27    Ni  28    Cu    29
+    Zn  30    Ga  31    Ge  32    As  33    Se    34
+    Br  35    Kr  36    Rb  37    Sr  38    Y     39
+    Zr  40    Nb  41    Mo  42    Tc  43    Ru    44
+    Rh  45    Pd  46    Ag  47    Cd  48    In    49
+    Sn  50    Sb  51    Te  52    I   53    Xe    54
+    Cs  55    Ba  56    La  57    Ce  58    Pr    59
+    Nd  60    Pm  61    Sm  62    Eu  63    Gd    64
+    Tb  65    Dy  66    Ho  67    Er  68    Tm    69
+    Yb  70    Lu  71    Hf  72    Ta  73    W     74
+    Re  75    Os  76    Ir  77    Pt  78    Au    79
+    Hg  80    Tl  81    Pb  82    Bi  83    Po    84
+    At  85    Rn  86    Fr  87    Ra  88    Ac    89
+    Th  90    Pa  91    U   92    Np  93    Pu    94
+    Am  95    Cm  96    Bk  97    Cf  98    Es    99
+    Fm 100    Md 101    No 102    Lr 103    Rf   104
+    Db 105    Sg 106    Bh 107    Hs 108    Mt   109
+    Ds 110    Rg 111    Cn 112    Nh 113    Fl   114
+    Mc 115    Lv 116    Ts 117    Og 118
+
+save_
 
 
 save_electron_count
@@ -1173,200 +1156,112 @@ save_dispersion_real_cu
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     .0      D     .0      H1-   .0      He    .0      Li    .001
-     Li1+  .001    Be    .003    Be2+  .003    B     .008    C     .017
-     N     .029    O     .047    O1-   .047    F     .069    F1-   .069
-     Ne    .097    Na    0.129   Na1+  0.129   Mg    .165    Mg2+  .165
-     Al    .204    Al3+  .204    Si    .244    Si4+  .244    P     .283
-     S     .319    Cl    .348    Cl1-  .348    Ar    .366    K     .365
-     K1+   .365    Ca    .341    Ca2+  .341    Sc    0.285   Sc3+  0.285
-     Ti    .189    Ti2+  .189    Ti3+  .189    Ti4+  .189    V     .035
-     V2+   .035    V3+   .035    V5+   .035    Cr    -.198   Cr2+  -.198
-     Cr3+  -.198   Mn    -.568   Mn2+  -.568   Mn3+  -.568   Mn4+  -.568
-     Fe    -1.179  Fe2+  -1.179  Fe3+  -1.179  Co    -2.464  Co2+  -2.464
-     Co3+  -2.464  Ni    -2.956  Ni2+  -2.956  Ni3+  -2.956  Cu    -2.019
-     Cu1+  -2.019  Cu2+  -2.019  Zn    -1.612  Zn2+  -1.612  Ga    -1.354
-     Ga3+  -1.354  Ge    -1.163  Ge4+  -1.163  As    -1.011  Se    -.879
-     Br    -.767   Br1-  -.767   Kr    -.665   Rb    -.574   Rb1+  -.574
-     Sr    -.465   Sr2+  -.465   Y     -.386   Y3+   -.386   Zr    -.314
-     Zr4+  -.314   Nb    -.248   Nb3+  -.248   Nb5+  -.248   Mo    -.191
-     Mo3+  -.191   Mo5+  -.191   Mo6+  -.191   Tc    -.145   Ru    -.105
-     Ru3+  -.105   Ru4+  -.105   Rh    -.077   Rh3+  -.077   Rh4+  -.077
-     Pd    -.059   Pd2+  -.059   Pd4+  -.059   Ag    -.06    Ag1+  -.06
-     Ag2+  -.06    Cd    -.079   Cd2+  -.079   In    -.126   In3+  -.126
-     Sn    -.194   Sn2+  -.194   Sn4+  -.194   Sb    -.287   Sb3+  -.287
-     Sb5+  -.287   Te    -.418   I     -.579   I1-   -.579   Xe    -.783
-     Cs    -1.022  Cs1+  -1.022  Ba    -1.334  Ba2+  -1.334  La    -1.716
-     La3+  -1.716  Ce    -2.17   Ce3+  -2.17   Ce4+  -2.17   Pr    -2.939
-     Pr3+  -2.939  Pr4+  -2.939  Nd    -3.431  Nd3+  -3.431  Pm    -4.357
-     Sm    -5.696  Sm3+  -5.696  Eu    -7.718  Eu2+  -7.718  Eu3+  -7.718
-     Gd    -9.242  Gd3+  -9.242  Tb    -9.498  Tb3+  -9.498  Dy    -10.423
-     Dy3+  -10.423 Ho    -12.255 Ho3+  -12.255 Er    -9.733  Er3+  -9.733
-     Tm    -8.488  Tm3+  -8.488  Yb    -7.701  Yb2+  -7.701  Yb3+  -7.701
-     Lu    -7.133  Lu3+  -7.133  Hf    -6.715  Hf4+  -6.715  Ta    -6.351
-     Ta5+  -6.351  W     -6.048  W6+   -6.048  Re    -5.79   Os    -5.581
-     Os4+  -5.581  Ir    -5.391  Ir3+  -5.391  Ir4+  -5.391  Pt    -5.233
-     Pt2+  -5.233  Pt4+  -5.233  Au    -5.096  Au1+  -5.096  Au3+  -5.096
-     Hg    -4.99   Hg1+  -4.99   Hg2+  -4.99   Tl    -4.883  Tl1+  -4.883
-     Tl3+  -4.883  Pb    -4.818  Pb2+  -4.818  Pb4+  -4.818  Bi    -4.776
-     Bi3+  -4.776  Bi5+  -4.776  Po    -4.756  At    -4.772  Rn    -4.787
-     Fr    -4.833  Ra    -4.898  Ra2+  -4.898  Ac    -4.994  Ac3+  -4.994
-     Th    -5.091  Th4+  -5.091  Pa    -5.216  U     -5.359  U3+   -5.359
-     U4+   -5.359  U6+   -5.359  Np    -5.529  Np3+  -5.529  Np4+  -5.529
-     Np6+  -5.529  Pu    -5.712  Pu3+  -5.712  Pu4+  -5.712  Pu6+  -5.712
-     Am    -5.93   Cm    -6.176  Bk    -6.498  Cf    -6.798
-     save_
+    H    0.0      D     0.0      He    0.0      Li   0.001    Be   0.003
+    B    0.008    C     0.017    N     0.029    O    0.047    F    0.069
+    Ne   0.097    Na    0.129    Mg    0.165    Al   0.204    Si   0.244
+    P    0.283    S     0.319    Cl    0.348    Ar   0.366    K    0.365
+    Ca   0.341    Sc    0.285    Ti    0.189    V    0.035    Cr  -0.198
+    Mn  -0.568    Fe   -1.179    Co   -2.464    Ni  -2.956    Cu  -2.019
+    Zn  -1.612    Ga   -1.354    Ge   -1.163    As  -1.011    Se  -0.879
+    Br  -0.767    Kr   -0.665    Rb   -0.574    Sr  -0.465    Y   -0.386
+    Zr  -0.314    Nb   -0.248    Mo   -0.191    Tc  -0.145    Ru  -0.105
+    Rh  -0.077    Pd   -0.059    Ag   -0.06     Cd  -0.079    In  -0.126
+    Sn  -0.194    Sb   -0.287    Te   -0.418    I   -0.579    Xe  -0.783
+    Cs  -1.022    Ba   -1.334    La   -1.716    Ce  -2.17     Pr  -2.939
+    Nd  -3.431    Pm   -4.357    Sm   -5.696    Eu  -7.718    Gd  -9.242
+    Tb  -9.498    Dy  -10.423    Ho  -12.255    Er  -9.733    Tm  -8.488
+    Yb  -7.701    Lu   -7.133    Hf   -6.715    Ta  -6.351    W   -6.048
+    Re  -5.79     Os   -5.581    Ir   -5.391    Pt  -5.233    Au  -5.096
+    Hg  -4.99     Tl   -4.883    Pb   -4.818    Bi  -4.776    Po  -4.756
+    At  -4.772    Rn   -4.787    Fr   -4.833    Ra  -4.898    Ac  -4.994
+    Th  -5.091    Pa   -5.216    U    -5.359    Np  -5.529    Pu  -5.712
+    Am  -5.93     Cm   -6.176    Bk   -6.498    Cf  -6.798
 
-
+save_
 
 save_dispersion_imag_cu
 
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     .0      D     .0      H1-   .0      He    .0      Li    .0
-     Li1+  .0      Be    .001    Be2+  .001    B     .004    C     .009
-     N     .018    O     .032    O1-   .032    F     .053    F1-   .053
-     Ne    .083    Na    .124    Na1+  .124    Mg    .177    Mg2+  .177
-     Al    .246    Al3+  .246    Si    .33     Si4+  .33     P     .434
-     S     .557    Cl    .702    Cl1-  .702    Ar    .872    K     1.066
-     K1+   1.066   Ca    1.286   Ca2+  1.286   Sc    1.533   Sc3+  1.533
-     Ti    1.807   Ti2+  1.807   Ti3+  1.807   Ti4+  1.807   V     2.11
-     V2+   2.11    V3+   2.11    V5+   2.11    Cr    2.443   Cr2+  2.443
-     Cr3+  2.443   Mn    2.808   Mn2+  2.808   Mn3+  2.808   Mn4+  2.808
-     Fe    3.204   Fe2+  3.204   Fe3+  3.204   Co    3.608   Co2+  3.608
-     Co3+  3.608   Ni    .509    Ni2+  .509    Ni3+  .509    Cu    .589
-     Cu1+  .589    Cu2+  .589    Zn    .678    Zn2+  .678    Ga    0.777
-     Ga3+  0.777   Ge    .886    Ge4+  .886    As    1.006   Se    1.139
-     Br    1.283   Br1-  1.283   Kr    1.439   Rb    1.608   Rb1+  1.608
-     Sr    1.82    Sr2+  1.82    Y     2.025   Y3+   2.025   Zr    2.245
-     Zr4+  2.245   Nb    2.482   Nb3+  2.482   Nb5+  2.482   Mo    2.735
-     Mo3+  2.735   Mo5+  2.735   Mo6+  2.735   Tc    3.005   Ru    3.296
-     Ru3+  3.296   Ru4+  3.296   Rh    3.605   Rh3+  3.605   Rh4+  3.605
-     Pd    3.934   Pd2+  3.934   Pd4+  3.934   Ag    4.282   Ag1+  4.282
-     Ag2+  4.282   Cd    4.653   Cd2+  4.653   In    5.045   In3+  5.045
-     Sn    5.459   Sn2+  5.459   Sn4+  5.459   Sb    5.894   Sb3+  5.894
-     Sb5+  5.894   Te    6.352   I     6.835   I1-   6.835   Xe    7.348
-     Cs    7.904   Cs1+  7.904   Ba    8.46    Ba2+  8.46    La    9.036
-     La3+  9.036   Ce    9.648   Ce3+  9.648   Ce4+  9.648   Pr    10.535
-     Pr3+  10.535  Pr4+  10.535  Nd    10.933  Nd3+  10.933  Pm    11.614
-     Sm    12.32   Sm3+  12.32   Eu    11.276  Eu2+  11.276  Eu3+  11.276
-     Gd    11.946  Gd3+  11.946  Tb    9.242   Tb3+  9.242   Dy    9.748
-     Dy3+  9.748   Ho    3.704   Ho3+  3.704   Er    3.937   Er3+  3.937
-     Tm    4.181   Tm3+  4.181   Yb    4.432   Yb2+  4.432   Yb3+  4.432
-     Lu    4.693   Lu3+  4.693   Hf    4.977   Hf4+  4.977   Ta    5.271
-     Ta5+  5.271   W     5.577   W6+   5.577   Re    5.891   Os    6.221
-     Os4+  6.221   Ir    6.566   Ir3+  6.566   Ir4+  6.566   Pt    6.925
-     Pt2+  6.925   Pt4+  6.925   Au    7.297   Au1+  7.297   Au3+  7.297
-     Hg    7.686   Hg1+  7.686   Hg2+  7.686   Tl    8.089   Tl1+  8.089
-     Tl3+  8.089   Pb    8.505   Pb2+  8.505   Pb4+  8.505   Bi    8.93
-     Bi3+  8.93    Bi5+  8.93    Po    9.383   At    9.843   Rn    10.317
-     Fr    10.803  Ra    11.296  Ra2+  11.296  Ac    11.799  Ac3+  11.799
-     Th    12.33   Th4+  12.33   Pa    12.868  U     13.409  U3+   13.409
-     U4+   13.409  U6+   13.409  Np    13.967  Np3+  13.967  Np4+  13.967
-     Np6+  13.967  Pu    14.536  Pu3+  14.536  Pu4+  14.536  Pu6+  14.536
-     Am    15.087  Cm    15.634  Bk    16.317  Cf    16.93
-     save_
+     H    0.0      D    0.0      He   0.0      Li   0.0      Be   0.001
+     B    0.004    C    0.009    N    0.018    O    0.032    F    0.053
+     Ne   0.083    Na   0.124    Mg   0.177    Al   0.246    Si   0.33
+     P    0.434    S    0.557    Cl   0.702    Ar   0.872    K    1.066
+     Ca   1.286    Sc   1.533    Ti   1.807    V    2.11     Cr   2.443
+     Mn   2.808    Fe   3.204    Co   3.608    Ni   0.509    Cu   0.589
+     Zn   0.678    Ga   0.777    Ge   0.886    As   1.006    Se   1.139
+     Br   1.283    Kr   1.439    Rb   1.608    Sr   1.82     Y    2.025
+     Zr   2.245    Nb   2.482    Mo   2.735    Tc   3.005    Ru   3.296
+     Rh   3.605    Pd   3.934    Ag   4.282    Cd   4.653    In   5.045
+     Sn   5.459    Sb   5.894    Te   6.352    I    6.835    Xe   7.348
+     Cs   7.904    Ba   8.46     La   9.036    Ce   9.648    Pr  10.535
+     Nd  10.933    Pm  11.614    Sm  12.32     Eu  11.276    Gd  11.946
+     Tb   9.242    Dy   9.748    Ho   3.704    Er   3.937    Tm   4.181
+     Yb   4.432    Lu   4.693    Hf   4.977    Ta   5.271    W    5.577
+     Re   5.891    Os   6.221    Ir   6.566    Pt   6.925    Au   7.297
+     Hg   7.686    Tl   8.089    Pb   8.505    Bi   8.93     Po   9.383
+     At   9.843    Rn  10.317    Fr  10.803    Ra  11.296    Ac  11.799
+     Th  12.33     Pa  12.868    U   13.409    Np  13.967    Pu  14.536
+     Am  15.087    Cm  15.634    Bk  16.317    Cf  16.93
 
+save_
 
 save_dispersion_real_mo
 
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     .0      D     .0      H1-   .0      He    .0      Li    .0
-     Li1+  .0      Be    .0      Be2+  .0      B     .0      C     .002
-     N     .004    O     .008    O1-   .008    F     .014    F1-   .014
-     Ne    .021    Na    0.03    Na1+  0.03    Mg    .042    Mg2+  .042
-     Al    .056    Al3+  .056    Si    .072    Si4+  .072    P     .09
-     S     .11     Cl    .132    Cl1-  .132    Ar    .155    K     .179
-     K1+   .179    Ca    .203    Ca2+  .203    Sc    0.226   Sc3+  0.226
-     Ti    .248    Ti2+  .248    Ti3+  .248    Ti4+  .248    V     .267
-     V2+   .267    V3+   .267    V5+   .267    Cr    .284    Cr2+  .284
-     Cr3+  .284    Mn    .295    Mn2+  .295    Mn3+  .295    Mn4+  .295
-     Fe    .301    Fe2+  .301    Fe3+  .301    Co    .299    Co2+  .299
-     Co3+  .299    Ni    .285    Ni2+  .285    Ni3+  .285    Cu    .263
-     Cu1+  .263    Cu2+  .263    Zn    .222    Zn2+  .222    Ga    0.163
-     Ga3+  0.163   Ge    .081    Ge4+  .081    As    -.03    Se    -.178
-     Br    -.374   Br1-  -.374   Kr    -.652   Rb    -1.044  Rb1+  -1.044
-     Sr    -1.657  Sr2+  -1.657  Y     -2.951  Y3+   -2.951  Zr    -2.965
-     Zr4+  -2.965  Nb    -2.197  Nb3+  -2.197  Nb5+  -2.197  Mo    -1.825
-     Mo3+  -1.825  Mo5+  -1.825  Mo6+  -1.825  Tc    -1.59   Ru    -1.42
-     Ru3+  -1.42   Ru4+  -1.42   Rh    -1.287  Rh3+  -1.287  Rh4+  -1.287
-     Pd    -1.177  Pd2+  -1.177  Pd4+  -1.177  Ag    -1.085  Ag1+  -1.085
-     Ag2+  -1.085  Cd    -1.005  Cd2+  -1.005  In    -.936   In3+  -.936
-     Sn    -.873   Sn2+  -.873   Sn4+  -.873   Sb    -.816   Sb3+  -.816
-     Sb5+  -.816   Te    -.772   I     -.726   I1-   -.726   Xe    -.684
-     Cs    -.644   Cs1+  -.644   Ba    -.613   Ba2+  -.613   La    -.588
-     La3+  -.588   Ce    -.564   Ce3+  -.564   Ce4+  -.564   Pr    -.53
-     Pr3+  -.53    Pr4+  -.53    Nd    -.535   Nd3+  -.535   Pm    -.53
-     Sm    -.533   Sm3+  -.533   Eu    -.542   Eu2+  -.542   Eu3+  -.542
-     Gd    -.564   Gd3+  -.564   Tb    -.591   Tb3+  -.591   Dy    -.619
-     Dy3+  -.619   Ho    -.666   Ho3+  -.666   Er    -.723   Er3+  -.723
-     Tm    -.795   Tm3+  -.795   Yb    -.884   Yb2+  -.884   Yb3+  -.884
-     Lu    -.988   Lu3+  -.988   Hf    -1.118  Hf4+  -1.118  Ta    -1.258
-     Ta5+  -1.258  W     -1.421  W6+   -1.421  Re    -1.598  Os    -1.816
-     Os4+  -1.816  Ir    -2.066  Ir3+  -2.066  Ir4+  -2.066  Pt    -2.352
-     Pt2+  -2.352  Pt4+  -2.352  Au    -2.688  Au1+  -2.688  Au3+  -2.688
-     Hg    -3.084  Hg1+  -3.084  Hg2+  -3.084  Tl    -3.556  Tl1+  -3.556
-     Tl3+  -3.556  Pb    -4.133  Pb2+  -4.133  Pb4+  -4.133  Bi    -4.861
-     Bi3+  -4.861  Bi5+  -4.861  Po    -5.924  At    -7.444  Rn    -8.862
-     Fr    -7.912  Ra    -7.62   Ra2+  -7.62   Ac    -7.725  Ac3+  -7.725
-     Th    -8.127  Th4+  -8.127  Pa    -8.96   U     -10.673 U3+   -10.673
-     U4+   -10.673 U6+   -10.673 Np    -11.158 Np3+  -11.158 Np4+  -11.158
-     Np6+  -11.158 Pu    -9.725  Pu3+  -9.725  Pu4+  -9.725  Pu6+  -9.725
-     Am    -8.926  Cm    -8.416  Bk    -7.99   Cf    -7.683
-     save_
+    H    0.0      D    0.0      He    0.0      Li    0.0      Be   0.0
+    B    0.0      C    0.002    N     0.004    O     0.008    F    0.014
+    Ne   0.021    Na   0.03     Mg    0.042    Al    0.056    Si   0.072
+    P    0.09     S    0.11     Cl    0.132    Ar    0.155    K    0.179
+    Ca   0.203    Sc   0.226    Ti    0.248    V     0.267    Cr   0.284
+    Mn   0.295    Fe   0.301    Co    0.299    Ni    0.285    Cu   0.263
+    Zn   0.222    Ga   0.163    Ge    0.081    As   -0.03     Se  -0.178
+    Br  -0.374    Kr  -0.652    Rb   -1.044    Sr   -1.657    Y   -2.951
+    Zr  -2.965    Nb  -2.197    Mo   -1.825    Tc   -1.59     Ru  -1.42
+    Rh  -1.287    Pd  -1.177    Ag   -1.085    Cd   -1.005    In  -0.936
+    Sn  -0.873    Sb  -0.816    Te   -0.772    I    -0.726    Xe  -0.684
+    Cs  -0.644    Ba  -0.613    La   -0.588    Ce   -0.564    Pr  -0.53
+    Nd  -0.535    Pm  -0.53     Sm   -0.533    Eu   -0.542    Gd  -0.564
+    Tb  -0.591    Dy  -0.619    Ho   -0.666    Er   -0.723    Tm  -0.795
+    Yb  -0.884    Lu  -0.988    Hf   -1.118    Ta   -1.258    W   -1.421
+    Re  -1.598    Os  -1.816    Ir   -2.066    Pt   -2.352    Au  -2.688
+    Hg  -3.084    Tl  -3.556    Pb   -4.133    Bi   -4.861    Po  -5.924
+    At  -7.444    Rn  -8.862    Fr   -7.912    Ra   -7.62     Ac  -7.725
+    Th  -8.127    Pa  -8.96     U   -10.673    Np  -11.158    Pu  -9.725
+    Am  -8.926    Cm  -8.416    Bk   -7.99     Cf   -7.683
 
+save_
 
 save_dispersion_imag_mo
 
      loop_
          _enumeration_default.index
          _enumeration_default.value
-     H     .0      D     .0      H1-   .0      He    .0      Li    .0
-     Li1+  .0      Be    .0      Be2+  .0      B     .001    C     .002
-     N     .003    O     .006    O1-   .006    F     .01     F1-   .01
-     Ne    .016    Na    .025    Na1+  .025    Mg    .036    Mg2+  .036
-     Al    .052    Al3+  .052    Si    .071    Si4+  .071    P     .095
-     S     .124    Cl    .159    Cl1-  .159    Ar    .201    K     .25
-     K1+   .25     Ca    .306    Ca2+  .306    Sc    0.372   Sc3+  0.372
-     Ti    .446    Ti2+  .446    Ti3+  .446    Ti4+  .446    V     .53
-     V2+   .53     V3+   .53     V5+   .53     Cr    .624    Cr2+  .624
-     Cr3+  .624    Mn    .729    Mn2+  .729    Mn3+  .729    Mn4+  .729
-     Fe    .845    Fe2+  .845    Fe3+  .845    Co    .973    Co2+  .973
-     Co3+  .973    Ni    1.113   Ni2+  1.113   Ni3+  1.113   Cu    1.266
-     Cu1+  1.266   Cu2+  1.266   Zn    1.431   Zn2+  1.431   Ga    1.609
-     Ga3+  1.609   Ge    1.801   Ge4+  1.801   As    2.007   Se    2.223
-     Br    2.456   Br1-  2.456   Kr    2.713   Rb    2.973   Rb1+  2.973
-     Sr    3.264   Sr2+  3.264   Y     3.542   Y3+   3.542   Zr    .56
-     Zr4+  .56     Nb    0.621   Nb3+  0.621   Nb5+  0.621   Mo    .688
-     Mo3+  .688    Mo5+  .688    Mo6+  .688    Tc    .759    Ru    .836
-     Ru3+  .836    Ru4+  .836    Rh    .919    Rh3+  .919    Rh4+  .919
-     Pd    1.007   Pd2+  1.007   Pd4+  1.007   Ag    1.101   Ag1+  1.101
-     Ag2+  1.101   Cd    1.202   Cd2+  1.202   In    1.31    In3+  1.31
-     Sn    1.424   Sn2+  1.424   Sn4+  1.424   Sb    1.546   Sb3+  1.546
-     Sb5+  1.546   Te    1.675   I     1.812   I1-   1.812   Xe    1.958
-     Cs    2.119   Cs1+  2.119   Ba    2.282   Ba2+  2.282   La    2.452
-     La3+  2.452   Ce    2.632   Ce3+  2.632   Ce4+  2.632   Pr    2.845
-     Pr3+  2.845   Pr4+  2.845   Nd    3.018   Nd3+  3.018   Pm    3.225
-     Sm    3.442   Sm3+  3.442   Eu    3.669   Eu2+  3.669   Eu3+  3.669
-     Gd    3.904   Gd3+  3.904   Tb    4.151   Tb3+  4.151   Dy    4.41
-     Dy3+  4.41    Ho    4.678   Ho3+  4.678   Er    4.958   Er3+  4.958
-     Tm    5.248   Tm3+  5.248   Yb    5.548   Yb2+  5.548   Yb3+  5.548
-     Lu    5.858   Lu3+  5.858   Hf    6.185   Hf4+  6.185   Ta    6.523
-     Ta5+  6.523   W     6.872   W6+   6.872   Re    7.232   Os    7.605
-     Os4+  7.605   Ir    7.99    Ir3+  7.99    Ir4+  7.99    Pt    8.388
-     Pt2+  8.388   Pt4+  8.388   Au    8.798   Au1+  8.798   Au3+  8.798
-     Hg    9.223   Hg1+  9.223   Hg2+  9.223   Tl    9.659   Tl1+  9.659
-     Tl3+  9.659   Pb    10.102  Pb2+  10.102  Pb4+  10.102  Bi    10.559
-     Bi3+  10.559  Bi5+  10.559  Po    11.042  At    9.961   Rn    10.403
-     Fr    7.754   Ra    8.105   Ra2+  8.105   Ac    8.472   Ac3+  8.472
-     Th    8.87    Th4+  8.87    Pa    9.284   U     9.654   U3+   9.654
-     U4+   9.654   U6+   9.654   Np    4.148   Np3+  4.148   Np4+  4.148
-     Np6+  4.148   Pu    4.33    Pu3+  4.33    Pu4+  4.33    Pu6+  4.33
-     Am    4.511   Cm    4.697   Bk    4.908   Cf    5.107
-     save_
+    H     0.0       D    0.0      He   0.0      Li   0.0      Be   0.0
+    B     0.001     C    0.002    N    0.003    O    0.006    F    0.01
+    Ne    0.016     Na   0.025    Mg   0.036    Al   0.052    Si   0.071
+    P     0.095     S    0.124    Cl   0.159    Ar   0.201    K    0.25
+    Ca    0.306     Sc   0.372    Ti   0.446    V    0.53     Cr   0.624
+    Mn    0.729     Fe   0.845    Co   0.973    Ni   1.113    Cu   1.266
+    Zn    1.431     Ga   1.609    Ge   1.801    As   2.007    Se   2.223
+    Br    2.456     Kr   2.713    Rb   2.973    Sr   3.264    Y    3.542
+    Zr    0.56      Nb   0.621    Mo   0.688    Tc   0.759    Ru   0.836
+    Rh    0.919     Pd   1.007    Ag   1.101    Cd   1.202    In   1.31
+    Sn    1.424     Sb   1.546    Te   1.675    I    1.812    Xe   1.958
+    Cs    2.119     Ba   2.282    La   2.452    Ce   2.632    Pr   2.845
+    Nd    3.018     Pm   3.225    Sm   3.442    Eu   3.669    Gd   3.904
+    Tb    4.151     Dy   4.41     Ho   4.678    Er   4.958    Tm   5.248
+    Yb    5.548     Lu   5.858    Hf   6.185    Ta   6.523    W    6.872
+    Re    7.232     Os   7.605    Ir   7.99     Pt   8.388    Au   8.798
+    Hg    9.223     Tl   9.659    Pb  10.102    Bi  10.559    Po  11.042
+    At    9.961     Rn  10.403    Fr   7.754    Ra   8.105    Ac   8.472
+    Th    8.87      Pa   9.284    U    9.654    Np   4.148    Pu   4.33
+    Am    4.511     Cm   4.697    Bk   4.908    Cf   5.107
+
+save_
 
 
 save_cromer_mann_a1
@@ -2419,4 +2314,8 @@ save_
 
        Updated the values for V2+, V3+ and V5+ in the 'length_neutron' save
        frame to match those of V.
+
+       Altered key of atomic_number, dispersion_real_Cu,
+       dispersion_imag_Cu, dispersion_real_Mo, and dispersion_imag_Mo to be
+       keyed on _atom_type.element_symbol.
 ;

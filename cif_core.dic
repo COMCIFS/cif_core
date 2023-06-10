@@ -16019,7 +16019,7 @@ save_citation.id
 
     _definition.id                '_citation.id'
     _alias.definition_id          '_citation_id'
-    _definition.update            2021-10-27
+    _definition.update            2023-04-04
     _description.text
 ;
     Unique identifier to the CITATION list. A value of 'primary'
@@ -16041,6 +16041,16 @@ save_citation.id
          1
          2
          3
+
+    _method.purpose               Definition
+    _method.expression
+;
+    if (len(citation) == 1) {
+        _enumeration.default = "primary"
+    } else {
+        _enumeration.default = missing
+    }
+;
 
 save_
 
@@ -23900,7 +23910,7 @@ save_
 save_atom_type.atomic_number
 
     _definition.id                '_atom_type.atomic_number'
-    _definition.update            2021-03-01
+    _definition.update            2023-06-01
     _description.text
 ;
     Atomic number of this atom type.
@@ -23912,7 +23922,7 @@ save_atom_type.atomic_number
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            1:
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24504,7 +24514,7 @@ save_
 save_atom_type_scat.dispersion_imag_cu
 
     _definition.id                '_atom_type_scat.dispersion_imag_Cu'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -24516,7 +24526,7 @@ save_atom_type_scat.dispersion_imag_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24527,7 +24537,7 @@ save_
 save_atom_type_scat.dispersion_imag_mo
 
     _definition.id                '_atom_type_scat.dispersion_imag_Mo'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -24539,7 +24549,7 @@ save_atom_type_scat.dispersion_imag_mo
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24585,7 +24595,7 @@ save_
 save_atom_type_scat.dispersion_real_cu
 
     _definition.id                '_atom_type_scat.dispersion_real_Cu'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -24597,7 +24607,7 @@ save_atom_type_scat.dispersion_real_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24608,7 +24618,7 @@ save_
 save_atom_type_scat.dispersion_real_mo
 
     _definition.id                '_atom_type_scat.dispersion_real_Mo'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -24620,7 +24630,7 @@ save_atom_type_scat.dispersion_real_mo
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -27534,10 +27544,17 @@ save_
        # Please update the date above and describe the change below until
        # ready for the next release
 
+       Added a dREL definition method for the _citation.id data item.
+
         Rewrote the _atom_type.radius_contact evaluation method as a definition
         method.
 
         Added _atom_type.mass_number to record specific isotope identities.
+
+        Changed enumeration of _atom_type.atomic_number,
+        _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
+        _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
+        to be defaulted on _atom_type.element_symbol.
 
         Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 
