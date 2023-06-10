@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-06-07
+    _dictionary.date              2023-06-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -997,14 +997,13 @@ save_enumeration.def_index_ids
 
     _definition.id                '_enumeration.def_index_ids'
     _definition.class             Attribute
-    _definition.update            2023-06-01
+    _definition.update            2023-06-10
     _description.text
 ;
-    Specifies the data names of the items that, in combination, have a value
-    used as an index to the DEFAULT enumeration list (in category
-    enumeration_default) in order to select the default enumeration value for
-    that specific combination of defined items. The value of the identified data
-    items must match one of the _enumeration_default.indexes values.
+    Specifies the data names of items that are collectively used to identify
+    the suitable default value in the ENUMERATION_DEFAULT category loop.
+    The values of these items are used to construct an ordered list which is
+    checked against the values of the _enumeration_defaults.index attribute.
 ;
     _name.category_id             enumeration
     _name.object_id               def_index_ids
@@ -1013,11 +1012,6 @@ save_enumeration.def_index_ids
     _type.container               Array
     _type.dimension               '[]'
     _type.contents                Tag
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration.def_index_ids = [ _enumeration.def_index_id ]
-;
 
 save_
 
@@ -1204,12 +1198,20 @@ save_enumeration_defaults.index
 
     _definition.id                '_enumeration_defaults.index'
     _definition.class             Attribute
-    _definition.update            2023-06-01
+    _definition.update            2023-06-10
     _description.text
 ;
-    Index key in the list default values referenced to by the value of
-    _enumeration.def_index_ids. The values given must be in the same order as
-    specified by _enumeration.def_index_ids.
+    An index value, in a form of an ordered list, which allows the
+    identification the most suitable default value. The order of values in the
+    list must correspond to the order of the related data item references in the
+    _enumeration.def_index_ids attribute list. That is, the n^th^ list element
+    is assumed to represent a value that may be assigned to the data item
+    referenced at the n^th^ position of the _enumeration.def_index_ids attribute
+    list value.
+
+    The constituent values of the _enumeration_defaults.index attribute inherit
+    the enumeration range, enumeration set, and the content type of the
+    data item from which they are paired.
 ;
     _name.category_id             enumeration_defaults
     _name.object_id               index
@@ -2935,7 +2937,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-06-07
+         4.1.0                    2023-06-10
 ;
        Added new 'Word' content type.
 
