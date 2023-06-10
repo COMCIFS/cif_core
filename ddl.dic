@@ -1184,9 +1184,8 @@ save_ENUMERATION_DEFAULTS
     _definition.update            2023-06-01
     _description.text
 ;
-    Loop of pre-determined default enumeration values indexed to a
-    data item by the (potentially) multiple keys in the item
-    _enumeration.def_index_ids.
+    Loop of pre-determined default enumeration values indexed by a set of data
+    items specified using the _enumeration.def_index_ids attribute.
 ;
     _name.category_id             ENUMERATION
     _name.object_id               ENUMERATION_DEFAULTS
@@ -1230,9 +1229,10 @@ save_enumeration_defaults.value
     _definition.update            2023-06-01
     _description.text
 ;
-    Default enumeration value in the list referenced by the value of
-    _enumeration.def_index_ids. The reference index key is given by
-    the value of _enumeration_defaults.index.
+    The default enumeration value associated with a specific index value
+    constructed using data items referenced by the _enumeration.def_index_ids
+    attribute. The associated index value is provided using the
+    _enumeration_defaults.index attribute.
 ;
     _name.category_id             enumeration_defaults
     _name.object_id               value
@@ -2087,10 +2087,13 @@ save_type.contents
          Inherited
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         For use only with List, Array, Matrix, or Table data values in the DDLm
-         attribute dictionary. The data type of each value in such a compound
-         value is the same as that of the data name to which each value is
-         directly related.
+         Intended to be used with List, Array, Matrix or Table containers which
+         may simultaneously contain values of several content types. The content
+         type of each value in such containers matches the content type of the
+         data item to which it is directly related. Specific rules for relating
+         data values to data items MUST be provided as human-readable text in
+         the _description.text attribute of all data items that have the
+         Inherited content type.
 
          The description text of the Inherited type must include rules on
          establishing the units of any indiviudal value in the compound data.
