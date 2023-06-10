@@ -1217,7 +1217,7 @@ save_enumeration_defaults.index
     _name.object_id               index
     _type.purpose                 Encode
     _type.source                  Assigned
-    _type.container               Array
+    _type.container               List
     _type.dimension               '[]'
     _type.contents                Inherited
 
