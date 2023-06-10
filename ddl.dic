@@ -1190,9 +1190,8 @@ save_ENUMERATION_DEFAULTS
     _definition.update            2023-06-01
     _description.text
 ;
-    Loop of pre-determined default enumeration values indexed to a
-    data item by the (potentially) multiple keys in the item
-    _enumeration.def_index_ids.
+    Loop of pre-determined default enumeration values indexed by a set of data
+    items specified using the _enumeration.def_index_ids attribute.
 ;
     _name.category_id             ENUMERATION
     _name.object_id               ENUMERATION_DEFAULTS
