@@ -2084,10 +2084,13 @@ save_type.contents
          Inherited
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         For use only with List, Array, Matrix, or Table data values in the DDLm
-         attribute dictionary. The data type of each value in such a compound
-         value is the same as that of the data name to which each value is
-         directly related.
+         Intended to be used with List, Array, Matrix or Table containers which
+         may simultaneously contain values of several content types. The content
+         type of each value in such containers matches the content type of the
+         data item to which it is directly related. Specific rules for relating
+         data values to data items MUST be provided as human-readable text in
+         the _description.text attribute of all data items that have the
+         Inherited content type.
 
          The description text of the Inherited type must include rules on
          establishing the units of any indiviudal value in the compound data.
