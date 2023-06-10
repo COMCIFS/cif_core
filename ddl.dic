@@ -1227,9 +1227,10 @@ save_enumeration_defaults.value
     _definition.update            2023-06-01
     _description.text
 ;
-    Default enumeration value in the list referenced by the value of
-    _enumeration.def_index_ids. The reference index key is given by
-    the value of _enumeration_defaults.index.
+    The default enumeration value associated with a specific index value
+    constructed using data items referenced by the _enumeration.def_index_ids
+    attribute. The associated index value is provided using the
+    _enumeration_defaults.index attribute.
 ;
     _name.category_id             enumeration_defaults
     _name.object_id               value
