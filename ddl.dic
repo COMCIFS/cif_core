@@ -1200,17 +1200,17 @@ save_enumeration_defaults.index
     _definition.update            2023-06-10
     _description.text
 ;
-    An index value, in a form of an ordered list, which allows the
-    identification the most suitable default value. The order of values in the
-    list must correspond to the order of the related data item references in the
-    _enumeration.def_index_ids attribute list. That is, the n^th^ list element
-    is assumed to represent a value that may be assigned to the data item
-    referenced at the n^th^ position of the _enumeration.def_index_ids attribute
-    list value.
+    An index value, in the form of an ordered list, which allows the
+    identification of the most suitable default value. The order of values in
+    the list must correspond to the order of the related data item references
+    in the _enumeration.def_index_ids attribute list. That is, the n^th^ list
+    element is assumed to represent a value that may be assigned to the data
+    item referenced at the n^th^ position of the _enumeration.def_index_ids
+    attribute list value.
 
     The constituent values of the _enumeration_defaults.index attribute inherit
-    the enumeration range, enumeration set, and the content type of the
-    data item from which they are paired.
+    the enumeration range, enumeration set, and the content type from the
+    data item with which they are paired.
 ;
     _name.category_id             enumeration_defaults
     _name.object_id               index
@@ -2094,9 +2094,6 @@ save_type.contents
          data values to data items MUST be provided as human-readable text in
          the _description.text attribute of all data items that have the
          Inherited content type.
-
-         The description text of the Inherited type must include rules on
-         establishing the units of any indiviudal value in the compound data.
 ;
     _enumeration.default          Text
     _description_example.case     Integer
