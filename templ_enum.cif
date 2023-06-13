@@ -754,7 +754,7 @@ save_units_code
    'none' "dimensionless - e.g. a ratio, factor, weight or scale"
 
    'unspecified'
-   "no units supplied; the user must derive the correct units from context."
+   "no units supplied - the correct units should be derived based on the context"
 
    'coulomb'        "electronic charge in coulombs"
    'electron_volts' "electronic charge in electron volts eV"
