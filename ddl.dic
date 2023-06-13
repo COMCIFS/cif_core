@@ -2325,8 +2325,9 @@ save_units.code
 ;
     A code which identifies the units of measurement.
 
-    'unspecified' is used only for List, Array, Matrix, or Table data types
-    where the constituent values have differing units.
+    The 'unspecified' code should only be used in cases when the units cannot
+    be properly expressed in DDLm. A typical example of such situation is a
+    List data item with constituent values that may have differing units.
 ;
     _name.category_id             units
     _name.object_id               code
