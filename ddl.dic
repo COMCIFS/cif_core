@@ -2869,8 +2869,7 @@ save_
        by explicitly specifying that is adheres to the formal grammar
        provided in SemVer version 2.0.0.
 
-       Added 'unspecified' as a valid units.code for compound data types where
-       the constituent values have differing units.
+       Added the "unspecified" enumeration value for the _units.code attribute.
 
        Added ENUMERATION_SOURCE and _enumeration_default.source_id to allow the
        source of default enumeration values to be recorded.
