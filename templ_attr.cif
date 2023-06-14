@@ -695,7 +695,7 @@ save_hi_ang_fox_coeffs
 
     f(s) = exp(Sum( c~i~ * s^i^, i=0:3))
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength 
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
         Ref: International Tables for Crystallography, Vol. C
