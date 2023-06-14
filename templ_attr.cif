@@ -690,7 +690,7 @@ save_hi_ang_fox_coeffs
     _definition.update           2023-06-03
     _description.text
 ;
-    The set of data items used to define Fox et al.  coefficients
+    The set of data items used to define Fox et al. coefficients
     for generation of high angle (2.0 < s < 6.0 Å^-1^) X-ray scattering factors.
 
     f(s) = exp(Sum( c~i~ * s^i^, i=0:3))
