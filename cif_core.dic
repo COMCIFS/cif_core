@@ -4308,7 +4308,7 @@ save_diffrn_refln.standard_code
 ;
     Code identifying reflections measured repeated as standard intensity.
     Must match a _diffrn_standard_refln.code values OR set to '.' if
-    it was not used as a intensity standard.
+    it was not used as an intensity standard.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               standard_code
