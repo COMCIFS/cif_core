@@ -24674,7 +24674,7 @@ save_atom_type_scat.exponential_polynomial_coefs
 
     f(s; Z) = exp(Sum( a~i~ * s^i^), i=0:N))
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength 
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
