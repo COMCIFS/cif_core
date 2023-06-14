@@ -10480,7 +10480,7 @@ save_exptl_crystal.preparation
     _description.text
 ;
     Details of crystal growth and preparation of the crystals
-    (e.g.  mounting) prior to the intensity measurements.
+    (e.g. mounting) prior to the intensity measurements.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               preparation
@@ -11583,7 +11583,7 @@ save_space_group.name_hall
 
     loop_
       _description_example.case
-         'P 2ac  2n'
+         'P 2ac 2n'
          '-R 3 2"'
          'P 61 2 2 (0 0 -1)'
 
@@ -12155,7 +12155,7 @@ save_space_group_wyckoff.multiplicity
     _description.text
 ;
     The multiplicity of this Wyckoff position as given in
-    International Tables Volume A.  It is the number of equivalent
+    International Tables Volume A. It is the number of equivalent
     sites per conventional unit cell.
 
     Ref: International Tables for Crystallography (2002). Volume A,
@@ -16160,7 +16160,7 @@ save_citation.journal_issue
     _definition.update            2021-11-12
     _description.text
 ;
-    Issue identifier of the journal cited;  relevant for articles.
+    Issue identifier of the journal cited; relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_issue
@@ -16183,7 +16183,7 @@ save_citation.journal_volume
     _definition.update            2021-03-01
     _description.text
 ;
-    Volume number of the journal cited;  relevant for articles.
+    Volume number of the journal cited; relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_volume
