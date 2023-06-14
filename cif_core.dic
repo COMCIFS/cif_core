@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-03
+    _dictionary.date              2023-06-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -12124,13 +12124,13 @@ save_
 save_space_group_wyckoff.letter
 
     _definition.id                '_space_group_Wyckoff.letter'
-    _definition.update            2021-09-23
+    _definition.update            2023-06-14
     _description.text
 ;
     The Wyckoff letter associated with this position, as given in
     International Tables for Crystallography Volume A. The
-    enumeration value 'α' corresponds to the Greek letter 'alpha'
-    used in International Tables.
+    enumeration values '\a' and α are equivalent, and correspond to
+    the Greek letter 'alpha' used in International Tables.
 
     Ref: International Tables for Crystallography (2002). Volume A,
          Space-group symmetry, edited by Th. Hahn, 5th ed.
@@ -24764,7 +24764,7 @@ save_atom_type_scat.gaussian_coefs
 
     f(s; Z) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:N)
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength 
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
@@ -27539,24 +27539,26 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-06-03
+         3.3.0                    2023-06-14
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
 
        Added a dREL definition method for the _citation.id data item.
 
-        Rewrote the _atom_type.radius_contact evaluation method as a definition
-        method.
+       Rewrote the _atom_type.radius_contact evaluation method as a definition
+       method.
 
-        Added _atom_type.mass_number to record specific isotope identities.
+       Added _atom_type.mass_number to record specific isotope identities.
 
-        Changed enumeration of _atom_type.atomic_number,
-        _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
-        _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
-        to be defaulted on _atom_type.element_symbol.
+       Changed enumeration of _atom_type.atomic_number,
+       _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
+       _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
+       to be defaulted on _atom_type.element_symbol.
 
-        Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
+       Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 
-        Corrected the content type of the _refln.F_complex_su attribute.
+       Corrected the content type of the _refln.F_complex_su attribute.
+
+       Updated description of _space_group_wyckoff.letter.
 ;
