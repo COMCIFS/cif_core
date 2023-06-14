@@ -664,8 +664,8 @@ save_cromer_mann_coeff
     _definition.update           2023-06-03
     _description.text
 ;
-     The set of data items used to define Cromer-Mann coefficients
-     for generation of (0.0 < s < 2.0 Å^-1^) X-ray scattering factors.
+    The set of data items used to define Cromer-Mann coefficients
+    for generation of (0.0 < s < 2.0 Å^-1^) X-ray scattering factors.
 
     f(s) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:4)
 
