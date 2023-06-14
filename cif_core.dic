@@ -24944,7 +24944,7 @@ save_atom_type_scat.inv_mott_bethe_coefs
     Z - 8 * π * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
 
     where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z is the atomic number.
-    θ is the diffraction angle and λ is the wavelength of the incident 
+    θ is the diffraction angle and λ is the wavelength of the incident
     radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
