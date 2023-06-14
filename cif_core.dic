@@ -15082,14 +15082,14 @@ save_audit_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A.'''
-         '''Müller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A."
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
 
 save_
 
@@ -16418,14 +16418,14 @@ save_citation_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A'''
-         '''Müller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A"
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
 
 save_
 
@@ -16515,13 +16515,13 @@ save_citation_editor.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A'''
-         '''Müller, H.A.'''
-         '''Ross II, C.R.'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A"
+         "Müller, H.A."
+         "Ross II, C.R."
 
 save_
 
@@ -18661,14 +18661,14 @@ save_publ_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A'''
-         '''Müller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A"
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
 
 save_
 
