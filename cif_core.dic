@@ -761,8 +761,8 @@ save_cell.diffrn_id
     for example, to locate and extract diffraction peaks. These will normally be
     the same conditions as those under which the cell was measured, but some
     legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using
-    `_cell_measurement.condition_id`
+    in which case those conditions should be indicated using the
+    _cell_measurement.condition_id data item.
 ;
     _name.category_id             cell
     _name.object_id               diffrn_id
