@@ -24518,7 +24518,7 @@ save_atom_type_scat.dispersion_imag_cu
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Cu
@@ -24541,7 +24541,7 @@ save_atom_type_scat.dispersion_imag_mo
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Mo
@@ -24599,7 +24599,7 @@ save_atom_type_scat.dispersion_real_cu
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Cu
@@ -24622,7 +24622,7 @@ save_atom_type_scat.dispersion_real_mo
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Mo
