@@ -5479,7 +5479,7 @@ save_diffrn_source.size
 
     loop_
       _description_example.case
-         '8mm x 0.4 mm fine-focus'
+         '8 mm x 0.4 mm fine-focus'
          'broad focus'
 
 save_
