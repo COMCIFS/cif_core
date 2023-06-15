@@ -667,7 +667,7 @@ save_cromer_mann_coeff
     The set of data items used to define Cromer-Mann coefficients for generation
     of X-ray scattering factors (0.0 < s < 2.0 \%A^-1^).
 
-    f(s) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:4)
+    f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
 
     where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
     the wavelength of the incident radiation in angstroms.
@@ -693,7 +693,7 @@ save_hi_ang_fox_coeffs
     The set of data items used to define Fox et al. coefficients for generation
     of high angle (2.0 < s < 6.0 \%A^-1^) X-ray scattering factors.
 
-    f(s) = exp(Sum( c~i~ * s^i^, i=0:3))
+    f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
 
     where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
     the wavelength of the incident radiation in angstroms.
@@ -798,7 +798,7 @@ save_diffr_angle
     _description.text
 ;
      Diffractometer angle at which the intensity is measured. This was
-     calculated from the specified  orientation matrix and the original
+     calculated from the specified orientation matrix and the original
      measured cell dimensions before any subsequent transformations.
 ;
     _type.purpose                Number

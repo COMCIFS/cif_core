@@ -1880,11 +1880,11 @@ save_type.contents
     [U+B0000-U+BFFFD], [U+C0000-U+CFFFD], [U+D0000-U+DFFFD],
     [U+E0000-U+EFFFD], [U+F0000-U+FFFFD], [U+100000-U+10FFFD]
 
-    Two "case insensitive" strings are considered identical when
+    Two case-insensitive strings are considered identical when
     they match under the Unicode canonical caseless matching algorithm.
 
     In all cases, "whitespace" refers to ASCII whitespace only, that
-    is [U+0009],[U+000A],[U+000D] and [U+0020].
+    is [U+0009], [U+000A], [U+000D] and [U+0020].
 
     Note that descriptions of text syntax are relevant only to those
     formats that encode data values as text.
@@ -2618,7 +2618,7 @@ save_
          3.8.4                    2011-06-23
 ;
        Remove IMPORT_TABLE. Change the IMPORT to a set category.
-       Insert a import.get attribute to replace import_table.id.
+       Insert an import.get attribute to replace import_table.id.
        Rename the DDL_ATTR category as ATTRIBUTES.
 ;
          3.8.5                    2011-06-27
@@ -2866,7 +2866,7 @@ save_
        Updated definition of "Integer" in _type.contents.
 
        Clarified the definition of the "Version" state in _type.contents
-       by explicitly specifying that is adheres to the formal grammar
+       by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 
        Added the "unspecified" enumeration value for the _units.code attribute.
