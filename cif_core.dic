@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-03
+    _dictionary.date              2023-06-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -24416,7 +24416,7 @@ save_
 save_atom_type_scat.cromer_mann_coeffs
 
     _definition.id                '_atom_type_scat.Cromer_Mann_coeffs'
-    _definition.update            2012-11-20
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Cromer-Mann coefficients for generating X-ray scattering
@@ -24431,7 +24431,7 @@ save_atom_type_scat.cromer_mann_coeffs
     _type.container               List
     _type.dimension               '[9]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24666,7 +24666,7 @@ save_
 save_atom_type_scat.exponential_polynomial_coefs
 
     _definition.id                '_atom_type_scat.exponential_polynomial_coefs'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of polynomial coefficients for generating X-ray scattering factors:
@@ -24684,7 +24684,7 @@ save_atom_type_scat.exponential_polynomial_coefs
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -24692,7 +24692,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
 
     _definition.id
         '_atom_type_scat.exponential_polynomial_coefs_su'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     Standard uncertainty of _atom_type_scat.exponential_polynomial_coefs.
@@ -24705,7 +24705,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -24756,7 +24756,7 @@ save_
 save_atom_type_scat.gaussian_coefs
 
     _definition.id                '_atom_type_scat.Gaussian_coefs'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Gaussian coefficients for generating X-ray scattering factors:
@@ -24774,14 +24774,14 @@ save_atom_type_scat.gaussian_coefs
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
 save_atom_type_scat.gaussian_coefs_su
 
     _definition.id                '_atom_type_scat.Gaussian_coefs_su'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     Standard uncertainty of _atom_type_scat.Gaussian_coefs.
@@ -24794,7 +24794,7 @@ save_atom_type_scat.gaussian_coefs_su
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -24903,7 +24903,7 @@ save_
 save_atom_type_scat.hi_ang_fox_coeffs
 
     _definition.id                '_atom_type_scat.hi_ang_Fox_coeffs'
-    _definition.update            2012-11-30
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Fox et al. coefficients for generating high angle
@@ -24918,7 +24918,7 @@ save_atom_type_scat.hi_ang_fox_coeffs
     _type.container               List
     _type.dimension               '[4]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24933,7 +24933,7 @@ save_
 save_atom_type_scat.inv_mott_bethe_coefs
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Gaussian coefficients for use in the inverse Mott-Bethe
@@ -24954,14 +24954,14 @@ save_atom_type_scat.inv_mott_bethe_coefs
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
 save_atom_type_scat.inv_mott_bethe_coefs_su
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
@@ -24974,7 +24974,7 @@ save_atom_type_scat.inv_mott_bethe_coefs_su
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -27539,7 +27539,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-06-03
+         3.3.0                    2023-06-16
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
