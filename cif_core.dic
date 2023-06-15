@@ -761,8 +761,8 @@ save_cell.diffrn_id
     for example, to locate and extract diffraction peaks. These will normally be
     the same conditions as those under which the cell was measured, but some
     legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using
-    `_cell_measurement.condition_id`
+    in which case those conditions should be indicated using the
+    _cell_measurement.condition_id data item.
 ;
     _name.category_id             cell
     _name.object_id               diffrn_id
@@ -4308,7 +4308,7 @@ save_diffrn_refln.standard_code
 ;
     Code identifying reflections measured repeated as standard intensity.
     Must match a _diffrn_standard_refln.code values OR set to '.' if
-    it was not used as a intensity standard.
+    it was not used as an intensity standard.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               standard_code
@@ -5479,7 +5479,7 @@ save_diffrn_source.size
 
     loop_
       _description_example.case
-         '8mm x 0.4 mm fine-focus'
+         '8 mm x 0.4 mm fine-focus'
          'broad focus'
 
 save_
@@ -10040,7 +10040,7 @@ save_exptl_absorpt.special_details
 ;
     Details of the absorption correction process applied to the
     measured intensities that cannot otherwise be given using
-    other data items from the EXPTL_ABSORBT category.
+    other data items from the EXPTL_ABSORPT category.
 ;
     _name.category_id             exptl_absorpt
     _name.object_id               special_details
@@ -10072,8 +10072,8 @@ save_exptl_absorpt.special_details
 ;
 ;
          Text modified from:
-         Lengyel, Jeff et al. Antiferroelectric Phase Transition in a Proton-
-         Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
+         Lengyel, Jeff et al. Antiferroelectric Phase Transition in a
+         Proton-Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
          Journal of the American Chemical Society, 2019, 141, 16279-16287
          https://doi.org/10.1021/jacs.9b04473
          COD 4127699
@@ -10480,7 +10480,7 @@ save_exptl_crystal.preparation
     _description.text
 ;
     Details of crystal growth and preparation of the crystals
-    (e.g.  mounting) prior to the intensity measurements.
+    (e.g. mounting) prior to the intensity measurements.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               preparation
@@ -11583,7 +11583,7 @@ save_space_group.name_hall
 
     loop_
       _description_example.case
-         'P 2ac  2n'
+         'P 2ac 2n'
          '-R 3 2"'
          'P 61 2 2 (0 0 -1)'
 
@@ -12155,7 +12155,7 @@ save_space_group_wyckoff.multiplicity
     _description.text
 ;
     The multiplicity of this Wyckoff position as given in
-    International Tables Volume A.  It is the number of equivalent
+    International Tables Volume A. It is the number of equivalent
     sites per conventional unit cell.
 
     Ref: International Tables for Crystallography (2002). Volume A,
@@ -16160,7 +16160,7 @@ save_citation.journal_issue
     _definition.update            2021-11-12
     _description.text
 ;
-    Issue identifier of the journal cited;  relevant for articles.
+    Issue identifier of the journal cited; relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_issue
@@ -16183,7 +16183,7 @@ save_citation.journal_volume
     _definition.update            2021-03-01
     _description.text
 ;
-    Volume number of the journal cited;  relevant for articles.
+    Volume number of the journal cited; relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_volume
@@ -19417,7 +19417,7 @@ save_PUBL_SECTION
     _definition.update            2012-05-07
     _description.text
 ;
-    Manuscript section data if submitted in parts. see also
+    Manuscript section data if submitted in parts. See also
     _publ_manuscript.text and _publ_manuscript.processed.
     The _publ_section.exptl_prep, _publ_section.exptl_refinement
     and _publ_section.exptl_solution items are preferred for
@@ -20168,7 +20168,7 @@ save_atom_analytical_mass_loss.percent
     is represented by a negative value.
 
     This data name would be used to record mass loss on drying, or mass
-    loss on ignitition, during, for example, fusion bead preparation for
+    loss on ignition, during, for example, fusion bead preparation for
     XRF analysis.
 ;
     _name.category_id             atom_analytical_mass_loss
@@ -20240,7 +20240,7 @@ save_atom_analytical_mass_loss.temperature
     The temperature, in kelvin, at which the mass loss was recorded
     as given by _atom_analytical_mass_loss.percent.
 
-    This would be used to record the temperature of drying or ignitition,
+    This would be used to record the temperature of drying or ignition,
     during, for example, fusion bead preparation for XRF analysis.
 ;
     _name.category_id             atom_analytical_mass_loss
@@ -24518,7 +24518,7 @@ save_atom_type_scat.dispersion_imag_cu
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Cu
@@ -24541,7 +24541,7 @@ save_atom_type_scat.dispersion_imag_mo
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Mo
@@ -24599,7 +24599,7 @@ save_atom_type_scat.dispersion_real_cu
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Cu
@@ -24622,7 +24622,7 @@ save_atom_type_scat.dispersion_real_mo
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo K alpha radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Mo
@@ -24672,7 +24672,7 @@ save_atom_type_scat.exponential_polynomial_coefs
     The set of polynomial coefficients for generating X-ray scattering factors:
     [ a_0, a_1, ... , a_N ].
 
-    f(s; Z) = exp(Sum( a~i~ * s^i^), i=0:N))
+    f(s; Z) = exp(Sum(a~i~ * s^i^), i=0:N)
 
     where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
     the wavelength of the incident radiation in angstroms.
@@ -24762,7 +24762,7 @@ save_atom_type_scat.gaussian_coefs
     The set of Gaussian coefficients for generating X-ray scattering factors:
     [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
 
-    f(s; Z) = c + Sum( a~i~ * exp(-b~i~ * s^2^), i=1:N)
+    f(s; Z) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:N)
 
     where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
     the wavelength of the incident radiation in angstroms.
@@ -24941,7 +24941,7 @@ save_atom_type_scat.inv_mott_bethe_coefs
     [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
 
     f(s; Z) =
-    Z - 8 * Pi * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
+    Z - 8 * Pi * a~0~ * s^2^ * (e + Sum(c~i~ * exp(-d~i~ * s^2^), i=1:N))
 
     where s = sin(theta)/lambda, a~0~ is the Bohr radius, and Z is the atomic
     number. theta is the diffraction angle and lambda is the wavelength of the
