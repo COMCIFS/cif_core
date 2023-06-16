@@ -548,7 +548,7 @@ save_
 
 save_dictionary.doi
 
-    _definition.id                '_dictionary.doi'
+    _definition.id                '_dictionary.DOI'
     _definition.class             Attribute
     _definition.update            2023-06-19
     _description.text
