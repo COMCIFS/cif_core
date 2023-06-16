@@ -560,7 +560,7 @@ save_dictionary.doi
     _type.purpose                 Identify
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Word
+    _type.contents                Text
     _description_example.case     10.5555/12345678
 
 save_
