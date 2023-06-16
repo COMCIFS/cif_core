@@ -6468,7 +6468,7 @@ save_
 save_refln.form_factor_table
 
     _definition.id                '_refln.form_factor_table'
-    _definition.update            2021-07-20
+    _definition.update            2023-06-16
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
@@ -6480,38 +6480,49 @@ save_refln.form_factor_table
     _type.source                  Derived
     _type.container               Table
     _type.contents                Real
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
+
+    loop_
+      _method.purpose
+      _method.expression
+         Definition
 ;
-    With r  as  refln
+         _units.code = "none"
 
-     table = Table ()
-     s  =    r.sin_theta_over_lambda
+         If (_diffrn_radiation.probe == "neutron")
+             _units.code = "femtometres"
+;
+         Evaluation
+;
+         With r  as  refln
 
-    Loop t  as  atom_type  {
+           table = Table ()
+           s  =    r.sin_theta_over_lambda
 
-       If (_diffrn_radiation.probe == 'neutron') {
+           Loop t  as  atom_type  {
 
-            f  =   t.length_neutron
+             If (_diffrn_radiation.probe == 'neutron') {
 
-       } Else If (s < 2.0 ) {
+               f  =   t.length_neutron
 
-            c  =   t.Cromer_Mann_coeffs
+             } Else If (s < 2.0 ) {
 
-            f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
-                        + c[3] * Exp (-c[4] * s*s)
-                        + c[5] * Exp (-c[6] * s*s)
-                        + c[7] * Exp (-c[8] * s*s))
-       } Else {
+               c  =   t.Cromer_Mann_coeffs
 
-            c  =   t.hi_ang_Fox_coeffs
+               f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
+                           + c[3] * Exp (-c[4] * s*s)
+                           + c[5] * Exp (-c[6] * s*s)
+                           + c[7] * Exp (-c[8] * s*s))
+             } Else {
 
-            f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
-       }
-        table [ t.symbol ]  =   f
-    }
-       _refln.form_factor_table  =   table
+               c  =   t.hi_ang_Fox_coeffs
+
+               f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
+             }
+
+             table [ t.symbol ]  =   f
+
+           }
+         _refln.form_factor_table  =   table
 ;
 
 save_
@@ -27559,4 +27570,8 @@ save_
         Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 
         Corrected the content type of the _refln.F_complex_su attribute.
+
+       Added a dREL definition method that determines the units of measure to
+       the definition of the _refln.form_factor_table data item. Changed the
+       units of several data items to 'unspecified'.
 ;
