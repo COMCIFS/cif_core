@@ -21533,89 +21533,6 @@ save_atom_site.site_symmetry_order
 
 save_
 
-save_atom_site.tensor_beta
-
-    _definition.id                '_atom_site.tensor_beta'
-    _definition_replaced.id       1
-    _definition_replaced.by       '_atom_site_aniso.matrix_beta'
-    _definition.update            2023-06-16
-    _description.text
-;
-    The symmetric anisotropic atomic displacement tensor beta[I,J]
-    appears in a structure factor expression as:
-
-    t = exp -[ beta11 h h + ............ 2 beta23 k l ]
-
-    It is related to the ADP matrices U(IJ) and B(IJ) as follows:
-
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-;
-    _name.category_id             atom_site
-    _name.object_id               tensor_beta
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With  a  as  atom_site
-
-    label = a.label
-
-    If      (a.ADP_type == 'Uani')  {
-        Loop b as atom_site_aniso     {
-          If(label == b.label)           {
-
-              UIJ = b.matrix_U
-              Break
-    } } }
-
-    Else If (a.ADP_type == 'Bani')  {
-        Loop b as atom_site_aniso     {
-          If(label == b.label)           {
-
-             UIJ = b.matrix_B / (8 * Pi**2)
-             Break
-    } } }
-
-    Else                                    {
-        If (a.ADP_type == 'Uiso')  U  =  a.U_iso_or_equiv
-        Else                       U  =  a.B_iso_or_equiv / (8 * Pi**2)
-
-            UIJ = U * _cell.convert_Uiso_to_Uij
-    }
-
-             CUB = _cell.convert_Uij_to_betaij
-
-       _atom_site.tensor_beta =  CUB * UIJ * CUB
-;
-
-save_
-
-save_atom_site.tensor_beta_su
-
-    _definition.id                '_atom_site.tensor_beta_su'
-    _definition.update            2021-09-23
-    _description.text
-;
-    Standard uncertainty of _atom_site.tensor_beta.
-;
-    _name.category_id             atom_site
-    _name.object_id               tensor_beta_su
-    _name.linked_item_id          '_atom_site.tensor_beta'
-    _type.purpose                 SU
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3,3]'
-    _type.contents                Real
-    _units.code                   none
-
-save_
-
 save_atom_site.type_symbol
 
     _definition.id                '_atom_site.type_symbol'
@@ -22226,10 +22143,19 @@ save_
 save_atom_site_aniso.matrix_beta
 
     _definition.id                '_atom_site_aniso.matrix_beta'
+    _alias.definition_id          '_atom_site.tensor_beta'
     _definition.update            2023-06-16
     _description.text
 ;
-    The symmetric anisotropic atomic displacement matrix \b.
+    The symmetric anisotropic atomic displacement matrix \b which appears
+    in a structure factor expression as:
+
+    T = exp -[ \b11 h h + ... + 2 \b23 k l ]
+
+    It is related to the ADP matrices U and B as follows:
+
+    T = exp -2pi**2 ( U11    h h a* a* + ... + 2 U23    k l b* c* )
+    T = exp - 0.25  ( B11    h h a* a* + ... + 2 B23    k l b* c* )
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               matrix_beta
@@ -22297,6 +22223,7 @@ save_
 save_atom_site_aniso.matrix_beta_su
 
     _definition.id                '_atom_site_aniso.matrix_beta_su'
+    _alias.definition_id          '_atom_site.tensor_beta_su'
     _definition.update            2023-02-15
     _description.text
 ;
