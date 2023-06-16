@@ -21536,7 +21536,9 @@ save_
 save_atom_site.tensor_beta
 
     _definition.id                '_atom_site.tensor_beta'
-    _definition.update            2021-09-24
+    _definition_replaced.id       1
+    _definition_replaced.by       '_atom_site_aniso.matrix_beta'
+    _definition.update            2023-06-16
     _description.text
 ;
     The symmetric anisotropic atomic displacement tensor beta[I,J]
@@ -22224,7 +22226,6 @@ save_
 save_atom_site_aniso.matrix_beta
 
     _definition.id                '_atom_site_aniso.matrix_beta'
-    _alias.definition_id          '_atom_site.tensor_beta'
     _definition.update            2023-06-16
     _description.text
 ;
