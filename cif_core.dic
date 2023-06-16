@@ -27546,17 +27546,17 @@ save_
 
        Added a dREL definition method for the _citation.id data item.
 
-        Rewrote the _atom_type.radius_contact evaluation method as a definition
-        method.
+       Rewrote the _atom_type.radius_contact evaluation method as a definition
+       method.
 
-        Added _atom_type.mass_number to record specific isotope identities.
+       Added _atom_type.mass_number to record specific isotope identities.
 
-        Changed enumeration of _atom_type.atomic_number,
-        _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
-        _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
-        to be defaulted on _atom_type.element_symbol.
+       Changed enumeration of _atom_type.atomic_number,
+       _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
+       _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
+       to be defaulted on _atom_type.element_symbol.
 
-        Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
+       Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 
-        Corrected the content type of the _refln.F_complex_su attribute.
+       Corrected the content type of the _refln.F_complex_su attribute.
 ;
