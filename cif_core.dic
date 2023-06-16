@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-03
+    _dictionary.date              2023-06-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -22213,7 +22213,7 @@ save_
 save_atom_site_aniso.matrix_beta
 
     _definition.id                '_atom_site_aniso.matrix_beta'
-    _definition.update            2023-02-16
+    _definition.update            2023-06-16
     _description.text
 ;
     The symmetric anisotropic atomic displacement matrix \b.
@@ -22231,9 +22231,52 @@ save_atom_site_aniso.matrix_beta
 ;
     With a as atom_site_aniso
 
-     a.matrix_beta =  [[ a.beta_11, a.beta_12, a.beta_13 ],
-                       [ a.beta_12, a.beta_22, a.beta_23 ],
-                       [ a.beta_13, a.beta_23, a.beta_33 ]]
+        label = a.label
+
+        If (a.ADP_type == 'betaani')
+        {
+            a.matrix_beta =  [[ a.beta_11, a.beta_12, a.beta_13 ],
+                              [ a.beta_12, a.beta_22, a.beta_23 ],
+                              [ a.beta_13, a.beta_23, a.beta_33 ]]
+        }
+        Else
+        {
+            If (a.ADP_type == 'Uani')
+            {
+                UIJ = b.matrix_U
+            }
+            Else If (a.ADP_type == 'Bani')
+            {
+                UIJ = b.matrix_B / (8 * Pi**2)
+            }
+            Else {
+                If (a.ADP_type == 'Uiso')
+                {
+                    Loop b as atom_site
+                    {
+                        If(label == b.label)
+                        {
+                            U  =  b.U_iso_or_equiv
+                            Break
+                        }
+                    }
+                }
+                Else
+                {
+                    Loop b as atom_site
+                    {
+                        If(label == b.label)
+                        {
+                            U  = b.B_iso_or_equiv / (8 * Pi**2)
+                            Break
+                        }
+                    }
+                }
+                UIJ = U * _cell.convert_Uiso_to_Uij
+            }
+            CUB = _cell.convert_Uij_to_betaij
+            a.matrix_beta =  CUB * UIJ * CUB
+        }
 ;
 
 save_
@@ -27735,7 +27778,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-06-03
+         3.3.0                    2023-06-16
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27755,4 +27798,6 @@ save_
         Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 
         Corrected the content type of the _refln.F_complex_su attribute.
+
+        Updated dREL evaluation of _atom_site_aniso.matrix_beta.
 ;
