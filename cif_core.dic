@@ -6230,7 +6230,7 @@ save_refln.f_complex
 
             Loop s  as  space_group_symop  {
 
-                t   =  Exp(-h * s.R * a.tensor_beta * s.RT * h)
+                t   =  Exp(-h * s.R * a.matrix_beta * s.RT * h)
 
                 fc +=  f * t * ExpImag(TwoPi *( h *( s.R * a.fract_xyz + s.T)))
          }  }
@@ -14139,7 +14139,7 @@ save_model_site.adp_matrix_beta
     a = atom_site[m.label]
     s = space_group_symop[SymKey(m.symop)]
 
-    _model_site.ADP_matrix_beta =  s.R * a.tensor_beta * s.RT
+    _model_site.ADP_matrix_beta =  s.R * a.matrix_beta * s.RT
 ;
 
 save_
@@ -22213,6 +22213,7 @@ save_
 save_atom_site_aniso.matrix_beta
 
     _definition.id                '_atom_site_aniso.matrix_beta'
+    _alias.definition_id          '_atom_site.tensor_beta'
     _definition.update            2023-06-16
     _description.text
 ;
