@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-03
+    _dictionary.date              2023-06-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -6468,7 +6468,7 @@ save_
 save_refln.form_factor_table
 
     _definition.id                '_refln.form_factor_table'
-    _definition.update            2021-07-20
+    _definition.update            2023-06-16
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
@@ -6480,38 +6480,49 @@ save_refln.form_factor_table
     _type.source                  Derived
     _type.container               Table
     _type.contents                Real
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
+
+    loop_
+      _method.purpose
+      _method.expression
+         Definition
 ;
-    With r  as  refln
+         _units.code = "none"
 
-     table = Table ()
-     s  =    r.sin_theta_over_lambda
+         If (_diffrn_radiation.probe == "neutron")
+             _units.code = "femtometres"
+;
+         Evaluation
+;
+         With r  as  refln
 
-    Loop t  as  atom_type  {
+           table = Table ()
+           s  =    r.sin_theta_over_lambda
 
-       If (_diffrn_radiation.probe == 'neutron') {
+           Loop t  as  atom_type  {
 
-            f  =   t.length_neutron
+             If (_diffrn_radiation.probe == 'neutron') {
 
-       } Else If (s < 2.0 ) {
+               f  =   t.length_neutron
 
-            c  =   t.Cromer_Mann_coeffs
+             } Else If (s < 2.0 ) {
 
-            f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
-                        + c[3] * Exp (-c[4] * s*s)
-                        + c[5] * Exp (-c[6] * s*s)
-                        + c[7] * Exp (-c[8] * s*s))
-       } Else {
+               c  =   t.Cromer_Mann_coeffs
 
-            c  =   t.hi_ang_Fox_coeffs
+               f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
+                           + c[3] * Exp (-c[4] * s*s)
+                           + c[5] * Exp (-c[6] * s*s)
+                           + c[7] * Exp (-c[8] * s*s))
+             } Else {
 
-            f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
-       }
-        table [ t.symbol ]  =   f
-    }
-       _refln.form_factor_table  =   table
+               c  =   t.hi_ang_Fox_coeffs
+
+               f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
+             }
+
+             table [ t.symbol ]  =   f
+
+           }
+         _refln.form_factor_table  =   table
 ;
 
 save_
@@ -24416,7 +24427,7 @@ save_
 save_atom_type_scat.cromer_mann_coeffs
 
     _definition.id                '_atom_type_scat.Cromer_Mann_coeffs'
-    _definition.update            2012-11-20
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Cromer-Mann coefficients for generating X-ray scattering
@@ -24431,7 +24442,7 @@ save_atom_type_scat.cromer_mann_coeffs
     _type.container               List
     _type.dimension               '[9]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24666,7 +24677,7 @@ save_
 save_atom_type_scat.exponential_polynomial_coefs
 
     _definition.id                '_atom_type_scat.exponential_polynomial_coefs'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of polynomial coefficients for generating X-ray scattering factors:
@@ -24684,7 +24695,7 @@ save_atom_type_scat.exponential_polynomial_coefs
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -24692,7 +24703,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
 
     _definition.id
         '_atom_type_scat.exponential_polynomial_coefs_su'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     Standard uncertainty of _atom_type_scat.exponential_polynomial_coefs.
@@ -24705,7 +24716,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -24756,7 +24767,7 @@ save_
 save_atom_type_scat.gaussian_coefs
 
     _definition.id                '_atom_type_scat.Gaussian_coefs'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Gaussian coefficients for generating X-ray scattering factors:
@@ -24774,14 +24785,14 @@ save_atom_type_scat.gaussian_coefs
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
 save_atom_type_scat.gaussian_coefs_su
 
     _definition.id                '_atom_type_scat.Gaussian_coefs_su'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     Standard uncertainty of _atom_type_scat.Gaussian_coefs.
@@ -24794,7 +24805,7 @@ save_atom_type_scat.gaussian_coefs_su
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -24903,7 +24914,7 @@ save_
 save_atom_type_scat.hi_ang_fox_coeffs
 
     _definition.id                '_atom_type_scat.hi_ang_Fox_coeffs'
-    _definition.update            2012-11-30
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Fox et al. coefficients for generating high angle
@@ -24918,7 +24929,7 @@ save_atom_type_scat.hi_ang_fox_coeffs
     _type.container               List
     _type.dimension               '[4]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24933,7 +24944,7 @@ save_
 save_atom_type_scat.inv_mott_bethe_coefs
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Gaussian coefficients for use in the inverse Mott-Bethe
@@ -24954,14 +24965,14 @@ save_atom_type_scat.inv_mott_bethe_coefs
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
 save_atom_type_scat.inv_mott_bethe_coefs_su
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
-    _definition.update            2023-04-09
+    _definition.update            2023-06-16
     _description.text
 ;
     Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
@@ -24974,7 +24985,7 @@ save_atom_type_scat.inv_mott_bethe_coefs_su
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
 
 save_
 
@@ -27539,7 +27550,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-06-03
+         3.3.0                    2023-06-16
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27559,4 +27570,8 @@ save_
        Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
 
        Corrected the content type of the _refln.F_complex_su attribute.
+
+       Added a dREL definition method that determines the units of measure to
+       the definition of the _refln.form_factor_table data item. Changed the
+       units of several data items to 'unspecified'.
 ;
