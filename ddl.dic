@@ -553,7 +553,7 @@ save_dictionary.doi
     _definition.update            2023-06-19
     _description.text
 ;
-    The digital object identifier (DOI) for this dictionary.
+    The digital object identifier (DOI) of the dictionary.
 ;
     _name.category_id             dictionary
     _name.object_id               doi
