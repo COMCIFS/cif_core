@@ -22147,15 +22147,25 @@ save_atom_site_aniso.matrix_beta
     _definition.update            2023-06-16
     _description.text
 ;
-    The symmetric anisotropic atomic displacement matrix \b which appears
-    in a structure factor expression as:
+    The symmetric anisotropic atomic displacement parameter (ADP) matrix \b,
+    which appears in a structure factor expression.
 
-    T = exp -[ \b11 h h + ... + 2 \b23 k l ]
+    The contribution of the ADPs to the calculation of the structure factor is
+    given as:
 
-    It is related to the ADP matrices U and B as follows:
+        T = exp(-1 * Sum(Sum(\b^ij^ * h~i~ * h~j~, j=1:3), i=1:3))
 
-    T = exp -2pi**2 ( U11    h h a* a* + ... + 2 U23    k l b* c* )
-    T = exp - 0.25  ( B11    h h a* a* + ... + 2 B23    k l b* c* )
+    where \b^ij^ are the matrix elements, and h~m~ are the Miller indices.
+
+    The ADP matrix \b, is related to the ADP matrices U and B, as follows:
+
+                |a~1~*   0     0  |   |t^11^ t^12^ t^13^|   |a~1~*   0     0  |
+       \b = C * |  0   a~2~*   0  | * |t^12^ t^22^ t^23^| * |  0   a~2~*   0  |
+                |  0     0   a~3~*|   |t^13^ t^23^ t^33^|   |  0     0   a~3~*|
+
+    where C is a constant (2 * Pi**2 for U, and 0.25 for B). a~i~* is the
+    length of the respective reciprocal unit cell vector, and t represents
+    the individual anisotropic values, U^ij^ or B^ij^.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               matrix_beta
