@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-06-01
+    _dictionary.date             2023-06-17
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -815,6 +815,8 @@ save_units_code
    'seconds'          "time      'seconds'"
    'microseconds'     "time      'microseconds'"
 
+   'reciprocal_seconds'          "Rate      'per second'"
+
    'degrees'          "angle      'degrees (of arc)'"
    'cycles'           "phase      'angle in 360 degree arcs'"
    'radians'          "angle      'radians'"
@@ -856,6 +858,7 @@ save_units_code
 
    'counts_per_photon' "measure of gain used in array detectors"
    'counts'            "counts from a detector"
+   'counts_per_second' "counts from a detector per second of count time"
    'photons per second'  "photons registered in one second"
 
    'microseconds_per_angstrom' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-1))'"
@@ -2272,7 +2275,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2023-05-14
+         1.4.8                    2023-05-17
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2318,4 +2321,6 @@ save_
        Altered key of atomic_number, dispersion_real_Cu,
        dispersion_imag_Cu, dispersion_real_Mo, and dispersion_imag_Mo to be
        keyed on _atom_type.element_symbol.
+
+       Added reciprocal_seconds and counts_per_second to units_code.
 ;
