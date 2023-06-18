@@ -2322,5 +2322,5 @@ save_
        dispersion_imag_Cu, dispersion_real_Mo, and dispersion_imag_Mo to be
        keyed on _atom_type.element_symbol.
 
-       Added reciprocal_seconds and counts_per_second to units_code.
+       Added hertz and counts_per_second to units_code.
 ;
