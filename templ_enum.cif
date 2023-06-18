@@ -815,7 +815,7 @@ save_units_code
    'seconds'          "time      'seconds'"
    'microseconds'     "time      'microseconds'"
 
-   'reciprocal_seconds'          "Rate      'per second'"
+   'hertz'          "Rate      'reciprocal seconds'"
 
    'degrees'          "angle      'degrees (of arc)'"
    'cycles'           "phase      'angle in 360 degree arcs'"
