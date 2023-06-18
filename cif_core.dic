@@ -27680,9 +27680,6 @@ save_
        # Please update the date above and describe the change below until
        # ready for the next release
 
-       Rewrote the _atom_type.radius_contact evaluation method as a definition
-       method.
-
        Added a dREL definition method for the _citation.id data item.
 
        Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
