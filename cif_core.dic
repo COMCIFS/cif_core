@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-16
+    _dictionary.date              2023-06-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -27550,7 +27550,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-06-16
+         3.3.0                    2023-06-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27574,4 +27574,6 @@ save_
        Added a dREL definition method that determines the units of measure to
        the definition of the _refln.form_factor_table data item. Changed the
        units of several data items to 'unspecified'.
+
+       Added the default value of '1_555' to the site symmetry data items.
 ;
