@@ -22163,7 +22163,7 @@ save_atom_site_aniso.matrix_beta
        \b = C * |  0   a~2~*   0  | * |t^12^ t^22^ t^23^| * |  0   a~2~*   0  |
                 |  0     0   a~3~*|   |t^13^ t^23^ t^33^|   |  0     0   a~3~*|
 
-    where C is a constant (2 * Pi**2 for U, and 0.25 for B). a~i~* is the
+    where C is a constant (2 * pi^2^ for U, and 0.25 for B), a~i~* is the
     length of the respective reciprocal unit cell vector, and t represents
     the individual anisotropic values, U^ij^ or B^ij^.
 ;
