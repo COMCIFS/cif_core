@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2023-01-13
+    _dictionary.date             2023-06-19
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -280,7 +280,7 @@ save_cell_length_su
 
 save_site_symmetry
 
-    _definition.update           2023-01-10
+    _definition.update           2023-06-19
     _description.text
 ;
      Data item specifying the symmetry operation codes applied to the atom
@@ -314,6 +314,9 @@ save_site_symmetry
     _description_example.detail '4'     '4th symmetry operation applied.'
                                 '7_645' '7th symm. posn.; +a on x; -b on y.'
                                  .      'No symmetry or translation to site.'
+
+    _enumeration.default         1_555
+
      save_
 
 save_cartn_coord
@@ -956,7 +959,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2023-06-03
+         1.4.10                   2023-06-19
 ;
        Corrected a few typos in the descriptions of several save frames.
 
@@ -979,4 +982,6 @@ save_display_colour
        Updated description of _site_symmetry.
 
        Updated descriptions of cromer_mann_coeff and hi_ang_fox_coeffs.
+
+       Added the default value of '1_555' to the 'site_symmetry' save frame.
 ;
