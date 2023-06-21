@@ -27718,9 +27718,6 @@ save_
        multiple cells for different diffraction conditions. Deprecated
        _cell_measurement.temperature,pressure data names.
 
-       Added _atom_site_aniso.matrix_beta and _atom_site_aniso.beta_* data
-       items.
-
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 
@@ -27757,5 +27754,7 @@ save_
 
        Added the default value of '1_555' to the site symmetry data items.
 
-       Updated dREL evaluation of _atom_site_aniso.matrix_beta.
+       Renamed _atom_site.tensor_beta to _atom_site_aniso.matrix_beta and
+       updated the associated dREL evaluation methods. The old data name was
+       retained as an alias. Added the _atom_site_aniso.beta_* data items.
 ;
