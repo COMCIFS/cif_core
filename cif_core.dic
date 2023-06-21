@@ -25136,7 +25136,7 @@ save_ATOM_TYPE_SCAT_TABLE
     The CATEGORY of data items used to list atomic scattering factor values for
     use in crystallographic structure studies.
 ;
-    _name.category_id             ATOM_TYPE
+    _name.category_id             ATOM
     _name.object_id               ATOM_TYPE_SCAT_TABLE
 
     loop_
