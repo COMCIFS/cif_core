@@ -2004,7 +2004,7 @@ save_cell_measurement.wavelength
     ** DEPRECATED **
 
     Wavelength of the radiation used to measure the unit cell.
-    Items from the _diffrn_radiation_wavelength category should
+    Items from the DIFFRN_RADIATION_WAVELENGTH category should
     be used instead of this item.
 ;
     _name.category_id             cell_measurement
