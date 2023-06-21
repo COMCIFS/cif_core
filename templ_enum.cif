@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.8
-    _dictionary.date             2023-06-01
+    _dictionary.date             2023-06-14
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -2162,6 +2162,7 @@ save_wyckoff_letter
          y
          z
          \a
+         α
 
 save_
 
@@ -2272,7 +2273,7 @@ save_
        Updated the human-readable descriptions of the 'kelvins' and
        'kelvins_per_minute' enumeration states in the _units_code save frame.
 ;
-         1.4.8                    2023-05-14
+         1.4.8                    2023-06-14
 ;
        Corrected a few typos in the 'units_code' save frame.
 
@@ -2318,4 +2319,7 @@ save_
        Altered key of atomic_number, dispersion_real_Cu,
        dispersion_imag_Cu, dispersion_real_Mo, and dispersion_imag_Mo to be
        keyed on _atom_type.element_symbol.
+
+       The enumeration for wyckoff_letter includes both \a and α to represent
+       the Greek letter 'alpha'.
 ;
