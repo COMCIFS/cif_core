@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.1.0
-    _dictionary.date              2023-06-10
+    _dictionary.date              2023-06-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.1.0
@@ -543,6 +543,25 @@ save_dictionary.ddl_conformance
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Version
+
+save_
+
+save_dictionary.doi
+
+    _definition.id                '_dictionary.DOI'
+    _definition.class             Attribute
+    _definition.update            2023-06-19
+    _description.text
+;
+    The digital object identifier (DOI) of the dictionary.
+;
+    _name.category_id             dictionary
+    _name.object_id               doi
+    _type.purpose                 Identify
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     10.5555/12345678
 
 save_
 
@@ -2842,7 +2861,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-06-10
+         4.1.0                    2023-06-19
 ;
        Added new 'Word' content type.
 
@@ -2876,4 +2895,7 @@ save_
 
        Added DICTIONARY_AUTHOR to allow details of dictionary authors to be
        recorded.
+
+       Added _dictionary.doi to record the persistent Digital Object Identifier
+       of a dictionary.
 ;
