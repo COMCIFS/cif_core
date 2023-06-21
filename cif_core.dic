@@ -25105,6 +25105,13 @@ save_atom_type_scat.versus_stol_list
     _definition.id                '_atom_type_scat.versus_stol_list'
 
     loop_
+      _definition_replaced.id
+      _definition_replaced.by
+         1                        '_atom_type_scat_table.type_symbol'
+         2                        '_atom_type_scat_table.stol'
+         3                        '_atom_type_scat_table.scat_value'
+
+    loop_
       _alias.definition_id
          '_atom_type_scat_versus_stol_list'
          '_atom_type.scat_versus_stol_list'
@@ -27705,4 +27712,5 @@ save_
 
        Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
        scattering factor values with respect to sin theta over lambda.
+       Deprecated the _atom_type_scat.versus_stol_list data item.
 ;
