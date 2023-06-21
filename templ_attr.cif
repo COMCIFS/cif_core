@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.10
-    _dictionary.date             2023-01-13
+    _dictionary.date             2023-06-19
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.1.0
     _description.text
@@ -107,8 +107,8 @@ save_rho_kappa
     _description.text
 ;
       A radial function expansion-contraction coefficient
-      (kappa    = atom_rho_multipole_kappa.base and
-      kappa'(l) = atom_rho_multipole_kappa.prime[l])
+      (κ     = atom_rho_multipole_kappa.base and
+       κ'(l) = atom_rho_multipole_kappa.prime[l])
       for the atom specified in atom_rho_multipole.atom_label.
 ;
     _type.purpose                Measurand
@@ -125,7 +125,7 @@ save_rho_slater
     _description.text
 ;
       Items used when the radial dependence of the valence
-      electron density, R(kappa'(l),l,r), of the atom specified in
+      electron density, R(κ'(l),l,r), of the atom specified in
       atom_rho_multipole.atom_label is expressed as a Slater-type
       function [Hansen & Coppens (1978), equation (3)]
 ;
@@ -280,7 +280,7 @@ save_cell_length_su
 
 save_site_symmetry
 
-    _definition.update           2023-01-10
+    _definition.update           2023-06-19
     _description.text
 ;
      Data item specifying the symmetry operation codes applied to the atom
@@ -314,6 +314,9 @@ save_site_symmetry
     _description_example.detail '4'     '4th symmetry operation applied.'
                                 '7_645' '7th symm. posn.; +a on x; -b on y.'
                                  .      'No symmetry or translation to site.'
+
+    _enumeration.default         1_555
+
      save_
 
 save_cartn_coord
@@ -618,7 +621,7 @@ save_aniso_uij
      components in angstroms squared which appear in the
      structure factor term:
 
-        T = exp{-2pi^2^ sum~i~ [sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
+        T = exp{-2π^2^ sum~i~ [sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
      h = the Miller indices
      a* = the reciprocal-space cell lengths
@@ -664,13 +667,13 @@ save_cromer_mann_coeff
     _definition.update           2023-06-03
     _description.text
 ;
-    The set of data items used to define Cromer-Mann coefficients for generation
-    of X-ray scattering factors (0.0 < s < 2.0 \%A^-1^).
+    The set of data items used to define Cromer-Mann coefficients
+    for generation of (0.0 < s < 2.0 Å^-1^) X-ray scattering factors.
 
     f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
 
-    where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
-    the wavelength of the incident radiation in angstroms.
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
 
         Ref: International Tables for X-ray Crystallography, Vol. IV
              (1974) Table 2.2B
@@ -690,13 +693,13 @@ save_hi_ang_fox_coeffs
     _definition.update           2023-06-03
     _description.text
 ;
-    The set of data items used to define Fox et al. coefficients for generation
-    of high angle (2.0 < s < 6.0 \%A^-1^) X-ray scattering factors.
+    The set of data items used to define Fox et al. coefficients
+    for generation of high angle (2.0 < s < 6.0 Å^-1^) X-ray scattering factors.
 
     f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
 
-    where s = sin(theta)/lambda and theta is the diffraction angle and lambda is
-    the wavelength of the incident radiation in angstroms.
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
 
         Ref: International Tables for Crystallography, Vol. C
              (1991) Table 6.1.1.5
@@ -956,7 +959,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2023-06-03
+         1.4.10                   2023-06-19
 ;
        Corrected a few typos in the descriptions of several save frames.
 
@@ -979,4 +982,6 @@ save_display_colour
        Updated description of _site_symmetry.
 
        Updated descriptions of cromer_mann_coeff and hi_ang_fox_coeffs.
+
+       Added the default value of '1_555' to the 'site_symmetry' save frame.
 ;
