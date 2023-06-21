@@ -27667,13 +27667,9 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 
-       Reverted _atom_type_scat.versus_stol_list to a text-type to regain
-       compatibility with DDL1 dictionary.
-
        Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
-
 ;
          3.3.0                    2023-06-19
 ;
@@ -27681,9 +27677,6 @@ save_
        # ready for the next release
 
        Added a dREL definition method for the _citation.id data item.
-
-       Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
-       scattering factor values with respect to sin theta over lambda.
 
        Rewrote the _atom_type.radius_contact evaluation method as a definition
        method.
@@ -27706,4 +27699,10 @@ save_
        units of several data items to 'unspecified'.
 
        Added the default value of '1_555' to the site symmetry data items.
+
+       Reverted _atom_type_scat.versus_stol_list to a text-type to regain
+       compatibility with DDL1 dictionary.
+
+       Added ATOM_TYPE_SCAT_TABLE to allow for the explicit listing of
+       scattering factor values with respect to sin theta over lambda.
 ;
