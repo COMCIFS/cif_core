@@ -1020,7 +1020,7 @@ save_enumeration.def_index_ids
     _description.text
 ;
     Specifies the data names of items that are collectively used to identify
-    the suitable default value in the ENUMERATION_DEFAULT category loop.
+    the suitable default value in the ENUMERATION_DEFAULTS category loop.
     The values of these items are used to construct an ordered list which is
     checked against the values of the _enumeration_defaults.index attribute.
 ;
