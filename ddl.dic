@@ -1016,7 +1016,7 @@ save_enumeration.def_index_ids
 
     _definition.id                '_enumeration.def_index_ids'
     _definition.class             Attribute
-    _definition.update            2023-06-10
+    _definition.update            2023-06-23
     _description.text
 ;
     Specifies the data names of items that are collectively used to identify
@@ -1213,7 +1213,7 @@ save_ENUMERATION_DEFAULTS
     _definition.id                ENUMERATION_DEFAULTS
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-06-01
+    _definition.update            2023-06-23
     _description.text
 ;
     Loop of pre-determined default enumeration values indexed by a set of data
@@ -1229,7 +1229,7 @@ save_enumeration_defaults.index
 
     _definition.id                '_enumeration_defaults.index'
     _definition.class             Attribute
-    _definition.update            2023-06-10
+    _definition.update            2023-06-23
     _description.text
 ;
     An index value, in the form of an ordered list, which allows the
@@ -1258,7 +1258,7 @@ save_enumeration_defaults.value
 
     _definition.id                '_enumeration_defaults.value'
     _definition.class             Attribute
-    _definition.update            2023-06-01
+    _definition.update            2023-06-23
     _description.text
 ;
     The default enumeration value associated with a specific index value
@@ -1982,7 +1982,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-06-07
+    _definition.update            2023-06-23
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
