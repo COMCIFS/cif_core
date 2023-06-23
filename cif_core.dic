@@ -25120,7 +25120,7 @@ save_atom_type_scat.versus_stol_list
     _description.text
 ;
     Deprecated. Data items from the ATOM_TYPE_SCAT_TABLE category should be
-    used instead instead of this item.
+    used instead of this item.
 
     A table of scattering factors as a function of sin(θ)/λ (sin theta over
     lambda, stol). This table should be well-commented to indicate the items
