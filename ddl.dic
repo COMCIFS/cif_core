@@ -9,11 +9,11 @@ data_DDL_DIC
 
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
-    _dictionary.version           4.1.0
+    _dictionary.version           4.2.0
     _dictionary.date              2023-06-23
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
-    _dictionary.ddl_conformance   4.1.0
+    _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         DdlDic
     _description.text
 ;
@@ -2978,7 +2978,7 @@ save_
 
        Unified the spelling of certain words.
 ;
-         4.1.0                    2023-06-23
+         4.1.0                    2023-01-13
 ;
        Added new 'Word' content type.
 
@@ -3004,7 +3004,9 @@ save_
        Clarified the definition of the "Version" state in _type.contents
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
-
+;
+       4.2.0                    2023-06-23
+;
        Added the "unspecified" enumeration value for the _units.code attribute.
 
        Added DICTIONARY_AUTHOR to allow details of dictionary authors to be

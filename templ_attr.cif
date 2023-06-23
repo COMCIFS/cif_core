@@ -12,7 +12,7 @@ data_TEMPL_ATTR
     _dictionary.version          1.4.10
     _dictionary.date             2023-06-19
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
-    _dictionary.ddl_conformance  4.1.0
+    _dictionary.ddl_conformance  4.2.0
     _description.text
 ;
      This dictionary contains definition attribute sets that are common

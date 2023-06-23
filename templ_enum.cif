@@ -12,7 +12,7 @@ data_COM_VAL
     _dictionary.version          1.4.8
     _dictionary.date             2023-06-14
     _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
-    _dictionary.ddl_conformance  4.1.0
+    _dictionary.ddl_conformance  4.2.0
     _description.text
 ;
      This dictionary contains commonly used enumeration value sets that
