@@ -994,9 +994,14 @@ save_enumeration.def_index_id
 
     _definition.id                '_enumeration.def_index_id'
     _definition.class             Attribute
-    _definition.update            2021-08-18
+    _definition_replaced.id       1
+    _definition_replaced.by       '_enumeration.def_index_ids'
+    _definition.update            2023-06-23
     _description.text
 ;
+    Deprecated. The _enumeration.def_index_id data item should be
+    used instead of this item.
+
     Specifies the data name of the item with a value used as an index
     to the DEFAULT enumeration list (in category enumeration_default)
     in order to select the default enumeration value for the
@@ -3011,10 +3016,9 @@ save_
        Added _dictionary.doi to record the persistent Digital Object Identifier
        of a dictionary.
 
-       Added _enumeration.def_index_ids and ENUMERATION_DEFAULTS to
-       allow default values to be dependent on multiple keys.
-
-       Deprecated the ENUMERATION_DEFAULT category.
+       Added _enumeration.def_index_ids and ENUMERATION_DEFAULTS to allow
+       default values to be dependent on multiple keys. Deprecated the
+       _enumeration.def_index_id attribute and the ENUMERATION_DEFAULT category.
 
        Added 'Inherited' as an enumeration value to _type.contents.
 ;
