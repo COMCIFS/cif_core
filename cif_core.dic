@@ -6414,7 +6414,7 @@ save_refln.f_squared_meas_su
          '_refln.F_squared_sigma'
          '_refln_F_squared_meas_su'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the measured structure factor squared.
@@ -6423,7 +6423,7 @@ save_refln.f_squared_meas_su
     _name.object_id               F_squared_meas_su
     _name.linked_item_id          '_refln.F_squared_meas'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _method.purpose               Definition
