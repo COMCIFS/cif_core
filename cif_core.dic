@@ -9908,7 +9908,7 @@ save_
 
 save_exptl_absorpt.coefficient_mu_su
 
-    _definition.id                'exptl_absorpt.coefficient_mu_su'
+    _definition.id                '_exptl_absorpt.coefficient_mu_su'
     _definition.update            2023-06-25
     _description.text
 ;
