@@ -9229,7 +9229,7 @@ save_chemical.temperature_sublimation_su
          '_chemical_temperature_sublimation_su'
          '_chemical.temperature_sublimation_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the temperature at which
@@ -9239,7 +9239,7 @@ save_chemical.temperature_sublimation_su
     _name.object_id               temperature_sublimation_su
     _name.linked_item_id          '_chemical.temperature_sublimation'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   kelvins
