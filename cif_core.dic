@@ -27597,5 +27597,6 @@ save_
 
        Redefined _exptl_absorpt.coefficient_mu as Derived Measurand. Added SU.
 
-
+       Redefined many *_su data names' type source from Related to matching
+       their associated data name type source.
 ;
