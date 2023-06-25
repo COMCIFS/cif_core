@@ -13744,7 +13744,7 @@ save_geom_torsion.angle_su
          '_geom_torsion_su'
          '_geom_torsion.value_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the torsion angle.
@@ -13753,7 +13753,7 @@ save_geom_torsion.angle_su
     _name.object_id               angle_su
     _name.linked_item_id          '_geom_torsion.angle'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   degrees
