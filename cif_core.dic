@@ -10247,7 +10247,7 @@ save_exptl_crystal.density_meas_su
          '_exptl_crystal_density_meas_su'
          '_exptl_crystal.density_meas_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the crystal density measured
@@ -10257,7 +10257,7 @@ save_exptl_crystal.density_meas_su
     _name.object_id               density_meas_su
     _name.linked_item_id          '_exptl_crystal.density_meas'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   megagrams_per_metre_cubed
