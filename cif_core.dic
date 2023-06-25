@@ -1817,7 +1817,7 @@ save_cell_measurement.pressure_su
          '_cell_measurement_pressure_su'
          '_cell_measurement.pressure_esd'
 
-    _definition.update            2022-05-22
+    _definition.update            2023-06-25
     _description.text
 ;
     ** DEPRECATED **
@@ -1829,7 +1829,7 @@ save_cell_measurement.pressure_su
     _name.object_id               pressure_su
     _name.linked_item_id          '_cell_measurement.pressure'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   kilopascals
