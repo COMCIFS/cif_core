@@ -25660,7 +25660,7 @@ save_refine_ls.extinction_coef_su
          '_refine_ls_extinction_coef_su'
          '_refine.ls_extinction_coef_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the extinction coefficient.
@@ -25669,7 +25669,7 @@ save_refine_ls.extinction_coef_su
     _name.object_id               extinction_coef_su
     _name.linked_item_id          '_refine_ls.extinction_coef'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   none
