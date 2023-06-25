@@ -10341,7 +10341,7 @@ save_exptl_crystal.density_meas_temp_su
          '_exptl_crystal_density_meas_temp_su'
          '_exptl_crystal.density_meas_temp_esd'
 
-    _definition.update            2012-11-22
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the temperature at
@@ -10351,7 +10351,7 @@ save_exptl_crystal.density_meas_temp_su
     _name.object_id               density_meas_temp_su
     _name.linked_item_id          '_exptl_crystal.density_meas_temp'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   kelvins
