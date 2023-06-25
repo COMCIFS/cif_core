@@ -20617,7 +20617,7 @@ save_atom_site.b_equiv_geom_mean_su
          '_atom_site_B_equiv_geom_mean_su'
          '_atom_site.B_equiv_geom_mean_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the equivalent isotropic atomic displacement
@@ -20628,7 +20628,7 @@ save_atom_site.b_equiv_geom_mean_su
     _name.object_id               B_equiv_geom_mean_su
     _name.linked_item_id          '_atom_site.B_equiv_geom_mean'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   angstrom_squared
