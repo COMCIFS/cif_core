@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-19
+    _dictionary.date              2023-06-25
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.1.0
@@ -9890,20 +9890,37 @@ save_exptl_absorpt.coefficient_mu
          '_exptl_absorpt_coefficient_mu'
          '_exptl.absorpt_coefficient_mu'
 
-    _definition.update            2012-11-22
+    _definition.update            2023-06-25
     _description.text
 ;
-    Absorption coefficient mu calculated from the atomic content of
+    Linear absorption coefficient, μ, calculated from the atomic content of
     the cell, the density and the radiation wavelength.
 ;
     _name.category_id             exptl_absorpt
     _name.object_id               coefficient_mu
-    _type.purpose                 Number
-    _type.source                  Recorded
+    _type.purpose                 Measurand
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   reciprocal_millimetres
+
+save_
+
+save_exptl_absorpt.coefficient_mu_su
+
+    _definition.id                'exptl_absorpt.coefficient_mu_su'
+    _definition.update            2023-06-25
+    _description.text
+;
+    Standard uncertainty of _exptl_absorpt.coefficient_mu.
+;
+    _name.category_id             exptl_absorpt
+    _name.object_id               coefficient_mu_su
+    _name.linked_item_id          '_exptl_absorpt.coefficient_mu'
+    _units.code                   reciprocal_millimetres
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -27550,7 +27567,7 @@ save_
        inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
        the definition of form factors.
 ;
-         3.3.0                    2023-06-19
+         3.3.0                    2023-06-25
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27578,4 +27595,6 @@ save_
        units of several data items to 'unspecified'.
 
        Added the default value of '1_555' to the site symmetry data items.
+
+       Redefined _exptl_absorpt.coefficient_mu as Derived Measurand. Added SU.
 ;
