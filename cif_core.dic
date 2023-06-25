@@ -13456,7 +13456,7 @@ save_geom_hbond.distance_dh_su
          '_geom_hbond_distance_DH_su'
          '_geom_hbond.dist_DH_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the set of data items which specify
@@ -13466,7 +13466,7 @@ save_geom_hbond.distance_dh_su
     _name.object_id               distance_DH_su
     _name.linked_item_id          '_geom_hbond.distance_DH'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   angstroms
