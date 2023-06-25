@@ -21300,7 +21300,7 @@ save_atom_site.occupancy_su
          '_atom_site_occupancy_su'
          '_atom_site.occupancy_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the fraction of the atom type
@@ -21310,7 +21310,7 @@ save_atom_site.occupancy_su
     _name.object_id               occupancy_su
     _name.linked_item_id          '_atom_site.occupancy'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   none
