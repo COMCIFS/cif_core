@@ -25487,7 +25487,7 @@ save_refine_ls.abs_structure_flack_su
          '_refine_ls_abs_structure_Flack_su'
          '_refine.ls_abs_structure_Flack_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the measure of absolute structure
@@ -25497,7 +25497,7 @@ save_refine_ls.abs_structure_flack_su
     _name.object_id               abs_structure_Flack_su
     _name.linked_item_id          '_refine_ls.abs_structure_Flack'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   none
