@@ -25242,7 +25242,7 @@ save_refine_diff.density_max_su
          '_refine_diff_density_max_su'
          '_refine.diff_density_max_esd'
 
-    _definition.update            2023-01-12
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the maximum density value
@@ -25252,7 +25252,7 @@ save_refine_diff.density_max_su
     _name.object_id               density_max_su
     _name.linked_item_id          '_refine_diff.density_max'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _method.purpose               Definition
