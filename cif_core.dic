@@ -619,7 +619,7 @@ save_cell.atomic_mass
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   dalton
     _method.purpose               Evaluation
     _method.expression
@@ -964,7 +964,7 @@ save_cell.reciprocal_angle_alpha
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:180.
+    _enumeration.range            0.0:180.0
     _units.code                   degrees
     _method.purpose               Evaluation
     _method.expression
@@ -1021,7 +1021,7 @@ save_cell.reciprocal_angle_beta
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:180.
+    _enumeration.range            0.0:180.0
     _units.code                   degrees
     _method.purpose               Evaluation
     _method.expression
@@ -1078,7 +1078,7 @@ save_cell.reciprocal_angle_gamma
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:180.
+    _enumeration.range            0.0:180.0
     _units.code                   degrees
     _method.purpose               Evaluation
     _method.expression
@@ -1133,7 +1133,7 @@ save_cell.reciprocal_length_a
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
@@ -1183,7 +1183,7 @@ save_cell.reciprocal_length_b
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
@@ -1233,7 +1233,7 @@ save_cell.reciprocal_length_c
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   reciprocal_angstroms
     _method.purpose               Evaluation
     _method.expression
@@ -4669,7 +4669,7 @@ save_diffrn_reflns.point_measured_fraction_max
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0:1.0
+    _enumeration.range            0.0:1.0
     _units.code                   none
 
 save_
@@ -5506,7 +5506,7 @@ save_diffrn_source.take_off_angle
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0:90
+    _enumeration.range            0.0:90.0
     _units.code                   degrees
 
 save_
@@ -5599,7 +5599,7 @@ save_diffrn_standards.decay_percent
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            :100
+    _enumeration.range            :100.0
     _units.code                   none
 
     loop_
@@ -5663,7 +5663,7 @@ save_diffrn_standards.interval_time
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   minutes
 
 save_
@@ -6637,7 +6637,7 @@ save_refln.intensity_calc
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   none
     _method.purpose               Evaluation
     _method.expression
@@ -6679,7 +6679,7 @@ save_refln.intensity_meas
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -6727,7 +6727,7 @@ save_refln.lp_factor
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -6767,7 +6767,7 @@ save_refln.phase_calc
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:360.
+    _enumeration.range            0.0:360.0
     _units.code                   degrees
     _method.purpose               Evaluation
     _method.expression
@@ -6813,7 +6813,7 @@ save_refln.phase_meas
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:360.
+    _enumeration.range            0.0:360.0
     _units.code                   degrees
 
 save_
@@ -7998,7 +7998,7 @@ save_reflns_shell.meani_over_sui_all
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0:
+    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -8029,7 +8029,7 @@ save_reflns_shell.meani_over_sui_gt
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0:
+    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -10557,7 +10557,7 @@ save_exptl_crystal.size_length
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   millimetres
 
 save_
@@ -10594,7 +10594,7 @@ save_exptl_crystal.size_max
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   millimetres
 
 save_
@@ -10631,7 +10631,7 @@ save_exptl_crystal.size_mid
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   millimetres
 
 save_
@@ -10668,7 +10668,7 @@ save_exptl_crystal.size_min
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   millimetres
 
 save_
@@ -10705,7 +10705,7 @@ save_exptl_crystal.size_rad
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   millimetres
 
 save_
@@ -12633,7 +12633,7 @@ save_geom_angle.value
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:180.
+    _enumeration.range            0.0:180.0
     _units.code                   degrees
     _method.purpose               Evaluation
     _method.expression
@@ -12781,7 +12781,7 @@ save_geom_bond.distance
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
@@ -12937,7 +12937,7 @@ save_geom_bond.valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   electrons
 
 save_
@@ -13071,7 +13071,7 @@ save_geom_contact.distance
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
@@ -13230,7 +13230,7 @@ save_geom_hbond.angle_dha
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:180.
+    _enumeration.range            0.0:180.0
     _units.code                   degrees
     _method.purpose               Evaluation
     _method.expression
@@ -13714,7 +13714,7 @@ save_geom_torsion.angle
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            -180.:180.
+    _enumeration.range            -180.0:180.0
     _units.code                   degrees
 
 save_
@@ -14407,7 +14407,7 @@ save_model_site.radius_contact
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.:
+    _enumeration.range            1.0:
     _units.code                   angstroms
     _method.purpose               Evaluation
     _method.expression
@@ -14521,7 +14521,7 @@ save_valence_param.atom_1_valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -14562,7 +14562,7 @@ save_valence_param.atom_2_valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -14662,7 +14662,7 @@ save_valence_param.ro
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.:
+    _enumeration.range            1.0:
     _units.code                   angstroms
 
 save_
@@ -19938,7 +19938,7 @@ save_atom_analytical.analyte_mass_percent
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:100.
+    _enumeration.range            0.0:100.0
     _units.code                   none
 
 save_
@@ -20024,7 +20024,7 @@ save_atom_analytical.chemical_species_mass_percent
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:100.
+    _enumeration.range            0.0:100.0
     _units.code                   none
 
 save_
@@ -23875,7 +23875,7 @@ save_atom_type.analytical_mass_percent
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:100.
+    _enumeration.range            0.0:100.0
     _units.code                   none
 
 save_
@@ -24101,7 +24101,7 @@ save_atom_type.number_in_cell
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0:
+    _enumeration.range            0.0:
     _units.code                   none
     _method.purpose               Evaluation
     _method.expression
@@ -25204,7 +25204,7 @@ save_refine_diff.density_max
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            -100.:
+    _enumeration.range            -100.0:
     _method.purpose               Definition
     _method.expression
 ;
@@ -25271,7 +25271,7 @@ save_refine_diff.density_min
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            :100.
+    _enumeration.range            :100.0
     _method.purpose               Definition
     _method.expression
 ;
@@ -25343,7 +25343,7 @@ save_refine_diff.density_rms
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            -100.:100.
+    _enumeration.range            -100.0:100.0
     _method.purpose               Definition
     _method.expression
 ;
@@ -25628,7 +25628,7 @@ save_refine_ls.extinction_coef
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.:
+    _enumeration.range            0.0:
     _units.code                   none
     _description_example.case     3472(52)
     _description_example.detail   'Zachariasen coefficient r* = 0.347(5)e+04.'
