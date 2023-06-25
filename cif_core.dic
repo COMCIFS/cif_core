@@ -1703,7 +1703,7 @@ save_cell.volume_su
          '_cell_volume_su'
          '_cell.volume_esd'
 
-    _definition.update            2014-06-08
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the volume of the crystal unit cell.
@@ -1712,7 +1712,7 @@ save_cell.volume_su
     _name.object_id               volume_su
     _name.linked_item_id          '_cell.volume'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   angstrom_cubed
