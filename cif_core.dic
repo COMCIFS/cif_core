@@ -21699,7 +21699,7 @@ save_atom_site.u_equiv_geom_mean_su
          '_atom_site_U_equiv_geom_mean_su'
          '_atom_site.U_equiv_geom_mean_esd'
 
-    _definition.update            2012-11-20
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty values (esds) of the U(equiv).
@@ -21708,7 +21708,7 @@ save_atom_site.u_equiv_geom_mean_su
     _name.object_id               U_equiv_geom_mean_su
     _name.linked_item_id          '_atom_site.U_equiv_geom_mean'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   angstrom_squared
