@@ -6693,7 +6693,7 @@ save_refln.intensity_meas_su
          '_refln.intensity_sigma'
          '_refln_intensity_sigma'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the measured intensity.
@@ -6702,7 +6702,7 @@ save_refln.intensity_meas_su
     _name.object_id               intensity_meas_su
     _name.linked_item_id          '_refln.intensity_meas'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _units.code                   none
