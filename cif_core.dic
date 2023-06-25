@@ -986,7 +986,7 @@ save_cell.reciprocal_angle_alpha_su
          '_cell_reciprocal_angle_alpha_su'
          '_cell.reciprocal_angle_alpha_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the reciprocal of the angle
@@ -996,7 +996,7 @@ save_cell.reciprocal_angle_alpha_su
     _name.object_id               reciprocal_angle_alpha_su
     _name.linked_item_id          '_cell.reciprocal_angle_alpha'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   degrees
@@ -1043,7 +1043,7 @@ save_cell.reciprocal_angle_beta_su
          '_cell_reciprocal_angle_beta_su'
          '_cell.reciprocal_angle_beta_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the reciprocal of the angle
@@ -1053,7 +1053,7 @@ save_cell.reciprocal_angle_beta_su
     _name.object_id               reciprocal_angle_beta_su
     _name.linked_item_id          '_cell.reciprocal_angle_beta'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   degrees
@@ -1151,7 +1151,7 @@ save_cell.reciprocal_length_a_su
          '_cell_reciprocal_length_a_su'
          '_cell.reciprocal_length_a_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the reciprocal of the _cell.length_a.
@@ -1160,7 +1160,7 @@ save_cell.reciprocal_length_a_su
     _name.object_id               reciprocal_length_a_su
     _name.linked_item_id          '_cell.reciprocal_length_a'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   reciprocal_angstroms
@@ -1201,7 +1201,7 @@ save_cell.reciprocal_length_b_su
          '_cell_reciprocal_length_b_su'
          '_cell.reciprocal_length_b_esd'
 
-    _definition.update            2021-03-03
+    _definition.update            2023-06-25
     _description.text
 ;
     Standard uncertainty of the reciprocal of the _cell.length_b.
@@ -1210,7 +1210,7 @@ save_cell.reciprocal_length_b_su
     _name.object_id               reciprocal_length_b_su
     _name.linked_item_id          '_cell.reciprocal_length_b'
     _type.purpose                 SU
-    _type.source                  Related
+    _type.source                  Derived
     _type.container               Single
     _type.contents                Real
     _units.code                   reciprocal_angstroms
@@ -27596,4 +27596,6 @@ save_
        Added the default value of '1_555' to the site symmetry data items.
 
        Redefined _exptl_absorpt.coefficient_mu as Derived Measurand. Added SU.
+
+
 ;
