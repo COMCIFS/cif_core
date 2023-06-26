@@ -12827,7 +12827,7 @@ save_geom_bond.distance_su
          '_geom_bond_distance_su'
          '_geom_bond.dist_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-03-03
     _description.text
 ;
     Standard uncertainty of the intramolecular bond distance
@@ -12837,7 +12837,7 @@ save_geom_bond.distance_su
     _name.object_id               distance_su
     _name.linked_item_id          '_geom_bond.distance'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   angstroms
