@@ -25908,7 +25908,7 @@ save_refine_ls.goodness_of_fit_all_su
          '_refine_ls_goodness_of_fit_all_su'
          '_refine.ls_goodness_of_fit_all_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-03-03
     _description.text
 ;
     Standard uncertainty of the least-squares goodness-of-fit
@@ -25918,7 +25918,7 @@ save_refine_ls.goodness_of_fit_all_su
     _name.object_id               goodness_of_fit_all_su
     _name.linked_item_id          '_refine_ls.goodness_of_fit_all'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   none
