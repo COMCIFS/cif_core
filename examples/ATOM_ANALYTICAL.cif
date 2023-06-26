@@ -8,17 +8,17 @@ _atom_analytical.analyte
 _atom_analytical.meas_id
 _atom_analytical.chemical_species
 _atom_analytical.chemical_species_mass_percent
- 1 Fe  a   'Fe'	    49.09
- 2 Si  a   'Si O2' 	10.48
- 3 Al  a   'Al2 O3'	 6.02
+ 1 Fe  a   'Fe'     49.09
+ 2 Si  a   'Si O2'  10.48
+ 3 Al  a   'Al2 O3'  6.02
  4 Ti  a   'Ti O2'   0.75
- 5 Mn  a   'Mn'	     0.15
+ 5 Mn  a   'Mn'      0.15
  6 Ca  a   'Ca O'    0.14
  7 P   a   'P'       0.454
  8 S   a   'S'       0.007
  9 Mg  a   'Mg O'    0.27
 10 K   a   'K2 O'    0.014
-11 Na  a   'Na'	     0.01
+11 Na  a   'Na'      0.01
 
 loop_
 _atom_analytical_mass_loss.id
