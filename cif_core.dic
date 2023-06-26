@@ -13280,7 +13280,7 @@ save_geom_hbond.angle_dha_su
          '_geom_hbond_angle_DHA_su'
          '_geom_hbond.angle_DHA_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-03-03
     _description.text
 ;
     Standard uncertainty of the angle subtended by the sites identified
@@ -13290,7 +13290,7 @@ save_geom_hbond.angle_dha_su
     _name.object_id               angle_DHA_su
     _name.linked_item_id          '_geom_hbond.angle_DHA'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   degrees
