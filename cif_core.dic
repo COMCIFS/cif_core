@@ -25381,7 +25381,7 @@ save_refine_diff.density_rms_su
          '_refine_diff_density_RMS_su'
          '_refine.diff_density_RMS_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2023-01-12
     _description.text
 ;
     Standard uncertainty of the root mean square density value
@@ -25391,7 +25391,7 @@ save_refine_diff.density_rms_su
     _name.object_id               density_RMS_su
     _name.linked_item_id          '_refine_diff.density_RMS'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _method.purpose               Definition
