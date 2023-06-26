@@ -1,5 +1,17 @@
 #\#CIF_2.0
 
+##
+# This example represents the reporting of the elemental analysis of a specimen
+# used in a diffraction experiment.
+#
+# The specimen may consist of one or more distinct crystalline and/or amorphous
+# phases.
+#
+# In this case, a single XRF experiment determined the weight fractions of
+# the elements, and the mass loss was determined at three seperate temperatures
+# via TGA. The mass loss values are cumulative totals.
+##
+
 data_ATOM_ANALYTICAL_example
 
 loop_
@@ -25,12 +37,13 @@ _atom_analytical_mass_loss.id
 _atom_analytical_mass_loss.meas_id
 _atom_analytical_mass_loss.percent
 _atom_analytical_mass_loss.temperature
-LOI1 a   9.6   698
-LOI2 a  10.71  923
-LOI3 a  10.99 1273
+LOI1 b   9.6   698
+LOI2 b  10.71  923
+LOI3 b  10.99 1273
 
 loop_
 _atom_analytical_source.id
 _atom_analytical_source.technique
 _atom_analytical_source.equipment_make
 a  XRF 'Panalytical Axios'
+b  TGA 'NETZSCH Nevio'
