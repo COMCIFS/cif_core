@@ -13,7 +13,7 @@ data_CORE_DIC
     _dictionary.date              2023-06-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
-    _dictionary.ddl_conformance   4.1.0
+    _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
 ;
@@ -2004,7 +2004,7 @@ save_cell_measurement.wavelength
     ** DEPRECATED **
 
     Wavelength of the radiation used to measure the unit cell.
-    Items from the _diffrn_radiation_wavelength category should
+    Items from the DIFFRN_RADIATION_WAVELENGTH category should
     be used instead of this item.
 ;
     _name.category_id             cell_measurement
@@ -14336,7 +14336,7 @@ save_model_site.label
     _definition.update            2012-11-22
     _description.text
 ;
-    Code identifies a site in the atom_site category of data.
+    Code identifies a site in the ATOM_SITE category of data.
 ;
     _name.category_id             model_site
     _name.object_id               label
@@ -15162,7 +15162,7 @@ save_audit_author_role.id
     Unique identifier for the author for whom a role is identified.
     This may be repeated where an author took on multiple roles.
     The identifier for the author is drawn from the list of authors
-    given in the audit_author category.
+    given in the AUDIT_AUTHOR category.
 ;
     _name.category_id             audit_author_role
     _name.object_id               id
@@ -23974,7 +23974,7 @@ save_atom_type.display_colour
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
-    possible colours are enumerated in the display_colour list
+    possible colours are enumerated in the DISPLAY_COLOUR list
     category of items.
 ;
     _name.category_id             atom_type
@@ -27413,7 +27413,7 @@ save_function.symequiv
 
     returns a fractional coordinate vector xyz' which is input vector
     xyz transformed by the input symop 'n_pqr' applied to the symmetry
-    equivalent matrix extracted from the category space_group_symop.
+    equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
 ;
     _name.category_id             function
     _name.object_id               SymEquiv
@@ -27647,7 +27647,7 @@ save_
 
        Numerous improvements to types and harmonisation of spelling.
 ;
-         3.2.0                    2023-04-10
+         3.2.0                    2023-04-04
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27676,15 +27676,15 @@ save_
 
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
-
-       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
-       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
-       the definition of form factors.
 ;
          3.3.0                    2023-06-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
+
+       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
+       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
+       the definition of form factors.
 
        Added a dREL definition method for the _citation.id data item.
 
