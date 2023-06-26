@@ -2004,7 +2004,7 @@ save_cell_measurement.wavelength
     ** DEPRECATED **
 
     Wavelength of the radiation used to measure the unit cell.
-    Items from the _diffrn_radiation_wavelength category should
+    Items from the DIFFRN_RADIATION_WAVELENGTH category should
     be used instead of this item.
 ;
     _name.category_id             cell_measurement
@@ -14336,7 +14336,7 @@ save_model_site.label
     _definition.update            2012-11-22
     _description.text
 ;
-    Code identifies a site in the atom_site category of data.
+    Code identifies a site in the ATOM_SITE category of data.
 ;
     _name.category_id             model_site
     _name.object_id               label
@@ -15162,7 +15162,7 @@ save_audit_author_role.id
     Unique identifier for the author for whom a role is identified.
     This may be repeated where an author took on multiple roles.
     The identifier for the author is drawn from the list of authors
-    given in the audit_author category.
+    given in the AUDIT_AUTHOR category.
 ;
     _name.category_id             audit_author_role
     _name.object_id               id
@@ -23974,7 +23974,7 @@ save_atom_type.display_colour
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
-    possible colours are enumerated in the display_colour list
+    possible colours are enumerated in the DISPLAY_COLOUR list
     category of items.
 ;
     _name.category_id             atom_type
@@ -27282,7 +27282,7 @@ save_function.symequiv
 
     returns a fractional coordinate vector xyz' which is input vector
     xyz transformed by the input symop 'n_pqr' applied to the symmetry
-    equivalent matrix extracted from the category space_group_symop.
+    equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
 ;
     _name.category_id             function
     _name.object_id               SymEquiv

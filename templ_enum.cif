@@ -815,6 +815,8 @@ save_units_code
    'seconds'          "time      'seconds'"
    'microseconds'     "time      'microseconds'"
 
+   'hertz'          "frequency      'reciprocal seconds'"
+
    'degrees'          "angle      'degrees (of arc)'"
    'cycles'           "phase      'angle in 360 degree arcs'"
    'radians'          "angle      'radians'"
@@ -856,6 +858,7 @@ save_units_code
 
    'counts_per_photon' "measure of gain used in array detectors"
    'counts'            "counts from a detector"
+   'counts_per_second' "counts from a detector per second of count time"
    'photons per second'  "photons registered in one second"
 
    'microseconds_per_angstrom' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-1))'"
@@ -2322,4 +2325,6 @@ save_
 
        The enumeration for wyckoff_letter includes both \a and α to represent
        the Greek letter 'alpha'.
+
+       Added hertz and counts_per_second to units_code.
 ;
