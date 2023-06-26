@@ -571,7 +571,7 @@ save_aniso_bij
      reporting atomic displacement parameters. U, being directly proportional
      to B, is preferred [1].
 
-     Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
 
      [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
@@ -625,16 +625,16 @@ save_aniso_betaij
      These are the standard unitless anisotropic atomic displacement components
      which appear in the structure factor term:
 
-         T = exp{-1 sum~i~ [ sum~j~ (\b^ij^ h~i~ h~j~) ] }
+         T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
 
      h = the Miller indices
 
      The unique elements of the real symmetric matrix are entered by row.
 
      The IUCr Commission on Nomenclature recommends against the use
-     of \b for reporting atomic displacement parameters; U is preferred [1].
+     of β for reporting atomic displacement parameters; U is preferred [1].
 
-     Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
 
      [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
@@ -652,9 +652,9 @@ save_aniso_betaij_su
     _description.text
 ;
      These are the standard uncertainty values (SU) for the standard
-     form of the \b^ij^ anisotropic atomic displacement components (see
+     form of the β^ij^ anisotropic atomic displacement components (see
      aniso_betaIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the \b^ij^ calculation.
+     may in practice be auto generated as part of the β^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Derived
@@ -682,7 +682,7 @@ save_aniso_uij
      The IUCr Commission on Nomenclature recommends the use of U for reporting
      atomic displacement parameters [1].
 
-     Note that U^ij^ = \b^ij^/(2 pi^2^ a*~i~ a*~j~) = B^ij^/(8 pi^2^) [1].
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
 
      [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
