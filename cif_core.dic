@@ -10,15 +10,15 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-04-12
+    _dictionary.date              2023-06-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
-    _dictionary.ddl_conformance   4.1.0
+    _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
 ;
     The CIF_CORE dictionary records all the CORE data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
 
 save_CIF_CORE
@@ -46,7 +46,7 @@ save_DIFFRACTION
     _description.text
 ;
     The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
     _name.object_id               DIFFRACTION
@@ -645,13 +645,13 @@ save_cell.convert_uij_to_betaij
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
     The ADP factor in a structure factor expression:
 
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
-      = exp -       ( beta11 h h + ............ 2 beta23 k l )
+    t = exp - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* )
+    t = exp - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* )
+      = exp -       ( β11 h h + ............ 2 β23 k l )
 
-    The conversion of the U or B matrices to the beta matrix
+    The conversion of the U or B matrices to the β matrix
 
-        beta =   C U C   =    C B C /8pi**2
+        β =   C U C   =    C B C /8π^2^
 
     where C is conversion matrix defined here.
 ;
@@ -705,9 +705,9 @@ save_cell.convert_uiso_to_uij
     The reciprocal space matrix for converting the isotropic Uiso
     atomic displacement parameter to the anisotropic matrix Uij.
 
-                     | 1            cos(gamma*)   cos(beta*)  |
-    U[i,j]  = Uiso * | cos(gamma*)  1             cos(alpha*) |
-                     | cos(beta*)   cos(alpha*)   1           |
+                     | 1        cos(γ*)  cos(β*) |
+    U[i,j]  = Uiso * | cos(γ*)  1        cos(α*) |
+                     | cos(β*)  cos(α*)  1       |
 ;
     _name.category_id             cell
     _name.object_id               convert_Uiso_to_Uij
@@ -761,8 +761,8 @@ save_cell.diffrn_id
     for example, to locate and extract diffraction peaks. These will normally be
     the same conditions as those under which the cell was measured, but some
     legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using
-    `_cell_measurement.condition_id`
+    in which case those conditions should be indicated using the
+    _cell_measurement.condition_id data item.
 ;
     _name.category_id             cell
     _name.object_id               diffrn_id
@@ -1957,7 +1957,7 @@ save_cell_measurement.theta_max
     _definition.update            2012-11-22
     _description.text
 ;
-    Maximum theta scattering angle of reflections used to measure
+    Maximum θ scattering angle of reflections used to measure
     the crystal unit cell.
 ;
     _name.category_id             cell_measurement
@@ -1978,7 +1978,7 @@ save_cell_measurement.theta_min
     _definition.update            2012-11-22
     _description.text
 ;
-    Minimum theta scattering angle of reflections used to measure
+    Minimum θ scattering angle of reflections used to measure
     the crystal unit cell.
 ;
     _name.category_id             cell_measurement
@@ -2004,7 +2004,7 @@ save_cell_measurement.wavelength
     ** DEPRECATED **
 
     Wavelength of the radiation used to measure the unit cell.
-    Items from the _diffrn_radiation_wavelength category should
+    Items from the DIFFRN_RADIATION_WAVELENGTH category should
     be used instead of this item.
 ;
     _name.category_id             cell_measurement
@@ -2381,7 +2381,7 @@ save_diffrn_measurement.details
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     '440 frames of 0.25\%'
+    _description_example.case     '440 frames of 0.25°'
 
 save_
 
@@ -2411,7 +2411,7 @@ save_diffrn_measurement.device_class
       _description_example.case
          'three-circle diffractometer'
          'four-circle diffractometer'
-         '\k-geometry diffractometer'
+         'κ-geometry diffractometer'
          'oscillation camera'
          'precession camera'
 
@@ -2438,7 +2438,7 @@ save_diffrn_measurement.device_details
     _type.container               Single
     _type.contents                Text
     _description_example.case
-        'commercial goniometer modified locally to allow for 90\% \t arc'
+        'commercial goniometer modified locally to allow for 90° θ arc'
 
 save_
 
@@ -2493,7 +2493,7 @@ save_diffrn_measurement.method
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     'profile data from \q/2\q scans'
+    _description_example.case     'profile data from θ/2θ scans'
 
 save_
 
@@ -3267,9 +3267,9 @@ save_diffrn_radiation.type
 
     loop_
       _description_example.case
-         'Mo K\a'
-         'Cu K\a'
-         'Cu K\a~1~'
+         'Mo Kα'
+         'Cu Kα'
+         'Cu Kα~1~'
          'Cu K-L~2,3~'
          'white-beam'
 
@@ -3297,9 +3297,9 @@ save_diffrn_radiation.xray_symbol
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         K-L~3~                 'K\a~1~ in older Siegbahn notation.'
-         K-L~2~                 'K\a~2~ in older Siegbahn notation.'
-         K-M~3~                 'K\b~1~ in older Siegbahn notation.'
+         K-L~3~                 'Kα~1~ in older Siegbahn notation.'
+         K-L~2~                 'Kα~2~ in older Siegbahn notation.'
+         K-M~3~                 'Kβ~1~ in older Siegbahn notation.'
          K-L~2,3~               'Use where K-L~3~ and K-L~2~ are not resolved.'
 
 save_
@@ -3373,7 +3373,7 @@ save_diffrn_radiation_wavelength.determination
       _enumeration_set.state
       _enumeration_set.detail
          fundamental
-             'Fundamental property of matter, e.g. MoK\a.'
+             'Fundamental property of matter, e.g. MoKα.'
          estimated
              'Estimated, e.g. from monochromator angle or time of flight.'
          refined
@@ -3423,9 +3423,9 @@ save_diffrn_radiation_wavelength.type
 
     loop_
       _description_example.case
-         'Mo K\a'
-         'Cu K\a'
-         'Cu K\a~1~'
+         'Mo Kα'
+         'Cu Kα'
+         'Cu Kα~1~'
          'Cu K-L~2,3~'
          'white-beam'
 
@@ -3520,9 +3520,9 @@ save_diffrn_radiation_wavelength.xray_symbol
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         K-L~3~                 'K\a~1~ in older Siegbahn notation.'
-         K-L~2~                 'K\a~2~ in older Siegbahn notation.'
-         K-M~3~                 'K\b~1~ in older Siegbahn notation.'
+         K-L~3~                 'Kα~1~ in older Siegbahn notation.'
+         K-L~2~                 'Kα~2~ in older Siegbahn notation.'
+         K-M~3~                 'Kβ~1~ in older Siegbahn notation.'
          K-L~2,3~               'Use where K-L~3~ and K-L~2~ are not resolved.'
 
 save_
@@ -4183,8 +4183,8 @@ save_diffrn_refln.scan_mode
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         om                       'Omega scan.'
-         ot                       'Omega/2theta scan.'
+         om                       'ω-scan.'
+         ot                       'ω/2θ-scan.'
          q                        'Q-scans (arbitrary reciprocal directions).'
 
 save_
@@ -4286,7 +4286,7 @@ save_diffrn_refln.sin_theta_over_lambda
     _definition.update            2012-11-26
     _description.text
 ;
-    (sin theta)/lambda value for this reflection.
+    sin(θ)/λ value for this reflection.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               sin_theta_over_lambda
@@ -4308,7 +4308,7 @@ save_diffrn_refln.standard_code
 ;
     Code identifying reflections measured repeated as standard intensity.
     Must match a _diffrn_standard_refln.code values OR set to '.' if
-    it was not used as a intensity standard.
+    it was not used as an intensity standard.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               standard_code
@@ -4766,7 +4766,7 @@ save_diffrn_reflns.theta_max
     _definition.update            2012-11-26
     _description.text
 ;
-    Maximum theta angle of the measured reflections.
+    Maximum θ angle of the measured reflections.
 ;
     _name.category_id             diffrn_reflns
     _name.object_id               theta_max
@@ -4786,7 +4786,7 @@ save_diffrn_reflns.theta_min
     _definition.update            2012-11-26
     _description.text
 ;
-    Minimum theta angle of the measured reflections.
+    Minimum θ angle of the measured reflections.
 ;
     _name.category_id             diffrn_reflns
     _name.object_id               theta_min
@@ -5479,7 +5479,7 @@ save_diffrn_source.size
 
     loop_
       _description_example.case
-         '8mm x 0.4 mm fine-focus'
+         '8 mm x 0.4 mm fine-focus'
          'broad focus'
 
 save_
@@ -6242,7 +6242,7 @@ save_
 save_refln.f_complex_su
 
     _definition.id                '_refln.F_complex_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-06-03
     _description.text
 ;
     Standard uncertainty of _refln.F_complex.
@@ -6250,9 +6250,10 @@ save_refln.f_complex_su
     _name.category_id             refln
     _name.object_id               F_complex_su
     _name.linked_item_id          '_refln.F_complex'
-
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
-
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Complex
     _method.purpose               Definition
     _method.expression
 ;
@@ -6446,13 +6447,13 @@ save_refln.fom
 ;
     The figure of merit m for this reflection.
 
-        int P~alpha~ exp(i*alpha) dalpha
-    m = --------------------------------
-              int P~alpha~ dalpha
+        int P~α~ exp(i*α) dα
+    m = --------------------
+            int P~α~ dα
 
-    P~a~ = the probability that the phase angle a is correct
+    P~α~ = the probability that the phase angle α is correct
 
-    int is taken over the range alpha = 0 to 2 pi.
+    int is taken over the range α = 0 to 2 π.
 ;
     _name.category_id             refln
     _name.object_id               fom
@@ -6467,7 +6468,7 @@ save_
 save_refln.form_factor_table
 
     _definition.id                '_refln.form_factor_table'
-    _definition.update            2021-07-20
+    _definition.update            2023-06-16
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
@@ -6479,38 +6480,49 @@ save_refln.form_factor_table
     _type.source                  Derived
     _type.container               Table
     _type.contents                Real
-    _units.code                   none
-    _method.purpose               Evaluation
-    _method.expression
+
+    loop_
+      _method.purpose
+      _method.expression
+         Definition
 ;
-    With r  as  refln
+         _units.code = "none"
 
-     table = Table ()
-     s  =    r.sin_theta_over_lambda
+         If (_diffrn_radiation.probe == "neutron")
+             _units.code = "femtometres"
+;
+         Evaluation
+;
+         With r  as  refln
 
-    Loop t  as  atom_type  {
+           table = Table ()
+           s  =    r.sin_theta_over_lambda
 
-       If (_diffrn_radiation.probe == 'neutron') {
+           Loop t  as  atom_type  {
 
-            f  =   t.length_neutron
+             If (_diffrn_radiation.probe == 'neutron') {
 
-       } Else If (s < 2.0 ) {
+               f  =   t.length_neutron
 
-            c  =   t.Cromer_Mann_coeffs
+             } Else If (s < 2.0 ) {
 
-            f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
-                        + c[3] * Exp (-c[4] * s*s)
-                        + c[5] * Exp (-c[6] * s*s)
-                        + c[7] * Exp (-c[8] * s*s))
-       } Else {
+               c  =   t.Cromer_Mann_coeffs
 
-            c  =   t.hi_ang_Fox_coeffs
+               f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
+                           + c[3] * Exp (-c[4] * s*s)
+                           + c[5] * Exp (-c[6] * s*s)
+                           + c[7] * Exp (-c[8] * s*s))
+             } Else {
 
-            f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
-       }
-        table [ t.symbol ]  =   f
-    }
-       _refln.form_factor_table  =   table
+               c  =   t.hi_ang_Fox_coeffs
+
+               f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
+             }
+
+             table [ t.symbol ]  =   f
+
+           }
+         _refln.form_factor_table  =   table
 ;
 
 save_
@@ -6881,7 +6893,7 @@ save_refln.sin_theta_over_lambda
     _definition.update            2013-03-07
     _description.text
 ;
-    The (sin theta)/lambda value for this reflection.
+    The sin(θ)/λ value for this reflection.
 ;
     _name.category_id             refln
     _name.object_id               sin_theta_over_lambda
@@ -9007,7 +9019,7 @@ save_chemical.optical_rotation
     The optical rotation in solution of the compound is
     specified in the following format:
 
-       '[\a]^TEMP^~WAVE~ = SORT (c = CONC, SOLV)'
+       '[α]^TEMP^~WAVE~ = SORT (c = CONC, SOLV)'
 
     where: TEMP is the temperature of the measurement in degrees Celsius,
            WAVE is an indication of the wavelength of the light
@@ -9015,7 +9027,7 @@ save_chemical.optical_rotation
            CONC is the concentration of the solution given as the
                 mass of the substance in g in 100 ml of solution,
            SORT is the signed value (preceded by a + or a - sign)
-                of 100.\a/(l.c), where \a is the signed optical
+                of 100.α/(l.c), where α is the signed optical
                 rotation in degrees measured in a cell of length l in
                 dm and c is the value of CONC in g, and
            SOLV is the chemical formula of the solvent.
@@ -9026,7 +9038,7 @@ save_chemical.optical_rotation
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     '[\a]^25^~D~ = +108 (c = 3.42, CHCl~3~)'
+    _description_example.case     '[α]^25^~D~ = +108 (c = 3.42, CHCl~3~)'
 
 save_
 
@@ -10039,7 +10051,7 @@ save_exptl_absorpt.special_details
 ;
     Details of the absorption correction process applied to the
     measured intensities that cannot otherwise be given using
-    other data items from the EXPTL_ABSORBT category.
+    other data items from the EXPTL_ABSORPT category.
 ;
     _name.category_id             exptl_absorpt
     _name.object_id               special_details
@@ -10067,12 +10079,12 @@ save_exptl_absorpt.special_details
 ;
          Neutron linear absorption coefficient is wavelength dependent. The
          value of 0.2216 (mm^-1^) shown in _exptl_absorpt_coefficient_mu is the
-         sample absorption coefficient for a neutron wavelength at 1.0 \%A.
+         sample absorption coefficient for a neutron wavelength at 1.0 Å.
 ;
 ;
          Text modified from:
-         Lengyel, Jeff et al. Antiferroelectric Phase Transition in a Proton-
-         Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
+         Lengyel, Jeff et al. Antiferroelectric Phase Transition in a
+         Proton-Transfer Salt of Squaric Acid and 2,3-Dimethylpyrazine.
          Journal of the American Chemical Society, 2019, 141, 16279-16287
          https://doi.org/10.1021/jacs.9b04473
          COD 4127699
@@ -10426,8 +10438,8 @@ save_exptl_crystal.f_000
 
          F(000) = [ (sum f~r~)^2^ + (sum f~i~)^2^ ]^1/2^
 
-         f~r~   = real part of the scattering factors at theta = 0
-         f~i~   = imaginary part of the scattering factors at theta = 0
+         f~r~   = real part of the scattering factors at θ = 0
+         f~i~   = imaginary part of the scattering factors at θ = 0
 
                  the sum is taken over each atom in the unit cell
 
@@ -10479,7 +10491,7 @@ save_exptl_crystal.preparation
     _description.text
 ;
     Details of crystal growth and preparation of the crystals
-    (e.g.  mounting) prior to the intensity measurements.
+    (e.g. mounting) prior to the intensity measurements.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               preparation
@@ -11582,7 +11594,7 @@ save_space_group.name_hall
 
     loop_
       _description_example.case
-         'P 2ac  2n'
+         'P 2ac 2n'
          '-R 3 2"'
          'P 61 2 2 (0 0 -1)'
 
@@ -12123,13 +12135,13 @@ save_
 save_space_group_wyckoff.letter
 
     _definition.id                '_space_group_Wyckoff.letter'
-    _definition.update            2021-09-23
+    _definition.update            2023-06-14
     _description.text
 ;
     The Wyckoff letter associated with this position, as given in
     International Tables for Crystallography Volume A. The
-    enumeration value '\a' corresponds to the Greek letter 'alpha'
-    used in International Tables.
+    enumeration values '\a' and α are equivalent, and correspond to
+    the Greek letter 'alpha' used in International Tables.
 
     Ref: International Tables for Crystallography (2002). Volume A,
          Space-group symmetry, edited by Th. Hahn, 5th ed.
@@ -12154,7 +12166,7 @@ save_space_group_wyckoff.multiplicity
     _description.text
 ;
     The multiplicity of this Wyckoff position as given in
-    International Tables Volume A.  It is the number of equivalent
+    International Tables Volume A. It is the number of equivalent
     sites per conventional unit cell.
 
     Ref: International Tables for Crystallography (2002). Volume A,
@@ -14324,7 +14336,7 @@ save_model_site.label
     _definition.update            2012-11-22
     _description.text
 ;
-    Code identifies a site in the atom_site category of data.
+    Code identifies a site in the ATOM_SITE category of data.
 ;
     _name.category_id             model_site
     _name.object_id               label
@@ -14717,7 +14729,7 @@ save_PUBLICATION
     _description.text
 ;
     The DICTIONARY group encompassing the CORE PUBLICATION data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
     _name.object_id               PUBLICATION
@@ -14964,6 +14976,57 @@ save_audit_author.address
 
 save_
 
+save_audit_author.email
+
+    _definition.id                '_audit_author.email'
+    _definition.update            2023-06-02
+    _description.text
+;
+    The electronic mail address of an author of the data block, in a form
+    recognizable to international networks. The format of e-mail addresses is
+    given in Section 3.4, Address Specification, of Internet Message Format,
+    RFC 2822, P. Resnick (Editor), Network Standards Group, April 2001.
+;
+    _name.category_id             audit_author
+    _name.object_id               email
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         name@host.domain.country
+         bm@iucr.org
+
+save_
+
+save_audit_author.fax
+
+    _definition.id                '_audit_author.fax'
+    _definition.update            2023-06-02
+    _description.text
+;
+    Facsimile telephone number of an author of the data block.
+    The recommended style is the international dialing prefix, followed
+    by the area code in parentheses, followed by the local number with
+    no spaces. The earlier convention of including the international
+    dialing prefix in parentheses is no longer recommended.
+;
+    _name.category_id             audit_author
+    _name.object_id               fax
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         12(34)9477334
+         12()349477334
+
+save_
+
 save_audit_author.id
 
     _definition.id                '_audit_author.id'
@@ -15030,14 +15093,42 @@ save_audit_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A.'''
-         '''M\"uller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A."
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
+
+save_
+
+save_audit_author.phone
+
+    _definition.id                '_audit_author.phone'
+    _definition.update            2023-06-02
+    _description.text
+;
+    Telephone number of an author of the data block.
+    The recommended style is the international dialing prefix,
+    followed by the area code in parentheses, followed by the
+    local number and any extension number prefixed by 'x', with
+    no spaces. The earlier convention of including the international
+    dialing prefix in parentheses is no longer recommended.
+;
+    _name.category_id             audit_author
+    _name.object_id               phone
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         12(34)9477330
+         12()349477330
+         12(34)9477330x5543
 
 save_
 
@@ -15071,7 +15162,7 @@ save_audit_author_role.id
     Unique identifier for the author for whom a role is identified.
     This may be repeated where an author took on multiple roles.
     The identifier for the author is drawn from the list of authors
-    given in the audit_author category.
+    given in the AUDIT_AUTHOR category.
 ;
     _name.category_id             audit_author_role
     _name.object_id               id
@@ -15126,7 +15217,7 @@ save_audit_author_role.role
 ;
          analysis
 ;
-         Worked on the structural model.
+         Obtained fitted parameters, such as a structural model, from the data.
 ;
          software
 ;
@@ -15939,7 +16030,7 @@ save_citation.id
 
     _definition.id                '_citation.id'
     _alias.definition_id          '_citation_id'
-    _definition.update            2021-10-27
+    _definition.update            2023-04-04
     _description.text
 ;
     Unique identifier to the CITATION list. A value of 'primary'
@@ -15961,6 +16052,16 @@ save_citation.id
          1
          2
          3
+
+    _method.purpose               Definition
+    _method.expression
+;
+    if (len(citation) == 1) {
+        _enumeration.default = "primary"
+    } else {
+        _enumeration.default = missing
+    }
+;
 
 save_
 
@@ -16070,7 +16171,7 @@ save_citation.journal_issue
     _definition.update            2021-11-12
     _description.text
 ;
-    Issue identifier of the journal cited;  relevant for articles.
+    Issue identifier of the journal cited; relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_issue
@@ -16093,7 +16194,7 @@ save_citation.journal_volume
     _definition.update            2021-03-01
     _description.text
 ;
-    Volume number of the journal cited;  relevant for articles.
+    Volume number of the journal cited; relevant for articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_volume
@@ -16328,14 +16429,14 @@ save_citation_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A'''
-         '''M\"uller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A"
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
 
 save_
 
@@ -16425,13 +16526,13 @@ save_citation_editor.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A'''
-         '''M\"uller, H.A.'''
-         '''Ross II, C.R.'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A"
+         "Müller, H.A."
+         "Ross II, C.R."
 
 save_
 
@@ -18571,14 +18672,14 @@ save_publ_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A'''
-         '''M\"uller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A"
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
 
 save_
 
@@ -19327,7 +19428,7 @@ save_PUBL_SECTION
     _definition.update            2012-05-07
     _description.text
 ;
-    Manuscript section data if submitted in parts. see also
+    Manuscript section data if submitted in parts. See also
     _publ_manuscript.text and _publ_manuscript.processed.
     The _publ_section.exptl_prep, _publ_section.exptl_refinement
     and _publ_section.exptl_solution items are preferred for
@@ -19739,7 +19840,7 @@ save_STRUCTURE
     _description.text
 ;
     The DICTIONARY group encompassing the CORE STRUCTURE data items defined
-    and used with in the Crystallographic Information Framework (CIF).
+    and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
     _name.object_id               STRUCTURE
@@ -20078,7 +20179,7 @@ save_atom_analytical_mass_loss.percent
     is represented by a negative value.
 
     This data name would be used to record mass loss on drying, or mass
-    loss on ignitition, during, for example, fusion bead preparation for
+    loss on ignition, during, for example, fusion bead preparation for
     XRF analysis.
 ;
     _name.category_id             atom_analytical_mass_loss
@@ -20150,7 +20251,7 @@ save_atom_analytical_mass_loss.temperature
     The temperature, in kelvin, at which the mass loss was recorded
     as given by _atom_analytical_mass_loss.percent.
 
-    This would be used to record the temperature of drying or ignitition,
+    This would be used to record the temperature of drying or ignition,
     during, for example, fusion bead preparation for XRF analysis.
 ;
     _name.category_id             atom_analytical_mass_loss
@@ -20533,7 +20634,7 @@ save_atom_site.b_iso_or_equiv
 
     a     = the real-space cell vectors
     a*    = the reciprocal-space cell lengths
-    B^ij^ = 8 pi^2^ U^ij^
+    B^ij^ = 8 π^2^ U^ij^
     Ref: Fischer, R. X. & Tillmanns, E. (1988). Acta Cryst. C44, 775-776.
 
     The IUCr Commission on Nomenclature recommends against the use
@@ -21440,12 +21541,12 @@ save_atom_site.tensor_beta
     The symmetric anisotropic atomic displacement tensor beta[I,J]
     appears in a structure factor expression as:
 
-    t = exp -[ beta11 h h + ............ 2 beta23 k l ]
+    t = exp - [ β11 h h + ............ 2 β23 k l ]
 
     It is related to the ADP matrices U(IJ) and B(IJ) as follows:
 
-    t = exp -2pi**2 ( U11    h h a* a* + ...... 2 U23    k l b* c* )
-    t = exp - 0.25  ( B11    h h a* a* + ...... 2 B23    k l b* c* )
+    t = exp - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* )
+    t = exp - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* )
 ;
     _name.category_id             atom_site
     _name.object_id               tensor_beta
@@ -22321,7 +22422,7 @@ save_atom_sites.solution_hydrogens
     *_hydrogens code identifies how the hydrogen sites were located.
 
     Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Us\'on, I. (2001). Ab initio phasing.
+         Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -22379,7 +22480,7 @@ save_atom_sites.solution_hydrogens
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
          Acta Cryst. A60, 134-141].
 ;
          other
@@ -22403,7 +22504,7 @@ save_atom_sites.solution_primary
     *_hydrogens code identifies how the hydrogen sites were located.
 
     Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Us\'on, I. (2001). Ab initio phasing.
+         Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -22457,7 +22558,7 @@ save_atom_sites.solution_primary
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
          Acta Cryst. A60, 134-141].
 ;
          other
@@ -22481,7 +22582,7 @@ save_atom_sites.solution_secondary
     *_hydrogens code identifies how the hydrogen sites were located.
 
     Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Us\'on, I. (2001). Ab initio phasing.
+         Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -22535,7 +22636,7 @@ save_atom_sites.solution_secondary
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
          Acta Cryst. A60, 134-141].
 ;
          other
@@ -23820,7 +23921,7 @@ save_
 save_atom_type.atomic_number
 
     _definition.id                '_atom_type.atomic_number'
-    _definition.update            2021-03-01
+    _definition.update            2023-06-01
     _description.text
 ;
     Atomic number of this atom type.
@@ -23832,7 +23933,7 @@ save_atom_type.atomic_number
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            1:
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -23873,7 +23974,7 @@ save_atom_type.display_colour
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
-    possible colours are enumerated in the display_colour list
+    possible colours are enumerated in the DISPLAY_COLOUR list
     category of items.
 ;
     _name.category_id             atom_type
@@ -23960,6 +24061,28 @@ save_atom_type.key
 ;
     _atom_type.key = _atom_type.symbol
 ;
+
+save_
+
+save_atom_type.mass_number
+
+    _definition.id                '_atom_type.mass_number'
+    _definition.update            2023-05-22
+    _description.text
+;
+    Mass number of this atom type.
+
+    Used to denote a specific isotope. Special value '.' indicates
+    that the element is present in natural isotopic abundance.
+;
+    _name.category_id             atom_type
+    _name.object_id               mass_number
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:
+    _units.code                   none
 
 save_
 
@@ -24058,10 +24181,10 @@ save_atom_type.radius_contact
     _type.contents                Real
     _enumeration.range            0.0:5.0
     _units.code                   angstroms
-    _method.purpose               Evaluation
+    _method.purpose               Definition
     _method.expression
 ;
-    _atom_type.radius_contact =  _atom_type.radius_bond + 1.25
+    _enumeration.default = _atom_type.radius_bond + 1.25
 ;
 
 save_
@@ -24123,6 +24246,7 @@ save_atom_type_scat.cromer_mann_a1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a1
+    _units.code                   none
 
     _import.get
         [
@@ -24143,6 +24267,7 @@ save_atom_type_scat.cromer_mann_a2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a2
+    _units.code                   none
 
     _import.get
         [
@@ -24163,6 +24288,7 @@ save_atom_type_scat.cromer_mann_a3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a3
+    _units.code                   none
 
     _import.get
         [
@@ -24183,6 +24309,7 @@ save_atom_type_scat.cromer_mann_a4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a4
+    _units.code                   none
 
     _import.get
         [
@@ -24203,6 +24330,7 @@ save_atom_type_scat.cromer_mann_b1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b1
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24223,6 +24351,7 @@ save_atom_type_scat.cromer_mann_b2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b2
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24243,6 +24372,7 @@ save_atom_type_scat.cromer_mann_b3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b3
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24263,6 +24393,7 @@ save_atom_type_scat.cromer_mann_b4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b4
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24283,6 +24414,7 @@ save_atom_type_scat.cromer_mann_c
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_c
+    _units.code                   none
 
     _import.get
         [
@@ -24295,7 +24427,7 @@ save_
 save_atom_type_scat.cromer_mann_coeffs
 
     _definition.id                '_atom_type_scat.Cromer_Mann_coeffs'
-    _definition.update            2012-11-20
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Cromer-Mann coefficients for generating X-ray scattering
@@ -24310,7 +24442,7 @@ save_atom_type_scat.cromer_mann_coeffs
     _type.container               List
     _type.dimension               '[9]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24393,11 +24525,11 @@ save_
 save_atom_type_scat.dispersion_imag_cu
 
     _definition.id                '_atom_type_scat.dispersion_imag_Cu'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Cu
@@ -24405,7 +24537,7 @@ save_atom_type_scat.dispersion_imag_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24416,11 +24548,11 @@ save_
 save_atom_type_scat.dispersion_imag_mo
 
     _definition.id                '_atom_type_scat.dispersion_imag_Mo'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag_Mo
@@ -24428,7 +24560,7 @@ save_atom_type_scat.dispersion_imag_mo
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24474,11 +24606,11 @@ save_
 save_atom_type_scat.dispersion_real_cu
 
     _definition.id                '_atom_type_scat.dispersion_real_Cu'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Cu K alpha radiation
+    for this atom type and Cu Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Cu
@@ -24486,7 +24618,7 @@ save_atom_type_scat.dispersion_real_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24497,11 +24629,11 @@ save_
 save_atom_type_scat.dispersion_real_mo
 
     _definition.id                '_atom_type_scat.dispersion_real_Mo'
-    _definition.update            2021-09-24
+    _definition.update            2023-06-01
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
-    for this atom type and Mo K alpha radiation
+    for this atom type and Mo Kα radiation.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real_Mo
@@ -24509,7 +24641,7 @@ save_atom_type_scat.dispersion_real_mo
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_id     '_atom_type.element_symbol'
     _units.code                   none
 
     _import.get
@@ -24542,11 +24674,189 @@ save_atom_type_scat.dispersion_source
 
 save_
 
+save_atom_type_scat.exponential_polynomial_coefs
+
+    _definition.id                '_atom_type_scat.exponential_polynomial_coefs'
+    _definition.update            2023-06-16
+    _description.text
+;
+    The set of polynomial coefficients for generating X-ray scattering factors:
+    [ a_0, a_1, ... , a_N ].
+
+    f(s; Z) = exp(Sum(a~i~ * s^i^), i=0:N)
+
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_coefs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   unspecified
+
+save_
+
+save_atom_type_scat.exponential_polynomial_coefs_su
+
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_coefs_su'
+    _definition.update            2023-06-16
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.exponential_polynomial_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_coefs_su
+    _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coefs'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   unspecified
+
+save_
+
+save_atom_type_scat.exponential_polynomial_lower_limit
+
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_lower_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The inclusive lower limit of s for which the corresponding exponential
+    polynomial coefficients are valid.
+
+    See _atom_type_scat.exponential_polynomial_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_lower_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.exponential_polynomial_upper_limit
+
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_upper_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The exclusive upper limit of s for which the corresponding exponential
+    polynomial coefficients are valid.
+
+    See _atom_type_scat.exponential_polynomial_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               exponential_polynomial_upper_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.gaussian_coefs
+
+    _definition.id                '_atom_type_scat.Gaussian_coefs'
+    _definition.update            2023-06-16
+    _description.text
+;
+    The set of Gaussian coefficients for generating X-ray scattering factors:
+    [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
+
+    f(s; Z) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:N)
+
+    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_coefs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   unspecified
+
+save_
+
+save_atom_type_scat.gaussian_coefs_su
+
+    _definition.id                '_atom_type_scat.Gaussian_coefs_su'
+    _definition.update            2023-06-16
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_coefs_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_coefs'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   unspecified
+
+save_
+
+save_atom_type_scat.gaussian_lower_limit
+
+    _definition.id                '_atom_type_scat.Gaussian_lower_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The inclusive lower limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.Gaussian_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_lower_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.gaussian_upper_limit
+
+    _definition.id                '_atom_type_scat.Gaussian_upper_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The exclusive upper limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.Gaussian_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_upper_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
 save_atom_type_scat.hi_ang_fox_c0
 
     _definition.id                '_atom_type_scat.hi_ang_Fox_c0'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c0
+    _units.code                   none
 
     _import.get
         [
@@ -24561,6 +24871,7 @@ save_atom_type_scat.hi_ang_fox_c1
     _definition.id                '_atom_type_scat.hi_ang_Fox_c1'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c1
+    _units.code                   angstroms
 
     _import.get
         [
@@ -24575,6 +24886,7 @@ save_atom_type_scat.hi_ang_fox_c2
     _definition.id                '_atom_type_scat.hi_ang_Fox_c2'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c2
+    _units.code                   angstrom_squared
 
     _import.get
         [
@@ -24589,6 +24901,7 @@ save_atom_type_scat.hi_ang_fox_c3
     _definition.id                '_atom_type_scat.hi_ang_Fox_c3'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c3
+    _units.code                   angstrom_cubed
 
     _import.get
         [
@@ -24601,7 +24914,7 @@ save_
 save_atom_type_scat.hi_ang_fox_coeffs
 
     _definition.id                '_atom_type_scat.hi_ang_Fox_coeffs'
-    _definition.update            2012-11-30
+    _definition.update            2023-06-16
     _description.text
 ;
     The set of Fox et al. coefficients for generating high angle
@@ -24616,7 +24929,7 @@ save_atom_type_scat.hi_ang_fox_coeffs
     _type.container               List
     _type.dimension               '[4]'
     _type.contents                Real
-    _units.code                   none
+    _units.code                   unspecified
     _method.purpose               Evaluation
     _method.expression
 ;
@@ -24625,6 +24938,96 @@ save_atom_type_scat.hi_ang_fox_coeffs
     _atom_type_scat.hi_ang_Fox_coeffs  =
     [t.hi_ang_Fox_c0,t.hi_ang_Fox_c1,t.hi_ang_Fox_c2,t.hi_ang_Fox_c3]
 ;
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_coefs
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
+    _definition.update            2023-06-16
+    _description.text
+;
+    The set of Gaussian coefficients for use in the inverse Mott-Bethe
+    relationship for generating X-ray scattering factors:
+    [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
+
+    f(s; Z) =
+    Z - 8π * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
+
+    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z is the atomic number.
+    θ is the diffraction angle and λ is the wavelength of the incident
+    radiation in angstroms.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_coefs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   unspecified
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_coefs_su
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
+    _definition.update            2023-06-16
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_coefs_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_coefs'
+    _type.purpose                 SU
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   unspecified
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_lower_limit
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_lower_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The inclusive lower limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.inv_Mott_Bethe_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_lower_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_upper_limit
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_upper_limit'
+    _definition.update            2023-04-09
+    _description.text
+;
+    The exclusive upper limit of s for which the corresponding Gaussian
+    coefficients are valid.
+
+    See _atom_type_scat.inv_Mott_Bethe_coefs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_upper_limit
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   reciprocal_angstroms
 
 save_
 
@@ -24709,7 +25112,7 @@ save_atom_type_scat.versus_stol_list
     _definition.update            2013-04-17
     _description.text
 ;
-    List of scattering factors as a function of sin theta on lambda.
+    List of scattering factors as a function of sin(θ)/λ.
     List has the form [[<stol value 1> <scatfac 1>] [<stol value 2> <scatfac
     2>] ....] in increments of 0.01, increasing from 0.0.
 ;
@@ -25099,9 +25502,9 @@ save_refine_ls.abs_structure_rogers
 ;
     The measure of absolute structure as defined by Rogers (1981).
     The value must lie in the 99.97% Gaussian confidence interval
-    -1 -3u =< \h =< 1 + 3u and a standard uncertainty (e.s.d.) u must
+    -1 -3u =< η =< 1 + 3u and a standard uncertainty (e.s.d.) u must
     be supplied. The _enumeration.range of -1.0:1.0 is correctly
-    interpreted as meaning (-1.0 - 3u) =< \h =< (1.0 + 3u).
+    interpreted as meaning (-1.0 - 3u) =< η =< (1.0 + 3u).
     Ref: Rogers, D. (1981). Acta Cryst. A37, 734-741.
 ;
     _name.category_id             refine_ls
@@ -25389,7 +25792,7 @@ save_refine_ls.f_calc_precision
 
     _definition.id                '_refine_ls.F_calc_precision'
     _alias.definition_id          '_refine_ls_F_calc_precision'
-    _definition.update            2013-01-21
+    _definition.update            2023-05-14
     _description.text
 ;
     Estimate of the precision resulting from the numerical
@@ -26379,7 +26782,7 @@ save_refine_ls.weighting_details
     _description_example.case
 ;
     Sigdel model of Konnert-Hendrickson:
-      Sigdel = Afsig +  Bfsig*(sin(\q)/\l - 1/6)
+      Sigdel = Afsig +  Bfsig*(sin(θ)/λ - 1/6)
       Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
       Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
 ;
@@ -26729,7 +27132,7 @@ save_FUNCTION
     _description.text
 ;
     The crystallographic functions the invoked in the definition
-    methods of CORE STRUCTURE data items defined and used with in
+    methods of CORE STRUCTURE data items defined and used within
     the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE
@@ -26879,7 +27282,7 @@ save_function.symequiv
 
     returns a fractional coordinate vector xyz' which is input vector
     xyz transformed by the input symop 'n_pqr' applied to the symmetry
-    equivalent matrix extracted from the category space_group_symop.
+    equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
 ;
     _name.category_id             function
     _name.object_id               SymEquiv
@@ -27143,8 +27546,36 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-04-12
+         3.3.0                    2023-06-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
+
+       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
+       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
+       the definition of form factors.
+
+       Added a dREL definition method for the _citation.id data item.
+
+       Rewrote the _atom_type.radius_contact evaluation method as a definition
+       method.
+
+       Added _atom_type.mass_number to record specific isotope identities.
+
+       Changed enumeration of _atom_type.atomic_number,
+       _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
+       _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
+       to be defaulted on _atom_type.element_symbol.
+
+       Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
+
+       Corrected the content type of the _refln.F_complex_su attribute.
+
+       Updated description of _space_group_wyckoff.letter.
+
+       Added a dREL definition method that determines the units of measure to
+       the definition of the _refln.form_factor_table data item. Changed the
+       units of several data items to 'unspecified'.
+
+       Added the default value of '1_555' to the site symmetry data items.
 ;
