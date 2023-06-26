@@ -221,16 +221,17 @@ save_diffrn.ambient_temperature_su
          '_diffrn_ambient_temp_su'
          '_diffrn.ambient_temp_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of _diffrn.ambient_temperature.
+    Standard uncertainty of the mean temperature
+    at which intensities were measured.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_temperature_su
     _name.linked_item_id          '_diffrn.ambient_temperature'
     _type.purpose                 SU
-    _type.source                  Recorded
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   kelvins
