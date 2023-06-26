@@ -20677,7 +20677,7 @@ save_atom_site.b_iso_or_equiv_su
          '_atom_site_B_iso_or_equiv_su'
          '_atom_site.B_iso_or_equiv_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2023-01-16
     _description.text
 ;
     Standard uncertainty of the isotropic atomic displacement parameter,
@@ -20689,7 +20689,7 @@ save_atom_site.b_iso_or_equiv_su
     _name.object_id               B_iso_or_equiv_su
     _name.linked_item_id          '_atom_site.B_iso_or_equiv'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   angstrom_squared
