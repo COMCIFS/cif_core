@@ -1339,7 +1339,7 @@ save_cromer_mann_a1
 
 save_cromer_mann_b1
 
-    _units.code                   none
+    _units.code                   angstrom_squared
 
      loop_
          _enumeration_default.index
@@ -1443,7 +1443,7 @@ save_cromer_mann_a2
 
 save_cromer_mann_b2
 
-    _units.code                   none
+    _units.code                   angstrom_squared
 
      loop_
          _enumeration_default.index
@@ -1547,7 +1547,7 @@ save_cromer_mann_a3
 
 save_cromer_mann_b3
 
-    _units.code                   none
+    _units.code                   angstrom_squared
 
      loop_
          _enumeration_default.index
@@ -1651,7 +1651,7 @@ save_cromer_mann_a4
 
 save_cromer_mann_b4
 
-    _units.code                   none
+    _units.code                   angstrom_squared
 
      loop_
          _enumeration_default.index
@@ -1807,7 +1807,7 @@ save_hi_ang_fox_c0
 
 save_hi_ang_fox_c1
 
-    _units.code                   none
+    _units.code                   angstroms
 
      loop_
          _enumeration_default.index
@@ -1859,7 +1859,7 @@ save_hi_ang_fox_c1
 
 save_hi_ang_fox_c2
 
-    _units.code                   none
+    _units.code                   angstrom_squared
 
      loop_
          _enumeration_default.index
@@ -1911,7 +1911,7 @@ save_hi_ang_fox_c2
 
 save_hi_ang_fox_c3
 
-    _units.code                   none
+    _units.code                   angstrom_cubed
 
      loop_
          _enumeration_default.index
