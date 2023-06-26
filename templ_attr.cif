@@ -9,10 +9,10 @@ data_TEMPL_ATTR
 
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
-    _dictionary.version          1.4.10
+    _dictionary.version          1.4.11
     _dictionary.date             2023-06-19
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
-    _dictionary.ddl_conformance  4.1.0
+    _dictionary.ddl_conformance  4.2.0
     _description.text
 ;
      This dictionary contains definition attribute sets that are common
@@ -959,7 +959,7 @@ save_display_colour
        Changed the data type in the 'diffr_counts' save frame from 'Count' to
        'Integer'.
 ;
-         1.4.10                   2023-06-19
+         1.4.10                   2023-01-13
 ;
        Corrected a few typos in the descriptions of several save frames.
 
@@ -980,6 +980,11 @@ save_display_colour
        Changed atomic labels to 'Word' for conformance with DDL1.
 
        Updated description of _site_symmetry.
+;
+         1.4.11                   2023-06-19
+;
+       # Please update the date above and describe the change below until
+       # ready for the next release
 
        Updated descriptions of cromer_mann_coeff and hi_ang_fox_coeffs.
 
