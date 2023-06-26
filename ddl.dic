@@ -3008,6 +3008,9 @@ save_
 ;
          4.2.0                    2023-06-23
 ;
+       # Please update the date above and describe the change below until
+       # ready for the next release
+
        Added the "unspecified" enumeration value for the _units.code attribute.
 
        Added DICTIONARY_AUTHOR to allow details of dictionary authors to be

@@ -27516,7 +27516,7 @@ save_
 
        Numerous improvements to types and harmonisation of spelling.
 ;
-         3.2.0                    2023-04-09
+         3.2.0                    2023-04-04
 ;
        Added data names to allow multi-data-block expression of data sets.
 
@@ -27545,15 +27545,15 @@ save_
 
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
-
-       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
-       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
-       the definition of form factors.
 ;
          3.3.0                    2023-06-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
+
+       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
+       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
+       the definition of form factors.
 
        Added a dREL definition method for the _citation.id data item.
 
