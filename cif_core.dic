@@ -1930,7 +1930,7 @@ save_cell_measurement.temperature_su
          '_cell_measurement_temp_su'
          '_cell_measurement.temp_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2022-05-22
     _description.text
 ;
     ** DEPRECATED **
@@ -1942,7 +1942,7 @@ save_cell_measurement.temperature_su
     _name.object_id               temperature_su
     _name.linked_item_id          '_cell_measurement.temperature'
     _type.purpose                 SU
-    _type.source                  Recorded
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   kelvins
