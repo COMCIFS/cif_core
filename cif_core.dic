@@ -3464,7 +3464,7 @@ save_diffrn_radiation_wavelength.value_su
          '_diffrn_radiation_wavelength_su'
          '_diffrn_radiation_wavelength.wavelength_su'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-08-03
     _description.text
 ;
     Standard uncertainty of the wavelength of radiation used in diffraction
@@ -3474,7 +3474,7 @@ save_diffrn_radiation_wavelength.value_su
     _name.object_id               value_su
     _name.linked_item_id          '_diffrn_radiation_wavelength.value'
     _type.purpose                 SU
-    _type.source                  Assigned
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   angstroms
