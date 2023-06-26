@@ -12679,7 +12679,7 @@ save_geom_angle.value_su
          '_geom_angle_su'
          '_geom_angle.value_esd'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-03-03
     _description.text
 ;
     Standard uncertainty of the angle defined by
@@ -12689,7 +12689,7 @@ save_geom_angle.value_su
     _name.object_id               value_su
     _name.linked_item_id          '_geom_angle.value'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   degrees
