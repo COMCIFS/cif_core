@@ -6300,7 +6300,7 @@ save_refln.f_meas_su
          '_refln.F_meas_sigma'
          '_refln_F_meas_su'
 
-    _definition.update            2023-06-25
+    _definition.update            2021-03-03
     _description.text
 ;
     Standard uncertainty of the measured structure factor amplitude.
@@ -6309,7 +6309,7 @@ save_refln.f_meas_su
     _name.object_id               F_meas_su
     _name.linked_item_id          '_refln.F_meas'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _method.purpose               Definition
