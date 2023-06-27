@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-06-19
+    _dictionary.date              2023-06-23
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -994,9 +994,14 @@ save_enumeration.def_index_id
 
     _definition.id                '_enumeration.def_index_id'
     _definition.class             Attribute
-    _definition.update            2021-08-18
+    _definition_replaced.id       1
+    _definition_replaced.by       '_enumeration.def_index_ids'
+    _definition.update            2023-06-23
     _description.text
 ;
+    Deprecated. The _enumeration.def_index_ids data item should be
+    used instead of this item.
+
     Specifies the data name of the item with a value used as an index
     to the DEFAULT enumeration list (in category enumeration_default)
     in order to select the default enumeration value for the
@@ -1008,6 +1013,28 @@ save_enumeration.def_index_id
     _type.purpose                 Identify
     _type.source                  Assigned
     _type.container               Single
+    _type.contents                Tag
+
+save_
+
+save_enumeration.def_index_ids
+
+    _definition.id                '_enumeration.def_index_ids'
+    _definition.class             Attribute
+    _definition.update            2023-06-23
+    _description.text
+;
+    Specifies the data names of items that are collectively used to identify
+    the suitable default value in the ENUMERATION_DEFAULTS category loop.
+    The values of these items are used to construct an ordered list which is
+    checked against the values of the _enumeration_defaults.index attribute.
+;
+    _name.category_id             enumeration
+    _name.object_id               def_index_ids
+    _type.purpose                 Identify
+    _type.source                  Assigned
+    _type.container               List
+    _type.dimension               '[]'
     _type.contents                Tag
 
 save_
@@ -1102,9 +1129,12 @@ save_ENUMERATION_DEFAULT
     _definition.id                ENUMERATION_DEFAULT
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2013-09-08
+    _definition.update            2023-06-23
     _description.text
 ;
+    Deprecated. The ENUMERATION_DEFAULTS category should be used instead
+    of this category.
+
     Loop of pre-determined default enumeration values indexed to a
     data item by the item _enumeration.def_index_id.
 ;
@@ -1118,9 +1148,14 @@ save_enumeration_default.index
 
     _definition.id                '_enumeration_default.index'
     _definition.class             Attribute
-    _definition.update            2013-04-17
+    _definition_replaced.id       1
+    _definition_replaced.by       '_enumeration_defaults.index'
+    _definition.update            2023-06-23
     _description.text
 ;
+    Deprecated. The _enumeration_defaults.index data item should be
+    used instead of this item.
+
     Index key in the list default values referenced to by the value
     of _enumeration.def_index_id.
 ;
@@ -1133,17 +1168,88 @@ save_enumeration_default.index
 
 save_
 
-save_enumeration_default.source_id
+save_enumeration_default.value
 
-    _definition.id                '_enumeration_default.source_id'
-    _definition.update            2023-06-02
+    _definition.id                '_enumeration_default.value'
+    _definition.class             Attribute
+    _definition_replaced.id       1
+    _definition_replaced.by       '_enumeration_defaults.value'
+    _definition.update            2023-06-23
+    _description.text
+;
+    Deprecated. The _enumeration_defaults.value data item should be
+    used instead of this item.
+
+    Default enumeration value in the list referenced by the value of
+    _enumeration.def_index_id. The reference index key is given by
+    the value of _enumeration_default.index value.
+;
+    _name.category_id             enumeration_default
+    _name.object_id               value
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Implied
+    _type.contents                Implied
+
+save_
+
+save_ENUMERATION_DEFAULTS
+
+    _definition.id                ENUMERATION_DEFAULTS
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2023-06-23
+    _description.text
+;
+    Loop of pre-determined default enumeration values indexed by a set of data
+    items specified using the _enumeration.def_index_ids attribute.
+;
+    _name.category_id             ENUMERATION
+    _name.object_id               ENUMERATION_DEFAULTS
+    _category_key.name            '_enumeration_defaults.index'
+
+save_
+
+save_enumeration_defaults.index
+
+    _definition.id                '_enumeration_defaults.index'
+    _definition.class             Attribute
+    _definition.update            2023-06-23
+    _description.text
+;
+    An index value, in the form of an ordered list, which allows the
+    identification of the most suitable default value. The order of values in
+    the list must correspond to the order of the related data item references
+    in the _enumeration.def_index_ids attribute list. That is, the n^th^ list
+    element is assumed to represent a value that may be assigned to the data
+    item referenced at the n^th^ position of the _enumeration.def_index_ids
+    attribute list value.
+
+    The constituent values of the _enumeration_defaults.index attribute inherit
+    the enumeration range, enumeration set, and the content type from the
+    data item with which they are paired.
+;
+    _name.category_id             enumeration_defaults
+    _name.object_id               index
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Inherited
+
+save_
+
+save_enumeration_defaults.source_id
+
+    _definition.id                '_enumeration_defaults.source_id'
+    _definition.update            2023-06-23
     _description.text
 ;
     An identifier which corresponds to an entry in the ENUMERATION_SOURCE
     category loop. Used to provide a reference to the original source of
     a specific enumeration value.
 ;
-    _name.category_id             enumeration_default
+    _name.category_id             enumeration_defaults
     _name.object_id               source_id
     _name.linked_item_id          '_enumeration_source.id'
     _type.purpose                 Link
@@ -1153,18 +1259,19 @@ save_enumeration_default.source_id
 
 save_
 
-save_enumeration_default.value
+save_enumeration_defaults.value
 
-    _definition.id                '_enumeration_default.value'
+    _definition.id                '_enumeration_defaults.value'
     _definition.class             Attribute
-    _definition.update            2013-04-17
+    _definition.update            2023-06-23
     _description.text
 ;
-    Default enumeration value in the list referenced by the value of
-    _enumeration.def_index_id. The reference index key is given by
-    the value of _enumeration_default.index value.
+    The default enumeration value associated with a specific index value
+    constructed using data items referenced by the _enumeration.def_index_ids
+    attribute. The associated index value is provided using the
+    _enumeration_defaults.index attribute.
 ;
-    _name.category_id             enumeration_default
+    _name.category_id             enumeration_defaults
     _name.object_id               value
     _type.purpose                 Encode
     _type.source                  Assigned
@@ -1232,11 +1339,11 @@ save_ENUMERATION_SOURCE
     _definition.id                ENUMERATION_SOURCE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-06-02
+    _definition.update            2023-06-23
     _description.text
 ;
     Attributes used to record the original sources of the default values
-    enumerated using the ENUMERATION_DEFAULT category.
+    enumerated using the ENUMERATION_DEFAULTS category.
 ;
     _name.category_id             ENUMERATION
     _name.object_id               ENUMERATION_SOURCE
@@ -1253,13 +1360,13 @@ save_ENUMERATION_SOURCE
          b "International Tables Vol. H Table 4.3.2.1 1st ed."
 
          loop_
-         _enumeration_default.index
-         _enumeration_default.value
-         _enumeration_default.source_id
-         H   1  a
-         H-  2  a
-         He  2  b
-         #...
+         _enumeration_defaults.index
+         _enumeration_defaults.value
+         _enumeration_defaults.source_id
+         [ H  ]  1  a
+         [ H- ]  2  a
+         [ He ]  2  b
+         # ...
 ;
 ;
          There are two sources for the default values given in the enumeration.
@@ -1273,12 +1380,12 @@ save_ENUMERATION_SOURCE
              'https://doi.org/10.1107/S2053273322010944, Table S4'
 
          loop_
-         _enumeration_default.index
-         _enumeration_default.value
-         He  0.8733928
-         Li  1.129319
-         Be  1.592162
-         #...
+         _enumeration_defaults.index
+         _enumeration_defaults.value
+         [ He ] 0.8733928
+         [ Li ] 1.129319
+         [ Be ] 1.592162
+         # ...
 ;
 ;
          There is a single source for all default values given in the
@@ -1292,11 +1399,11 @@ save_enumeration_source.id
 
     _definition.id                '_enumeration_source.id'
     _definition.class             Attribute
-    _definition.update            2023-06-02
+    _definition.update            2023-06-23
     _description.text
 ;
     A unique identifier of the source material from which the
-    _enumeration_default.value attribute values were taken.
+    _enumeration_defaults.value attribute values were taken.
 ;
     _name.category_id             enumeration_source
     _name.object_id               id
@@ -1311,11 +1418,11 @@ save_enumeration_source.reference
 
     _definition.id                '_enumeration_source.reference'
     _definition.class             Attribute
-    _definition.update            2023-06-02
+    _definition.update            2023-06-23
     _description.text
 ;
     Bibliographic information sufficient to identify the original source of
-    the associated _enumeration_default.value attribute values.
+    the associated _enumeration_defaults.value attribute values.
 ;
     _name.category_id             enumeration_source
     _name.object_id               reference
@@ -1880,7 +1987,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-01-13
+    _definition.update            2023-06-23
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -2014,7 +2121,17 @@ save_type.contents
          The contents have the same form as those of the attribute referenced
          by _type.contents_referenced_id.
 ;
-
+         Inherited
+;
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
+         Intended to be used with List, Array, Matrix or Table containers which
+         may simultaneously contain values of several content types. The content
+         type of each value in such containers matches the content type of the
+         data item to which it is directly related. Specific rules for relating
+         data values to data items MUST be provided as human-readable text in
+         the _description.text attribute of all data items that have the
+         Inherited content type.
+;
     _enumeration.default          Text
     _description_example.case     Integer
     _description_example.detail   'Content is a single or multiple integer(s).'
@@ -2889,19 +3006,25 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-06-19
+         4.2.0                    2023-06-23
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
 
        Added the "unspecified" enumeration value for the _units.code attribute.
 
-       Added ENUMERATION_SOURCE and _enumeration_default.source_id to allow the
-       source of default enumeration values to be recorded.
-
        Added DICTIONARY_AUTHOR to allow details of dictionary authors to be
        recorded.
 
        Added _dictionary.doi to record the persistent Digital Object Identifier
        of a dictionary.
+
+       Added _enumeration.def_index_ids and ENUMERATION_DEFAULTS to allow
+       default values to be dependent on multiple keys. Deprecated the
+       _enumeration.def_index_id attribute and the ENUMERATION_DEFAULT category.
+
+       Added ENUMERATION_SOURCE and _enumeration_defaults.source_id to allow
+       the source of default enumeration values to be recorded.
+
+       Added 'Inherited' as an enumeration value to _type.contents.
 ;
