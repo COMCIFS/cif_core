@@ -27596,5 +27596,6 @@ save_
 
        Added the default value of '1_555' to the site symmetry data items.
 
-       Redefined _exptl_absorpt.coefficient_mu as Derived Measurand. Added SU.
+       Redefined _exptl_absorpt.coefficient_mu as a derived measurand item.
+       Added the _exptl_absorpt.coefficient_mu_su data item.
 ;
