@@ -22210,7 +22210,7 @@ save_atom_site_aniso.matrix_beta
                         }
                     }
                 }
-                Else
+                Else If (a.ADP_type == 'Biso')
                 {
                     Loop b as atom_site
                     {
