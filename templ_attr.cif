@@ -258,7 +258,7 @@ save_cell_length
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           1.:
+    _enumeration.range           1.0:
     _units.code                  angstroms
      save_
 
@@ -773,7 +773,7 @@ save_face_angle
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           -180.:180.
+    _enumeration.range           -180.0:180.0
     _units.code                  degrees
      save_
 
@@ -790,7 +790,7 @@ save_orient_angle
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           -180.:180.
+    _enumeration.range           -180.0:180.0
     _units.code                  degrees
      save_
 
@@ -808,7 +808,7 @@ save_diffr_angle
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           -180.:180.
+    _enumeration.range           -180.0:180.0
     _units.code                  degrees
      save_
 
