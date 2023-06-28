@@ -3046,4 +3046,6 @@ save_
        the source of default enumeration values to be recorded.
 
        Added 'Inherited' as an enumeration value to _type.contents.
+
+       Updated the description of _type.source and _method.purpose attributes
 ;
