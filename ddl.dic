@@ -1814,7 +1814,7 @@ save_method.purpose
 
     _definition.id                '_method.purpose'
     _definition.class             Attribute
-    _definition.update            2006-11-16
+    _definition.update            2023-06-28
     _description.text
 ;
     The purpose and scope of the method expression.
@@ -1829,9 +1829,19 @@ save_method.purpose
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         Evaluation   'Method evaluates an item from related item values.'
-         Definition   'Method generates attribute value(s) in the definition.'
-         Validation   'Method compares an evaluation with existing item value.'
+         Evaluation
+;
+         Method evaluates an item from related item values. Definitions of
+         primitive data items should normally not contain methods of this type.
+;
+         Definition
+;
+         Method generates attribute value(s) in the definition.
+;
+         Validation
+;
+         Method compares an evaluation with existing item value.
+;
 
     _enumeration.default          Evaluation
 
