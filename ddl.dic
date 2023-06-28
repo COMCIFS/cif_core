@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-06-23
+    _dictionary.date              2023-06-28
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -816,15 +816,13 @@ save_
 save_dictionary_author.name
 
     _definition.id                '_dictionary_author.name'
-    _definition.update            2023-06-02
+    _definition.update            2023-06-28
     _description.text
 ;
-    The name of an author of this dictionary. If there are multiple authors,
-    _dictionary_author.name is looped with _dictionary_author.address.
-    The family name(s), followed by a comma and including any
-    dynastic components, precedes the first name(s) or initial(s).
-    For authors with only one name, provide the full name without
-    abbreviation.
+    The name of an author of this dictionary. The family name(s), followed
+    by a comma and including any dynastic components, precedes the first
+    name(s) or initial(s). For authors with only one name, provide the full
+    name without abbreviation.
 ;
     _name.category_id             dictionary_author
     _name.object_id               name
@@ -3006,7 +3004,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-06-23
+         4.2.0                    2023-06-28
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
