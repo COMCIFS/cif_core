@@ -23929,10 +23929,8 @@ save_atom_type.atomic_mass
     _type.container               Single
     _type.contents                Real
     _enumeration.def_index_id     '_atom_type.symbol'
-    _units.code                   dalton
 
-    _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':atomic_mass}]
+    _import.get                   [{'file':templ_enum.cif  'save':atomic_mass}]
 
 save_
 
@@ -23952,10 +23950,9 @@ save_atom_type.atomic_number
     _type.contents                Integer
     _enumeration.range            1:
     _enumeration.def_index_id     '_atom_type.element_symbol'
-    _units.code                   none
 
     _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':atomic_number}]
+        [{'file':templ_enum.cif  'save':atomic_number}]
 
 save_
 
@@ -24026,10 +24023,9 @@ save_atom_type.electron_count
     _type.contents                Integer
     _enumeration.range            1:
     _enumeration.def_index_id     '_atom_type.symbol'
-    _units.code                   none
 
     _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':electron_count}]
+        [{'file':templ_enum.cif  'save':electron_count}]
 
 save_
 
@@ -24176,10 +24172,8 @@ save_atom_type.radius_bond
     _type.contents                Real
     _enumeration.range            0.0:5.0
     _enumeration.def_index_id     '_atom_type.symbol'
-    _units.code                   angstroms
 
-    _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':radius_bond}]
+    _import.get                   [{'file':templ_enum.cif  'save':radius_bond}]
 
 save_
 
@@ -24265,12 +24259,11 @@ save_atom_type_scat.cromer_mann_a1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a1
-    _units.code                   none
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_a1}
+         {'file':templ_enum.cif  'save':cromer_mann_a1}
         ]
 
 save_
@@ -24286,12 +24279,11 @@ save_atom_type_scat.cromer_mann_a2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a2
-    _units.code                   none
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_a2}
+         {'file':templ_enum.cif  'save':cromer_mann_a2}
         ]
 
 save_
@@ -24307,12 +24299,11 @@ save_atom_type_scat.cromer_mann_a3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a3
-    _units.code                   none
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_a3}
+         {'file':templ_enum.cif  'save':cromer_mann_a3}
         ]
 
 save_
@@ -24328,12 +24319,11 @@ save_atom_type_scat.cromer_mann_a4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_a4
-    _units.code                   none
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_a4}
+         {'file':templ_enum.cif  'save':cromer_mann_a4}
         ]
 
 save_
@@ -24349,12 +24339,11 @@ save_atom_type_scat.cromer_mann_b1
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b1
-    _units.code                   angstrom_squared
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_b1}
+         {'file':templ_enum.cif  'save':cromer_mann_b1}
         ]
 
 save_
@@ -24370,12 +24359,11 @@ save_atom_type_scat.cromer_mann_b2
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b2
-    _units.code                   angstrom_squared
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_b2}
+         {'file':templ_enum.cif  'save':cromer_mann_b2}
         ]
 
 save_
@@ -24391,12 +24379,11 @@ save_atom_type_scat.cromer_mann_b3
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b3
-    _units.code                   angstrom_squared
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_b3}
+         {'file':templ_enum.cif  'save':cromer_mann_b3}
         ]
 
 save_
@@ -24412,12 +24399,11 @@ save_atom_type_scat.cromer_mann_b4
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_b4
-    _units.code                   angstrom_squared
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_b4}
+         {'file':templ_enum.cif  'save':cromer_mann_b4}
         ]
 
 save_
@@ -24433,12 +24419,11 @@ save_atom_type_scat.cromer_mann_c
 
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_c
-    _units.code                   none
 
     _import.get
         [
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'dupl':replace  'file':templ_enum.cif  'save':cromer_mann_c}
+         {'file':templ_enum.cif  'save':cromer_mann_c}
         ]
 
 save_
@@ -24557,10 +24542,9 @@ save_atom_type_scat.dispersion_imag_cu
     _type.container               Single
     _type.contents                Real
     _enumeration.def_index_id     '_atom_type.element_symbol'
-    _units.code                   none
 
     _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':dispersion_imag_cu}]
+        [{'file':templ_enum.cif  'save':dispersion_imag_cu}]
 
 save_
 
@@ -24580,10 +24564,9 @@ save_atom_type_scat.dispersion_imag_mo
     _type.container               Single
     _type.contents                Real
     _enumeration.def_index_id     '_atom_type.element_symbol'
-    _units.code                   none
 
     _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':dispersion_imag_mo}]
+        [{'file':templ_enum.cif  'save':dispersion_imag_mo}]
 
 save_
 
@@ -24638,10 +24621,9 @@ save_atom_type_scat.dispersion_real_cu
     _type.container               Single
     _type.contents                Real
     _enumeration.def_index_id     '_atom_type.element_symbol'
-    _units.code                   none
 
     _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':dispersion_real_cu}]
+        [{'file':templ_enum.cif  'save':dispersion_real_cu}]
 
 save_
 
@@ -24661,10 +24643,9 @@ save_atom_type_scat.dispersion_real_mo
     _type.container               Single
     _type.contents                Real
     _enumeration.def_index_id     '_atom_type.element_symbol'
-    _units.code                   none
 
     _import.get
-        [{'dupl':replace  'file':templ_enum.cif  'save':dispersion_real_mo}]
+        [{'file':templ_enum.cif  'save':dispersion_real_mo}]
 
 save_
 
@@ -24875,12 +24856,11 @@ save_atom_type_scat.hi_ang_fox_c0
     _definition.id                '_atom_type_scat.hi_ang_Fox_c0'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c0
-    _units.code                   none
 
     _import.get
         [
          {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'dupl':replace  'file':templ_enum.cif  'save':hi_ang_fox_c0}
+         {'file':templ_enum.cif  'save':hi_ang_fox_c0}
         ]
 
 save_
@@ -24890,12 +24870,11 @@ save_atom_type_scat.hi_ang_fox_c1
     _definition.id                '_atom_type_scat.hi_ang_Fox_c1'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c1
-    _units.code                   angstroms
 
     _import.get
         [
          {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'dupl':replace  'file':templ_enum.cif  'save':hi_ang_fox_c1}
+         {'file':templ_enum.cif  'save':hi_ang_fox_c1}
         ]
 
 save_
@@ -24905,12 +24884,11 @@ save_atom_type_scat.hi_ang_fox_c2
     _definition.id                '_atom_type_scat.hi_ang_Fox_c2'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c2
-    _units.code                   angstrom_squared
 
     _import.get
         [
          {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'dupl':replace  'file':templ_enum.cif  'save':hi_ang_fox_c2}
+         {'file':templ_enum.cif  'save':hi_ang_fox_c2}
         ]
 
 save_
@@ -24920,12 +24898,11 @@ save_atom_type_scat.hi_ang_fox_c3
     _definition.id                '_atom_type_scat.hi_ang_Fox_c3'
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_c3
-    _units.code                   angstrom_cubed
 
     _import.get
         [
          {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'dupl':replace  'file':templ_enum.cif  'save':hi_ang_fox_c3}
+         {'file':templ_enum.cif  'save':hi_ang_fox_c3}
         ]
 
 save_
