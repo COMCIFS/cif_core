@@ -2386,11 +2386,18 @@ save_type.source
 
     _definition.id                '_type.source'
     _definition.class             Attribute
-    _definition.update            2013-04-16
+    _definition.update            2023-06-28
     _description.text
 ;
     The origin or source of the defined data item, indicating by what
     recording process it has been added to the domain instance.
+
+    All data items can be classified as primitive or non-primitive based on
+    the origin of the data. Primitive data items record data that usually
+    cannot be deduced without repeating the entire experiment such as
+    measurements, observations (e.g. instrument settings) and decisions
+    made in nonlinear processes. Non-primitive data items record derivable
+    data that can be directly evaluated from other data.
 ;
     _name.category_id             type
     _name.object_id               source
@@ -2404,31 +2411,35 @@ save_type.source
       _enumeration_set.detail
          Recorded
 ;
-         A value (numerical or otherwise) recorded by observation or
-         measurement during the experimental collection of data. This item is
-         PRIMITIVE.
+         Data value (numerical or otherwise) was recorded by observation or
+         measurement during the experimental collection of data.
+
+         Data items of this type are considered primitive.
 ;
          Assigned
 ;
-         A value (numerical or otherwise) assigned as part of the data
+         Data value (numerical or otherwise) was assigned as part of the data
          collection, analysis or modelling required for a specific domain
-         instance. These assignments often represent a decision made that
-         determines the course of the experiment (and therefore may be deemed
-         PRIMITIVE) or a particular choice in the way the data was analysed
-         (and therefore may be considered NOT PRIMITIVE).
+         instance.
+
+         These assignments often represent a decision made that determines the
+         course of the experiment (and therefore the data item may be deemed
+         primitive) or a particular choice in the way the data was analysed
+         (and therefore the data item may be considered non-primitive).
 ;
          Related
 ;
-         A value or tag used in the construction of looped lists of data.
-         Typically identifying an item whose unique value is the reference key
-         for a loop category and/or an item which has values in common with
-         those of another loop category and is considered a Link between these
-         lists.
+         Data item was used in the construction of looped lists of data.
+         Typically identifies an item whose unique values are used as the
+         reference key for a loop category and/or an item which has values in
+         common with those of another loop category and is considered a Link
+         between these lists.
 ;
          Derived
 ;
-         A quantity derived from other data items within the domain instance.
-         This item is NOT PRIMITIVE.
+         Data item was derived from other data items within the domain instance.
+
+         Data items of this type are considered non-primitive.
 ;
 
     _enumeration.default          Assigned
