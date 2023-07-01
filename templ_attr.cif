@@ -218,13 +218,13 @@ save_index_limit_min
 
 save_cell_angle
 
-    _definition.update           2014-06-08
+    _definition.update           2023-07-01
     _description.text
 ;
      The angle between the bounding cell axes.
 ;
     _type.purpose                Measurand
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           0.0:180.0
@@ -240,7 +240,7 @@ save_cell_angle_su
      Standard uncertainty of the angle between the bounding cell axes.
 ;
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _units.code                  degrees
@@ -249,13 +249,13 @@ save_cell_angle_su
 
 save_cell_length
 
-    _definition.update           2014-06-08
+    _definition.update           2023-07-01
     _description.text
 ;
      The length of each cell axis.
 ;
     _type.purpose                Measurand
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.range           1.0:
@@ -271,7 +271,7 @@ save_cell_length_su
      Standard uncertainty of the length of each cell axis.
 ;
     _type.purpose                SU
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _units.code                  angstroms
