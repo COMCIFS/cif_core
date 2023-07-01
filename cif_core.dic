@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-06-25
+    _dictionary.date              2023-07-01
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -27542,7 +27542,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-06-25
+         3.3.0                    2023-07-01
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27576,5 +27576,8 @@ save_
        Added the default value of '1_555' to the site symmetry data items.
 
        Redefined _exptl_absorpt.coefficient_mu as a derived measurand item.
+
        Added the _exptl_absorpt.coefficient_mu_su data item.
+
+       All SU data items are now of _type.source Related.
 ;

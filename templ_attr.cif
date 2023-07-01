@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2023-06-19
+    _dictionary.date             2023-07-01
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -989,4 +989,6 @@ save_display_colour
        Updated descriptions of cromer_mann_coeff and hi_ang_fox_coeffs.
 
        Added the default value of '1_555' to the 'site_symmetry' save frame.
+
+       All SU data items are now of _type.source Related.
 ;
