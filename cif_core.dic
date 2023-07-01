@@ -27542,7 +27542,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-06-25
+         3.3.0                    2023-07-01
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
