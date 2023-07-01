@@ -125,8 +125,7 @@ save_diffrn.ambient_pressure_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the mean hydrostatic pressure
-    at which intensities were measured.
+    Standard uncertainty of _diffrn.ambient_pressure.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_pressure_su
@@ -224,8 +223,7 @@ save_diffrn.ambient_temperature_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the mean temperature
-    at which intensities were measured.
+    Standard uncertainty of _diffrn.ambient_temperature.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_temperature_su
@@ -990,8 +988,7 @@ save_cell.reciprocal_angle_alpha_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the reciprocal of the angle
-    between _cell.length_b and _cell.length_c.
+    Standard uncertainty of _cell.reciprocal_angle_alpha.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_angle_alpha_su
@@ -1047,8 +1044,7 @@ save_cell.reciprocal_angle_beta_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the reciprocal of the angle
-    between _cell.length_a and _cell.length_c.
+    Standard uncertainty of _cell.reciprocal_angle_beta.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_angle_beta_su
@@ -1104,8 +1100,7 @@ save_cell.reciprocal_angle_gamma_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the reciprocal of the angle
-    between _cell.length_a and _cell.length_b.
+    Standard uncertainty of _cell.reciprocal_angle_gamma.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_angle_gamma_su
@@ -1155,7 +1150,7 @@ save_cell.reciprocal_length_a_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the reciprocal of the _cell.length_a.
+    Standard uncertainty of _cell.reciprocal_length_a.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_length_a_su
@@ -1205,7 +1200,7 @@ save_cell.reciprocal_length_b_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the reciprocal of the _cell.length_b.
+    Standard uncertainty of _cell.reciprocal_length_b.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_length_b_su
@@ -1255,7 +1250,7 @@ save_cell.reciprocal_length_c_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the reciprocal of the _cell.length_c.
+    Standard uncertainty of _cell.reciprocal_length_c.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_length_c_su
@@ -1707,7 +1702,7 @@ save_cell.volume_su
     _definition.update            2014-06-08
     _description.text
 ;
-    Standard uncertainty of the volume of the crystal unit cell.
+    Standard uncertainty of _cell.volume.
 ;
     _name.category_id             cell
     _name.object_id               volume_su
@@ -1823,8 +1818,7 @@ save_cell_measurement.pressure_su
 ;
     ** DEPRECATED **
 
-    Standard uncertainty of the pressure at which
-    the unit-cell parameters were measured.
+    Standard uncertainty of _cell_measurement.pressure.
 ;
     _name.category_id             cell_measurement
     _name.object_id               pressure_su
@@ -1936,8 +1930,7 @@ save_cell_measurement.temperature_su
 ;
     ** DEPRECATED **
 
-    Standard uncertainty of the temperature of at which
-    the unit-cell parameters were measured.
+    Standard uncertainty of _cell_measurement.temperature.
 ;
     _name.category_id             cell_measurement
     _name.object_id               temperature_su
@@ -3468,8 +3461,7 @@ save_diffrn_radiation_wavelength.value_su
     _definition.update            2021-08-03
     _description.text
 ;
-    Standard uncertainty of the wavelength of radiation used in diffraction
-    measurements.
+    Standard uncertainty of _diffrn_radiation_wavelength.value.
 ;
     _name.category_id             diffrn_radiation_wavelength
     _name.object_id               value_su
@@ -6304,7 +6296,7 @@ save_refln.f_meas_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the measured structure factor amplitude.
+    Standard uncertainty of _refln.F_meas.
 ;
     _name.category_id             refln
     _name.object_id               F_meas_su
@@ -6418,7 +6410,7 @@ save_refln.f_squared_meas_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the measured structure factor squared.
+    Standard uncertainty of _refln.F_squared_meas.
 ;
     _name.category_id             refln
     _name.object_id               F_squared_meas_su
@@ -6697,7 +6689,7 @@ save_refln.intensity_meas_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the measured intensity.
+    Standard uncertainty of _refln.intensity_meas.
 ;
     _name.category_id             refln
     _name.object_id               intensity_meas_su
@@ -9145,8 +9137,7 @@ save_chemical.temperature_decomposition_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the temperature at which
-    a crystalline solid decomposes.
+    Standard uncertainty of _chemical.temperature_decomposition.
 ;
     _name.category_id             chemical
     _name.object_id               temperature_decomposition_su
@@ -9233,8 +9224,7 @@ save_chemical.temperature_sublimation_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the temperature at which
-    a crystalline solid sublimates.
+    Standard uncertainty of _chemical.temperature_sublimation.
 ;
     _name.category_id             chemical
     _name.object_id               temperature_sublimation_su
@@ -10251,8 +10241,7 @@ save_exptl_crystal.density_meas_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the crystal density measured
-    using standard chemical and physical methods.
+    Standard uncertainty of _exptl_crystal.density_meas.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_su
@@ -10345,8 +10334,7 @@ save_exptl_crystal.density_meas_temp_su
     _definition.update            2012-11-22
     _description.text
 ;
-    Standard uncertainty of the temperature at
-    which _exptl_crystal.density_meas was determined.
+    Standard uncertainty of _exptl_crystal.density_meas_temp.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_temp_su
@@ -12683,8 +12671,7 @@ save_geom_angle.value_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the angle defined by
-    the sites identified by _geom_angle.id.
+    Standard uncertainty of _geom_angle.value.
 ;
     _name.category_id             geom_angle
     _name.object_id               value_su
@@ -12831,8 +12818,7 @@ save_geom_bond.distance_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the intramolecular bond distance
-    between the sites identified by _geom_bond.id.
+    Standard uncertainty of _geom_bond.distance.
 ;
     _name.category_id             geom_bond
     _name.object_id               distance_su
@@ -13121,8 +13107,7 @@ save_geom_contact.distance_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the intermolecular distance between
-    the atomic sites identified by _geom_contact.id.
+    Standard uncertainty of _geom_contact.distance.
 ;
     _name.category_id             geom_contact
     _name.object_id               distance_su
@@ -13284,8 +13269,7 @@ save_geom_hbond.angle_dha_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the angle subtended by the sites identified
-    by _geom_hbond.id. The hydrogen at site H is at the apex of the angle.
+    Standard uncertainty of _geom_hbond.angle_DHA.
 ;
     _name.category_id             geom_hbond
     _name.object_id               angle_DHA_su
@@ -13396,8 +13380,7 @@ save_geom_hbond.distance_da_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the set of data items which specify
-    the distance between the three atom sites identified by _geom_hbond.id.
+    Standard uncertainty of _geom_hbond.distance_DA.
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_DA_su
@@ -13460,8 +13443,7 @@ save_geom_hbond.distance_dh_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the set of data items which specify
-    the distance between the three atom sites identified by _geom_hbond.id.
+    Standard uncertainty of _geom_hbond.distance_DH.
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_DH_su
@@ -13524,8 +13506,7 @@ save_geom_hbond.distance_ha_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the set of data items which specify
-    the distance between the three atom sites identified by _geom_hbond.id.
+    Standard uncertainty of _geom_hbond.distance_HA.
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_HA_su
@@ -13748,7 +13729,7 @@ save_geom_torsion.angle_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the torsion angle.
+    Standard uncertainty of _geom_torsion.angle.
 ;
     _name.category_id             geom_torsion
     _name.object_id               angle_su
@@ -20621,9 +20602,7 @@ save_atom_site.b_equiv_geom_mean_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the equivalent isotropic atomic displacement
-    parameter, B(equiv), in angstroms squared, calculated as the geometric
-    mean of the anisotropic atomic displacement parameters.
+    Standard uncertainty of _atom_site.B_equiv_geom_mean.
 ;
     _name.category_id             atom_site
     _name.object_id               B_equiv_geom_mean_su
@@ -20681,10 +20660,7 @@ save_atom_site.b_iso_or_equiv_su
     _definition.update            2023-01-16
     _description.text
 ;
-    Standard uncertainty of the isotropic atomic displacement parameter,
-    or equivalent isotropic atomic displacement parameter, B(equiv),
-    in angstroms squared, calculated from anisotropic atomic displacement
-    parameters.
+    Standard uncertainty of _atom_site.B_iso_or_equiv.
 ;
     _name.category_id             atom_site
     _name.object_id               B_iso_or_equiv_su
@@ -21304,8 +21280,7 @@ save_atom_site.occupancy_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the fraction of the atom type
-    present at this site.
+    Standard uncertainty of _atom_site.occupancy.
 ;
     _name.category_id             atom_site
     _name.object_id               occupancy_su
@@ -21703,7 +21678,7 @@ save_atom_site.u_equiv_geom_mean_su
     _definition.update            2012-11-20
     _description.text
 ;
-    Standard uncertainty values (esds) of the U(equiv).
+    Standard uncertainty of _atom_site.U_equiv_geom_mean.
 ;
     _name.category_id             atom_site
     _name.object_id               U_equiv_geom_mean_su
@@ -21756,7 +21731,7 @@ save_atom_site.u_iso_or_equiv_su
     _definition.update            2012-11-20
     _description.text
 ;
-    Standard uncertainty values (esds) of the U(iso) or U(equiv).
+    Standard uncertainty of _atom_site.U_iso_or_equiv.
 ;
     _name.category_id             atom_site
     _name.object_id               U_iso_or_equiv_su
@@ -25225,8 +25200,7 @@ save_refine_diff.density_max_su
     _definition.update            2023-01-12
     _description.text
 ;
-    Standard uncertainty of the maximum density value
-    in a difference Fourier map.
+    Standard uncertainty of _refine_diff.density_max.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_max_su
@@ -25292,8 +25266,7 @@ save_refine_diff.density_min_su
     _definition.update            2023-01-12
     _description.text
 ;
-    Standard uncertainty of the minimum density value
-    in a difference Fourier map.
+    Standard uncertainty of _refine_diff.density_min.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_min_su
@@ -25364,8 +25337,7 @@ save_refine_diff.density_rms_su
     _definition.update            2023-01-12
     _description.text
 ;
-    Standard uncertainty of the root mean square density value
-    in a difference Fourier map.
+    Standard uncertainty of _refine_diff.density_RMS.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_RMS_su
@@ -25470,8 +25442,7 @@ save_refine_ls.abs_structure_flack_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the measure of absolute structure
-    as defined by Flack (1983).
+    Standard uncertainty of _refine_ls.abs_structure_Flack.
 ;
     _name.category_id             refine_ls
     _name.object_id               abs_structure_Flack_su
@@ -25526,8 +25497,7 @@ save_refine_ls.abs_structure_rogers_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the measure of absolute structure
-    as defined by Rogers (1981).
+    Standard uncertainty of _refine_ls.abs_structure_Rogers.
 ;
     _name.category_id             refine_ls
     _name.object_id               abs_structure_Rogers_su
@@ -25643,7 +25613,7 @@ save_refine_ls.extinction_coef_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the extinction coefficient.
+    Standard uncertainty of _refine_ls.extinction_coef.
 ;
     _name.category_id             refine_ls
     _name.object_id               extinction_coef_su
@@ -25891,8 +25861,7 @@ save_refine_ls.goodness_of_fit_all_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the least-squares goodness-of-fit
-    parameter S for all reflections after the final cycle of refinement.
+    Standard uncertainty of _refine_ls.goodness_of_fit_all.
 ;
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_all_su
@@ -25964,8 +25933,7 @@ save_refine_ls.goodness_of_fit_gt_su
     _definition.update            2021-03-03
     _description.text
 ;
-    Standard uncertainty of the least-squares goodness-of-fit
-    parameter S for gt reflections after the final cycle of refinement.
+    Standard uncertainty of _refine_ls.goodness_of_fit_gt.
 ;
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_gt_su
