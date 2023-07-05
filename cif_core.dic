@@ -20115,7 +20115,7 @@ save_ATOM_ANALYTICAL_MASS_LOSS
     the purposes of determining elemental composition
     information for use in crystallographic structure studies.
 ;
-    _name.category_id             ATOM_ANALYTICAL
+    _name.category_id             ATOM
     _name.object_id               ATOM_ANALYTICAL_MASS_LOSS
     _category_key.name            '_atom_analytical_mass_loss.id'
     _description_example.case
@@ -20311,7 +20311,7 @@ save_ATOM_ANALYTICAL_SOURCE
     of elemental composition information used in crystallographic
     structure studies.
 ;
-    _name.category_id             ATOM_ANALYTICAL
+    _name.category_id             ATOM
     _name.object_id               ATOM_ANALYTICAL_SOURCE
     _category_key.name            '_atom_analytical_source.id'
     _description_example.case
