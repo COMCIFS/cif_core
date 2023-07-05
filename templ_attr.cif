@@ -583,22 +583,6 @@ save_aniso_bij
      save_
 
 
-save_aniso_bij2
-
-    _definition.update          2014-06-12
-    _description.text
-;
-     The [I][J] tdf elements define the overall anisotropic
-     displacement model if one was refined for this structure.
-;
-    _type.purpose               Number
-    _type.source                Derived
-    _type.container             Single
-    _type.contents              Real
-    _units.code                 angstrom_squared
-     save_
-
-
 save_aniso_bij_su
 
     _definition.update           2021-03-18
@@ -1050,4 +1034,6 @@ save_display_colour
 
        Added descriptions for aniso_betaIJ, and aniso_betaIJ_su.
        Updated descriptions of aniso_BIJ and aniso_UIJ.
+
+       Removed the 'aniso_bij2' save frame.
 ;
