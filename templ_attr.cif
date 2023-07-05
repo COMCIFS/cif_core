@@ -240,7 +240,7 @@ save_cell_angle_su
      Standard uncertainty of the angle between the bounding cell axes.
 ;
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _units.code                  degrees
@@ -271,7 +271,7 @@ save_cell_length_su
      Standard uncertainty of the length of each cell axis.
 ;
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _units.code                  angstroms
