@@ -16059,7 +16059,7 @@ save_citation.id
     _name.category_id             citation
     _name.object_id               id
     _type.purpose                 Encode
-    _type.source                  Recorded
+    _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
 
