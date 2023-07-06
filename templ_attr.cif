@@ -554,21 +554,26 @@ save_
 
 save_aniso_bij
 
-    _definition.update           2013-03-08
+    _definition.update           2023-02-16
     _description.text
 ;
-     These are the standard anisotropic atomic displacement components
-     in angstroms squared which appear in the structure factor term:
+     These are the standard anisotropic atomic displacement components, in
+     angstroms squared, which appear in the structure factor term:
 
          T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
      h = the Miller indices
      a* = the reciprocal-space cell lengths
+
      The unique elements of the real symmetric matrix are entered by row.
 
-     The IUCr Commission on Nomenclature recommends against the use
-     of B for reporting atomic displacement parameters. U, being
-     directly proportional to B, is preferred.
+     The IUCr Commission on Nomenclature recommends against the use of B for
+     reporting atomic displacement parameters. U, being directly proportional
+     to B, is preferred [1].
+
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
+
+     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -578,31 +583,15 @@ save_aniso_bij
      save_
 
 
-save_aniso_bij2
-
-    _definition.update          2014-06-12
-    _description.text
-;
-     The [I][J] tdf elements define the overall anisotropic
-     displacement model if one was refined for this structure.
-;
-    _type.purpose               Number
-    _type.source                Derived
-    _type.container             Single
-    _type.contents              Real
-    _units.code                 angstrom_squared
-     save_
-
-
 save_aniso_bij_su
 
     _definition.update           2021-03-18
     _description.text
 ;
      These are the standard uncertainty values (SU) for the standard
-     form of the Bij anisotropic atomic displacement components (see
-     _aniso_BIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the Bij calculation.
+     form of the B^ij^ anisotropic atomic displacement components (see
+     aniso_BIJ). Because these values are TYPE measurand, the su values
+     may in practice be auto generated as part of the B^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Derived
@@ -612,21 +601,74 @@ save_aniso_bij_su
      save_
 
 
-save_aniso_uij
+save_aniso_betaij
 
-    _definition.update           2013-03-08
+    _definition.update           2023-02-16
     _description.text
 ;
-     These are the standard anisotropic atomic displacement
-     components in angstroms squared which appear in the
-     structure factor term:
+     These are the standard unitless anisotropic atomic displacement components
+     which appear in the structure factor term:
 
-        T = exp{-2π^2^ sum~i~ [sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
+         T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
+
+     h = the Miller indices
+
+     The unique elements of the real symmetric matrix are entered by row.
+
+     The IUCr Commission on Nomenclature recommends against the use
+     of β for reporting atomic displacement parameters; U is preferred [1].
+
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
+
+     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+;
+    _type.purpose                Measurand
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  none
+     save_
+
+
+save_aniso_betaij_su
+
+    _definition.update           2023-02-15
+    _description.text
+;
+     These are the standard uncertainty values (SU) for the standard
+     form of the β^ij^ anisotropic atomic displacement components (see
+     aniso_betaIJ). Because these values are TYPE measurand, the su values
+     may in practice be auto generated as part of the β^ij^ calculation.
+;
+    _type.purpose                SU
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  none
+     save_
+
+
+save_aniso_uij
+
+    _definition.update           2023-02-16
+    _description.text
+;
+     These are the standard anisotropic atomic displacement components, in
+     angstroms squared, which appear in the structure factor term:
+
+        T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
      h = the Miller indices
      a* = the reciprocal-space cell lengths
 
      The unique elements of the real symmetric matrix are entered by row.
+
+     The IUCr Commission on Nomenclature recommends the use of U for reporting
+     atomic displacement parameters [1].
+
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
+
+     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -642,9 +684,9 @@ save_aniso_uij_su
     _description.text
 ;
      These are the standard uncertainty values (SU) for the standard
-     form of the Uij anisotropic atomic displacement components (see
-     _aniso_UIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the Uij calculation.
+     form of the U^ij^ anisotropic atomic displacement components (see
+     aniso_UIJ). Because these values are TYPE measurand, the su values
+     may in practice be auto generated as part of the U^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Derived
@@ -989,4 +1031,9 @@ save_display_colour
        Updated descriptions of cromer_mann_coeff and hi_ang_fox_coeffs.
 
        Added the default value of '1_555' to the 'site_symmetry' save frame.
+
+       Added descriptions for aniso_betaIJ, and aniso_betaIJ_su.
+       Updated descriptions of aniso_BIJ and aniso_UIJ.
+
+       Removed the 'aniso_bij2' save frame.
 ;
