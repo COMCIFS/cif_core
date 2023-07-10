@@ -510,7 +510,7 @@ save_CELL
 ;
     _name.category_id             DIFFRN
     _name.object_id               CELL
-    _category_key.name            '_cell.diffrn_id'
+    _category_key.name            '_cell.structure_id'
 
 save_
 
@@ -748,29 +748,6 @@ save_cell.convert_uiso_to_uij_su
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   none
-
-save_
-
-save_cell.diffrn_id
-
-    _definition.id                '_cell.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction conditions to which this cell has been applied,
-    for example, to locate and extract diffraction peaks. These will normally be
-    the same conditions as those under which the cell was measured, but some
-    legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using the
-    _cell_measurement.condition_id data item.
-;
-    _name.category_id             cell
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -1536,6 +1513,23 @@ save_cell.special_details
 
 save_
 
+save_cell.structure_id
+
+    _definition.id                '_cell.structure_id'
+    _definition.update            2023-07-06
+    _description.text
+;
+    Identifier for the structure to which the cell belongs.
+;
+    _name.category_id             cell
+    _name.object_id               structure_id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_cell.vector_a
 
     _definition.id                '_cell.vector_a'
@@ -1733,7 +1727,7 @@ save_CELL_MEASUREMENT
 ;
     _name.category_id             CELL
     _name.object_id               CELL_MEASUREMENT
-    _category_key.name            '_cell_measurement.diffrn_id'
+    _category_key.name            '_cell_measurement.structure_id'
 
 save_
 
@@ -1759,25 +1753,6 @@ save_cell_measurement.condition_id
 ;
     _enumeration.default = _cell_measurement.diffrn_id
 ;
-
-save_
-
-save_cell_measurement.diffrn_id
-
-    _definition.id                '_cell_measurement.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction experiment to which the measured cell
-    has been applied.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -1885,6 +1860,24 @@ save_cell_measurement.reflns_used
     _type.contents                Integer
     _enumeration.range            3:
     _units.code                   none
+
+save_
+
+save_cell_measurement.structure_id
+
+    _definition.id                '_cell_measurement.structure_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    The structure that the measured cell relates to.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -2037,6 +2030,7 @@ save_CELL_MEASUREMENT_REFLN
          '_cell_measurement_refln.index_h'
          '_cell_measurement_refln.index_k'
          '_cell_measurement_refln.index_l'
+         '_cell_measurement_refln.structure_id'
 
 save_
 
@@ -2096,6 +2090,24 @@ save_cell_measurement_refln.index_l
     _name.object_id               index_l
 
     _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+
+save_
+
+save_cell_measurement_refln.structure_id
+
+    _definition.id                '_cell_measurement_refln.structure_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    The structure for which the reflections were measured.
+;
+    _name.category_id             cell_measurement_refln
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -11115,7 +11127,7 @@ save_SPACE_GROUP
     _definition.id                SPACE_GROUP
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-01-13
+    _definition.update            2023-07-10
     _description.text
 ;
     The CATEGORY of data items used to specify space group
@@ -11142,7 +11154,8 @@ save_SPACE_GROUP
 ;
     _name.category_id             EXPTL
     _name.object_id               SPACE_GROUP
-
+    _category_key.name            '_space_group.id'
+        
 save_
 
 save_space_group.bravais_type
@@ -11732,6 +11745,23 @@ save_space_group.point_group_h-m
 
 save_
 
+save_space_group.id
+
+    _definition.id                '_space_group.id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    An arbitrary identifier for this space group description.
+;
+    _name.category_id             space_group
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_symmetry.cell_setting
 
     _definition.id                '_symmetry.cell_setting'
@@ -11773,7 +11803,7 @@ save_SPACE_GROUP_GENERATOR
     _definition.id                SPACE_GROUP_GENERATOR
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-07-10
     _description.text
 ;
     The CATEGORY of data items used to list generators for
@@ -11781,7 +11811,10 @@ save_SPACE_GROUP_GENERATOR
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_GENERATOR
-    _category_key.name            '_space_group_generator.key'
+    loop_
+      _category_key.name
+        '_space_group_generator.key'
+        '_space_group_generator.space_group_id'
 
 save_
 
@@ -11796,6 +11829,24 @@ save_space_group_generator.key
     _name.category_id             space_group_generator
     _name.object_id               key
     _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_space_group_generator.space_group_id
+
+    _definition.id                '_space_group_generator.space_group_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    Identifier for the space group to which the generator relates.
+;
+    _name.category_id             space_group_generator
+    _name.object_id               space_group_id
+    _name.linked_item_id          '_space_group.id'
+    _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -11855,7 +11906,7 @@ save_SPACE_GROUP_SYMOP
     _definition.id                SPACE_GROUP_SYMOP
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-07-10
     _description.text
 ;
     The CATEGORY of data items used to describe symmetry equivalent sites
@@ -11863,7 +11914,10 @@ save_SPACE_GROUP_SYMOP
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_SYMOP
-    _category_key.name            '_space_group_symop.id'
+    loop_
+      _category_key.name
+        '_space_group_symop.id'
+        '_space_group_symop.space_group_id'
 
 save_
 
@@ -12063,6 +12117,24 @@ save_space_group_symop.seitz_matrix
 
 save_
 
+save_space_group_symop.space_group_id
+
+    _definition.id                '_space_group_symop.space_group_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    Identifier for the space group to which the symop belongs.
+;
+    _name.category_id             space_group_symop
+    _name.object_id               space_group_id
+    _name.linked_item_id          '_space_group.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_space_group_symop.t
 
     _definition.id                '_space_group_symop.T'
@@ -12094,7 +12166,7 @@ save_SPACE_GROUP_WYCKOFF
     _definition.id                SPACE_GROUP_WYCKOFF
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-01-13
+    _definition.update            2023-07-10
     _description.text
 ;
     Contains information about Wyckoff positions of a space group.
@@ -12104,7 +12176,10 @@ save_SPACE_GROUP_WYCKOFF
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_WYCKOFF
-    _category_key.name            '_space_group_Wyckoff.id'
+    loop_
+      _category_key.name
+        '_space_group_Wyckoff.id'
+        '_space_group_Wyckoff.space_group_id'
 
 save_
 
@@ -12243,6 +12318,24 @@ save_space_group_wyckoff.site_symmetry
          the point group 2 with the twofold axis along one of the {100}
          directions.
 ;
+
+save_
+
+save_space_group_wyckoff.space_group_id
+
+    _definition.id                '_space_group_Wyckoff.space_group_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    Identifier for the space group that has these Wyckoff positions.
+;
+    _name.category_id             space_group_Wyckoff
+    _name.object_id               space_group_id
+    _name.linked_item_id          '_space_group.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -19853,17 +19946,76 @@ save_STRUCTURE
     _definition.id                STRUCTURE
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-20
+    _definition.update            2023-07-06
     _description.text
 ;
-    The DICTIONARY group encompassing the CORE STRUCTURE data items defined
-    and used within the Crystallographic Information Framework (CIF).
+    A category for collecting information relating to the atomic-level
+    structure.
 ;
     _name.category_id             CIF_CORE
     _name.object_id               STRUCTURE
+    _category_key.name            _structure.id
 
 save_
 
+save_structure.diffrn_id
+
+    _definition.id                '_structure.diffrn_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    A pointer to the diffraction conditions to which this structure has been
+    applied, for example, to locate and extract diffraction peaks. These will
+    normally be the same conditions as those under which the cell was measured,
+    but some legacy data sets may have used a cell measured under differing
+    conditions, in which case those conditions should be indicated using the
+    _cell_measurement.condition_id data item.
+;
+    _name.category_id             structure
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_structure.id
+
+    _definition.id                '_structure.id'
+    _definition.update            2023-06-06
+    _description.text
+;
+    Unique identifier for a structure description.
+;
+    _name.category_id             structure
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_structure.space_group_id
+
+    _definition.id                '_structure.space_group_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    The space group of the structure.
+;
+    _name.category_id             structure
+    _name.object_id               space_group_id
+    _name.linked_item_id          '_space_group.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+    
 save_ATOM
 
     _definition.id                ATOM
@@ -19875,7 +20027,7 @@ save_ATOM
     The CATEGORY of data items used to describe atomic information
     used in crystallographic structure studies.
 ;
-    _name.category_id             STRUCTURE
+    _name.category_id             CIF_CORE
     _name.object_id               ATOM
 
 save_
@@ -20574,7 +20726,10 @@ save_ATOM_SITE
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
-    _category_key.name            '_atom_site.label'
+    loop_
+      _category_key.name
+         '_atom_site.label'
+         '_atom_site.structure_id'
 
     loop_
       _description_example.case
@@ -21673,6 +21828,24 @@ save_atom_site.site_symmetry_order
 
 save_
 
+save_atom_site.structure_id
+
+    _definition.id                '_atom_site.structure_id'
+    _definition.update            2023-07-10
+    _description.text
+;
+    Identifier for the structure to which the atom site belongs.
+;
+    _name.category_id             atom_site
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_atom_site.type_symbol
 
     _definition.id                '_atom_site.type_symbol'
@@ -21847,7 +22020,11 @@ save_ATOM_SITE_ANISO
 ;
     _name.category_id             ATOM_SITE
     _name.object_id               ATOM_SITE_ANISO
-    _category_key.name            '_atom_site_aniso.label'
+
+    loop_
+      _category_key.name
+         '_atom_site_aniso.label'
+         '_atom_site_aniso.structure_id'
 
 save_
 
@@ -22463,6 +22640,24 @@ save_atom_site_aniso.ratio
     _type.contents                Real
     _enumeration.range            1.0:
     _units.code                   none
+
+save_
+
+save_atom_site_aniso.structure_id
+
+    _definition.id                '_atom_site_aniso.structure_id'
+    _definition.update            2023-07-06
+    _description.text
+;
+    Identifier for the structure to which the atom site belongs.
+;
+    _name.category_id             atom_site_aniso
+    _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site.structure_id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
