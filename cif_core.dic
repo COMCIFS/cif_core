@@ -19954,7 +19954,7 @@ save_STRUCTURE
 ;
     _name.category_id             CIF_CORE
     _name.object_id               STRUCTURE
-    _category_key.name            _structure.id
+    _category_key.name            '_structure.id'
 
 save_
 
