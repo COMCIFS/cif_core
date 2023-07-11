@@ -1023,7 +1023,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2023-06-19
+         1.4.11                   2023-07-01
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
