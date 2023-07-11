@@ -27885,8 +27885,6 @@ save_
 
        Added the _exptl_absorpt.coefficient_mu_su data item.
 
-       All SU data items are now of _type.source Related.
-
        Renamed _atom_site.tensor_beta to _atom_site_aniso.matrix_beta and
        updated the associated dREL evaluation methods. The old data name was
        retained as an alias. Added the _atom_site_aniso.beta_* data items.
@@ -27897,4 +27895,6 @@ save_
        Added ATOM_SCAT_VERSUS_STOL to allow for the explicit listing of
        scattering factor values with respect to sin theta over lambda.
        Deprecated the _atom_type_scat.versus_stol_list data item.
+
+       All SU data items are now of _type.source Related.
 ;

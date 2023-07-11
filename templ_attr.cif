@@ -1032,10 +1032,10 @@ save_display_colour
 
        Added the default value of '1_555' to the 'site_symmetry' save frame.
 
-       All SU data items are now of _type.source Related.
-
        Added descriptions for aniso_betaIJ, and aniso_betaIJ_su.
        Updated descriptions of aniso_BIJ and aniso_UIJ.
 
        Removed the 'aniso_bij2' save frame.
+
+       All SU data items are now of _type.source Related.
 ;
