@@ -2122,7 +2122,7 @@ save_
 save_cell_measurement_refln.theta_su
 
     _definition.id                '_cell_measurement_refln.theta_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _cell_measurement_refln.theta.
@@ -2852,7 +2852,7 @@ save_
 save_diffrn_orient_refln.angle_chi_su
 
     _definition.id                '_diffrn_orient_refln.angle_chi_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_orient_refln.angle_chi.
@@ -2880,7 +2880,7 @@ save_
 save_diffrn_orient_refln.angle_kappa_su
 
     _definition.id                '_diffrn_orient_refln.angle_kappa_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_orient_refln.angle_kappa.
@@ -2908,7 +2908,7 @@ save_
 save_diffrn_orient_refln.angle_omega_su
 
     _definition.id                '_diffrn_orient_refln.angle_omega_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_orient_refln.angle_omega.
@@ -2936,7 +2936,7 @@ save_
 save_diffrn_orient_refln.angle_phi_su
 
     _definition.id                '_diffrn_orient_refln.angle_phi_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_orient_refln.angle_phi.
@@ -2964,7 +2964,7 @@ save_
 save_diffrn_orient_refln.angle_psi_su
 
     _definition.id                '_diffrn_orient_refln.angle_psi_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_orient_refln.angle_psi.
@@ -2992,7 +2992,7 @@ save_
 save_diffrn_orient_refln.angle_theta_su
 
     _definition.id                '_diffrn_orient_refln.angle_theta_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_orient_refln.angle_theta.
@@ -3736,7 +3736,7 @@ save_
 save_diffrn_refln.counts_net_su
 
     _definition.id                '_diffrn_refln.counts_net_su'
-    _definition.update            2012-12-13
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.counts_net.
@@ -3957,7 +3957,7 @@ save_
 save_diffrn_refln.intensity_bg_1_su
 
     _definition.id                '_diffrn_refln.intensity_bg_1_su'
-    _definition.update            2022-11-22
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.intensity_bg_1.
@@ -3999,7 +3999,7 @@ save_
 save_diffrn_refln.intensity_bg_2_su
 
     _definition.id                '_diffrn_refln.intensity_bg_2_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.intensity_bg_2.
@@ -4045,7 +4045,7 @@ save_diffrn_refln.intensity_net_su
          '_diffrn_refln.intensity_sigma'
          '_diffrn_refln.intensity_u'
 
-    _definition.update            2012-12-13
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.intensity_net.
@@ -4087,7 +4087,7 @@ save_
 save_diffrn_refln.intensity_peak_su
 
     _definition.id                '_diffrn_refln.intensity_peak_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.intensity_peak.
@@ -4130,7 +4130,7 @@ save_
 save_diffrn_refln.intensity_total_su
 
     _definition.id                '_diffrn_refln.intensity_total_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.intensity_total.
@@ -5244,7 +5244,7 @@ save_
 save_diffrn_scale_group.i_net_su
 
     _definition.id                '_diffrn_scale_group.I_net_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_scale_group.I_net.
@@ -5614,7 +5614,7 @@ save_
 save_diffrn_standards.decay_percent_su
 
     _definition.id                '_diffrn_standards.decay_percent_su'
-    _definition.update            2023-01-10
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_standards.decay_percent.
@@ -5719,7 +5719,7 @@ save_
 save_diffrn_standards.scale_su_average_su
 
     _definition.id                '_diffrn_standards.scale_su_average_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _diffrn_standards.scale_su_average.
@@ -5899,7 +5899,7 @@ save_
 save_refln.a_calc_su
 
     _definition.id                '_refln.A_calc_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.A_calc.
@@ -5949,7 +5949,7 @@ save_
 save_refln.a_meas_su
 
     _definition.id                '_refln.A_meas_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.A_meas.
@@ -6006,7 +6006,7 @@ save_
 save_refln.b_calc_su
 
     _definition.id                '_refln.B_calc_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.B_calc.
@@ -6056,7 +6056,7 @@ save_
 save_refln.b_meas_su
 
     _definition.id                '_refln.B_meas_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.B_meas.
@@ -6166,7 +6166,7 @@ save_
 save_refln.f_calc_su
 
     _definition.id                '_refln.F_calc_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.F_calc.
@@ -6354,7 +6354,7 @@ save_
 save_refln.f_squared_calc_su
 
     _definition.id                '_refln.F_squared_calc_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.F_squared_calc.
@@ -6650,7 +6650,7 @@ save_
 save_refln.intensity_calc_su
 
     _definition.id                '_refln.intensity_calc_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.intensity_calc.
@@ -6782,7 +6782,7 @@ save_
 save_refln.phase_calc_su
 
     _definition.id                '_refln.phase_calc_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.phase_calc.
@@ -6821,7 +6821,7 @@ save_
 save_refln.phase_meas_su
 
     _definition.id                '_refln.phase_meas_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refln.phase_meas.
@@ -7796,7 +7796,7 @@ save_
 save_reflns_scale.meas_f_su
 
     _definition.id                '_reflns_scale.meas_F_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _reflns_scale.meas_F.
@@ -7833,7 +7833,7 @@ save_
 save_reflns_scale.meas_f_squared_su
 
     _definition.id                '_reflns_scale.meas_F_squared_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _reflns_scale.meas_F_squared.
@@ -7870,7 +7870,7 @@ save_
 save_reflns_scale.meas_intensity_su
 
     _definition.id                '_reflns_scale.meas_intensity_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _reflns_scale.meas_intensity.
@@ -8461,7 +8461,7 @@ save_
 save_exptl.transmission_factor_max_su
 
     _definition.id                '_exptl.transmission_factor_max_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl.transmission_factor_max.
@@ -8503,7 +8503,7 @@ save_
 save_exptl.transmission_factor_min_su
 
     _definition.id                '_exptl.transmission_factor_min_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl.transmission_factor_min.
@@ -8649,7 +8649,7 @@ save_
 save_chemical.enantioexcess_bulk_su
 
     _definition.id                '_chemical.enantioexcess_bulk_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _chemical.enantioexcess_bulk.
@@ -8735,7 +8735,7 @@ save_
 save_chemical.enantioexcess_crystal_su
 
     _definition.id                '_chemical.enantioexcess_crystal_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _chemical.enantioexcess_crystal.
@@ -8879,7 +8879,7 @@ save_
 save_chemical.melting_point_su
 
     _definition.id                '_chemical.melting_point_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _chemical.melting_point.
@@ -9851,7 +9851,7 @@ save_
 save_chemical_formula.weight_meas_su
 
     _definition.id                '_chemical_formula.weight_meas_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _chemical_formula.weight_meas.
@@ -9910,7 +9910,7 @@ save_
 save_exptl_absorpt.coefficient_mu_su
 
     _definition.id                '_exptl_absorpt.coefficient_mu_su'
-    _definition.update            2023-06-25
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_absorpt.coefficient_mu.
@@ -10205,7 +10205,7 @@ save_
 save_exptl_crystal.density_diffrn_su
 
     _definition.id                '_exptl_crystal.density_diffrn_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal.density_diffrn.
@@ -10582,7 +10582,7 @@ save_
 save_exptl_crystal.size_length_su
 
     _definition.id                '_exptl_crystal.size_length_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal.size_length.
@@ -10619,7 +10619,7 @@ save_
 save_exptl_crystal.size_max_su
 
     _definition.id                '_exptl_crystal.size_max_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal.size_max.
@@ -10656,7 +10656,7 @@ save_
 save_exptl_crystal.size_mid_su
 
     _definition.id                '_exptl_crystal.size_mid_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal.size_mid.
@@ -10693,7 +10693,7 @@ save_
 save_exptl_crystal.size_min_su
 
     _definition.id                '_exptl_crystal.size_min_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal.size_min.
@@ -10730,7 +10730,7 @@ save_
 save_exptl_crystal.size_rad_su
 
     _definition.id                '_exptl_crystal.size_rad_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal.size_rad.
@@ -10916,7 +10916,7 @@ save_
 save_exptl_crystal_face.diffr_chi_su
 
     _definition.id                '_exptl_crystal_face.diffr_chi_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal_face.diffr_chi.
@@ -10944,7 +10944,7 @@ save_
 save_exptl_crystal_face.diffr_kappa_su
 
     _definition.id                '_exptl_crystal_face.diffr_kappa_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal_face.diffr_kappa.
@@ -10972,7 +10972,7 @@ save_
 save_exptl_crystal_face.diffr_phi_su
 
     _definition.id                '_exptl_crystal_face.diffr_phi_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal_face.diffr_phi.
@@ -11000,7 +11000,7 @@ save_
 save_exptl_crystal_face.diffr_psi_su
 
     _definition.id                '_exptl_crystal_face.diffr_psi_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal_face.diffr_psi.
@@ -11096,7 +11096,7 @@ save_
 save_exptl_crystal_face.perp_dist_su
 
     _definition.id                '_exptl_crystal_face.perp_dist_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _exptl_crystal_face.perp_dist.
@@ -12962,7 +12962,7 @@ save_
 save_geom_bond.valence_su
 
     _definition.id                '_geom_bond.valence_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _geom_bond.valence.
@@ -19963,7 +19963,7 @@ save_
 save_atom_analytical.analyte_mass_percent_su
 
     _definition.id                '_atom_analytical.analyte_mass_percent_su'
-    _definition.update            2022-11-19
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_analytical.analyte_mass_percent.
@@ -20050,7 +20050,7 @@ save_atom_analytical.chemical_species_mass_percent_su
 
     _definition.id
         '_atom_analytical.chemical_species_mass_percent_su'
-    _definition.update            2022-11-19
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_analytical.chemical_species_mass_percent.
@@ -20226,7 +20226,7 @@ save_
 save_atom_analytical_mass_loss.percent_su
 
     _definition.id                '_atom_analytical_mass_loss.percent_su'
-    _definition.update            2022-11-21
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_analytical_mass_loss.percent.
@@ -20285,7 +20285,7 @@ save_
 save_atom_analytical_mass_loss.temperature_su
 
     _definition.id                '_atom_analytical_mass_loss.temperature_su'
-    _definition.update            2022-11-21
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_analytical_mass_loss.temperature.
@@ -22752,7 +22752,7 @@ save_
 save_atom_sites_cartn_transform.mat_11_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_11_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_11.
@@ -22791,7 +22791,7 @@ save_
 save_atom_sites_cartn_transform.mat_12_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_12_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_12.
@@ -22830,7 +22830,7 @@ save_
 save_atom_sites_cartn_transform.mat_13_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_13_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_13.
@@ -22872,7 +22872,7 @@ save_
 save_atom_sites_cartn_transform.mat_21_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_21_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_21.
@@ -22913,7 +22913,7 @@ save_
 save_atom_sites_cartn_transform.mat_22_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_22_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_22.
@@ -22952,7 +22952,7 @@ save_
 save_atom_sites_cartn_transform.mat_23_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_23_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_23.
@@ -22993,7 +22993,7 @@ save_
 save_atom_sites_cartn_transform.mat_31_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_31_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_31.
@@ -23034,7 +23034,7 @@ save_
 save_atom_sites_cartn_transform.mat_32_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_32_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_32.
@@ -23073,7 +23073,7 @@ save_
 save_atom_sites_cartn_transform.mat_33_su
 
     _definition.id                '_atom_sites_Cartn_transform.mat_33_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.mat_33.
@@ -23165,7 +23165,7 @@ save_
 save_atom_sites_cartn_transform.vec_1_su
 
     _definition.id                '_atom_sites_Cartn_transform.vec_1_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.vec_1.
@@ -23198,7 +23198,7 @@ save_
 save_atom_sites_cartn_transform.vec_2_su
 
     _definition.id                '_atom_sites_Cartn_transform.vec_2_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.vec_2.
@@ -23231,7 +23231,7 @@ save_
 save_atom_sites_cartn_transform.vec_3_su
 
     _definition.id                '_atom_sites_Cartn_transform.vec_3_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_Cartn_transform.vec_3.
@@ -23356,7 +23356,7 @@ save_
 save_atom_sites_fract_transform.mat_11_su
 
     _definition.id                '_atom_sites_fract_transform.mat_11_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_11.
@@ -23389,7 +23389,7 @@ save_
 save_atom_sites_fract_transform.mat_12_su
 
     _definition.id                '_atom_sites_fract_transform.mat_12_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_12.
@@ -23422,7 +23422,7 @@ save_
 save_atom_sites_fract_transform.mat_13_su
 
     _definition.id                '_atom_sites_fract_transform.mat_13_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_13.
@@ -23455,7 +23455,7 @@ save_
 save_atom_sites_fract_transform.mat_21_su
 
     _definition.id                '_atom_sites_fract_transform.mat_21_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_21.
@@ -23488,7 +23488,7 @@ save_
 save_atom_sites_fract_transform.mat_22_su
 
     _definition.id                '_atom_sites_fract_transform.mat_22_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_22.
@@ -23521,7 +23521,7 @@ save_
 save_atom_sites_fract_transform.mat_23_su
 
     _definition.id                '_atom_sites_fract_transform.mat_23_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_23.
@@ -23554,7 +23554,7 @@ save_
 save_atom_sites_fract_transform.mat_31_su
 
     _definition.id                '_atom_sites_fract_transform.mat_31_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_31.
@@ -23587,7 +23587,7 @@ save_
 save_atom_sites_fract_transform.mat_32_su
 
     _definition.id                '_atom_sites_fract_transform.mat_32_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_32.
@@ -23620,7 +23620,7 @@ save_
 save_atom_sites_fract_transform.mat_33_su
 
     _definition.id                '_atom_sites_fract_transform.mat_33_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.mat_33.
@@ -23712,7 +23712,7 @@ save_
 save_atom_sites_fract_transform.vec_1_su
 
     _definition.id                '_atom_sites_fract_transform.vec_1_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.vec_1.
@@ -23745,7 +23745,7 @@ save_
 save_atom_sites_fract_transform.vec_2_su
 
     _definition.id                '_atom_sites_fract_transform.vec_2_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.vec_2.
@@ -23778,7 +23778,7 @@ save_
 save_atom_sites_fract_transform.vec_3_su
 
     _definition.id                '_atom_sites_fract_transform.vec_3_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_sites_fract_transform.vec_3.
@@ -23900,7 +23900,7 @@ save_
 save_atom_type.analytical_mass_percent_su
 
     _definition.id                '_atom_type.analytical_mass_percent_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_type.analytical_mass_percent.
@@ -25816,7 +25816,7 @@ save_
 save_refine_ls.f_calc_precision_su
 
     _definition.id                '_refine_ls.F_calc_precision_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refine_ls.F_calc_precision.
@@ -26023,7 +26023,7 @@ save_
 save_refine_ls.goodness_of_fit_ref_su
 
     _definition.id                '_refine_ls.goodness_of_fit_ref_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refine_ls.goodness_of_fit_ref.
@@ -26522,7 +26522,7 @@ save_
 save_refine_ls.restrained_s_all_su
 
     _definition.id                '_refine_ls.restrained_S_all_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refine_ls.restrained_S_all.
@@ -26593,7 +26593,7 @@ save_
 save_refine_ls.restrained_s_gt_su
 
     _definition.id                '_refine_ls.restrained_S_gt_su'
-    _definition.update            2021-09-23
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _refine_ls.restrained_S_gt.
