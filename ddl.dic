@@ -2376,7 +2376,7 @@ save_type.purpose
          SU
 ;
          Used to type an item with a numerical value that is the standard
-         uncertainty of another data item. The definition of an SU item should
+         uncertainty of another data item. The definition of an SU item must
          have the _type.source attribute set to 'Related' and must include
          the _name.linked_item_id attribute which explicitly identifies
          the associated measurand item. SU values must be non-negative.
