@@ -2279,7 +2279,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2021-08-18
+    _definition.update            2023-07-11
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -2376,10 +2376,10 @@ save_type.purpose
          SU
 ;
          Used to type an item with a numerical value that is the standard
-         uncertainty of another data item. The definition of an SU item must
-         include the attribute "_name.linked_item_id" which explicitly
-         identifies the associated measurand item. SU values must be
-         non-negative.
+         uncertainty of another data item. The definition of an SU item should
+         have the _type.source attribute set to 'Related' and must include
+         the _name.linked_item_id attribute which explicitly identifies
+         the associated measurand item. SU values must be non-negative.
 ;
          Internal
 ;
@@ -3054,4 +3054,6 @@ save_
        Added 'Inherited' as an enumeration value to _type.contents.
 
        Updated the description of _type.source and _method.purpose attributes.
+
+       Clarified the use of the 'SU' state of the _type.purpose attribute.
 ;
