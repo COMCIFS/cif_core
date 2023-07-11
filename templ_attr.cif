@@ -656,7 +656,7 @@ save_aniso_uij_su
 save_general_su
 
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
 
