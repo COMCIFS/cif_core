@@ -1037,5 +1037,5 @@ save_display_colour
 
        Removed the 'aniso_bij2' save frame.
 
-       All SU data items are now of _type.source Related.
+       Changed the _type.source attribute of all SU data items to 'Related'.
 ;

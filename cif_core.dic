@@ -27896,5 +27896,5 @@ save_
        scattering factor values with respect to sin theta over lambda.
        Deprecated the _atom_type_scat.versus_stol_list data item.
 
-       All SU data items are now of _type.source Related.
+       Changed the _type.source attribute of all SU data items to 'Related'.
 ;
