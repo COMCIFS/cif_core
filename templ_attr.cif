@@ -585,7 +585,7 @@ save_aniso_bij
 
 save_aniso_bij_su
 
-    _definition.update           2021-03-18
+    _definition.update           2023-07-01
     _description.text
 ;
      These are the standard uncertainty values (SU) for the standard
@@ -594,7 +594,7 @@ save_aniso_bij_su
      may in practice be auto generated as part of the B^ij^ calculation.
 ;
     _type.purpose                SU
-    _type.source                 Derived
+    _type.source                 Related
     _type.container              Single
     _type.contents               Real
     _units.code                  angstrom_squared

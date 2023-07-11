@@ -22374,7 +22374,7 @@ save_atom_site_aniso.matrix_beta_su
 
     _definition.id                '_atom_site_aniso.matrix_beta_su'
     _alias.definition_id          '_atom_site.tensor_beta_su'
-    _definition.update            2023-02-15
+    _definition.update            2023-07-01
     _description.text
 ;
     Standard uncertainty of _atom_site_aniso.matrix_beta.
@@ -22383,7 +22383,7 @@ save_atom_site_aniso.matrix_beta_su
     _name.object_id               matrix_beta_su
     _name.linked_item_id          '_atom_site_aniso.matrix_beta'
     _type.purpose                 SU
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
