@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-06-28
+    _dictionary.date              2023-07-11
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2279,7 +2279,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2021-08-18
+    _definition.update            2023-07-11
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -2377,9 +2377,9 @@ save_type.purpose
 ;
          Used to type an item with a numerical value that is the standard
          uncertainty of another data item. The definition of an SU item must
-         include the attribute "_name.linked_item_id" which explicitly
-         identifies the associated measurand item. SU values must be
-         non-negative.
+         have the _type.source attribute set to 'Related' and must include
+         the _name.linked_item_id attribute which explicitly identifies
+         the associated measurand item. SU values must be non-negative.
 ;
          Internal
 ;
@@ -2396,7 +2396,7 @@ save_type.source
 
     _definition.id                '_type.source'
     _definition.class             Attribute
-    _definition.update            2023-06-28
+    _definition.update            2023-07-11
     _description.text
 ;
     The origin or source of the defined data item, indicating by what
@@ -2439,11 +2439,17 @@ save_type.source
 ;
          Related
 ;
-         Data item was used in the construction of looped lists of data.
-         Typically identifies an item whose unique values are used as the
-         reference key for a loop category and/or an item which has values in
-         common with those of another loop category and is considered a Link
-         between these lists.
+         Data item was added based on a relationship to another data item.
+
+         This state indicates that the item was used to record the SU value of
+         a related measurand item or that the item was used in the construction
+         of looped lists of data. In the latter case, it typically identifies
+         an item whose unique values are used as the reference key for a loop
+         category and/or an item which has values in common with those of
+         another loop category and is considered a Link between these lists.
+
+         Data items of this type includes both primitive and non-primitive
+         items.
 ;
          Derived
 ;
@@ -3025,7 +3031,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-06-28
+         4.2.0                    2023-07-11
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3047,5 +3053,7 @@ save_
 
        Added 'Inherited' as an enumeration value to _type.contents.
 
-       Updated the description of _type.source and _method.purpose attributes
+       Updated the description of _type.source and _method.purpose attributes.
+
+       Clarified the use of the 'SU' state of the _type.purpose attribute.
 ;
