@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-07-05
+    _dictionary.date              2023-07-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -24144,7 +24144,7 @@ save_ATOM_TYPE
     _definition.id                ATOM_TYPE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2023-07-13
     _description.text
 ;
     The CATEGORY of data items used to describe atomic type information
@@ -24159,7 +24159,7 @@ save_ATOM_TYPE
     typelist  = List()
 
     Loop  a  as  atom_site  {
-       type = AtomType ( a.label )
+       type = a.type_symbol
        If( type not in typelist )  typelist ++= type
      }
      For type in typelist {
@@ -27848,7 +27848,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-07-05
+         3.3.0                    2023-07-13
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27897,4 +27897,6 @@ save_
        Deprecated the _atom_type_scat.versus_stol_list data item.
 
        Changed the _type.source attribute of all SU data items to 'Related'.
+
+       Updated dREL evaluation method of the ATOM_TYPE category.
 ;
