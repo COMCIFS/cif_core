@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-07-05
+    _dictionary.date              2023-17-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -18200,20 +18200,17 @@ save_
 save_journal_index.id
 
     _definition.id                '_journal_index.id'
-    _alias.definition_id          '_journal_index_id'
-    _definition.update            2021-03-01
+    _definition.update            2023-17-13
     _description.text
 ;
-    Index number identifier of the JOURNAL_INDEX category.
+    Unique identifier for a journal index entry.
 ;
     _name.category_id             journal_index
     _name.object_id               id
-    _type.purpose                 Number
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            1:
-    _units.code                   none
+    _type.contents                Word
 
 save_
 
@@ -27848,7 +27845,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-07-05
+         3.3.0                    2023-17-13
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
