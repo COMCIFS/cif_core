@@ -3063,7 +3063,7 @@ save_
        Clarified the use of the 'SU' state of the _type.purpose attribute.
 
        Changed _description.text of _dictionary.namespace to say "trailing
-       double colon '::' " in accordanxce with DDLm specs and other
+       double colon '::' " in accordance with DDLm specs and other
        discussion in Volume G 2ed (bm).
 
        Some cosmetic changes (single quotes instead of double) to match
