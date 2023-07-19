@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-07-13
+    _dictionary.date              2023-07-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -594,8 +594,8 @@ save_dictionary.namespace
     _definition.update            2006-12-05
     _description.text
 ;
-    The namespace code that may be prefixed (with a trailing colon
-    ":") to an item tag defined in the defining dictionary when used
+    The namespace code that may be prefixed (with a trailing double colon
+    '::') to an item tag defined in the defining dictionary when used
     in particular applications. Because tags must be unique, namespace
     codes are unlikely to be used in data files.
 ;
@@ -1359,8 +1359,8 @@ save_ENUMERATION_SOURCE
          loop_
          _enumeration_source.id
          _enumeration_source.reference
-         a "International Tables Vol. C Table 4.4.4.1 2nd ed."
-         b "International Tables Vol. H Table 4.3.2.1 1st ed."
+         a 'International Tables Vol. C Table 4.4.4.1 2nd ed.'
+         b 'International Tables Vol. H Table 4.3.2.1 1st ed.'
 
          loop_
          _enumeration_defaults.index
@@ -1569,9 +1569,9 @@ save_import_details.if_dupl
     _description.text
 ;
     Code identifying the action taken if the requested definition block
-    already exists within the importing dictionary in "Full" mode, or
+    already exists within the importing dictionary in 'Full' mode, or
     an attribute exists in both the importing definition block and the
-    requested definition block in "Contents" mode.
+    requested definition block in 'Contents' mode.
 ;
     _name.category_id             import_details
     _name.object_id               if_dupl
@@ -1585,20 +1585,20 @@ save_import_details.if_dupl
       _enumeration_set.detail
          Ignore
 ;
-         Ignore imported definitions if block identifiers match in "Full" mode.
+         Ignore imported definitions if block identifiers match in 'Full' mode.
          Ignore imported attributes that match attributes already in the
-         importing definition in "Contents" mode.
+         importing definition in 'Contents' mode.
 
-         When importing in "Contents" mode, if the ignored attribute belongs to
+         When importing in 'Contents' mode, if the ignored attribute belongs to
          a Loop category, all attributes from that category must be ignored to
          avoid loop mismatches.
 ;
          Replace
 ;
          Replace existing definitions with imported definitions if block
-         identifiers match in "Full" mode.
+         identifiers match in 'Full' mode.
 
-         When importing in "Contents" mode, contents of the two save frames
+         When importing in 'Contents' mode, contents of the two save frames
          should be merged and any duplicate attributes replaced with those from
          the imported save frame. In case the replaced attribute belongs to a
          Loop category, all attributes from that category must first be removed
@@ -1650,17 +1650,17 @@ save_import_details.mode
     Code identifying how the definition referenced by
     _import_details.frame_id is to be imported.
 
-    "Full" imports the entire definition together with any child definitions
+    'Full' imports the entire definition together with any child definitions
     (in the case of categories) found in the target dictionary. The importing
     definition becomes the parent of the imported definition. As such, the
-    "Full" mode must only be used in category definitions.
+    'Full' mode must only be used in category definitions.
 
     As a special case, a 'Head' category importing a 'Head' category is
     equivalent to importing all children of the imported 'Head' category
     as children of the importing 'Head' category. A 'Head' category can
-    only be imported in "Full" mode and only by another 'Head' category.
+    only be imported in 'Full' mode and only by another 'Head' category.
 
-    "Contents" imports only the attributes found in the imported definition.
+    'Contents' imports only the attributes found in the imported definition.
 ;
     _name.category_id             import_details
     _name.object_id               mode
@@ -2022,7 +2022,7 @@ save_type.contents
     Two case-insensitive strings are considered identical when
     they match under the Unicode canonical caseless matching algorithm.
 
-    In all cases, "whitespace" refers to ASCII whitespace only, that
+    In all cases, 'whitespace' refers to ASCII whitespace only, that
     is [U+0009], [U+000A], [U+000D] and [U+0020].
 
     Note that descriptions of text syntax are relevant only to those
@@ -2237,7 +2237,7 @@ save_type.indices
 ;
          Date
 ;
-         ISO date format yyyy-mm-dd.
+         ISO date format <yyyy>-<mm>-<dd>.
 ;
          Uri
 ;
@@ -2303,14 +2303,14 @@ save_type.purpose
          Import
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         Used to type the SPECIAL attribute "_import.get" that is present in
+         Used to type the SPECIAL attribute '_import.get' that is present in
          dictionaries to instigate the importation of external dictionary
          definitions.
 ;
          Method
 ;
          >>> Applied ONLY in the DDLm Reference Dictionary <<<
-         Used to type the attribute "_method.expression" that is present in
+         Used to type the attribute '_method.expression' that is present in
          dictionary definitions to provide the text method expressing the
          defined item in terms of other defined items.
 ;
@@ -2340,7 +2340,7 @@ save_type.purpose
          State
 ;
          Used to type items with values that are restricted to codes present in
-         their "enumeration_set.state" lists.
+         their 'enumeration_set.state' lists.
 ;
          Key
 ;
@@ -2351,7 +2351,7 @@ save_type.purpose
 ;
          Used to type an item that acts as a foreign key between two
          categories. The definition of the item must additionally contain the
-         attribute "_name.linked_item_id" specifying the data name of the item
+         attribute '_name.linked_item_id' specifying the data name of the item
          with unique values in the linked category. The values of the defined
          item are drawn from the set of values in the referenced item. Cross
          referencing items from the same category is allowed.
@@ -3036,7 +3036,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-07-13
+         4.2.0                    2023-07-18
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3061,4 +3061,11 @@ save_
        Updated the description of _type.source and _method.purpose attributes.
 
        Clarified the use of the 'SU' state of the _type.purpose attribute.
+
+       Changed _description.text of _dictionary.namespace to say "trailing
+       double colon '::' " in accordance with DDLm specs and other
+       discussion in Volume G 2ed (bm).
+
+       Some cosmetic changes (single quotes instead of double) to match
+       IUCr house style and angle brackets around <yyyy>-<mm>-<dd> (bm).
 ;
