@@ -160,9 +160,10 @@ save_matrix_w
      Element of the matrix W defined by van Smaalen (1991); (1995)
 ;
     _type.purpose                Number
-    _type.source                 Derived
+    _type.source                 Assigned
     _type.container              Single
     _type.contents               Real
+    _enumeration.default         0.0
     _name.category_id            cell_subsystem
     _units.code                  none
      save_
