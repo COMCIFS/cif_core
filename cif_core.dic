@@ -14913,12 +14913,13 @@ save_audit.schema
 ;
          'Entry'
 ;
-         entry category is defined and looped: information from multiple data
+         Entry category is defined and looped: information from multiple data
          blocks in one block.
 ;
          'Custom'
 ;
-         Examine dictionaries provided in _audit_conform.
+         Examine dictionaries listed using data items from the AUDIT_CONFORM
+         category.
 ;
          'Local'
 ;
