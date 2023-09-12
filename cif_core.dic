@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-07-13
+    _dictionary.date              2023-09-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -12135,14 +12135,14 @@ save_
 save_space_group_wyckoff.id
 
     _definition.id                '_space_group_Wyckoff.id'
-    _definition.update            2023-02-02
+    _definition.update            2023-09-12
     _description.text
 ;
     An arbitrary code that is unique to a particular Wyckoff position.
 ;
     _name.category_id             space_group_Wyckoff
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -14647,7 +14647,7 @@ save_valence_param.ref_id
 
     _definition.id                '_valence_param.ref_id'
     _alias.definition_id          '_valence_param_ref_id'
-    _definition.update            2021-10-27
+    _definition.update            2023-09-12
     _description.text
 ;
     Code linking parameters to the key _valence_ref.id key
@@ -14711,7 +14711,7 @@ save_valence_ref.id
 ;
     _name.category_id             valence_ref
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -27846,7 +27846,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-07-13
+         3.3.0                    2023-09-12
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27897,4 +27897,7 @@ save_
        Changed the _type.source attribute of all SU data items to 'Related'.
 
        Updated dREL evaluation method of the ATOM_TYPE category.
+
+       Changed the purpose of _space_group_Wyckoff.id and _valence_ref.id
+       from 'Encode' to 'Key'.
 ;
