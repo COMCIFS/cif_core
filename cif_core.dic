@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-07-13
+    _dictionary.date              2023-09-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -8789,7 +8789,7 @@ save_chemical.identifier_inchi
 
     _definition.id                '_chemical.identifier_InChI'
     _alias.definition_id          '_chemical_identifier_InChI'
-    _definition.update            2023-02-02
+    _definition.update            2023-09-12
     _description.text
 ;
     The IUPAC International Chemical Identifier (InChI) is a
@@ -8817,7 +8817,7 @@ save_chemical.identifier_inchi_key
 
     _definition.id                '_chemical.identifier_InChI_key'
     _alias.definition_id          '_chemical_identifier_InChI_key'
-    _definition.update            2023-02-02
+    _definition.update            2023-09-12
     _description.text
 ;
     The InChIKey is a compact hashed version of the full InChI
@@ -27846,7 +27846,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-07-13
+         3.3.0                    2023-09-12
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27897,4 +27897,7 @@ save_
        Changed the _type.source attribute of all SU data items to 'Related'.
 
        Updated dREL evaluation method of the ATOM_TYPE category.
+
+       Corrected examples of the _chemical.identifier_InChI and
+       _chemical.identifier_InChI_key data items.
 ;
