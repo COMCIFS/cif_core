@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2023-07-01
+    _dictionary.date             2023-09-11
     _dictionary.uri              www.iucr.org/cif/dic/com_att.dic
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -154,7 +154,7 @@ save_matrix_pdb
 
 save_matrix_w
 
-    _definition.update           2021-03-01
+    _definition.update           2023-09-11
     _description.text
 ;
      Element of the matrix W defined by van Smaalen (1991); (1995)
@@ -164,7 +164,6 @@ save_matrix_w
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
-    _name.category_id            cell_subsystem
     _units.code                  none
      save_
 
@@ -1024,7 +1023,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2023-07-01
+         1.4.11                   2023-09-11
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -1039,4 +1038,6 @@ save_display_colour
        Removed the 'aniso_bij2' save frame.
 
        Changed the _type.source attribute of all SU data items to 'Related'.
+
+       Removed the _name.category_id attribute from the 'matrix_w' save frame.
 ;
