@@ -12135,14 +12135,14 @@ save_
 save_space_group_wyckoff.id
 
     _definition.id                '_space_group_Wyckoff.id'
-    _definition.update            2023-02-02
+    _definition.update            2023-09-12
     _description.text
 ;
     An arbitrary code that is unique to a particular Wyckoff position.
 ;
     _name.category_id             space_group_Wyckoff
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -14704,14 +14704,14 @@ save_valence_ref.id
 
     _definition.id                '_valence_ref.id'
     _alias.definition_id          '_valence_ref_id'
-    _definition.update            2021-10-27
+    _definition.update            2023-09-12
     _description.text
 ;
     Unique loop code of the valence references.
 ;
     _name.category_id             valence_ref
     _name.object_id               id
-    _type.purpose                 Encode
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -27897,6 +27897,9 @@ save_
        Changed the _type.source attribute of all SU data items to 'Related'.
 
        Updated dREL evaluation method of the ATOM_TYPE category.
+
+       Changed the purpose of _space_group_Wyckoff.id and _valence_ref.id
+       from 'Encode' to 'Key'.
 
        Corrected examples of the _chemical.identifier_InChI and
        _chemical.identifier_InChI_key data items.
