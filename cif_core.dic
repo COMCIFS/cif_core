@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-09-12
+    _dictionary.date              2023-10-15
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -3070,7 +3070,7 @@ save_DIFFRN_RADIATION
     _definition.id                DIFFRN_RADIATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-26
+    _definition.update            2023-10-15
     _description.text
 ;
     The CATEGORY of data items which specify the wavelength of the
@@ -27846,7 +27846,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-09-12
+         3.3.0                    2023-10-15
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27903,4 +27903,6 @@ save_
 
        Corrected examples of the _chemical.identifier_InChI and
        _chemical.identifier_InChI_key data items.
+
+       Updated description of DIFFRN_RADIATION to remove looping reference.
 ;
