@@ -3074,9 +3074,9 @@ save_DIFFRN_RADIATION
     _description.text
 ;
     The CATEGORY of data items which specify the wavelength of the
-    radiation used in measuring diffraction intensities. Items may be
-    looped to identify and assign weights to distinct wavelength
-    components from a polychromatic beam.
+    radiation used in measuring diffraction intensities. To identify
+    and assign weights to distinct wavelength components from a
+    polychromatic beam, see DIFFRN_RADIATION_WAVELENGTH.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_RADIATION
