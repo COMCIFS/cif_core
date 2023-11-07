@@ -1323,17 +1323,19 @@ save_enumeration_set.state
 
     _definition.id                '_enumeration_set.state'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2023-11-07
     _description.text
 ;
-    Permitted value state for the defined item.
+    Permitted value state for the defined item. Value of this attribute inherits
+    the enumeration range, enumeration set, container, dimension, content and
+    purpose type constraints of the defining item.
 ;
     _name.category_id             enumeration_set
     _name.object_id               state
     _type.purpose                 Encode
     _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Text
+    _type.container               Implied
+    _type.contents                Implied
 
 save_
 
@@ -3068,4 +3070,7 @@ save_
 
        Some cosmetic changes (single quotes instead of double) to match
        IUCr house style and angle brackets around <yyyy>-<mm>-<dd> (bm).
+
+       Updated the _enumeration_set.state attribute to inherit various
+       properties from the defining data item.
 ;
