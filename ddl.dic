@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-07-18
+    _dictionary.date              2023-11-07
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -1323,17 +1323,19 @@ save_enumeration_set.state
 
     _definition.id                '_enumeration_set.state'
     _definition.class             Attribute
-    _definition.update            2019-04-02
+    _definition.update            2023-11-07
     _description.text
 ;
-    Permitted value state for the defined item.
+    Permitted value state for the defined item. Value of this attribute inherits
+    the enumeration range, enumeration set, container, dimension, content and
+    purpose type constraints of the defining item.
 ;
     _name.category_id             enumeration_set
     _name.object_id               state
     _type.purpose                 Encode
     _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Text
+    _type.container               Implied
+    _type.contents                Implied
 
 save_
 
@@ -2000,7 +2002,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-06-23
+    _definition.update            2023-11-07
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -2126,6 +2128,7 @@ save_type.contents
 ;
          Implied
 ;
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
          The contents are described by the _type.contents attribute in the
          definition in which the defined attribute appears.
 ;
@@ -3036,7 +3039,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-07-18
+         4.2.0                    2023-11-07
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3068,4 +3071,10 @@ save_
 
        Some cosmetic changes (single quotes instead of double) to match
        IUCr house style and angle brackets around <yyyy>-<mm>-<dd> (bm).
+
+       Updated the _enumeration_set.state attribute to inherit various
+       properties from the defining data item.
+
+       Explicitly specified that the _type.contents attribute value 'Implied'
+       can only be applied in the DDLm Reference dictionary.
 ;
