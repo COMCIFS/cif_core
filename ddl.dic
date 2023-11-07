@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-07-18
+    _dictionary.date              2023-11-07
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2002,7 +2002,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-06-23
+    _definition.update            2023-11-07
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -2128,6 +2128,7 @@ save_type.contents
 ;
          Implied
 ;
+         >>> Applied ONLY in the DDLm Reference Dictionary <<<
          The contents are described by the _type.contents attribute in the
          definition in which the defined attribute appears.
 ;
@@ -3038,7 +3039,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-07-18
+         4.2.0                    2023-11-07
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3073,4 +3074,7 @@ save_
 
        Updated the _enumeration_set.state attribute to inherit various
        properties from the defining data item.
+
+       Explicitly specified that the _type.contents attribute value 'Implied'
+       can only be applied in the DDLm Reference dictionary.
 ;
