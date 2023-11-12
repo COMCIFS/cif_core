@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-11-07
+    _dictionary.date              2023-11-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2287,7 +2287,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2023-07-11
+    _definition.update            2023-11-12
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -2343,7 +2343,7 @@ save_type.purpose
          State
 ;
          Used to type items with values that are restricted to codes present in
-         their 'enumeration_set.state' lists.
+         their _enumeration_set.state lists.
 ;
          Key
 ;
@@ -3039,7 +3039,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-11-07
+         4.2.0                    2023-11-12
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
