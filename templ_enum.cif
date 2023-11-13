@@ -10,8 +10,8 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2023-06-14
-    _dictionary.uri              www.iucr.org/cif/dic/com_val.dic
+    _dictionary.date             2023-11-13
+    _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
 ;
@@ -2350,7 +2350,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2023-06-14
+         1.4.9                    2023-11-13
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
