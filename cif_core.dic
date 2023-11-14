@@ -4304,11 +4304,11 @@ save_diffrn_refln.standard_code
 
     _definition.id                '_diffrn_refln.standard_code'
     _alias.definition_id          '_diffrn_refln_standard_code'
-    _definition.update            2021-10-27
+    _definition.update            2023-11-14
     _description.text
 ;
     Code identifying reflections measured repeated as standard intensity.
-    Must match a _diffrn_standard_refln.code values OR set to '.' if
+    Must match a _diffrn_standard_refln.code value or set to '.' if
     it was not used as an intensity standard.
 ;
     _name.category_id             diffrn_refln
