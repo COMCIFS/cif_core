@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-10-15
+    _dictionary.date              2023-11-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -4148,10 +4148,11 @@ save_diffrn_refln.scale_group_code
 
     _definition.id                '_diffrn_refln.scale_group_code'
     _alias.definition_id          '_diffrn_refln_scale_group_code'
-    _definition.update            2021-10-27
+    _definition.update            2023-11-14
     _description.text
 ;
-    Code identifying the scale applying to this reflection.
+    Code identifying the scale applying to this reflection. The code must match
+    a _diffrn_scale_group.code in the DIFFRN_SCALE_GROUP list.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               scale_group_code
@@ -5192,12 +5193,11 @@ save_diffrn_scale_group.code
 
     _definition.id                '_diffrn_scale_group.code'
     _alias.definition_id          '_diffrn_scale_group_code'
-    _definition.update            2021-10-27
+    _definition.update            2023-11-14
     _description.text
 ;
     Code identifying a specific scale group of reflections (e.g. for
-    multi-film or multi-crystal data). The code must match a
-    _diffrn_refln.scale_group_code in the DIFFRN_REFLN list.
+    multi-film or multi-crystal data).
 ;
     _name.category_id             diffrn_scale_group
     _name.object_id               code
@@ -27846,7 +27846,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-10-15
+         3.3.0                    2023-11-14
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27905,4 +27905,8 @@ save_
        _chemical.identifier_InChI_key data items.
 
        Updated description of DIFFRN_RADIATION to remove looping reference.
+
+       Updated the definitions of _diffrn_refln.scale_group_code and
+       _diffrn_scale_group.code definitions to better reflect that
+       _diffrn_scale_group.code is the main data item.
 ;
