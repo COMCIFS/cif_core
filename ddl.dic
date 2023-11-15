@@ -2124,8 +2124,8 @@ save_type.contents
 ;
          Symop
 ;
-         A string composed of an integer optionally followed by an underscore
-         or space and three or more digits.
+         A string composed of a positive integer optionally followed by an
+         underscore or space and three or more digits.
 ;
          Implied
 ;
@@ -2288,7 +2288,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2023-11-12
+    _definition.update            2023-11-14
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -3078,6 +3078,8 @@ save_
 
        Explicitly specified that the _type.contents attribute value 'Implied'
        can only be applied in the DDLm Reference dictionary.
+
+       Updated the description of the 'Symop' content type.
 
        Updated the definition of the _method.expression attribute.
 ;
