@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-11-12
+    _dictionary.date              2023-11-13
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -1458,7 +1458,7 @@ save_import.get
 
     _definition.id                '_import.get'
     _definition.class             Attribute
-    _definition.update            2015-01-06
+    _definition.update            2023-11-13
     _description.text
 ;
     A list of tables of attributes defined individually in the category
@@ -1469,6 +1469,7 @@ save_import.get
     _type.purpose                 Import
     _type.source                  Assigned
     _type.container               List
+    _type.dimension               '[]'
     _type.contents                ByReference
     _type.contents_referenced_id  '_import_details.single'
     _method.purpose               Evaluation
@@ -3039,7 +3040,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-11-12
+         4.2.0                    2023-11-13
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
