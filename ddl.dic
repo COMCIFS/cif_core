@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-11-13
+    _dictionary.date              2023-11-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -1804,10 +1804,10 @@ save_method.expression
 
     _definition.id                '_method.expression'
     _definition.class             Attribute
-    _definition.update            2006-11-16
+    _definition.update            2023-11-14
     _description.text
 ;
-    The method expression for the defined item.
+    The method expression for the defined item or category.
 ;
     _name.category_id             method
     _name.object_id               expression
@@ -3040,7 +3040,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-11-13
+         4.2.0                    2023-11-14
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3078,4 +3078,6 @@ save_
 
        Explicitly specified that the _type.contents attribute value 'Implied'
        can only be applied in the DDLm Reference dictionary.
+
+       Updated the definition of the _method.expression attribute.
 ;
