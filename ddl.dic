@@ -2288,7 +2288,7 @@ save_type.purpose
 
     _definition.id                '_type.purpose'
     _definition.class             Attribute
-    _definition.update            2023-07-11
+    _definition.update            2023-11-12
     _description.text
 ;
     The primary purpose or function the defined data item serves in a
@@ -2344,7 +2344,7 @@ save_type.purpose
          State
 ;
          Used to type items with values that are restricted to codes present in
-         their 'enumeration_set.state' lists.
+         their _enumeration_set.state lists.
 ;
          Key
 ;
