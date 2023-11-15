@@ -1458,7 +1458,7 @@ save_import.get
 
     _definition.id                '_import.get'
     _definition.class             Attribute
-    _definition.update            2015-01-06
+    _definition.update            2023-11-13
     _description.text
 ;
     A list of tables of attributes defined individually in the category
@@ -1469,6 +1469,7 @@ save_import.get
     _type.purpose                 Import
     _type.source                  Assigned
     _type.container               List
+    _type.dimension               '[]'
     _type.contents                ByReference
     _type.contents_referenced_id  '_import_details.single'
     _method.purpose               Evaluation
@@ -1803,10 +1804,10 @@ save_method.expression
 
     _definition.id                '_method.expression'
     _definition.class             Attribute
-    _definition.update            2006-11-16
+    _definition.update            2023-11-14
     _description.text
 ;
-    The method expression for the defined item.
+    The method expression for the defined item or category.
 ;
     _name.category_id             method
     _name.object_id               expression
@@ -2343,7 +2344,7 @@ save_type.purpose
          State
 ;
          Used to type items with values that are restricted to codes present in
-         their 'enumeration_set.state' lists.
+         their _enumeration_set.state lists.
 ;
          Key
 ;
@@ -3079,4 +3080,6 @@ save_
        can only be applied in the DDLm Reference dictionary.
 
        Updated the description of the 'Symop' content type.
+
+       Updated the definition of the _method.expression attribute.
 ;
