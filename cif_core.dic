@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2023-11-14
+    _dictionary.date              2024-01-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -21160,6 +21160,40 @@ save_atom_site.disorder_group
 
 save_
 
+save_atom_site.fract_symmform
+
+    _definition.id                '_atom_site.fract_symmform'
+    _alias.definition_id          '_atom_site_fract_symmform'
+    _definition.update            2024-01-18
+    _description.text
+;
+    A symbolic expression that indicates the symmetry-restricted form of the
+    components of the positional coordinates of an atom.
+;
+    _name.category_id             atom_site
+    _name.object_id               symmform
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         Dx,Dy,Dz
+;
+         No symmetry restrictions.
+;
+         Dx,-Dx,0
+;
+         y component equal and opposite to x component with z component zero.
+;
+         Dx,0,Dz
+;
+         y component zero.
+;
+
+save_
+
 save_atom_site.fract_x
 
     _definition.id                '_atom_site.fract_x'
@@ -22461,6 +22495,41 @@ save_atom_site_aniso.ratio
     _type.contents                Real
     _enumeration.range            1.0:
     _units.code                   none
+
+save_
+
+save_atom_site_aniso.symmform
+
+    _definition.id                '_atom_site_aniso.symmform'
+    _alias.definition_id          '_atom_site_aniso_symmform'
+    _definition.update            2024-01-18
+    _description.text
+;
+    A symbolic expression that indicates the symmetry-restricted form of the
+    components of the anisotropic displacement parameters of an atom, where the
+    tensor components are ordered as A11, A22, A33, A23, A13, A12.
+;
+    _name.category_id             atom_site_aniso
+    _name.object_id               symmform
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         A11,A22,A33,A23,A13,A12
+;
+             No symmetry restrictions.
+;
+         A11,A11,A11
+;
+             Diagonal terms equal, zeros off-diagonal.
+;
+         A11,A22,A33,0,0,0
+;
+             Diagonal terms distinct, zeros off-diagonal.
+;
 
 save_
 
@@ -27846,7 +27915,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2023-11-14
+         3.3.0                    2024-01-18
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27909,4 +27978,7 @@ save_
        Updated the definitions of _diffrn_refln.scale_group_code and
        _diffrn_scale_group.code definitions to better reflect that
        _diffrn_scale_group.code is the main data item.
+
+       Added the _atom_site_fract.symmform and _atom_site_aniso.symmform
+       data items.
 ;
