@@ -81,8 +81,8 @@ save_alias.deprecation_date
 ;
     Date that the aliased tag was deprecated as a definition tag.
 
-    An unquoted value of '.' or '?' indicates that the associated alias has not
-    been deprecated.
+    An unquoted value of '.' indicates that the associated alias has not been
+    deprecated.
 ;
     _name.category_id             alias
     _name.object_id               deprecation_date
