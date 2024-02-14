@@ -2254,7 +2254,7 @@ save_diffrn_detector.description
     loop_
       _alias.definition_id
       _alias.deprecation_date
-         '_diffrn_radiation_detector'                                1999-03-24
+         '_diffrn_radiation_detector'                                1997-01-20
          '_diffrn_detector'                                          .
          '_diffrn_detector.detector'                                 .
 
@@ -2306,7 +2306,7 @@ save_diffrn_detector.dtime
       _alias.deprecation_date
          '_diffrn_detector_dtime'                                    .
          '_diffrn_radiation.detector_dtime'                          ?
-         '_diffrn_radiation_detector_dtime'                          1999-03-24
+         '_diffrn_radiation_detector_dtime'                          1997-01-20
 
     _definition.update            2024-02-14
     _description.text
