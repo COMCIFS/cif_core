@@ -11331,11 +11331,12 @@ save_space_group.it_number
 
     loop_
       _alias.definition_id
-         '_space_group_IT_number'
-         '_symmetry.Int_Tables_number'
-         '_symmetry_Int_Tables_number'
+      _alias.deprecation_date
+         '_space_group_IT_number'                                    .
+         '_symmetry.Int_Tables_number'                               ?
+         '_symmetry_Int_Tables_number'                               2003-10-04
 
-    _definition.update            2021-03-03
+    _definition.update            2024-02-14
     _description.text
 ;
     The number as assigned in International Tables for Crystallography
@@ -11487,10 +11488,11 @@ save_space_group.name_h-m_full
 
     loop_
       _alias.definition_id
-         '_symmetry.space_group_name_H-M'
-         '_symmetry_space_group_name_H-M'
+      _alias.deprecation_date
+         '_symmetry.space_group_name_H-M'                            ?
+         '_symmetry_space_group_name_H-M'                            2003-10-04
 
-    _definition.update            2023-01-13
+    _definition.update            2024-02-14
     _description.text
 ;
     The full international Hermann-Mauguin space-group symbol as
@@ -11585,11 +11587,12 @@ save_space_group.name_hall
 
     loop_
       _alias.definition_id
-         '_space_group_name_Hall'
-         '_symmetry_space_group_name_Hall'
-         '_symmetry.space_group_name_Hall'
+      _alias.deprecation_date
+         '_space_group_name_Hall'                                    .
+         '_symmetry_space_group_name_Hall'                           2003-10-04
+         '_symmetry.space_group_name_Hall'                           ?
 
-    _definition.update            2021-03-03
+    _definition.update            2024-02-14
     _description.text
 ;
     Space group symbol defined by Hall. Each component of the
@@ -11873,11 +11876,12 @@ save_space_group_symop.id
 
     loop_
       _alias.definition_id
-         '_space_group_symop_id'
-         '_symmetry_equiv.pos_site_id'
-         '_symmetry_equiv_pos_site_id'
+      _alias.deprecation_date
+         '_space_group_symop_id'                                     .
+         '_symmetry_equiv.pos_site_id'                               ?
+         '_symmetry_equiv_pos_site_id'                               2003-10-04
 
-    _definition.update            2021-11-15
+    _definition.update            2024-02-14
     _description.text
 ;
     Index identifying each entry in the _space_group_symop.operation_xyz
@@ -11927,11 +11931,12 @@ save_space_group_symop.operation_xyz
 
     loop_
       _alias.definition_id
-         '_space_group_symop_operation_xyz'
-         '_symmetry_equiv.pos_as_xyz'
-         '_symmetry_equiv_pos_as_xyz'
+      _alias.deprecation_date
+         '_space_group_symop_operation_xyz'                          .
+         '_symmetry_equiv.pos_as_xyz'                                ?
+         '_symmetry_equiv_pos_as_xyz'                                2003-10-04
 
-    _definition.update            2016-05-13
+    _definition.update            2024-02-14
     _description.text
 ;
     A parsable string giving one of the symmetry operations of the
