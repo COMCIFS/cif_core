@@ -2253,11 +2253,12 @@ save_diffrn_detector.description
 
     loop_
       _alias.definition_id
-         '_diffrn_radiation_detector'
-         '_diffrn_detector'
-         '_diffrn_detector.detector'
+      _alias.deprecation_date
+         '_diffrn_radiation_detector'                                1999-03-24
+         '_diffrn_detector'                                          .
+         '_diffrn_detector.detector'                                 .
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Description of the type of diffraction radiation detector.
@@ -2302,11 +2303,12 @@ save_diffrn_detector.dtime
 
     loop_
       _alias.definition_id
-         '_diffrn_detector_dtime'
-         '_diffrn_radiation.detector_dtime'
-         '_diffrn_radiation_detector_dtime'
+      _alias.deprecation_date
+         '_diffrn_detector_dtime'                                    .
+         '_diffrn_radiation.detector_dtime'                          ?
+         '_diffrn_radiation_detector_dtime'                          1999-03-24
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     The maximum time between two detector signals that cannot be resolved.
@@ -4040,12 +4042,13 @@ save_diffrn_refln.intensity_net_su
 
     loop_
       _alias.definition_id
-         '_diffrn_refln_intensity_u'
-         '_diffrn_refln_intensity_sigma'
-         '_diffrn_refln.intensity_sigma'
-         '_diffrn_refln.intensity_u'
+      _alias.deprecation_date
+         '_diffrn_refln_intensity_u'                                 .
+         '_diffrn_refln_intensity_sigma'                             1999-03-24
+         '_diffrn_refln.intensity_sigma'                             ?
+         '_diffrn_refln.intensity_u'                                 .
 
-    _definition.update            2023-07-01
+    _definition.update            2024-02-14
     _description.text
 ;
     Standard uncertainty of _diffrn_refln.intensity_net.
@@ -4405,13 +4408,14 @@ save_diffrn_reflns.av_suneti_over_neti
 
     loop_
       _alias.definition_id
-         '_diffrn_reflns_av_sigmaI_over_netI'
-         '_diffrn_reflns_av_sigmaI/netI'
-         '_diffrn_reflns.av_unetI/netI'
-         '_diffrn_reflns_av_unetI/netI'
-         '_diffrn_reflns.av_sigmaI_over_netI'
+      _alias.deprecation_date
+         '_diffrn_reflns_av_sigmaI_over_netI'                        ?
+         '_diffrn_reflns_av_sigmaI/netI'                             1999-03-24
+         '_diffrn_reflns.av_unetI/netI'                              .
+         '_diffrn_reflns_av_unetI/netI'                              .
+         '_diffrn_reflns.av_sigmaI_over_netI'                        ?
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Recorded [sum |su(netI)| / sum |netI|] for all measured reflections.
@@ -4846,13 +4850,14 @@ save_diffrn_reflns_class.av_sui_over_i
 
     loop_
       _alias.definition_id
-         '_diffrn_reflns_class_av_uI_over_I'
-         '_diffrn_reflns_class.av_uI/I'
-         '_diffrn_reflns_class_av_uI/I'
-         '_diffrn_reflns_class.av_sgI/I'
-         '_diffrn_reflns_class_av_sgI/I'
+      _alias.deprecation_date
+         '_diffrn_reflns_class_av_uI_over_I'                         .
+         '_diffrn_reflns_class.av_uI/I'                              .
+         '_diffrn_reflns_class_av_uI/I'                              .
+         '_diffrn_reflns_class.av_sgI/I'                             ?
+         '_diffrn_reflns_class_av_sgI/I'                             1999-03-24
 
-    _definition.update            2014-07-22
+    _definition.update            2024-02-14
     _description.text
 ;
     Recorded [sum|su(net I)|/sum|net I|] in a reflection class.
@@ -5694,12 +5699,13 @@ save_diffrn_standards.scale_su_average
 
     loop_
       _alias.definition_id
-         '_diffrn_standards_scale_sigma'
-         '_diffrn_standards.scale_sigma'
-         '_diffrn_standards.scale_u'
-         '_diffrn_standards_scale_u'
+      _alias.deprecation_date
+         '_diffrn_standards_scale_sigma'                             1999-03-24
+         '_diffrn_standards.scale_sigma'                             ?
+         '_diffrn_standards.scale_u'                                 .
+         '_diffrn_standards_scale_u'                                 .
 
-    _definition.update            2023-01-10
+    _definition.update            2024-02-14
     _description.text
 ;
     The average standard uncertainty of the individual standard scales
@@ -6559,12 +6565,13 @@ save_refln.include_status
 
     loop_
       _alias.definition_id
-         '_refln_include_status'
-         '_refln_observed_status'
-         '_refln.observed_status'
-         '_refln.status'
+      _alias.deprecation_date
+         '_refln_include_status'                                     .
+         '_refln_observed_status'                                    1999-03-24
+         '_refln.observed_status'                                    ?
+         '_refln.status'                                             .
 
-    _definition.update            2023-01-13
+    _definition.update            2024-02-14
     _description.text
 ;
     Code indicating how the reflection was included in the refinement
@@ -7320,12 +7327,13 @@ save_reflns.number_gt
 
     loop_
       _alias.definition_id
-         '_reflns_number_gt'
-         '_reflns_number_observed'
-         '_reflns_number_obs'
-         '_reflns.number_obs'
+      _alias.deprecation_date
+         '_reflns_number_gt'                                         .
+         '_reflns_number_observed'                                   1999-03-24
+         '_reflns_number_obs'                                        ?
+         '_reflns.number_obs'                                        ?
 
-    _definition.update            2023-01-13
+    _definition.update            2024-02-14
     _description.text
 ;
     Count of reflections in the REFLN set (not the DIFFRN_REFLN set) which
@@ -7405,11 +7413,12 @@ save_reflns.threshold_expression
 
     loop_
       _alias.definition_id
-         '_reflns_threshold_expression'
-         '_reflns_observed_criterion'
-         '_reflns.observed_criterion'
+      _alias.deprecation_date
+         '_reflns_threshold_expression'                              .
+         '_reflns_observed_criterion'                                1999-03-24
+         '_reflns.observed_criterion'                                ?
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Description of the criterion used to classify a reflection as having a
@@ -7981,12 +7990,13 @@ save_reflns_shell.meani_over_sui_all
 
     loop_
       _alias.definition_id
-         '_reflns_shell_meanI_over_uI_all'
-         '_reflns_shell_meanI_over_sigI_all'
-         '_reflns_shell.meanI_over_sigI_all'
-         '_reflns_shell.meanI_over_uI_all'
+      _alias.deprecation_date
+         '_reflns_shell_meanI_over_uI_all'                           .
+         '_reflns_shell_meanI_over_sigI_all'                         1999-03-24
+         '_reflns_shell.meanI_over_sigI_all'                         ?
+         '_reflns_shell.meanI_over_uI_all'                           .
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Ratio of the mean intensity in a shell to the mean standard uncertainty
@@ -8009,14 +8019,15 @@ save_reflns_shell.meani_over_sui_gt
 
     loop_
       _alias.definition_id
-         '_reflns_shell_meanI_over_sigI_obs'
-         '_reflns_shell.meanI_over_sigI_obs'
-         '_reflns_shell.meanI_over_sigI_gt'
-         '_reflns_shell_meanI_over_sigI_gt'
-         '_reflns_shell.meanI_over_uI_gt'
-         '_reflns_shell_meanI_over_uI_gt'
+      _alias.deprecation_date
+         '_reflns_shell_meanI_over_sigI_obs'                         1999-03-24
+         '_reflns_shell.meanI_over_sigI_obs'                         ?
+         '_reflns_shell.meanI_over_sigI_gt'                          ?
+         '_reflns_shell_meanI_over_sigI_gt'                          1999-03-24
+         '_reflns_shell.meanI_over_uI_gt'                            .
+         '_reflns_shell_meanI_over_uI_gt'                            .
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Ratio of the mean intensity of significantly intense reflections (see
@@ -8060,11 +8071,12 @@ save_reflns_shell.number_measured_gt
 
     loop_
       _alias.definition_id
-         '_reflns_shell_number_measured_obs'
-         '_reflns_shell.number_measured_obs'
-         '_reflns_shell_number_measured_gt'
+      _alias.deprecation_date
+         '_reflns_shell_number_measured_obs'                         1999-03-24
+         '_reflns_shell.number_measured_obs'                         ?
+         '_reflns_shell_number_measured_gt'                          .
 
-    _definition.update            2021-03-01
+    _definition.update            2024-02-14
     _description.text
 ;
     Number of reflections measured for this resolution shell which are
@@ -8132,11 +8144,12 @@ save_reflns_shell.number_unique_gt
 
     loop_
       _alias.definition_id
-         '_reflns_shell_number_unique_gt'
-         '_reflns_shell_number_unique_obs'
-         '_reflns_shell.number_unique_obs'
+      _alias.deprecation_date
+         '_reflns_shell_number_unique_gt'                            .
+         '_reflns_shell_number_unique_obs'                           1999-03-24
+         '_reflns_shell.number_unique_obs'                           ?
 
-    _definition.update            2021-03-01
+    _definition.update            2024-02-14
     _description.text
 ;
     Number of symmetry-unique reflections present in this reflection shell
@@ -8179,11 +8192,12 @@ save_reflns_shell.percent_possible_gt
 
     loop_
       _alias.definition_id
-         '_reflns_shell_percent_possible_gt'
-         '_reflns_shell_percent_possible_obs'
-         '_reflns_shell.percent_possible_obs'
+      _alias.deprecation_date
+         '_reflns_shell_percent_possible_gt'                         .
+         '_reflns_shell_percent_possible_obs'                        1999-03-24
+         '_reflns_shell.percent_possible_obs'                        ?
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Percentage of reflections present in this shell which are significantly
@@ -8237,11 +8251,12 @@ save_reflns_shell.rmerge_f_gt
 
     loop_
       _alias.definition_id
-         '_reflns_shell_Rmerge_F_obs'
-         '_reflns_shell.Rmerge_F_obs'
-         '_reflns_shell_Rmerge_F_gt'
+      _alias.deprecation_date
+         '_reflns_shell_Rmerge_F_obs'                                1999-03-24
+         '_reflns_shell.Rmerge_F_obs'                                ?
+         '_reflns_shell_Rmerge_F_gt'                                 .
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Rmerge(F) for reflections in a shell which are significantly intense
@@ -8296,11 +8311,12 @@ save_reflns_shell.rmerge_i_gt
 
     loop_
       _alias.definition_id
-         '_reflns_shell_Rmerge_I_obs'
-         '_reflns_shell.Rmerge_I_obs'
-         '_reflns_shell_Rmerge_I_gt'
+      _alias.deprecation_date
+         '_reflns_shell_Rmerge_I_obs'                                1999-03-24
+         '_reflns_shell.Rmerge_I_obs'                                ?
+         '_reflns_shell_Rmerge_I_gt'                                 .
 
-    _definition.update            2012-11-26
+    _definition.update            2024-02-14
     _description.text
 ;
     Rmerge(I) for reflections in a shell which are significantly intense
@@ -11592,7 +11608,7 @@ save_space_group.name_hall
          '_symmetry_space_group_name_Hall'                           2003-10-04
          '_symmetry.space_group_name_Hall'                           ?
 
-    _definition.update            2024-02-14
+    _definition.update            2023-02-13
     _description.text
 ;
     Space group symbol defined by Hall. Each component of the
@@ -20647,11 +20663,12 @@ save_atom_site.adp_type
 
     loop_
       _alias.definition_id
-         '_atom_site_ADP_type'
-         '_atom_site_thermal_displace_type'
-         '_atom_site.thermal_displace_type'
+      _alias.deprecation_date
+         '_atom_site_ADP_type'                                       .
+         '_atom_site_thermal_displace_type'                          1999-03-24
+         '_atom_site.thermal_displace_type'                          ?
 
-    _definition.update            2021-09-24
+    _definition.update            2024-02-14
     _description.text
 ;
     Code for type of atomic displacement parameters used for the site.
@@ -26221,12 +26238,13 @@ save_refine_ls.goodness_of_fit_gt
 
     loop_
       _alias.definition_id
-         '_refine_ls_goodness_of_fit_gt'
-         '_refine_ls_goodness_of_fit_obs'
-         '_refine.ls_goodness_of_fit_obs'
-         '_refine.ls_goodness_of_fit_gt'
+      _alias.deprecation_date
+         '_refine_ls_goodness_of_fit_gt'                             .
+         '_refine_ls_goodness_of_fit_obs'                            1999-03-24
+         '_refine.ls_goodness_of_fit_obs'                            ?
+         '_refine.ls_goodness_of_fit_gt'                             .
 
-    _definition.update            2012-11-20
+    _definition.update            2024-02-14
     _description.text
 ;
     Least-squares goodness-of-fit parameter S for significantly
@@ -26670,12 +26688,13 @@ save_refine_ls.r_factor_gt
 
     loop_
       _alias.definition_id
-         '_refine_ls_R_factor_obs'
-         '_refine_ls_R_factor_gt'
-         '_refine.ls_R_factor_obs'
-         '_refine.ls_R_factor_gt'
+      _alias.deprecation_date
+         '_refine_ls_R_factor_obs'                                   1999-03-24
+         '_refine_ls_R_factor_gt'                                    .
+         '_refine.ls_R_factor_obs'                                   ?
+         '_refine.ls_R_factor_gt'                                    .
 
-    _definition.update            2012-11-20
+    _definition.update            2024-02-14
     _description.text
 ;
     Residual factor for the reflections judged significantly intense
@@ -26852,11 +26871,12 @@ save_refine_ls.restrained_s_gt
 
     loop_
       _alias.definition_id
-         '_refine_ls_restrained_S_obs'
-         '_refine_ls_restrained_S_gt'
-         '_refine.ls_restrained_S_obs'
+      _alias.deprecation_date
+         '_refine_ls_restrained_S_obs'                               1999-03-24
+         '_refine_ls_restrained_S_gt'                                .
+         '_refine.ls_restrained_S_obs'                               ?
 
-    _definition.update            2012-11-20
+    _definition.update            2024-02-14
     _description.text
 ;
     Least-squares goodness-of-fit parameter S' for significantly intense
@@ -26923,13 +26943,14 @@ save_refine_ls.shift_over_su_max
 
     loop_
       _alias.definition_id
-         '_refine_ls_shift_over_su_max'
-         '_refine.ls_shift_over_esd_max'
-         '_refine.ls_shift_over_su_max'
-         '_refine_ls_shift/su_max'
-         '_refine_ls_shift/esd_max'
+      _alias.deprecation_date
+         '_refine_ls_shift_over_su_max'                              .
+         '_refine.ls_shift_over_esd_max'                             ?
+         '_refine.ls_shift_over_su_max'                              .
+         '_refine_ls_shift/su_max'                                   .
+         '_refine_ls_shift/esd_max'                                  1999-03-24
 
-    _definition.update            2012-11-20
+    _definition.update            2024-02-14
     _description.text
 ;
     The largest ratio of the final least-squares parameter shift
@@ -26981,13 +27002,14 @@ save_refine_ls.shift_over_su_mean
 
     loop_
       _alias.definition_id
-         '_refine_ls_shift_over_su_mean'
-         '_refine.ls_shift_over_esd_mean'
-         '_refine.ls_shift_over_su_mean'
-         '_refine_ls_shift/su_mean'
-         '_refine_ls_shift/esd_mean'
+      _alias.deprecation_date
+         '_refine_ls_shift_over_su_mean'                             .
+         '_refine.ls_shift_over_esd_mean'                            ?
+         '_refine.ls_shift_over_su_mean'                             .
+         '_refine_ls_shift/su_mean'                                  .
+         '_refine_ls_shift/esd_mean'                                 1999-03-24
 
-    _definition.update            2012-11-20
+    _definition.update            2024-02-14
     _description.text
 ;
     The average ratio of the final least-squares parameter shift
@@ -27168,11 +27190,12 @@ save_refine_ls.wr_factor_gt
 
     loop_
       _alias.definition_id
-         '_refine_ls_wR_factor_obs'
-         '_refine.ls_wR_factor_obs'
-         '_refine_ls_wR_factor_gt'
+      _alias.deprecation_date
+         '_refine_ls_wR_factor_obs'                                  1999-03-24
+         '_refine.ls_wR_factor_obs'                                  ?
+         '_refine_ls_wR_factor_gt'                                   .
 
-    _definition.update            2019-01-09
+    _definition.update            2024-02-14
     _description.text
 ;
     Weighted residual factors for significantly intense reflections
