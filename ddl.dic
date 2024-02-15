@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2023-11-14
+    _dictionary.date              2024-02-05
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -76,10 +76,13 @@ save_alias.deprecation_date
 
     _definition.id                '_alias.deprecation_date'
     _definition.class             Attribute
-    _definition.update            2013-09-08
+    _definition.update            2024-02-05
     _description.text
 ;
     Date that the aliased tag was deprecated as a definition tag.
+
+    An unquoted value of '.' indicates that the associated alias has not been
+    deprecated.
 ;
     _name.category_id             alias
     _name.object_id               deprecation_date
@@ -87,6 +90,7 @@ save_alias.deprecation_date
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Date
+    _enumeration.default          .
 
 save_
 
@@ -3040,7 +3044,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2023-11-14
+         4.2.0                    2024-02-05
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3082,4 +3086,6 @@ save_
        Updated the description of the 'Symop' content type.
 
        Updated the definition of the _method.expression attribute.
+
+       Updated definition of the _alias.deprecation_date attribute.
 ;
