@@ -4409,7 +4409,6 @@ save_diffrn_reflns.av_suneti_over_neti
     loop_
       _alias.definition_id
       _alias.deprecation_date
-         '_diffrn_reflns_av_sigmaI_over_netI'                        .
          '_diffrn_reflns_av_sigmaI/netI'                             1999-03-24
          '_diffrn_reflns.av_unetI/netI'                              .
          '_diffrn_reflns_av_unetI/netI'                              .
@@ -7330,7 +7329,6 @@ save_reflns.number_gt
       _alias.deprecation_date
          '_reflns_number_gt'                                         .
          '_reflns_number_observed'                                   1999-03-24
-         '_reflns_number_obs'                                        .
          '_reflns.number_obs'                                        .
 
     _definition.update            2024-02-14
