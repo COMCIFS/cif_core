@@ -5330,11 +5330,12 @@ save_diffrn_source.description
 
     loop_
       _alias.definition_id
-         '_diffrn_source'
-         '_diffrn_radiation_source'
-         '_diffrn_source.source'
+      _alias.deprecation_date
+         '_diffrn_source'                                            .
+         '_diffrn_radiation_source'                                  1997-01-20
+         '_diffrn_source.source'                                     .
 
-    _definition.update            2023-01-16
+    _definition.update            2024-02-14
     _description.text
 ;
     The general class of the source of radiation. This is deprecated.
@@ -11755,7 +11756,8 @@ save_symmetry.cell_setting
     _definition_replaced.id       1
     _definition_replaced.by       '_space_group.crystal_system'
     _alias.definition_id          '_symmetry_cell_setting'
-    _definition.update            2021-08-18
+    _alias.deprecation_date       2003-10-04
+    _definition.update            2024-02-14
     _description.text
 ;
     This data item should not be used and is DEPRECATED as it is
