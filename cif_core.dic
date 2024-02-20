@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-02-14
+    _dictionary.date              2024-02-20
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -21184,7 +21184,7 @@ save_atom_site.fract_symmform
 
     _definition.id                '_atom_site.fract_symmform'
     _alias.definition_id          '_atom_site_fract_symmform'
-    _definition.update            2024-01-18
+    _definition.update            2024-02-20
     _description.text
 ;
     A symbolic expression that indicates the symmetry-restricted form of the
@@ -22524,7 +22524,7 @@ save_atom_site_aniso.symmform
 
     _definition.id                '_atom_site_aniso.symmform'
     _alias.definition_id          '_atom_site_aniso_symmform'
-    _definition.update            2024-01-18
+    _definition.update            2024-02-20
     _description.text
 ;
     A symbolic expression that indicates the symmetry-restricted form of the
@@ -27944,7 +27944,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-02-14
+         3.3.0                    2024-02-20
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
