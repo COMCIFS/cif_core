@@ -5700,9 +5700,13 @@ save_diffrn_source.description
     loop_
       _alias.definition_id
       _alias.deprecation_date
+      _alias.dictionary_uri
          '_diffrn_source'                                            .
+         ?
          '_diffrn_radiation_source'                                  1997-01-20
+         https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.0.1.dic
          '_diffrn_source.source'                                     .
+         ?
 
     _definition.update            2024-02-14
     _description.text
@@ -12338,6 +12342,8 @@ save_symmetry.cell_setting
     _definition_replaced.by       '_space_group.crystal_system'
     _alias.definition_id          '_symmetry_cell_setting'
     _alias.deprecation_date       2003-10-04
+    _alias.dictionary_uri
+        https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
     _definition.update            2024-02-14
     _description.text
 ;
