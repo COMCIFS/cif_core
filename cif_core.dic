@@ -5354,11 +5354,12 @@ save_diffrn_source.description
 
     loop_
       _alias.definition_id
-         '_diffrn_source'
-         '_diffrn_radiation_source'
-         '_diffrn_source.source'
+      _alias.deprecation_date
+         '_diffrn_source'                                            .
+         '_diffrn_radiation_source'                                  1997-01-20
+         '_diffrn_source.source'                                     .
 
-    _definition.update            2023-01-16
+    _definition.update            2024-02-14
     _description.text
 ;
     The general class of the source of radiation. This is deprecated.
@@ -11840,7 +11841,8 @@ save_symmetry.cell_setting
     _definition_replaced.id       1
     _definition_replaced.by       '_space_group.crystal_system'
     _alias.definition_id          '_symmetry_cell_setting'
-    _definition.update            2021-08-18
+    _alias.deprecation_date       2003-10-04
+    _definition.update            2024-02-14
     _description.text
 ;
     This data item should not be used and is DEPRECATED as it is
@@ -21277,6 +21279,41 @@ save_atom_site.disorder_group
 
 save_
 
+save_atom_site.fract_symmform
+
+    _definition.id                '_atom_site.fract_symmform'
+    _alias.definition_id          '_atom_site_fract_symmform'
+    _definition.update            2024-02-20
+    _description.text
+;
+    A symbolic expression that indicates the symmetry-restricted form of the
+    components of the positional coordinates of an atom.
+;
+    _name.category_id             atom_site
+    _name.object_id               symmform
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         Dx,Dy,Dz
+;
+         No symmetry restrictions.
+;
+         Dx,-Dx,0
+;
+         y component equal and opposite to x component with z component zero.
+;
+         Dx,0,Dz
+;
+         y component zero.
+;
+
+save_
+
 save_atom_site.fract_x
 
     _definition.id                '_atom_site.fract_x'
@@ -22583,6 +22620,42 @@ save_atom_site_aniso.ratio
     _type.contents                Real
     _enumeration.range            1.0:
     _units.code                   none
+
+save_
+
+save_atom_site_aniso.symmform
+
+    _definition.id                '_atom_site_aniso.symmform'
+    _alias.definition_id          '_atom_site_aniso_symmform'
+    _definition.update            2024-02-20
+    _description.text
+;
+    A symbolic expression that indicates the symmetry-restricted form of the
+    components of the anisotropic displacement parameters of an atom, where the
+    tensor components are ordered as A11, A22, A33, A23, A13, A12.
+;
+    _name.category_id             atom_site_aniso
+    _name.object_id               symmform
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         A11,A22,A33,A23,A13,A12
+;
+             No symmetry restrictions.
+;
+         A11,A11,A11
+;
+             Diagonal terms equal, zeros off-diagonal.
+;
+         A11,A22,A33,0,0,0
+;
+             Diagonal terms distinct, zeros off-diagonal.
+;
 
 save_
 
@@ -28070,6 +28143,9 @@ save_
 
        Added the deprecation date for multiple aliases that were originally
        deprecated in the DDL1 version of the dictionary.
+
+       Added the _atom_site_fract.symmform and _atom_site_aniso.symmform
+       data items.
 
        Added dictionary URIs for deprecated data names.
 ;
