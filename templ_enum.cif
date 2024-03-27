@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2023-11-27
+    _dictionary.date             2024-03-27
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -606,6 +606,7 @@ save_database_list
 loop_
     _enumeration_set.state
     _enumeration_set.detail
+    BIncStrDB    'Bilbao Modulated Structures Database'
     CAS          'Chemical Abstracts'
     COD          'Crystallography Open Database'
     CSD          'Cambridge Structural Database'
@@ -2350,7 +2351,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2023-11-27
+         1.4.9                    202$-03-27
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2378,4 +2379,6 @@ save_
        Added hertz and counts_per_second to units_code.
 
        Renamed the 'photons per second' unit to 'photons_per_second'.
+
+       Added BIncStrDB to save_database_list (bm)
 ;
