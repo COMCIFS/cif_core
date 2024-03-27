@@ -2351,7 +2351,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    202$-03-27
+         1.4.9                    2024-03-27
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2380,5 +2380,5 @@ save_
 
        Renamed the 'photons per second' unit to 'photons_per_second'.
 
-       Added BIncStrDB to save_database_list (bm)
+       Added BIncStrDB to save_database_list. (bm)
 ;
