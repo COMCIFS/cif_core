@@ -10,7 +10,7 @@ data_CORE_DIC
     _dictionary.title             CORE_DIC
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-02-20
+    _dictionary.date              2024-03-27
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -16876,6 +16876,25 @@ save_DATABASE_CODE
 
 save_
 
+save_database_code.bincstrdb
+
+    _definition.id                '_database_code.BIncStrDB'
+
+    _definition.update            2024-03-27
+    _description.text
+;
+    Code assigned by the Bilbao Modulated Structures Database
+    (B-IncStrDB).
+;
+    _name.category_id             database_code
+    _name.object_id               BIncStrDB
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
 save_database_code.cas
 
     _definition.id                '_database_code.CAS'
@@ -27946,7 +27965,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-02-20
+         3.3.0                    2024-03-27
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28015,4 +28034,6 @@ save_
 
        Added the _atom_site_fract.symmform and _atom_site_aniso.symmform
        data items.
+
+       Added _database_code.BIncStrDB (bm).
 ;
