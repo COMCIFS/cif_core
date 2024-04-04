@@ -2437,12 +2437,14 @@ save_diffrn_detector.description
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_radiation_detector'                                1997-01-20
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.0.1.dic
+         2.0.1
          '_diffrn_detector'                                          .
-         ?
+         ? ?
          '_diffrn_detector.detector'                                 .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -2491,12 +2493,14 @@ save_diffrn_detector.dtime
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_detector_dtime'                                    .
-         ?
+         ? ?
          '_diffrn_radiation.detector_dtime'                          .
-         ?
+         ? ?
          '_diffrn_radiation_detector_dtime'                          1997-01-20
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.0.1.dic
+         2.0.1
 
     _definition.update            2024-02-20
     _description.text
@@ -4374,14 +4378,16 @@ save_diffrn_refln.intensity_net_su
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_refln_intensity_u'                                 .
-         ?
+         ? ?
          '_diffrn_refln_intensity_sigma'                             1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_diffrn_refln.intensity_sigma'                             .
-         ?
+         ? ?
          '_diffrn_refln.intensity_u'                                 .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -4745,14 +4751,16 @@ save_diffrn_reflns.av_suneti_over_neti
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_reflns_av_sigmaI/netI'                             1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_diffrn_reflns.av_unetI/netI'                              .
-         ?
+         ? ?
          '_diffrn_reflns_av_unetI/netI'                              .
-         ?
+         ? ?
          '_diffrn_reflns.av_sigmaI_over_netI'                        .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -5191,16 +5199,18 @@ save_diffrn_reflns_class.av_sui_over_i
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_reflns_class_av_uI_over_I'                         .
-         ?
+         ? ?
          '_diffrn_reflns_class.av_uI/I'                              .
-         ?
+         ? ?
          '_diffrn_reflns_class_av_uI/I'                              .
-         ?
+         ? ?
          '_diffrn_reflns_class.av_sgI/I'                             .
-         ?
+         ? ?
          '_diffrn_reflns_class_av_sgI/I'                             1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
 
     _definition.update            2024-02-20
     _description.text
@@ -5701,12 +5711,14 @@ save_diffrn_source.description
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_source'                                            .
-         ?
+         ? ?
          '_diffrn_radiation_source'                                  1997-01-20
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.0.1.dic
+         2.0.1
          '_diffrn_source.source'                                     .
-         ?
+         ? ?
 
     _definition.update            2024-02-14
     _description.text
@@ -6101,14 +6113,16 @@ save_diffrn_standards.scale_su_average
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_diffrn_standards_scale_sigma'                             1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_diffrn_standards.scale_sigma'                             .
-         ?
+         ? ?
          '_diffrn_standards.scale_u'                                 .
-         ?
+         ? ?
          '_diffrn_standards_scale_u'                                 .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -6985,14 +6999,16 @@ save_refln.include_status
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refln_include_status'                                     .
-         ?
+         ? ?
          '_refln_observed_status'                                    1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_refln.observed_status'                                    .
-         ?
+         ? ?
          '_refln.status'                                             .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -7754,12 +7770,14 @@ save_reflns.number_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_number_gt'                                         .
-         ?
+         ? ?
          '_reflns_number_observed'                                   1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns.number_obs'                                        .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -7843,12 +7861,14 @@ save_reflns.threshold_expression
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_threshold_expression'                              .
-         ?
+         ? ?
          '_reflns_observed_criterion'                                1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns.observed_criterion'                                .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8424,14 +8444,16 @@ save_reflns_shell.meani_over_sui_all
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_meanI_over_uI_all'                           .
-         ?
+         ? ?
          '_reflns_shell_meanI_over_sigI_all'                         1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.meanI_over_sigI_all'                         .
-         ?
+         ? ?
          '_reflns_shell.meanI_over_uI_all'                           .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8458,18 +8480,21 @@ save_reflns_shell.meani_over_sui_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_meanI_over_sigI_obs'                         1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.meanI_over_sigI_obs'                         .
-         ?
+         ? ?
          '_reflns_shell.meanI_over_sigI_gt'                          .
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell_meanI_over_sigI_gt'                          1999-03-24
-         ?
+         ? ?
          '_reflns_shell.meanI_over_uI_gt'                            .
-         ?
+         ? ?
          '_reflns_shell_meanI_over_uI_gt'                            .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8517,12 +8542,14 @@ save_reflns_shell.number_measured_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_number_measured_obs'                         1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.number_measured_obs'                         .
-         ?
+         ? ?
          '_reflns_shell_number_measured_gt'                          .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8594,12 +8621,14 @@ save_reflns_shell.number_unique_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_number_unique_gt'                            .
-         ?
+         ? ?
          '_reflns_shell_number_unique_obs'                           1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.number_unique_obs'                           .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8646,12 +8675,14 @@ save_reflns_shell.percent_possible_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_percent_possible_gt'                         .
-         ?
+         ? ?
          '_reflns_shell_percent_possible_obs'                        1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.percent_possible_obs'                        .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8709,12 +8740,14 @@ save_reflns_shell.rmerge_f_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_Rmerge_F_obs'                                1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.Rmerge_F_obs'                                .
-         ?
+         ? ?
          '_reflns_shell_Rmerge_F_gt'                                 .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -8773,12 +8806,14 @@ save_reflns_shell.rmerge_i_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_reflns_shell_Rmerge_I_obs'                                1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_reflns_shell.Rmerge_I_obs'                                .
-         ?
+         ? ?
          '_reflns_shell_Rmerge_I_gt'                                 .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -11922,12 +11957,14 @@ save_space_group.it_number
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_space_group_IT_number'                                    .
-         ?
+         ? ?
          '_symmetry.Int_Tables_number'                               .
-         ?
+         ? ?
          '_symmetry_Int_Tables_number'                               2003-10-04
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
+         2.3
 
     _definition.update            2024-02-20
     _description.text
@@ -12083,10 +12120,12 @@ save_space_group.name_h-m_full
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_symmetry.space_group_name_H-M'                            .
-         ?
+         ? ?
          '_symmetry_space_group_name_H-M'                            2003-10-04
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
+         2.3
 
     _definition.update            2025-06-18
     _description.text
@@ -12185,12 +12224,14 @@ save_space_group.name_hall
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_space_group_name_Hall'                                    .
-         ?
+         ? ?
          '_symmetry_space_group_name_Hall'                           2003-10-04
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
+         2.3
          '_symmetry.space_group_name_Hall'                           .
-         ?
+         ? ?
 
     _definition.update            2023-02-13
     _description.text
@@ -12344,6 +12385,7 @@ save_symmetry.cell_setting
     _alias.deprecation_date       2003-10-04
     _alias.dictionary_uri
         https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
+    _alias.dictionary_version     2.3
     _definition.update            2024-02-14
     _description.text
 ;
@@ -12481,12 +12523,14 @@ save_space_group_symop.id
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_space_group_symop_id'                                     .
-         ?
+         ? ?
          '_symmetry_equiv.pos_site_id'                               .
-         ?
+         ? ?
          '_symmetry_equiv_pos_site_id'                               2003-10-04
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
+         2.3
 
     _definition.update            2024-02-14
     _description.text
@@ -12540,12 +12584,14 @@ save_space_group_symop.operation_xyz
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_space_group_symop_operation_xyz'                          .
-         ?
+         ? ?
          '_symmetry_equiv.pos_as_xyz'                                .
-         ?
+         ? ?
          '_symmetry_equiv_pos_as_xyz'                                2003-10-04
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.3.dic
+         2.3
 
     _definition.update            2024-02-14
     _description.text
@@ -21418,12 +21464,14 @@ save_atom_site.adp_type
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_atom_site_ADP_type'                                       .
-         ?
+         ? ?
          '_atom_site_thermal_displace_type'                          1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_atom_site.thermal_displace_type'                          .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -22405,12 +22453,14 @@ save_atom_site.site_symmetry_multiplicity
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_atom_site_site_symmetry_multiplicity'                     .
-         ?
+         ? ?
          '_atom_site_symmetry_multiplicity'                          2014-05-20
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.4.4.dic
+         2.4.4
          '_atom_site.symmetry_multiplicity'                          .
-         ?
+         ? ?
 
     _definition.update            2024-02-14
     _description.text
@@ -27224,14 +27274,16 @@ save_refine_ls.goodness_of_fit_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refine_ls_goodness_of_fit_gt'                             .
-         ?
+         ? ?
          '_refine_ls_goodness_of_fit_obs'                            1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_refine.ls_goodness_of_fit_obs'                            .
-         ?
+         ? ?
          '_refine.ls_goodness_of_fit_gt'                             .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -27673,14 +27725,16 @@ save_refine_ls.r_factor_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refine_ls_R_factor_obs'                                   1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_refine_ls_R_factor_gt'                                    .
-         ?
+         ? ?
          '_refine.ls_R_factor_obs'                                   .
-         ?
+         ? ?
          '_refine.ls_R_factor_gt'                                    .
-         ?
+         ? ?
 
     _definition.update            2024-02-14
     _description.text
@@ -27863,12 +27917,14 @@ save_refine_ls.restrained_s_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refine_ls_restrained_S_obs'                               1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_refine_ls_restrained_S_gt'                                .
-         ?
+         ? ?
          '_refine.ls_restrained_S_obs'                               .
-         ?
+         ? ?
 
     _definition.update            2024-02-14
     _description.text
@@ -28032,16 +28088,18 @@ save_refine_ls.shift_over_su_max
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refine_ls_shift_over_su_max'                              .
-         ?
+         ? ?
          '_refine.ls_shift_over_esd_max'                             .
-         ?
+         ? ?
          '_refine.ls_shift_over_su_max'                              .
-         ?
+         ? ?
          '_refine_ls_shift/su_max'                                   .
-         ?
+         ? ?
          '_refine_ls_shift/esd_max'                                  1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
 
     _definition.update            2024-02-20
     _description.text
@@ -28097,16 +28155,18 @@ save_refine_ls.shift_over_su_mean
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refine_ls_shift_over_su_mean'                             .
-         ?
+         ? ?
          '_refine.ls_shift_over_esd_mean'                            .
-         ?
+         ? ?
          '_refine.ls_shift_over_su_mean'                             .
-         ?
+         ? ?
          '_refine_ls_shift/su_mean'                                  .
-         ?
+         ? ?
          '_refine_ls_shift/esd_mean'                                 1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
 
     _definition.update            2024-02-20
     _description.text
@@ -28291,12 +28351,14 @@ save_refine_ls.wr_factor_gt
       _alias.definition_id
       _alias.deprecation_date
       _alias.dictionary_uri
+      _alias.dictionary_version
          '_refine_ls_wR_factor_obs'                                  1999-03-24
          https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_2.1.dic
+         2.1
          '_refine.ls_wR_factor_obs'                                  .
-         ?
+         ? ?
          '_refine_ls_wR_factor_gt'                                   .
-         ?
+         ? ?
 
     _definition.update            2024-02-20
     _description.text
@@ -29142,4 +29204,7 @@ save_
        characters.
 
        Added dictionary URIs for deprecated data names.
+
+       Added dictionary URIs and dictionary version numbers for deprecated
+       data names.
 ;
