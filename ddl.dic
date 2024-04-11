@@ -123,8 +123,8 @@ save_alias.dictionary_version
     _definition.update            2024-04-04
     _description.text
 ;
-    A version identifier of the dictionary that includes the latest compatible
-    version of the aliased definition.
+    The version identifier of the dictionary containing a compatible version of
+    the aliased definition.
 ;
     _name.category_id             alias
     _name.object_id               dictionary_version
