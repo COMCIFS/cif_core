@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2023-11-13
+    _dictionary.date             2024-03-28
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_attr.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -87,11 +87,11 @@ save_atom_site_id
 
 save_rho_coeff
 
-    _definition.update           2021-03-01
+    _definition.update           2024-03-28
     _description.text
 ;
-     Specifies a multipole population coefficients P(l,m) for
-     the atom identified in atom_rho_multipole.atom_label.
+     Specifies a multipole population coefficient P(l,m) for
+     the atom identified in _atom_rho_multipole.atom_label.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -103,13 +103,13 @@ save_rho_coeff
 
 save_rho_kappa
 
-    _definition.update           2021-03-01
+    _definition.update           2024-03-28
     _description.text
 ;
       A radial function expansion-contraction coefficient
-      (κ     = atom_rho_multipole_kappa.base and
-       κ'(l) = atom_rho_multipole_kappa.prime[l])
-      for the atom specified in atom_rho_multipole.atom_label.
+      (κ     = _atom_rho_multipole_kappa.base and
+       κ'(l) = _atom_rho_multipole_kappa.prime[l])
+      for the atom specified in _atom_rho_multipole.atom_label.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -121,12 +121,12 @@ save_rho_kappa
 
 save_rho_slater
 
-    _definition.update           2023-01-13
+    _definition.update           2024-03-28
     _description.text
 ;
       Items used when the radial dependence of the valence
       electron density, R(κ'(l),l,r), of the atom specified in
-      atom_rho_multipole.atom_label is expressed as a Slater-type
+      _atom_rho_multipole.atom_label is expressed as a Slater-type
       function [Hansen & Coppens (1978), equation (3)]
 ;
     _type.purpose                Measurand
@@ -1023,7 +1023,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2023-11-13
+         1.4.11                   2024-03-28
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -1040,4 +1040,7 @@ save_display_colour
        Changed the _type.source attribute of all SU data items to 'Related'.
 
        Removed the _name.category_id attribute from the 'matrix_w' save frame.
+
+       Corrected referenced data names (e.g. atom_rho_multipole.atom_label
+       -> _atom_rho_multipole.atom_label) in the save_rho_* saveframes (bm).
 ;
