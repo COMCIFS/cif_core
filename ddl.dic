@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2024-02-05
+    _dictionary.date              2024-04-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -98,10 +98,14 @@ save_alias.dictionary_uri
 
     _definition.id                '_alias.dictionary_uri'
     _definition.class             Attribute
-    _definition.update            2006-11-16
+    _definition.update            2024-04-04
     _description.text
 ;
-    Absolute URI of dictionary to which the aliased definition belongs.
+    An absolute URI of the dictionary that includes the aliased definition.
+    The URI should preferably point to a specific version of the dictionary
+    identified by the _alias.dictionary_version attribute, however, a more
+    general URI, e.g. one that always points to the latest version of the
+    dictionary, can also be provided when this is not possible.
 ;
     _name.category_id             alias
     _name.object_id               dictionary_uri
@@ -109,6 +113,25 @@ save_alias.dictionary_uri
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Uri
+
+save_
+
+save_alias.dictionary_version
+
+    _definition.id                '_alias.dictionary_version'
+    _definition.class             Attribute
+    _definition.update            2024-04-04
+    _description.text
+;
+    The version identifier of the dictionary containing a compatible version of
+    the aliased definition.
+;
+    _name.category_id             alias
+    _name.object_id               dictionary_version
+    _type.purpose                 Identify
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -3044,7 +3067,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2024-02-05
+         4.2.0                    2024-04-04
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3088,4 +3111,6 @@ save_
        Updated the definition of the _method.expression attribute.
 
        Updated definition of the _alias.deprecation_date attribute.
+       Updated definition of the _alias.dictionary_uri attribute.
+       Added the _alias.dictionary_version attribute.
 ;
