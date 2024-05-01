@@ -130,11 +130,9 @@ save_diffrn.ambient_pressure_su
     _name.category_id             diffrn
     _name.object_id               ambient_pressure_su
     _name.linked_item_id          '_diffrn.ambient_pressure'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kilopascals
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -228,11 +226,9 @@ save_diffrn.ambient_temperature_su
     _name.category_id             diffrn
     _name.object_id               ambient_temperature_su
     _name.linked_item_id          '_diffrn.ambient_temperature'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -993,11 +989,9 @@ save_cell.reciprocal_angle_alpha_su
     _name.category_id             cell
     _name.object_id               reciprocal_angle_alpha_su
     _name.linked_item_id          '_cell.reciprocal_angle_alpha'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1049,11 +1043,9 @@ save_cell.reciprocal_angle_beta_su
     _name.category_id             cell
     _name.object_id               reciprocal_angle_beta_su
     _name.linked_item_id          '_cell.reciprocal_angle_beta'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1105,11 +1097,9 @@ save_cell.reciprocal_angle_gamma_su
     _name.category_id             cell
     _name.object_id               reciprocal_angle_gamma_su
     _name.linked_item_id          '_cell.reciprocal_angle_gamma'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1155,11 +1145,9 @@ save_cell.reciprocal_length_a_su
     _name.category_id             cell
     _name.object_id               reciprocal_length_a_su
     _name.linked_item_id          '_cell.reciprocal_length_a'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1205,11 +1193,9 @@ save_cell.reciprocal_length_b_su
     _name.category_id             cell
     _name.object_id               reciprocal_length_b_su
     _name.linked_item_id          '_cell.reciprocal_length_b'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1255,11 +1241,9 @@ save_cell.reciprocal_length_c_su
     _name.category_id             cell
     _name.object_id               reciprocal_length_c_su
     _name.linked_item_id          '_cell.reciprocal_length_c'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   reciprocal_angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1707,11 +1691,9 @@ save_cell.volume_su
     _name.category_id             cell
     _name.object_id               volume_su
     _name.linked_item_id          '_cell.volume'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstrom_cubed
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1823,11 +1805,9 @@ save_cell_measurement.pressure_su
     _name.category_id             cell_measurement
     _name.object_id               pressure_su
     _name.linked_item_id          '_cell_measurement.pressure'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kilopascals
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -1935,11 +1915,9 @@ save_cell_measurement.temperature_su
     _name.category_id             cell_measurement
     _name.object_id               temperature_su
     _name.linked_item_id          '_cell_measurement.temperature'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -3468,11 +3446,9 @@ save_diffrn_radiation_wavelength.value_su
     _name.category_id             diffrn_radiation_wavelength
     _name.object_id               value_su
     _name.linked_item_id          '_diffrn_radiation_wavelength.value'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -6307,10 +6283,9 @@ save_refln.f_meas_su
     _name.category_id             refln
     _name.object_id               F_meas_su
     _name.linked_item_id          '_refln.F_meas'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -6421,10 +6396,9 @@ save_refln.f_squared_meas_su
     _name.category_id             refln
     _name.object_id               F_squared_meas_su
     _name.linked_item_id          '_refln.F_squared_meas'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -6701,11 +6675,9 @@ save_refln.intensity_meas_su
     _name.category_id             refln
     _name.object_id               intensity_meas_su
     _name.linked_item_id          '_refln.intensity_meas'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9157,11 +9129,9 @@ save_chemical.temperature_decomposition_su
     _name.category_id             chemical
     _name.object_id               temperature_decomposition_su
     _name.linked_item_id          '_chemical.temperature_decomposition'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -9244,11 +9214,9 @@ save_chemical.temperature_sublimation_su
     _name.category_id             chemical
     _name.object_id               temperature_sublimation_su
     _name.linked_item_id          '_chemical.temperature_sublimation'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -10261,11 +10229,9 @@ save_exptl_crystal.density_meas_su
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_su
     _name.linked_item_id          '_exptl_crystal.density_meas'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   megagrams_per_metre_cubed
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -10354,11 +10320,9 @@ save_exptl_crystal.density_meas_temp_su
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_temp_su
     _name.linked_item_id          '_exptl_crystal.density_meas_temp'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -12697,11 +12661,9 @@ save_geom_angle.value_su
     _name.category_id             geom_angle
     _name.object_id               value_su
     _name.linked_item_id          '_geom_angle.value'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -12844,11 +12806,9 @@ save_geom_bond.distance_su
     _name.category_id             geom_bond
     _name.object_id               distance_su
     _name.linked_item_id          '_geom_bond.distance'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -13133,11 +13093,9 @@ save_geom_contact.distance_su
     _name.category_id             geom_contact
     _name.object_id               distance_su
     _name.linked_item_id          '_geom_contact.distance'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -13295,11 +13253,9 @@ save_geom_hbond.angle_dha_su
     _name.category_id             geom_hbond
     _name.object_id               angle_DHA_su
     _name.linked_item_id          '_geom_hbond.angle_DHA'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -13406,11 +13362,9 @@ save_geom_hbond.distance_da_su
     _name.category_id             geom_hbond
     _name.object_id               distance_DA_su
     _name.linked_item_id          '_geom_hbond.distance_DA'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -13469,11 +13423,9 @@ save_geom_hbond.distance_dh_su
     _name.category_id             geom_hbond
     _name.object_id               distance_DH_su
     _name.linked_item_id          '_geom_hbond.distance_DH'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -13532,11 +13484,9 @@ save_geom_hbond.distance_ha_su
     _name.category_id             geom_hbond
     _name.object_id               distance_HA_su
     _name.linked_item_id          '_geom_hbond.distance_HA'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -13755,11 +13705,9 @@ save_geom_torsion.angle_su
     _name.category_id             geom_torsion
     _name.object_id               angle_su
     _name.linked_item_id          '_geom_torsion.angle'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   degrees
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20770,11 +20718,9 @@ save_atom_site.b_equiv_geom_mean_su
     _name.category_id             atom_site
     _name.object_id               B_equiv_geom_mean_su
     _name.linked_item_id          '_atom_site.B_equiv_geom_mean'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstrom_squared
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -20828,11 +20774,9 @@ save_atom_site.b_iso_or_equiv_su
     _name.category_id             atom_site
     _name.object_id               B_iso_or_equiv_su
     _name.linked_item_id          '_atom_site.B_iso_or_equiv'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstrom_squared
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -21483,11 +21427,9 @@ save_atom_site.occupancy_su
     _name.category_id             atom_site
     _name.object_id               occupancy_su
     _name.linked_item_id          '_atom_site.occupancy'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -21801,11 +21743,9 @@ save_atom_site.u_equiv_geom_mean_su
     _name.category_id             atom_site
     _name.object_id               U_equiv_geom_mean_su
     _name.linked_item_id          '_atom_site.U_equiv_geom_mean'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstrom_squared
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -21854,11 +21794,9 @@ save_atom_site.u_iso_or_equiv_su
     _name.category_id             atom_site
     _name.object_id               U_iso_or_equiv_su
     _name.linked_item_id          '_atom_site.U_iso_or_equiv'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   angstrom_squared
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -25622,10 +25560,9 @@ save_refine_diff.density_max_su
     _name.category_id             refine_diff
     _name.object_id               density_max_su
     _name.linked_item_id          '_refine_diff.density_max'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -25688,10 +25625,9 @@ save_refine_diff.density_min_su
     _name.category_id             refine_diff
     _name.object_id               density_min_su
     _name.linked_item_id          '_refine_diff.density_min'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -25759,10 +25695,9 @@ save_refine_diff.density_rms_su
     _name.category_id             refine_diff
     _name.object_id               density_RMS_su
     _name.linked_item_id          '_refine_diff.density_RMS'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
     _method.purpose               Definition
     _method.expression
 ;
@@ -25864,11 +25799,9 @@ save_refine_ls.abs_structure_flack_su
     _name.category_id             refine_ls
     _name.object_id               abs_structure_Flack_su
     _name.linked_item_id          '_refine_ls.abs_structure_Flack'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -25919,11 +25852,9 @@ save_refine_ls.abs_structure_rogers_su
     _name.category_id             refine_ls
     _name.object_id               abs_structure_Rogers_su
     _name.linked_item_id          '_refine_ls.abs_structure_Rogers'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -26035,11 +25966,9 @@ save_refine_ls.extinction_coef_su
     _name.category_id             refine_ls
     _name.object_id               extinction_coef_su
     _name.linked_item_id          '_refine_ls.extinction_coef'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -26283,11 +26212,9 @@ save_refine_ls.goodness_of_fit_all_su
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_all_su
     _name.linked_item_id          '_refine_ls.goodness_of_fit_all'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -26356,11 +26283,9 @@ save_refine_ls.goodness_of_fit_gt_su
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_gt_su
     _name.linked_item_id          '_refine_ls.goodness_of_fit_gt'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
