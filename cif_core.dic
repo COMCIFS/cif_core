@@ -5,12 +5,12 @@
 #                                                                        #
 ##########################################################################
 
-data_CORE_DIC
+data_CIF_CORE
 
-    _dictionary.title             CORE_DIC
+    _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-03-27
+    _dictionary.date              2024-05-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -32,7 +32,7 @@ save_CIF_CORE
     The CIF_CORE group contains the definitions of data items that
     are common to all domains of crystallographic studies.
 ;
-    _name.category_id             CORE_DIC
+    _name.category_id             CIF_CORE
     _name.object_id               CIF_CORE
 
 save_
@@ -27933,7 +27933,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-03-27
+         3.3.0                    2024-05-02
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28004,4 +28004,6 @@ save_
        data items.
 
        Added _database_code.BIncStrDB (bm).
+
+       Changed the title of the dictionary to CIF_CORE.
 ;
