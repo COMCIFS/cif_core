@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-05-02
+    _dictionary.date              2024-05-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -21,19 +21,19 @@ data_CIF_CORE
     and used within the Crystallographic Information Framework (CIF).
 ;
 
-save_CIF_CORE
+save_HEAD
 
-    _definition.id                CIF_CORE
+    _definition.id                HEAD
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2014-06-18
+    _definition.update            2024-05-14
     _description.text
 ;
-    The CIF_CORE group contains the definitions of data items that
-    are common to all domains of crystallographic studies.
+    The HEAD category encompasses groups of categories that are common to all
+    domains of crystallographic studies.
 ;
     _name.category_id             CIF_CORE
-    _name.object_id               CIF_CORE
+    _name.object_id               HEAD
 
 save_
 
@@ -42,13 +42,13 @@ save_DIFFRACTION
     _definition.id                DIFFRACTION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-26
+    _definition.update            2024-05-14
     _description.text
 ;
     The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
-    _name.category_id             CIF_CORE
+    _name.category_id             HEAD
     _name.object_id               DIFFRACTION
 
 save_
@@ -8302,14 +8302,14 @@ save_EXPTL
     _definition.id                EXPTL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-01-13
+    _definition.update            2024-05-14
     _description.text
 ;
     The CATEGORY of data items used to specify the experimental work
     prior to diffraction measurements. These include crystallization
     crystal measurements and absorption-correction techniques used.
 ;
-    _name.category_id             CIF_CORE
+    _name.category_id             HEAD
     _name.object_id               EXPTL
 
 save_
@@ -12224,7 +12224,7 @@ save_MODEL
     _definition.id                MODEL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-22
+    _definition.update            2024-05-14
     _description.text
 ;
     Items in the MODEL Category specify data for the crystal structure
@@ -12233,7 +12233,7 @@ save_MODEL
     described principally in terms of the geometry of the 'connected'
     atom sites and the crystal symmetry in which they reside.
 ;
-    _name.category_id             CIF_CORE
+    _name.category_id             HEAD
     _name.object_id               MODEL
 
 save_
@@ -14692,13 +14692,13 @@ save_PUBLICATION
     _definition.id                PUBLICATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2015-09-04
+    _definition.update            2024-05-14
     _description.text
 ;
     The DICTIONARY group encompassing the CORE PUBLICATION data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
-    _name.category_id             CIF_CORE
+    _name.category_id             HEAD
     _name.object_id               PUBLICATION
 
 save_
@@ -19820,13 +19820,13 @@ save_STRUCTURE
     _definition.id                STRUCTURE
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-20
+    _definition.update            2024-05-14
     _description.text
 ;
     The DICTIONARY group encompassing the CORE STRUCTURE data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
-    _name.category_id             CIF_CORE
+    _name.category_id             HEAD
     _name.object_id               STRUCTURE
 
 save_
@@ -27440,14 +27440,14 @@ save_FUNCTION
     _definition.id                FUNCTION
     _definition.scope             Category
     _definition.class             Functions
-    _definition.update            2012-12-18
+    _definition.update            2024-05-14
     _description.text
 ;
     The crystallographic functions the invoked in the definition
     methods of CORE STRUCTURE data items defined and used within
     the Crystallographic Information Framework (CIF).
 ;
-    _name.category_id             CIF_CORE
+    _name.category_id             HEAD
     _name.object_id               FUNCTION
 
 save_
@@ -27858,7 +27858,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-05-02
+         3.3.0                    2024-05-14
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27930,5 +27930,7 @@ save_
 
        Added _database_code.BIncStrDB (bm).
 
-       Changed the title of the dictionary to CIF_CORE.
+       Changed the title of the dictionary to 'CIF_CORE'.
+
+       Changed the title of the Head category from 'CIF_CORE' to 'HEAD'.
 ;
