@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-05-02
+    _dictionary.date              2024-06-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -20474,7 +20474,7 @@ save_
 save_atom_scat_versus_stol.scat_value
 
     _definition.id                '_atom_scat_versus_stol.scat_value'
-    _definition.update            2023-07-05
+    _definition.update            2024-06-09
     _description.text
 ;
     The value of the scattering factor of a particular atom type at a particular
@@ -20486,6 +20486,7 @@ save_atom_scat_versus_stol.scat_value
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
+    _enumeration.range            0.0:
     _units.code                   electrons
 
 save_
@@ -20510,7 +20511,7 @@ save_
 save_atom_scat_versus_stol.stol_value
 
     _definition.id                '_atom_scat_versus_stol.stol_value'
-    _definition.update            2023-07-05
+    _definition.update            2024-06-09
     _description.text
 ;
     The value of sin(θ)/λ (sin theta over lambda, stol) to which the
@@ -20524,6 +20525,7 @@ save_atom_scat_versus_stol.stol_value
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
+    _enumeration.range            0.0:
     _units.code                   reciprocal_angstroms
 
 save_
@@ -27858,7 +27860,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-05-02
+         3.3.0                    2024-06-09
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
