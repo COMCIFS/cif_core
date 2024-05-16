@@ -29,8 +29,8 @@ save_CIF_CORE_HEAD
     _definition.update            2024-05-15
     _description.text
 ;
-    The HEAD category encompasses groups of categories that are common to all
-    domains of crystallographic studies.
+    The CIF_CORE_HEAD category is the top-level category for all categories in
+    the CIF_CORE dictionary.
 ;
     _name.category_id             CIF_CORE
     _name.object_id               CIF_CORE_HEAD
