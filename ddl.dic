@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2024-04-04
+    _dictionary.date              2024-05-17
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2555,8 +2555,8 @@ save_
                                    DESCRIPTION_EXAMPLE  ENUMERATION  IMPORT
                                    METHOD  NAME  TYPE  UNITS]
          Category    Mandatory    ['_definition.id'  '_definition.scope'
-                                   '_definition.class'  '_name.category_id'
-                                   '_name.object_id']
+                                   '_definition.class'  '_definition.update'
+                                   '_name.category_id'  '_name.object_id']
          Category    Recommended  ['_category_key.name'  '_description.text']
          Category    Prohibited   [ALIAS  DICTIONARY  ENUMERATION  TYPE  UNITS]
          Item        Mandatory    ['_definition.id'  '_definition.update'
@@ -3067,7 +3067,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2024-04-04
+         4.2.0                    2024-05-17
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3113,4 +3113,7 @@ save_
        Updated definition of the _alias.deprecation_date attribute.
        Updated definition of the _alias.dictionary_uri attribute.
        Added the _alias.dictionary_version attribute.
+
+       Added _definition.update to the list of attributes that are mandatory
+       in the 'Category' scope.
 ;
