@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2024-03-28
+    _dictionary.date             2024-07-17
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_attr.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -249,7 +249,7 @@ save_cell_angle_su
 
 save_cell_length
 
-    _definition.update           2023-07-01
+    _definition.update           2024-07-17
     _description.text
 ;
      The length of each cell axis.
@@ -258,7 +258,7 @@ save_cell_length
     _type.source                 Derived
     _type.container              Single
     _type.contents               Real
-    _enumeration.range           1.0:
+    _enumeration.range           0.0:
     _units.code                  angstroms
      save_
 
@@ -1023,7 +1023,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2024-03-28
+         1.4.11                   2024-07-17
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -1043,4 +1043,7 @@ save_display_colour
 
        Corrected referenced data names (e.g. atom_rho_multipole.atom_label
        -> _atom_rho_multipole.atom_label) in the save_rho_* saveframes (bm).
+
+       Changed the enumeration range of in the 'cell_length' save frame from
+       '1.0:' to '0.0:' (av).
 ;
