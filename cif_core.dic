@@ -18918,6 +18918,12 @@ save_publ_contact_author.contact_details
     _definition.id                '_publ_contact_author.contact_details'
 
     loop_
+      _definition_replaced.id
+      _definition_replaced.by
+         1                        '_publ_contact_author.name'
+         2                        '_publ_contact_author.address'
+
+    loop_
       _alias.definition_id
          '_publ_contact_author'
          '_publ.contact_author'
@@ -18925,10 +18931,11 @@ save_publ_contact_author.contact_details
     _definition.update            2024-08-28
     _description.text
 ;
-    The name and address of the author submitting the manuscript and
-    data block. This is the person contacted by the journal editorial
-    staff. It is preferable to use the separate data items
-    _publ_contact_author.name and _publ_contact_author.address.
+    DEPRECATED. The _publ_contact_author.name and _publ_contact_author.address
+    data items should be used instead of this item.
+
+    The name and address of the author submitting the manuscript and data block.
+    This is the person contacted by the journal editorial staff.
 ;
     _name.category_id             publ_contact_author
     _name.object_id               contact_details
@@ -27998,5 +28005,6 @@ save_
        data item.
 
        Moved the definition of _publ_contact_author data name into a
-       separate data item definition.
+       separate data item definition and deprecated it in favour of the
+       _publ_contact_author.name and _publ_contact_author.address data items.
 ;
