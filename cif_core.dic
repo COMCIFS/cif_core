@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-07-17
+    _dictionary.date              2024-08-28
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -18913,6 +18913,41 @@ save_publ_contact_author.address
 
 save_
 
+save_publ_contact_author.contact_details
+
+    _definition.id                '_publ_contact_author.contact_details'
+
+    loop_
+      _alias.definition_id
+         '_publ_contact_author'
+         '_publ.contact_author'
+
+    _definition.update            2024-08-28
+    _description.text
+;
+    The name and address of the author submitting the manuscript and
+    data block. This is the person contacted by the journal editorial
+    staff. It is preferable to use the separate data items
+    _publ_contact_author.name and _publ_contact_author.address.
+;
+    _name.category_id             publ_contact_author
+    _name.object_id               contact_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case
+;
+    Professor George Ferguson
+    Department of Chemistry and Biochemistry
+    University of Guelph
+    Ontario
+    Canada
+    N1G 2W1
+;
+
+save_
+
 save_publ_contact_author.email
 
     _definition.id                '_publ_contact_author.email'
@@ -19058,8 +19093,6 @@ save_publ_contact_author.name
     loop_
       _alias.definition_id
          '_publ_contact_author_name'
-         '_publ.contact_author'
-         '_publ_contact_author'
          '_publ.contact_author_name'
 
     _definition.update            2012-11-29
@@ -27882,7 +27915,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-07-17
+         3.3.0                    2024-08-28
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -27963,4 +27996,7 @@ save_
        Redefined the _cell_measurement.wavelength data item as a measurand.
        Added and immediately deprecated the _cell_measurement.wavelength_su
        data item.
+
+       Moved the definition of _publ_contact_author data name into a
+       separate data item definition.
 ;
