@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-08-28
+    _dictionary.date              2024-10-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -15661,7 +15661,7 @@ save_
 save_audit_support.award_type
 
     _definition.id                '_audit_support.award_type'
-    _definition.update            2020-08-23
+    _definition.update            2024-10-18
     _description.text
 ;
     Type or kind of award.
@@ -15686,7 +15686,7 @@ save_audit_support.award_type
 ;
          Funds were provided by an organization or person outside the research
          program for the specific purpose of supporting the research, as
-         directed by the primary investigator
+         directed by the primary investigator.
 ;
          contract
 ;
@@ -27922,7 +27922,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-08-28
+         3.3.0                    2024-10-18
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
