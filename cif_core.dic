@@ -15696,7 +15696,7 @@ save_
 save_audit_support.award_type
 
     _definition.id                '_audit_support.award_type'
-    _definition.update            2020-08-23
+    _definition.update            2024-10-18
     _description.text
 ;
     Type or kind of award.
@@ -15721,7 +15721,7 @@ save_audit_support.award_type
 ;
          Funds were provided by an organization or person outside the research
          program for the specific purpose of supporting the research, as
-         directed by the primary investigator
+         directed by the primary investigator.
 ;
          contract
 ;
