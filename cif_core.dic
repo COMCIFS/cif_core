@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-08-28
+    _dictionary.date              2024-10-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -15756,6 +15756,27 @@ save_audit_support.funding_organization_doi
 
 save_
 
+save_audit_support.funding_organization_url
+
+    _definition.id                '_audit_support.funding_organization_URL'
+    _definition.update            2024-10-21
+    _description.text
+;
+    The Uniform Resource Locator (URL) associated with the funding organisation.
+
+    The _audit_support.funding_organization_DOI data item should be provided
+    alongside this item when possible.
+;
+    _name.category_id             audit_support
+    _name.object_id               funding_organization_URL
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Uri
+    _description_example.case     https://www.nccih.nih.gov/
+
+save_
+
 save_audit_support.id
 
     _definition.id                '_audit_support.id'
@@ -15771,6 +15792,24 @@ save_audit_support.id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
+
+save_
+
+save_audit_support.special_details
+
+    _definition.id                '_audit_support.special_details'
+    _definition.update            2024-10-21
+    _description.text
+;
+    Details of the funding support that cannot be specified by other data items
+    from the AUDIT_SUPPORT category.
+;
+    _name.category_id             audit_support
+    _name.object_id               special_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -27922,7 +27961,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-08-28
+         3.3.0                    2024-10-21
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28007,4 +28046,7 @@ save_
        Moved the definition of _publ_contact_author data name into a
        separate data item definition and deprecated it in favour of the
        _publ_contact_author.name and _publ_contact_author.address data items.
+
+       Added the _audit_support.funding_organization_url and
+       _audit_support.special_details data items.
 ;
