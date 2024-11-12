@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-10-21
+    _dictionary.date              2024-11-12
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -27996,7 +27996,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-10-21
+         3.3.0                    2024-11-12
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28084,4 +28084,6 @@ save_
 
        Added the _audit_support.funding_organization_url and
        _audit_support.special_details data items.
+
+       Added opaque identifiers for diffrn_refln and refln categories.
 ;
