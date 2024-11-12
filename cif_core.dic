@@ -3532,7 +3532,7 @@ save_DIFFRN_REFLN
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_REFLN
-    _category_key.name            '_diffrn_refln.hkl'
+    _category_key.name            '_diffrn_refln.id'
 
 save_
 
@@ -3886,6 +3886,26 @@ save_diffrn_refln.hkl
 
           _diffrn_refln.hkl =   [a.index_h, a.index_h, a.index_l]
 ;
+
+save_
+
+save_diffrn_refln.id
+
+    _definition.id                '_diffrn_refln.id'
+    _definition.update            2024-11-12
+    _description.text
+;
+    _diffrn_refln.id must uniquely identify the reflection.
+
+    Note that this item need not be a number; it can be any unique
+    identifier.
+;
+    _name.category_id             diffrn_refln
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -5842,7 +5862,7 @@ save_REFLN
     _definition.id                REFLN
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2024-11-12
     _description.text
 ;
     The CATEGORY of data items used to describe the reflection data
@@ -5850,12 +5870,7 @@ save_REFLN
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               REFLN
-
-    loop_
-      _category_key.name
-         '_refln.index_h'
-         '_refln.index_k'
-         '_refln.index_l'
+    _category_key.name            '_refln.id'
 
 save_
 
@@ -6544,6 +6559,26 @@ save_refln.hkl
 
            _refln.hkl =  [r.index_h, r.index_k, r.index_l]
 ;
+
+save_
+
+save_refln.id
+
+    _definition.id                '_refln.id'
+    _definition.update            2024-11-12
+    _description.text
+;
+    _refln.id must uniquely identify the reflection.
+
+    Note that this item need not be a number; it can be any unique
+    identifier.
+;
+    _name.category_id             refln
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
