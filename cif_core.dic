@@ -26714,8 +26714,7 @@ save_refine_ls.number_reflns_gt
 ;
     The number of reflections that satisfy the resolution limits
     established by _refine_ls.d_res_high and _refine_ls.d_res_low
-    and the observation limit established by
-    _reflns.observed_criterion.
+    and the observation limit established by _reflns.threshold_expression.
 ;
     _name.category_id             refine_ls
     _name.object_id               number_reflns_gt
