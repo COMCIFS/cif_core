@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2024-07-17
+    _dictionary.date             2024-12-12
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_attr.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -167,7 +167,6 @@ save_matrix_w
     _units.code                  none
      save_
 
-
 save_ms_index
 
     _definition.update           2014-06-27
@@ -183,6 +182,70 @@ save_ms_index
     _type.contents               Integer
      save_
 
+save_q_coeff_element
+
+    _definition.update           2024-08-06
+    _description.text                   
+;
+     Element of the matrix _atom_site_Fourier_wave_vector.q_coeff.
+     Notation of the elements is identical to the one used in magCIF.
+     However, in magCIF the number of elements is limited to 3.
+;
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Integer
+    _enumeration.default         0
+save_
+
+save_q_coeff_seq_id
+
+    _definition.update           2024-07-26
+    _description.text                   
+;
+     Element of the matrix _atom_site_Fourier_wave_vector.q_coeff_seq_id.
+     Must match those given in _cell_wave_vector.seq_id.
+;
+    _name.linked_item_id         '_cell_wave_vector.seq_id'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Integer
+save_
+
+save_site_ssg_symmetry
+
+    _definition.update           2024-12-12
+    _description.text                   
+;
+      The symmetry code of each atom site as the symmetry operation
+      number 'n' and the higher-dimensional translation 'm1...mp'.
+      These numbers are combined to form the code 'n m1...mp' or
+      n_m1...mp. The character string n_m1...mp is composed as follows:
+      'n' refers to the symmetry operation that is applied to the
+      superspace coordinates. It must match a number given in
+      _space_group_symop_ssg_id. 'm1...mp' refer to the translations
+      that are subsequently applied to the symmetry-transformed
+      coordinates to generate the atom used in calculating the angle.
+      These translations (t1,...tp) are related to (m1...mp) by the
+      relations m1=5+t1, ..., mp=5+tp. By adding 5 to the translations,
+      the use of negative numbers is avoided. The number 'p' must agree
+      with (_cell_modulation_dimension + 3). If there are no cell
+      translations, the translation number may be omitted. If no
+      symmetry operations or translations are applicable, then a single
+      full stop '.' is used.
+;
+    _type.purpose                Composite
+    _type.source                 Derived
+    _type.container              Single
+    _type.contents               Symop
+    loop_
+    _description_example.case
+    _description_example.detail
+    '.'                  'no symmetry or translation to site'          
+    '4'                  '4th symmetry operation applied'    
+    '7_645'              '7th symmetry position; +a on x, -b on y' 
+save_
 
 save_index_limit_max
 
@@ -197,8 +260,7 @@ save_index_limit_max
     _type.container              Single
     _type.contents               Integer
     _units.code                  none
-     save_
-
+save_
 
 save_index_limit_min
 
@@ -784,7 +846,6 @@ save_orient_matrix
     _units.code                  none
      save_
 
-
 save_transf_matrix
 
     _definition.update           2012-05-07
@@ -801,6 +862,30 @@ save_transf_matrix
     _units.code                  none
      save_
 
+save_transf_matrix_id
+
+    _description.text                   
+;
+      A numeric code identifying the transformation matrix that defines
+      the arbitrary axes a1, a2 and a3 in terms of the crystallographic axes. 
+      This code must match _atom_sites_axes.matrix_seq_id.
+;
+    _name.linked_item_id         '_atom_sites_axes.matrix_seq_id'
+    _type.purpose                Link
+    _type.source                 Related
+    _type.container              Single
+    _type.contents               Integer
+    save_
+
+save_general_mod_param
+
+    _type.purpose                Measurand
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.default         0.0
+
+save_
 
 save_face_angle
 
@@ -1023,7 +1108,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2024-07-17
+         1.4.11                   2024-12-12
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -1046,4 +1131,8 @@ save_display_colour
 
        Changed the enumeration range of in the 'cell_length' save frame from
        '1.0:' to '0.0:' (av).
+
+       Added transf_matrix_id, general_mod_param, site_ssg_symmetry,
+       q_coeff_element and q_coeff_seq_id for use in modulated structures
+       dictionary.
 ;
