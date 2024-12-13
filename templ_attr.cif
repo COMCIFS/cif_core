@@ -226,7 +226,7 @@ save_site_ssg_symmetry
       n_m1...mp. The character string n_m1...mp is composed as follows:
       'n' refers to the symmetry operation that is applied to the
       superspace coordinates. It must match a number given in
-      _space_group_symop_ssg_id. 'm1...mp' refer to the translations
+      _space_group_symop.ssg_id. 'm1...mp' refer to the translations
       that are subsequently applied to the symmetry-transformed
       coordinates to generate the atom used in calculating the angle.
       These translations (t1,...tp) are related to (m1...mp) by the
