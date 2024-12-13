@@ -245,6 +245,7 @@ save_site_ssg_symmetry
     '.'                  'no symmetry or translation to site'          
     '4'                  '4th symmetry operation applied'    
     '7_645'              '7th symmetry position; +a on x, -b on y' 
+
 save_
 
 save_index_limit_max
