@@ -232,7 +232,7 @@ save_site_ssg_symmetry
       These translations (t1,...tp) are related to (m1...mp) by the
       relations m1=5+t1, ..., mp=5+tp. By adding 5 to the translations,
       the use of negative numbers is avoided. The number 'p' must agree
-      with (_cell_modulation_dimension + 3). If there are no cell
+      with (_cell.modulation_dimension + 3). If there are no cell
       translations, the translation number may be omitted. If no
       symmetry operations or translations are applicable, then a single
       full stop '.' is used.
