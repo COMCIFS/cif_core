@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2024-03-27
+    _dictionary.date             2024-12-17
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -782,6 +782,9 @@ save_units_code
    'reciprocal_picometres'
    "per-length 'reciprocal picometres  (metres * 10^(-12)^-1)'"
 
+   'reciprocal_angstroms_per_pixel'
+   "unit for electron diffraction camera constant calibration factor"
+
    'nanometre_squared'
    "length_squared 'nanometres squared (metres * 10^( -9))^2'"
    'angstrom_squared'
@@ -832,6 +835,9 @@ save_units_code
    'electrons'    "electrons              'electrons'"
 
    'electron_squared'  "electrons-squared    'electrons squared'"
+
+   'electrons_per_angstrom'
+   "electrostatic potential (electron diffraction) 'electrons per angstrom  (electrons * (metres * 10^(-10))^(-1))'"
 
    'electrons_per_nanometre_cubed'
    "electron-density 'electrons per nanometres cubed (electrons * (metres * 10^( -9))^(-3))'"
@@ -2351,7 +2357,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2024-03-27
+         1.4.9                    2024-12-17
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2381,4 +2387,7 @@ save_
        Renamed the 'photons per second' unit to 'photons_per_second'.
 
        Added BIncStrDB to save_database_list. (bm)
+
+       Added electrons_per_angstrom and reciprocal_angstroms_per_pixel
+       for electron diffraction. (bm)
 ;
