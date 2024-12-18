@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2024-12-17
+    _dictionary.date             2024-12-18
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -837,7 +837,7 @@ save_units_code
    'electron_squared'  "electrons-squared    'electrons squared'"
 
    'electrons_per_angstrom'
-   "electrostatic potential (electron diffraction) 'electrons per angstrom  (electrons * (metres * 10^(-10))^(-1))'"
+   "electrostatic potential in Gaussian unit system: 1 V = 0.069420 e/angstrom (electron diffraction) 'electrons per angstrom  (electrons * (metres * 10^(-10))^(-1))'"
 
    'electrons_per_nanometre_cubed'
    "electron-density 'electrons per nanometres cubed (electrons * (metres * 10^( -9))^(-3))'"
@@ -2357,7 +2357,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2024-12-17
+         1.4.9                    2024-12-18
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2389,5 +2389,5 @@ save_
        Added BIncStrDB to save_database_list. (bm)
 
        Added electrons_per_angstrom and reciprocal_angstroms_per_pixel
-       for electron diffraction. (bm)
+       for electron diffraction; extended description of the former. (bm)
 ;
