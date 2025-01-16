@@ -27709,9 +27709,11 @@ save_function.seitzfromjones
                If (inum == 0)   m  = AtoI(c)
                If (inum == 1 and c != '/')
                dummy = print('illegal num in symmetry xyz')
-               If (inum == 2)   {
-                                n  = AtoI(c)
-                     If(n == 5) dummy = print('illegal translation in symmetry xyz')
+               If (inum == 2)
+               {
+                     n  = AtoI(c)
+                     If(n == 5)
+                        dummy = print('illegal translation in symmetry xyz')
                      s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
                      sign      = 1
                }
