@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-11-12
+    _dictionary.date              2025-02-07
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -384,6 +384,40 @@ save_diffrn.crystal_treatment
 
 save_
 
+save_diffrn.flux_density
+
+    _definition.id                '_diffrn.flux_density'
+    _definition.update            2025-02-07
+    _description.text
+;
+    Flux density of radiation incident at the crystal.
+
+    Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
+    J. C. & Garman, E. F. (2024). Doses for X-ray and electron
+    diffraction: New features in RADDOSE-3D including intensity decay
+    models. Protein Sci. 33, e5005.
+;
+    _name.category_id             diffrn
+    _name.object_id               flux_density
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                _units.code =
+"neutrons_per_millimetre_squared_per_second"
+    Else If (_diffrn_radiation.probe == "electron")
+                                _units.code =
+"electrons_per_angstrom_squared_per_second"
+    Else                        _units.code =
+"photons_per_millimetre_squared_per_second"
+;
+save_
+
 save_diffrn.id
 
     _definition.id                '_diffrn.id'
@@ -489,6 +523,49 @@ save_diffrn.symmetry_description
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+
+save_
+save_diffrn.total_dose
+
+    _definition.id                '_diffrn.total_dose'
+    _definition.update            2025-02-07
+    _description.text
+;
+    Total radiation dose absorbed by the crystal during the diffraction
+    experiment.
+
+    Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
+    J. C. & Garman, E. F. (2024). Doses for X-ray and electron
+    diffraction: New features in RADDOSE-3D including intensity decay
+    models. Protein Sci. 33, e5005.
+;
+    _name.category_id             diffrn
+    _name.object_id               total_dose
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   megagray
+
+save_
+
+save_diffrn.total_exposure_time
+
+    _definition.id                '_diffrn.total_exposure_time'
+    _definition.update            2025-02-07
+    _description.text
+;
+    Total time the crystal was exposed during the diffraction experiment.
+;
+    _name.category_id             diffrn
+    _name.object_id               total_exposure_time
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   minutes
 
 save_
 
@@ -27995,7 +28072,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-11-12
+         3.3.0                    2025-02-07
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28085,4 +28162,8 @@ save_
        _audit_support.special_details data items.
 
        Added opaque identifiers for diffrn_refln and refln categories.
+
+       Added _diffrn.flux_density, _diffrn.total_dose and
+       _diffrn.total_exposure_time as first step towards characterizing
+       radiation damage (bm).
 ;
