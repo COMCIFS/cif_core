@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2025-02-07
+    _dictionary.date             2025-02-10
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -847,7 +847,7 @@ save_units_code
    "electron-density 'electrons per picometres cubed (electrons * (metres * 10^(-12))^(-3))'"
 
    'electrons_per_angstrom_squared_per_second'
-   "electron flux density  'electrons per angstrom squared per second  (electrons * (metres * 10^(-10))^(-2) * (seconds^(-1))'"
+   "electron flux density  'electrons per angstrom squared per second  (electrons * (metres * 10^(-10))^(-2) * (seconds^(-1)))'"
 
    'femtometres_per_angstrom_cubed'
    "scattering-length-density 'femtometres per angstroms cubed (10^-6 * (metres * 10^(-10))^(-2))'"
@@ -872,10 +872,10 @@ save_units_code
    'photons_per_second'  "photons registered in one second"
 
    'photons_per_millimetre_squared_per_second'
-   "electromagnetic radiation flux density  'photons per millimetre squared per second  (photons * (metres * 10^(-3))^(-2) * (seconds^(-1))'"
+   "electromagnetic radiation flux density  'photons per millimetre squared per second  (photons * (metres * 10^(-3))^(-2) * (seconds^(-1)))'"
 
    'neutrons_per_millimetre_squared_per_second'
-   "neutron flux density  'neutrons per millimetre squared per second  (neutrons * (metres * 10^(-3))^(-2) * (seconds^(-1))'"
+   "neutron flux density  'neutrons per millimetre squared per second  (neutrons * (metres * 10^(-3))^(-2) * (seconds^(-1)))'"
 
    'megagray'     "radiation dose       'megagrays'"
 
@@ -2368,7 +2368,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2025-02-07
+         1.4.9                    2025-02-10
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2402,7 +2402,8 @@ save_
        Added electrons_per_angstrom and reciprocal_angstroms_per_pixel
        for electron diffraction; extended description of the former. (bm)
 
-       Added electrons_per_angstrom_squared_per_second,
+       Added megagray, electrons_per_angstrom_squared_per_second,
        photons_per_millimetre_squared_per_second and
-       neutrons_per_millimetre_squared_per_second for flux density (bm)
+       neutrons_per_millimetre_squared_per_second for radiation dose
+       and flux density (bm)
 ;

@@ -525,6 +525,7 @@ save_diffrn.symmetry_description
     _type.contents                Text
 
 save_
+
 save_diffrn.total_dose
 
     _definition.id                '_diffrn.total_dose'
