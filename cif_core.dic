@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2024-11-12
+    _dictionary.date              2025-02-17
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -441,6 +441,45 @@ save_diffrn.measured_fraction_theta_max
     _type.contents                Real
     _enumeration.range            0.0:1.0
     _units.code                   none
+
+save_
+
+save_diffrn.precession_semi_angle
+
+    _definition.id                '_diffrn.precession_semi_angle'
+    _definition.update            2024-04-22
+    _description.text
+;
+    Angle at the sample of the tilt from the normal direction of a radiation
+    beam moved in a precessional scan.
+;
+    _name.category_id             diffrn
+    _name.object_id               precession_semi_angle
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   degrees
+
+save_
+
+save_diffrn.precession_semi_angle_su
+
+    _definition.id                '_diffrn.precession_semi_angle_su'
+    _definition.update            2024-04-22
+    _description.text
+;
+    Standard uncertainty of _diffrn.precession_semi_angle.
+;
+    _name.category_id             diffrn
+    _name.object_id               precession_semi_angle_su
+    _name.linked_item_id          '_diffrn.precession_semi_angle'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
 
 save_
 
@@ -2290,6 +2329,30 @@ save_diffrn_detector.details
 
 save_
 
+save_diffrn_detector.distance_sample
+
+    _definition.id                '_diffrn_detector.distance_sample'
+    _definition.update            2024-07-26
+    _description.text
+;
+    Mean distance in millimetres from the diffracting sample
+    to the detector. Appropriate for instrument geometries where
+    the detector is fixed or maintained at a constant distance
+    from the diffraction target. More general geometries and
+    provision for adjusting the instrument geometries between or
+    during scans are handled by the imgCIF dictionary.
+;
+    _name.category_id             diffrn_detector
+    _name.object_id               distance_sample
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   millimetres
+
+save_
+
 save_diffrn_detector.dtime
 
     _definition.id                '_diffrn_detector.dtime'
@@ -2314,6 +2377,26 @@ save_diffrn_detector.dtime
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   microseconds
+
+save_
+
+save_diffrn_detector.ed_calibration_constant
+
+    _definition.id                '_diffrn_detector.ed_calibration_constant'
+    _definition.update            2024-07-15
+    _description.text
+;
+    The electron diffraction camera constant calibration factor.
+    Ref: Millette, J. (1987). The Microscope, 35, 107-117.
+;
+    _name.category_id             diffrn_detector
+    _name.object_id               ed_calibration_constant
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   reciprocal_angstroms_per_pixel
 
 save_
 
@@ -2489,6 +2572,108 @@ save_diffrn_measurement.method
     _type.container               Single
     _type.contents                Text
     _description_example.case     'profile data from θ/2θ scans'
+
+save_
+
+save_diffrn_measurement.method_precession
+
+    _definition.id                '_diffrn_measurement.method_precession'
+    _definition.update            2024-05-15
+    _description.text
+;
+    Yes or no flag indicating if the radiation beam illuminates the sample
+    at an angle that is rotated about a precession axis.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               method_precession
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         yes                      'Precession method is used.'
+         y                        'Abbreviation for "yes".'
+         no                       'Precession method is not used.'
+         n                        'Abbreviation for "no".'
+
+save_
+
+save_diffrn_measurement.rotation_mode
+
+    _definition.id                '_diffrn_measurement.rotation_mode'
+    _definition.update            2024-12-02
+    _description.text
+;
+    Code describing the technique used to sample as completely as possible
+    the accessible range of reciprocal space.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               rotation_mode
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         rotation
+;
+         The detector records diffracted intensities continuously while the
+         sample is rotated.
+;
+         stepwise
+;
+         The detector records diffracted intensities while the sample
+         is stationary and the beam is either steady or performing a
+         defined motion, typically precessing around a conical surface
+         normal to the sample (precession electron diffraction).
+;
+
+save_
+
+save_diffrn_measurement.sample_tracking
+
+    _definition.id                '_diffrn_measurement.sample_tracking'
+    _definition.update            2024-07-25
+    _description.text
+;
+    Yes or no flag indicating if a tracking method to follow the
+    crystal was used in the data acquisition. Typically used to track
+    very small crystals in electron diffraction experiments.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               sample_tracking
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         yes                      'A crystal tracking method is used.'
+         y                        'Abbreviation for "yes".'
+         no                       'A crystal tracking method is not used.'
+         n                        'Abbreviation for "no".'
+
+save_
+
+save_diffrn_measurement.sample_tracking_method
+
+    _definition.id                '_diffrn_measurement.sample_tracking_method'
+    _definition.update            2024-07-25
+    _description.text
+;
+    Description of the method used to follow the crystal during data collection.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               sample_tracking_method
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     'Electron-beam tracking by PyFast-ADT'
 
 save_
 
@@ -3119,6 +3304,32 @@ save_diffrn_radiation.filter_edge
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   angstroms
+
+save_
+
+save_diffrn_radiation.illumination_mode
+
+    _definition.id                '_diffrn_radiation.illumination_mode'
+    _definition.update            2024-05-15
+    _description.text
+;
+    Code describing the optical configuration of the incident beam at
+    the sample. For electron diffraction, parallel illumination is
+    the normal mode in transmission electron microscopy (TEM),
+    convergent-beam in scanning transmission electron microscopy
+    (STEM).
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               illumination_mode
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         convergent               'Convergent-beam illumination'
+         parallel                 'Parallel illumination'
 
 save_
 
@@ -5308,6 +5519,29 @@ save_diffrn_source.beamline
 
 save_
 
+save_diffrn_source.convergence_angle
+
+    _definition.id                '_diffrn_source.convergence_angle'
+    _definition.update            2024-07-11
+    _description.text
+;
+    The angle of convergence of the source beam (for example in
+    convergent-beam electron diffraction). The convergence angle
+    is the angular spread of the cone of illumination (i.e. 2\a,
+    where the semi-angle \a is measured from the axis defining the
+    beam direction).
+;
+    _name.category_id             diffrn_source
+    _name.object_id               convergence_angle
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   degrees
+
+save_
+
 save_diffrn_source.current
 
     _definition.id                '_diffrn_source.current'
@@ -5406,6 +5640,31 @@ save_diffrn_source.device
 
 save_
 
+save_diffrn_source.ed_diffracting_area_selection
+
+    _definition.id                '_diffrn_source.ed_diffracting_area_selection'
+    _definition.update            2024-12-02
+    _description.text
+;
+    Enumerated code for the technique in electron diffraction used to
+    select the region of the sample from which the diffraction pattern
+    is obtained.
+;
+    _name.category_id             diffrn_source
+    _name.object_id               ed_diffracting_area_selection
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         probe  'Diffraction region selected by the size of the probe (= beam)'
+         SAED   'Selected-area electron diffraction'
+
+save_
+
 save_diffrn_source.facility
 
     _definition.id                '_diffrn_source.facility'
@@ -5496,6 +5755,8 @@ save_diffrn_source.size
       _description_example.case
          '8 mm x 0.4 mm fine-focus'
          'broad focus'
+         '300 nm electron beam in NBED (nano-beam electron diffraction)'
+         '1 micrometre aperture size in SAED (selected-aperture el. diffr.)'
 
 save_
 
@@ -8606,6 +8867,10 @@ save_chemical.absolute_configuration
          'anomalous dispersion' Absolute configuration established by a-d
          effects in diffraction measurements on the crystal.
 ;
+         dyn
+;
+         Absolute configuration determined directly from dynamical refinement.
+;
          rmad
 ;
          'rm + ad' Absolute configuration established by the structure
@@ -10521,6 +10786,119 @@ save_exptl_crystal.id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
+
+save_
+
+save_exptl_crystal.mosaic_block_size
+
+    _definition.id                '_exptl_crystal.mosaic_block_size'
+    _definition.update            2024-07-22
+    _description.text
+;
+    Isotropic and resolution-independent term representing the average size of
+    mosaic domains in the crystal specified in angstroms. Larger size indicates
+    better ordered crystals.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               mosaic_block_size
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   angstroms
+
+save_
+
+save_exptl_crystal.mosaic_block_size_su
+
+    _definition.id                '_exptl_crystal.mosaic_block_size_su'
+    _definition.update            2024-07-22
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.mosaic_block_size.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               mosaic_block_size_su
+    _name.linked_item_id          '_exptl_crystal.mosaic_block_size'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_exptl_crystal.mosaic_method
+
+    _definition.id                '_exptl_crystal.mosaic_method'
+    _definition.update            2024-05-07
+    _description.text
+;
+    How parameters derived from the spot shape (such as mosaic block
+    size and rotation, beam divergence, and crossfire) and their
+    errors were estimated.
+
+    This can be a written description or a citation to a specific
+    software package that determined these parameters.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               mosaic_method
+    _type.purpose                 Describe
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     'Determined from rocking curve.'
+
+save_
+
+save_exptl_crystal.mosaicity
+
+    _definition.id                '_exptl_crystal.mosaicity'
+    _definition.update            2024-07-09
+    _description.text
+;
+    Isotropic approximation of the distribution of mis-orientation angles
+    specified in degrees of all the mosaic domain blocks in the crystal,
+    represented as a standard deviation. Here, a mosaic block is a set of
+    contiguous unit cells assumed to be perfectly aligned. Lower mosaicity
+    indicates better ordered crystals. See for example:
+
+    Nave, C. (1998). Acta Cryst. D54, 848-853.
+
+    Note that many software packages estimate the mosaic rotation distribution
+    differently and may combine several physical properties of the experiment
+    into a single mosaic term. This term will help fit the modelled spots
+    to the observed spots without necessarily being directly related to the
+    physics of the crystal itself.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               mosaicity
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   degrees
+
+save_
+
+save_exptl_crystal.mosaicity_su
+
+    _definition.id                '_exptl_crystal.mosaicity_su'
+    _definition.update            2024-07-09
+    _description.text
+;
+    Standard uncertainty of _exptl_crystal.mosaicity.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               mosaicity_su
+    _name.linked_item_id          '_exptl_crystal.mosaicity'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
 
 save_
 
@@ -16739,6 +17117,27 @@ save_computing.publication_material
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+
+save_
+
+save_computing.sample_tracking
+
+    _definition.id                '_computing.sample_tracking'
+    _definition.update            2024-07-08
+    _description.text
+;
+    Reference to software used to track the position of a sample with
+    respect to the diffraction source beam. Typically used in 3D
+    electron diffraction. More details of the tracking method may be
+    provided in _diffrn_measurement.sample_tracking_method.
+;
+    _name.category_id             computing
+    _name.object_id               sample_tracking
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     'PyFast-ADT (Santucci, 2024)'
 
 save_
 
@@ -25607,6 +26006,62 @@ save_REFINE
 
 save_
 
+save_refine.diffraction_theory
+
+    _definition.id                '_refine.diffraction_theory'
+    _definition.update            2024-05-15
+    _description.text
+;
+    A code describing the approach to the calculation of the
+    diffracted intensities. In the kinematical approximation,
+    interactions of diffracted waves with matter are neglected, and
+    integrated intensities of the Bragg reflections are proportional
+    to the square of the modulus of the structure factor. In the
+    dynamical calculation, interactions between diffracted waves are
+    taken into account, and the proportionality of the intensities and
+    the structure factors is not preserved.
+;
+    _name.category_id             refine
+    _name.object_id               diffraction_theory
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         dynamical
+;
+         Interactions between diffracted waves and matter are taken into
+         account when calculating the amplitudes of the diffracted beams.
+;
+         kinematical
+;
+         Interactions between diffracted waves and matter are ignored
+         when calculating the amplitudes of diffracted beams.
+;
+
+save_
+
+save_refine.diffraction_theory_details
+
+    _definition.id                '_refine.diffraction_theory_details'
+    _definition.update            2024-12-02
+    _description.text
+;
+    Details needed to characterize the approach to the calculation of the
+    diffracted intensities, such as a description of the parameters that
+    were refined dynamically.
+;
+    _name.category_id             refine
+    _name.object_id               diffraction_theory_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
 save_refine.special_details
 
     _definition.id                '_refine.special_details'
@@ -25848,6 +26303,122 @@ save_refine_diff.density_rms_su
 
 save_
 
+save_refine_diff.potential_max
+
+    _definition.id                '_refine_diff.potential_max'
+    _definition.update            2024-12-06
+    _description.text
+;
+    Maximum electrostatic potential value in a difference Fourier map.
+;
+    _name.category_id             refine_diff
+    _name.object_id               potential_max
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   electrons_per_angstrom
+
+save_
+
+save_refine_diff.potential_max_su
+
+    _definition.id                '_refine_diff.potential_max_su'
+    _definition.update            2024-12-06
+    _description.text
+;
+    Standard uncertainty of _refine_diff.potential_max.
+;
+    _name.category_id             refine_diff
+    _name.object_id               potential_max_su
+    _name.linked_item_id          '_refine_diff.potential_max'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   electrons_per_angstrom
+
+save_
+
+save_refine_diff.potential_min
+
+    _definition.id                '_refine_diff.potential_min'
+    _definition.update            2024-12-06
+    _description.text
+;
+    Minimum electrostatic potential value in a difference Fourier map.
+;
+    _name.category_id             refine_diff
+    _name.object_id               potential_min
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   electrons_per_angstrom
+
+save_
+
+save_refine_diff.potential_min_su
+
+    _definition.id                '_refine_diff.potential_min_su'
+    _definition.update            2024-12-06
+    _description.text
+;
+    Standard uncertainty of _refine_diff.potential_min.
+;
+    _name.category_id             refine_diff
+    _name.object_id               potential_min_su
+    _name.linked_item_id          '_refine_diff.potential_min'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   electrons_per_angstrom
+
+save_
+
+save_refine_diff.potential_rms
+
+    _definition.id                '_refine_diff.potential_RMS'
+    _definition.update            2024-12-06
+    _description.text
+;
+    Root mean square electrostatic potential value in a difference Fourier map.
+    This value is measured with respect to the arithmetic mean
+    potential and is derived from summations over each grid point
+    in the asymmetric unit of the cell. This quantity is useful
+    for assessing the significance of *_min and *_max values,
+    and also for defining suitable contour levels.
+;
+    _name.category_id             refine_diff
+    _name.object_id               potential_RMS
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   electrons_per_angstrom
+
+save_
+
+save_refine_diff.potential_rms_su
+
+    _definition.id                '_refine_diff.potential_RMS_su'
+    _definition.update            2024-12-06
+    _description.text
+;
+    Standard uncertainty of _refine_diff.potential_RMS.
+;
+    _name.category_id             refine_diff
+    _name.object_id               potential_RMS_su
+    _name.linked_item_id          '_refine_diff.potential_RMS'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   electrons_per_angstrom
+
+save_
+
 save_REFINE_LS
 
     _definition.id                REFINE_LS
@@ -25993,6 +26564,32 @@ save_refine_ls.abs_structure_rogers_su
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_refine_ls.abs_structure_z-score
+
+    _definition.id                '_refine_ls.abs_structure_z-score'
+
+    _definition.update            2024-05-03
+    _description.text
+;
+    The z-score is a measure of confidence in an absolute structure
+    determination as described by Klar et al. (2023), based on the
+    method of Le Page et al. (1990). For centrosymmetric structures,
+    the only permitted value, if the data item is present, is
+    'inapplicable', represented by '.' .
+    Ref:  Klar, P. B. et al. (2023). Nature Chem. 15, 848-855.
+          Le Page, Y., Gabe, E. J. & Gainsford, G. J. (1990). J. Appl. Cryst.
+          23, 406-411.
+;
+    _name.category_id             refine_ls
+    _name.object_id               abs_structure_z_score
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -27057,6 +27654,99 @@ save_refine_ls.restrained_s_gt_su
 
 save_
 
+save_refine_ls.sample_shape_details
+
+    _definition.id                '_refine_ls.sample_shape_details'
+    _definition.update            2024-07-25
+    _description.text
+;
+    Additional details describing the sample thickness when calculated
+    during dynamical refinement where this cannot be defined completely by
+    the formula given in _refine_ls.sample_shape_expression.
+    Ref: Palatinus, L., Petricek, V. & Correa, C. A. (2015). Acta
+         Cryst. A71, 235-244.
+;
+    _name.category_id             refine_ls
+    _name.object_id               sample_shape_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_refine_ls.sample_shape_expression
+
+    _definition.id                '_refine_ls.sample_shape_expression'
+    _definition.update            2024-07-25
+    _description.text
+;
+    Formula for the sample thickness distribution when the sample
+    thickness is considered during dynamical refinement.
+    Ref: Palatinus, L., Petricek, V. & Correa, C. A. (2015). Acta
+         Cryst. A71, 235-244.
+;
+    _name.category_id             refine_ls
+    _name.object_id               sample_shape_expression
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case
+;
+    F(\t) = 1 - ( 1 - \t^2^)^1/2^
+;
+    _description_example.detail
+;
+    The cumulative distribution function in terms of the reduced thickness \t
+    of a sample treated as a cylinder. \t = t/t~m~, where t is the thickness
+    at the point illuminated and t~m~ the maximum thickness of the cylinder
+    (i.e. its diameter).
+;
+
+save_
+
+save_refine_ls.sample_thickness
+
+    _definition.id                '_refine_ls.sample_thickness'
+    _definition.update            2024-07-08
+    _description.text
+;
+    The refined sample thickness as determined by dynamical refinement.
+    Ref: Palatinus, L., Petricek, V. & Correa, C. A. (2015). Acta
+         Cryst. A71, 235-244.
+;
+    _name.category_id             refine_ls
+    _name.object_id               sample_thickness
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.:
+    _units.code                   nanometres
+    _description_example.case     35(2)
+
+save_
+
+save_refine_ls.sample_thickness_su
+
+    _definition.id                '_refine_ls.sample_thickness_su'
+    _definition.update            2024-07-08
+    _description.text
+;
+    Standard uncertainty of _refine_ls.sample_thickness.
+;
+    _name.category_id             refine_ls
+    _name.object_id               sample_thickness_su
+    _name.linked_item_id          '_refine_ls.sample_thickness'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   nanometres
+
+save_
+
 save_refine_ls.shift_over_su_max
 
     _definition.id                '_refine_ls.shift_over_su_max'
@@ -27995,7 +28685,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2024-11-12
+         3.3.0                    2025-02-17
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28085,4 +28775,30 @@ save_
        _audit_support.special_details data items.
 
        Added opaque identifiers for diffrn_refln and refln categories.
+
+       Added definitions and updated some existing ones with material
+       relating to electron diffraction (bm, on behalf of NanED group):
+         Added 'dyn' to _chemical.absolute_configuration.
+         Added two examples to _diffrn_source.size for NBED and SAED.
+         New items:
+           _computing.sample_tracking
+           _diffrn_detector.distance_sample
+           _diffrn.precession_semi_angle (and *_su)
+           _diffrn_detector.ed_calibration_constant
+           _diffrn_measurement.method_precession
+           _diffrn_measurement.rotation_mode
+           _diffrn_measurement.sample_tracking
+           _diffrn_measurement.sample_tracking_method
+           _diffrn_radiation.illumination_mode
+           _diffrn_source.convergence_angle
+           _diffrn_source.ed_diffracting_area_selection
+           _exptl_crystal.mosaic_block_size (and *_su)
+           _exptl_crystal.mosaic_method
+           _exptl_crystal.mosaicity (and *_su)
+           _refine_diff.potential_max, *_min, *_rms (all with *_su)
+           _refine.diffraction_theory and _refine.diffraction_theory_details
+           _refine_ls.abs_structure_z-score
+           _refine_ls.sample_shape_details
+           _refine_ls.sample_shape_expression
+           _refine_ls.sample_thickness (and *_su)
 ;
