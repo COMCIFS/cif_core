@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2024-05-17
+    _dictionary.date              2025-02-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -847,7 +847,7 @@ save_dictionary_author.name
 
     _definition.id                '_dictionary_author.name'
     _definition.class             Attribute
-    _definition.update            2023-07-13
+    _definition.update            2025-02-19
     _description.text
 ;
     The name of an author of this dictionary. The family name(s), followed
@@ -864,14 +864,14 @@ save_dictionary_author.name
 
     loop_
       _description_example.case
-         '''Bleary, Percival R.'''
-         '''O'Neil, F.K.'''
-         '''Van den Bossche, G.'''
-         '''Yang, D.-L.'''
-         '''Simonov, Yu.A.'''
-         '''M\"uller, H.A.'''
-         '''Ross II, C.R.'''
-         '''Chandra'''
+         "Bleary, Percival R."
+         "O'Neil, F.K."
+         "Van den Bossche, G."
+         "Yang, D.-L."
+         "Simonov, Yu.A."
+         "Müller, H.A."
+         "Ross II, C.R."
+         "Chandra"
 
 save_
 
@@ -3067,7 +3067,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2024-05-17
+         4.2.0                    2025-02-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
