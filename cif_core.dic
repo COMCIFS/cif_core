@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-02-07
+    _dictionary.date              2025-02-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -529,7 +529,7 @@ save_
 save_diffrn.total_dose
 
     _definition.id                '_diffrn.total_dose'
-    _definition.update            2025-02-07
+    _definition.update            2025-02-26
     _description.text
 ;
     Total radiation dose absorbed by the crystal during the diffraction
@@ -542,12 +542,29 @@ save_diffrn.total_dose
 ;
     _name.category_id             diffrn
     _name.object_id               total_dose
-    _type.purpose                 Number
+    _type.purpose                 Measurand
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   megagray
+
+save_
+
+save_diffrn.total_dose_su
+
+    _definition.id                '_diffrn.total_dose_su'
+    _definition.update            2025-02-26
+    _description.text
+;
+    Standard uncertainty of _diffrn.total_dose.
+;
+    _name.category_id             diffrn
+    _name.object_id               total_dose_su
+    _name.linked_item_id          '_diffrn.total_dose'
+    _units.code                   megagray
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
 save_
 
@@ -28073,7 +28090,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-02-07
+         3.3.0                    2025-02-26
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28167,4 +28184,6 @@ save_
        Added _diffrn.flux_density, _diffrn.total_dose and
        _diffrn.total_exposure_time as first step towards characterizing
        radiation damage (bm).
+
+       Changed _type.purpose of _diffrn.total_dose to 'Measurand' (bm).
 ;
