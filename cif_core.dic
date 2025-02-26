@@ -28184,6 +28184,4 @@ save_
        Added _diffrn.flux_density, _diffrn.total_dose and
        _diffrn.total_exposure_time as first step towards characterizing
        radiation damage (bm).
-
-       Changed _type.purpose of _diffrn.total_dose to 'Measurand' (bm).
 ;
