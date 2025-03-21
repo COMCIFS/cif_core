@@ -5483,8 +5483,8 @@ save_diffrn_source.convergence_angle
 ;
     The angle of convergence of the source beam (for example in
     convergent-beam electron diffraction). The convergence angle
-    is the angular spread of the cone of illumination (i.e. 2\a,
-    where the semi-angle \a is measured from the axis defining the
+    is the angular spread of the cone of illumination (i.e. 2α,
+    where the semi-angle α is measured from the axis defining the
     beam direction).
 ;
     _name.category_id             diffrn_source
@@ -27650,12 +27650,12 @@ save_refine_ls.sample_shape_expression
     _type.contents                Text
     _description_example.case
 ;
-    F(\t) = 1 - ( 1 - \t^2^)^1/2^
+    F(𝜏) = 1 - ( 1 - 𝜏^2^)^1/2^
 ;
     _description_example.detail
 ;
-    The cumulative distribution function in terms of the reduced thickness \t
-    of a sample treated as a cylinder. \t = t/t~m~, where t is the thickness
+    The cumulative distribution function in terms of the reduced thickness 𝜏
+    of a sample treated as a cylinder. 𝜏 = t/t~m~, where t is the thickness
     at the point illuminated and t~m~ the maximum thickness of the cylinder
     (i.e. its diameter).
 ;
