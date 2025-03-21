@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-02-17
+    _dictionary.date              2025-03-21
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2329,30 +2329,6 @@ save_diffrn_detector.details
 
 save_
 
-save_diffrn_detector.distance_sample
-
-    _definition.id                '_diffrn_detector.distance_sample'
-    _definition.update            2024-07-26
-    _description.text
-;
-    Mean distance in millimetres from the diffracting sample
-    to the detector. Appropriate for instrument geometries where
-    the detector is fixed or maintained at a constant distance
-    from the diffraction target. More general geometries and
-    provision for adjusting the instrument geometries between or
-    during scans are handled by the imgCIF dictionary.
-;
-    _name.category_id             diffrn_detector
-    _name.object_id               distance_sample
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   millimetres
-
-save_
-
 save_diffrn_detector.dtime
 
     _definition.id                '_diffrn_detector.dtime'
@@ -2377,26 +2353,6 @@ save_diffrn_detector.dtime
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   microseconds
-
-save_
-
-save_diffrn_detector.ed_calibration_constant
-
-    _definition.id                '_diffrn_detector.ed_calibration_constant'
-    _definition.update            2024-07-15
-    _description.text
-;
-    The electron diffraction camera constant calibration factor.
-    Ref: Millette, J. (1987). The Microscope, 35, 107-117.
-;
-    _name.category_id             diffrn_detector
-    _name.object_id               ed_calibration_constant
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   reciprocal_angstroms_per_pixel
 
 save_
 
@@ -28685,7 +28641,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-02-17
+         3.3.0                    2025-03-21
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28782,9 +28738,7 @@ save_
          Added two examples to _diffrn_source.size for NBED and SAED.
          New items:
            _computing.sample_tracking
-           _diffrn_detector.distance_sample
            _diffrn.precession_semi_angle (and *_su)
-           _diffrn_detector.ed_calibration_constant
            _diffrn_measurement.method_precession
            _diffrn_measurement.rotation_mode
            _diffrn_measurement.sample_tracking
