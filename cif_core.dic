@@ -663,10 +663,10 @@ save_cell.convert_uij_to_betaij
 ;
     With c  as  cell
 
-    _cell.convert_Uij_to_betaij =                              1.4142 * Pi *
-    Matrix([[ c.reciprocal_length_a, 0, 0 ],
-                [ 0, c.reciprocal_length_b, 0 ],
-                    [ 0, 0, c.reciprocal_length_c ]])
+    _cell.convert_Uij_to_betaij =
+    1.4142 * Pi * Matrix([[ c.reciprocal_length_a, 0, 0 ],
+                          [ 0, c.reciprocal_length_b, 0 ],
+                          [ 0, 0, c.reciprocal_length_c ]])
 ;
 
 save_
@@ -12087,8 +12087,8 @@ save_space_group_symop.seitz_matrix
     _method.purpose               Evaluation
     _method.expression
 ;
-    _space_group_symop.Seitz_matrix =  SeitzFromJones
-    (_space_group_symop.operation_xyz)
+    _space_group_symop.Seitz_matrix =
+    SeitzFromJones(_space_group_symop.operation_xyz)
 ;
 
 save_
@@ -22458,11 +22458,11 @@ save_atom_site_aniso.matrix_beta
         {
             If (a.ADP_type == 'Uani')
             {
-                UIJ = b.matrix_U
+                UIJ = a.matrix_U
             }
             Else If (a.ADP_type == 'Bani')
             {
-                UIJ = b.matrix_B / (8 * Pi**2)
+                UIJ = a.matrix_B / (8 * Pi**2)
             }
             Else {
                 If (a.ADP_type == 'Uiso')
@@ -27612,12 +27612,13 @@ save_function.atomtype
     Function AtomType( s :[Single, Word])  {  # atom label
 
        m = Len(s)
-       n = 1
-       If (m > 1 and s[1] not in '0123456789') n = 2
-       If (m > 2 and s[2]     in '+-'        ) n = 3
-       If (m > 3 and s[3]     in '+-'        ) n = 4
+       f = ""
+       if (m > 0) f += Upper(s[0])
+       If (m > 1 and s[1] not in '0123456789') f += Lower(s[1])
+       If (m > 2 and s[2]     in '+-'        ) f += s[2]
+       If (m > 3 and s[3]     in '+-'        ) f += s[3]
 
-                AtomType =  s[0:n]
+                AtomType =  f
     }
 ;
 
@@ -27705,11 +27706,14 @@ save_function.seitzfromjones
           Else If (c == 'z') s[axis,2] = sign
           Else   {
                If (inum == 0)   m  = AtoI(c)
-               If (inum == 1 and c != '/') dummy = print('illegal num in
-    symmetry xyz')            If (inum == 2)   {
-                                n  = AtoI(c)
-                     If(n == 5) dummy = print('illegal translation in symmetry
-    xyz')                  s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
+               If (inum == 1 and c != '/')
+                   dummy = print('illegal num in symmetry xyz')
+               If (inum == 2)
+               {
+                     n  = AtoI(c)
+                     If(n == 5)
+                        dummy = print('illegal translation in symmetry xyz')
+                     s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
                      sign      = 1
                }
                inum += 1
