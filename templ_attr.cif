@@ -244,7 +244,7 @@ save_site_ssg_symmetry
     loop_
     _description_example.case
     _description_example.detail
-    '.'                  'no symmetry or translation to site'          
+    .                    'no symmetry or translation to site'          
     '4'                  '4th symmetry operation applied'    
     '7_645'              '7th symmetry position; +a on x, -b on y' 
 
