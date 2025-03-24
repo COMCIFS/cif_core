@@ -665,7 +665,7 @@ save_cell.convert_uij_to_betaij
 
     _cell.convert_Uij_to_betaij =
     1.4142 * Pi * Matrix([[ c.reciprocal_length_a, 0, 0 ],
-                          [0, c.reciprocal_length_b, 0 ],
+                          [ 0, c.reciprocal_length_b, 0 ],
                           [ 0, 0, c.reciprocal_length_c ]])
 ;
 
