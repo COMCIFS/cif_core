@@ -384,6 +384,40 @@ save_diffrn.crystal_treatment
 
 save_
 
+save_diffrn.flux_density
+
+    _definition.id                '_diffrn.flux_density'
+    _definition.update            2025-02-07
+    _description.text
+;
+    Flux density of radiation incident at the crystal.
+
+    Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
+    J. C. & Garman, E. F. (2024). Doses for X-ray and electron
+    diffraction: New features in RADDOSE-3D including intensity decay
+    models. Protein Sci. 33, e5005.
+;
+    _name.category_id             diffrn
+    _name.object_id               flux_density
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _method.purpose               Definition
+    _method.expression
+;
+    If      (_diffrn_radiation.probe == "neutron")
+                                _units.code =
+"neutrons_per_millimetre_squared_per_second"
+    Else If (_diffrn_radiation.probe == "electron")
+                                _units.code =
+"electrons_per_angstrom_squared_per_second"
+    Else                        _units.code =
+"photons_per_millimetre_squared_per_second"
+;
+save_
+
 save_diffrn.id
 
     _definition.id                '_diffrn.id'
@@ -528,6 +562,67 @@ save_diffrn.symmetry_description
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+
+save_
+
+save_diffrn.total_dose
+
+    _definition.id                '_diffrn.total_dose'
+    _definition.update            2025-02-26
+    _description.text
+;
+    Total radiation dose absorbed by the crystal during the diffraction
+    experiment.
+
+    Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
+    J. C. & Garman, E. F. (2024). Doses for X-ray and electron
+    diffraction: New features in RADDOSE-3D including intensity decay
+    models. Protein Sci. 33, e5005.
+;
+    _name.category_id             diffrn
+    _name.object_id               total_dose
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   megagray
+
+save_
+
+save_diffrn.total_dose_su
+
+    _definition.id                '_diffrn.total_dose_su'
+    _definition.update            2025-02-26
+    _description.text
+;
+    Standard uncertainty of _diffrn.total_dose.
+;
+    _name.category_id             diffrn
+    _name.object_id               total_dose_su
+    _name.linked_item_id          '_diffrn.total_dose'
+    _units.code                   megagray
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_diffrn.total_exposure_time
+
+    _definition.id                '_diffrn.total_exposure_time'
+    _definition.update            2025-02-07
+    _description.text
+;
+    Total time the crystal was exposed during the diffraction experiment.
+;
+    _name.category_id             diffrn
+    _name.object_id               total_exposure_time
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   minutes
 
 save_
 
@@ -702,10 +797,10 @@ save_cell.convert_uij_to_betaij
 ;
     With c  as  cell
 
-    _cell.convert_Uij_to_betaij =                              1.4142 * Pi *
-    Matrix([[ c.reciprocal_length_a, 0, 0 ],
-                [ 0, c.reciprocal_length_b, 0 ],
-                    [ 0, 0, c.reciprocal_length_c ]])
+    _cell.convert_Uij_to_betaij =
+    1.4142 * Pi * Matrix([[ c.reciprocal_length_a, 0, 0 ],
+                          [ 0, c.reciprocal_length_b, 0 ],
+                          [ 0, 0, c.reciprocal_length_c ]])
 ;
 
 save_
@@ -12421,8 +12516,8 @@ save_space_group_symop.seitz_matrix
     _method.purpose               Evaluation
     _method.expression
 ;
-    _space_group_symop.Seitz_matrix =  SeitzFromJones
-    (_space_group_symop.operation_xyz)
+    _space_group_symop.Seitz_matrix =
+    SeitzFromJones(_space_group_symop.operation_xyz)
 ;
 
 save_
@@ -16030,7 +16125,7 @@ save_
 save_audit_support.award_type
 
     _definition.id                '_audit_support.award_type'
-    _definition.update            2020-08-23
+    _definition.update            2024-10-18
     _description.text
 ;
     Type or kind of award.
@@ -16055,7 +16150,7 @@ save_audit_support.award_type
 ;
          Funds were provided by an organization or person outside the research
          program for the specific purpose of supporting the research, as
-         directed by the primary investigator
+         directed by the primary investigator.
 ;
          contract
 ;
@@ -22813,11 +22908,11 @@ save_atom_site_aniso.matrix_beta
         {
             If (a.ADP_type == 'Uani')
             {
-                UIJ = b.matrix_U
+                UIJ = a.matrix_U
             }
             Else If (a.ADP_type == 'Bani')
             {
-                UIJ = b.matrix_B / (8 * Pi**2)
+                UIJ = a.matrix_B / (8 * Pi**2)
             }
             Else {
                 If (a.ADP_type == 'Uiso')
@@ -28258,12 +28353,13 @@ save_function.atomtype
     Function AtomType( s :[Single, Word])  {  # atom label
 
        m = Len(s)
-       n = 1
-       If (m > 1 and s[1] not in '0123456789') n = 2
-       If (m > 2 and s[2]     in '+-'        ) n = 3
-       If (m > 3 and s[3]     in '+-'        ) n = 4
+       f = ""
+       if (m > 0) f += Upper(s[0])
+       If (m > 1 and s[1] not in '0123456789') f += Lower(s[1])
+       If (m > 2 and s[2]     in '+-'        ) f += s[2]
+       If (m > 3 and s[3]     in '+-'        ) f += s[3]
 
-                AtomType =  s[0:n]
+                AtomType =  f
     }
 ;
 
@@ -28351,11 +28447,14 @@ save_function.seitzfromjones
           Else If (c == 'z') s[axis,2] = sign
           Else   {
                If (inum == 0)   m  = AtoI(c)
-               If (inum == 1 and c != '/') dummy = print('illegal num in
-    symmetry xyz')            If (inum == 2)   {
-                                n  = AtoI(c)
-                     If(n == 5) dummy = print('illegal translation in symmetry
-    xyz')                  s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
+               If (inum == 1 and c != '/')
+                   dummy = print('illegal num in symmetry xyz')
+               If (inum == 2)
+               {
+                     n  = AtoI(c)
+                     If(n == 5)
+                        dummy = print('illegal translation in symmetry xyz')
+                     s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
                      sign      = 1
                }
                inum += 1
@@ -28755,4 +28854,8 @@ save_
            _refine_ls.sample_shape_details
            _refine_ls.sample_shape_expression
            _refine_ls.sample_thickness (and *_su)
+
+       Added _diffrn.flux_density, _diffrn.total_dose and
+       _diffrn.total_exposure_time as first step towards characterizing
+       radiation damage (bm).
 ;
