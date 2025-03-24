@@ -27708,7 +27708,7 @@ save_function.seitzfromjones
           Else   {
                If (inum == 0)   m  = AtoI(c)
                If (inum == 1 and c != '/')
-               dummy = print('illegal num in symmetry xyz')
+                   dummy = print('illegal num in symmetry xyz')
                If (inum == 2)
                {
                      n  = AtoI(c)
