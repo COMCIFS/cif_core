@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2024-07-17
+    _dictionary.date             2025-03-27
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_attr.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -280,7 +280,7 @@ save_cell_length_su
 
 save_site_symmetry
 
-    _definition.update           2023-06-19
+    _definition.update           2025-03-27
     _description.text
 ;
      Data item specifying the symmetry operation codes applied to the atom
@@ -299,8 +299,8 @@ save_site_symmetry
 
          p, q and r refer to the translations that are subsequently
          applied to the symmetry transformed coordinates to generate
-         the atom used in calculating the angle. These translations
-         (x,y,z) are related to (p,q,r) by the relations
+         the atom used in calculating the geometric parameter. These
+         translations (x,y,z) are related to (p,q,r) by the relations
               p = 5 + x
               q = 5 + y
               r = 5 + z
@@ -554,11 +554,11 @@ save_
 
 save_aniso_bij
 
-    _definition.update           2023-02-16
+    _definition.update           2025-03-27
     _description.text
 ;
      These are the standard anisotropic atomic displacement components, in
-     angstroms squared, which appear in the structure factor term:
+     angstroms squared, which appear in the structure-factor term
 
          T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
@@ -569,11 +569,11 @@ save_aniso_bij
 
      The IUCr Commission on Nomenclature recommends against the use of B for
      reporting atomic displacement parameters. U, being directly proportional
-     to B, is preferred [1].
+     to B, is preferred.
 
      Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -585,13 +585,14 @@ save_aniso_bij
 
 save_aniso_bij_su
 
-    _definition.update           2023-07-01
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
+     These are the standard uncertainty values (s.u.) for the standard
      form of the B^ij^ anisotropic atomic displacement components (see
-     aniso_BIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the B^ij^ calculation.
+     aniso_BIJ). Because these values are _type.purpose Measurand, the
+     s.u. values may in practice be auto generated as part of the
+     B^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Related
@@ -603,11 +604,11 @@ save_aniso_bij_su
 
 save_aniso_betaij
 
-    _definition.update           2023-02-16
+    _definition.update           2025-03-27
     _description.text
 ;
      These are the standard unitless anisotropic atomic displacement components
-     which appear in the structure factor term:
+     which appear in the structure factor term
 
          T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
 
@@ -632,13 +633,14 @@ save_aniso_betaij
 
 save_aniso_betaij_su
 
-    _definition.update           2023-02-15
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
+     These are the standard uncertainty values (s.u.) for the standard
      form of the β^ij^ anisotropic atomic displacement components (see
-     aniso_betaIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the β^ij^ calculation.
+     aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     s.u. values may in practice be auto generated as part of the
+     β^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Related
@@ -650,11 +652,11 @@ save_aniso_betaij_su
 
 save_aniso_uij
 
-    _definition.update           2023-02-16
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard anisotropic atomic displacement components, in
-     angstroms squared, which appear in the structure factor term:
+     These are the standard anisotropic atomic displacement components in
+     angstroms squared which appear in the structure-factor term
 
         T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
@@ -680,13 +682,14 @@ save_aniso_uij
 
 save_aniso_uij_su
 
-    _definition.update           2023-07-01
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
+     These are the standard uncertainty values (s.u.) for the standard
      form of the U^ij^ anisotropic atomic displacement components (see
-     aniso_UIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the U^ij^ calculation.
+     aniso_UIJ). Because these values are _type.purpose Measurand, the
+     s.u. values may in practice be auto generated as part of the
+     U^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Related
@@ -1023,7 +1026,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2024-07-17
+         1.4.11                   2025-03-27
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -1046,4 +1049,10 @@ save_display_colour
 
        Changed the enumeration range of in the 'cell_length' save frame from
        '1.0:' to '0.0:' (av).
+
+       Style/formatting changes in readiness for Volume G 2nd Edition for:
+         aniso_bij, aniso_bij_su, aniso_beta_ij, aniso_beta_ij_su,
+         aniso_uij, aniso_uij_su
+
+       Updated description of _site_symmetry.
 ;

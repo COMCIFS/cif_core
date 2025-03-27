@@ -17962,24 +17962,6 @@ save_journal.coden_cambridge
 
 save_
 
-save_journal.data_validation_number
-
-    _definition.id                '_journal.data_validation_number'
-    _alias.definition_id          '_journal_data_validation_number'
-    _definition.update            2021-10-27
-    _description.text
-;
-    Journal data items are defined by the journal staff.
-;
-    _name.category_id             journal
-    _name.object_id               'data_validation_number'
-    _type.purpose                 Encode
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_journal.issue
 
     _definition.id                '_journal.issue'
@@ -18223,10 +18205,18 @@ save_
 save_journal.validation_number
 
     _definition.id                '_journal.validation_number'
-    _definition.update            2013-01-23
+
+    loop_
+      _alias.definition_id
+         '_journal.data_validation_number'
+         '_journal_data_validation_number'
+
+    _definition.update            2025-03-27
     _description.text
 ;
-    Data validation number assigned to journal.
+    Data validation number identifying a published structure that
+    has been processed by a standard validation/checking procedure;
+    assigned by a journal.
 ;
     _name.category_id             journal
     _name.object_id               validation_number
@@ -28858,4 +28848,7 @@ save_
        Added _diffrn.flux_density, _diffrn.total_dose and
        _diffrn.total_exposure_time as first step towards characterizing
        radiation damage (bm).
+
+       Made _journal.data_validation_number a proper alias of
+       _journal.validation_number and deleted save frame for the former (bm).
 ;
