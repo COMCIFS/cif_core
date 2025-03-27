@@ -18223,7 +18223,7 @@ save_journal.validation_number
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Code
+    _type.contents                Word
 
 save_
 
