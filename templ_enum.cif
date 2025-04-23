@@ -883,6 +883,8 @@ save_units_code
    'microseconds_per_angstrom_squared' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-2))'"
    'microseconds_per_angstrom_cubed' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-3))'"
    'angstroms_per_microsecond'       "TOF coefficient '(metres * 10^(-10)) * (seconds * 10^(-6)^(-1))'"
+
+   'electron_volts_per_angstrom' "force 'electron volts per angstrom (eV * (metres * 10^(-10)^(-1)))'"
     save_
 
 
