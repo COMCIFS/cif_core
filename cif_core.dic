@@ -12230,7 +12230,7 @@ save_SPACE_GROUP_GENERATOR
     _definition.id                SPACE_GROUP_GENERATOR
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-04-28
     _description.text
 ;
     The CATEGORY of data items used to list generators for
@@ -12238,20 +12238,20 @@ save_SPACE_GROUP_GENERATOR
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_GENERATOR
-    _category_key.name            '_space_group_generator.key'
+    _category_key.name            '_space_group_generator.id'
 
 save_
 
-save_space_group_generator.key
+save_space_group_generator.id
 
-    _definition.id                '_space_group_generator.key'
-    _definition.update            2023-02-03
+    _definition.id                '_space_group_generator.id'
+    _definition.update            2025-04-28
     _description.text
 ;
     Arbitrary identifier for each entry in the _space_group_generator.xyz list.
 ;
     _name.category_id             space_group_generator
-    _name.object_id               key
+    _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
@@ -28829,5 +28829,6 @@ save_
        Made _journal.data_validation_number a proper alias of
        _journal.validation_number and deleted save frame for the former (bm).
 
-       Removed the _atom_type.key data item.
+       Removed the _atom_type.key data item. Renamed _space_group_generator.key
+       to _space_group_generator.id for consistency. (av)
 ;
