@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-03-27
+    _dictionary.date              2025-05-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -738,7 +738,7 @@ save_cell.atomic_mass
     _definition.update            2012-11-22
     _description.text
 ;
-    Atomic mass of the contents of the unit cell. This calculated
+    Atomic mass of the contents of the unit cell. This is calculated
     from the atom sites present in the ATOM_TYPE list, rather than
     the ATOM_SITE lists of atoms in the refined model.
 ;
@@ -770,19 +770,19 @@ save_cell.convert_uij_to_betaij
     _definition.update            2021-09-24
     _description.text
 ;
-    The reciprocal space matrix for converting the U(ij) matrix of
+    The reciprocal-space matrix for converting the U(ij) matrix of
     atomic displacement parameters to a dimensionless beta(IJ) matrix.
-    The ADP factor in a structure factor expression:
+    The ADP factor in a structure-factor expression:
 
-    t = exp - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* )
-    t = exp - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* )
-      = exp -       ( β11 h h + ............ 2 β23 k l )
+    t = exp [ - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* ) ]
+    t = exp [ - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* ) ]
+    t = exp [ -       ( β11 h h + ............ 2 β23 k l ) ]
 
     The conversion of the U or B matrices to the β matrix
 
         β =   C U C   =    C B C /8π^2^
 
-    where C is conversion matrix defined here.
+    where C is the conversion matrix defined here.
 ;
     _name.category_id             cell
     _name.object_id               convert_Uij_to_betaij
@@ -831,11 +831,11 @@ save_cell.convert_uiso_to_uij
     _definition.update            2021-07-07
     _description.text
 ;
-    The reciprocal space matrix for converting the isotropic Uiso
+    The reciprocal-space matrix for converting the isotropic Uiso
     atomic displacement parameter to the anisotropic matrix Uij.
 
                      | 1        cos(γ*)  cos(β*) |
-    U[i,j]  = Uiso * | cos(γ*)  1        cos(α*) |
+    Uij   =   Uiso * | cos(γ*)  1        cos(α*) |
                      | cos(β*)  cos(α*)  1       |
 ;
     _name.category_id             cell
@@ -1046,12 +1046,15 @@ save_
 save_cell.orthogonal_matrix
 
     _definition.id                '_cell.orthogonal_matrix'
-    _definition.update            2021-07-07
+    _definition.update            2025-05-12
     _description.text
 ;
     Orthogonal matrix of the crystal unit cell. Definition uses
-    Rollet's axial assignments with cell vectors a,b,c aligned
+    Rollett's axial assignments with cell vectors a,b,c aligned
     with orthogonal axes X,Y,Z so that c||Z and b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _name.category_id             cell
     _name.object_id               orthogonal_matrix
@@ -1446,9 +1449,9 @@ save_cell.reciprocal_orthogonal_matrix
 ;
     Orthogonal matrix of the reciprocal space. The matrix may be
     used to transform the non-orthogonal vector h = (h,k,l) into
-    the orthogonal indices p = (p,q,r)
+    the orthogonal indices p = (p,q,r):
 
-                    M h = p
+                    M h = p.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_orthogonal_matrix
@@ -1984,7 +1987,7 @@ save_cell_measurement.reflns_used
     _description.text
 ;
     Total number of reflections used to determine the unit cell.
-    The reflections may be specified as cell_measurement_refln items.
+    The reflections may be specified as CELL_MEASUREMENT_REFLN items.
 ;
     _name.category_id             cell_measurement
     _name.object_id               reflns_used
@@ -8889,13 +8892,13 @@ save_chemical.absolute_configuration
     _definition.update            2023-02-02
     _description.text
 ;
-    Necessary conditions for this assignment are given by
-         Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
+    Necessary conditions for this assignment are given by H. D. Flack
+    and G. Bernardinelli (1999, 2000).
+
+    Ref: Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
                 https://doi.org/10.1107/S0108767399004262
-                https://www.iucr.org/paper?sh0129
          Flack, H. D. & Bernardinelli, G. (2000). J. Appl. Cryst. 33, 1143-1148.
                 https://doi.org/10.1107/S0021889800007184
-                https://www.iucr.org/paper?ks0021
 ;
     _name.category_id             chemical
     _name.object_id               absolute_configuration
@@ -8915,8 +8918,9 @@ save_chemical.absolute_configuration
 ;
          ad
 ;
-         'anomalous dispersion' Absolute configuration established by a-d
-         effects in diffraction measurements on the crystal.
+         'anomalous dispersion' Absolute configuration established by
+         anomalous-dispersion effects in diffraction measurements on
+         the crystal.
 ;
          dyn
 ;
@@ -8926,8 +8930,8 @@ save_chemical.absolute_configuration
 ;
          'rm + ad' Absolute configuration established by the structure
          determination of a compound containing a chiral reference molecule of
-         known absolute configuration and confirmed by a-d effects in
-         diffraction measurements on the crystal.
+         known absolute configuration and confirmed by anomalous-dispersion
+         effects in diffraction measurements on the crystal.
 ;
          syn
 ;
@@ -8938,8 +8942,9 @@ save_chemical.absolute_configuration
 ;
          unk
 ;
-         'unknown' No firm chemical or a-d evidence for an assignment is
-         available. An arbitrary choice of enantiomer has been made.
+         'unknown' No firm chemical or anomalous-dispersion evidence for
+         an assignment is available. An arbitrary choice of enantiomer
+         has been made.
 ;
          .
 ;
@@ -8982,8 +8987,9 @@ save_chemical.enantioexcess_bulk
     Enantioexcess is defined in the IUPAC Recommendations
     (Moss et al., 1996). The composition of the crystal
     and bulk must be the same.
+
     Ref: Moss G. P. et al. (1996). Basic Terminology of Stereochemistry.
-         Pure Appl. Chem., 68, 2193-2222.
+         Pure Appl. Chem. 68, 2193-2222.
          https://doi.org/10.1351/pac199668122193
          https://iupac.qmul.ac.uk/stereo/
 ;
@@ -20940,12 +20946,12 @@ save_atom_analytical_source.special_details
     loop_
       _description_example.case
 ;
-       XRF utilising a WDS detector system calibrated for the analysis
-       of iron ores.
+       XRF utilising a WDS detector system calibrated for the
+       analysis of iron ores.
 ;
 ;
-       Laser Induced Breakdown Spectroscopy. Measurements carried out
-       by commercial laboratory, report #P90.
+       Laser Induced Breakdown Spectroscopy. Measurements carried
+       out by commercial laboratory, report #P90.
 ;
 ;
        Detector calibrated following Smith (2018).
@@ -21091,7 +21097,7 @@ save_atom_scat_versus_stol.stol_value
     _description.text
 ;
     The value of sin(θ)/λ (sin theta over lambda, stol) to which the
-    accompanying atom symbol and scattering factor value correspond to.
+    accompanying atom symbol and scattering factor value correspond.
 
     A regularly spaced grid is strongly recommended.
 ;
@@ -21262,7 +21268,7 @@ save_atom_site.b_equiv_geom_mean
 
                 B(equiv) = (B~i~ B~j~ B~k~)^1/3^
 
-    B~n~  = the principal components of the orthogonalised B^ij^
+    B~n~  = the principal components of the orthogonalized B^ij^
 
     The IUCr Commission on Nomenclature recommends against the use
     of B for reporting atomic displacement parameters. U, being
@@ -22291,7 +22297,7 @@ save_atom_site.u_equiv_geom_mean
 
                U(equiv) = (U~i~ U~j~ U~k~)^1/3^
 
-    U~n~ = the principal components of the orthogonalised U^ij^
+    U~n~ = the principal components of the orthogonalized U^ij^
 ;
     _name.category_id             atom_site
     _name.object_id               U_equiv_geom_mean
@@ -22854,23 +22860,23 @@ save_atom_site_aniso.matrix_beta
     _description.text
 ;
     The symmetric anisotropic atomic displacement parameter (ADP) matrix, β,
-    which appears in a structure factor expression.
+    which appears in a structure-factor expression.
 
     The contribution of the ADPs to the calculation of the structure factor is
-    given as:
+    given as
 
-        T = exp(-1 * Sum(Sum(β^ij^ * h~i~ * h~j~, j=1:3), i=1:3))
+        T = exp{-1 * Sum[Sum(β^ij^ * h~i~ * h~j~, j=1:3), i=1:3]}
 
-    where β^ij^ are the matrix elements, and h~m~ are the Miller indices.
+    where β^ij^ are the matrix elements and h~m~ are the Miller indices.
 
-    The ADP matrix β, is related to the ADP matrices U and B, as follows:
+    The ADP matrix β is related to the ADP matrices U and B as follows:
 
                 |a~1~*   0     0  |   |t^11^ t^12^ t^13^|   |a~1~*   0     0  |
         β = C * |  0   a~2~*   0  | * |t^12^ t^22^ t^23^| * |  0   a~2~*   0  |
                 |  0     0   a~3~*|   |t^13^ t^23^ t^33^|   |  0     0   a~3~*|
 
-    where C is a constant (2 * π^2^ for U, and 0.25 for B), a~i~* is the
-    length of the respective reciprocal unit cell vector, and t represents
+    where C is a constant (2 * π^2^ for U and 0.25 for B), a~i~* is the
+    length of the respective reciprocal unit-cell vector, and t represents
     the individual anisotropic values, U^ij^ or B^ij^.
 ;
     _name.category_id             atom_site_aniso
@@ -23338,8 +23344,9 @@ save_atom_sites.solution_hydrogens
     how the remaining non-hydrogen sites were located; and the
     *_hydrogens code identifies how the hydrogen sites were located.
 
-    Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-         Miller, R. and Usón, I. (2001). Ab initio phasing.
+    Ref: Oszlányi, G. & Süto, A. (2004). Acta Cryst. A60, 134-141;
+         Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
+         Miller, R. & Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
          edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -23397,8 +23404,7 @@ save_atom_sites.solution_hydrogens
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
-         Acta Cryst. A60, 134-141].
+         Iterative e.g. charge flipping (Oszlányi & Süto, 2004).
 ;
          other
 ;
@@ -23420,7 +23426,8 @@ save_atom_sites.solution_primary
     how the remaining non-hydrogen sites were located; and the
     *_hydrogens code identifies how the hydrogen sites were located.
 
-    Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
+    Ref: Oszlányi, G. & Süto, A. (2004). Acta Cryst. A60, 134-141;
+         Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
          Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
@@ -23475,8 +23482,7 @@ save_atom_sites.solution_primary
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
-         Acta Cryst. A60, 134-141].
+         Iterative e.g. charge flipping (Oszlányi & Süto, 2004).
 ;
          other
 ;
@@ -23498,7 +23504,8 @@ save_atom_sites.solution_secondary
     how the remaining non-hydrogen sites were located; and the
     *_hydrogens code identifies how the hydrogen sites were located.
 
-    Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
+    Ref: Oszlányi, G. & Süto, A. (2004). Acta Cryst. A60, 134-141;
+         Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
          Miller, R. and Usón, I. (2001). Ab initio phasing.
          In International Tables for Crystallography,
          Vol. F. Crystallography of biological macromolecules,
@@ -23553,8 +23560,7 @@ save_atom_sites.solution_secondary
 ;
          iterative
 ;
-         Iterative e.g. charge flipping [Oszlányi, G. and Süto, A. (2004).
-         Acta Cryst. A60, 134-141].
+         Iterative e.g. charge flipping (Oszlányi & Süto, 2004).
 ;
          other
 ;
@@ -23990,7 +23996,7 @@ save_
 save_atom_sites_cartn_transform.matrix
 
     _definition.id                '_atom_sites_Cartn_transform.matrix'
-    _definition.update            2021-07-07
+    _definition.update            2025-05-12
     _description.text
 ;
     Matrix used to transform fractional coordinates in the ATOM_SITE
@@ -23998,13 +24004,16 @@ save_atom_sites_cartn_transform.matrix
     transformation are described in _atom_sites_Cartn_transform.axes.
     The 3 x 1 translation is defined in _atom_sites_Cartn_transform.vector.
 
-      x'                   |11 12 13|     x                  | 1 |
-    ( y' ) Cartesian   =   |21 22 23| * ( y ) fractional  + v| 2 |
-      z'                   |31 32 33|     z                  | 3 |
+      x'                      |11 12 13|     x                    | 1 |
+    ( y' ) Cartesian   =   mat|21 22 23| * ( y ) fractional  + vec| 2 |
+      z'                      |31 32 33|     z                    | 3 |
 
-    The default transformation matrix uses Rollet's axial
+    The default transformation matrix uses Rollett's axial
     assignments with cell vectors a,b,c aligned with orthogonal
     axes X,Y,Z so that c||Z and b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               matrix
@@ -24537,7 +24546,7 @@ save_
 save_atom_sites_fract_transform.matrix
 
     _definition.id                '_atom_sites_fract_transform.matrix'
-    _definition.update            2021-07-21
+    _definition.update            2025-05-12
     _description.text
 ;
     Matrix used to transform Cartesian coordinates in the ATOM_SITE
@@ -24552,6 +24561,9 @@ save_atom_sites_fract_transform.matrix
     The default transformation matrix uses Rollet's axial
     assignments with cell vectors a,b,c aligned with orthogonal
     axes X,Y,Z so that c||Z and b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _name.category_id             atom_sites_fract_transform
     _name.object_id               matrix
@@ -25335,9 +25347,9 @@ save_atom_type_scat.cromer_mann_coeffs
     _description.text
 ;
     The set of Cromer-Mann coefficients for generating X-ray scattering
-    factors. [ c, a1, b1, a2, b2, a3, b3, a4, b4 ]
-    Ref: International Tables for Crystallography, Vol. C
-            (1991) Table 6.1.1.4
+    factors:
+    [ c, a1, b1, a2, b2, a3, b3, a4, b4 ].
+    Ref: International Tables for Crystallography (2004). Vol. C, Table 6.1.1.4.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Cromer_Mann_coeffs
@@ -25583,9 +25595,9 @@ save_atom_type_scat.exponential_polynomial_coefs
     The set of polynomial coefficients for generating X-ray scattering factors:
     [ a_0, a_1, ... , a_N ].
 
-    f(s; Z) = exp(Sum(a~i~ * s^i^), i=0:N)
+    f(s; Z) = exp[Sum(a~i~ * s^i^), i=0:N]
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
@@ -25673,9 +25685,9 @@ save_atom_type_scat.gaussian_coefs
     The set of Gaussian coefficients for generating X-ray scattering factors:
     [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
 
-    f(s; Z) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:N)
+    f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
@@ -25813,10 +25825,11 @@ save_atom_type_scat.hi_ang_fox_coeffs
     _definition.update            2023-06-16
     _description.text
 ;
-    The set of Fox et al. coefficients for generating high angle
-    X-ray scattering factors. [ c0, c1, c2, c3 ]
-    Ref: International Tables for Crystallography, Vol. C
-         (1991) Table 6.1.1.5
+    The set of Fox et al. coefficients for generating high-angle
+    X-ray scattering factors: [ c0, c1, c2, c3 ]
+
+    Ref: International Tables for Crystallography (2004). Vol. C,
+         Table 6.1.1.5
 ;
     _name.category_id             atom_type_scat
     _name.object_id               hi_ang_Fox_coeffs
@@ -25840,7 +25853,7 @@ save_
 save_atom_type_scat.inv_mott_bethe_coefs
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
-    _definition.update            2023-06-16
+    _definition.update            2025-05-16
     _description.text
 ;
     The set of Gaussian coefficients for use in the inverse Mott-Bethe
@@ -25848,11 +25861,16 @@ save_atom_type_scat.inv_mott_bethe_coefs
     [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
 
     f(s; Z) =
-    Z - 8π * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
+    Z - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
 
     where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z is the atomic number.
     θ is the diffraction angle and λ is the wavelength of the incident
     radiation in angstroms.
+
+    Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318–330.
+         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
+         127, 658–665.
+         Bethe, H. (1930). Ann. Phys. 397, 325–400.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               inv_Mott_Bethe_coefs
@@ -28730,7 +28748,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-03-27
+         3.3.0                    2025-05-16
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28851,4 +28869,9 @@ save_
 
        Made _journal.data_validation_number a proper alias of
        _journal.validation_number and deleted save frame for the former (bm).
+
+       Added reference to _atom_sites_cartn_transform.matrix,
+       _atom_sites_fract_transform.matrix, _cell.orthogonal_matrix
+       and _atom_type_scat.inv_mott_bethe_coefs; also minor editorial
+       changes to many definitions in the style of International Tables (bm).
 ;
