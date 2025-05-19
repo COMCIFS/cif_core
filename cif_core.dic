@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-04-28
+    _dictionary.date              2025-05-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -28707,7 +28707,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-04-28
+         3.3.0                    2025-05-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
