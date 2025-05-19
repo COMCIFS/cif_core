@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2025-03-27
+    _dictionary.date             2025-05-19
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_attr.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -808,12 +808,12 @@ save_transf_matrix
 
 save_face_angle
 
-    _definition.update           2013-04-15
+    _definition.update           2025-05-19
     _description.text
 ;
     Diffractometer angle setting when the perpendicular to the specified
     crystal face is aligned along a specified direction (e.g. the
-    bisector of the incident and reflected beams in an optical goniometer.
+    bisector of the incident and reflected beams in an optical goniometer).
 ;
     _type.purpose                Measurand
     _type.source                 Recorded
@@ -1027,7 +1027,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2025-03-27
+         1.4.11                   2025-05-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
