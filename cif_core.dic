@@ -10,8 +10,8 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-05-16
-    _dictionary.uri
+    _dictionary.date              2025-05-19
+    _dictionary.
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
@@ -12236,7 +12236,7 @@ save_SPACE_GROUP_GENERATOR
     _definition.id                SPACE_GROUP_GENERATOR
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-04-28
     _description.text
 ;
     The CATEGORY of data items used to list generators for
@@ -12244,20 +12244,20 @@ save_SPACE_GROUP_GENERATOR
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_GENERATOR
-    _category_key.name            '_space_group_generator.key'
+    _category_key.name            '_space_group_generator.id'
 
 save_
 
-save_space_group_generator.key
+save_space_group_generator.id
 
-    _definition.id                '_space_group_generator.key'
-    _definition.update            2023-02-03
+    _definition.id                '_space_group_generator.id'
+    _definition.update            2025-04-28
     _description.text
 ;
     Arbitrary identifier for each entry in the _space_group_generator.xyz list.
 ;
     _name.category_id             space_group_generator
-    _name.object_id               key
+    _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
@@ -24967,29 +24967,6 @@ save_atom_type.element_symbol
 
 save_
 
-save_atom_type.key
-
-    _definition.id                '_atom_type.key'
-    _definition.update            2021-10-27
-    _description.text
-;
-    Value is a unique key to a set of ATOM_TYPE items
-    in a looped list.
-;
-    _name.category_id             atom_type
-    _name.object_id               key
-    _type.purpose                 Key
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
-    _method.purpose               Evaluation
-    _method.expression
-;
-    _atom_type.key = _atom_type.symbol
-;
-
-save_
-
 save_atom_type.mass_number
 
     _definition.id                '_atom_type.mass_number'
@@ -28748,7 +28725,8 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-05-16
+
+         3.3.0                    2025-05-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28869,6 +28847,9 @@ save_
 
        Made _journal.data_validation_number a proper alias of
        _journal.validation_number and deleted save frame for the former (bm).
+       
+       Removed the _atom_type.key data item. Renamed _space_group_generator.key
+       to _space_group_generator.id for consistency. (av)
 
        Added reference to _atom_sites_cartn_transform.matrix,
        _atom_sites_fract_transform.matrix, _cell.orthogonal_matrix
