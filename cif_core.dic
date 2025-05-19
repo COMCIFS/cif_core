@@ -28847,7 +28847,7 @@ save_
 
        Made _journal.data_validation_number a proper alias of
        _journal.validation_number and deleted save frame for the former (bm).
-       
+
        Removed the _atom_type.key data item. Renamed _space_group_generator.key
        to _space_group_generator.id for consistency. (av)
 
