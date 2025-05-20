@@ -440,9 +440,12 @@ save_cartn_matrix
     ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
       z'                  |31 32 33|     z                  | 3 |
 
-    The default transformation matrix uses Rollet's axial assignments with
+    The default transformation matrix uses Rollett's axial assignments with
     cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
     b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -511,21 +514,24 @@ save_
 
 save_fract_matrix
 
-    _definition.update            2021-07-21
+    _definition.update            2025-05-12
     _description.text
 ;
     Matrix used to transform Cartesian coordinates in the ATOM_SITE category
     to fractional coordinates. The axial alignments of this transformation are
-    described in _atom_sites_fract_transform.axes. The 3x1 translation is
+    described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
     defined in _atom_sites_fract_transform.vector.
 
       x'                  |11 12 13|     x                  | 1 |
     ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
       z'                  |31 32 33|     z                  | 3 |
 
-    The default transformation matrix uses Rollet's axial assignments with
+    The default transformation matrix uses Rollett's axial assignments with
     cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
     b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -716,15 +722,15 @@ save_cromer_mann_coeff
     The set of data items used to define Cromer-Mann coefficients
     for generation of (0.0 < s < 2.0 Å^-1^) X-ray scattering factors.
 
-    f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+    f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
-        Ref: International Tables for X-ray Crystallography, Vol. IV
-             (1974) Table 2.2B
-        or   International Tables for Crystallography, Vol. C
-             (1991) Tables 6.1.1.4 and 6.1.1.5
+        Ref: International Tables for X-ray Crystallography (1974).
+	     Vol. IV, Table 2.2B
+        or   International Tables for Crystallography (2004).
+	     Vol. C, Tables 6.1.1.4 and 6.1.1.5.
 ;
     _type.purpose                Number
     _type.source                 Assigned
@@ -740,15 +746,15 @@ save_hi_ang_fox_coeffs
     _description.text
 ;
     The set of data items used to define Fox et al. coefficients
-    for generation of high angle (2.0 < s < 6.0 Å^-1^) X-ray scattering factors.
+    for generation of high-angle (2.0 < s < 6.0 Å^-1^) X-ray scattering factors.
 
-    f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
+    f(s) = exp[Sum(c~i~ * s^i^, i=0:3)]
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
-        Ref: International Tables for Crystallography, Vol. C
-             (1991) Table 6.1.1.5
+        Ref: International Tables for Crystallography (2004). Vol. C,
+             Table 6.1.1.5.
 ;
     _type.purpose                Number
     _type.source                 Assigned
@@ -1056,4 +1062,6 @@ save_display_colour
          aniso_uij, aniso_uij_su
 
        Updated description of _site_symmetry.
+
+       Added reference to cartn_matrix and fract_matrix.
 ;
