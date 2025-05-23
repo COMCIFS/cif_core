@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-06-22
+    _dictionary.date              2025-05-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -6518,7 +6518,7 @@ save_refln.f_complex
 
     _definition.id                '_refln.F_complex'
     _alias.definition_id          '_refln_F_complex'
-    _definition.update            2025-06-22
+    _definition.update            2025-05-22
     _description.text
 ;
     The structure factor vector for the reflection calculated from
@@ -6569,7 +6569,7 @@ save_
 save_refln.f_complex_su
 
     _definition.id                '_refln.F_complex_su'
-    _definition.update            2025-06-22
+    _definition.update            2025-05-22
     _description.text
 ;
     Standard uncertainty of _refln.F_complex.
@@ -28727,7 +28727,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-06-22
+         3.3.0                    2025-05-22
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
