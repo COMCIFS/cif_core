@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-05-22
+    _dictionary.date              2025-06-05
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -7284,7 +7284,7 @@ save_refln.symmetry_multiplicity
 
     _definition.id                '_refln.symmetry_multiplicity'
     _alias.definition_id          '_refln_symmetry_multiplicity'
-    _definition.update            2021-03-01
+    _definition.update            2025-06-05
     _description.text
 ;
     The number of reflections symmetry-equivalent under the Laue
@@ -7957,7 +7957,7 @@ save_reflns_class.r_factor_gt
          '_reflns_class_R_factor_gt'
          '_reflns_class_R_factor_observed'
 
-    _definition.update            2012-11-26
+    _definition.update            2025-06-05
     _description.text
 ;
     Residual factor for the reflections in this class judged
@@ -28722,7 +28722,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-05-22
+         3.3.0                    2025-06-05
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28851,4 +28851,8 @@ save_
        _atom_sites_fract_transform.matrix, _cell.orthogonal_matrix
        and _atom_type_scat.inv_mott_bethe_coefs; also minor editorial
        changes to many definitions in the style of International Tables (bm).
+
+       Updated _refln.symmetry_multiplicity (reference to newer version
+       of ITC) and _reflns_class.r_factor_gt (fixed the formula notation),
+       plus many minor editorial changes to International Tables style (bm).
 ;
