@@ -46,7 +46,7 @@ save_DIFFRACTION
     _definition.update            2024-05-15
     _description.text
 ;
-    The dictionary group encompassing the CORE DIFFRACTION data items defined
+    The dictionary group encompassing the core diffraction data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE_HEAD
@@ -8033,7 +8033,7 @@ save_reflns_class.r_i_factor
               I(meas_gt) = the net 'observed' intensities
               I(calc   ) = the net calculated intensities
 
-              and the sum is taken over the specified reflections..
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             reflns_class
     _name.object_id               R_I_factor
