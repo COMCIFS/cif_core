@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-05-22
+    _dictionary.date              2025-06-05
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -46,7 +46,7 @@ save_DIFFRACTION
     _definition.update            2024-05-15
     _description.text
 ;
-    The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
+    The dictionary group encompassing the core diffraction data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE_HEAD
@@ -62,7 +62,7 @@ save_DIFFRN
     _definition.update            2022-05-09
     _description.text
 ;
-    The CATEGORY of data items used to describe the diffraction experiment.
+    The category of data items used to describe the diffraction experiment.
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN
@@ -407,7 +407,7 @@ save_diffrn.flux_density
     _method.purpose               Definition
     _method.expression
 ;
-    If      (_diffrn_radiation.probe == "neutron")
+         If (_diffrn_radiation.probe == "neutron")
                                 _units.code =
 "neutrons_per_millimetre_squared_per_second"
     Else If (_diffrn_radiation.probe == "electron")
@@ -634,7 +634,7 @@ save_CELL
     _definition.update            2023-03-02
     _description.text
 ;
-    The CATEGORY of data items used to describe the parameters of
+    The category of data items used to describe the parameters of
     the crystal unit cell.
 ;
     _name.category_id             DIFFRN
@@ -1843,7 +1843,7 @@ save_CELL_MEASUREMENT
     _definition.update            2022-05-25
     _description.text
 ;
-    The CATEGORY of data items used to describe the measurement of
+    The category of data items used to describe the measurement of
     the cell parameters.
 ;
     _name.category_id             CELL
@@ -2156,7 +2156,7 @@ save_CELL_MEASUREMENT_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to describe the reflection data
+    The category of data items used to describe the reflection data
     used in the measurement of the crystal unit cell.
 ;
     _name.category_id             CELL_MEASUREMENT
@@ -2274,7 +2274,7 @@ save_DIFFRN_ATTENUATOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the attenuators used in the
+    The category of data items which specify the attenuators used in the
     diffraction source.
 ;
     _name.category_id             DIFFRN
@@ -2349,7 +2349,7 @@ save_DIFFRN_DETECTOR
     _definition.update            2023-01-13
     _description.text
 ;
-    The CATEGORY of data items which specify the detectors used
+    The category of data items which specify the detectors used
     in the measurement of diffraction intensities.
 ;
     _name.category_id             DIFFRN
@@ -2485,7 +2485,7 @@ save_DIFFRN_MEASUREMENT
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items which specify the details of the
+    The category of data items which specify the details of the
     diffraction measurement.
 ;
     _name.category_id             DIFFRN
@@ -2824,7 +2824,7 @@ save_DIFFRN_ORIENT
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items which specify the orientation of the crystal
+    The category of data items which specify the orientation of the crystal
     axes to the diffractometer goniometer.
 ;
     _name.category_id             DIFFRN
@@ -2840,7 +2840,7 @@ save_DIFFRN_ORIENT_MATRIX
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items which specify the matrix specifying the
+    The category of data items which specify the matrix specifying the
     orientation of the crystal axes to the diffractometer goniometer.
 ;
     _name.category_id             DIFFRN_ORIENT
@@ -3057,7 +3057,7 @@ save_DIFFRN_ORIENT_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the reflections used to
+    The category of data items which specify the reflections used to
     calculate the matrix which gives the orientation of the crystal
     axes to the diffractometer goniometer.
 ;
@@ -3307,7 +3307,7 @@ save_DIFFRN_RADIATION
     _definition.update            2023-10-15
     _description.text
 ;
-    The CATEGORY of data items which specify the wavelength of the
+    The category of data items which specify the wavelength of the
     radiation used in measuring diffraction intensities. To identify
     and assign weights to distinct wavelength components from a
     polychromatic beam, see DIFFRN_RADIATION_WAVELENGTH.
@@ -3572,7 +3572,7 @@ save_DIFFRN_RADIATION_WAVELENGTH
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the wavelength of the
+    The category of data items which specify the wavelength of the
     radiation used in measuring diffraction intensities. Items may be
     looped to identify and assign weights to distinct wavelength
     components from a polychromatic beam.
@@ -3792,7 +3792,7 @@ save_DIFFRN_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the reflection measurements,
+    The category of data items which specify the reflection measurements,
     prior to data reduction and merging.
 ;
     _name.category_id             DIFFRN
@@ -4646,7 +4646,7 @@ save_DIFFRN_REFLNS
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items which specify the overall reflection
+    The category of data items which specify the overall reflection
     measurement information.
 ;
     _name.category_id             DIFFRN
@@ -5086,7 +5086,7 @@ save_DIFFRN_REFLNS_CLASS
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify different classes of
+    The category of data items which specify different classes of
     reflections in the raw measured diffraction data.
 ;
     _name.category_id             DIFFRN_REFLNS
@@ -5254,7 +5254,7 @@ save_DIFFRN_REFLNS_TRANSF_MATRIX
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items which specify the elements of the matrix
+    The category of data items which specify the elements of the matrix
     used to transform the reflection indices _diffrn_refln.hkl
     into _refln.hkl.
                                 |11 12 13|
@@ -5459,7 +5459,7 @@ save_DIFFRN_SCALE_GROUP
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the groups of reflections in
+    The category of data items which specify the groups of reflections in
     the raw measured diffraction data with different relative scales.
 ;
     _name.category_id             DIFFRN
@@ -5545,7 +5545,7 @@ save_DIFFRN_SOURCE
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items which specify information about the
+    The category of data items which specify information about the
     radiation source.
 ;
     _name.category_id             DIFFRN
@@ -5891,7 +5891,7 @@ save_DIFFRN_STANDARDS
     _definition.update            2023-01-10
     _description.text
 ;
-    The CATEGORY of data items which specify information about the
+    The category of data items which specify information about the
     standard reflections used in the diffraction measurement process.
 ;
     _name.category_id             DIFFRN
@@ -6072,7 +6072,7 @@ save_DIFFRN_STANDARD_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the "standard" reflections
+    The category of data items which specify the "standard" reflections
     measured repeatedly to monitor variations in intensity due to source
     flux, environment conditions or crystal quality.
 ;
@@ -6180,7 +6180,7 @@ save_REFLN
     _definition.update            2024-11-12
     _description.text
 ;
-    The CATEGORY of data items used to describe the reflection data
+    The category of data items used to describe the reflection data
     used in the refinement of a crystallographic structure model.
 ;
     _name.category_id             DIFFRACTION
@@ -6196,7 +6196,7 @@ save_refln.a_calc
     _definition.update            2012-11-26
     _description.text
 ;
-    The calculated real structure-factor component A =|Fcalc|cos(phase)
+    The calculated real structure-factor component A =|Fcalc|cos(phase).
 ;
     _name.category_id             refln
     _name.object_id               A_calc
@@ -6210,10 +6210,11 @@ save_refln.a_calc
       _method.expression
          Definition
 ;
-              If (_diffrn_radiation.probe == "neutron")  _units.code =
-         "femtometres" Else If (_diffrn_radiation.probe == "electron")
-         _units.code =  "volts" Else
-         _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")
+                                              _units.code = "femtometres"
+         Else If (_diffrn_radiation.probe == "electron")
+                                              _units.code =  "volts"
+         Else                                 _units.code =  "electrons"
 ;
          Evaluation
 ;
@@ -6239,10 +6240,9 @@ save_refln.a_calc_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =
-    "femtometres" Else If (_diffrn_radiation.probe == "electron")
-    _units.code =  "volts" Else
-    _units.code =  "electrons"
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
 ;
 
 save_
@@ -6254,7 +6254,7 @@ save_refln.a_meas
     _definition.update            2012-11-26
     _description.text
 ;
-    The measured real structure-factor component A =|Fmeas|cos(phase)
+    The measured real structure-factor component A =|Fmeas|cos(phase).
 ;
     _name.category_id             refln
     _name.object_id               A_meas
@@ -6303,7 +6303,7 @@ save_refln.b_calc
     _definition.update            2012-11-26
     _description.text
 ;
-    The calculated imaginary structure-factor component B =|Fcalc|sin(phase)
+    The calculated imaginary structure-factor component B =|Fcalc|sin(phase).
 ;
     _name.category_id             refln
     _name.object_id               B_calc
@@ -6317,10 +6317,11 @@ save_refln.b_calc
       _method.expression
          Definition
 ;
-              If (_diffrn_radiation.probe == "neutron")  _units.code =
-         "femtometres" Else If (_diffrn_radiation.probe == "electron")
-         _units.code =  "volts" Else
-         _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")
+                                              _units.code = "femtometres"
+         Else If (_diffrn_radiation.probe == "electron")
+                                              _units.code =  "volts"
+         Else                                 _units.code =  "electrons"
 ;
          Evaluation
 ;
@@ -6346,10 +6347,9 @@ save_refln.b_calc_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =
-    "femtometres" Else If (_diffrn_radiation.probe == "electron")
-    _units.code =  "volts" Else
-    _units.code =  "electrons"
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
 ;
 
 save_
@@ -6361,7 +6361,7 @@ save_refln.b_meas
     _definition.update            2012-11-26
     _description.text
 ;
-    The measured imaginary structure-factor component B =|Fmeas|sin(phase)
+    The measured imaginary structure-factor component B =|Fmeas|sin(phase).
 ;
     _name.category_id             refln
     _name.object_id               B_meas
@@ -6462,7 +6462,7 @@ save_refln.f_calc
     _definition.update            2013-02-21
     _description.text
 ;
-    The structure factor amplitude for the reflection calculated from
+    The structure-factor amplitude for the reflection calculated from
     the atom site data.
 ;
     _name.category_id             refln
@@ -6477,10 +6477,11 @@ save_refln.f_calc
       _method.expression
          Definition
 ;
-              If (_diffrn_radiation.probe == "neutron")  _units.code =
-         "femtometres" Else If (_diffrn_radiation.probe == "electron")
-         _units.code =  "volts" Else
-         _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")
+                                              _units.code = "femtometres"
+         Else If (_diffrn_radiation.probe == "electron")
+                                              _units.code =  "volts"
+         Else                                 _units.code =  "electrons"
 ;
          Evaluation
 ;
@@ -6506,10 +6507,9 @@ save_refln.f_calc_su
     _method.purpose               Definition
     _method.expression
 ;
-         If (_diffrn_radiation.probe == "neutron")  _units.code =
-    "femtometres" Else If (_diffrn_radiation.probe == "electron")
-    _units.code =  "volts" Else
-    _units.code =  "electrons"
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
 ;
 
 save_
@@ -6584,11 +6584,9 @@ save_refln.f_complex_su
     _method.purpose               Definition
     _method.expression
 ;
-              If (_diffrn_radiation.probe == "neutron")
-                                              _units.code = "femtometres"
-         Else If (_diffrn_radiation.probe == "electron")
-                                              _units.code =  "volts"
-         Else                                 _units.code =  "electrons"
+         If (_diffrn_radiation.probe == "neutron")  _units.code =  "femtometres"
+    Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
+    Else                                            _units.code =  "electrons"
 ;
 
 save_
@@ -6600,7 +6598,7 @@ save_refln.f_meas
     _definition.update            2013-02-21
     _description.text
 ;
-    The structure factor amplitude for the reflection derived from the
+    The structure-factor amplitude for the reflection derived from the
     measured intensities.
 ;
     _name.category_id             refln
@@ -6657,7 +6655,7 @@ save_refln.f_squared_calc
     _definition.update            2012-11-26
     _description.text
 ;
-    The structure factor amplitude squared for the reflection calculated from
+    The structure-factor amplitude squared for the reflection calculated from
     the atom site data.
 ;
     _name.category_id             refln
@@ -6669,7 +6667,7 @@ save_refln.f_squared_calc
     _method.purpose               Definition
     _method.expression
 ;
-    If      (_diffrn_radiation.probe == "neutron")
+         If (_diffrn_radiation.probe == "neutron")
                                          _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")
                                          _units.code =  "volt_squared"
@@ -6695,7 +6693,7 @@ save_refln.f_squared_calc_su
     _method.purpose               Definition
     _method.expression
 ;
-    If      (_diffrn_radiation.probe == "neutron")
+         If (_diffrn_radiation.probe == "neutron")
                                          _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")
                                          _units.code =  "volt_squared"
@@ -6711,7 +6709,7 @@ save_refln.f_squared_meas
     _definition.update            2013-02-21
     _description.text
 ;
-    The structure factor amplitude for the reflection derived from the
+    The structure-factor amplitude for the reflection derived from the
     measured intensities.
 ;
     _name.category_id             refln
@@ -6723,7 +6721,7 @@ save_refln.f_squared_meas
     _method.purpose               Definition
     _method.expression
 ;
-    If      (_diffrn_radiation.probe == "neutron")
+         If (_diffrn_radiation.probe == "neutron")
                                          _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")
                                          _units.code =  "volt_squared"
@@ -6756,7 +6754,7 @@ save_refln.f_squared_meas_su
     _method.purpose               Definition
     _method.expression
 ;
-    If      (_diffrn_radiation.probe == "neutron")
+         If (_diffrn_radiation.probe == "neutron")
                                          _units.code =  "femtometre_squared"
     Else If (_diffrn_radiation.probe == "electron")
                                          _units.code =  "volt_squared"
@@ -7286,14 +7284,14 @@ save_refln.symmetry_multiplicity
 
     _definition.id                '_refln.symmetry_multiplicity'
     _alias.definition_id          '_refln_symmetry_multiplicity'
-    _definition.update            2021-03-01
+    _definition.update            2025-06-05
     _description.text
 ;
     The number of reflections symmetry-equivalent under the Laue
     symmetry to the present reflection. In the Laue symmetry, Friedel
     opposites (h k l and -h -k -l) are equivalent. Tables of
     symmetry-equivalent reflections are available in International
-    Tables for Crystallography, Volume A (1987), section 10.2.
+    Tables for Crystallography, Volume A (2002), Chapter 10.1.
 ;
     _name.category_id             refln
     _name.object_id               symmetry_multiplicity
@@ -7355,7 +7353,7 @@ save_REFLNS
     _definition.update            2012-11-26
     _description.text
 ;
-    The CATEGORY of data items used to specify parameters for the complete
+    The category of data items used to specify parameters for the complete
     set of reflections used in the structure refinement process. Note that
     these parameters are often similar measures to those defined in the
     DIFFRN categories, but differ in that the parameters refer to the
@@ -7780,7 +7778,7 @@ save_REFLNS_CLASS
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the properties of reflections
+    The category of data items which specify the properties of reflections
     in specific classes of reflections.
 ;
     _name.category_id             REFLNS
@@ -7937,7 +7935,7 @@ save_reflns_class.r_factor_all
               F(meas) = the measured structure-factor amplitudes
               F(calc) = the calculated structure-factor amplitudes
 
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             reflns_class
     _name.object_id               R_factor_all
@@ -7959,7 +7957,7 @@ save_reflns_class.r_factor_gt
          '_reflns_class_R_factor_gt'
          '_reflns_class_R_factor_observed'
 
-    _definition.update            2012-11-26
+    _definition.update            2025-06-05
     _description.text
 ;
     Residual factor for the reflections in this class judged
@@ -7970,10 +7968,10 @@ save_reflns_class.r_factor_gt
        R(F gt) = --------------------------------
                         sum | F(meas_gt) |
 
-              F(meas) = the measured structure-factor amplitudes
+              F(meas_gt) = the measured structure-factor amplitudes
               F(calc) = the calculated structure-factor amplitudes
 
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             reflns_class
     _name.object_id               R_factor_gt
@@ -8001,10 +7999,10 @@ save_reflns_class.r_fsqd_factor
            R(Fsqd gt) = ------------------------------------
                                  sum F(meas_gt)^2^
 
-         F(meas_gt)^2^ = square of the 'observed' structure-factor
-         F(calc   )^2^ = square of the calculated structure-factor
+         F(meas_gt)^2^ = square of the 'observed' structure factors
+         F(calc   )^2^ = square of the calculated structure factors
 
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             reflns_class
     _name.object_id               R_Fsqd_factor
@@ -8032,10 +8030,10 @@ save_reflns_class.r_i_factor
            R(I gt) =  ----------------------------
                              sum | I(meas_gt) |
 
-              I(meas_gt) = the net 'observed' intensity
-              I(calc   ) = the net calculated intensity
+              I(meas_gt) = the net 'observed' intensities
+              I(calc   ) = the net calculated intensities
 
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             reflns_class
     _name.object_id               R_I_factor
@@ -8091,7 +8089,7 @@ save_REFLNS_SCALE
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the scales needed to place
+    The category of data items which specify the scales needed to place
     measured structure factor coefficients on the same absolute scale.
 ;
     _name.category_id             REFLNS
@@ -8238,7 +8236,7 @@ save_REFLNS_SHELL
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the information about
+    The category of data items which specify the information about
     reflections divided into shells bounded by d resolution limits.
 ;
     _name.category_id             REFLNS
@@ -8679,7 +8677,7 @@ save_EXPTL
     _definition.update            2024-05-15
     _description.text
 ;
-    The CATEGORY of data items used to specify the experimental work
+    The category of data items used to specify the experimental work
     prior to diffraction measurements. These include crystallization
     crystal measurements and absorption-correction techniques used.
 ;
@@ -8878,7 +8876,7 @@ save_CHEMICAL
     _definition.update            2012-11-22
     _description.text
 ;
-    The CATEGORY of data items which describe the composition and
+    The category of data items which describe the composition and
     chemical properties of the compound under study. The formula data
     items must be consistent with the density, unit-cell and Z values.
 ;
@@ -9651,7 +9649,7 @@ save_CHEMICAL_CONN_ATOM
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which describe the 2D chemical structure of
+    The category of data items which describe the 2D chemical structure of
     the molecular species. They allow a 2D chemical diagram to be
     reconstructed for use in a publication or in a database search
     for structural and substructural relationships. In particular,
@@ -9821,7 +9819,7 @@ save_CHEMICAL_CONN_BOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the connections between
+    The category of data items which specify the connections between
     the atoms sites in the chemical_conn_atom list and the nature
     of the chemical bond between these atoms. These are details about
     the two-dimensional (2D) chemical structure of the molecular species.
@@ -9973,7 +9971,7 @@ save_CHEMICAL_FORMULA
     _definition.update            2023-01-13
     _description.text
 ;
-    The CATEGORY of data items which specify the composition and chemical
+    The category of data items which specify the composition and chemical
     properties of the compound. The formula data items must agree
     with those that specify the density, unit-cell and Z values.
 
@@ -10148,7 +10146,7 @@ save_chemical_formula.sum
 ;
     Chemical formulae in which all discrete bonded residues and ions are
     summed over the constituent elements, following the ordering given
-    in rule 5 of the CATEGORY description. Parentheses normally not used.
+    in rule 5 of the category description. Parentheses normally not used.
 ;
     _name.category_id             chemical_formula
     _name.object_id               sum
@@ -10227,7 +10225,7 @@ save_EXPTL_ABSORPT
     _definition.update            2023-01-13
     _description.text
 ;
-    The CATEGORY of data items used to specify the experimental details
+    The category of data items used to specify the experimental details
     of the absorption measurements and corrections to the diffraction data.
 ;
     _name.category_id             EXPTL
@@ -10471,7 +10469,7 @@ save_EXPTL_CRYSTAL
     _definition.update            2022-05-09
     _description.text
 ;
-    The CATEGORY of data items used to specify information about
+    The category of data items used to specify information about
     crystals used in the diffraction measurements.
 ;
     _name.category_id             EXPTL
@@ -10780,7 +10778,7 @@ save_exptl_crystal.description
     _description.text
 ;
     Description of the quality and habit of the crystal. The crystal
-    dimensions should be provided using the exptl_crystal.size_* data items.
+    dimensions should be provided using the _exptl_crystal.size_* data items.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               description
@@ -11231,7 +11229,7 @@ save_EXPTL_CRYSTAL_APPEARANCE
     _definition.update            2012-11-22
     _description.text
 ;
-    The CATEGORY of ENUMERATION items used to specify information about the
+    The category of enumeration items used to specify information about the
     crystal colour and appearance.
 ;
     _name.category_id             EXPTL_CRYSTAL
@@ -11349,7 +11347,7 @@ save_EXPTL_CRYSTAL_FACE
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items which specify the dimensions of the
+    The category of data items which specify the dimensions of the
     crystal used in the diffraction measurements.
 ;
     _name.category_id             EXPTL_CRYSTAL
@@ -11579,7 +11577,7 @@ save_SPACE_GROUP
     _definition.update            2023-01-13
     _description.text
 ;
-    The CATEGORY of data items used to specify space group
+    The category of data items used to specify space group
     information about the crystal used in the diffraction measurements.
 
     Space-group types are identified by their number as listed in
@@ -12241,7 +12239,7 @@ save_SPACE_GROUP_GENERATOR
     _definition.update            2025-04-28
     _description.text
 ;
-    The CATEGORY of data items used to list generators for
+    The category of data items used to list generators for
     the space group
 ;
     _name.category_id             SPACE_GROUP
@@ -12323,7 +12321,7 @@ save_SPACE_GROUP_SYMOP
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to describe symmetry equivalent sites
+    The category of data items used to describe symmetry equivalent sites
     in the crystal unit cell.
 ;
     _name.category_id             SPACE_GROUP
@@ -12408,10 +12406,10 @@ save_space_group_symop.operation_xyz
     translations defined by fractions, an equivalent position
     X' is generated from a given position X by the equation
 
-              X' = WX + w
+              X' = WX + w.
 
     (Note: X is used to represent bold_italics_x in International
-    Tables for Crystallography Vol. A, Part 5)
+    Tables for Crystallography Vol. A, Part 5.)
 
     When a list of symmetry operations is given, it must contain
     a complete set of coordinate representatives which generates
@@ -12445,7 +12443,7 @@ save_space_group_symop.r
     _definition.update            2021-07-07
     _description.text
 ;
-    A matrix containing the symmetry rotation operations of a space group
+    A matrix containing the symmetry rotation operations of a space group.
 
                    |  r11  r12  r13  |
              R  =  |  r21  r22  r23  |
@@ -12476,8 +12474,8 @@ save_space_group_symop.rt
     _definition.update            2021-03-03
     _description.text
 ;
-    The TRANSPOSE of the symmetry rotation matrix representing the point
-    group operations of the space group
+    The transpose of the symmetry rotation matrix representing the point
+    group operations of the space group.
 
                     |  r11  r21  r31  |
              RT  =  |  r12  r22  r32  |
@@ -12740,7 +12738,7 @@ save_GEOM
     _definition.update            2012-11-22
     _description.text
 ;
-    The CATEGORY of data items used to specify the geometry
+    The category of data items used to specify the geometry
     of the structural model as derived from the atomic sites.
     The geometry is expressed in terms of the interatomic
     angles (GEOM_ANGLE data), covalent bond distances
@@ -12867,7 +12865,7 @@ save_GEOM_ANGLE
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to specify the geometry angles in the
+    The category of data items used to specify the geometry angles in the
     structural model as derived from the atomic sites.
 ;
     _name.category_id             GEOM
@@ -13169,7 +13167,7 @@ save_GEOM_BOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to specify the geometry bonds in the
+    The category of data items used to specify the geometry bonds in the
     structural model as derived from the atomic sites.
 ;
     _name.category_id             GEOM
@@ -13445,7 +13443,7 @@ save_GEOM_CONTACT
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to specify the interatomic
+    The category of data items used to specify the interatomic
     contact distances in the structural model.
 ;
     _name.category_id             GEOM
@@ -13672,7 +13670,7 @@ save_GEOM_HBOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to specify the hydrogen bond
+    The category of data items used to specify the hydrogen bond
     distances in the structural model as derived from atomic sites.
 ;
     _name.category_id             GEOM
@@ -14075,7 +14073,7 @@ save_GEOM_TORSION
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to specify the torsion angles in the
+    The category of data items used to specify the torsion angles in the
     structural model as derived from the atomic sites.
 ;
     _name.category_id             GEOM
@@ -14409,7 +14407,7 @@ save_MODEL_SITE
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to describe atomic sites and
+    The category of data items used to describe atomic sites and
     connections in the proposed atomic model.
 ;
     _name.category_id             MODEL
@@ -14922,7 +14920,7 @@ save_VALENCE
     _definition.update            2012-12-13
     _description.text
 ;
-    The CATEGORY of items used to specify bond valence parameters
+    The category of items used to specify bond-valence parameters
     used to calculate bond valences from bond lengths.
 ;
     _name.category_id             MODEL
@@ -14938,7 +14936,7 @@ save_VALENCE_PARAM
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of items for listing bond valences.
+    The category of items for listing bond valences.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_PARAM
@@ -14973,8 +14971,8 @@ save_valence_param.atom_1_valence
     _definition.update            2021-03-01
     _description.text
 ;
-    The formal charge of the atom 1 whose bond
-    valence parameters are given in this category.
+    The formal charge of the atom 1 whose bond-valence parameters
+    are given in this category.
 ;
     _name.category_id             valence_param
     _name.object_id               atom_1_valence
@@ -15014,8 +15012,8 @@ save_valence_param.atom_2_valence
     _definition.update            2021-03-01
     _description.text
 ;
-    The formal charge of the atom 2 whose bond
-    valence parameters are given in this category.
+    The formal charge of the atom 2 whose bond-valence parameters
+    are given in this category.
 ;
     _name.category_id             valence_param
     _name.object_id               atom_2_valence
@@ -15035,8 +15033,8 @@ save_valence_param.b
     _definition.update            2012-12-13
     _description.text
 ;
-    The bond valence parameter B used in the expression
-    s = exp[(Ro - R)/B] where s is the valence of bond length R.
+    The bond-valence parameter B used in the expression
+    s = exp[(Ro - R)/B], where s is the valence of bond length R.
 ;
     _name.category_id             valence_param
     _name.object_id               B
@@ -15114,8 +15112,8 @@ save_valence_param.ro
     _definition.update            2012-12-13
     _description.text
 ;
-    The bond valence parameter Ro used in the expression
-    s = exp[(Ro - R)/B] where s is the valence of bond length R.
+    The bond-valence parameter Ro used in the expression
+    s = exp[(Ro - R)/B], where s is the valence of bond length R.
 ;
     _name.category_id             valence_param
     _name.object_id               Ro
@@ -15136,7 +15134,7 @@ save_VALENCE_REF
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of items for listing valence references.
+    The category of items for listing valence references.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_REF
@@ -15189,7 +15187,7 @@ save_PUBLICATION
     _definition.update            2024-05-15
     _description.text
 ;
-    The DICTIONARY group encompassing the CORE PUBLICATION data items defined
+    The dictionary group encompassing the core publication data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE_HEAD
@@ -15205,7 +15203,7 @@ save_AUDIT
     _definition.update            2012-05-07
     _description.text
 ;
-    The CATEGORY of data items used to record details about the
+    The category of data items used to record details about the
     creation and subsequent updating of the data block.
 ;
     _name.category_id             PUBLICATION
@@ -15402,7 +15400,7 @@ save_AUDIT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used for author(s) details.
+    The category of data items used for author(s) details.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_AUTHOR
@@ -15602,7 +15600,7 @@ save_AUDIT_AUTHOR_ROLE
     _definition.update            2020-08-06
     _description.text
 ;
-    The CATEGORY of data items used to describe the role that
+    The category of data items used to describe the role that
     authors took in the production of the dataset.
 ;
     _name.category_id             AUDIT
@@ -15723,7 +15721,7 @@ save_AUDIT_CONFORM
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used describe dictionary versions
+    The category of data items used describe dictionary versions
     by which data names in the current data block are conformant.
 ;
     _name.category_id             AUDIT
@@ -15797,7 +15795,7 @@ save_AUDIT_CONTACT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used for contact author(s) details.
+    The category of data items used for contact author(s) details.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_CONTACT_AUTHOR
@@ -15996,7 +15994,7 @@ save_AUDIT_LINK
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to record details about the
+    The category of data items used to record details about the
     relationships between data blocks in the current CIF.
 ;
     _name.category_id             AUDIT
@@ -17066,7 +17064,7 @@ save_COMPUTING
     _definition.update            2012-05-07
     _description.text
 ;
-    The CATEGORY of data items used to record details of the
+    The category of data items used to record details of the
     computer programs used in the crystal structure analysis.
 ;
     _name.category_id             PUBLICATION
@@ -17246,7 +17244,7 @@ save_DATABASE
     _definition.update            2012-12-13
     _description.text
 ;
-    The CATEGORY of data items recording database deposition.
+    The category of data items recording database deposition.
 ;
     _name.category_id             PUBLICATION
     _name.object_id               DATABASE
@@ -17350,7 +17348,7 @@ save_DATABASE_CODE
     _definition.update            2012-12-13
     _description.text
 ;
-    The CATEGORY of data items recording database deposition. These data items
+    The category of data items recording database deposition. These data items
     are assigned by database managers and should only appear in a CIF if they
     originate from that source.
 ;
@@ -17813,7 +17811,7 @@ save_DISPLAY
     _definition.update            2012-05-07
     _description.text
 ;
-    The CATEGORY of data items used to enumerate the display
+    The category of data items used to enumerate the display
     parameters used in the discipline.
 ;
     _name.category_id             PUBLICATION
@@ -17829,7 +17827,7 @@ save_DISPLAY_COLOUR
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to enumerate the display
+    The category of data items used to enumerate the display
     colour codes used in the discipline.
 ;
     _name.category_id             DISPLAY
@@ -19880,7 +19878,7 @@ save_PUBL_REQUESTED
     _definition.update            2012-12-13
     _description.text
 ;
-    CATEGORY of data items that enable the author to make
+    The category of data items that enable the author to make
     specific requests to the journal office for processing.
 ;
     _name.category_id             PUBL
@@ -20407,7 +20405,7 @@ save_STRUCTURE
     _definition.update            2024-05-15
     _description.text
 ;
-    The DICTIONARY group encompassing the CORE STRUCTURE data items defined
+    The dictionary group encompassing the core structure data items defined
     and used within the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE_HEAD
@@ -20423,7 +20421,7 @@ save_ATOM
     _definition.update            2012-11-20
     _description.text
 ;
-    The CATEGORY of data items used to describe atomic information
+    The category of data items used to describe atomic information
     used in crystallographic structure studies.
 ;
     _name.category_id             STRUCTURE
@@ -20439,7 +20437,7 @@ save_ATOM_ANALYTICAL
     _definition.update            2022-11-19
     _description.text
 ;
-    The CATEGORY of data items used to describe elemental
+    The category of data items used to describe elemental
     composition information used in crystallographic
     structure studies.
 ;
@@ -20661,7 +20659,7 @@ save_ATOM_ANALYTICAL_MASS_LOSS
     _definition.update            2022-11-21
     _description.text
 ;
-    The CATEGORY of data items used to describe information
+    The category of data items used to describe information
     pertaining to mass loss during specimen preparation for
     the purposes of determining elemental composition
     information for use in crystallographic structure studies.
@@ -20858,7 +20856,7 @@ save_ATOM_ANALYTICAL_SOURCE
     _definition.update            2022-11-19
     _description.text
 ;
-    The CATEGORY of data items used to describe the source
+    The category of data items used to describe the source
     of elemental composition information used in crystallographic
     structure studies.
 ;
@@ -20997,7 +20995,7 @@ save_ATOM_SCAT_VERSUS_STOL
     _definition.update            2023-07-05
     _description.text
 ;
-    The CATEGORY of data items used to list atomic scattering factor values for
+    The category of data items used to list atomic scattering factor values for
     use in crystallographic structure studies.
 ;
     _name.category_id             ATOM
@@ -21122,7 +21120,7 @@ save_ATOM_SITE
     _definition.update            2023-02-03
     _description.text
 ;
-    The CATEGORY of data items used to describe atom site information
+    The category of data items used to describe atom site information
     used in crystallographic structure studies.
 ;
     _name.category_id             ATOM
@@ -22416,7 +22414,7 @@ save_ATOM_SITE_ANISO
     _definition.update            2023-01-16
     _description.text
 ;
-    The CATEGORY of data items used to describe the anisotropic atomic
+    The category of data items used to describe the anisotropic atomic
     displacement parameters of the atomic sites in a crystal structure.
 ;
     _name.category_id             ATOM_SITE
@@ -23325,7 +23323,7 @@ save_ATOM_SITES
     _definition.update            2012-11-20
     _description.text
 ;
-    The CATEGORY of data items used to describe information which applies
+    The category of data items used to describe information which applies
     to all atom sites in a crystal structure.
 ;
     _name.category_id             ATOM
@@ -23597,7 +23595,7 @@ save_ATOM_SITES_CARTN_TRANSFORM
     _definition.update            2021-03-03
     _description.text
 ;
-    The CATEGORY of data items used to describe the matrix elements
+    The category of data items used to describe the matrix elements
     used to transform fractional coordinates into Cartesian coordinates
     of all atom sites in a crystal structure.
 ;
@@ -24213,7 +24211,7 @@ save_ATOM_SITES_FRACT_TRANSFORM
     _definition.update            2021-03-03
     _description.text
 ;
-    The CATEGORY of data items used to describe the matrix elements
+    The category of data items used to describe the matrix elements
     used to transform Cartesian coordinates into fractional coordinates
     of all atom sites in a crystal structure.
 ;
@@ -24763,7 +24761,7 @@ save_ATOM_TYPE
     _definition.update            2023-07-13
     _description.text
 ;
-    The CATEGORY of data items used to describe atomic type information
+    The category of data items used to describe atomic type information
     used in crystallographic structure studies.
 ;
     _name.category_id             ATOM
@@ -25130,7 +25128,7 @@ save_ATOM_TYPE_SCAT
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to describe atomic scattering
+    The category of data items used to describe atomic scattering
     information used in crystallographic structure studies.
 ;
     _name.category_id             ATOM_TYPE
@@ -26036,7 +26034,7 @@ save_REFINE
     _definition.update            2012-11-20
     _description.text
 ;
-    The CATEGORY of data items used to specify information about the
+    The category of data items used to specify information about the
     refinement of the structural model.
 ;
     _name.category_id             STRUCTURE
@@ -26131,7 +26129,7 @@ save_REFINE_DIFF
     _definition.update            2023-01-12
     _description.text
 ;
-    The CATEGORY of data items which specify the scattering density limits
+    The category of data items which specify the scattering density limits
     in a difference Fourier map after the structure has been refined. The
     RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
@@ -26465,7 +26463,7 @@ save_REFINE_LS
     _definition.update            2012-11-20
     _description.text
 ;
-    The CATEGORY of data items used to specify information about the
+    The category of data items used to specify information about the
     refinement of the structural model.
 ;
     _name.category_id             REFINE
@@ -26849,8 +26847,8 @@ save_refine_ls.f_calc_details
        Gaussian integration using 16 points
 ;
 ;
-       Bessel functions expansion up to 5th order. Estimated accuracy of
-       Bessel function better than 0.001 electrons
+       Bessel functions expansion up to 5th order. Estimated
+       accuracy of Bessel function better than 0.001 electrons
 ;
 
 save_
@@ -26951,11 +26949,10 @@ save_refine_ls.goodness_of_fit_all
          Y(calc) = the calculated coefficients
                    (see _refine_ls.structure_factor_coef)
          w       = the least-squares reflection weight
-                   [1/(u^2^)]
-         u       = standard uncertainty
+                   [1/(u^2^), where u = the standard uncertainty]
          Nref   = the number of reflections used in the refinement
          Nparam = the number of refined parameters
-         and the sum is taken over the specified reflections
+         and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_all
@@ -27008,7 +27005,7 @@ save_refine_ls.goodness_of_fit_gt
 ;
     Least-squares goodness-of-fit parameter S for significantly
     intense reflections, (i.e. 'observed' reflections with values
-    greater-than the threshold set in _reflns.threshold_expression),
+    greater than the threshold set in _reflns.threshold_expression),
     after the final cycle. Ideally, account should be taken of
     parameters restrained in the least-squares refinement.
 
@@ -27021,11 +27018,10 @@ save_refine_ls.goodness_of_fit_gt
          Y(calc)     = the calculated coefficients
                    (see _refine_ls.structure_factor_coef)
          w       = the least-squares reflection weight
-                   [1/(u^2^)]
-         u       = standard uncertainty
+                   [1/(u^2^), where u = the standard uncertainty]
          Nref   = the number of reflections used in the refinement
          Nparam = the number of refined parameters
-         and the sum is taken over the specified reflections
+         and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_gt
@@ -27087,11 +27083,10 @@ save_refine_ls.goodness_of_fit_ref
          Y(calc) = the calculated coefficients
                    (see _refine_ls.structure_factor_coef)
          w       = the least-squares reflection weight
-                   [1/(u^2^)]
-         u       = standard uncertainty
+                   [1/(u^2^), where u = the standard uncertainty]
          Nref   = the number of reflections used in the refinement
          Nparam = the number of refined parameters
-         and the sum is taken over the specified reflections
+         and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               goodness_of_fit_ref
@@ -27413,7 +27408,7 @@ save_refine_ls.r_factor_all
 
               F(meas) = the measured structure-factor amplitudes
               F(calc) = the calculated structure-factor amplitudes
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               R_factor_all
@@ -27464,7 +27459,7 @@ save_refine_ls.r_factor_gt
 
               F(meas_gt) = the 'observed' structure-factor amplitudes
               F(calc)    = the calculated structure-factor amplitudes
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               R_factor_gt
@@ -27499,9 +27494,9 @@ save_refine_ls.r_fsqd_factor
               R(Fsqd) = ------------------------------------
                                  sum F(meas_gt)^2^
 
-              F(meas_gt)^2^ = squares of the 'observed' structure-factor
-              F(calc)^2^    = squares of the calculated structure-factor
-              and the sum is taken over the specified reflections
+              F(meas_gt)^2^ = squares of the 'observed' structure factors
+              F(calc)^2^    = squares of the calculated structure factors
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               R_Fsqd_factor
@@ -27537,7 +27532,7 @@ save_refine_ls.r_i_factor
 
               I(meas_gt) = the net 'observed' intensities
               I(calc)    = the net calculated intensities
-              and the sum is taken over the specified reflections
+              and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               R_I_factor
@@ -27590,7 +27585,7 @@ save_refine_ls.restrained_s_all
                        (see _refine_ls.number_parameters)
 
               sum     is taken over the specified reflections
-              sum~r~  is taken over the restraints
+              sum~r~  is taken over the restraints.
 ;
     _name.category_id             refine_ls
     _name.object_id               restrained_S_all
@@ -27662,7 +27657,7 @@ save_refine_ls.restrained_s_gt
                        (see _refine_ls.number_parameters)
 
               sum     is taken over the specified reflections
-              sum~r~  is taken over the restraints
+              sum~r~  is taken over the restraints.
 ;
     _name.category_id             refine_ls
     _name.object_id               restrained_S_gt
@@ -28019,7 +28014,7 @@ save_refine_ls.wr_factor_all
       Y(meas) = the measured   amplitude _refine_ls.structure_factor_coef
       Y(calc) = the calculated amplitude _refine_ls.structure_factor_coef
       w       = the least-squares weight
-      and the sum is taken over the specified reflections
+      and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               wR_factor_all
@@ -28058,7 +28053,7 @@ save_refine_ls.wr_factor_gt
     Y(meas_gt) = the 'observed' amplitude _refine_ls.structure_factor_coef
     Y(calc)    = the calculated amplitude _refine_ls.structure_factor_coef
       w        = the least-squares weight
-      and the sum is taken over the specified reflections
+      and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               wR_factor_gt
@@ -28089,7 +28084,7 @@ save_refine_ls.wr_factor_ref
       Y(meas) = the measured   amplitude _refine_ls.structure_factor_coef
       Y(calc) = the calculated amplitude _refine_ls.structure_factor_coef
       w       = the least-squares weight
-      and the sum is taken over the specified reflections
+      and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
     _name.object_id               wR_factor_ref
@@ -28110,7 +28105,7 @@ save_REFINE_LS_CLASS
     _definition.update            2021-06-29
     _description.text
 ;
-    The CATEGORY of data items used to specify information about the
+    The category of data items used to specify information about the
     refinement of the structural model.
 ;
     _name.category_id             REFINE_LS
@@ -28309,7 +28304,7 @@ save_FUNCTION
     _description.text
 ;
     The crystallographic functions the invoked in the definition
-    methods of CORE STRUCTURE data items defined and used within
+    methods of core structure data items defined and used within
     the Crystallographic Information Framework (CIF).
 ;
     _name.category_id             CIF_CORE_HEAD
@@ -28462,8 +28457,8 @@ save_function.symequiv
                     xyz' =  SymEquiv( symop, xyz )
 
     returns a fractional coordinate vector xyz' which is input vector
-    xyz transformed by the input symop 'n_pqr' applied to the symmetry
-    equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
+    xyz transformed by the input symop 'n_pqr' applied to the
+    symmetry-equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
 ;
     _name.category_id             function
     _name.object_id               SymEquiv
@@ -28727,7 +28722,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-05-22
+         3.3.0                    2025-06-05
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28856,4 +28851,8 @@ save_
        _atom_sites_fract_transform.matrix, _cell.orthogonal_matrix
        and _atom_type_scat.inv_mott_bethe_coefs; also minor editorial
        changes to many definitions in the style of International Tables (bm).
+
+       Updated _refln.symmetry_multiplicity (reference to newer version
+       of ITC) and _reflns_class.r_factor_gt (fixed the formula notation),
+       plus many minor editorial changes to International Tables style (bm).
 ;
