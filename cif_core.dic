@@ -6521,7 +6521,7 @@ save_refln.f_complex
     _definition.update            2025-05-22
     _description.text
 ;
-    The structure factor vector for the reflection calculated from
+    The structure-factor vector for the reflection calculated from
     the atom site data.
 ;
     _name.category_id             refln
@@ -8090,7 +8090,7 @@ save_REFLNS_SCALE
     _description.text
 ;
     The category of data items which specify the scales needed to place
-    measured structure factor coefficients on the same absolute scale.
+    measured structure-factor coefficients on the same absolute scale.
 ;
     _name.category_id             REFLNS
     _name.object_id               REFLNS_SCALE
@@ -10083,7 +10083,7 @@ save_chemical_formula.moiety
        3. Parentheses are not used within moieties but may surround
           a moiety. Parentheses may not be nested.
        4. Charges should be placed at the end of the moiety. The
-          Singlege '+' or '-' may be preceded by a numerical multiplier
+          charge '+' or '-' may be preceded by a numerical multiplier
           and should be separated from the last (element symbol +
           count) by a space. Pre- or post-multipliers may be used for
           individual moieties.
