@@ -10166,7 +10166,7 @@ save_chemical_formula.weight
     _description.text
 ;
     Mass corresponding to the formulae _chemical_formula.structural,
-    *_IUPAC, *_moiety or *_sum and, together with the Z value and cell
+    *.IUPAC, *.moiety or *.sum and, together with the Z value and cell
     parameters yield the density given as _exptl_crystal.density_diffrn.
 ;
     _name.category_id             chemical_formula
