@@ -12273,7 +12273,7 @@ save_
 save_space_group_generator.xyz
 
     _definition.id                '_space_group_generator.xyz'
-    _definition.update            2015-06-10
+    _definition.update            2016-05-10
     _description.text
 ;
     A parsable string giving one of the symmetry generators of the
@@ -28864,5 +28864,5 @@ save_
        plus many minor editorial changes to International Tables style (bm).
 
        Updated _refln.symmetry_multiplicity and other references to
-       International Tables Volume A  to latest edition (bm).
+       International Tables Volume A to latest edition (bm).
 ;
