@@ -27499,8 +27499,10 @@ save_refine_ls.r_fsqd_factor
               R(Fsqd) = ------------------------------------
                                  sum F(meas_gt)^2^
 
-              F(meas_gt)^2^ = squares of the 'observed' structure factors
-              F(calc)^2^    = squares of the calculated structure factors
+              F(meas_gt)^2^ = squares of the 'observed' structure-factor
+                              amplitudes
+              F(calc)^2^    = squares of the calculated structure-factor
+                              amplitudes
               and the sum is taken over the specified reflections.
 ;
     _name.category_id             refine_ls
