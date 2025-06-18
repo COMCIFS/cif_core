@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-06-05
+    _dictionary.date              2025-06-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -7284,14 +7284,18 @@ save_refln.symmetry_multiplicity
 
     _definition.id                '_refln.symmetry_multiplicity'
     _alias.definition_id          '_refln_symmetry_multiplicity'
-    _definition.update            2025-06-05
+    _definition.update            2025-06-18
     _description.text
 ;
     The number of reflections symmetry-equivalent under the Laue
     symmetry to the present reflection. In the Laue symmetry, Friedel
     opposites (h k l and -h -k -l) are equivalent. Tables of
     symmetry-equivalent reflections are available in International
-    Tables for Crystallography, Volume A (2002), Chapter 10.1.
+    Tables for Crystallography, Volume A (2016), Table 3.2.3.2.
+
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             refln
     _name.object_id               symmetry_multiplicity
@@ -10166,7 +10170,7 @@ save_chemical_formula.weight
     _description.text
 ;
     Mass corresponding to the formulae _chemical_formula.structural,
-    *_IUPAC, *_moiety or *_sum and, together with the Z value and cell
+    *.IUPAC, *.moiety or *.sum and, together with the Z value and cell
     parameters yield the density given as _exptl_crystal.density_diffrn.
 ;
     _name.category_id             chemical_formula
@@ -11574,7 +11578,7 @@ save_SPACE_GROUP
     _definition.id                SPACE_GROUP
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-01-13
+    _definition.update            2025-06-18
     _description.text
 ;
     The category of data items used to specify space group
@@ -11595,9 +11599,9 @@ save_SPACE_GROUP
     Hermann-Mauguin symbol contains information on the choice of
     the basis, but not on the choice of origin.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             EXPTL
     _name.object_id               SPACE_GROUP
@@ -11607,7 +11611,7 @@ save_
 save_space_group.bravais_type
 
     _definition.id                '_space_group.Bravais_type'
-    _definition.update            2014-06-12
+    _definition.update            2025-06-18
     _description.text
 ;
     The symbol denoting the lattice type (Bravais type) to which the
@@ -11619,9 +11623,10 @@ save_space_group.bravais_type
     setting-independent symbol oS replaces the setting-dependent
     symbols oA, oB and oC.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed., p. 15.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.,
+         Tables 1.3.4.1 and 2.1.1.1.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group
     _name.object_id               Bravais_type
@@ -11717,19 +11722,19 @@ save_
 save_space_group.it_coordinate_system_code
 
     _definition.id                '_space_group.IT_coordinate_system_code'
-    _definition.update            2016-05-13
+    _definition.update            2025-06-18
     _description.text
 ;
     A qualifier taken from the enumeration list identifying which
     setting in International Tables for Crystallography Volume A
-    (2002) (IT) is used.  See IT Table 4.3.2.1, Section 2.2.16,
-    Table 2.2.16.1, Section 2.2.16.1 and Fig. 2.2.6.4.  This item
-    is not computer-interpretable and cannot be used to define the
+    (2016) (IT) is used.  See IT Table 1.5.4.4, Section 2.1.3.15,
+    Table 2.1.3.11 and Fig. 2.1.3.4.  This item is not
+    computer-interpretable and cannot be used to define the
     coordinate system.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group
     _name.object_id               IT_coordinate_system_code
@@ -11951,13 +11956,13 @@ save_space_group.name_h-m_full
          '_symmetry.space_group_name_H-M'                            .
          '_symmetry_space_group_name_H-M'                            2003-10-04
 
-    _definition.update            2024-02-14
+    _definition.update            2025-06-18
     _description.text
 ;
     The full international Hermann-Mauguin space-group symbol as
-    defined in Section 2.2.3 and given as the second item of the
-    second line of each of the space-group tables of Part 7 of
-    International Tables for Crystallography Volume A (2002).
+    defined in Section 2.1.3.3 and given as the second item of the
+    second line of each of the space-group tables of Chapter 2.3 of
+    International Tables for Crystallography Volume A (2016).
 
     Each component of the space-group name is separated by a
     space or an underscore character. The use of a space is
@@ -11979,9 +11984,9 @@ save_space_group.name_h-m_full
     _space_group.name_Hall, or list the symmetry operations
     or generators.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group
     _name.object_id               name_H_M_full
@@ -12001,9 +12006,9 @@ save_space_group.name_h-m_ref
     _description.text
 ;
     The short international Hermann-Mauguin space-group symbol as
-    defined in Section 2.2.3 and given as the first item of each
-    space-group table in Part 7 of International Tables
-    for Crystallography Volume A (2002).
+    defined in Section 2.1.3.3 and given as the first item of each
+    space-group table in Chapter 2.3 of International Tables
+    for Crystallography Volume A (2016).
 
     Each component of the space-group name is separated by a
     space character. Subscripts appear without special symbols.
@@ -12025,9 +12030,9 @@ save_space_group.name_h-m_ref
     In the enumeration list, each possible value is identified by
     space-group number and Schoenflies symbol.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group
     _name.object_id               name_H_M_ref
@@ -12095,9 +12100,9 @@ save_space_group.name_schoenflies
     The symbol is given with a period, '.', separating the
     Schoenflies point group and the superscript.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group
     _name.object_id               name_Schoenflies
@@ -12115,13 +12120,13 @@ save_
 save_space_group.patterson_name_h-m
 
     _definition.id                '_space_group.Patterson_name_H-M'
-    _definition.update            2016-05-13
+    _definition.update            2025-06-18
     _description.text
 ;
     The Hermann-Mauguin symbol of the type of that centrosymmetric
     symmorphic space group to which the Patterson function belongs;
-    see Table 2.2.5.1 in International Tables for Crystallography
-    Volume A (2002).
+    see Table 2.1.3.3 in International Tables for Crystallography
+    Volume A (2016).
 
     A space separates each symbol referring to different axes.
     Underscores may replace the spaces, but this use is discouraged.
@@ -12129,9 +12134,9 @@ save_space_group.patterson_name_h-m
     Bars should be given as negative signs before the number
     to which they apply.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.,
-         Table 2.2.5.1. Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed., Table 2.1.3.3.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group
     _name.object_id               Patterson_name_H_M
@@ -12268,7 +12273,7 @@ save_
 save_space_group_generator.xyz
 
     _definition.id                '_space_group_generator.xyz'
-    _definition.update            2016-05-10
+    _definition.update            2015-06-10
     _description.text
 ;
     A parsable string giving one of the symmetry generators of the
@@ -12281,7 +12286,7 @@ save_space_group_generator.xyz
               X' = WX + w.
 
     (Note: X is used to represent the bold italic x in International
-    Tables for Crystallography Volume A, Section 5.)
+    Tables for Crystallography Volume A, Chapter 1.5.)
 
     When a list of symmetry generators is given, it is assumed
     that the complete list of symmetry operations of the space
@@ -12294,9 +12299,9 @@ save_space_group_generator.xyz
             W3 = W2 x W1
             w3 = W2 x w1 + w2.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group_generator
     _name.object_id               xyz
@@ -12617,7 +12622,7 @@ save_
 save_space_group_wyckoff.letter
 
     _definition.id                '_space_group_Wyckoff.letter'
-    _definition.update            2023-06-14
+    _definition.update            2025-06-18
     _description.text
 ;
     The Wyckoff letter associated with this position, as given in
@@ -12625,9 +12630,9 @@ save_space_group_wyckoff.letter
     enumeration values '\a' and α are equivalent, and correspond to
     the Greek letter 'alpha' used in International Tables.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group_Wyckoff
     _name.object_id               letter
@@ -12644,16 +12649,16 @@ save_
 save_space_group_wyckoff.multiplicity
 
     _definition.id                '_space_group_Wyckoff.multiplicity'
-    _definition.update            2021-08-19
+    _definition.update            2025-06-18
     _description.text
 ;
     The multiplicity of this Wyckoff position as given in
     International Tables Volume A. It is the number of equivalent
     sites per conventional unit cell.
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group_Wyckoff
     _name.object_id               multiplicity
@@ -12669,7 +12674,7 @@ save_
 save_space_group_wyckoff.site_symmetry
 
     _definition.id                '_space_group_Wyckoff.site_symmetry'
-    _definition.update            2014-06-12
+    _definition.update            2025-06-18
     _description.text
 ;
     The subgroup of the space group that leaves the point fixed.
@@ -12677,11 +12682,11 @@ save_space_group_wyckoff.site_symmetry
     space group. The site-symmetry symbol indicates the symmetry
     in the symmetry direction determined by the Hermann-Mauguin
     symbol of the space group (see International Tables for
-    Crystallography Volume A, Section 2.2.12).
+    Crystallography Volume A, Section 2.1.3.12).
 
-    Ref: International Tables for Crystallography (2002). Volume A,
-         Space-group symmetry, edited by Th. Hahn, 5th ed.
-         Dordrecht: Kluwer Academic Publishers.
+    Ref: International Tables for Crystallography (2016). Volume A,
+         Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+         Chichester: John Wiley & Sons.
 ;
     _name.category_id             space_group_Wyckoff
     _name.object_id               site_symmetry
@@ -28722,7 +28727,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-06-05
+         3.3.0                    2025-06-18
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28855,4 +28860,7 @@ save_
        Updated _refln.symmetry_multiplicity (reference to newer version
        of ITC) and _reflns_class.r_factor_gt (fixed the formula notation),
        plus many minor editorial changes to International Tables style (bm).
+
+       Updated _refln.symmetry_multiplicity and other references to
+       International Tables Volume A  to latest edition (bm).
 ;
