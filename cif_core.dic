@@ -27486,7 +27486,7 @@ save_refine_ls.r_fsqd_factor
          '_refine_ls_R_Fsqd_factor'
          '_refine.ls_R_Fsqd_factor_obs'
 
-    _definition.update            2012-11-20
+    _definition.update            2025-06-18
     _description.text
 ;
     Residual factor R(Fsqd), calculated on the squared amplitudes of the
