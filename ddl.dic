@@ -10,7 +10,7 @@ data_DDL_DIC
     _dictionary.title             DDL_DIC
     _dictionary.class             Reference
     _dictionary.version           4.2.0
-    _dictionary.date              2025-02-19
+    _dictionary.date              2025-07-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2030,7 +2030,7 @@ save_type.contents
 
     _definition.id                '_type.contents'
     _definition.class             Attribute
-    _definition.update            2023-11-07
+    _definition.update            2025-07-04
     _description.text
 ;
     Syntax of the value elements within the container type. Where the
@@ -2131,7 +2131,8 @@ save_type.contents
          'max' are separated by a colon character. If 'max' is omitted, then
          the range includes all values that are greater than or equal to 'min'.
          If 'min' is omitted, then the range includes all values that are less
-         than or equal to 'max'.
+         than or equal to 'max'. Omitting both 'min' and 'max' at the same time
+         is not allowed.
 ;
          Integer
 ;
@@ -3067,7 +3068,7 @@ save_
        by explicitly specifying that it adheres to the formal grammar
        provided in SemVer version 2.0.0.
 ;
-         4.2.0                    2025-02-19
+         4.2.0                    2025-07-04
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -3116,4 +3117,7 @@ save_
 
        Added _definition.update to the list of attributes that are mandatory
        in the 'Category' scope.
+
+       Clarified that empty range values that include neither the upper nor
+       the lower bound are not allowed.
 ;
