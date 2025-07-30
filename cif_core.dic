@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-06-18
+    _dictionary.date              2025-07-30
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -24763,7 +24763,7 @@ save_ATOM_TYPE
     _definition.id                ATOM_TYPE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-07-13
+    _definition.update            2025-07-30
     _description.text
 ;
     The category of data items used to describe atomic type information
@@ -24783,7 +24783,7 @@ save_ATOM_TYPE
      }
      For type in typelist {
                              atom_type(.symbol         = type,
-                                       .number_in_cell = '?'   )
+                                       .number_in_cell = ?    )
      }
 ;
 
@@ -28491,7 +28491,7 @@ save_
 save_function.symkey
 
     _definition.id                '_function.SymKey'
-    _definition.update            2021-03-01
+    _definition.update            2025-07-30
     _description.text
 ;
     The function
@@ -28513,7 +28513,7 @@ save_function.symkey
 ;
     Function SymKey( s :[Single, Symop])  {  # symop string
 
-           If (s == '.')   n = 1
+           If (s == NULL)  n = 1
            Else            n = AtoI(s[0])
 
                 SymKey =  n       # index from 1
@@ -28729,7 +28729,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-06-18
+         3.3.0                    2025-07-30
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28865,4 +28865,7 @@ save_
 
        Updated _refln.symmetry_multiplicity and other references to
        International Tables Volume A to latest edition (bm).
+
+       Corrected the usage of unknown or missing values in several dREL code
+       snippets. (av)
 ;
