@@ -24782,8 +24782,7 @@ save_ATOM_TYPE
        If( type not in typelist )  typelist ++= type
      }
      For type in typelist {
-                             atom_type(.symbol         = type,
-                                       .number_in_cell = ?    )
+                             atom_type(.symbol         = type)
      }
 ;
 
