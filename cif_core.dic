@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-07-30
+    _dictionary.date              2025-07-31
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -15894,7 +15894,7 @@ save_
 save_audit_contact_author.id
 
     _definition.id                '_audit_contact_author.id'
-    _definition.update            2023-02-02
+    _definition.update            2025-07-31
     _description.text
 ;
     Arbitrary identifier for this author.
@@ -15922,7 +15922,7 @@ save_audit_contact_author.id
         _enumeration.default = target
         }
     else {
-        _enumeration.default = missing
+        _enumeration.default = ?
     }
 ;
 
@@ -16534,7 +16534,7 @@ save_citation.id
 
     _definition.id                '_citation.id'
     _alias.definition_id          '_citation_id'
-    _definition.update            2023-04-04
+    _definition.update            2025-07-31
     _description.text
 ;
     Unique identifier to the CITATION list. A value of 'primary'
@@ -16563,7 +16563,7 @@ save_citation.id
     if (len(citation) == 1) {
         _enumeration.default = "primary"
     } else {
-        _enumeration.default = missing
+        _enumeration.default = ?
     }
 ;
 
@@ -19542,7 +19542,7 @@ save_
 save_publ_contact_author.id
 
     _definition.id                '_publ_contact_author.id'
-    _definition.update            2023-02-02
+    _definition.update            2025-07-31
     _description.text
 ;
     Arbitrary identifier for this author.
@@ -19570,7 +19570,7 @@ save_publ_contact_author.id
         _enumeration.default = target
         }
     else {
-        _enumeration.default = missing
+        _enumeration.default = ?
     }
 ;
 
@@ -28728,7 +28728,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-07-30
+         3.3.0                    2025-07-31
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
