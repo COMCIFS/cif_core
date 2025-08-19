@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-07-31
+    _dictionary.date              2025-08-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -907,12 +907,16 @@ save_cell.formula_units_z
 
     _definition.id                '_cell.formula_units_Z'
     _alias.definition_id          '_cell_formula_units_Z'
-    _definition.update            2021-03-01
+    _definition.update            2025-08-19
     _description.text
 ;
     The number of the formula units in the unit cell as specified
     by _chemical_formula.structural, _chemical_formula.moiety or
-    _chemical_formula.sum.
+    _chemical_formula.sum. This is normally an integer value, but
+    in exceptional circumstances (Brock, 2025) may be reported as
+    non-integral.
+
+    Reference: Brock, C. P. (2025). Acta Cryst. A81, nnn-nnn.
 ;
     _name.category_id             cell
     _name.object_id               formula_units_Z
@@ -920,8 +924,32 @@ save_cell.formula_units_z
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            1:
+    _enumeration.range            0:
     _units.code                   none
+
+save_
+
+save_cell.formula_units_z_details
+
+    _definition.id                '_cell.formula_units_Z_details'
+    _definition.update            2025-08-19
+    _description.text
+;
+    The number Z of formula units in the unit cell is expected to
+    be an integer. In exceptional circumstances with complex chemistry
+    an author may report a fractional value of Z, as explained by the
+    IUCr Commission on Crystallographic Nomenclature (Brock, 2025). This
+    field is used to describe the justification for the value reported in
+    _cell.formula_units_Z.
+
+    Reference: Brock, C. P. (2025). Acta Cryst. A81, nnn-nnn.
+;
+    _name.category_id             cell
+    _name.object_id               formula_units_Z_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -28728,7 +28756,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-07-31
+         3.3.0                    2025-08-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28867,4 +28895,7 @@ save_
 
        Corrected the usage of unknown or missing values in several dREL code
        snippets. (av)
+
+       Modified range and extended definition of _cell.formula_units_Z
+       and added _cell.formula_units_Z_details. (bm)
 ;
