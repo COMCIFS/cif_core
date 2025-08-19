@@ -920,7 +920,7 @@ save_cell.formula_units_z
 ;
     _name.category_id             cell
     _name.object_id               formula_units_Z
-    _type.purpose                 Number
+    _type.purpose                 Real
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Integer
