@@ -916,7 +916,7 @@ save_cell.formula_units_z
     in exceptional circumstances (Brock, 2025) may be reported as
     non-integral.
 
-    Reference: Brock, C. P. (2025). Acta Cryst. A81, nnn-nnn.
+    Reference: Brock, C. P. (2025). Acta Cryst. A81, 405-408.
 ;
     _name.category_id             cell
     _name.object_id               formula_units_Z
@@ -942,7 +942,7 @@ save_cell.formula_units_z_details
     field is used to describe the justification for the value reported in
     _cell.formula_units_Z.
 
-    Reference: Brock, C. P. (2025). Acta Cryst. A81, nnn-nnn.
+    Reference: Brock, C. P. (2025). Acta Cryst. A81, 405-408.
 ;
     _name.category_id             cell
     _name.object_id               formula_units_Z_details
@@ -950,6 +950,15 @@ save_cell.formula_units_z_details
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
+    _description_example.case
+;
+    The fractional value of Z=2/3 allows integral coefficients in
+    the chemical formula, emphasizing that the compound is
+    stoichiometric in spite of the multiple orderings within
+    these molecular perovskites A~x~{Ni[Bi(SCN)~6~]}.
+;
+    _description_example.detail
+        'Based on Lee et al. (2021), Chem. Sci. 12, 3516–3525'
 
 save_
 
