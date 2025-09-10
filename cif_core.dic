@@ -927,6 +927,22 @@ save_cell.formula_units_z
     _enumeration.range            0:
     _units.code                   none
 
+    loop_
+      _description_example.case
+      _description_example.detail
+         4
+;
+         Normal case: integral number of formula units in the unit cell.
+;
+         0.667
+;
+         Based on Lee et al. (2021), Chem. Sci. 12, 3516–3525. An exceptional
+         case with fractional Z, emphasizing that the compound is stoichiometric
+         despite multiple complex orderings. The Z value, although rational, is
+         reported as a real number and an explanation is expected to be given
+         in _cell.formula_units_Z_details.
+;
+
 save_
 
 save_cell.formula_units_z_details
@@ -952,10 +968,10 @@ save_cell.formula_units_z_details
     _type.contents                Text
     _description_example.case
 ;
-    The fractional value of Z=2/3 allows integral coefficients in
-    the chemical formula, emphasizing that the compound is
-    stoichiometric in spite of the multiple orderings within
-    these molecular perovskites A~x~{Ni[Bi(SCN)~6~]}.
+         The fractional value of Z=2/3 allows integral coefficients in
+         the chemical formula, emphasizing that the compound is
+         stoichiometric in spite of the multiple orderings within
+         these molecular perovskites A~x~{Ni[Bi(SCN)~6~]}.
 ;
     _description_example.detail
         'Based on Lee et al. (2021), Chem. Sci. 12, 3516–3525'
