@@ -3697,12 +3697,7 @@ save_
 save_diffrn_radiation_wavelength.id
 
     _definition.id                '_diffrn_radiation_wavelength.id'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_radiation_wavelength_id'
-         '_diffrn_radiation.wavelength_id'
-
+    _alias.definition_id          '_diffrn_radiation_wavelength_id'
     _definition.update            2023-04-04
     _description.text
 ;
