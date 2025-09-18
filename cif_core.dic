@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-08-19
+    _dictionary.date              2025-09-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -689,7 +689,6 @@ save_cell.angle_beta_su
 
     loop_
       _alias.definition_id
-         '_cell_angle.beta_su'
          '_cell_angle_beta_su'
          '_cell.angle_beta_esd'
 
@@ -719,7 +718,6 @@ save_cell.angle_gamma_su
 
     loop_
       _alias.definition_id
-         '_cell_angle.gamma_su'
          '_cell_angle_gamma_su'
          '_cell.angle_gamma_esd'
 
@@ -28776,7 +28774,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-08-19
+         3.3.0                    2025-09-18
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28918,4 +28916,6 @@ save_
 
        Modified range and extended definition of _cell.formula_units_Z
        and added _cell.formula_units_Z_details. (bm)
+
+       Removed the _cell_angle.beta_su and _cell_angle.gamma_su aliases.
 ;
