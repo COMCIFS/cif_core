@@ -229,7 +229,7 @@ save_site_ssg_symmetry
       superspace coordinates. It must match a number given in
       _space_group_symop.ssg_id. 'm1...mp' refer to the translations
       that are subsequently applied to the symmetry-transformed
-      coordinates to generate the atom used in calculating the angle.
+      coordinates to generate the atomic position.
       These translations (t1,...tp) are related to (m1...mp) by the
       relations m1=5+t1, ..., mp=5+tp. By adding 5 to the translations,
       the use of negative numbers is avoided. The number 'p' must agree
@@ -247,7 +247,7 @@ save_site_ssg_symmetry
     _description_example.detail
     .                    'no symmetry or translation to site'          
     '4'                  '4th symmetry operation applied'    
-    '7_645'              '7th symmetry position; +a on x, -b on y' 
+    '7_6455'              '7th symmetry position; +a on x, -b on y' 
 
 save_
 
