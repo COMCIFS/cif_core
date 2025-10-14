@@ -10,7 +10,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2024-03-27
+    _dictionary.date             2025-07-29
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -782,6 +782,9 @@ save_units_code
    'reciprocal_picometres'
    "per-length 'reciprocal picometres  (metres * 10^(-12)^-1)'"
 
+   'reciprocal_angstroms_per_pixel'
+   "unit for electron diffraction camera constant calibration factor"
+
    'nanometre_squared'
    "length_squared 'nanometres squared (metres * 10^( -9))^2'"
    'angstrom_squared'
@@ -821,7 +824,7 @@ save_units_code
    'degrees'          "angle      'degrees (of arc)'"
    'cycles'           "phase      'angle in 360 degree arcs'"
    'radians'          "angle      'radians'"
-   'degrees_squared'   "angle      'degrees (of arc)'"
+   'degrees_squared'  "angle      'degrees (of arc) squared (degrees^(2))'"
 
    'degree_per_minute' "rotation_per_time  'degrees (of arc) per minute'"
 
@@ -833,12 +836,18 @@ save_units_code
 
    'electron_squared'  "electrons-squared    'electrons squared'"
 
+   'electrons_per_angstrom'
+   "electrostatic potential in Gaussian unit system: 1 V = 0.069420 e/angstrom (electron diffraction) 'electrons per angstrom  (electrons * (metres * 10^(-10))^(-1))'"
+
    'electrons_per_nanometre_cubed'
    "electron-density 'electrons per nanometres cubed (electrons * (metres * 10^( -9))^(-3))'"
    'electrons_per_angstrom_cubed'
    "electron-density 'electrons per angstroms  cubed (electrons * (metres * 10^(-10))^(-3))'"
    'electrons_per_picometre_cubed'
    "electron-density 'electrons per picometres cubed (electrons * (metres * 10^(-12))^(-3))'"
+
+   'electrons_per_angstrom_squared_per_second'
+   "electron flux density  'electrons per angstrom squared per second  (electrons * (metres * 10^(-10))^(-2) * (seconds^(-1)))'"
 
    'femtometres_per_angstrom_cubed'
    "scattering-length-density 'femtometres per angstroms cubed (10^-6 * (metres * 10^(-10))^(-2))'"
@@ -862,10 +871,28 @@ save_units_code
    'counts_per_second' "counts from a detector per second of count time"
    'photons_per_second'  "photons registered in one second"
 
+   'photons'       "photons     'photons'"
+
+   'photons_per_micrometre_squared'
+   "electromagnetic radiation fluence  'photons per micrometre squared (photons * (metres * 10^(-6))^(-2))'"
+
+   'photons_per_second_per_micrometre_squared'
+   "electromagnetic radiation flux density  'photons per second per micrometre squared (photons * (seconds^(-1)) * (metres * 10^(-6))^(-2))'"
+
+   'photons_per_millimetre_squared_per_second'
+   "electromagnetic radiation flux density  'photons per millimetre squared per second  (photons * (metres * 10^(-3))^(-2) * (seconds^(-1)))'"
+
+   'neutrons_per_millimetre_squared_per_second'
+   "neutron flux density  'neutrons per millimetre squared per second  (neutrons * (metres * 10^(-3))^(-2) * (seconds^(-1)))'"
+
+   'megagray'     "radiation dose       'megagrays'"
+
    'microseconds_per_angstrom' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-1))'"
    'microseconds_per_angstrom_squared' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-2))'"
    'microseconds_per_angstrom_cubed' "TOF coefficient '(seconds * 10^(-6)) * (metres * 10^(-10)^(-3))'"
    'angstroms_per_microsecond'       "TOF coefficient '(metres * 10^(-10)) * (seconds * 10^(-6)^(-1))'"
+
+   'electron_volts_per_angstrom' "force 'electron volts per angstrom (eV * (metres * 10^(-10)^(-1)))'"
     save_
 
 
@@ -2351,7 +2378,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2024-03-27
+         1.4.9                    2025-07-29
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2381,4 +2408,17 @@ save_
        Renamed the 'photons per second' unit to 'photons_per_second'.
 
        Added BIncStrDB to save_database_list. (bm)
+
+       Added electrons_per_angstrom and reciprocal_angstroms_per_pixel
+       for electron diffraction; extended description of the former. (bm)
+
+       Added megagray, electrons_per_angstrom_squared_per_second,
+       photons_per_millimetre_squared_per_second and
+       neutrons_per_millimetre_squared_per_second for radiation dose
+       and flux density (bm)
+
+       Added 'photons', 'photons_per_micrometre_squared' and
+       'photons_per_second_per_micrometre_squared' units. (av)
+
+       Updated description of the 'degrees_squared' units. (av)
 ;

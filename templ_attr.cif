@@ -10,7 +10,7 @@ data_TEMPL_ATTR
     _dictionary.title            TEMPL_ATTR
     _dictionary.class            Template
     _dictionary.version          1.4.11
-    _dictionary.date             2024-12-12
+    _dictionary.date             2025-05-19
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_attr.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -347,11 +347,12 @@ save_cell_length_su
 
 save_site_symmetry
 
-    _definition.update           2023-06-19
+    _definition.update           2025-03-27
     _description.text
 ;
      Data item specifying the symmetry operation codes applied to the atom
-     sites involved in a specific geometric configuration.
+     sites involved in a specific geometric configuration or other correlated
+     behaviour.
 
      The symmetry code of each atom site as the symmetry-equivalent position
      number 'n' and the cell translation number 'pqr'. These numbers are
@@ -366,8 +367,8 @@ save_site_symmetry
 
          p, q and r refer to the translations that are subsequently
          applied to the symmetry transformed coordinates to generate
-         the atom used in calculating the angle. These translations
-         (x,y,z) are related to (p,q,r) by the relations
+         the related atom position. These translations (x,y,z) are related
+         to (p,q,r) by the relations
               p = 5 + x
               q = 5 + y
               r = 5 + z
@@ -506,9 +507,12 @@ save_cartn_matrix
     ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
       z'                  |31 32 33|     z                  | 3 |
 
-    The default transformation matrix uses Rollet's axial assignments with
+    The default transformation matrix uses Rollett's axial assignments with
     cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
     b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -577,21 +581,24 @@ save_
 
 save_fract_matrix
 
-    _definition.update            2021-07-21
+    _definition.update            2025-05-12
     _description.text
 ;
     Matrix used to transform Cartesian coordinates in the ATOM_SITE category
     to fractional coordinates. The axial alignments of this transformation are
-    described in _atom_sites_fract_transform.axes. The 3x1 translation is
+    described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
     defined in _atom_sites_fract_transform.vector.
 
       x'                  |11 12 13|     x                  | 1 |
     ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
       z'                  |31 32 33|     z                  | 3 |
 
-    The default transformation matrix uses Rollet's axial assignments with
+    The default transformation matrix uses Rollett's axial assignments with
     cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
     b in plane YZ.
+
+    Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+    Oxford: Pergamon Press.
 ;
     _type.purpose                 Measurand
     _type.source                  Derived
@@ -621,11 +628,11 @@ save_
 
 save_aniso_bij
 
-    _definition.update           2023-02-16
+    _definition.update           2025-03-27
     _description.text
 ;
      These are the standard anisotropic atomic displacement components, in
-     angstroms squared, which appear in the structure factor term:
+     angstroms squared, which appear in the structure-factor term
 
          T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
@@ -636,11 +643,11 @@ save_aniso_bij
 
      The IUCr Commission on Nomenclature recommends against the use of B for
      reporting atomic displacement parameters. U, being directly proportional
-     to B, is preferred [1].
+     to B, is preferred.
 
-     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -652,13 +659,14 @@ save_aniso_bij
 
 save_aniso_bij_su
 
-    _definition.update           2023-07-01
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
+     These are the standard uncertainty values (s.u.) for the standard
      form of the B^ij^ anisotropic atomic displacement components (see
-     aniso_BIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the B^ij^ calculation.
+     aniso_BIJ). Because these values are _type.purpose Measurand, the
+     s.u. values may in practice be auto generated as part of the
+     B^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Related
@@ -670,11 +678,11 @@ save_aniso_bij_su
 
 save_aniso_betaij
 
-    _definition.update           2023-02-16
+    _definition.update           2025-03-27
     _description.text
 ;
      These are the standard unitless anisotropic atomic displacement components
-     which appear in the structure factor term:
+     which appear in the structure factor term
 
          T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
 
@@ -683,11 +691,11 @@ save_aniso_betaij
      The unique elements of the real symmetric matrix are entered by row.
 
      The IUCr Commission on Nomenclature recommends against the use
-     of β for reporting atomic displacement parameters; U is preferred [1].
+     of β for reporting atomic displacement parameters; U is preferred.
 
-     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -699,13 +707,14 @@ save_aniso_betaij
 
 save_aniso_betaij_su
 
-    _definition.update           2023-02-15
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
+     These are the standard uncertainty values (s.u.) for the standard
      form of the β^ij^ anisotropic atomic displacement components (see
-     aniso_betaIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the β^ij^ calculation.
+     aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     s.u. values may in practice be auto generated as part of the
+     β^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Related
@@ -717,11 +726,11 @@ save_aniso_betaij_su
 
 save_aniso_uij
 
-    _definition.update           2023-02-16
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard anisotropic atomic displacement components, in
-     angstroms squared, which appear in the structure factor term:
+     These are the standard anisotropic atomic displacement components in
+     angstroms squared which appear in the structure-factor term
 
         T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
 
@@ -731,11 +740,11 @@ save_aniso_uij
      The unique elements of the real symmetric matrix are entered by row.
 
      The IUCr Commission on Nomenclature recommends the use of U for reporting
-     atomic displacement parameters [1].
+     atomic displacement parameters.
 
-     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) [1].
+     Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
 
-     [1] Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
 ;
     _type.purpose                Measurand
     _type.source                 Derived
@@ -747,13 +756,14 @@ save_aniso_uij
 
 save_aniso_uij_su
 
-    _definition.update           2023-07-01
+    _definition.update           2025-03-27
     _description.text
 ;
-     These are the standard uncertainty values (SU) for the standard
+     These are the standard uncertainty values (s.u.) for the standard
      form of the U^ij^ anisotropic atomic displacement components (see
-     aniso_UIJ). Because these values are TYPE measurand, the su values
-     may in practice be auto generated as part of the U^ij^ calculation.
+     aniso_UIJ). Because these values are _type.purpose Measurand, the
+     s.u. values may in practice be auto generated as part of the
+     U^ij^ calculation.
 ;
     _type.purpose                SU
     _type.source                 Related
@@ -779,15 +789,15 @@ save_cromer_mann_coeff
     The set of data items used to define Cromer-Mann coefficients
     for generation of (0.0 < s < 2.0 Å^-1^) X-ray scattering factors.
 
-    f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+    f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
-        Ref: International Tables for X-ray Crystallography, Vol. IV
-             (1974) Table 2.2B
-        or   International Tables for Crystallography, Vol. C
-             (1991) Tables 6.1.1.4 and 6.1.1.5
+        Ref: International Tables for X-ray Crystallography (1974).
+	     Vol. IV, Table 2.2B
+        or   International Tables for Crystallography (2004).
+	     Vol. C, Tables 6.1.1.4 and 6.1.1.5.
 ;
     _type.purpose                Number
     _type.source                 Assigned
@@ -803,15 +813,15 @@ save_hi_ang_fox_coeffs
     _description.text
 ;
     The set of data items used to define Fox et al. coefficients
-    for generation of high angle (2.0 < s < 6.0 Å^-1^) X-ray scattering factors.
+    for generation of high-angle (2.0 < s < 6.0 Å^-1^) X-ray scattering factors.
 
-    f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
+    f(s) = exp[Sum(c~i~ * s^i^, i=0:3)]
 
-    where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
-        Ref: International Tables for Crystallography, Vol. C
-             (1991) Table 6.1.1.5
+        Ref: International Tables for Crystallography (2004). Vol. C,
+             Table 6.1.1.5.
 ;
     _type.purpose                Number
     _type.source                 Assigned
@@ -895,12 +905,12 @@ save_
 
 save_face_angle
 
-    _definition.update           2013-04-15
+    _definition.update           2025-05-19
     _description.text
 ;
     Diffractometer angle setting when the perpendicular to the specified
     crystal face is aligned along a specified direction (e.g. the
-    bisector of the incident and reflected beams in an optical goniometer.
+    bisector of the incident and reflected beams in an optical goniometer).
 ;
     _type.purpose                Measurand
     _type.source                 Recorded
@@ -1114,7 +1124,7 @@ save_display_colour
 
        Updated description of _site_symmetry.
 ;
-         1.4.11                   2024-12-12
+         1.4.11                   2025-05-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -1141,4 +1151,11 @@ save_display_colour
        Added transf_matrix_id, general_mod_param, site_ssg_symmetry,
        q_coeff_element and q_coeff_seq_id for use in modulated structures
        dictionary.
+       Style/formatting changes in readiness for Volume G 2nd Edition for:
+         aniso_bij, aniso_bij_su, aniso_beta_ij, aniso_beta_ij_su,
+         aniso_uij, aniso_uij_su
+
+       Updated description of _site_symmetry.
+
+       Added reference to cartn_matrix and fract_matrix.
 ;
