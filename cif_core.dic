@@ -10,7 +10,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-09-18
+    _dictionary.date              2025-10-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -973,6 +973,99 @@ save_cell.formula_units_z_details
 ;
     _description_example.detail
         'Based on Lee et al. (2021), Chem. Sci. 12, 3516–3525'
+
+save_
+
+save_cell.formula_units_z_prime
+
+    _definition.id                '_cell.formula_units_Z_prime'
+    _definition.update            2025-10-22
+    _description.text
+;
+    Z' specifies the number of molecules in the asymmetric unit.
+    It is defined as the number of formula units in the unit cell
+    (_cell.formula_units_Z) divided by the multiplicity of the
+    general position of the corresponding space group. Z' can be
+    a fraction or a positive integer.
+
+    Note that correct assignment of Z' may be difficult for some
+    complex structures (Flack, 2002; Steed et al., 2014). For such
+    cases a justification of the assigned value should be given in
+    _cell.formula_units_Z_prime_details.
+
+    Ref: Flack, H. D. (2002).
+           https://www.iucr.org/__data/iucr/lists/coredmg/msg00196.html
+         Steed, J. et al. (2014). https://zprime.co.uk/limitations
+;
+    _name.category_id             cell
+    _name.object_id               formula_units_Z_prime
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0:
+    _units.code                   none
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         5
+;
+         Crystal structure contains five molecules in the asymmetric unit.
+         One such crystal structure (tetraphenylphosphonium octahydrotriborate)
+         is described  by Beckett, M. A. et al. (2010). Acta Cryst. E66, o833.
+;
+         1.5
+;
+         Crystal structure contains one and a half instances of a molecule
+         in the asymmetric unit. One such crystal structure
+         [9-(methoxymethyl)anthracene] is described by Liu, J. et al.
+         (2007). Acta Cryst. E63, o4442.
+;
+         0.5
+;
+         Crystal structure contains half of a molecule in the asymmetric unit.
+         One such crystal structure [(E)-1,1,4,4-tetraphenylbut-2-yne-1,4-diol]
+         is described by Sundar, J. K. et al. (2010). Acta Cryst. E66, o679.
+;
+
+save_
+
+save_cell.formula_units_z_prime_details
+
+    _definition.id                '_cell.formula_units_Z_prime_details'
+    _definition.update            2025-10-22
+    _description.text
+;
+    An account of the assigned value of Z', the number of molecules in
+    the asymmetric unit, where there is difficulty in deciding the
+    appropriate value for reasons of symmetry, chirality, disorder etc.
+    (Flack, 2002; Steed et al., 2014).
+
+    Ref: Flack, H. D. (2002).
+           https://www.iucr.org/__data/iucr/lists/coredmg/msg00196.html
+         Steed, J. et al. (2014). https://zprime.co.uk/limitations
+;
+    _name.category_id             cell
+    _name.object_id               formula_units_Z_prime_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case
+;
+         Z' has been assigned the value 1 as the catenane is considered
+         a single complex of two interlocked molecules that cannot be
+         chemically separated, in preference to a crystallographic
+         interpretation that considers it as two interlinked independent
+         molecules that would suggest setting Z' = 2.
+;
+    _description_example.detail
+;
+         Based on a discussion in https://zprime.co.uk/limitations of a
+         structure (QINJIG) reported by Watanabe, N. et al. (1999).
+         Chem. Lett. 28, 915-916.
+;
 
 save_
 
@@ -28774,7 +28867,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-09-18
+         3.3.0                    2025-10-22
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28918,4 +29011,6 @@ save_
        and added _cell.formula_units_Z_details. (bm)
 
        Removed the _cell_angle.beta_su and _cell_angle.gamma_su aliases.
+
+       Added _cell.formula_units_Z_prime and *_details. (bm)
 ;
