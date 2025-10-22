@@ -154,13 +154,12 @@ save_matrix_pdb
 
 save_matrix_w
 
-    _definition.update           2023-09-11
     _description.text
 ;
      Element of the matrix W defined by van Smaalen (1991); (1995)
 ;
     _type.purpose                Number
-    _type.source                 Assigned
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
@@ -169,7 +168,6 @@ save_matrix_w
 
 save_ms_index
 
-    _definition.update           2014-06-27
     _description.text
 ;
      Additional Miller indices needed to write the reciprocal vector
@@ -177,14 +175,13 @@ save_ms_index
      _diffrn_standard_refln.index_m_list, _exptl_crystal_face.index_m_list.
 ;
     _type.purpose                Number
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Integer
      save_
 
 save_q_coeff_element
 
-    _definition.update           2024-08-06
     _description.text                   
 ;
      Element of the matrix _atom_site_Fourier_wave_vector.q_coeff.
@@ -192,7 +189,7 @@ save_q_coeff_element
      However, in magCIF the number of elements is limited to 3.
 ;
     _type.purpose                Number
-    _type.source                 Assigned
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Integer
     _enumeration.default         0
@@ -201,7 +198,6 @@ save_
 
 save_q_coeff_seq_id
 
-    _definition.update           2024-07-26
     _description.text                   
 ;
      Element of the matrix _atom_site_Fourier_wave_vector.q_coeff_seq_id.
@@ -209,7 +205,7 @@ save_q_coeff_seq_id
 ;
     _name.linked_item_id         '_cell_wave_vector.seq_id'
     _type.purpose                Link
-    _type.source                 Related
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           0:
@@ -253,14 +249,13 @@ save_
 
 save_index_limit_max
 
-    _definition.update           2021-03-01
     _description.text
 ;
      Maximum value of the additional Miller indices appearing in
      _diffrn_reflns.index_m_* and _reflns.index_m_*.
 ;
     _type.purpose                Number
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Integer
     _units.code                  none
@@ -269,14 +264,13 @@ save_
 
 save_index_limit_min
 
-    _definition.update           2021-03-01
     _description.text
 ;
      Minimum value of the additional Miller indices appearing in
      _diffrn_reflns.index_m_* and _reflns.index_m_*.
 ;
     _type.purpose                Number
-    _type.source                 Recorded
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Integer
     _units.code                  none
@@ -896,7 +890,7 @@ save_
 save_general_mod_param
 
     _type.purpose                Measurand
-    _type.source                 Assigned
+    _type.source                 Derived
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
