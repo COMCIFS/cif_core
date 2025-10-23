@@ -154,7 +154,6 @@ save_matrix_pdb
 
 save_matrix_w
 
-    _definition.update           2023-09-11
     _description.text
 ;
      Element of the matrix W defined by van Smaalen (1991); (1995)
@@ -169,7 +168,6 @@ save_matrix_w
 
 save_ms_index
 
-    _definition.update           2014-06-27
     _description.text
 ;
      Additional Miller indices needed to write the reciprocal vector
@@ -184,7 +182,6 @@ save_ms_index
 
 save_q_coeff_element
 
-    _definition.update           2024-08-06
     _description.text                   
 ;
      Element of the matrix _atom_site_Fourier_wave_vector.q_coeff.
@@ -201,7 +198,6 @@ save_
 
 save_q_coeff_seq_id
 
-    _definition.update           2024-07-26
     _description.text                   
 ;
      Element of the matrix _atom_site_Fourier_wave_vector.q_coeff_seq_id.
@@ -253,7 +249,6 @@ save_
 
 save_index_limit_max
 
-    _definition.update           2021-03-01
     _description.text
 ;
      Maximum value of the additional Miller indices appearing in
@@ -269,7 +264,6 @@ save_
 
 save_index_limit_min
 
-    _definition.update           2021-03-01
     _description.text
 ;
      Minimum value of the additional Miller indices appearing in
