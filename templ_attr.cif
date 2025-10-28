@@ -164,7 +164,8 @@ save_matrix_w
     _type.contents               Real
     _enumeration.default         0.0
     _units.code                  none
-     save_
+
+save_
 
 save_ms_index
 
@@ -178,7 +179,9 @@ save_ms_index
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-     save_
+    _units.code                  None
+
+save_
 
 save_q_coeff_element
 
@@ -193,6 +196,7 @@ save_q_coeff_element
     _type.container              Single
     _type.contents               Integer
     _enumeration.default         0
+    _units.code                  None
 
 save_
 
@@ -208,7 +212,8 @@ save_q_coeff_seq_id
     _type.source                 Related
     _type.container              Single
     _type.contents               Integer
-    _enumeration.range           0:
+    _enumeration.range           1:
+    _units.code                  None
 
 save_
 
@@ -274,7 +279,8 @@ save_index_limit_min
     _type.container              Single
     _type.contents               Integer
     _units.code                  none
-     save_
+
+save_
 
 
 save_cell_angle
@@ -884,6 +890,8 @@ save_transf_matrix_id
     _type.source                 Related
     _type.container              Single
     _type.contents               Integer
+    _enumeration.range           0:
+    _units.code                  None
 
 save_
 
@@ -894,6 +902,7 @@ save_general_mod_param
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
+    _units.code                  None
 
 save_
 
