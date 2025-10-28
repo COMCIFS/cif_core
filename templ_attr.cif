@@ -179,7 +179,7 @@ save_ms_index
     _type.source                 Recorded
     _type.container              Single
     _type.contents               Integer
-    _units.code                  None
+    _units.code                  none
 
 save_
 
@@ -196,7 +196,7 @@ save_q_coeff_element
     _type.container              Single
     _type.contents               Integer
     _enumeration.default         0
-    _units.code                  None
+    _units.code                  none
 
 save_
 
@@ -213,7 +213,7 @@ save_q_coeff_seq_id
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           1:
-    _units.code                  None
+    _units.code                  none
 
 save_
 
@@ -891,7 +891,7 @@ save_transf_matrix_id
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           0:
-    _units.code                  None
+    _units.code                  none
 
 save_
 
@@ -902,7 +902,7 @@ save_general_mod_param
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
-    _units.code                  None
+    _units.code                  none
 
 save_
 
