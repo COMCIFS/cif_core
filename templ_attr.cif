@@ -902,7 +902,6 @@ save_general_mod_param
     _type.container              Single
     _type.contents               Real
     _enumeration.default         0.0
-    _units.code                  none
 
 save_
 
