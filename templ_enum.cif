@@ -11,7 +11,7 @@ data_COM_VAL
     _dictionary.title            COM_VAL
     _dictionary.class            Template
     _dictionary.version          1.4.9
-    _dictionary.date             2025-07-29
+    _dictionary.date             2025-11-05
     _dictionary.uri              https://raw.githubusercontent.com/COMCIFS/cif_core/master/templ_enum.cif
     _dictionary.ddl_conformance  4.2.0
     _description.text
@@ -2381,7 +2381,7 @@ save_
        'electrons_per_angstrom_cubed', 'electrons_per_picometre_cubed' and
        'femtometre_squared' enumeration states in the 'units_code' save frame.
 ;
-         1.4.9                    2025-07-29
+         1.4.9                    2025-11-05
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -2424,4 +2424,6 @@ save_
        'photons_per_second_per_micrometre_squared' units. (av)
 
        Updated description of the 'degrees_squared' units. (av)
+
+       Added 'valence_units' to the units list. (bm)
 ;
