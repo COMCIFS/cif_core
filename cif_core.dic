@@ -1,4 +1,5 @@
 #\#CIF_2.0
+# SPDX-License-Identifier: CC-BY-4.0
 ##########################################################################
 #                                                                        #
 #  CIF CORE DICTIONARY                                                   #
@@ -10,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-09-18
+    _dictionary.date              2025-09-28
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -12828,24 +12829,6 @@ save_geom.bond_distance_incr
 
 save_
 
-save_geom.bond_distance_min
-
-    _definition.id                '_geom.bond_distance_min'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Minimum permitted "bonded" distance between two atom sites.
-;
-    _name.category_id             geom
-    _name.object_id               bond_distance_min
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   angstroms
-
-save_
-
 save_geom.contact_distance_incr
 
     _definition.id                '_geom.contact_distance_incr'
@@ -12866,16 +12849,34 @@ save_geom.contact_distance_incr
 
 save_
 
-save_geom.contact_distance_min
+save_geom.min_bond_distance_cutoff
 
-    _definition.id                '_geom.contact_distance_min'
-    _definition.update            2012-11-22
+    _definition.id                '_geom.min_bond_distance_cutoff'
+    _definition.update            2025-07-28
+    _description.text
+;
+    Minimum permitted "bonded" distance between two atom sites.
+;
+    _name.category_id             geom
+    _name.object_id               min_bond_distance_cutoff
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_geom.min_contact_distance_cutoff
+
+    _definition.id                '_geom.min_contact_distance_cutoff'
+    _definition.update            2025-07-28
     _description.text
 ;
     Minimum permitted "contact" distance between two "non-bonded" atom sites.
 ;
     _name.category_id             geom
-    _name.object_id               contact_distance_min
+    _name.object_id               min_contact_distance_cutoff
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -12913,7 +12914,7 @@ save_GEOM_ANGLE
     _definition.id                GEOM_ANGLE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-07-28
     _description.text
 ;
     The category of data items used to specify the geometry angles in the
@@ -12934,7 +12935,7 @@ save_GEOM_ANGLE
     _method.purpose               Evaluation
     _method.expression
 ;
-    dmin =  _geom.bond_distance_min
+    dmin =  _geom.min_bond_distance_cutoff
 
     Loop  m1  as  model_site  :i  {   # loop vertex model site
 
@@ -13234,7 +13235,7 @@ save_GEOM_BOND
     _method.purpose               Evaluation
     _method.expression
 ;
-    dmin =  _geom.bond_distance_min
+    dmin =  _geom.min_bond_distance_cutoff
 
     Loop  m1  as  model_site  :i  {
 
@@ -14121,7 +14122,7 @@ save_GEOM_TORSION
     _definition.id                GEOM_TORSION
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-07-28
     _description.text
 ;
     The category of data items used to specify the torsion angles in the
@@ -14144,7 +14145,7 @@ save_GEOM_TORSION
     _method.purpose               Evaluation
     _method.expression
 ;
-    dmin =  _geom.bond_distance_min
+    dmin =  _geom.min_bond_distance_cutoff
 
     Loop  m1  as  model_site  :i  {
 
@@ -14455,7 +14456,7 @@ save_MODEL_SITE
     _definition.id                MODEL_SITE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-07-28
     _description.text
 ;
     The category of data items used to describe atomic sites and
@@ -14483,7 +14484,7 @@ save_MODEL_SITE
     }
 
     molelist  = List()
-    dmin     =  _geom.bond_distance_min
+    dmin     =  _geom.min_bond_distance_cutoff
     m        =  0
     n        =  0
 
@@ -28774,7 +28775,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-09-18
+         3.3.0                    2025-09-28
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28918,4 +28919,9 @@ save_
        and added _cell.formula_units_Z_details. (bm)
 
        Removed the _cell_angle.beta_su and _cell_angle.gamma_su aliases.
+
+       Renamed _geom.bond_distance_min and _geom.contact_distance_min to
+       _geom.min_bond_distance_cutoff and _geom.min_contact_distance_cutoff
+       respectively. The original names were not retained as aliases to avoid
+       name clashes with data names from the msCIF dictionary.
 ;
