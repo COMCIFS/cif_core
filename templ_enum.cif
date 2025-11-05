@@ -894,6 +894,8 @@ save_units_code
    'angstroms_per_microsecond'       "TOF coefficient '(metres * 10^(-10)) * (seconds * 10^(-6)^(-1))'"
 
    'electron_volts_per_angstrom' "force 'electron volts per angstrom (eV * (metres * 10^(-10)^(-1)))'"
+
+   'valence_units' "valence unit in bond-valence model of Brown (2002). The Chemical Bond in Inorganic Chemistry, eq. (3.1). Oxford: Oxford University Press"
     save_
 
 

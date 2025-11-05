@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-09-28
+    _dictionary.date              2025-11-05
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -13454,10 +13454,15 @@ save_geom_bond.valence
 
     _definition.id                '_geom_bond.valence'
     _alias.definition_id          '_geom_bond_valence'
-    _definition.update            2012-12-11
+    _definition.update            2025-11-05
     _description.text
 ;
-    Bond valence calculated from the bond distance.
+    Valence assigned to the bond between the sites identified by
+    _geom_bond.id calculated according to the bond-valence model
+    (Brown, 2002) from the bond distance.
+
+    Ref: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
+         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
 ;
     _name.category_id             geom_bond
     _name.object_id               valence
@@ -13465,15 +13470,15 @@ save_geom_bond.valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   electrons
+    _enumeration.range            0.0:10.0
+    _units.code                   valence_units
 
 save_
 
 save_geom_bond.valence_su
 
     _definition.id                '_geom_bond.valence_su'
-    _definition.update            2023-07-01
+    _definition.update            2025-11-05
     _description.text
 ;
     Standard uncertainty of _geom_bond.valence.
@@ -13481,7 +13486,7 @@ save_geom_bond.valence_su
     _name.category_id             geom_bond
     _name.object_id               valence_su
     _name.linked_item_id          '_geom_bond.valence'
-    _units.code                   electrons
+    _units.code                   valence_units
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
@@ -14969,11 +14974,14 @@ save_VALENCE
     _definition.id                VALENCE
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
-    The category of items used to specify bond-valence parameters
-    used to calculate bond valences from bond lengths.
+    The category of items used to characterize localized inorganic
+    bond valences using the model of Brown (2002).
+
+    Ref: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
+         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
 ;
     _name.category_id             MODEL
     _name.object_id               VALENCE
@@ -14985,10 +14993,15 @@ save_VALENCE_PARAM
     _definition.id                VALENCE_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-11-05
     _description.text
 ;
-    The category of items for listing bond valences.
+    The category of items that specify bond-valence parameters
+    used to calculate bond valences from bond lengths using the
+    model of Brown (2002).
+
+    Ref: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
+         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_PARAM
@@ -15003,7 +15016,7 @@ save_valence_param.atom_1
     _definition.update            2021-10-27
     _description.text
 ;
-    Atom type symbol for atom 1 forming a bond whose
+    The atom type symbol for atom 1 forming a bond whose
     valence parameters are given in this category.
 ;
     _name.category_id             valence_param
@@ -15020,7 +15033,7 @@ save_valence_param.atom_1_valence
 
     _definition.id                '_valence_param.atom_1_valence'
     _alias.definition_id          '_valence_param_atom_1_valence'
-    _definition.update            2021-03-01
+    _definition.update            2025-11-05
     _description.text
 ;
     The formal charge of the atom 1 whose bond-valence parameters
@@ -15032,7 +15045,6 @@ save_valence_param.atom_1_valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -15061,7 +15073,7 @@ save_valence_param.atom_2_valence
 
     _definition.id                '_valence_param.atom_2_valence'
     _alias.definition_id          '_valence_param_atom_2_valence'
-    _definition.update            2021-03-01
+    _definition.update            2025-11-05
     _description.text
 ;
     The formal charge of the atom 2 whose bond-valence parameters
@@ -15073,7 +15085,6 @@ save_valence_param.atom_2_valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -15082,7 +15093,7 @@ save_valence_param.b
 
     _definition.id                '_valence_param.B'
     _alias.definition_id          '_valence_param_B'
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
     The bond-valence parameter B used in the expression
@@ -15094,8 +15105,30 @@ save_valence_param.b
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.1:
+    _enumeration.range            0.0:
     _units.code                   angstroms
+
+save_
+
+save_valence_param.citation_id
+
+    _definition.id                '_valence_param.citation_id'
+    _definition.update            2025-11-05
+    _description.text
+;
+    Code linking parameters to the key _citation.id in the reference
+    list in category CITATION. This may be used when the source of the
+    bond valence parameters is included in an article reference list,
+    instead of in a separate VALENCE_REF list. Use of this item does not
+    preclude the use also of _valence_param.ref_id.
+;
+    _name.category_id             valence_param
+    _name.object_id               citation_id
+    _name.linked_item_id          '_citation.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -15103,10 +15136,10 @@ save_valence_param.details
 
     _definition.id                '_valence_param.details'
     _alias.definition_id          '_valence_param_details'
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
-    Details of valence parameters of stated bond.
+    Details of or comments on the bond-valence parameters of the stated bond.
 ;
     _name.category_id             valence_param
     _name.object_id               details
@@ -15144,8 +15177,10 @@ save_valence_param.ref_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code linking parameters to the key _valence_ref.id key
-    in the reference list in category VALENCE_REF.
+    Code linking parameters to the key _valence_ref.id in the list of
+    standard literature references for bond-valence parameters tabulated
+    in category VALENCE_REF. Use of this item does not preclude links to
+    references in the article citation list using _valence_param.citation_id.
 ;
     _name.category_id             valence_param
     _name.object_id               ref_id
@@ -15161,7 +15196,7 @@ save_valence_param.ro
 
     _definition.id                '_valence_param.Ro'
     _alias.definition_id          '_valence_param_Ro'
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
     The bond-valence parameter Ro used in the expression
@@ -15173,7 +15208,7 @@ save_valence_param.ro
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.0:
+    _enumeration.range            0.0:
     _units.code                   angstroms
 
 save_
@@ -15183,10 +15218,11 @@ save_VALENCE_REF
     _definition.id                VALENCE_REF
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-11-05
     _description.text
 ;
-    The category of items for listing valence references.
+    The category of items for tabulating standard literature references
+    from which the bond-valence parameters have been taken.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_REF
@@ -15216,10 +15252,10 @@ save_valence_ref.reference
 
     _definition.id                '_valence_ref.reference'
     _alias.definition_id          '_valence_ref_reference'
-    _definition.update            2021-03-03
+    _definition.update            2025-11-05
     _description.text
 ;
-    Literature reference from which the valence parameters
+    Literature reference from which the bond-valence parameters
     identified by _valence_param.id were taken.
 ;
     _name.category_id             valence_ref
@@ -16945,7 +16981,7 @@ save_citation_author.citation_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifier in the CITATION data list. The value of must match
+    Code identifier in the CITATION data list. The value must match
     an identifier specified in the CITATION list.
 ;
     _name.category_id             citation_author
@@ -28775,7 +28811,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-09-28
+         3.3.0                    2025-11-05
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28924,4 +28960,7 @@ save_
        _geom.min_bond_distance_cutoff and _geom.min_contact_distance_cutoff
        respectively. The original names were not retained as aliases to avoid
        name clashes with data names from the msCIF dictionary.
+
+       Updated definitions relating to the bond valence model
+       (_geom_bond.valence, categories VALENCE and VALENCE_REF) (bm).
 ;
