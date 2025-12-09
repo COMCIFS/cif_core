@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-11-05
+    _dictionary.date              2025-12-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -15818,6 +15818,37 @@ save_AUDIT_CONFORM
 
 save_
 
+save_audit_conform.dict_doi
+
+    _definition.id                '_audit_conform.dict_DOI'
+    _definition.update            2025-12-09
+    _description.text
+;
+    The digital object identifier (DOI) registered to identify
+    a CIF dictionary to which data names in this data block are
+    conformant. This should resolve to a machine-readable dictionary
+    and not to a descriptive landing page.
+
+    A DOI is a unique character string identifying any
+    object of intellectual property. It provides a
+    persistent identifier for an object on a digital network
+    and permits the association of related current data in a
+    structured extensible way. A DOI is an implementation
+    of the Internet concepts of Uniform Resource Name and
+    Universal Resource Locator managed according to the
+    specifications of the International DOI Foundation
+    (see https://www.doi.org/).
+;
+    _name.category_id             audit_conform
+    _name.object_id               dict_DOI
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     10.1107/cifdic_000002
+
+save_
+
 save_audit_conform.dict_location
 
     _definition.id                '_audit_conform.dict_location'
@@ -28811,7 +28842,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-11-05
+         3.3.0                    2025-12-09
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28963,4 +28994,6 @@ save_
 
        Updated definitions relating to the bond valence model
        (_geom_bond.valence, categories VALENCE and VALENCE_REF) (bm).
+
+       Added _audit_conform.dict_DOI. (bm)
 ;
