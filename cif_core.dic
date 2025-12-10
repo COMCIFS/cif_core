@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-12-09
+    _dictionary.date              2025-12-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -16324,7 +16324,7 @@ save_
 save_audit_support.funding_organization_doi
 
     _definition.id                '_audit_support.funding_organization_DOI'
-    _definition.update            2023-01-13
+    _definition.update            2025-12-10
     _description.text
 ;
     The Digital Object Identifier (DOI) associated with the
@@ -16333,14 +16333,17 @@ save_audit_support.funding_organization_doi
     accordance with CrossRef guidelines, the full URI of
     the resolved page describing the funding organization
     should be given (i.e. including the https://doi.org/
-    component).
+    DOI resolver prefix). Note that it may be necessary to
+    URL-encode certain special characters in the DOI suffix
+    for the URI to resolve correctly through CrossRef
+    (e.g. the number sign '#' must be encoded as '%23').
 ;
     _name.category_id             audit_support
     _name.object_id               funding_organization_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
     _description_example.case     https://doi.org/10.13039/100000064
 
 save_
@@ -28842,7 +28845,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-12-09
+         3.3.0                    2025-12-10
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -28996,4 +28999,8 @@ save_
        (_geom_bond.valence, categories VALENCE and VALENCE_REF) (bm).
 
        Added _audit_conform.dict_DOI. (bm)
+
+       Changed the content type of _audit_support.funding_organization_doi
+       from 'Text' to 'Word' and added a note on the escaping special
+       characters.
 ;
