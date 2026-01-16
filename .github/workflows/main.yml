@@ -82,9 +82,9 @@ jobs:
 
       - name: Checkout DDL definitions
         uses: actions/checkout@v4
-	with:
+        with:
 	        repository: COMCIFS/DDLm
-		path: DDLm
+                path: DDLm
 
       - name: Diagnostics
         run: |
