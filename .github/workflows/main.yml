@@ -79,11 +79,13 @@ jobs:
         with:
                 repository: COMCIFS/cif_core
                 path: cif_core
+
       - name: Checkout DDL definitions
         uses: actions/checkout@v4
 	with:
 	        repository: COMCIFS/DDLm
 		path: DDLm
+
       - name: Diagnostics
         run: |
             ls -a
