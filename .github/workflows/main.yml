@@ -77,7 +77,8 @@ jobs:
       - name: Checkout CIF master files
         uses: actions/checkout@v4
         with:
-                repository: COMCIFS/cif_core
+                repository: jamesrhester/cif_core
+                ref: remove_auxilliary_files
                 path: cif_core
 
       - name: Checkout DDL definitions
