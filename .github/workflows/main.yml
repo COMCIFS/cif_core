@@ -64,10 +64,6 @@ jobs:
         run: |
                julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths");Pkg.add("ArgParse")'
 
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-                path: main
       - name: checkout julia tools
         uses: actions/checkout@v4
         with:
@@ -77,8 +73,6 @@ jobs:
       - name: Checkout CIF master files
         uses: actions/checkout@v4
         with:
-                repository: jamesrhester/cif_core
-                ref: remove_auxilliary_files
                 path: cif_core
 
       - name: Checkout DDL definitions
@@ -106,14 +100,17 @@ jobs:
       - name: Diagnostics
         run: |
             ls -a
+            echo "pwd:"
             pwd
+            echo "Julia location:"
             which julia
+            echo "cif_core contents"
             ls cif_core
 
       - name: one_dict_layout
         run: |
                julia -e 'using Pkg; Pkg.status()'
-               for file in main/*.dic
+               for file in cif_core/*.dic
                do      
                   echo "Checking $file"
                   julia -O0 ./julia_cif_tools/linter.jl -i $PWD/cif_core $file $PWD/DDLm/ddl.dic
