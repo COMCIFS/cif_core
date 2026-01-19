@@ -87,11 +87,28 @@ jobs:
                 repository: COMCIFS/DDLm
                 path: DDLm
 
+      - name: Checkout enum templates
+        uses: actions/checkout@v4
+        with:
+                repository: COMCIFS/Enumeration_Templates
+                path: enum
+                
+      - name: Checkout attr templates
+        uses: actions/checkout@v4
+        with:
+                repository: COMCIFS/Attribute_Templates
+                path: templ
+      - name: Move template files to expected location
+        run: |
+              mv enum/templ_enum.cif cif_core/templ_enum.cif
+              mv templ/templ_attr.cif cif_core/templ_attr.cif
+              
       - name: Diagnostics
         run: |
             ls -a
             pwd
             which julia
+            ls cif_core
 
       - name: one_dict_layout
         run: |
