@@ -32,16 +32,38 @@ jobs:
         - name: check_syntax
           uses: COMCIFS/cif_syntax_check_action@master
           id: cif_syntax_check
-  ddlm:
+
+  semantics:
+    name: Semantics
     runs-on: ubuntu-latest
     needs: syntax
-    steps:
-        - name: checkout
-          uses: actions/checkout@v4
 
-        - name: check_ddlm
-          uses: COMCIFS/dictionary_check_action@main
-          id: ddlm_check
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout the DDLm reference dictionary
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/DDLm
+          path: cif-dictionaries/DDLm
+
+      - name: Checkout enumeration templates
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/Enumeration_Templates
+          path: cif-dictionaries/Enumeration_Templates
+
+      - name: Checkout attribute templates
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/Attribute_Templates
+          path: cif-dictionaries/Attribute_Templates
+
+      - name: Run dictionary validity checks
+        uses: COMCIFS/dictionary_check_action@main
+        id: ddlm_check
+
   layout:
     runs-on: ubuntu-latest
     needs: syntax
