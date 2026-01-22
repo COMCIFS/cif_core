@@ -1,4 +1,20 @@
 (*
+ * This file was originally published as supplementary material to
+ * the following publication:
+ *
+ * Bernstein, H. J., Bollinger, J. C., Brown, I. D., Gražulis, S.,
+ * Hester, J. R., McMahon, B., Spadaccini, N., Westbrook, J. D. &
+ * Westrip, S. P. (2016). Specification of the Crystallographic
+ * Information File format, version 2.0.
+ * Journal of Applied Crystallography, 49(1), 277-284.
+ * https://doi.org/10.1107/S1600576715021871
+ *
+ * Original work is licensed under CC-BY 4.0:
+ * https://creativecommons.org/licenses/by/4.0/
+ * No changes were made to the original file.
+ *)
+
+(*
  *   Extended Backus-Naur Form of the CIF2 syntax and grammar
  *
  * The CIF2 syntax is closely related to the STAR2 syntax published 
