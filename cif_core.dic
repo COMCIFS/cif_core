@@ -28710,13 +28710,13 @@ save_
       _dictionary_author.id_orcid
       _dictionary_author.email
          1     'Hall, Sydney R.'       .                       .
-         2     'McMahon, Brian'        .                       .
+         2     'McMahon, Brian'        0000-0003-0391-0002     .
          3     'Brown, I. D.'          .                       .
          4     'Toby, Brian'           .                       .
          5     'Hester, James R.'      0000-0002-2004-8672     jxh@ansto.gov.au
          6     'Vaitkus, Antanas'      0000-0002-5944-1391     antanas.vaitkus@bti.vu.lt
-         7     'Rowles, Matthew'       xxx                     xxx@xxx
-         8     'Bollinger, John C.'     xxx                     .
+         7     'Rowles, Matthew'       .                       .
+         8     'Bollinger, John C.'    .                       .
 
     loop_
       _dictionary_audit.version
