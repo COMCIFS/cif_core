@@ -28716,7 +28716,7 @@ save_
          5     'Hester, James R.'      0000-0002-2004-8672     jxh@ansto.gov.au
          6     'Vaitkus, Antanas'      0000-0002-5944-1391     antanas.vaitkus@bti.vu.lt
          7     'Rowles, Matthew'       xxx                     xxx@xxx
-         8     'Bollinger, John C'     xxx                     .
+         8     'Bollinger, John C.'     xxx                     .
 
     loop_
       _dictionary_audit.version
