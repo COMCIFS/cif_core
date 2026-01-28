@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-12-10
+    _dictionary.date              2026-01-28
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -15013,7 +15013,7 @@ save_valence_param.atom_1
 
     _definition.id                '_valence_param.atom_1'
     _alias.definition_id          '_valence_param_atom_1'
-    _definition.update            2021-10-27
+    _definition.update            2026-01-28
     _description.text
 ;
     The atom type symbol for atom 1 forming a bond whose
@@ -15161,7 +15161,7 @@ save_valence_param.id
 ;
     _name.category_id             valence_param
     _name.object_id               id
-    _type.purpose                 Number
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Integer
@@ -28845,7 +28845,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-12-10
+         3.3.0                    2026-01-28
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29003,4 +29003,6 @@ save_
        Changed the content type of _audit_support.funding_organization_doi
        from 'Text' to 'Word' and added a note on the escaping special
        characters.
+
+       Changed the purpose of _valence_param.id from 'Number' to 'Key'.
 ;
