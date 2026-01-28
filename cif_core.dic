@@ -417,6 +417,7 @@ save_diffrn.flux_density
     Else                        _units.code =
 "photons_per_millimetre_squared_per_second"
 ;
+
 save_
 
 save_diffrn.id
@@ -966,8 +967,7 @@ save_cell.formula_units_z_details
     _type.container               Single
     _type.contents                Text
     _description_example.case
-;
-         The fractional value of Z=2/3 allows integral coefficients in
+;         The fractional value of Z=2/3 allows integral coefficients in
          the chemical formula, emphasizing that the compound is
          stoichiometric in spite of the multiple orderings within
          these molecular perovskites A~x~{Ni[Bi(SCN)~6~]}.
@@ -2696,6 +2696,7 @@ save_diffrn_measurement.method_precession
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -2721,6 +2722,7 @@ save_diffrn_measurement.rotation_mode
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -2755,6 +2757,7 @@ save_diffrn_measurement.sample_tracking
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -3431,6 +3434,7 @@ save_diffrn_radiation.illumination_mode
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -9216,8 +9220,7 @@ save_chemical.identifier_inchi
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _description_example.case
-        InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
+    _description_example.case     InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
     _description_example.detail   naphthalene
 
 save_
@@ -17482,7 +17485,6 @@ save_
 save_database_code.bincstrdb
 
     _definition.id                '_database_code.BIncStrDB'
-
     _definition.update            2024-03-27
     _description.text
 ;
@@ -17774,8 +17776,7 @@ save_DATABASE_RELATED
     _name.object_id               DATABASE_RELATED
     _category_key.name            '_database_related.id'
     _description_example.case
-;
-    loop_
+;    loop_
       _database_related.id
       _database_related.database_id
       _database_related.entry_code
@@ -17786,8 +17787,7 @@ save_DATABASE_RELATED
        3 CSD BAPLOT01 Identical .
 ;
     _description_example.detail
-;
-    The loop relates a specific instance of a theophylline crystal structure
+;    The loop relates a specific instance of a theophylline crystal structure
     to corresponding entries in the COD and CSD crystallographic databases
     as well as to the general description of the theophyline compound in the
     CAS registry.
@@ -20567,8 +20567,7 @@ save_ATOM_ANALYTICAL
     _name.object_id               ATOM_ANALYTICAL
     _category_key.name            '_atom_analytical.id'
     _description_example.case
-;
-    loop_
+;    loop_
     _atom_analytical.id
     _atom_analytical.analyte
     _atom_analytical.meas_id
@@ -21129,8 +21128,7 @@ save_ATOM_SCAT_VERSUS_STOL
          '_atom_scat_versus_stol.stol_value'
 
     _description_example.case
-;
-        loop_
+;        loop_
         _atom_scat_versus_stol.atom_type
         _atom_scat_versus_stol.stol_value
         _atom_scat_versus_stol.scat_value
@@ -21150,10 +21148,10 @@ save_ATOM_SCAT_VERSUS_STOL
         O   6.00   0.03670
 ;
     _description_example.detail
-;
-        A listing of the scattering factors for Ac and O in the range
+;        A listing of the scattering factors for Ac and O in the range
         (0, 6.00) reciprocal angstroms.
 ;
+
 save_
 
 save_atom_scat_versus_stol.atom_type
@@ -26184,6 +26182,7 @@ save_refine.diffraction_theory
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -26727,7 +26726,6 @@ save_
 save_refine_ls.abs_structure_z-score
 
     _definition.id                '_refine_ls.abs_structure_z-score'
-
     _definition.update            2024-05-03
     _description.text
 ;
@@ -28074,8 +28072,7 @@ save_refine_ls.weighting_details
     _type.container               Single
     _type.contents                Text
     _description_example.case
-;
-    Sigdel model of Konnert-Hendrickson:
+;    Sigdel model of Konnert-Hendrickson:
       Sigdel = Afsig +  Bfsig*(sin(θ)/λ - 1/6)
       Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
       Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
@@ -28707,16 +28704,24 @@ save_
     loop_
       _dictionary_author.id
       _dictionary_author.name
-      _dictionary_author.id_orcid
       _dictionary_author.email
-         1     'Hall, Sydney R.'       .                       .
-         2     'McMahon, Brian'        0000-0003-0391-0002     .
-         3     'Brown, I. D.'          .                       .
-         4     'Toby, Brian'           .                       .
-         5     'Hester, James R.'      0000-0002-2004-8672     jxh@ansto.gov.au
-         6     'Vaitkus, Antanas'      0000-0002-5944-1391     antanas.vaitkus@bti.vu.lt
-         7     'Rowles, Matthew'       .                       .
-         8     'Bollinger, John C.'    .                       .
+      _dictionary_author.id_orcid
+         1            'Hall, Sydney R.'               .
+         .
+         2            'McMahon, Brian'                .
+         0000-0003-0391-0002
+         3            'Brown, I. D.'                  .
+         .
+         4            'Toby, Brian'                   .
+         .
+         5            'Hester, James R.'              jxh@ansto.gov.au
+         0000-0002-2004-8672
+         6            'Vaitkus, Antanas'              antanas.vaitkus@bti.vu.lt
+         0000-0002-5944-1391
+         7            'Rowles, Matthew'               .
+         .
+         8            'Bollinger, John C.'            .
+         .
 
     loop_
       _dictionary_audit.version
