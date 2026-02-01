@@ -417,6 +417,7 @@ save_diffrn.flux_density
     Else                        _units.code =
 "photons_per_millimetre_squared_per_second"
 ;
+
 save_
 
 save_diffrn.id
@@ -2696,6 +2697,7 @@ save_diffrn_measurement.method_precession
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -2721,6 +2723,7 @@ save_diffrn_measurement.rotation_mode
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -2755,6 +2758,7 @@ save_diffrn_measurement.sample_tracking
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -3431,6 +3435,7 @@ save_diffrn_radiation.illumination_mode
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -9216,8 +9221,7 @@ save_chemical.identifier_inchi
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _description_example.case
-        InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
+    _description_example.case     InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
     _description_example.detail   naphthalene
 
 save_
@@ -17482,7 +17486,6 @@ save_
 save_database_code.bincstrdb
 
     _definition.id                '_database_code.BIncStrDB'
-
     _definition.update            2024-03-27
     _description.text
 ;
@@ -21154,6 +21157,7 @@ save_ATOM_SCAT_VERSUS_STOL
         A listing of the scattering factors for Ac and O in the range
         (0, 6.00) reciprocal angstroms.
 ;
+
 save_
 
 save_atom_scat_versus_stol.atom_type
@@ -26184,6 +26188,7 @@ save_refine.diffraction_theory
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -26727,7 +26732,6 @@ save_
 save_refine_ls.abs_structure_z-score
 
     _definition.id                '_refine_ls.abs_structure_z-score'
-
     _definition.update            2024-05-03
     _description.text
 ;
@@ -28703,6 +28707,28 @@ save_function.symop
 ;
 
 save_
+
+    loop_
+      _dictionary_author.id
+      _dictionary_author.name
+      _dictionary_author.id_orcid
+      _dictionary_author.email
+         1               'Hall, Sydney R.'                  .
+         .
+         2               'McMahon, Brian'                   0000-0003-0391-0002
+         .
+         3               'Brown, I. D.'                     .
+         .
+         4               'Toby, Brian'                      .
+         .
+         5               'Hester, James R.'                 0000-0002-2004-8672
+         jxh@ansto.gov.au
+         6               'Vaitkus, Antanas'                 0000-0002-5944-1391
+         antanas.vaitkus@bti.vu.lt
+         7               'Rowles, Matthew'                  .
+         .
+         8               'Bollinger, John C.'               .
+         .
 
     loop_
       _dictionary_audit.version
