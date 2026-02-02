@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-01-28
+    _dictionary.date              2026-02-02
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -17483,6 +17483,25 @@ save_DATABASE_CODE
 
 save_
 
+save_database_code.amcsd
+
+    _definition.id                '_database_code.AMCSD'
+    _alias.definition_id          '_database_code_AMCSD'
+    _definition.update            2026-02-02
+    _description.text
+;
+    Code assigned by the American Mineralogist Crystal Structure Database
+    (AMCSD).
+;
+    _name.category_id             database_code
+    _name.object_id               AMCSD
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
 save_database_code.bincstrdb
 
     _definition.id                '_database_code.BIncStrDB'
@@ -28871,7 +28890,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-01-28
+         3.3.0                    2026-02-02
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29029,6 +29048,8 @@ save_
        Changed the content type of _audit_support.funding_organization_doi
        from 'Text' to 'Word' and added a note on the escaping special
        characters.
+
+       Added _database_code.AMCSD
 
        Changed the purpose of _valence_param.id from 'Number' to 'Key'.
 ;
