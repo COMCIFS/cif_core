@@ -17483,6 +17483,24 @@ save_DATABASE_CODE
 
 save_
 
+save_database_code.amcsd
+
+    _definition.id                '_database_code.AMCSD'
+    _definition.update            2026-02-02
+    _description.text
+;
+    Code assigned by the American Mineralogist Crystal Structure Database
+    (AMCSD).
+;
+    _name.category_id             database_code
+    _name.object_id               AMCSD
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
 save_database_code.bincstrdb
 
     _definition.id                '_database_code.BIncStrDB'
