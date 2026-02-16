@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-02-02
+    _dictionary.date              2026-02-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -9253,11 +9253,11 @@ save_chemical.identifier_inchi_version
 
     _definition.id                '_chemical.identifier_InChI_version'
     _alias.definition_id          '_chemical_identifier_InChI_version'
-    _definition.update            2021-09-24
+    _definition.update            2026-02-16
     _description.text
 ;
-    Version number of the InChI standard to which the associated
-    chemical identifier string applies.
+    InChI software release version used to generate the
+    _chemical.identifier_InChI value.
 ;
     _name.category_id             chemical
     _name.object_id               identifier_InChI_version
@@ -28890,7 +28890,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-02-02
+         3.3.0                    2026-02-16
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29052,4 +29052,7 @@ save_
        Added _database_code.AMCSD
 
        Changed the purpose of _valence_param.id from 'Number' to 'Key'.
+
+       _chemical.identifier_InChI_version refers to the software release
+       version.
 ;
