@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-02-16
+    _dictionary.date              2026-02-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -8813,6 +8813,29 @@ save_exptl.method_details
       _description_example.case
          '29 structures'
          'minimized average structure'
+
+save_
+
+save_exptl.method_id_panet
+
+    _definition.id                '_exptl.method_id_PaNET'
+    _definition.update            2026-02-19
+    _description.text
+;
+    An identifier from the PaNET ontology matching the experimental technique
+    used to obtain the data. For more details, see
+    https://expands-eu.github.io/ExPaNDS-experimental-techniques-ontology/
+;
+    _name.category_id             exptl
+    _name.object_id               method_id_PaNET
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+    _description_example.case     http://purl.org/pan-science/PaNET/PaNET01102
+    _description_example.detail
+        'Data were obtained from a single crystal X-ray diffraction experiment'
 
 save_
 
@@ -28890,7 +28913,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-02-16
+         3.3.0                    2026-02-19
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29055,4 +29078,6 @@ save_
 
        _chemical.identifier_InChI_version refers to the software release
        version.
+
+       Add dataname for PaNET experimental method identifier
 ;
