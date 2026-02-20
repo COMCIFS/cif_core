@@ -8835,7 +8835,7 @@ save_exptl.method_id_panet
 
     _description_example.case     http://purl.org/pan-science/PaNET/PaNET01102
     _description_example.detail
-        'Data were obtained from a single crystal X-ray diffraction experiment'
+        'Data were obtained from a single crystal X-ray diffraction experiment.'
 
 save_
 
