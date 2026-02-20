@@ -8824,7 +8824,7 @@ save_exptl.method_id_panet
 ;
     An identifier from the PaNET ontology matching the experimental technique
     used to obtain the data. For more details, see
-    https://expands-eu.github.io/ExPaNDS-experimental-techniques-ontology/
+    https://expands-eu.github.io/ExPaNDS-experimental-techniques-ontology/.
 ;
     _name.category_id             exptl
     _name.object_id               method_id_PaNET
