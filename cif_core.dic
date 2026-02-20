@@ -29079,5 +29079,5 @@ save_
        _chemical.identifier_InChI_version refers to the software release
        version.
 
-       Add dataname for PaNET experimental method identifier
+       Add data item for PaNET experimental method identifier.
 ;
