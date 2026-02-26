@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-02-25
+    _dictionary.date              2026-02-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -8820,7 +8820,7 @@ save_
 save_exptl.method_id_panet
 
     _definition.id                '_exptl.method_id_PaNET'
-    _definition.update            2026-02-19
+    _definition.update            2026-02-26
     _description.text
 ;
     An identifier from the PaNET ontology matching the experimental technique
@@ -8832,7 +8832,7 @@ save_exptl.method_id_panet
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
-    _type.contents                Word
+    _type.contents                Iri
 
     _description_example.case     http://purl.org/pan-science/PaNET/PaNET01102
     _description_example.detail
@@ -28914,7 +28914,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-02-25
+         3.3.0                    2026-02-26
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
