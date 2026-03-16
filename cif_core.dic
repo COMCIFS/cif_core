@@ -1,4 +1,5 @@
 #\#CIF_2.0
+# SPDX-License-Identifier: CC-BY-4.0
 ##########################################################################
 #                                                                        #
 #  CIF CORE DICTIONARY                                                   #
@@ -10,10 +11,11 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2025-10-22
+    _dictionary.date              2026-02-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
+    _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore
     _description.text
 ;
@@ -416,6 +418,7 @@ save_diffrn.flux_density
     Else                        _units.code =
 "photons_per_millimetre_squared_per_second"
 ;
+
 save_
 
 save_diffrn.id
@@ -2788,6 +2791,7 @@ save_diffrn_measurement.method_precession
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -2813,6 +2817,7 @@ save_diffrn_measurement.rotation_mode
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -2847,6 +2852,7 @@ save_diffrn_measurement.sample_tracking
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -3523,6 +3529,7 @@ save_diffrn_radiation.illumination_mode
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -8903,6 +8910,29 @@ save_exptl.method_details
 
 save_
 
+save_exptl.method_id_panet
+
+    _definition.id                '_exptl.method_id_PaNET'
+    _definition.update            2026-02-26
+    _description.text
+;
+    An identifier from the PaNET ontology matching the experimental technique
+    used to obtain the data. For more details, see
+    https://expands-eu.github.io/ExPaNDS-experimental-techniques-ontology/.
+;
+    _name.category_id             exptl
+    _name.object_id               method_id_PaNET
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Iri
+
+    _description_example.case     http://purl.org/pan-science/PaNET/PaNET01102
+    _description_example.detail
+        'Data were obtained from a single crystal X-ray diffraction experiment.'
+
+save_
+
 save_exptl.special_details
 
     _definition.id                '_exptl.special_details'
@@ -9308,8 +9338,7 @@ save_chemical.identifier_inchi
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _description_example.case
-        InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
+    _description_example.case     InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
     _description_example.detail   naphthalene
 
 save_
@@ -9341,11 +9370,11 @@ save_chemical.identifier_inchi_version
 
     _definition.id                '_chemical.identifier_InChI_version'
     _alias.definition_id          '_chemical_identifier_InChI_version'
-    _definition.update            2021-09-24
+    _definition.update            2026-02-16
     _description.text
 ;
-    Version number of the InChI standard to which the associated
-    chemical identifier string applies.
+    InChI software release version used to generate the
+    _chemical.identifier_InChI value.
 ;
     _name.category_id             chemical
     _name.object_id               identifier_InChI_version
@@ -12921,24 +12950,6 @@ save_geom.bond_distance_incr
 
 save_
 
-save_geom.bond_distance_min
-
-    _definition.id                '_geom.bond_distance_min'
-    _definition.update            2012-11-22
-    _description.text
-;
-    Minimum permitted "bonded" distance between two atom sites.
-;
-    _name.category_id             geom
-    _name.object_id               bond_distance_min
-    _type.purpose                 Number
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   angstroms
-
-save_
-
 save_geom.contact_distance_incr
 
     _definition.id                '_geom.contact_distance_incr'
@@ -12959,16 +12970,34 @@ save_geom.contact_distance_incr
 
 save_
 
-save_geom.contact_distance_min
+save_geom.min_bond_distance_cutoff
 
-    _definition.id                '_geom.contact_distance_min'
-    _definition.update            2012-11-22
+    _definition.id                '_geom.min_bond_distance_cutoff'
+    _definition.update            2025-07-28
+    _description.text
+;
+    Minimum permitted "bonded" distance between two atom sites.
+;
+    _name.category_id             geom
+    _name.object_id               min_bond_distance_cutoff
+    _type.purpose                 Number
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_geom.min_contact_distance_cutoff
+
+    _definition.id                '_geom.min_contact_distance_cutoff'
+    _definition.update            2025-07-28
     _description.text
 ;
     Minimum permitted "contact" distance between two "non-bonded" atom sites.
 ;
     _name.category_id             geom
-    _name.object_id               contact_distance_min
+    _name.object_id               min_contact_distance_cutoff
     _type.purpose                 Number
     _type.source                  Assigned
     _type.container               Single
@@ -13006,7 +13035,7 @@ save_GEOM_ANGLE
     _definition.id                GEOM_ANGLE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-07-28
     _description.text
 ;
     The category of data items used to specify the geometry angles in the
@@ -13027,7 +13056,7 @@ save_GEOM_ANGLE
     _method.purpose               Evaluation
     _method.expression
 ;
-    dmin =  _geom.bond_distance_min
+    dmin =  _geom.min_bond_distance_cutoff
 
     Loop  m1  as  model_site  :i  {   # loop vertex model site
 
@@ -13327,7 +13356,7 @@ save_GEOM_BOND
     _method.purpose               Evaluation
     _method.expression
 ;
-    dmin =  _geom.bond_distance_min
+    dmin =  _geom.min_bond_distance_cutoff
 
     Loop  m1  as  model_site  :i  {
 
@@ -13546,10 +13575,15 @@ save_geom_bond.valence
 
     _definition.id                '_geom_bond.valence'
     _alias.definition_id          '_geom_bond_valence'
-    _definition.update            2012-12-11
+    _definition.update            2025-11-05
     _description.text
 ;
-    Bond valence calculated from the bond distance.
+    Valence assigned to the bond between the sites identified by
+    _geom_bond.id calculated according to the bond-valence model
+    (Brown, 2002) from the bond distance.
+
+    Ref: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
+         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
 ;
     _name.category_id             geom_bond
     _name.object_id               valence
@@ -13557,15 +13591,15 @@ save_geom_bond.valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   electrons
+    _enumeration.range            0.0:10.0
+    _units.code                   valence_units
 
 save_
 
 save_geom_bond.valence_su
 
     _definition.id                '_geom_bond.valence_su'
-    _definition.update            2023-07-01
+    _definition.update            2025-11-05
     _description.text
 ;
     Standard uncertainty of _geom_bond.valence.
@@ -13573,7 +13607,7 @@ save_geom_bond.valence_su
     _name.category_id             geom_bond
     _name.object_id               valence_su
     _name.linked_item_id          '_geom_bond.valence'
-    _units.code                   electrons
+    _units.code                   valence_units
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
 
@@ -14214,7 +14248,7 @@ save_GEOM_TORSION
     _definition.id                GEOM_TORSION
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-07-28
     _description.text
 ;
     The category of data items used to specify the torsion angles in the
@@ -14237,7 +14271,7 @@ save_GEOM_TORSION
     _method.purpose               Evaluation
     _method.expression
 ;
-    dmin =  _geom.bond_distance_min
+    dmin =  _geom.min_bond_distance_cutoff
 
     Loop  m1  as  model_site  :i  {
 
@@ -14548,7 +14582,7 @@ save_MODEL_SITE
     _definition.id                MODEL_SITE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-07-28
     _description.text
 ;
     The category of data items used to describe atomic sites and
@@ -14576,7 +14610,7 @@ save_MODEL_SITE
     }
 
     molelist  = List()
-    dmin     =  _geom.bond_distance_min
+    dmin     =  _geom.min_bond_distance_cutoff
     m        =  0
     n        =  0
 
@@ -15061,11 +15095,14 @@ save_VALENCE
     _definition.id                VALENCE
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
-    The category of items used to specify bond-valence parameters
-    used to calculate bond valences from bond lengths.
+    The category of items used to characterize localized inorganic
+    bond valences using the model of Brown (2002).
+
+    Ref: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
+         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
 ;
     _name.category_id             MODEL
     _name.object_id               VALENCE
@@ -15077,10 +15114,15 @@ save_VALENCE_PARAM
     _definition.id                VALENCE_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-11-05
     _description.text
 ;
-    The category of items for listing bond valences.
+    The category of items that specify bond-valence parameters
+    used to calculate bond valences from bond lengths using the
+    model of Brown (2002).
+
+    Ref: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
+         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_PARAM
@@ -15092,10 +15134,10 @@ save_valence_param.atom_1
 
     _definition.id                '_valence_param.atom_1'
     _alias.definition_id          '_valence_param_atom_1'
-    _definition.update            2021-10-27
+    _definition.update            2026-01-28
     _description.text
 ;
-    Atom type symbol for atom 1 forming a bond whose
+    The atom type symbol for atom 1 forming a bond whose
     valence parameters are given in this category.
 ;
     _name.category_id             valence_param
@@ -15112,7 +15154,7 @@ save_valence_param.atom_1_valence
 
     _definition.id                '_valence_param.atom_1_valence'
     _alias.definition_id          '_valence_param_atom_1_valence'
-    _definition.update            2021-03-01
+    _definition.update            2025-11-05
     _description.text
 ;
     The formal charge of the atom 1 whose bond-valence parameters
@@ -15124,7 +15166,6 @@ save_valence_param.atom_1_valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -15153,7 +15194,7 @@ save_valence_param.atom_2_valence
 
     _definition.id                '_valence_param.atom_2_valence'
     _alias.definition_id          '_valence_param_atom_2_valence'
-    _definition.update            2021-03-01
+    _definition.update            2025-11-05
     _description.text
 ;
     The formal charge of the atom 2 whose bond-valence parameters
@@ -15165,7 +15206,6 @@ save_valence_param.atom_2_valence
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.0:
     _units.code                   none
 
 save_
@@ -15174,7 +15214,7 @@ save_valence_param.b
 
     _definition.id                '_valence_param.B'
     _alias.definition_id          '_valence_param_B'
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
     The bond-valence parameter B used in the expression
@@ -15186,8 +15226,30 @@ save_valence_param.b
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            0.1:
+    _enumeration.range            0.0:
     _units.code                   angstroms
+
+save_
+
+save_valence_param.citation_id
+
+    _definition.id                '_valence_param.citation_id'
+    _definition.update            2025-11-05
+    _description.text
+;
+    Code linking parameters to the key _citation.id in the reference
+    list in category CITATION. This may be used when the source of the
+    bond valence parameters is included in an article reference list,
+    instead of in a separate VALENCE_REF list. Use of this item does not
+    preclude the use also of _valence_param.ref_id.
+;
+    _name.category_id             valence_param
+    _name.object_id               citation_id
+    _name.linked_item_id          '_citation.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -15195,10 +15257,10 @@ save_valence_param.details
 
     _definition.id                '_valence_param.details'
     _alias.definition_id          '_valence_param_details'
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
-    Details of valence parameters of stated bond.
+    Details of or comments on the bond-valence parameters of the stated bond.
 ;
     _name.category_id             valence_param
     _name.object_id               details
@@ -15220,7 +15282,7 @@ save_valence_param.id
 ;
     _name.category_id             valence_param
     _name.object_id               id
-    _type.purpose                 Number
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Integer
@@ -15236,8 +15298,10 @@ save_valence_param.ref_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code linking parameters to the key _valence_ref.id key
-    in the reference list in category VALENCE_REF.
+    Code linking parameters to the key _valence_ref.id in the list of
+    standard literature references for bond-valence parameters tabulated
+    in category VALENCE_REF. Use of this item does not preclude links to
+    references in the article citation list using _valence_param.citation_id.
 ;
     _name.category_id             valence_param
     _name.object_id               ref_id
@@ -15253,7 +15317,7 @@ save_valence_param.ro
 
     _definition.id                '_valence_param.Ro'
     _alias.definition_id          '_valence_param_Ro'
-    _definition.update            2012-12-13
+    _definition.update            2025-11-05
     _description.text
 ;
     The bond-valence parameter Ro used in the expression
@@ -15265,7 +15329,7 @@ save_valence_param.ro
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.0:
+    _enumeration.range            0.0:
     _units.code                   angstroms
 
 save_
@@ -15275,10 +15339,11 @@ save_VALENCE_REF
     _definition.id                VALENCE_REF
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-11-05
     _description.text
 ;
-    The category of items for listing valence references.
+    The category of items for tabulating standard literature references
+    from which the bond-valence parameters have been taken.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_REF
@@ -15308,10 +15373,10 @@ save_valence_ref.reference
 
     _definition.id                '_valence_ref.reference'
     _alias.definition_id          '_valence_ref_reference'
-    _definition.update            2021-03-03
+    _definition.update            2025-11-05
     _description.text
 ;
-    Literature reference from which the valence parameters
+    Literature reference from which the bond-valence parameters
     identified by _valence_param.id were taken.
 ;
     _name.category_id             valence_ref
@@ -15874,6 +15939,37 @@ save_AUDIT_CONFORM
 
 save_
 
+save_audit_conform.dict_doi
+
+    _definition.id                '_audit_conform.dict_DOI'
+    _definition.update            2025-12-09
+    _description.text
+;
+    The digital object identifier (DOI) registered to identify
+    a CIF dictionary to which data names in this data block are
+    conformant. This should resolve to a machine-readable dictionary
+    and not to a descriptive landing page.
+
+    A DOI is a unique character string identifying any
+    object of intellectual property. It provides a
+    persistent identifier for an object on a digital network
+    and permits the association of related current data in a
+    structured extensible way. A DOI is an implementation
+    of the Internet concepts of Uniform Resource Name and
+    Universal Resource Locator managed according to the
+    specifications of the International DOI Foundation
+    (see https://www.doi.org/).
+;
+    _name.category_id             audit_conform
+    _name.object_id               dict_DOI
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     10.1107/cifdic_000002
+
+save_
+
 save_audit_conform.dict_location
 
     _definition.id                '_audit_conform.dict_location'
@@ -16349,7 +16445,7 @@ save_
 save_audit_support.funding_organization_doi
 
     _definition.id                '_audit_support.funding_organization_DOI'
-    _definition.update            2023-01-13
+    _definition.update            2025-12-10
     _description.text
 ;
     The Digital Object Identifier (DOI) associated with the
@@ -16358,14 +16454,17 @@ save_audit_support.funding_organization_doi
     accordance with CrossRef guidelines, the full URI of
     the resolved page describing the funding organization
     should be given (i.e. including the https://doi.org/
-    component).
+    DOI resolver prefix). Note that it may be necessary to
+    URL-encode certain special characters in the DOI suffix
+    for the URI to resolve correctly through CrossRef
+    (e.g. the number sign '#' must be encoded as '%23').
 ;
     _name.category_id             audit_support
     _name.object_id               funding_organization_DOI
     _type.purpose                 Encode
     _type.source                  Recorded
     _type.container               Single
-    _type.contents                Text
+    _type.contents                Word
     _description_example.case     https://doi.org/10.13039/100000064
 
 save_
@@ -17037,7 +17136,7 @@ save_citation_author.citation_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifier in the CITATION data list. The value of must match
+    Code identifier in the CITATION data list. The value must match
     an identifier specified in the CITATION list.
 ;
     _name.category_id             citation_author
@@ -17501,10 +17600,28 @@ save_DATABASE_CODE
 
 save_
 
+save_database_code.amcsd
+
+    _definition.id                '_database_code.AMCSD'
+    _alias.definition_id          '_database_code_AMCSD'
+    _definition.update            2026-02-02
+    _description.text
+;
+    Code assigned by the American Mineralogist Crystal Structure Database
+    (AMCSD).
+;
+    _name.category_id             database_code
+    _name.object_id               AMCSD
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
 save_database_code.bincstrdb
 
     _definition.id                '_database_code.BIncStrDB'
-
     _definition.update            2024-03-27
     _description.text
 ;
@@ -21176,6 +21293,7 @@ save_ATOM_SCAT_VERSUS_STOL
         A listing of the scattering factors for Ac and O in the range
         (0, 6.00) reciprocal angstroms.
 ;
+
 save_
 
 save_atom_scat_versus_stol.atom_type
@@ -26206,6 +26324,7 @@ save_refine.diffraction_theory
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     loop_
       _enumeration_set.state
       _enumeration_set.detail
@@ -26749,7 +26868,6 @@ save_
 save_refine_ls.abs_structure_z-score
 
     _definition.id                '_refine_ls.abs_structure_z-score'
-
     _definition.update            2024-05-03
     _description.text
 ;
@@ -28727,6 +28845,28 @@ save_function.symop
 save_
 
     loop_
+      _dictionary_author.id
+      _dictionary_author.name
+      _dictionary_author.id_orcid
+      _dictionary_author.email
+         1               'Hall, Sydney R.'                  .
+         .
+         2               'McMahon, Brian'                   0000-0003-0391-0002
+         .
+         3               'Brown, I. D.'                     .
+         .
+         4               'Toby, Brian'                      .
+         .
+         5               'Hester, James R.'                 0000-0002-2004-8672
+         jxh@ansto.gov.au
+         6               'Vaitkus, Antanas'                 0000-0002-5944-1391
+         antanas.vaitkus@bti.vu.lt
+         7               'Rowles, Matthew'                  .
+         .
+         8               'Bollinger, John C.'               .
+         .
+
+    loop_
       _dictionary_audit.version
       _dictionary_audit.date
       _dictionary_audit.revision
@@ -28867,7 +29007,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2025-10-22
+         3.3.0                    2026-02-26
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29013,4 +29153,29 @@ save_
        Removed the _cell_angle.beta_su and _cell_angle.gamma_su aliases.
 
        Added _cell.formula_units_Z_prime and *_details. (bm)
+
+       Renamed _geom.bond_distance_min and _geom.contact_distance_min to
+       _geom.min_bond_distance_cutoff and _geom.min_contact_distance_cutoff
+       respectively. The original names were not retained as aliases to avoid
+       name clashes with data names from the msCIF dictionary.
+
+       Updated definitions relating to the bond valence model
+       (_geom_bond.valence, categories VALENCE and VALENCE_REF) (bm).
+
+       Added _audit_conform.dict_DOI. (bm)
+
+       Changed the content type of _audit_support.funding_organization_doi
+       from 'Text' to 'Word' and added a note on the escaping special
+       characters.
+
+       Added _database_code.AMCSD
+
+       Changed the purpose of _valence_param.id from 'Number' to 'Key'.
+
+       _chemical.identifier_InChI_version refers to the software release
+       version.
+
+       Add data item for PaNET experimental method identifier.
+
+       Added the _dictionary.licensing_SPDX dictionary attribute.
 ;
