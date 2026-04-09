@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-02-26
+    _dictionary.date              2026-04-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -14861,7 +14861,7 @@ save_
 save_model_site.display_colour
 
     _definition.id                '_model_site.display_colour'
-    _definition.update            2023-02-06
+    _definition.update            2026-04-09
     _description.text
 ;
     Display colour code assigned to this atom site. Note that the
@@ -14874,7 +14874,7 @@ save_model_site.display_colour
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _enumeration.def_index_id     '_model_site.type_symbol'
+    _enumeration.def_index_ids    ['_model_site.type_symbol']
 
     _import.get                   [
                                    {'file':templ_enum.cif  'save':colour_rgb}
@@ -25090,7 +25090,7 @@ save_
 save_atom_type.atomic_mass
 
     _definition.id                '_atom_type.atomic_mass'
-    _definition.update            2012-11-20
+    _definition.update            2026-04-09
     _description.text
 ;
     Mass of this atom type.
@@ -25101,7 +25101,7 @@ save_atom_type.atomic_mass
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get                   [{'file':templ_enum.cif  'save':atomic_mass}]
 
@@ -25110,7 +25110,7 @@ save_
 save_atom_type.atomic_number
 
     _definition.id                '_atom_type.atomic_number'
-    _definition.update            2023-06-01
+    _definition.update            2026-04-09
     _description.text
 ;
     Atomic number of this atom type.
@@ -25122,7 +25122,7 @@ save_atom_type.atomic_number
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            1:
-    _enumeration.def_index_id     '_atom_type.element_symbol'
+    _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
         [{'file':templ_enum.cif  'save':atomic_number}]
@@ -25158,7 +25158,7 @@ save_
 save_atom_type.display_colour
 
     _definition.id                '_atom_type.display_colour'
-    _definition.update            2023-02-06
+    _definition.update            2026-04-09
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
@@ -25171,7 +25171,7 @@ save_atom_type.display_colour
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get                   [
                                    {'file':templ_enum.cif  'save':colour_rgb}
@@ -25183,7 +25183,7 @@ save_
 save_atom_type.electron_count
 
     _definition.id                '_atom_type.electron_count'
-    _definition.update            2021-03-01
+    _definition.update            2026-04-09
     _description.text
 ;
     Number of electrons in this atom type.
@@ -25195,7 +25195,7 @@ save_atom_type.electron_count
     _type.container               Single
     _type.contents                Integer
     _enumeration.range            1:
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get
         [{'file':templ_enum.cif  'save':electron_count}]
@@ -25205,7 +25205,7 @@ save_
 save_atom_type.element_symbol
 
     _definition.id                '_atom_type.element_symbol'
-    _definition.update            2021-10-27
+    _definition.update            2026-04-09
     _description.text
 ;
     Element symbol for of this atom type. The default value is extracted
@@ -25218,7 +25218,7 @@ save_atom_type.element_symbol
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get
         [
@@ -25309,7 +25309,7 @@ save_atom_type.radius_bond
 
     _definition.id                '_atom_type.radius_bond'
     _alias.definition_id          '_atom_type_radius_bond'
-    _definition.update            2012-11-20
+    _definition.update            2026-04-09
     _description.text
 ;
     The effective intra-molecular bonding radius of this atom type.
@@ -25321,7 +25321,7 @@ save_atom_type.radius_bond
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:5.0
-    _enumeration.def_index_id     '_atom_type.symbol'
+    _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get                   [{'file':templ_enum.cif  'save':radius_bond}]
 
@@ -25679,7 +25679,7 @@ save_
 save_atom_type_scat.dispersion_imag_cu
 
     _definition.id                '_atom_type_scat.dispersion_imag_Cu'
-    _definition.update            2023-06-01
+    _definition.update            2026-04-09
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -25691,7 +25691,7 @@ save_atom_type_scat.dispersion_imag_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.element_symbol'
+    _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
         [{'file':templ_enum.cif  'save':dispersion_imag_cu}]
@@ -25701,7 +25701,7 @@ save_
 save_atom_type_scat.dispersion_imag_mo
 
     _definition.id                '_atom_type_scat.dispersion_imag_Mo'
-    _definition.update            2023-06-01
+    _definition.update            2026-04-09
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -25713,7 +25713,7 @@ save_atom_type_scat.dispersion_imag_mo
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.element_symbol'
+    _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
         [{'file':templ_enum.cif  'save':dispersion_imag_mo}]
@@ -25758,7 +25758,7 @@ save_
 save_atom_type_scat.dispersion_real_cu
 
     _definition.id                '_atom_type_scat.dispersion_real_Cu'
-    _definition.update            2023-06-01
+    _definition.update            2026-04-09
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -25770,7 +25770,7 @@ save_atom_type_scat.dispersion_real_cu
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.element_symbol'
+    _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
         [{'file':templ_enum.cif  'save':dispersion_real_cu}]
@@ -25780,7 +25780,7 @@ save_
 save_atom_type_scat.dispersion_real_mo
 
     _definition.id                '_atom_type_scat.dispersion_real_Mo'
-    _definition.update            2023-06-01
+    _definition.update            2026-04-09
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -25792,7 +25792,7 @@ save_atom_type_scat.dispersion_real_mo
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Real
-    _enumeration.def_index_id     '_atom_type.element_symbol'
+    _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
         [{'file':templ_enum.cif  'save':dispersion_real_mo}]
@@ -29007,7 +29007,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-02-26
+         3.3.0                    2026-04-09
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29178,4 +29178,6 @@ save_
        Add data item for PaNET experimental method identifier.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
+
+       Move to enumeration_defaults for default values
 ;
