@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-02-26
+    _dictionary.date              2026-04-09
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -5885,6 +5885,33 @@ save_diffrn_source.facility
     _type.container               Single
     _type.contents                Text
     _description_example.case     'Diamond Light Source'
+
+save_
+
+save_diffrn_source.instrument_doi
+
+    _definition.id                '_diffrn_source.instrument_DOI'
+    _definition.update            2026-04-09
+    _description.text
+;
+    A DOI for the instrument used to measure the data. This DOI
+    typically refers to a facility beamline or a laboratory instrument,
+    rather than to a specific component.
+;
+    _name.category_id             diffrn_source
+    _name.object_id               instrument_DOI
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    _description_example.case     10.5442/ni000019
+    _description_example.detail
+;
+        Data were collected at the hard X-ray EMIL beamline at the BESSY
+        synchrotron. Metadata for this DOI conform to the RDA recommended
+        schema at https://doi.org/10.15497/RDA00070.
+;
 
 save_
 
@@ -29007,7 +29034,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-02-26
+         3.3.0                    2026-04-09
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29178,4 +29205,6 @@ save_
        Add data item for PaNET experimental method identifier.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
+
+       Add data item for instrument DOI.
 ;
