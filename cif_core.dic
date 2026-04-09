@@ -5894,7 +5894,9 @@ save_diffrn_source.instrument_doi
     _definition.update            2026-04-09
     _description.text
 ;
-    A DOI for the instrument used to measure the data.
+    A DOI for the instrument used to measure the data. This DOI
+    typically refers to a facility beamline or a laboratory instrument,
+    rather than to a specific component.
 ;
     _name.category_id             diffrn_source
     _name.object_id               instrument_DOI
