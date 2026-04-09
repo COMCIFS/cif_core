@@ -5888,6 +5888,31 @@ save_diffrn_source.facility
 
 save_
 
+save_diffrn_source.instrument_doi
+
+    _definition.id                '_diffrn_source.instrument_DOI'
+    _definition.update            2026-04-09
+    _description.text
+;
+    A DOI for the instrument used to measure the data.
+;
+    _name.category_id             diffrn_source
+    _name.object_id               instrument_DOI
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    _description_example.case     10.5442/ni000019
+    _description_example.detail
+;
+        Data were collected at the hard X-ray EMIL beamline at the BESSY
+        synchrotron. Metadata for this DOI conform to the RDA recommended
+        schema at https://doi.org/10.15497/RDA00070.
+;
+
+save_
+
 save_diffrn_source.make
 
     _definition.id                '_diffrn_source.make'
