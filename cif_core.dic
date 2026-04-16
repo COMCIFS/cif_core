@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-02-26
+    _dictionary.date              2026-04-16
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -21095,13 +21095,13 @@ save_
 save_atom_analytical_mass_loss.temperature_su
 
     _definition.id                '_atom_analytical_mass_loss.temperature_su'
-    _definition.update            2023-07-01
+    _definition.update            2026-04-16
     _description.text
 ;
     Standard uncertainty of _atom_analytical_mass_loss.temperature.
 ;
     _name.category_id             atom_analytical_mass_loss
-    _name.object_id               analysis_temperature_su
+    _name.object_id               temperature_su
     _name.linked_item_id          '_atom_analytical_mass_loss.temperature'
     _units.code                   kelvins
 
@@ -21971,14 +21971,14 @@ save_atom_site.fract_symmform
 
     _definition.id                '_atom_site.fract_symmform'
     _alias.definition_id          '_atom_site_fract_symmform'
-    _definition.update            2024-02-20
+    _definition.update            2026-04-16
     _description.text
 ;
     A symbolic expression that indicates the symmetry-restricted form of the
     components of the positional coordinates of an atom.
 ;
     _name.category_id             atom_site
-    _name.object_id               symmform
+    _name.object_id               fract_symmform
     _type.purpose                 Encode
     _type.source                  Assigned
     _type.container               Single
@@ -29007,7 +29007,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-02-26
+         3.3.0                    2026-04-16
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29178,4 +29178,7 @@ save_
        Add data item for PaNET experimental method identifier.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
+
+       Correct the _name.object_id attribute of _atom_site.fract_symmform
+       and _atom_analytical_mass_loss.temperature_su.
 ;
