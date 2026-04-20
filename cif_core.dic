@@ -14861,7 +14861,7 @@ save_
 save_model_site.display_colour
 
     _definition.id                '_model_site.display_colour'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     Display colour code assigned to this atom site. Note that the
@@ -25090,7 +25090,7 @@ save_
 save_atom_type.atomic_mass
 
     _definition.id                '_atom_type.atomic_mass'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     Mass of this atom type.
@@ -25110,7 +25110,7 @@ save_
 save_atom_type.atomic_number
 
     _definition.id                '_atom_type.atomic_number'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     Atomic number of this atom type.
@@ -25158,7 +25158,7 @@ save_
 save_atom_type.display_colour
 
     _definition.id                '_atom_type.display_colour'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     The display colour assigned to this atom type. Note that the
@@ -25183,7 +25183,7 @@ save_
 save_atom_type.electron_count
 
     _definition.id                '_atom_type.electron_count'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     Number of electrons in this atom type.
@@ -25205,7 +25205,7 @@ save_
 save_atom_type.element_symbol
 
     _definition.id                '_atom_type.element_symbol'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     Element symbol for of this atom type. The default value is extracted
@@ -25309,7 +25309,7 @@ save_atom_type.radius_bond
 
     _definition.id                '_atom_type.radius_bond'
     _alias.definition_id          '_atom_type_radius_bond'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     The effective intra-molecular bonding radius of this atom type.
@@ -25679,7 +25679,7 @@ save_
 save_atom_type_scat.dispersion_imag_cu
 
     _definition.id                '_atom_type_scat.dispersion_imag_Cu'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -25701,7 +25701,7 @@ save_
 save_atom_type_scat.dispersion_imag_mo
 
     _definition.id                '_atom_type_scat.dispersion_imag_Mo'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     The imaginary component of the anomalous dispersion scattering factors
@@ -25758,7 +25758,7 @@ save_
 save_atom_type_scat.dispersion_real_cu
 
     _definition.id                '_atom_type_scat.dispersion_real_Cu'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
@@ -25780,7 +25780,7 @@ save_
 save_atom_type_scat.dispersion_real_mo
 
     _definition.id                '_atom_type_scat.dispersion_real_Mo'
-    _definition.update            2026-04-09
+    _definition.update            2026-04-20
     _description.text
 ;
     The real component of the anomalous dispersion scattering factors
