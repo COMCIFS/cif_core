@@ -26,7 +26,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - name: checkout
-          uses: actions/checkout@v4
+          uses: actions/checkout@v6
           
       # Check syntax of all CIF files
         - name: check_syntax
@@ -40,22 +40,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Checkout the DDLm reference dictionary
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: COMCIFS/DDLm
           path: cif-dictionaries/DDLm
 
       - name: Checkout enumeration templates
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: COMCIFS/Enumeration_Templates
           path: cif-dictionaries/Enumeration_Templates
 
       - name: Checkout attribute templates
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: COMCIFS/Attribute_Templates
           path: cif-dictionaries/Attribute_Templates
@@ -70,14 +70,14 @@ jobs:
 
     steps:
       - name: Get the cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache
         with:
                  path: ~/.julia
                  key: ${{ runner.os }}-julia-v2
                  
       - name: Install Julia
-        uses: julia-actions/setup-julia@v1
+        uses: julia-actions/setup-julia@v3
         with:
                 version: '1.6'
 
@@ -87,30 +87,30 @@ jobs:
                julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths");Pkg.add("ArgParse")'
 
       - name: checkout julia tools
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
                 repository: jamesrhester/julia_cif_tools
                 path: julia_cif_tools
 
       - name: Checkout CIF master files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
                 path: cif_core
 
       - name: Checkout DDL definitions
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
                 repository: COMCIFS/DDLm
                 path: DDLm
 
       - name: Checkout enum templates
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
                 repository: COMCIFS/Enumeration_Templates
                 path: enum
                 
       - name: Checkout attr templates
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
                 repository: COMCIFS/Attribute_Templates
                 path: templ
