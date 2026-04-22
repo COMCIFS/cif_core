@@ -136,7 +136,7 @@ jobs:
 
       - name: Run dictionary layout checks
         run: |
-          julia -e 'using Pkg; Pkg.status()'
+          julia -e 'using Pkg; Pkg.instantiate(); Pkg.status()'
           for file in cif_core/*.dic
           do
             echo "Checking $file"
