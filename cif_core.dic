@@ -2565,12 +2565,12 @@ save_diffrn_component_pid.framework
       _enumeration_set.detail
          DataCite
 ;
-         DOI resolving to metadata described in the RPAINST white paper
+         DOI resolving to metadata described in the RDA PIDINST white paper
          at 10.15497/RDA00070 and using the DataCite schema.
 ;
          ePIC
 ;
-         An ePIC handle resolving to metadata matching the RPAINST schema
+         An ePIC handle resolving to metadata matching the RDA PIDINST schema
          defined at DOI 10.15497/RDA00070.
 ;
 
