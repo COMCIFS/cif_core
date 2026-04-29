@@ -2510,7 +2510,7 @@ save_DIFFRN_COMPONENT_PID
        _diffrn_component_pid.framework  DataCite
        _diffrn_component_pid.details    "EMIL beamline"
 ;
-    _description_example.details
+    _description_example.detail
 ;
         Data were collected at the hard X-ray EMIL beamline at the BESSY
         synchrotron. Metadata for this DOI conform to the RDA recommended
