@@ -2571,7 +2571,7 @@ save_diffrn_component_pid.framework
          ePIC
 ;
          An ePIC handle resolving to metadata matching the RPAINST schema
-         defined at DOI 10.1547/RDA00070.
+         defined at DOI 10.15497/RDA00070.
 ;
 
 save_
