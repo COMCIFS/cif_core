@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-04-20
+    _dictionary.date              2026-04-29
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2485,6 +2485,114 @@ save_diffrn_attenuator.scale
     _type.contents                Real
     _enumeration.range            1.0:
     _units.code                   none
+
+save_
+
+save_DIFFRN_COMPONENT_PID
+
+    _definition.id                DIFFRN_COMPONENT_PID
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2026-04-29
+    _description.text
+;
+    The category of data items providing persistent identifiers for
+    instrumentation associated with data collection. These identifiers
+    will generally be registered with independent organisations.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               DIFFRN_COMPONENT_PID
+    _category_key.name            '_diffrn_component_pid.pid'
+
+    _description_example.case
+;
+       _diffrn_component_pid.pid        10.5442/ni000019
+       _diffrn_component_pid.framework  DataCite
+       _diffrn_component_pid.details    "EMIL beamline"
+;
+    _description_example.details
+;
+        Data were collected at the hard X-ray EMIL beamline at the BESSY
+        synchrotron. Metadata for this DOI conform to the RDA recommended
+        schema at https://doi.org/10.15497/RDA00070.
+;
+
+save_
+
+save_diffrn_component_pid.details
+
+    _definition.id                '_diffrn_component_pid.details'
+    _definition.update            2026-04-29
+    _description.text
+;
+    The part of the instrumentation to which the PID refers. This
+    value is purely descriptive; the metadata obtained via the PID
+    should be used for rigorous classification and identification.
+;
+    _name.category_id             diffrn_component_pid
+    _name.object_id               details
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'Mo X-ray target'
+         '9-module CCD detector'
+         'Lab diffractometer with Mo source and custom detector'
+
+save_
+
+save_diffrn_component_pid.framework
+
+    _definition.id                '_diffrn_component_pid.framework'
+    _definition.update            2026-04-29
+    _description.text
+;
+    The framework to which the metadata for the PID conform. A framework
+    includes both the PID type and a metadata schema.
+;
+    _name.category_id             diffrn_component_pid
+    _name.object_id               framework
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         DataCite
+;
+         DOI resolving to metadata described in the RPAINST white paper
+         at 10.15497/RDA00070 and using the DataCite schema.
+;
+         ePIC
+;
+         An ePIC handle resolving to metadata matching the RPAINST schema
+         defined at DOI 10.1547/RDA00070.
+;
+
+save_
+
+save_diffrn_component_pid.pid
+
+    _definition.id                '_diffrn_component_pid.PID'
+    _definition.update            2026-04-29
+    _description.text
+;
+    A persistent identifier (PID) for a component of the instrumentation
+    used during the experiment, which may include the entire instrument.
+    The PID should be registered with an external body and be resolvable
+    to a resource providing further metadata about the object.
+;
+    _name.category_id             diffrn_component_pid
+    _name.object_id               PID
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -29183,4 +29291,6 @@ save_
        and _atom_analytical_mass_loss.temperature_su.
 
        Moved to ENUMERATION_DEFAULTS for default values.
+
+       Added PIDs for instrumentation.
 ;
