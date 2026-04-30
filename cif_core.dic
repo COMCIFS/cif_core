@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-04-29
+    _dictionary.date              2026-04-30
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2740,13 +2740,13 @@ save_DIFFRN_MEASUREMENT
     _definition.id                DIFFRN_MEASUREMENT
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2012-11-26
+    _definition.update            2026-04-30
     _description.text
 ;
-    The category of data items which specify the details of the
-    diffraction measurement.
+    The category of data items used to describe the sample mounting,
+    positioning, and measurement strategy.
 ;
-    _name.category_id             DIFFRN
+    _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN_MEASUREMENT
 
 save_
@@ -29118,7 +29118,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-04-29
+         3.3.0                    2026-04-30
 ;
        # Please update the date above and describe the change below until
        # ready for the next release
@@ -29296,4 +29296,6 @@ save_
        Moved to ENUMERATION_DEFAULTS for default values.
 
        Added PIDs for instrumentation.
+
+       Improved DIFFRN_MEASUREMENT category description.
 ;
