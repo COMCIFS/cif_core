@@ -2502,7 +2502,10 @@ save_DIFFRN_COMPONENT_PID
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_COMPONENT_PID
-    _category_key.name            '_diffrn_component_pid.pid'
+    loop_
+      _category_key.name
+         '_diffrn_component_pid.pid'
+         '_diffrn_component_pid.framework'
 
     _description_example.case
 ;
