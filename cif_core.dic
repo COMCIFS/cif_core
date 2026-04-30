@@ -2531,8 +2531,8 @@ save_diffrn_component_pid.details
 ;
     _name.category_id             diffrn_component_pid
     _name.object_id               details
-    _type.purpose                 Encode
-    _type.source                  Assigned
+    _type.purpose                 Describe
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
 
