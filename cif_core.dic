@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-04-29
+    _dictionary.date              2026-05-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -29118,99 +29118,26 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-04-29
+         3.3.0                    2026-05-04
 ;
-       # Please update the date above and describe the change below until
-       # ready for the next release
 
-       Added _atom_type_scat.exponential_polynomial_coefs, Gaussian_coefs, and
-       inv_Mott_Bethe_coefs to allow for an arbitrary number of coefficients in
-       the definition of form factors.
+       Expanded available form factor parameterisations, add support for
+       isotopes and symmforms for atom sites. More details can be added
+       regarding organisational funding.
 
-       Added a dREL definition method for the _citation.id data item.
+       'BIncStrDB' database code added.
 
-       Rewrote the _atom_type.radius_contact evaluation method as a definition
-       method.
+       Deprecated _publ_contact_author, replaced by _publ_contact_author.name
+       and _publ_contact_author.address.
+       
+       New category ATOM_SCAT_VERSUS_STOL to tabulate scattering factors.
 
-       Added _atom_type.mass_number to record specific isotope identities.
+       More details can be provided for AUDIT_AUTHOR.
 
-       Changed enumeration of _atom_type.atomic_number,
-       _atom_type_scat.dispersion_real_Cu, _atom_type_scat.dispersion_imag_Cu,
-       _atom_type_scat.dispersion_real_Mo, _atom_type_scat.dispersion_imag_Mo
-       to be defaulted on _atom_type.element_symbol.
-
-       Expanded AUDIT_AUTHOR to include email, phone, and fax contact details.
-
-       Corrected the content type of the _refln.F_complex_su attribute.
-
-       Updated description of _space_group_wyckoff.letter.
-
-       Added a dREL definition method that determines the units of measure to
-       the definition of the _refln.form_factor_table data item. Changed the
-       units of several data items to 'unspecified'.
-
-       Added the default value of '1_555' to the site symmetry data items.
-
-       Redefined _exptl_absorpt.coefficient_mu as a derived measurand item.
-
-       Added the _exptl_absorpt.coefficient_mu_su data item.
-
-       Renamed _atom_site.tensor_beta to _atom_site_aniso.matrix_beta and
-       updated the associated dREL evaluation methods. The old data name was
-       retained as an alias. Added the _atom_site_aniso.beta_* data items.
-
-       Reverted _atom_type_scat.versus_stol_list to a text-type to regain
-       compatibility with DDL1 dictionary.
-
-       Added ATOM_SCAT_VERSUS_STOL to allow for the explicit listing of
-       scattering factor values with respect to sin theta over lambda.
-       Deprecated the _atom_type_scat.versus_stol_list data item.
-
-       Changed the _type.source attribute of all SU data items to 'Related'.
-
-       Updated dREL evaluation method of the ATOM_TYPE category.
-
-       Changed the purpose of _space_group_Wyckoff.id and _valence_ref.id
-       from 'Encode' to 'Key'.
-
-       Corrected examples of the _chemical.identifier_InChI and
-       _chemical.identifier_InChI_key data items.
-
-       Updated description of DIFFRN_RADIATION to remove looping reference.
-
-       Updated the definitions of _diffrn_refln.scale_group_code and
-       _diffrn_scale_group.code definitions to better reflect that
-       _diffrn_scale_group.code is the main data item.
-
-       Added the deprecation date for multiple aliases that were originally
-       deprecated in the DDL1 version of the dictionary.
-
-       Added the _atom_site_fract.symmform and _atom_site_aniso.symmform
-       data items.
-
-       Added _database_code.BIncStrDB (bm).
-
-       Changed the title of the dictionary to 'CIF_CORE'.
-
-       Renamed the Head category from 'CIF_CORE' to 'CIF_CORE_HEAD'.
-
-       Updated the dictionary description.
-
-       Redefined the _cell_measurement.wavelength data item as a measurand.
-       Added and immediately deprecated the _cell_measurement.wavelength_su
-       data item.
-
-       Moved the definition of _publ_contact_author data name into a
-       separate data item definition and deprecated it in favour of the
-       _publ_contact_author.name and _publ_contact_author.address data items.
-
-       Added the _audit_support.funding_organization_url and
-       _audit_support.special_details data items.
-
-       Added opaque identifiers for diffrn_refln and refln categories.
-
-       Added definitions and updated some existing ones with material
-       relating to electron diffraction (bm, on behalf of NanED group):
+       Reflections now have opaque identifiers instead of using hkl.
+       
+       Definitions to support electron diffraction (collaboration with NanED
+       group):
          Added 'dyn' to _chemical.absolute_configuration.
          Added two examples to _diffrn_source.size for NBED and SAED.
          New items:
@@ -29235,65 +29162,27 @@ save_
 
        Added _diffrn.flux_density, _diffrn.total_dose and
        _diffrn.total_exposure_time as first step towards characterizing
-       radiation damage (bm).
+       radiation damage.
 
-       Made _journal.data_validation_number a proper alias of
-       _journal.validation_number and deleted save frame for the former (bm).
+       Following determination of Nomenclature Commission, modified range and
+       extended definition of _cell.formula_units_Z and added
+       _cell.formula_units_Z_details.
 
-       Removed the _atom_type.key data item. Renamed _space_group_generator.key
-       to _space_group_generator.id for consistency. (av)
-
-       Added reference to _atom_sites_cartn_transform.matrix,
-       _atom_sites_fract_transform.matrix, _cell.orthogonal_matrix
-       and _atom_type_scat.inv_mott_bethe_coefs; also minor editorial
-       changes to many definitions in the style of International Tables (bm).
-
-       Updated _refln.symmetry_multiplicity (reference to newer version
-       of ITC) and _reflns_class.r_factor_gt (fixed the formula notation),
-       plus many minor editorial changes to International Tables style (bm).
-
-       Updated _refln.symmetry_multiplicity and other references to
-       International Tables Volume A to latest edition (bm).
-
-       Corrected the usage of unknown or missing values in several dREL code
-       snippets. (av)
-
-       Modified range and extended definition of _cell.formula_units_Z
-       and added _cell.formula_units_Z_details. (bm)
-
-       Removed the _cell_angle.beta_su and _cell_angle.gamma_su aliases.
-
-       Added _cell.formula_units_Z_prime and *_details. (bm)
+       Added _cell.formula_units_Z_prime and *_details.
 
        Renamed _geom.bond_distance_min and _geom.contact_distance_min to
        _geom.min_bond_distance_cutoff and _geom.min_contact_distance_cutoff
        respectively. The original names were not retained as aliases to avoid
        name clashes with data names from the msCIF dictionary.
 
-       Updated definitions relating to the bond valence model
-       (_geom_bond.valence, categories VALENCE and VALENCE_REF) (bm).
-
-       Added _audit_conform.dict_DOI. (bm)
-
-       Changed the content type of _audit_support.funding_organization_doi
-       from 'Text' to 'Word' and added a note on the escaping special
-       characters.
+       Added _audit_conform.dict_DOI.
 
        Added _database_code.AMCSD
-
-       Changed the purpose of _valence_param.id from 'Number' to 'Key'.
-
-       _chemical.identifier_InChI_version refers to the software release
-       version.
 
        Add data item for PaNET experimental method identifier.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
 
-       Corrected the _name.object_id attribute of _atom_site.fract_symmform
-       and _atom_analytical_mass_loss.temperature_su.
-
-       Moved to ENUMERATION_DEFAULTS for default values.
-
-       Added PIDs for instrumentation.
+       Add datanames to capture persistent identifiers (PIDs) of experimental
+       equipment.
 ;
