@@ -30,7 +30,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out the target repository
         uses: actions/checkout@v6
-          
+
       # Check syntax of all CIF files
       - name: Check CIF syntax
         uses: COMCIFS/cif_syntax_check_action@master
@@ -72,29 +72,33 @@ jobs:
     runs-on: ubuntu-latest
     needs: syntax
 
-    steps:
-      - name: Get the cache
-        uses: actions/cache@v5
-        id: cache
-        with:
-          path: ~/.julia
-          key: ${{ runner.os }}-julia-v3
+    env:
+        JULIA_VERSION: '1.10'
+        JULIA_DEP_FILE: 'julia_cif_tools/Project.toml'
 
+    steps:
       - name: Install Julia
         uses: julia-actions/setup-julia@v3
         with:
-          version: '1.10'
-
-      - name: Install Julia packages
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("ArgParse")'
+          version: ${{ env.JULIA_VERSION }}
 
       - name: Check out Julia tools
         uses: actions/checkout@v6
         with:
           repository: jamesrhester/julia_cif_tools
           path: julia_cif_tools
+    
+      - name: Get the cache
+        uses: actions/cache@v5
+        id: cache
+        with:
+          path: ~/.julia
+          key: ${{ runner.os }}-julia-${{ env.JULIA_VERSION }}-${{ hashFiles(env.JULIA_DEP_FILE) }}
+
+      - name: Install Julia packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          julia -e 'using Pkg, TOML; map(Pkg.add, collect(keys(TOML.parsefile("${{ env.JULIA_DEP_FILE }}")["deps"]))); Pkg.instantiate()'
 
       - name: Check out the target repository
         uses: actions/checkout@v6
@@ -123,7 +127,7 @@ jobs:
         run: |
           mv enum/templ_enum.cif cif_core/templ_enum.cif
           mv templ/templ_attr.cif cif_core/templ_attr.cif
-              
+
       - name: Run diagnostics
         run: |
           ls -a
