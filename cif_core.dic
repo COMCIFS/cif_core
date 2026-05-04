@@ -29128,7 +29128,7 @@ save_
 
        Deprecated _publ_contact_author.contact_details, replaced by
        _publ_contact_author.name and _publ_contact_author.address.
-       
+
        Added a new ATOM_SCAT_VERSUS_STOL category to tabulate scattering
        factors.
 
