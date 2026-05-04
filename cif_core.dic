@@ -29186,4 +29186,5 @@ save_
        equipment.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
+       Renamed the Head category from 'CIF_CORE' to 'CIF_CORE_HEAD'.
 ;
