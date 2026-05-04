@@ -29129,13 +29129,13 @@ save_
 
        Deprecated _publ_contact_author, replaced by _publ_contact_author.name
        and _publ_contact_author.address.
-       
+
        New category ATOM_SCAT_VERSUS_STOL to tabulate scattering factors.
 
        More details can be provided for AUDIT_AUTHOR.
 
        Reflections now have opaque identifiers instead of using hkl.
-       
+
        Definitions to support electron diffraction (collaboration with NanED
        group):
          Added 'dyn' to _chemical.absolute_configuration.
