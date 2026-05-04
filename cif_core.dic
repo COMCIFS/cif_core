@@ -29120,24 +29120,25 @@ save_
 ;
          3.3.0                    2026-05-04
 ;
-
-       Expanded available form factor parameterisations, add support for
+       Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
        regarding organisational funding.
 
-       'BIncStrDB' database code added.
+       Added the 'BIncStrDB' database code.
 
-       Deprecated _publ_contact_author, replaced by _publ_contact_author.name
-       and _publ_contact_author.address.
+       Deprecated _publ_contact_author.contact_details, replaced by
+       _publ_contact_author.name and _publ_contact_author.address.
+       
+       Added a new ATOM_SCAT_VERSUS_STOL category to tabulate scattering
+       factors.
 
-       New category ATOM_SCAT_VERSUS_STOL to tabulate scattering factors.
-
-       More details can be provided for AUDIT_AUTHOR.
+       Added new data items to provide more details in the AUDIT_AUTHOR
+       category.
 
        Reflections now have opaque identifiers instead of using hkl.
 
-       Definitions to support electron diffraction (collaboration with NanED
-       group):
+       Added definitions to support electron diffraction (collaboration with
+       NanED group):
          Added 'dyn' to _chemical.absolute_configuration.
          Added two examples to _diffrn_source.size for NBED and SAED.
          New items:
@@ -29177,12 +29178,12 @@ save_
 
        Added _audit_conform.dict_DOI.
 
-       Added _database_code.AMCSD
+       Added _database_code.AMCSD.
 
-       Add data item for PaNET experimental method identifier.
+       Added data item for PaNET experimental method identifier.
+
+       Added data items to capture persistent identifiers (PIDs) of experimental
+       equipment.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
-
-       Add datanames to capture persistent identifiers (PIDs) of experimental
-       equipment.
 ;
