@@ -21685,7 +21685,7 @@ save_atom_site.b_iso_or_equiv
 
     _definition.id                '_atom_site.B_iso_or_equiv'
     _alias.definition_id          '_atom_site_B_iso_or_equiv'
-    _definition.update            2023-01-16
+    _definition.update            2025-09-21
     _description.text
 ;
     Isotropic atomic displacement parameter, or equivalent isotropic
@@ -21695,7 +21695,7 @@ save_atom_site.b_iso_or_equiv
         B(equiv) = (1/3) sum~i~[sum~j~(B^ij^ a*~i~ a*~j~ a~i~.a~j~)]
 
     a     = the real-space cell vectors
-    a*    = the reciprocal-space cell lengths
+    a*    = the reciprocals of the direct-space cell lengths
     B^ij^ = 8 π^2^ U^ij^
     Ref: Fischer, R. X. & Tillmanns, E. (1988). Acta Cryst. C44, 775-776.
 
@@ -22710,7 +22710,7 @@ save_atom_site.u_iso_or_equiv
 
     _definition.id                '_atom_site.U_iso_or_equiv'
     _alias.definition_id          '_atom_site_U_iso_or_equiv'
-    _definition.update            2023-01-13
+    _definition.update            2025-09-21
     _description.text
 ;
     Isotropic atomic displacement parameter, or equivalent isotropic
@@ -22720,7 +22720,7 @@ save_atom_site.u_iso_or_equiv
        U(equiv) = (1/3) sum~i~[sum~j~(U^ij^ a*~i~ a*~j~ a~i~.a~j~)]
 
     a  = the real-space cell vectors
-    a* = the reciprocal-space cell lengths
+    a* = the reciprocals of the direct-space cell lengths
     Ref: Fischer, R. X. & Tillmanns, E. (1988). Acta Cryst. C44, 775-776.
 ;
     _name.category_id             atom_site
@@ -29187,4 +29187,8 @@ save_
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
        Renamed the Head category from 'CIF_CORE' to 'CIF_CORE_HEAD'.
+
+       Corrected the definition of a* in _atom_site.B_iso_or_equiv and
+       _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
+       J. Appl. Cryst. 57, 1733-1746]
 ;
