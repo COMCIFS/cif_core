@@ -356,4 +356,8 @@ _dictionary_audit.revision
        Added PIDs for instrumentation.
 
        Improved DIFFRN_MEASUREMENT category description.
+
+       Corrected the definition of a* in _atom_site.B_iso_or_equiv and
+       _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
+       J. Appl. Cryst. 57, 1733-1746]
 ;
