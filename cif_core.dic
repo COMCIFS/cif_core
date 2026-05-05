@@ -11,9 +11,9 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-05-04
+    _dictionary.date              2026-05-05
     _dictionary.uri
-        https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
+        https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore
@@ -29118,7 +29118,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-05-04
+         3.3.0                    2026-05-05
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
@@ -29192,7 +29192,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-05-04
+         3.4.0                    2026-05-05
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
