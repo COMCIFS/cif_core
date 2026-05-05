@@ -10,7 +10,7 @@ data_CIF_CORE
 
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
-    _dictionary.version           3.3.0
+    _dictionary.version           3.4.0
     _dictionary.date              2026-05-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
@@ -29191,4 +29191,9 @@ save_
        Corrected the definition of a* in _atom_site.B_iso_or_equiv and
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
+;
+         3.4.0                    2026-05-04
+;
+       # Append change information below and update the above date
+       # until dictionary is ready for release.
 ;
