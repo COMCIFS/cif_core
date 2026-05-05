@@ -3,17 +3,17 @@
 name: CIF Syntax and Style Check
 
 # Controls when the action will run. Triggers the workflow on push or pull
-# request events but only for the master branch
+# request events but only for the main branch
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - '.github/**'
 
   pull_request:
     branches:
-      - master
+      - main
     paths-ignore:
       - '.github/**'
 
