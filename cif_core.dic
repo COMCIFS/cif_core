@@ -11917,20 +11917,20 @@ save_space_group.bravais_type
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         aP        'Triclinic primitive'
-         mP        'Monoclinic primitive'
-         mS        'Monoclinic centred'
-         oP        'Orthorhombic primitive'
-         oS        'Orthorhombic single-face centred'
-         oI        'Orthorhombic body-centred'
-         oF        'Orthorhombic all faces centred'
-         tP        'Tetragonal primitive'
-         tI        'Tetragonal body-centred'
-         hP        'Hexagonal primitive'
-         hR        'Rhombohedral'
-         cP        'Cubic primitive'
-         cI        'Cubic body-centred'
-         cF        'Cubic face-centred'
+         aP                       'Triclinic primitive'
+         mP                       'Monoclinic primitive'
+         mS                       'Monoclinic centred'
+         oP                       'Orthorhombic primitive'
+         oS                       'Orthorhombic single-face centred'
+         oI                       'Orthorhombic body-centred'
+         oF                       'Orthorhombic all faces centred'
+         tP                       'Tetragonal primitive'
+         tI                       'Tetragonal body-centred'
+         hP                       'Hexagonal primitive'
+         hR                       'Rhombohedral'
+         cP                       'Cubic primitive'
+         cI                       'Cubic body-centred'
+         cF                       'Cubic face-centred'
 
 save_
 
