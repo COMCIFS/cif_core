@@ -11918,7 +11918,7 @@ save_space_group.bravais_type
       _enumeration_set.state
       _enumeration_set.detail
          aP        'Triclinic primitive'
-         mP        'Monoclinice primitive'
+         mP        'Monoclinic primitive'
          mS        'Monoclinic centred'
          oP        'Orthorhombic primitive'
          oS        'Orthorhombic single-face centred'
