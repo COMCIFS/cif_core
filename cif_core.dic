@@ -16560,12 +16560,12 @@ save_audit_support.funding_organization_doi
     The Digital Object Identifier (DOI) associated with the
     Organization providing funding support for
     the data collected and analysed in the data block. In
-    accordance with CrossRef guidelines, the full URI of
+    accordance with Crossref guidelines, the full URI of
     the resolved page describing the funding organization
     should be given (i.e. including the https://doi.org/
     DOI resolver prefix). Note that it may be necessary to
     URL-encode certain special characters in the DOI suffix
-    for the URI to resolve correctly through CrossRef
+    for the URI to resolve correctly through Crossref
     (e.g. the number sign '#' must be encoded as '%23').
 ;
     _name.category_id             audit_support
