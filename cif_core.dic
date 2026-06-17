@@ -16310,7 +16310,7 @@ save_audit_contact_author.id_orcid
 
     _definition.id                '_audit_contact_author.id_ORCID'
     _alias.definition_id          '_audit_contact_author_id_ORCID'
-    _definition_update            2026-06-17
+    _definition.update            2026-06-17
     _description.text
 ;
     Identifier in the ORCID registry of the author of the dataset
