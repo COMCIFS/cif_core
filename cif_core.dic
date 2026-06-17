@@ -16144,7 +16144,15 @@ save_AUDIT_CONTACT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used for contact author(s) details.
+    The category of data items used for details of the author of the
+    dataset to whom correspondence about crystallographic details
+    should be addressed.
+    This may or may not be the same as _publ_contact_author, which
+    is the author submitting and responsible for the manuscript
+    associated with the dataset.
+    Authors associated with individual data blocks within
+    this dataset can be declared in audit_author and related data
+    names.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_CONTACT_AUTHOR
@@ -16159,8 +16167,8 @@ save_audit_contact_author.address
     _definition.update            2019-01-09
     _description.text
 ;
-    The mailing address of the author of the data block to whom
-    correspondence should be addressed.
+    The mailing address of the author of the dataset to whom 
+    correspondence about crystallographic details should be addressed.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               address
@@ -16186,12 +16194,14 @@ save_audit_contact_author.email
     _definition.update            2012-11-29
     _description.text
 ;
-    The electronic mail address of the author of the data block
-    to whom correspondence should be addressed, in a form
-    recognizable to international networks. The format of e-mail
-    addresses is given in Section 3.4, Address Specification, of
-    Internet Message Format, RFC 2822, P. Resnick (Editor),
-    Network Standards Group, April 2001.
+    The electronic mail (e-mail) address of the author of the dataset
+    to whom correspondence about crystallographic details should be
+    addressed.
+    The email address should be given in a form recognizable to
+    international networks. The format of e-mail addresses is given
+    in Section 3.4, Address Specification, of Internet Message
+    Format, RFC 2822, P. Resnick (Editor), Network Standards Group,
+    April 2001.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               email
@@ -16214,12 +16224,13 @@ save_audit_contact_author.fax
     _definition.update            2012-11-29
     _description.text
 ;
-    Facsimile telephone number of the author submitting the manuscript
-    and data block.
-    The recommended style is the international dialing prefix, followed
-    by the area code in parentheses, followed by the local number with
-    no spaces. The earlier convention of including the international
-    dialing prefix in parentheses is no longer recommended.
+    Facsimile telephone number of the author of the dataset to whom
+    correspondence about crystallographic details should be addressed.
+    The recommended style is the international dialing prefix, 
+    followed by the area code in parentheses, followed by the local
+    number with no spaces. The earlier convention of including the
+    international dialing prefix in parentheses is no longer 
+    recommended.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               fax
@@ -16241,7 +16252,8 @@ save_audit_contact_author.id
     _definition.update            2025-07-31
     _description.text
 ;
-    Arbitrary identifier for this author.
+    Arbitrary identifier for the author of the dataset to whom
+    correspondence about crystallographic details should be addressed.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               id
@@ -16272,6 +16284,52 @@ save_audit_contact_author.id
 
 save_
 
+save_audit_contact_author.id_iucr
+
+    _definition.id                '_audit_contact_author.id_IUCr'
+    _alias.definition_id          '_audit_contact_author_id_IUCr'
+    _definition.update            2026-06-17
+    _description.text
+;
+    Identifier in the IUCr contact database of the author of the
+    dataset to whom correspondence about crystallographic details
+    should be addressed.
+    This is the person contacted by the journal editorial staff.
+    This identifier may be available from the World Directory of 
+    Crystallographers (https://wdc.iucr.org/).
+;
+    _name.category_id             audit_contact_author
+    _name.object_id               id_IUCr
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_audit_contact_author.id_orcid
+
+    _definition.id                '_audit_contact_author.id_ORCID'
+    _alias.definition_id          '_audit_contact_author_id_ORCID'
+    _definition_update            2026-06-17
+    _description.text
+;
+    Identifier in the ORCID registry of the author of the dataset
+    to whom correspondence about crystallographic details should be
+    addressed.
+    ORCID is an open, non-profit, commmunity-driven service to provide
+    a registry of unique researcher identifiers (https://orcid.org/).
+;
+    _name.category_id             audit_contact_author
+    _name.object_id               id_ORCID
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Code
+    _description_example.case     0000-0002-3272-3161
+
+save_
+
 save_audit_contact_author.name
 
     _definition.id                '_audit_contact_author.name'
@@ -16284,11 +16342,12 @@ save_audit_contact_author.name
     _definition.update            2023-01-10
     _description.text
 ;
-    The name of the author of the data block to whom correspondence
-    should be addressed. The family name(s), followed by a comma and
-    including any dynastic components, precedes the first name(s) or
-    initial(s). For authors with only one name, provide the full name
-    without abbreviation.
+    The name of the author of the dataset to whom correspondence
+    about crystallographic details should be addressed.
+    The family name(s), followed by a comma and including any
+    dynastic components, precedes the first name(s) or initial(s).
+    For authors with only one name, provide the full name without
+    abbreviation.
 ;
     _name.category_id             audit_contact_author
     _name.object_id               name
@@ -16313,7 +16372,8 @@ save_audit_contact_author.phone
     _definition.update            2012-11-29
     _description.text
 ;
-    Telephone number of author submitting the manuscript and data block.
+    Telephone number of the author of the dataset to whom
+    correspondence about crystallographic details should be addressed.
     The recommended style is the international dialing prefix,
     followed by the area code in parentheses, followed by the
     local number and any extension number prefixed by 'x', with
@@ -19383,7 +19443,8 @@ save_PUBL_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of data items recording the author information.
+    Category of data items recording information of an author of the
+    publication (for example the manuscript).
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_AUTHOR
@@ -19583,8 +19644,7 @@ save_publ_author.phone
     _definition.update            2014-06-12
     _description.text
 ;
-    Telephone number of the author submitting the manuscript and
-    data block.
+    Telephone number of a manuscript author.
 
     The recommended style starts with the international dialing
     prefix, followed by the area code in parentheses, followed by the
@@ -19759,7 +19819,12 @@ save_PUBL_CONTACT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of items describing contact author(s) details.
+    The category of data items used for details of the contact author(s)
+    of the associated manuscript, to whom general correspondence should
+    be addressed.
+    This is the person contacted by the journal editorial staff.
+    This may or may not be the same person as _audit_contact_author, 
+    which is the person responsible for the dataset.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_CONTACT_AUTHOR
@@ -19779,9 +19844,9 @@ save_publ_contact_author.address
     _definition.update            2012-11-29
     _description.text
 ;
-    The address of the author submitting the manuscript and
-    data block. This is the person contacted by the journal
-    editorial staff.
+    The address of the contact author of the associated manuscript to
+    whom general correspondence should be addressed.
+    This is the person contacted by the journal editorial staff.
 ;
     _name.category_id             publ_contact_author
     _name.object_id               address
@@ -19854,10 +19919,15 @@ save_publ_contact_author.email
     _definition.update            2014-06-12
     _description.text
 ;
-    E-mail address in a form recognizable to international networks.
-    The format of e-mail addresses is given in Section 3.4, Address
-    Specification, of Internet Message Format, RFC 2822, P. Resnick
-    (Editor), Network Standards Group, April 2001.
+    The electronic mail (e-mail) address of the contact author of the
+    associated manuscript to whom general correspondence should be
+    addressed.
+    This is the person contacted by the journal editorial staff.
+    The e-mail address should be given in a form recognizable to
+    international networks. The format of e-mail addresses is given
+    in Section 3.4, Address Specification, of Internet Message
+    Format, RFC 2822, P. Resnick (Editor), Network Standards Group,
+    April 2001.
 ;
     _name.category_id             publ_contact_author
     _name.object_id               email
@@ -19885,8 +19955,10 @@ save_publ_contact_author.fax
     _definition.update            2012-11-29
     _description.text
 ;
-    Facsimile telephone number of the author submitting the manuscript
-    and data block.
+    Facsimile telephone number of the contact author(s) of the contact
+    author of the associated manuscript to whom general correspondence
+    should be addressed.
+    This is the person contacted by the journal editorial staff.
     The recommended style is the international dialing prefix, followed
     by the area code in parentheses, followed by the local number with
     no spaces. The earlier convention of including the international
@@ -19907,7 +19979,9 @@ save_publ_contact_author.id
     _definition.update            2025-07-31
     _description.text
 ;
-    Arbitrary identifier for this author.
+    Arbitrary identifier for the contact author of the associated 
+    manuscript to whom general correspondence should be addressed.
+    This is the person contacted by the journal editorial staff.
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id
@@ -19945,9 +20019,12 @@ save_publ_contact_author.id_iucr
     _definition.update            2023-02-02
     _description.text
 ;
-    Identifier in the IUCr contact database of the author submitting
-    the manuscript and data block. This identifier may be available
-    from the World Directory of Crystallographers (https://wdc.iucr.org/).
+    Identifier in the IUCr contact database of the contact author of 
+    the associated manuscript to whom general correspondence should be
+    addressed.
+    This is the person contacted by the journal editorial staff.
+    This identifier may be available from the World Directory of 
+    Crystallographers (https://wdc.iucr.org/).
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id_IUCr
@@ -19965,10 +20042,12 @@ save_publ_contact_author.id_orcid
     _definition.update            2023-02-02
     _description.text
 ;
-    Identifier in the ORCID Registry of the author submitting
-    the manuscript and data block. ORCID is an open, non-profit,
-    community-driven service to provide a registry of unique
-    researcher identifiers (https://orcid.org/).
+    Identifier in the ORCID Registry of the contact author of the 
+    associated manuscript to whom general correspondence should be
+    addressed.
+    This is the person contacted by the journal editorial staff.
+    ORCID is an open, non-profit, community-driven service to provide
+    a registry of unique researcher identifiers (https://orcid.org/).
 ;
     _name.category_id             publ_contact_author
     _name.object_id               id_ORCID
@@ -19992,9 +20071,9 @@ save_publ_contact_author.name
     _definition.update            2012-11-29
     _description.text
 ;
-    The name of the author(s) submitting the manuscript and
-    data block. This is the person contacted by the journal
-    editorial staff.
+    The name of the contact author of the associated manuscript to
+    whom general correspondence should be addressed.
+    This is the person contacted by the journal editorial staff.
 ;
     _name.category_id             publ_contact_author
     _name.object_id               name
@@ -20018,7 +20097,9 @@ save_publ_contact_author.phone
     _definition.update            2012-11-29
     _description.text
 ;
-    Telephone number of author submitting the manuscript and data block.
+    Telephone number of the contact author of the associated
+    manuscript to whom general correspondence should be addressed.
+    This is the person contacted by the journal editorial staff.
     The recommended style is the international dialing prefix,
     followed by the area code in parentheses, followed by the
     local number and any extension number prefixed by 'x', with
