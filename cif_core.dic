@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-06-10
+    _dictionary.date              2026-06-17
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -16144,15 +16144,14 @@ save_AUDIT_CONTACT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used for details of the author of the
+    The category of data items used for details of the author(s) of the
     dataset to whom correspondence about crystallographic details
     should be addressed.
-    This may or may not be the same as _publ_contact_author, which
-    is the author submitting and responsible for the manuscript
-    associated with the dataset.
+    This audit contact author list may include authors from
+    the PUBL_CONTACT_AUTHOR category, i.e. author(s) submitting
+    and responsible for the manuscruipt associated with the dataset.
     Authors associated with individual data blocks within
-    this dataset can be declared in audit_author and related data
-    names.
+    this dataset can be declared using the AUDIT_AUTHOR category.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_CONTACT_AUTHOR
@@ -16167,7 +16166,7 @@ save_audit_contact_author.address
     _definition.update            2019-01-09
     _description.text
 ;
-    The mailing address of the author of the dataset to whom 
+    The mailing address of the author of the dataset to whom
     correspondence about crystallographic details should be addressed.
 ;
     _name.category_id             audit_contact_author
@@ -16226,10 +16225,10 @@ save_audit_contact_author.fax
 ;
     Facsimile telephone number of the author of the dataset to whom
     correspondence about crystallographic details should be addressed.
-    The recommended style is the international dialing prefix, 
+    The recommended style is the international dialing prefix,
     followed by the area code in parentheses, followed by the local
     number with no spaces. The earlier convention of including the
-    international dialing prefix in parentheses is no longer 
+    international dialing prefix in parentheses is no longer
     recommended.
 ;
     _name.category_id             audit_contact_author
@@ -16295,7 +16294,7 @@ save_audit_contact_author.id_iucr
     dataset to whom correspondence about crystallographic details
     should be addressed.
     This is the person contacted by the journal editorial staff.
-    This identifier may be available from the World Directory of 
+    This identifier may be available from the World Directory of
     Crystallographers (https://wdc.iucr.org/).
 ;
     _name.category_id             audit_contact_author
@@ -19823,7 +19822,7 @@ save_PUBL_CONTACT_AUTHOR
     of the associated manuscript, to whom general correspondence should
     be addressed.
     This is the person contacted by the journal editorial staff.
-    This may or may not be the same person as _audit_contact_author, 
+    This may or may not be the same person as _audit_contact_author,
     which is the person responsible for the dataset.
 ;
     _name.category_id             PUBL
@@ -19979,7 +19978,7 @@ save_publ_contact_author.id
     _definition.update            2025-07-31
     _description.text
 ;
-    Arbitrary identifier for the contact author of the associated 
+    Arbitrary identifier for the contact author of the associated
     manuscript to whom general correspondence should be addressed.
     This is the person contacted by the journal editorial staff.
 ;
@@ -20019,11 +20018,11 @@ save_publ_contact_author.id_iucr
     _definition.update            2023-02-02
     _description.text
 ;
-    Identifier in the IUCr contact database of the contact author of 
+    Identifier in the IUCr contact database of the contact author of
     the associated manuscript to whom general correspondence should be
     addressed.
     This is the person contacted by the journal editorial staff.
-    This identifier may be available from the World Directory of 
+    This identifier may be available from the World Directory of
     Crystallographers (https://wdc.iucr.org/).
 ;
     _name.category_id             publ_contact_author
@@ -20042,7 +20041,7 @@ save_publ_contact_author.id_orcid
     _definition.update            2023-02-02
     _description.text
 ;
-    Identifier in the ORCID Registry of the contact author of the 
+    Identifier in the ORCID Registry of the contact author of the
     associated manuscript to whom general correspondence should be
     addressed.
     This is the person contacted by the journal editorial staff.
@@ -29268,11 +29267,23 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-06-10
+         3.4.0                    2026-06-17
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
 
        Specified that _audit_support.funding_organization_doi should
        record pure DOIs without the resolver part.
+
+       Specified the differences between _audit_contact_author and
+       _publ_contact_author (responsible for dataset and manuscript,
+       respectively) in category and data name descriptions.
+
+       Updated description for category PUBL_AUTHOR.
+
+       Updated description for _publ_author.phone.
+
+       Added _audit_contact_author.id_orcid.
+
+       Added _audit_contact_author.id_iucr.
 ;
