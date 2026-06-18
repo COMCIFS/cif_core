@@ -16149,7 +16149,7 @@ save_AUDIT_CONTACT_AUTHOR
     should be addressed.
     This audit contact author list may include authors from
     the PUBL_CONTACT_AUTHOR category, i.e. author(s) submitting
-    and responsible for the manuscruipt associated with the dataset.
+    and responsible for the manuscrupt associated with the dataset.
     Authors associated with individual data blocks within
     this dataset can be declared using the AUDIT_AUTHOR category.
 ;
