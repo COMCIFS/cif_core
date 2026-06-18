@@ -16316,7 +16316,7 @@ save_audit_contact_author.id_orcid
     Identifier in the ORCID registry of the author of the dataset
     to whom correspondence about crystallographic details should be
     addressed.
-    ORCID is an open, non-profit, commmunity-driven service to provide
+    ORCID is an open, non-profit, community-driven service to provide
     a registry of unique researcher identifiers (https://orcid.org/).
 ;
     _name.category_id             audit_contact_author
