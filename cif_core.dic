@@ -389,10 +389,12 @@ save_
 save_diffrn.flux_density
 
     _definition.id                '_diffrn.flux_density'
-    _definition.update            2025-02-07
+    _definition.update            2026-06-19
     _description.text
 ;
-    Flux density of radiation incident at the crystal.
+    Flux density of radiation incident at the crystal. If flux is a
+    characteristic of the source that does not change between measurements,
+    _diffrn_radiation.beam_flux should be used instead.
 
     Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
     J. C. & Garman, E. F. (2024). Doses for X-ray and electron
