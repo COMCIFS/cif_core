@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-06-17
+    _dictionary.date              2026-06-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -5927,7 +5927,7 @@ save_
 save_diffrn_source.device
 
     _definition.id                '_diffrn_source.device'
-    _definition.update            2018-02-26
+    _definition.update            2026-06-22
     _description.text
 ;
     Enumerated code for the device providing the source of radiation.
@@ -5946,7 +5946,7 @@ save_diffrn_source.device
          nuclear                  'Nuclear reactor.'
          spallation               'Spallation source.'
          elect-micro              'Electron microscope.'
-         rot_anode                'Rotating-anode X-ray tube.'
+         rot-anode                'Rotating-anode X-ray tube.'
          synch                    'Synchrotron.'
 
 save_
@@ -29267,7 +29267,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-06-17
+         3.4.0                    2026-06-22
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29286,4 +29286,7 @@ save_
        Added _audit_contact_author.id_orcid.
 
        Added _audit_contact_author.id_iucr.
+
+       Changed the _diffrn_source.device data item enumeration value
+       from 'rot_anode' to 'rot-anode'.
 ;
