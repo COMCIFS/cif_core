@@ -10,17 +10,8 @@ data_CIF_CORE
 
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
-<<<<<<< HEAD
     _dictionary.version           3.3.0
     _dictionary.date              2026-06-25
-=======
-    _dictionary.version           3.4.0
-<<<<<<< HEAD
-    _dictionary.date              2026-06-10
->>>>>>> 5615c1f (Change the usage _audit_support.funding_organization_doi)
-=======
-    _dictionary.date              2026-06-17
->>>>>>> ef92c32 (Improve contact author description (issue #609) (#615))
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -5967,7 +5958,7 @@ save_
 save_diffrn_source.device
 
     _definition.id                '_diffrn_source.device'
-    _definition.update            2018-02-26
+    _definition.update            2026-06-22
     _description.text
 ;
     Enumerated code for the device providing the source of radiation.
@@ -5986,7 +5977,7 @@ save_diffrn_source.device
          nuclear                  'Nuclear reactor.'
          spallation               'Spallation source.'
          elect-micro              'Electron microscope.'
-         rot_anode                'Rotating-anode X-ray tube.'
+         rot-anode                'Rotating-anode X-ray tube.'
          synch                    'Synchrotron.'
 
 save_
