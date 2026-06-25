@@ -5927,7 +5927,7 @@ save_
 save_diffrn_source.device
 
     _definition.id                '_diffrn_source.device'
-    _definition.update            2018-02-26
+    _definition.update            2026-06-22
     _description.text
 ;
     Enumerated code for the device providing the source of radiation.
@@ -5946,7 +5946,7 @@ save_diffrn_source.device
          nuclear                  'Nuclear reactor.'
          spallation               'Spallation source.'
          elect-micro              'Electron microscope.'
-         rot_anode                'Rotating-anode X-ray tube.'
+         rot-anode                'Rotating-anode X-ray tube.'
          synch                    'Synchrotron.'
 
 save_
@@ -29294,4 +29294,7 @@ save_
        Added _audit_contact_author.id_iucr.
 
        Updated description for _refine_ls.abs_structure_z-score.
+
+       Changed the _diffrn_source.device data item enumeration value
+       from 'rot_anode' to 'rot-anode'.
 ;
