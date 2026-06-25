@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-06-19
+    _dictionary.date              2026-06-25
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -3577,6 +3577,35 @@ save_DIFFRN_RADIATION
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_RADIATION
+
+save_
+
+save_diffrn_radiation.beam_flux
+
+    _definition.id                '_diffrn_radiation.beam_flux'
+    _definition.update            2026-06-25
+    _description.text
+;
+     The average flux integrated over the beam incident on the sample.
+     If flux varies for individual measurements using the same source,
+     _diffrn.flux_density is preferred.
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               beam_flux
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _method.purpose               Definition
+    _method.expression
+;
+         If (_diffrn_radiation.probe == "neutron")
+                                _units.code = "neutrons_per_second"
+         Else If (_diffrn_radiation.probe == "electron")
+                                _units.code = "electrons_per_second"
+         Else                   _units.code = "photons_per_second"
+;
 
 save_
 
@@ -29120,7 +29149,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-06-19
+         3.3.0                    2026-06-25
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
@@ -29163,9 +29192,9 @@ save_
            _refine_ls.sample_shape_expression
            _refine_ls.sample_thickness (and *_su)
 
-       Added _diffrn.flux_density, _diffrn.total_dose and
-       _diffrn.total_exposure_time as first step towards characterizing
-       radiation damage.
+       Added _diffrn.flux_density, _diffrn_radiation.beam_flux,
+       _diffrn.total_dose and _diffrn.total_exposure_time as first
+       step towards characterizing radiation damage.
 
        Following determination of Nomenclature Commission, modified range and
        extended definition of _cell.formula_units_Z and added
