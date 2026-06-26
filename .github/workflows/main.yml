@@ -8,12 +8,14 @@ on:
   push:
     branches:
       - master
+      - 'rc-*'
     paths-ignore:
       - '.github/**'
 
   pull_request:
     branches:
       - master
+      - 'rc-*'
     paths-ignore:
       - '.github/**'
 
