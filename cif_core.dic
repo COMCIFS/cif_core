@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-06-22
+    _dictionary.date              2026-06-23
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -27061,10 +27061,16 @@ save_refine_ls.abs_structure_z-score
     determination as described by Klar et al. (2023), based on the
     method of Le Page et al. (1990). For centrosymmetric structures,
     the only permitted value, if the data item is present, is
-    'inapplicable', represented by '.' .
+    'inapplicable', represented by '.' . Details on how the here
+    reported z-score value was calculated (for example if it is
+    a noise-adjusted value or raw value) should be provided in
+    _refine_ls.abs_structure_details.
+
     Ref:  Klar, P. B. et al. (2023). Nature Chem. 15, 848-855.
+            https://www.doi.org/10.1038/s41557-023-01186-1
           Le Page, Y., Gabe, E. J. & Gainsford, G. J. (1990). J. Appl. Cryst.
           23, 406-411.
+            https://doi.org/10.1107/S0021889890005775
 ;
     _name.category_id             refine_ls
     _name.object_id               abs_structure_z_score
@@ -29267,7 +29273,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-06-22
+         3.4.0                    2026-06-23
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29286,6 +29292,8 @@ save_
        Added _audit_contact_author.id_orcid.
 
        Added _audit_contact_author.id_iucr.
+
+       Updated description for _refine_ls.abs_structure_z-score.
 
        Changed the _diffrn_source.device data item enumeration value
        from 'rot_anode' to 'rot-anode'.
