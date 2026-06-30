@@ -29088,6 +29088,8 @@ save_
          .
          8               'Bollinger, John C.'               .
          .
+         9               'Rainer, Daniel N.'                0000-0002-3272-3161
+         d.n.rainer@soton.ac.uk
 
     loop_
       _dictionary_audit.version
