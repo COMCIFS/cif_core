@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-06-25
+    _dictionary.date              2026-06-30
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -3885,11 +3885,11 @@ save_diffrn_radiation_wavelength.details
          '_diffrn_radiation_wavelength_details'
          '_diffrn_radiation.wavelength_details'
 
-    _definition.update            2012-11-26
+    _definition.update            2026-06-30
     _description.text
 ;
     Information about the determination of the radiation
-    diffrn_radiation_wavelength that is not conveyed completely by an
+    _diffrn_radiation_wavelength.value that is not conveyed completely by an
     enumerated value of _diffrn_radiation_wavelength.determination.
 ;
     _name.category_id             diffrn_radiation_wavelength
@@ -29232,7 +29232,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-06-25
+         3.3.0                    2026-06-30
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
