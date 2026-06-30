@@ -3567,13 +3567,13 @@ save_DIFFRN_RADIATION
     _definition.id                DIFFRN_RADIATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-10-15
+    _definition.update            2026-06-30
     _description.text
 ;
-    The category of data items which specify the wavelength of the
-    radiation used in measuring diffraction intensities. To identify
-    and assign weights to distinct wavelength components from a
-    polychromatic beam, see DIFFRN_RADIATION_WAVELENGTH.
+    The category of data items which describe the radiation used
+    in measuring diffraction intensities. To identify and assign
+    weights to distinct wavelength components from a beam,
+    see DIFFRN_RADIATION_WAVELENGTH.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_RADIATION
