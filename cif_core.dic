@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-06-30
+    _dictionary.date              2026-07-01
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -16425,6 +16425,158 @@ save_audit_contact_author.phone
 
 save_
 
+save_AUDIT_DATASET
+
+    _definition.id                AUDIT_DATASET
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-04-14
+    _description.text
+;
+    The CATEGORY of data items used for linking data blocks to aid in grouping
+    blocks which contain information which are interrelated.
+
+    Data blocks which should be interpreted together are identified with the
+    same unique _audit_dataset.id.
+;
+    _name.category_id             AUDIT
+    _name.object_id               AUDIT_DATASET
+    _category_key.name            '_audit_dataset.id'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         data_structure1
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         _pd_phase.name "First phase"
+         #cell parameters and atom positions
+         #...
+
+         data_structure2
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         _pd_phase.id "Second phase"
+         #cell parameters and atom positions
+         #...
+
+         data_diffraction_data1
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         _pd_diffractogram.id "First dataset"
+         #diffracted intensities vs angle
+         #...
+
+         data_information
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         #wavelength, specimen preparation, temperature, pressure...
+         #...
+;
+;
+         Four data blocks for a powder diffraction experiment.
+         By the presence of an identical _audit_dataset.id value, it is made
+         clear that all four data blocks are to be interpreted together as
+         a whole. It is clear that there are two crystal structures, one
+         diffractogram, and a block containing other experimental information.
+
+         These blocks may be contained in the same file, or many files, but
+         the presence of an _audit_dataset.id value removes doubt as to their
+         relationship to each other.
+;
+;
+         data_structure1
+         _pd_phase.name "First phase"
+         #cell parameters and atom positions
+         #...
+
+         data_structure2
+         _pd_phase.id "Second phase"
+         #cell parameters and atom positions
+         #...
+
+         data_diffraction_data1
+         _pd_diffractogram.id "First dataset"
+         #diffracted intensities vs angle
+         #...
+
+         data_information
+         #wavelength, specimen preparation, temperature, pressure...
+         #...
+;
+;
+         Four data blocks for a powder diffraction experiment.
+         The absence of an _audit_dataset.id value does not preclude
+         interpreting these data blocks together. The
+         consumer of the information may be able to infer that they belong
+         together due to contextual information.
+;
+;
+         data_structure1
+         _audit_dataset.id  34e58dee-900c-47cf-8f8c-1f52e5a9a3b9
+         _pd_phase.name "First phase"
+         #cell parameters and atom positions
+         #...
+
+         data_calibration_structure
+         loop_
+           _audit_dataset.id
+           34e58dee-900c-47cf-8f8c-1f52e5a9a3b9
+           2d7ee621-d916-4302-9045-ec68f56add45
+           255bb051-a3d5-43f0-8384-fa8ccb2ce3c7
+         _pd_phase.id "Calibration phase"
+         #cell parameters and atom positions
+         #...
+
+         data_diffraction_data
+         _audit_dataset.id  34e58dee-900c-47cf-8f8c-1f52e5a9a3b9
+         _pd_diffractogram.id "First dataset"
+         #diffracted intensities vs angle
+         #...
+;
+;
+         Three data blocks for a powder diffraction experiment.
+         The identical _audit_dataset.id value makes it
+         clear that all data blocks are to be interpreted together as
+         a whole. The presence of multiple _audit_dataset.id values for the
+         second data block indicates it is included in more than one dataset.
+
+         Because they have different
+         _audit_dataset.id values, the diffractogram _pd_diffractogram.id
+         "First dataset" in the first example is different to the diffractogram
+         _pd_diffractogram.id "First dataset" in this example.
+;
+
+save_
+
+save_audit_dataset.id
+
+    _definition.id                '_audit_dataset.id'
+    _definition.update            2025-04-14
+    _description.text
+;
+    Globally unique identifier for data blocks that are meant to be interpreted
+    together as a whole.
+
+    Data blocks which belong together, for instance, as they form part of the
+    same experiment, are given an identical _audit_dataset.id value.
+
+    Data blocks, such as calibration information, can be designated with more
+    than one _audit_dataset.id value.
+
+    Data blocks which do not contain an _audit_dataset.id may still be related,
+    depending on the presence of other data names and values. Data blocks which
+    contain different _audit_dataset.id values are not related in a CIF-sense,
+    even if other data names and values are common.
+
+    To ensure global uniqueness, a UUID-like identifier is suggested.
+;
+    _name.category_id             audit_dataset
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_AUDIT_LINK
 
     _definition.id                AUDIT_LINK
@@ -29232,7 +29384,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-06-30
+         3.3.0                    2026-07-01
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
@@ -29305,4 +29457,6 @@ save_
        Corrected the definition of a* in _atom_site.B_iso_or_equiv and
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
+
+       Added AUDIT_DATASET for identifying datasets.
 ;
