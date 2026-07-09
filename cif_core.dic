@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-07-01
+    _dictionary.date              2026-07-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -14856,7 +14856,7 @@ save_
 save_model_site.adp_eigenvectors
 
     _definition.id                '_model_site.ADP_eigenvectors'
-    _definition.update            2021-09-24
+    _definition.update            2026-07-10
     _description.text
 ;
     The set of three ADP eigenvectors corresponding to the values
@@ -14870,7 +14870,7 @@ save_model_site.adp_eigenvectors
     _name.object_id               ADP_eigenvectors
     _type.purpose                 Measurand
     _type.source                  Derived
-    _type.container               Array
+    _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   angstrom_squared
@@ -14887,7 +14887,7 @@ save_
 save_model_site.adp_eigenvectors_su
 
     _definition.id                '_model_site.ADP_eigenvectors_su'
-    _definition.update            2023-07-01
+    _definition.update            2026-07-10
     _description.text
 ;
     Standard uncertainty of _model_site.ADP_eigenvectors.
@@ -14897,7 +14897,7 @@ save_model_site.adp_eigenvectors_su
     _name.linked_item_id          '_model_site.ADP_eigenvectors'
     _type.purpose                 SU
     _type.source                  Related
-    _type.container               Array
+    _type.container               Matrix
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   angstrom_squared
@@ -29384,7 +29384,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-07-01
+         3.3.0                    2026-07-10
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
