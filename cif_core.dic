@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-07-01
+    _dictionary.date              2026-07-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -10228,7 +10228,7 @@ save_
 save_chemical_conn_bond.id
 
     _definition.id                '_chemical_conn_bond.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     Unique identifier for the bond.
@@ -10236,7 +10236,7 @@ save_chemical_conn_bond.id
     _name.category_id             chemical_conn_bond
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -13333,7 +13333,7 @@ save_
 save_geom_angle.id
 
     _definition.id                '_geom_angle.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     An arbitrary, unique identifier for the angle formed by the three atoms.
@@ -13341,7 +13341,7 @@ save_geom_angle.id
     _name.category_id             geom_angle
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -13620,7 +13620,7 @@ save_
 save_geom_bond.id
 
     _definition.id                '_geom_bond.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     Unique identifier for the bond.
@@ -13628,7 +13628,7 @@ save_geom_bond.id
     _name.category_id             geom_bond
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -13912,7 +13912,7 @@ save_
 save_geom_contact.id
 
     _definition.id                '_geom_contact.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     An identifier for the contact that is unique within the loop.
@@ -13920,7 +13920,7 @@ save_geom_contact.id
     _name.category_id             geom_contact
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -14303,7 +14303,7 @@ save_
 save_geom_hbond.id
 
     _definition.id                '_geom_hbond.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     An identifier for the hydrogen bond that is unique within the loop.
@@ -14311,7 +14311,7 @@ save_geom_hbond.id
     _name.category_id             geom_hbond
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -14627,7 +14627,7 @@ save_
 save_geom_torsion.id
 
     _definition.id                '_geom_torsion.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     An identifier for the torsion angle that is unique within its loop.
@@ -14635,7 +14635,7 @@ save_geom_torsion.id
     _name.category_id             geom_torsion
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -15074,7 +15074,7 @@ save_
 save_model_site.id
 
     _definition.id                '_model_site.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     An identifier for the model site that is unique within its loop.
@@ -15082,7 +15082,7 @@ save_model_site.id
     _name.category_id             model_site
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Derived
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -18330,7 +18330,7 @@ save_
 save_database_related.id
 
     _definition.id                '_database_related.id'
-    _definition.update            2023-02-02
+    _definition.update            2026-07-10
     _description.text
 ;
     An identifier for this database reference.
@@ -18338,7 +18338,7 @@ save_database_related.id
     _name.category_id             database_related
     _name.object_id               id
     _type.purpose                 Key
-    _type.source                  Recorded
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -29384,7 +29384,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-07-01
+         3.3.0                    2026-07-10
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
