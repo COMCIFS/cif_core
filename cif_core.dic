@@ -12782,7 +12782,7 @@ save_space_group.transform_pp_abc
     This item specifies the transformation (P,p) of the basis
     vectors from the setting used in the CIF (a,b,c) to the
     reference setting given in _space_group.reference_setting
-    (a',b',c'). The value is given in Jones-Faithful notation
+    (a',b',c'). The value is given in Jones faithful notation
     corresponding to the rotational matrix P combined with the
     origin shift vector p in the expression:
 
@@ -12836,7 +12836,7 @@ save_space_group.transform_qq_xyz
     _space_group.reference_setting [(x',y',z') referred to the
     basis vectors (a',b',c')].
 
-    The value given in Jones-Faithful notation corresponds to the
+    The value given in Jones faithful notation corresponds to the
     rotational matrix Q combined with the origin shift vector q in
     the expression:
 
