@@ -12476,6 +12476,303 @@ save_space_group.point_group_h-m
 
 save_
 
+save_space_group.reference_setting
+
+    _definition.id                '_space_group.reference_setting'
+    _definition.update            2026-07-10
+    _description.text
+;
+    The reference setting of a given space group is the setting
+    chosen by the International Union of Crystallography as a
+    unique setting to which other settings can be referred
+    using the transformation matrix column pair given in
+    _space_group.transform_Pp_abc and _space_group.transform_Qq_xyz.
+
+    The settings are given in the enumeration list in the form
+    '_space_group.IT_number:_space_group.name_Hall'. The
+    space-group number defines the space-group type and the
+    Hall symbol specifies the symmetry generators referred to
+    the reference coordinate system.
+
+    The 230 reference settings chosen are identical to the settings
+    listed in International Tables for Crystallography Volume A
+    (2002). For the space groups where more than one setting is
+    given in International Tables, the following choices have
+    been made.
+
+    For monoclinic space groups: unique axis b and cell choice 1.
+
+    For space groups with two origins: origin choice 2 (origin at
+    inversion centre, indicated by adding :2 to the Hermann-Mauguin
+    symbol in the enumeration list).
+
+    For rhombohedral space groups: hexagonal axes (indicated by
+    adding :h to the Hermann-Mauguin symbol in the enumeration list).
+
+    Based on the symmetry table of R. W. Grosse-Kunstleve, ETH,
+    Zurich.
+
+    The enumeration list may be extracted from the dictionary
+    and stored as a separate CIF that can be referred to as
+    required.
+
+    In the enumeration list, each reference setting is identified
+    by Schoenflies symbol and by the Hermann-Mauguin symbol,
+    augmented by :2 or :h suffixes as described above.
+
+    Ref: International Tables for Crystallography (2002). Volume A,
+         Space-group symmetry, edited by Th. Hahn, 5th ed.
+         Dordrecht: Kluwer Academic Publishers.
+
+         Grosse-Kunstleve, R. W. (2001). Xtal System of
+         Crystallographic Programs, System Documentation.
+         https://xtal.sourceforge.net/man/symmetry.html
+         (or follow links to Docs->Space-Group Symbols from
+         http://xtal.sourceforge.net).
+;
+    _name.category_id             space_group
+    _name.object_id               reference_setting
+    _type.purpose                 Describe
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+               '001:P 1'             'C1.1   P 1'
+               '002:-P 1'            'Ci.1   P -1'
+               '003:P 2y'            'C2.1   P 1 2 1'
+               '004:P 2yb'           'C2.2   P 1 21 1'
+               '005:C 2y'            'C2.3   C 1 2 1'
+               '006:P -2y'           'Cs.1   P 1 m 1'
+               '007:P -2yc'          'Cs.2   P 1 c 1'
+               '008:C -2y'           'Cs.3   C 1 m 1'
+               '009:C -2yc'          'Cs.4   C 1 c 1'
+               '010:-P 2y'           'C2h.1  P 1 2/m 1'
+               '011:-P 2yb'          'C2h.2  P 1 21/m 1'
+               '012:-C 2y'           'C2h.3  C 1 2/m 1'
+               '013:-P 2yc'          'C2h.4  P 1 2/c 1'
+               '014:-P 2ybc'         'C2h.5  P 1 21/c 1'
+               '015:-C 2yc'          'C2h.6  C 1 2/c 1'
+               '016:P 2 2'           'D2.1   P 2 2 2'
+               '017:P 2c 2'          'D2.2   P 2 2 21'
+               '018:P 2 2ab'         'D2.3   P 21 21 2'
+               '019:P 2ac 2ab'       'D2.4   P 21 21 21'
+               '020:C 2c 2'          'D2.5   C 2 2 21'
+               '021:C 2 2'           'D2.6   C 2 2 2'
+               '022:F 2 2'           'D2.7   F 2 2 2'
+               '023:I 2 2'           'D2.8   I 2 2 2'
+               '024:I 2b 2c'         'D2.9   I 21 21 21'
+               '025:P 2 -2'          'C2v.1  P m m 2'
+               '026:P 2c -2'         'C2v.2  P m c 21'
+               '027:P 2 -2c'         'C2v.3  P c c 2'
+               '028:P 2 -2a'         'C2v.4  P m a 2'
+               '029:P 2c -2ac'       'C2v.5  P c a 21'
+               '030:P 2 -2bc'        'C2v.6  P n c 2'
+               '031:P 2ac -2'        'C2v.7  P m n 21'
+               '032:P 2 -2ab'        'C2v.8  P b a 2'
+               '033:P 2c -2n'        'C2v.9  P n a 21'
+               '034:P 2 -2n'         'C2v.10 P n n 2'
+               '035:C 2 -2'          'C2v.11 C m m 2'
+               '036:C 2c -2'         'C2v.12 C m c 21'
+               '037:C 2 -2c'         'C2v.13 C c c 2'
+               '038:A 2 -2'          'C2v.14 A m m 2'
+               '039:A 2 -2b'         'C2v.15 A e m 2'
+               '040:A 2 -2a'         'C2v.16 A m a 2'
+               '041:A 2 -2ab'        'C2v.17 A e a 2'
+               '042:F 2 -2'          'C2v.18 F m m 2'
+               '043:F 2 -2d'         'C2v.19 F d d 2'
+               '044:I 2 -2'          'C2v.20 I m m 2'
+               '045:I 2 -2c'         'C2v.21 I b a 2'
+               '046:I 2 -2a'         'C2v.22 I m a 2'
+               '047:-P 2 2'          'D2h.1  P m m m'
+               '048:-P 2ab 2bc'      'D2h.2  P n n n:2'
+               '049:-P 2 2c'         'D2h.3  P c c m'
+               '050:-P 2ab 2b'       'D2h.4  P b a n:2'
+               '051:-P 2a 2a'        'D2h.5  P m m a'
+               '052:-P 2a 2bc'       'D2h.6  P n n a'
+               '053:-P 2ac 2'        'D2h.7  P m n a'
+               '054:-P 2a 2ac'       'D2h.8  P c c a'
+               '055:-P 2 2ab'        'D2h.9  P b a m'
+               '056:-P 2ab 2ac'      'D2h.10 P c c n'
+               '057:-P 2c 2b'        'D2h.11 P b c m'
+               '058:-P 2 2n'         'D2h.12 P n n m'
+               '059:-P 2ab 2a'       'D2h.13 P m m n:2'
+               '060:-P 2n 2ab'       'D2h.14 P b c n'
+               '061:-P 2ac 2ab'      'D2h.15 P b c a'
+               '062:-P 2ac 2n'       'D2h.16 P n m a'
+               '063:-C 2c 2'         'D2h.17 C m c m'
+               '064:-C 2ac 2'        'D2h.18 C m c e'
+               '065:-C 2 2'          'D2h.19 C m m m'
+               '066:-C 2 2c'         'D2h.20 C c c m'
+               '067:-C 2a 2'         'D2h.21 C m m e'
+               '068:-C 2a 2ac'       'D2h.22 C c c e:2'
+               '069:-F 2 2'          'D2h.23 F m m m'
+               '070:-F 2uv 2vw'      'D2h.24 F d d d:2'
+               '071:-I 2 2'          'D2h.25 I m m m'
+               '072:-I 2 2c'         'D2h.26 I b a m'
+               '073:-I 2b 2c'        'D2h.27 I b c a'
+               '074:-I 2b 2'         'D2h.28 I m m a'
+               '075:P 4'             'C4.1   P 4'
+               '076:P 4w'            'C4.2   P 41'
+               '077:P 4c'            'C4.3   P 42'
+               '078:P 4cw'           'C4.4   P 43'
+               '079:I 4'             'C4.5   I 4'
+               '080:I 4bw'           'C4.6   I 41'
+               '081:P -4'            'S4.1   P -4'
+               '082:I -4'            'S4.2   I -4'
+               '083:-P 4'            'C4h.1  P 4/m'
+               '084:-P 4c'           'C4h.2  P 42/m'
+               '085:-P 4a'           'C4h.3  P 4/n:2'
+               '086:-P 4bc'          'C4h.4  P 42/n:2'
+               '087:-I 4'            'C4h.5  I 4/m'
+               '088:-I 4ad'          'C4h.6  I 41/a:2'
+               '089:P 4 2'           'D4.1   P 4 2 2'
+               '090:P 4ab 2ab'       'D4.2   P 4 21 2'
+               '091:P 4w 2c'         'D4.3   P 41 2 2'
+               '092:P 4abw 2nw'      'D4.4   P 41 21 2'
+               '093:P 4c 2'          'D4.5   P 42 2 2'
+               '094:P 4n 2n'         'D4.6   P 42 21 2'
+               '095:P 4cw 2c'        'D4.7   P 43 2 2'
+               '096:P 4nw 2abw'      'D4.8   P 43 21 2'
+               '097:I 4 2'           'D4.9   I 4 2 2'
+               '098:I 4bw 2bw'       'D4.10  I 41 2 2'
+               '099:P 4 -2'          'C4v.1  P 4 m m'
+               '100:P 4 -2ab'        'C4v.2  P 4 b m'
+               '101:P 4c -2c'        'C4v.3  P 42 c m'
+               '102:P 4n -2n'        'C4v.4  P 42 n m'
+               '103:P 4 -2c'         'C4v.5  P 4 c c'
+               '104:P 4 -2n'         'C4v.6  P 4 n c'
+               '105:P 4c -2'         'C4v.7  P 42 m c'
+               '106:P 4c -2ab'       'C4v.8  P 42 b c'
+               '107:I 4 -2'          'C4v.9  I 4 m m'
+               '108:I 4 -2c'         'C4v.10 I 4 c m'
+               '109:I 4bw -2'        'C4v.11 I 41 m d'
+               '110:I 4bw -2c'       'C4v.12 I 41 c d'
+               '111:P -4 2'          'D2d.1  P -4 2 m'
+               '112:P -4 2c'         'D2d.2  P -4 2 c'
+               '113:P -4 2ab'        'D2d.3  P -4 21 m'
+               '114:P -4 2n'         'D2d.4  P -4 21 c'
+               '115:P -4 -2'         'D2d.5  P -4 m 2'
+               '116:P -4 -2c'        'D2d.6  P -4 c 2'
+               '117:P -4 -2ab'       'D2d.7  P -4 b 2'
+               '118:P -4 -2n'        'D2d.8  P -4 n 2'
+               '119:I -4 -2'         'D2d.9  I -4 m 2'
+               '120:I -4 -2c'        'D2d.10 I -4 c 2'
+               '121:I -4 2'          'D2d.11 I -4 2 m'
+               '122:I -4 2bw'        'D2d.12 I -4 2 d'
+               '123:-P 4 2'          'D4h.1  P 4/m m m'
+               '124:-P 4 2c'         'D4h.2  P 4/m c c'
+               '125:-P 4a 2b'        'D4h.3  P 4/n b m:2'
+               '126:-P 4a 2bc'       'D4h.4  P 4/n n c:2'
+               '127:-P 4 2ab'        'D4h.5  P 4/m b m'
+               '128:-P 4 2n'         'D4h.6  P 4/m n c'
+               '129:-P 4a 2a'        'D4h.7  P 4/n m m:2'
+               '130:-P 4a 2ac'       'D4h.8  P 4/n c c:2'
+               '131:-P 4c 2'         'D4h.9  P 42/m m c'
+               '132:-P 4c 2c'        'D4h.10 P 42/m c m'
+               '133:-P 4ac 2b'       'D4h.11 P 42/n b c:2'
+               '134:-P 4ac 2bc'      'D4h.12 P 42/n n m:2'
+               '135:-P 4c 2ab'       'D4h.13 P 42/m b c'
+               '136:-P 4n 2n'        'D4h.14 P 42/m n m'
+               '137:-P 4ac 2a'       'D4h.15 P 42/n m c:2'
+               '138:-P 4ac 2ac'      'D4h.16 P 42/n c m:2'
+               '139:-I 4 2'          'D4h.17 I 4/m m m'
+               '140:-I 4 2c'         'D4h.18 I 4/m c m'
+               '141:-I 4bd 2'        'D4h.19 I 41/a m d:2'
+               '142:-I 4bd 2c'       'D4h.20 I 41/a c d:2'
+               '143:P 3'             'C3.1   P 3'
+               '144:P 31'            'C3.2   P 31'
+               '145:P 32'            'C3.3   P 32'
+               '146:R 3'             'C3.4   R 3:h'
+               '147:-P 3'            'C3i.1  P -3'
+               '148:-R 3'            'C3i.2  R -3:h'
+               '149:P 3 2'           'D3.1   P 3 1 2'
+               '150:P 3 2"'          'D3.2   P 3 2 1'
+               '151:P 31 2 (0 0 4)'  'D3.3   P 31 1 2'
+               '152:P 31 2"'         'D3.4   P 31 2 1'
+               '153:P 32 2 (0 0 2)'  'D3.5   P 32 1 2'
+               '154:P 32 2"'         'D3.6   P 32 2 1'
+               '155:R 3 2"'          'D3.7   R 3 2:h'
+               '156:P 3 -2"'         'C3v.1  P 3 m 1'
+               '157:P 3 -2'          'C3v.2  P 3 1 m'
+               '158:P 3 -2"c'        'C3v.3  P 3 c 1'
+               '159:P 3 -2c'         'C3v.4  P 3 1 c'
+               '160:R 3 -2"'         'C3v.5  R 3 m:h'
+               '161:R 3 -2"c'        'C3v.6  R 3 c:h'
+               '162:-P 3 2'          'D3d.1  P -3 1 m'
+               '163:-P 3 2c'         'D3d.2  P -3 1 c'
+               '164:-P 3 2"'         'D3d.3  P -3 m 1'
+               '165:-P 3 2"c'        'D3d.4  P -3 c 1'
+               '166:-R 3 2"'         'D3d.5  R -3 m:h'
+               '167:-R 3 2"c'        'D3d.6  R -3 c:h'
+               '168:P 6'             'C6.1   P 6'
+               '169:P 61'            'C6.2   P 61'
+               '170:P 65'            'C6.3   P 65'
+               '171:P 62'            'C6.4   P 62'
+               '172:P 64'            'C6.5   P 64'
+               '173:P 6c'            'C6.6   P 63'
+               '174:P -6'            'C3h.1  P -6'
+               '175:-P 6'            'C6h.1  P 6/m'
+               '176:-P 6c'           'C6h.2  P 63/m'
+               '177:P 6 2'           'D6.1   P 6 2 2'
+               '178:P 61 2 (0 0 5)'  'D6.2   P 61 2 2'
+               '179:P 65 2 (0 0 1)'  'D6.3   P 65 2 2'
+               '180:P 62 2 (0 0 4)'  'D6.4   P 62 2 2'
+               '181:P 64 2 (0 0 2)'  'D6.5   P 64 2 2'
+               '182:P 6c 2c'         'D6.6   P 63 2 2'
+               '183:P 6 -2'          'C6v.1  P 6 m m'
+               '184:P 6 -2c'         'C6v.2  P 6 c c'
+               '185:P 6c -2'         'C6v.3  P 63 c m'
+               '186:P 6c -2c'        'C6v.4  P 63 m c'
+               '187:P -6 2'          'D3h.1  P -6 m 2'
+               '188:P -6c 2'         'D3h.2  P -6 c 2'
+               '189:P -6 -2'         'D3h.3  P -6 2 m'
+               '190:P -6c -2c'       'D3h.4  P -6 2 c'
+               '191:-P 6 2'          'D6h.1  P 6/m m m'
+               '192:-P 6 2c'         'D6h.2  P 6/m c c'
+               '193:-P 6c 2'         'D6h.3  P 63/m c m'
+               '194:-P 6c 2c'        'D6h.4  P 63/m m c'
+               '195:P 2 2 3'         'T.1    P 2 3'
+               '196:F 2 2 3'         'T.2    F 2 3'
+               '197:I 2 2 3'         'T.3    I 2 3'
+               '198:P 2ac 2ab 3'     'T.4    P 21 3'
+               '199:I 2b 2c 3'       'T.5    I 21 3'
+               '200:-P 2 2 3'        'Th.1   P m -3'
+               '201:-P 2ab 2bc 3'    'Th.2   P n -3:2'
+               '202:-F 2 2 3'        'Th.3   F m -3'
+               '203:-F 2uv 2vw 3'    'Th.4   F d -3:2'
+               '204:-I 2 2 3'        'Th.5   I m -3'
+               '205:-P 2ac 2ab 3'    'Th.6   P a -3'
+               '206:-I 2b 2c 3'      'Th.7   I a -3'
+               '207:P 4 2 3'         'O.1    P 4 3 2'
+               '208:P 4n 2 3'        'O.2    P 42 3 2'
+               '209:F 4 2 3'         'O.3    F 4 3 2'
+               '210:F 4d 2 3'        'O.4    F 41 3 2'
+               '211:I 4 2 3'         'O.5    I 4 3 2'
+               '212:P 4acd 2ab 3'    'O.6    P 43 3 2'
+               '213:P 4bd 2ab 3'     'O.7    P 41 3 2'
+               '214:I 4bd 2c 3'      'O.8    I 41 3 2'
+               '215:P -4 2 3'        'Td.1   P -4 3 m'
+               '216:F -4 2 3'        'Td.2   F -4 3 m'
+               '217:I -4 2 3'        'Td.3   I -4 3 m'
+               '218:P -4n 2 3'       'Td.4   P -4 3 n'
+               '219:F -4a 2 3'       'Td.5   F -4 3 c'
+               '220:I -4bd 2c 3'     'Td.6   I -4 3 d'
+               '221:-P 4 2 3'        'Oh.1   P m -3 m'
+               '222:-P 4a 2bc 3'     'Oh.2   P n -3 n:2'
+               '223:-P 4n 2 3'       'Oh.3   P m -3 n'
+               '224:-P 4bc 2bc 3'    'Oh.4   P n -3 m:2'
+               '225:-F 4 2 3'        'Oh.5   F m -3 m'
+               '226:-F 4a 2 3'       'Oh.6   F m -3 c'
+               '227:-F 4vw 2vw 3'    'Oh.7   F d -3 m:2'
+               '228:-F 4ud 2vw 3'    'Oh.8   F d -3 c:2'
+               '229:-I 4 2 3'        'Oh.9   I m -3 m'
+               '230:-I 4bd 2c 3'     'Oh.10  I a -3 d'
+
+save_
+
 save_symmetry.cell_setting
 
     _definition.id                '_symmetry.cell_setting'
