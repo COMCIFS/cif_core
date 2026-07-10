@@ -12818,9 +12818,9 @@ save_space_group.transform_pp_abc
     loop_
       _description_example.case
       _description_example.detail
-         '-b+c, a+c, -a+b+c'        'R3:r to R3:h'
-         'a-1/4, b-1/4, c-1/4'      'Pnnn:1 to Pnnn:2'
-         'b-1/2, c-1/2, a-1/2'      'Bbab:1 to Ccca:2'
+         '-b+c, a+c, -a+b+c'      'R3:r to R3:h'
+         'a-1/4, b-1/4, c-1/4'    'Pnnn:1 to Pnnn:2'
+         'b-1/2, c-1/2, a-1/2'    'Bbab:1 to Ccca:2'
 
 save_
 
