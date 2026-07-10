@@ -12532,7 +12532,7 @@ save_space_group.reference_setting
 ;
     _name.category_id             space_group
     _name.object_id               reference_setting
-    _type.purpose                 Describe
+    _type.purpose                 State
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Text
