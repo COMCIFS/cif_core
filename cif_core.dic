@@ -12773,7 +12773,7 @@ save_space_group.reference_setting
 
 save_
 
-save_space_group.transform_Pp_abc
+save_space_group.transform_pp_abc
 
     _definition.id                '_space_group.transform_Pp_abc'
     _definition.update            2026-07-10
@@ -12821,6 +12821,60 @@ save_space_group.transform_Pp_abc
           '-b+c, a+c, -a+b+c'       'R3:r to R3:h'
           'a-1/4, b-1/4, c-1/4'     'Pnnn:1 to Pnnn:2'
           'b-1/2, c-1/2, a-1/2'     'Bbab:1 to Ccca:2'
+
+save_
+
+save_space_group.transform_qq_xyz
+
+    _definition.id                '_space_group.transform_Qq_xyz'
+    _definition.update            2026-07-10
+    _description.text
+;
+    This item specifies the transformation (Q,q) of the atomic
+    coordinates from the setting used in the CIF [(x,y,z) referred
+    to the basis vectors (a,b,c)] to the reference setting given in
+    _space_group.reference_setting [(x',y',z') referred to the
+    basis vectors (a',b',c')].
+
+    The value given in Jones-Faithful notation corresponds to the
+    rotational matrix Q combined with the origin shift vector q in
+    the expression:
+
+        (x',y',z') = Q(x,y,z) + q.
+
+    Q is a pre-multiplication matrix of the column vector (x,y,z).
+    It is related to the inverse transformation (P,p) by:
+
+        P = Q^-1^
+        p = Pq = -(Q^-1^)q,
+
+    where the P and Q transformations are applied as follows:
+
+    atomic coordinates  (x',y',z') = Q(x,y,z) + q
+    Miller indices      (h',k',l') = (h,k,l)P
+    symmetry operations         W' = (Q,q)W(P,p)
+    basis vectors       (a',b',c') = (a,b,c)P + p
+
+    This item is given as a character string involving the
+    characters x, y and z with commas separating the expressions
+    for the x', y' and z' components. The numeric values may be
+    given as integers, fractions or real numbers. Multiplication
+    is implicit, division must be explicit. White space within
+    the string is optional.
+;
+    _name.category_id             space_group
+    _name.object_id               transform_Qq_xyz
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+          '-x/3+2y/3-z/3, -2x/3+y/3+z/3, x/3+y/3+z/3'       'R3:r to R3:h'
+          'x+1/4, y+1/4, z+1/4'     'Pnnn:1 to Pnnn:2'
+          'z+1/2, x+1/2, y+1/2'     'Bbab:1 to Ccca:2'
 
 save_
 
