@@ -26172,6 +26172,150 @@ save_atom_type_scat.exponential_polynomial_upper_limit
 
 save_
 
+save_atom_type_scat.gaussian_as
+
+    _definition.id                '_atom_type_scat.Gaussian_as'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian scalar coefficients for generating X-ray scattering
+    factors:
+    [ a_1, a_2, ... , a_N ].
+
+    f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
+
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.gaussian_bs
+              _atom_type_scat.gaussian_c
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_as
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.gaussian_as_su
+
+    _definition.id                '_atom_type_scat.Gaussian_as_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_as.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_as_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_as'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.gaussian_bs
+
+    _definition.id                '_atom_type_scat.Gaussian_bs'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian exponent coefficients for generating X-ray scattering
+    factors:
+    [ b_1, b_2, ... , b_N ].
+
+    f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
+
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.gaussian_as
+              _atom_type_scat.gaussian_c
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_bs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.gaussian_bs_su
+
+    _definition.id                '_atom_type_scat.Gaussian_bs_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_bs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_bs_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_bs'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.gaussian_c
+
+    _definition.id                '_atom_type_scat.Gaussian_c'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The Gaussian constant coefficient for generating X-ray scattering factors:
+    c.
+
+    f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
+
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.gaussian_as
+              _atom_type_scat.gaussian_bs
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.gaussian_c_su
+
+    _definition.id                '_atom_type_scat.Gaussian_c_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_c.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_c_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_c'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
 save_atom_type_scat.gaussian_coefs
 
     _definition.id                '_atom_type_scat.Gaussian_coefs'
