@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-06-23
+    _dictionary.date              2026-07-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -26712,61 +26712,6 @@ save_atom_type_scat.inv_mott_bethe_coefs_su
 
 save_
 
-save_atom_type_scat.inv_mott_bethe_constant
-
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_constant'
-    _definition.update            2026-07-14
-    _description.text
-;
-    The constant for use in the inverse Mott-Bethe relationship for generating
-    X-ray scattering factors:
-    e
-
-    f(s; Z~0~) =
-    Z~0~ - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
-
-    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
-    electrons for the atom or ion. θ is the diffraction angle and λ is the
-    wavelength of the incident radiation in angstroms.
-
-    See also: _atom_type_scat.inv_mott_bethe_c_coefs
-              _atom_type_scat.inv_mott_bethe_d_coefs
-
-    Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
-         Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
-         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
-         127, 658-665.
-         Bethe, H. (1930). Ann. Phys. 397, 325-400.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_constant
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   unspecified
-
-save_
-
-save_atom_type_scat.inv_mott_bethe_constant_su
-
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_constant_su'
-    _definition.update            2026-07-14
-    _description.text
-;
-    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_constant.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_constant_su
-    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_constant'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   unspecified
-
-save_
-
 save_atom_type_scat.inv_mott_bethe_lower_limit
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_lower_limit'
@@ -29715,7 +29660,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-06-23
+         3.4.0                    2026-07-14
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29739,4 +29684,6 @@ save_
 
        Changed the _diffrn_source.device data item enumeration value
        from 'rot_anode' to 'rot-anode'.
+
+       Enhanced form factor parameterisations through reprovision of
 ;
