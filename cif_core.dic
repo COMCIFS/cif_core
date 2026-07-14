@@ -12512,10 +12512,6 @@ save_space_group.reference_setting
     Based on the symmetry table of R. W. Grosse-Kunstleve, ETH,
     Zurich.
 
-    The enumeration list may be extracted from the dictionary
-    and stored as a separate CIF that can be referred to as
-    required.
-
     In the enumeration list, each reference setting is identified
     by Schoenflies symbol and by the Hermann-Mauguin symbol,
     augmented by :2 or :h suffixes as described above.
@@ -12527,8 +12523,8 @@ save_space_group.reference_setting
          Grosse-Kunstleve, R. W. (2001). Xtal System of
          Crystallographic Programs, System Documentation.
          https://xtal.sourceforge.net/man/symmetry.html
-         (or follow links to Docs->Space-Group Symbols from
-         http://xtal.sourceforge.net).
+         or follow links to Docs->Space-Group Symbols from
+         http://xtal.sourceforge.net.
 ;
     _name.category_id             space_group
     _name.object_id               reference_setting
