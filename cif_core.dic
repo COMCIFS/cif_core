@@ -25664,6 +25664,42 @@ save_atom_type_scat.cromer_mann_a4
 
 save_
 
+save_atom_type_scat.cromer_mann_as
+
+    _definition.id                '_atom_type_scat.Cromer_Mann_as'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Cromer-Mann 'a' coefficients for generating X-ray scattering
+    factors:
+    [ a1, a2, a3, a4 ].
+
+    See also: _atom_type_scat.cromer_mann_bs
+              _atom_type_scat.cromer_mann_c
+
+    Ref: International Tables for Crystallography (2004). Vol. C, Table 6.1.1.4.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Cromer_Mann_as
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[4]'
+    _type.contents                Real
+    _units.code                   none
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With t  as  atom_type_scat
+
+     _atom_type_scat.Cromer_Mann_as  =  [ t.Cromer_Mann_a1,
+                                          t.Cromer_Mann_a2,
+                                          t.Cromer_Mann_a3,
+                                          t.Cromer_Mann_a4 ]
+;
+
+save_
+
 save_atom_type_scat.cromer_mann_b1
 
     _definition.id                '_atom_type_scat.Cromer_Mann_b1'
