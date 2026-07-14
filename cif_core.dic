@@ -26490,25 +26490,25 @@ save_atom_type_scat.hi_ang_fox_coeffs
 
 save_
 
-save_atom_type_scat.inv_mott_bethe_c_coefs
+save_atom_type_scat.inv_mott_bethe_as
 
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_c_coefs'
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_as'
     _definition.update            2026-07-14
     _description.text
 ;
     The set of Gaussian scalar coefficients for use in the inverse Mott-Bethe
     relationship for generating X-ray scattering factors:
-    [ c_1, c_2, ... , c_N ].
+    [ a_1, a_2, ... , a_N ].
 
     f(s; Z~0~) =
-    Z~0~ - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π * a~0~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
     where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
     wavelength of the incident radiation in angstroms.
 
-    See also: _atom_type_scat.inv_mott_bethe_constant
-              _atom_type_scat.inv_mott_bethe_d_coefs
+    See also: _atom_type_scat.inv_mott_bethe_bs
+              _atom_type_scat.inv_mott_bethe_c
 
     Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
          Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
@@ -26517,33 +26517,145 @@ save_atom_type_scat.inv_mott_bethe_c_coefs
          Bethe, H. (1930). Ann. Phys. 397, 325-400.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_c_coefs
+    _name.object_id               inv_Mott_Bethe_as
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   unspecified
+    _units.code                   angstroms
 
 save_
 
-save_atom_type_scat.inv_mott_bethe_c_coefs_su
+save_atom_type_scat.inv_mott_bethe_as_su
 
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_c_coefs_su'
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_as_su'
     _definition.update            2026-07-14
     _description.text
 ;
-    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_c_coefs.
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_as.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_c_coefs_su
-    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_c_coefs'
+    _name.object_id               inv_Mott_Bethe_as_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_as'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   unspecified
+    _units.code                   angstroms
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_bs
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_bs'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian exponent coefficients for use in the inverse Mott-Bethe
+    relationship for generating X-ray scattering factors:
+    [ b_1, b_2, ... , b_N ].
+
+    f(s; Z~0~) =
+    Z~0~ - 8π * a~0~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+
+    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
+    electrons for the atom or ion. θ is the diffraction angle and λ is the
+    wavelength of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.inv_mott_bethe_as
+              _atom_type_scat.inv_mott_bethe_c
+
+    Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
+         Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
+         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
+         127, 658-665.
+         Bethe, H. (1930). Ann. Phys. 397, 325-400.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_bs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_bs_su
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_bs_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_bs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_bs_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_bs'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_c
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_c'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian constant coefficient for use in the inverse Mott-Bethe
+    relationship for generating X-ray scattering factors:
+    c.
+
+    f(s; Z~0~) =
+    Z~0~ - 8π * a~0~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+
+    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
+    electrons for the atom or ion. θ is the diffraction angle and λ is the
+    wavelength of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.inv_mott_bethe_as
+              _atom_type_scat.inv_mott_bethe_bs
+
+    Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
+         Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
+         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
+         127, 658-665.
+         Bethe, H. (1930). Ann. Phys. 397, 325-400.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_c_su
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_c_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_c.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_c_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_c'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
 
 save_
 
@@ -26650,63 +26762,6 @@ save_atom_type_scat.inv_mott_bethe_constant_su
     _type.purpose                 SU
     _type.source                  Related
     _type.container               Single
-    _type.contents                Real
-    _units.code                   unspecified
-
-save_
-
-save_atom_type_scat.inv_mott_bethe_d_coefs
-
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_d_coefs'
-    _definition.update            2026-07-14
-    _description.text
-;
-    The set of Gaussian exponent coefficients for use in the inverse Mott-Bethe
-    relationship for generating X-ray scattering factors:
-    [ d_1, d_2, ... , d_N ].
-
-    f(s; Z~0~) =
-    Z~0~ - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
-
-    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
-    electrons for the atom or ion. θ is the diffraction angle and λ is the
-    wavelength of the incident radiation in angstroms.
-
-    See also: _atom_type_scat.inv_mott_bethe_constant
-              _atom_type_scat.inv_mott_bethe_c_coefs
-
-    Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
-         Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
-         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
-         127, 658-665.
-         Bethe, H. (1930). Ann. Phys. 397, 325-400.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_d_coefs
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[]'
-    _type.contents                Real
-    _units.code                   unspecified
-
-save_
-
-save_atom_type_scat.inv_mott_bethe_d_coefs_su
-
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_d_coefs_su'
-    _definition.update            2026-07-14
-    _description.text
-;
-    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_d_coefs.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_d_coefs_su
-    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_d_coefs'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               List
-    _type.dimension               '[]'
     _type.contents                Real
     _units.code                   unspecified
 
