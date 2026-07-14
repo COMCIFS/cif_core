@@ -29686,4 +29686,12 @@ save_
        from 'rot_anode' to 'rot-anode'.
 
        Enhanced form factor parameterisations through reprovision of
+       _atom_type_scat.inv_mott_bethe_as
+       _atom_type_scat.inv_mott_bethe_bs
+       _atom_type_scat.inv_mott_bethe_c
+       _atom_type_scat.gaussian_as
+       _atom_type_scat.gaussian_bs
+       _atom_type_scat.gaussian_c
+       _atom_type_scat.cromer_mann_as
+       _atom_type_scat.cromer_mann_bs
 ;
