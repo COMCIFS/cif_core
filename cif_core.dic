@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-06-23
+    _dictionary.date              2026-07-10
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -12473,6 +12473,172 @@ save_space_group.point_group_h-m
       _description_example.case
          -4
          4/m
+
+save_
+
+save_space_group.reference_setting
+
+    _definition.id                '_space_group.reference_setting'
+    _definition.update            2026-07-10
+    _description.text
+;
+    The reference setting of a given space group is the setting
+    chosen by the International Union of Crystallography as a
+    unique setting to which other settings can be referred
+    using the transformation matrix column pair given in
+    _space_group.transform_Pp_abc and _space_group.transform_Qq_xyz.
+
+    The settings are given in the enumeration list in the form
+    '_space_group.IT_number:_space_group.name_Hall'. The
+    space-group number defines the space-group type and the
+    Hall symbol specifies the symmetry generators referred to
+    the reference coordinate system.
+
+    The 230 reference settings chosen are identical to the settings
+    listed in International Tables for Crystallography Volume A
+    (2002). For the space groups where more than one setting is
+    given in International Tables, the following choices have
+    been made.
+
+    For monoclinic space groups: unique axis b and cell choice 1.
+
+    For space groups with two origins: origin choice 2 (origin at
+    inversion centre, indicated by adding :2 to the Hermann-Mauguin
+    symbol in the enumeration list).
+
+    For rhombohedral space groups: hexagonal axes (indicated by
+    adding :h to the Hermann-Mauguin symbol in the enumeration list).
+
+    Based on the symmetry table of R. W. Grosse-Kunstleve, ETH,
+    Zurich.
+
+    In the enumeration list, each reference setting is identified
+    by Schoenflies symbol and by the Hermann-Mauguin symbol,
+    augmented by :2 or :h suffixes as described above.
+
+    Ref: International Tables for Crystallography (2002). Volume A,
+         Space-group symmetry, edited by Th. Hahn, 5th ed.
+         Dordrecht: Kluwer Academic Publishers.
+
+         Grosse-Kunstleve, R. W. (2001). Xtal System of
+         Crystallographic Programs, System Documentation.
+         https://xtal.sourceforge.net/man/symmetry.html
+         (or follow links to Documentation->Xtal Users Manual->Symmetry from
+         https://xtal.sourceforge.net).
+;
+    _name.category_id             space_group
+    _name.object_id               reference_setting
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    _import.get                   [{'file':templ_enum.cif  'save':ref_set}]
+
+save_
+
+save_space_group.transform_pp_abc
+
+    _definition.id                '_space_group.transform_Pp_abc'
+    _definition.update            2026-07-10
+    _description.text
+;
+    This item specifies the transformation (P,p) of the basis
+    vectors from the setting used in the CIF (a,b,c) to the
+    reference setting given in _space_group.reference_setting
+    (a',b',c'). The value is given in Jones faithful notation
+    corresponding to the rotational matrix P combined with the
+    origin shift vector p in the expression:
+
+         (a',b',c') = (a,b,c)P + p.
+
+    P is a post-multiplication matrix of a row (a,b,c) of column
+    vectors. It is related to the inverse transformation (Q,q) by:
+
+         P = Q^-1^
+         p = Pq = -(Q^-1^)q.
+
+    These transformations are applied as follows:
+
+    atomic coordinates  (x',y',z') = Q(x,y,z) + q
+    Miller indices      (h',k',l') = (h,k,l)P
+    symmetry operations         W' = (Q,q)W(P,p)
+    basis vectors       (a',b',c') = (a,b,c)P + p
+
+    This item is given as a character string involving the
+    characters a, b and c with commas separating the expressions
+    for the a', b' and c' vectors. The numeric values may be
+    given as integers, fractions or real numbers. Multiplication
+    is implicit, division must be explicit. White space within
+    the string is optional.
+;
+    _name.category_id             space_group
+    _name.object_id               transform_Pp_abc
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         '-b+c, a+c, -a+b+c'      'R3:r to R3:h'
+         'a-1/4, b-1/4, c-1/4'    'Pnnn:1 to Pnnn:2'
+         'b-1/2, c-1/2, a-1/2'    'Bbab:1 to Ccca:2'
+
+save_
+
+save_space_group.transform_qq_xyz
+
+    _definition.id                '_space_group.transform_Qq_xyz'
+    _definition.update            2026-07-10
+    _description.text
+;
+    This item specifies the transformation (Q,q) of the atomic
+    coordinates from the setting used in the CIF [(x,y,z) referred
+    to the basis vectors (a,b,c)] to the reference setting given in
+    _space_group.reference_setting [(x',y',z') referred to the
+    basis vectors (a',b',c')].
+
+    The value given in Jones faithful notation corresponds to the
+    rotational matrix Q combined with the origin shift vector q in
+    the expression:
+
+        (x',y',z') = Q(x,y,z) + q.
+
+    Q is a pre-multiplication matrix of the column vector (x,y,z).
+    It is related to the inverse transformation (P,p) by:
+
+        P = Q^-1^
+        p = Pq = -(Q^-1^)q,
+
+    where the P and Q transformations are applied as follows:
+
+    atomic coordinates  (x',y',z') = Q(x,y,z) + q
+    Miller indices      (h',k',l') = (h,k,l)P
+    symmetry operations         W' = (Q,q)W(P,p)
+    basis vectors       (a',b',c') = (a,b,c)P + p
+
+    This item is given as a character string involving the
+    characters x, y and z with commas separating the expressions
+    for the x', y' and z' components. The numeric values may be
+    given as integers, fractions or real numbers. Multiplication
+    is implicit, division must be explicit. White space within
+    the string is optional.
+;
+    _name.category_id             space_group
+    _name.object_id               transform_Qq_xyz
+    _type.purpose                 Encode
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+      _description_example.detail
+         '-x/3+2y/3-z/3, -2x/3+y/3+z/3, x/3+y/3+z/3'         'R3:r to R3:h'
+         'x+1/4, y+1/4, z+1/4'                               'Pnnn:1 to Pnnn:2'
+         'z+1/2, x+1/2, y+1/2'                               'Bbab:1 to Ccca:2'
 
 save_
 
@@ -29275,7 +29441,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-06-23
+         3.4.0                    2026-07-10
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29299,4 +29465,7 @@ save_
 
        Changed the _diffrn_source.device data item enumeration value
        from 'rot_anode' to 'rot-anode'.
+
+       Added _space_group.reference_setting, _space_group.transform_Pp_abc, and
+       _space_group.transform_Qq_xyz from symCIF to SPACE_GROUP.
 ;
