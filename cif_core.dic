@@ -12523,7 +12523,7 @@ save_space_group.reference_setting
          Grosse-Kunstleve, R. W. (2001). Xtal System of
          Crystallographic Programs, System Documentation.
          https://xtal.sourceforge.net/man/symmetry.html
-         (or follow links to Docs->Space-Group Symbols from
+         (or follow links to Documentation->Xtal Users Manual->Symmetry from
          https://xtal.sourceforge.net).
 ;
     _name.category_id             space_group
