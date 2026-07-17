@@ -26219,7 +26219,8 @@ save_
 
 save_atom_type_scat.exponential_polynomial_coeffs
 
-    _definition.id                '_atom_type_scat.exponential_polynomial_coeffs'
+    _definition.id
+        '_atom_type_scat.exponential_polynomial_coeffs'
     _definition.update            2023-06-16
     _description.text
 ;
@@ -26253,7 +26254,8 @@ save_atom_type_scat.exponential_polynomial_coeffs_su
 ;
     _name.category_id             atom_type_scat
     _name.object_id               exponential_polynomial_coeffs_su
-    _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coeffs'
+    _name.linked_item_id
+        '_atom_type_scat.exponential_polynomial_coeffs'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
@@ -29744,7 +29746,6 @@ save_
        _atom_type_scat.inv_mott_bethe_coefs
        _atom_type_scat.gaussian_coefs
        _atom_type_scat.cromer_mann_coeffs
-
 
        Added _space_group.reference_setting, _space_group.transform_Pp_abc, and
        _space_group.transform_Qq_xyz from symCIF to SPACE_GROUP.
