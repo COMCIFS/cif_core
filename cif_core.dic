@@ -26593,9 +26593,9 @@ save_atom_type_scat.inv_mott_bethe_as
     [ a_1, a_2, ... , a_N ].
 
     f(s; Z~0~) =
-    Z~0~ - 8π * a~0~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
-    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
+    where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
     wavelength of the incident radiation in angstroms.
 
@@ -26650,9 +26650,9 @@ save_atom_type_scat.inv_mott_bethe_bs
     [ b_1, b_2, ... , b_N ].
 
     f(s; Z~0~) =
-    Z~0~ - 8π * a~0~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
-    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
+    where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
     wavelength of the incident radiation in angstroms.
 
@@ -26707,9 +26707,9 @@ save_atom_type_scat.inv_mott_bethe_c
     c.
 
     f(s; Z~0~) =
-    Z~0~ - 8π * a~0~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
-    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z~0~ is the number of
+    where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
     wavelength of the incident radiation in angstroms.
 
