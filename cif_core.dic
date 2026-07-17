@@ -25674,8 +25674,8 @@ save_atom_type_scat.cromer_mann_as
     factors:
     [ a1, a2, a3, a4 ].
 
-    See also: _atom_type_scat.cromer_mann_bs
-              _atom_type_scat.cromer_mann_c
+    See also: _atom_type_scat.Cromer_Mann_bs
+              _atom_type_scat.Cromer_Mann_c
 
     Ref: International Tables for Crystallography (2004). Vol. C, Table 6.1.1.4.
 ;
@@ -25790,8 +25790,8 @@ save_atom_type_scat.cromer_mann_bs
     factors:
     [ b1, b2, b3, b4 ].
 
-    See also: _atom_type_scat.cromer_mann_as
-              _atom_type_scat.cromer_mann_c
+    See also: _atom_type_scat.Cromer_Mann_as
+              _atom_type_scat.Cromer_Mann_c
 
     Ref: International Tables for Crystallography (2004). Vol. C, Table 6.1.1.4.
 ;
