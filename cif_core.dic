@@ -7049,7 +7049,7 @@ save_
 save_refln.form_factor_table
 
     _definition.id                '_refln.form_factor_table'
-    _definition.update            2023-06-16
+    _definition.update            2026-07-14
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
@@ -29739,6 +29739,12 @@ save_
        _atom_type_scat.gaussian_c
        _atom_type_scat.cromer_mann_as
        _atom_type_scat.cromer_mann_bs
+
+       Removed:
+       _atom_type_scat.inv_mott_bethe_coefs
+       _atom_type_scat.gaussian_coefs
+       _atom_type_scat.cromer_mann_coeffs
+
 
        Added _space_group.reference_setting, _space_group.transform_Pp_abc, and
        _space_group.transform_Qq_xyz from symCIF to SPACE_GROUP.
