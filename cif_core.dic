@@ -26751,59 +26751,6 @@ save_atom_type_scat.inv_mott_bethe_c_su
 
 save_
 
-save_atom_type_scat.inv_mott_bethe_coefs
-
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
-    _definition.update            2025-05-16
-    _description.text
-;
-    The set of Gaussian coefficients for use in the inverse Mott-Bethe
-    relationship for generating X-ray scattering factors:
-    [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
-
-    f(s; Z) =
-    Z - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
-
-    where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z is the atomic number.
-    θ is the diffraction angle and λ is the wavelength of the incident
-    radiation in angstroms.
-
-    Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318–330.
-         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
-         127, 658–665.
-         Bethe, H. (1930). Ann. Phys. 397, 325–400.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_coefs
-    _type.purpose                 Measurand
-    _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[]'
-    _type.contents                Real
-    _units.code                   unspecified
-
-save_
-
-save_atom_type_scat.inv_mott_bethe_coefs_su
-
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
-    _definition.update            2023-07-01
-    _description.text
-;
-    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_coefs_su
-    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_coefs'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               List
-    _type.dimension               '[]'
-    _type.contents                Real
-    _units.code                   unspecified
-
-save_
-
 save_atom_type_scat.inv_mott_bethe_lower_limit
 
     _definition.id                '_atom_type_scat.inv_Mott_Bethe_lower_limit'
