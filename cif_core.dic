@@ -7087,12 +7087,14 @@ save_refln.form_factor_table
 
              } Else If (s < 2.0 ) {
 
-               c  =   t.Cromer_Mann_coeffs
+               cmc  =   t.Cromer_Mann_c
+               cma  =   t.Cromer_Mann_as
+               cmb  =   t.Cromer_Mann_bs
 
-               f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
-                           + c[3] * Exp (-c[4] * s*s)
-                           + c[5] * Exp (-c[6] * s*s)
-                           + c[7] * Exp (-c[8] * s*s))
+               f  =  (cmc + cma[0] * Exp (-cmb[0] * s*s)
+                          + cma[1] * Exp (-cmb[1] * s*s)
+                          + cma[2] * Exp (-cmb[2] * s*s)
+                          + cma[3] * Exp (-cmb[3] * s*s))
              } Else {
 
                c  =   t.hi_ang_Fox_coeffs
