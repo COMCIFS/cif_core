@@ -26215,9 +26215,9 @@ save_atom_type_scat.dispersion_source
 
 save_
 
-save_atom_type_scat.exponential_polynomial_coefs
+save_atom_type_scat.exponential_polynomial_coeffs
 
-    _definition.id                '_atom_type_scat.exponential_polynomial_coefs'
+    _definition.id                '_atom_type_scat.exponential_polynomial_coeffs'
     _definition.update            2023-06-16
     _description.text
 ;
@@ -26230,7 +26230,7 @@ save_atom_type_scat.exponential_polynomial_coefs
     of the incident radiation in angstroms.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               exponential_polynomial_coefs
+    _name.object_id               exponential_polynomial_coeffs
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               List
@@ -26240,18 +26240,18 @@ save_atom_type_scat.exponential_polynomial_coefs
 
 save_
 
-save_atom_type_scat.exponential_polynomial_coefs_su
+save_atom_type_scat.exponential_polynomial_coeffs_su
 
     _definition.id
-        '_atom_type_scat.exponential_polynomial_coefs_su'
+        '_atom_type_scat.exponential_polynomial_coeffs_su'
     _definition.update            2023-07-01
     _description.text
 ;
-    Standard uncertainty of _atom_type_scat.exponential_polynomial_coefs.
+    Standard uncertainty of _atom_type_scat.exponential_polynomial_coeffs.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               exponential_polynomial_coefs_su
-    _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coefs'
+    _name.object_id               exponential_polynomial_coeffs_su
+    _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coeffs'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
@@ -26271,7 +26271,7 @@ save_atom_type_scat.exponential_polynomial_lower_limit
     The inclusive lower limit of s for which the corresponding exponential
     polynomial coefficients are valid.
 
-    See _atom_type_scat.exponential_polynomial_coefs.
+    See _atom_type_scat.exponential_polynomial_coeffs.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               exponential_polynomial_lower_limit
@@ -26293,7 +26293,7 @@ save_atom_type_scat.exponential_polynomial_upper_limit
     The exclusive upper limit of s for which the corresponding exponential
     polynomial coefficients are valid.
 
-    See _atom_type_scat.exponential_polynomial_coefs.
+    See _atom_type_scat.exponential_polynomial_coeffs.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               exponential_polynomial_upper_limit
