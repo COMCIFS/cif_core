@@ -26320,8 +26320,8 @@ save_atom_type_scat.gaussian_as
     where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
-    See also: _atom_type_scat.gaussian_bs
-              _atom_type_scat.gaussian_c
+    See also: _atom_type_scat.Gaussian_bs
+              _atom_type_scat.Gaussian_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_as
@@ -26369,8 +26369,8 @@ save_atom_type_scat.gaussian_bs
     where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
-    See also: _atom_type_scat.gaussian_as
-              _atom_type_scat.gaussian_c
+    See also: _atom_type_scat.Gaussian_as
+              _atom_type_scat.Gaussian_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_bs
