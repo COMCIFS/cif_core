@@ -26458,7 +26458,9 @@ save_atom_type_scat.gaussian_lower_limit
     The inclusive lower limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.Gaussian_coefs.
+    See also: _atom_type_scat.Gaussian_as
+              _atom_type_scat.Gaussian_bs
+              _atom_type_scat.Gaussian_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_lower_limit
@@ -26479,7 +26481,9 @@ save_atom_type_scat.gaussian_upper_limit
     The exclusive upper limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.Gaussian_coefs.
+    See also: _atom_type_scat.Gaussian_as
+              _atom_type_scat.Gaussian_bs
+              _atom_type_scat.Gaussian_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_upper_limit
