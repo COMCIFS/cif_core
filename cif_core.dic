@@ -26219,8 +26219,7 @@ save_
 
 save_atom_type_scat.exponential_polynomial_coefs
 
-    _definition.id
-        '_atom_type_scat.exponential_polynomial_coef'
+    _definition.id                '_atom_type_scat.exponential_polynomial_coefs'
     _definition.update            2023-06-16
     _description.text
 ;
@@ -26254,8 +26253,7 @@ save_atom_type_scat.exponential_polynomial_coefs_su
 ;
     _name.category_id             atom_type_scat
     _name.object_id               exponential_polynomial_coefs_su
-    _name.linked_item_id
-        '_atom_type_scat.exponential_polynomial_coefs'
+    _name.linked_item_id          '_atom_type_scat.exponential_polynomial_coefs'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
