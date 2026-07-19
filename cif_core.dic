@@ -25664,7 +25664,7 @@ save_atom_type.radius_bond
     _definition.update            2026-07-19
     _description.text
 ;
-    The single-bond covalent radius of this atom type.
+    The effective intra-molecular bonding radius of this atom type.
 ;
     _name.category_id             atom_type
     _name.object_id               radius_bond
