@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-07-10
+    _dictionary.date              2026-07-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -25708,14 +25708,16 @@ save_atom_type.symbol
 
     _definition.id                '_atom_type.symbol'
     _alias.definition_id          '_atom_type_symbol'
-    _definition.update            2021-10-27
+    _definition.update            2026-07-19
     _description.text
 ;
     The identity of the atom specie(s) representing this atom type.
     Normally this code is the element symbol followed by the charge
     if there is one. The symbol may be composed of any character except
-    an underline or a blank, with the proviso that digits designate an
-    oxidation state and must be followed by a + or - character.
+    an underline or a blank, with the proviso that digits designate a
+    charge and must be followed by a + or - character.
+
+    Use _atom_type.oxidation_number to indicate the oxidation state.
 ;
     _name.category_id             atom_type
     _name.object_id               symbol
@@ -29441,7 +29443,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-07-10
+         3.4.0                    2026-07-19
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29468,4 +29470,7 @@ save_
 
        Added _space_group.reference_setting, _space_group.transform_Pp_abc, and
        _space_group.transform_Qq_xyz from symCIF to SPACE_GROUP.
+
+       Update description od _atom_type.symbol to state that the charge given
+       is the charge, and not the oxidation state.
 ;
