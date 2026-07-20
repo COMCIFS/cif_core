@@ -25521,10 +25521,10 @@ save_
 save_atom_type.element_symbol
 
     _definition.id                '_atom_type.element_symbol'
-    _definition.update            2026-04-20
+    _definition.update            2026-07-20
     _description.text
 ;
-    Element symbol for of this atom type. The default value is extracted
+    Element symbol of this atom type. The default value is extracted
     from the ion-to-element enumeration_default list using the index
     value of _atom_type.symbol.
 ;

@@ -33,7 +33,7 @@ jobs:
 
       # Check syntax of all CIF files
       - name: Check CIF syntax
-        uses: COMCIFS/cif_syntax_check_action@master
+        uses: COMCIFS/cif_syntax_check_action@main
         id: cif_syntax_check
 
   semantics:
