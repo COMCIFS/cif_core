@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-07-19
+    _dictionary.date              2026-07-20
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -25559,10 +25559,10 @@ save_
 save_atom_type.element_symbol
 
     _definition.id                '_atom_type.element_symbol'
-    _definition.update            2026-04-20
+    _definition.update            2026-07-20
     _description.text
 ;
-    Element symbol for of this atom type. The default value is extracted
+    Element symbol of this atom type. The default value is extracted
     from the ion-to-element enumeration_default list using the index
     value of _atom_type.symbol.
 ;
@@ -29707,7 +29707,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-07-19
+         3.4.0                    2026-07-20
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
