@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-07-10
+    _dictionary.date              2026-07-19
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -25891,14 +25891,16 @@ save_atom_type.symbol
 
     _definition.id                '_atom_type.symbol'
     _alias.definition_id          '_atom_type_symbol'
-    _definition.update            2021-10-27
+    _definition.update            2026-07-19
     _description.text
 ;
     The identity of the atom specie(s) representing this atom type.
     Normally this code is the element symbol followed by the charge
     if there is one. The symbol may be composed of any character except
-    an underline or a blank, with the proviso that digits designate an
-    oxidation state and must be followed by a + or - character.
+    an underline or a blank, with the proviso that digits designate a
+    charge and must be followed by a + or - character.
+
+    Use _atom_type.oxidation_number to indicate the oxidation state.
 ;
     _name.category_id             atom_type
     _name.object_id               symbol
@@ -29550,7 +29552,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-07-10
+         3.3.0                    2026-07-19
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
