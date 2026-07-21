@@ -317,25 +317,6 @@ save_diffrn.ambient_temperature_lt
 
 save_
 
-save_diffrn.crystal_id
-
-    _definition.id                '_diffrn.crystal_id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Identifier for the crystal from which diffraction data were
-    collected. This is a pointer to _exptl_crystal.id.
-;
-    _name.category_id             diffrn
-    _name.object_id               crystal_id
-    _name.linked_item_id          '_exptl_crystal.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_diffrn.crystal_support
 
     _definition.id                '_diffrn.crystal_support'
@@ -10759,7 +10740,6 @@ save_EXPTL_CRYSTAL
 ;
     _name.category_id             EXPTL
     _name.object_id               EXPTL_CRYSTAL
-    _category_key.name            '_exptl_crystal.id'
 
 save_
 
@@ -11110,24 +11090,6 @@ save_exptl_crystal.f_000
     Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
     Else                                            _units.code =  "electrons"
 ;
-
-save_
-
-save_exptl_crystal.id
-
-    _definition.id                '_exptl_crystal.id'
-    _alias.definition_id          '_exptl_crystal_id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Code identifying a crystal.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -29752,4 +29714,6 @@ save_
 
        Update description od _atom_type.symbol to state that the charge given
        is the charge, and not the oxidation state.
+
+       Remove _exptl_crystal.id as it is present in multiblock dictionary.
 ;
