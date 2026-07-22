@@ -4864,7 +4864,7 @@ save_diffrn_refln.wavelength_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifying the wavelength in the diffrn_radiation_wavelength list.
+    Code identifying the wavelength in the DIFFRN_RADIATION_WAVELENGTH list.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               wavelength_id
@@ -9919,7 +9919,7 @@ save_CHEMICAL_CONN_ATOM
     the molecular species. They allow a 2D chemical diagram to be
     reconstructed for use in a publication or in a database search
     for structural and substructural relationships. In particular,
-    the chemical_conn_atom data items provide information about the
+    the CHEMICAL_CONN_ATOM data items provide information about the
     chemical properties of the atoms in the structure. In cases
     where crystallographic and molecular symmetry elements coincide
     they must also contain symmetry-generated atoms, so as to describe
@@ -10023,9 +10023,9 @@ save_chemical_conn_atom.nh
 ;
     Total number of hydrogen atoms attached to this atom,
     regardless of whether they are included in the refinement or
-    the atom_site list. This number will be the same as
+    the ATOM_SITE list. This number will be the same as
     _atom_site.attached_hydrogens only if none of the hydrogen
-    atoms appear in the atom_site list.
+    atoms appear in the ATOM_SITE list.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               NH
@@ -10086,7 +10086,7 @@ save_CHEMICAL_CONN_BOND
     _description.text
 ;
     The category of data items which specify the connections between
-    the atoms sites in the chemical_conn_atom list and the nature
+    the atoms sites in the CHEMICAL_CONN_ATOM list and the nature
     of the chemical bond between these atoms. These are details about
     the two-dimensional (2D) chemical structure of the molecular species.
     They allow a 2D chemical diagram to be reconstructed for use in a
@@ -10315,10 +10315,10 @@ save_chemical_formula.iupac
 ;
     Formula expressed in conformance with IUPAC rules for inorganic
     and metal-organic compounds where these conflict with the rules
-    for any other chemical_formula entries. Typically used for
+    for any other CHEMICAL_FORMULA entries. Typically used for
     formatting a formula in accordance with journal rules. This
     should appear in the data block in addition to the most
-    appropriate of the other chemical_formula data names.
+    appropriate of the other CHEMICAL_FORMULA data names.
     Ref: IUPAC (1990). Nomenclature of Inorganic Chemistry.
          Oxford: Blackwell Scientific Publications.
 ;
