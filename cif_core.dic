@@ -29468,12 +29468,12 @@ save_
        _citation_id added to key list of citation_author (James Hester).
        _diffrn.crystal_id removed as diffrn is Set category. Changed
        EXPTL_CRYSTAL to Set type in keeping with current use patterns.
-       Removed all child keys of exptl_crystal_id.
+       Removed all child keys of _exptl_crystal_id.
 ;
          3.0.7                    2017-06-10
 ;
-       Added and deprecated symmetry.cell_setting. Removed rhombohedral
-       option from dREL method for space_group.crystal_system. (James Hester)
+       Added and deprecated _symmetry.cell_setting. Removed rhombohedral
+       option from dREL method for _space_group.crystal_system. (James Hester)
 ;
          3.0.8                    2017-09-23
 ;
@@ -29493,9 +29493,9 @@ save_
          3.0.11                   2019-09-25
 ;
        Removed the _chemical_conn_bond.distance_su data item.
-       Changed the purpose of the diffrn_radiation_wavelength.value data item
+       Changed the purpose of the _diffrn_radiation_wavelength.value data item
        from 'Number' to 'Measurand'. Added the
-       diffrn_radiation_wavelength.value_su data item.
+       _diffrn_radiation_wavelength.value_su data item.
 
        Replaced all instances of the _definition.replaced_by data item with
        data items from the DEFINITION_REPLACED category.
@@ -29510,7 +29510,7 @@ save_
        _valence_param_atom_2, _valence_param_ref_id, _atom_site_aniso.label
        and _atom_type_scat.symbol data items. Removed the _name.linked_item_id
        data item from the definitions of the _diffrn_scale_group.code and
-       diffrn_standard_refln.code data items.
+       _diffrn_standard_refln.code data items.
 
        Updated the definitions of the _geom_hbond.angle_DHA and
        _geom_hbond.angle_DHA_su data items.
