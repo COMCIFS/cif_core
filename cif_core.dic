@@ -29514,7 +29514,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-07-19
+         3.3.0                    2026-07-20
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
