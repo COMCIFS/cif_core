@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-07-20
+    _dictionary.date              2026-08-05
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -68,7 +68,6 @@ save_DIFFRN
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN
-    _category_key.name            '_diffrn.id'
 
 save_
 
@@ -402,24 +401,6 @@ save_diffrn.flux_density
 
 save_
 
-save_diffrn.id
-
-    _definition.id                '_diffrn.id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Unique identifier for a diffraction data set collected under
-    particular diffraction conditions.
-;
-    _name.category_id             diffrn
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_diffrn.measured_fraction_theta_full
 
     _definition.id                '_diffrn.measured_fraction_theta_full'
@@ -623,7 +604,6 @@ save_CELL
 ;
     _name.category_id             DIFFRN
     _name.object_id               CELL
-    _category_key.name            '_cell.diffrn_id'
 
 save_
 
@@ -859,29 +839,6 @@ save_cell.convert_uiso_to_uij_su
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   none
-
-save_
-
-save_cell.diffrn_id
-
-    _definition.id                '_cell.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction conditions to which this cell has been applied,
-    for example, to locate and extract diffraction peaks. These will normally be
-    the same conditions as those under which the cell was measured, but some
-    legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using the
-    _cell_measurement.condition_id data item.
-;
-    _name.category_id             cell
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -29669,7 +29626,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-07-20
+         3.4.0                    2026-08-05
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29715,5 +29672,6 @@ save_
        Update description od _atom_type.symbol to state that the charge given
        is the charge, and not the oxidation state.
 
-       Remove _exptl_crystal.id as it is present in multiblock dictionary.
+       Remove _exptl_crystal.id, _diffrn.id and pointers as they are
+       present in multiblock dictionary.
 ;
