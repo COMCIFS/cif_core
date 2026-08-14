@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-08-05
+    _dictionary.date              2026-08-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -8423,34 +8423,6 @@ save_reflns_shell.d_res_high
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   angstroms
-
-save_
-
-save_reflns_shell.d_res_limits
-
-    _definition.id                '_reflns_shell.d_res_limits'
-    _definition.update            2012-11-26
-    _description.text
-;
-    Resolution for the reflections in this shell stored as
-    the list of lowest and highest values. This is the
-    category key.
-;
-    _name.category_id             reflns_shell
-    _name.object_id               d_res_limits
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[2]'
-    _type.contents                Real
-    _units.code                   angstroms
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With s as reflns_shell
-
-       _reflns_shell.d_res_limits =  [ s.d_res_low, s.d_res_high ]
-;
 
 save_
 
@@ -29581,7 +29553,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-08-05
+         3.4.0                    2026-08-14
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29629,4 +29601,7 @@ save_
 
        Remove _exptl_crystal.id, _diffrn.id and pointers as they are
        present in multiblock dictionary.
+
+       Remove _reflns_shell.d_res_limits as it is a leftover artificial
+       key to the reflns_shell category with no practical use.
 ;
