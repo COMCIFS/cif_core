@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-09-07
+    _dictionary.date              2026-09-11
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -20739,13 +20739,13 @@ save_publ_requested.category
          '_publ_requested_category'
          '_publ.requested_category'
 
-    _definition.update            2012-12-13
+    _definition.update            2026-09-11
     _description.text
 ;
     The category of paper submitted. For submission to Acta
-    Crystallographica Section C or Acta Crystallographica
-    Section E, ONLY those codes indicated for use with those
-    journals should be used.
+    Crystallographica Sections C and E or to IUCrData,
+    ONLY those codes indicated for current use with those
+    journals should be used for new submissions.
 ;
     _name.category_id             publ_requested
     _name.object_id               category
@@ -20757,27 +20757,28 @@ save_publ_requested.category
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         AD     'Addenda and Errata (Acta C, Acta E).'
-         CI     'CIF-access paper - inorganic (Acta C) (no longer in use).'
-         CM     'CIF-access paper - metal-organic (Acta C) (no longer in use).'
-         CO     'CIF-access paper - organic (Acta C)  (no longer in use).'
-         EI     'Electronic submission - inorganic (Acta E).'
-         EM     'Electronic submission - metal-organic (Acta E).'
-         EO     'Electronic submission - organic (Acta E).'
-         FA     'Full article.'
-         FI     'Full submission - inorganic (Acta C).'
-         FM     'Full submission - metal-organic (Acta C).'
-         FO     'Full submission - organic (Acta C).'
-         GI     'Research communications - inorganic compounds (Acta E).'
-         GM     'Research communications - metal-organic compounds (Acta E).'
-         GO     'Research communications - organic compounds (Acta E).'
-         HI     'Data reports - inorganic compounds (Acta E).'
-         HM     'Data reports - metal-organic compounds (Acta E).'
-         HO     'Data reports - organic compounds (Acta E).'
-         QI     'Inorganic compounds (Acta E).'
-         QM     'Metal-organic compounds (Acta E).'
-         QO     'Organic compounds (Acta E).'
-         SC     'Short communication.'
+         AD      'Addenda and Errata (Acta C, Acta E).'
+         CI      'CIF-access paper - inorganic (Acta C) (legacy use).'
+         CM      'CIF-access paper - metal-organic (Acta C) (legacy use).'
+         CO      'CIF-access paper - organic (Acta C)  (legacy use).'
+         EI      'Electronic submission - inorganic (Acta E) (legacy use).'
+         EM      'Electronic submission - metal-organic (Acta E) (legacy use).'
+         EO      'Electronic submission - organic (Acta E) (legacy use).'
+         FA      'Full article (Acta C).'
+         FI      'Full submission - inorganic (Acta C) (legacy use).'
+         FM      'Full submission - metal-organic (Acta C) (legacy use).'
+         FO      'Full submission - organic (Acta C) (legacy use).'
+         GI      'Research communications - inorganic compounds (Acta E).'
+         GM      'Research communications - metal-organic compounds (Acta E).'
+         GO      'Research communications - organic compounds (Acta E).'
+         HI      'Data reports - inorganic compounds (IUCrData).'
+         HM      'Data reports - metal-organic compounds (IUCrData).'
+         HO      'Data reports - organic compounds (IUCrData).'
+         QI      'Inorganic compounds (Acta E) (legacy use).'
+         QM      'Metal-organic compounds (Acta E) (legacy use).'
+         QO      'Organic compounds (Acta E) (legacy use).'
+         SC      'Short communication.'
+         TE      'Teaching and Education.'
 
     _enumeration.default          FA
 
@@ -29627,7 +29628,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-09-07
+         3.3.0                    2026-09-11
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
@@ -29717,4 +29718,6 @@ save_
 
        Modified phone and fax definitions to support mobile numbers, and
        updated examples with valid test numbers.
+
+       Updated _publ_requested.category to lates IUCr journal requirements.
 ;
