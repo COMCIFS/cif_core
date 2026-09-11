@@ -13625,8 +13625,8 @@ save_geom_angle.value
     _definition.update            2020-03-13
     _description.text
 ;
-    Angle defined by the atoms located at atom_site_x/site_symmetry_x for
-    x = 1,2,3. The vertex atom is at site x = 2.
+    Angle defined by the sites identified by _geom_angle.id.
+    The vertex atom is that labelled by _geom_angle.atom_site_label_2.
 ;
     _name.category_id             geom_angle
     _name.object_id               value
