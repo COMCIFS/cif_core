@@ -10293,7 +10293,7 @@ save_chemical_conn_bond.type
     _description.text
 ;
     The chemical bond type associated with the connection between the two sites
-    chemical_conn_bond.atom_1 and *_2.
+    _chemical_conn_bond.atom_1 and *_2.
 ;
     _name.category_id             chemical_conn_bond
     _name.object_id               type
