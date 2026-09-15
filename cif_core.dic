@@ -621,8 +621,8 @@ save_CELL
     _definition.update            2023-03-02
     _description.text
 ;
-    The category of data items used to describe the parameters of
-    the crystal unit cell.
+    Data items in the CELL category record details about the
+    crystal unit-cell parameters.
 ;
     _name.category_id             DIFFRN
     _name.object_id               CELL
@@ -1776,7 +1776,7 @@ save_cell.special_details
     _definition.update            2012-11-22
     _description.text
 ;
-    Description of special aspects of the cell choice, noting
+    A description of special aspects of the cell choice, noting
     possible alternative settings.
 ;
     _name.category_id             cell
@@ -1978,8 +1978,8 @@ save_CELL_MEASUREMENT
     _definition.update            2022-05-25
     _description.text
 ;
-    The category of data items used to describe the measurement of
-    the cell parameters.
+    Data items in the CELL_MEASUREMENT category are used to describe the
+    measurement of the crystallographic unit-cell parameters.
 ;
     _name.category_id             CELL
     _name.object_id               CELL_MEASUREMENT
@@ -2043,7 +2043,7 @@ save_cell_measurement.pressure
     **DEPRECATED**
 
     The pressure at which the unit-cell parameters were measured
-    (not the pressure used to synthesize the sample).
+    (not the pressure at which the sample was synthesized).
     Replaced by '_diffrn.ambient_pressure'.
 ;
     _name.category_id             cell_measurement
@@ -2121,7 +2121,7 @@ save_cell_measurement.reflns_used
     _definition.update            2021-03-01
     _description.text
 ;
-    Total number of reflections used to determine the unit cell.
+    The total number of reflections used to determine the unit cell.
     The reflections may be specified as CELL_MEASUREMENT_REFLN items.
 ;
     _name.category_id             cell_measurement
@@ -2201,7 +2201,7 @@ save_cell_measurement.theta_max
     _definition.update            2012-11-22
     _description.text
 ;
-    Maximum θ scattering angle of reflections used to measure
+    The maximum θ scattering angle of reflections used to measure
     the crystal unit cell.
 ;
     _name.category_id             cell_measurement
@@ -2222,7 +2222,7 @@ save_cell_measurement.theta_min
     _definition.update            2012-11-22
     _description.text
 ;
-    Minimum θ scattering angle of reflections used to measure
+    The minimum θ scattering angle of reflections used to measure
     the crystal unit cell.
 ;
     _name.category_id             cell_measurement
@@ -2291,8 +2291,9 @@ save_CELL_MEASUREMENT_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to describe the reflection data
-    used in the measurement of the crystal unit cell.
+    Data items in the CELL_MEASUREMENT_REFLN category record
+    details about the reflections used in the determination of the
+    crystallographic cell parameters.
 ;
     _name.category_id             CELL_MEASUREMENT
     _name.object_id               CELL_MEASUREMENT_REFLN
@@ -9213,9 +9214,10 @@ save_CHEMICAL
     _definition.update            2012-11-22
     _description.text
 ;
-    The category of data items which describe the composition and
-    chemical properties of the compound under study. The formula data
-    items must be consistent with the density, unit-cell and Z values.
+    Data items in the CHEMICAL category record details about the
+    composition and chemical properties of the compound. The
+    formula data items must be consistent with those that specify the
+    density, unit-cell and Z values.
 ;
     _name.category_id             EXPTL
     _name.object_id               CHEMICAL
@@ -9229,8 +9231,8 @@ save_chemical.absolute_configuration
     _definition.update            2023-02-02
     _description.text
 ;
-    Necessary conditions for this assignment are given by H. D. Flack
-    and G. Bernardinelli (1999, 2000).
+    Necessary conditions for the assignment of a molecular absolute
+    configuration are given by H. D. Flack and G. Bernardinelli (1999, 2000).
 
     References:
          Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
@@ -9693,7 +9695,7 @@ save_chemical.name_systematic
     _definition.update            2012-11-22
     _description.text
 ;
-    IUPAC or Chemical Abstracts full name of compound.
+    IUPAC or Chemical Abstracts full name of the compound.
 ;
     _name.category_id             chemical
     _name.object_id               name_systematic
@@ -9744,7 +9746,7 @@ save_chemical.properties_biological
     _definition.update            2012-12-11
     _description.text
 ;
-    A description of the biological properties of the material.
+    A free-text description of the biological properties of the material.
 ;
     _name.category_id             chemical
     _name.object_id               properties_biological
@@ -9786,7 +9788,7 @@ save_chemical.properties_physical
     _definition.update            2012-12-11
     _description.text
 ;
-    A description of the physical properties of the material.
+    A free-text description of the physical properties of the material.
 ;
     _name.category_id             chemical
     _name.object_id               properties_physical
@@ -9988,8 +9990,9 @@ save_CHEMICAL_CONN_ATOM
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which describe the 2D chemical structure of
-    the molecular species. They allow a 2D chemical diagram to be
+    Data items in the CHEMICAL_CONN_ATOM and CHEMICAL_CONN_BOND
+    categories record details about the two-dimensional (2D) chemical
+    structure of the molecular species. They allow a 2D chemical diagram to be
     reconstructed for use in a publication or in a database search
     for structural and substructural relationships. In particular,
     the CHEMICAL_CONN_ATOM data items provide information about the
@@ -10032,8 +10035,9 @@ save_chemical_conn_atom.display_x
     _definition.update            2012-11-22
     _description.text
 ;
-    Cartesian coordinate (x) of the atom site in a chemical diagram. The
-    coordinate origin is at the lower left corner, the x axis is horizontal.
+    The 2D Cartesian x coordinate of the position of this atom in a
+    chemical diagram. The coordinate origin is at the lower left corner,
+    the x axis is horizontal.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               display_x
@@ -10053,8 +10057,9 @@ save_chemical_conn_atom.display_y
     _definition.update            2012-11-22
     _description.text
 ;
-    Cartesian coordinate (y) of the atom site in a chemical diagram. The
-    coordinate origin is at the lower left corner, the y axis is vertical.
+    The 2D Cartesian y coordinate of the position of this atom in a
+    chemical diagram. The coordinate origin is at the lower left corner,
+    the y axis is vertical.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               display_y
@@ -10074,7 +10079,7 @@ save_chemical_conn_atom.nca
     _definition.update            2021-03-01
     _description.text
 ;
-    Total number of connected atoms excluding terminal hydrogen atoms.
+    The number of connected atoms excluding terminal hydrogen atoms.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               NCA
@@ -10094,7 +10099,7 @@ save_chemical_conn_atom.nh
     _definition.update            2021-03-01
     _description.text
 ;
-    Total number of hydrogen atoms attached to this atom,
+    The total number of hydrogen atoms attached to this atom,
     regardless of whether they are included in the refinement or
     the ATOM_SITE list. This number will be the same as
     _atom_site.attached_hydrogens only if none of the hydrogen
@@ -10138,7 +10143,9 @@ save_chemical_conn_atom.type_symbol
     _definition.update            2021-10-27
     _description.text
 ;
-    A code identifying the atom type.
+    A code identifying the atom type. This code must match an
+    _atom_type.symbol code in the ATOM_TYPE list or be a
+    recognizable element symbol.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               type_symbol
@@ -10158,8 +10165,8 @@ save_CHEMICAL_CONN_BOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the connections between
-    the atom sites in the CHEMICAL_CONN_ATOM list and the nature
+    Data items in the CHEMICAL_CONN_BOND category specify the connections
+    between the atom sites in the CHEMICAL_CONN_ATOM list and the nature
     of the chemical bond between these atoms. These are details about
     the two-dimensional (2D) chemical structure of the molecular species.
     They allow a 2D chemical diagram to be reconstructed for use in a
@@ -10188,7 +10195,10 @@ save_chemical_conn_bond.atom_1
     _definition.update            2021-03-01
     _description.text
 ;
-    Index id of first atom in a bond connecting two atom sites.
+    The index identifier of the first atom in a bond connecting two atom sites.
+    These identifiers must match with chemical sequence numbers specified as
+    _chemical_conn_atom.number values. These link the
+    bond connection to the chemical numbering and atom sites.
 ;
     _name.category_id             chemical_conn_bond
     _name.object_id               atom_1
@@ -10214,7 +10224,10 @@ save_chemical_conn_bond.atom_2
     _definition.update            2021-03-01
     _description.text
 ;
-    Index id of second atom in a bond connecting two atom sites.
+    The index identifier of the second atom in a bond connecting two atom sites.
+    These identifiers must match with chemical sequence numbers specified as
+    _chemical_conn_atom.number values. These link the
+    bond connection to the chemical numbering and atom sites.
 ;
     _name.category_id             chemical_conn_bond
     _name.object_id               atom_2
@@ -10279,7 +10292,8 @@ save_chemical_conn_bond.type
     _definition.update            2012-11-22
     _description.text
 ;
-    Code for the chemical bond type.
+    The chemical bond type associated with the connection between the two sites
+    chemical_conn_bond.atom_1 and *_2.
 ;
     _name.category_id             chemical_conn_bond
     _name.object_id               type
@@ -10310,8 +10324,8 @@ save_CHEMICAL_FORMULA
     _definition.update            2023-01-13
     _description.text
 ;
-    The category of data items which specify the composition and chemical
-    properties of the compound. The formula data items must agree
+    Data items in the CHEMICAL_FORMULA category specify the composition and
+    chemical properties of the compound. The formula data items must agree
     with those that specify the density, unit-cell and Z values.
 
     The following rules apply to the construction of the data items
@@ -10322,22 +10336,22 @@ save_CHEMICAL_FORMULA
     moiety, but different requirements apply to the way that moieties
     are connected (see _chemical_formula.moiety).
 
-    1. Only recognized element symbols may be used.
+    (1) Only recognized element symbols may be used.
 
-    2. Each element symbol is followed by a 'count' number. A count of
+    (2) Each element symbol is followed by a 'count' number. A count of
        '1' may be omitted.
 
-    3. A space or parenthesis must separate each cluster of (element
+    (3) A space or parenthesis must separate each cluster of (element
        symbol + count).
 
-    4. Where a group of elements is enclosed in parentheses, the
+    (4) Where a group of elements is enclosed in parentheses, the
        multiplier for the group must follow the closing parentheses.
        That is, all element and group multipliers are assumed to be
        printed as subscripted numbers. [An exception to this rule
        exists for *.moiety formulae where pre- and post-multipliers
        are permitted for molecular units].
 
-    5. Unless the elements are ordered in a manner that corresponds to
+    (5) Unless the elements are ordered in a manner that corresponds to
        their chemical structure, as in _chemical_formula.structural,
        the order of the elements within any group or moiety
        depends on whether or not carbon is present. If carbon is
@@ -10425,12 +10439,12 @@ save_chemical_formula.moiety
     separate moiety. See the CHEMICAL_FORMULA category description
     for rules for writing chemical formulae. In addition to the
     general formulae requirements, the following rules apply:
-       1. Moieties are separated by commas ','.
-       2. The order of elements within a moiety follows general rule
-          5 in CHEMICAL_FORMULA.
-       3. Parentheses are not used within moieties but may surround
+       (1) Moieties are separated by commas ','.
+       (2) The order of elements within a moiety follows general rule
+          (5) in CHEMICAL_FORMULA.
+       (3) Parentheses are not used within moieties but may surround
           a moiety. Parentheses may not be nested.
-       4. Charges should be placed at the end of the moiety. The
+       (4) Charges should be placed at the end of the moiety. The
           charge '+' or '-' may be preceded by a numerical multiplier
           and should be separated from the last (element symbol +
           count) by a space. Pre- or post-multipliers may be used for
@@ -10490,9 +10504,11 @@ save_chemical_formula.sum
     _definition.update            2012-11-22
     _description.text
 ;
-    Chemical formulae in which all discrete bonded residues and ions are
+    See the CHEMICAL_FORMULA category description for the rules for writing
+    chemical formulae in which all discrete bonded residues and ions are
     summed over the constituent elements, following the ordering given
-    in rule 5 of the category description. Parentheses are not normally used.
+    in general rule (5) of the category description. Parentheses are not
+    normally used.
 ;
     _name.category_id             chemical_formula
     _name.object_id               sum
@@ -15760,7 +15776,7 @@ save_AUDIT
     _definition.update            2012-05-07
     _description.text
 ;
-    The category of data items used to record details about the
+    Data items in the AUDIT category record details about the
     creation and subsequent updating of the data block.
 ;
     _name.category_id             PUBLICATION
@@ -15780,7 +15796,7 @@ save_audit.block_code
     _definition.update            2019-01-09
     _description.text
 ;
-    A unique block code identifier for each revision.
+    A code intended to identify uniquely the current data block.
 ;
     _name.category_id             audit
     _name.object_id               block_code
@@ -15835,7 +15851,7 @@ save_audit.creation_date
     _definition.update            2019-03-26
     _description.text
 ;
-    The timestamp of the data revision.
+    The date on which the data block was created.
 ;
     _name.category_id             audit
     _name.object_id               creation_date
@@ -15859,7 +15875,7 @@ save_audit.creation_method
     _definition.update            2012-11-29
     _description.text
 ;
-    A description of how the revision was applied to the data.
+    A description of how data were entered into the data block.
 ;
     _name.category_id             audit
     _name.object_id               creation_method
@@ -15937,7 +15953,9 @@ save_audit.update_record
     _definition.update            2021-08-18
     _description.text
 ;
-    A description of the revision applied to the data.
+    A record of any changes to the data block. The preferred update
+    format is a date (yyyy-mm-dd) followed by a description of the
+    changes. The latest update entry is added to the bottom of this record.
 ;
     _name.category_id             audit
     _name.object_id               update_record
@@ -15945,7 +15963,7 @@ save_audit.update_record
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
-    _description_example.case     'Updated by Co-editor'
+    _description_example.case     '1991-04-15 Updated by Co-editor'
 
 save_
 
@@ -15957,7 +15975,8 @@ save_AUDIT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used for author(s) details.
+    Data items in the AUDIT_AUTHOR category record details about
+    the author(s) of the data block.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_AUTHOR
@@ -16156,7 +16175,7 @@ save_AUDIT_AUTHOR_ROLE
     _definition.update            2020-08-06
     _description.text
 ;
-    The category of data items used to describe the role that
+    Data items in the AUDIT_AUTHOR_ROLE category describe the role that
     authors took in the production of the data set.
 ;
     _name.category_id             AUDIT
@@ -16277,8 +16296,9 @@ save_AUDIT_CONFORM
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to describe the dictionary versions
-    against which data names in the current data block are conformant.
+    Data items in the AUDIT_CONFORM category describe the
+    dictionary versions against which the data names appearing in
+    the current data block are conformant.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_CONFORM
@@ -16324,8 +16344,8 @@ save_audit_conform.dict_location
     _definition.update            2012-11-29
     _description.text
 ;
-    File name or uniform resource locator (URL) where the
-    conformant data dictionary resides.
+    A file name or uniform resource locator (URL) for the
+    dictionary to which the current data block conforms.
 ;
     _name.category_id             audit_conform
     _name.object_id               dict_location
@@ -16343,7 +16363,7 @@ save_audit_conform.dict_name
     _definition.update            2012-11-29
     _description.text
 ;
-    Name identifying highest-level data dictionary defining
+    The string identifying the highest-level dictionary defining
     data names used in this file.
 ;
     _name.category_id             audit_conform
@@ -16362,8 +16382,8 @@ save_audit_conform.dict_version
     _definition.update            2021-11-04
     _description.text
 ;
-    Code for the version of the data dictionary defining data names
-    used in this file.
+    The version string of the dictionary to which the current data
+    block conforms.
 ;
     _name.category_id             audit_conform
     _name.object_id               dict_version
@@ -16382,9 +16402,9 @@ save_AUDIT_CONTACT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used for details of the author(s) of the
-    data set to whom correspondence about crystallographic details
-    should be addressed.
+    Data items in the AUDIT_CONTACT_AUTHOR category record details
+    of the author(s) of the data set to whom correspondence about
+    crystallographic details should be addressed.
     This audit contact author list may include authors from
     the PUBL_CONTACT_AUTHOR category, i.e. author(s) submitting
     and responsible for the manuscript associated with the data set.
@@ -16637,8 +16657,9 @@ save_AUDIT_DATASET
     _definition.update            2025-04-14
     _description.text
 ;
-    The category of data items used for linking data blocks to aid in grouping
-    blocks which contain information that is interrelated.
+    The AUDIT_DATASET category contains data items used for linking data
+    blocks to aid in grouping blocks which contain information that is
+    interrelated.
 
     Data blocks which should be interpreted together are identified with the
     same unique _audit_dataset.id.
@@ -16793,7 +16814,7 @@ save_AUDIT_LINK
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to record details about the
+    Data items in the AUDIT_LINK category record details about the
     relationships between data blocks in the current CIF.
 ;
     _name.category_id             AUDIT
@@ -16830,7 +16851,7 @@ save_audit_link.block_description
     _definition.update            2012-11-29
     _description.text
 ;
-    Description of the relationship of the referenced data block
+    A textual description of the relationship of the referenced data block
     to the current one.
 ;
     _name.category_id             audit_link
@@ -17107,7 +17128,7 @@ save_citation.abstract
     _definition.update            2012-12-11
     _description.text
 ;
-    Abstract for the citation. This is used most when the
+    Abstract for the cited work. This is used most when the
     citation is extracted from a bibliographic database that
     contains full text or abstract information.
 ;
@@ -17127,7 +17148,8 @@ save_citation.abstract_id_cas
     _definition.update            2012-12-11
     _description.text
 ;
-    Chemical Abstracts Service (CAS) abstract identifier.
+    The Chemical Abstracts Service (CAS) abstract identifier;
+    relevant for journal articles.
 ;
     _name.category_id             citation
     _name.object_id               abstract_id_CAS
@@ -17145,7 +17167,8 @@ save_citation.book_id_isbn
     _definition.update            2023-02-02
     _description.text
 ;
-    International Standard Book Number (ISBN) for book chapter cited.
+    The International Standard Book Number (ISBN) code assigned to
+    the book cited; relevant for books or book chapters.
 ;
     _name.category_id             citation
     _name.object_id               book_id_ISBN
@@ -17163,7 +17186,7 @@ save_citation.book_publisher
     _definition.update            2012-12-11
     _description.text
 ;
-    Publisher of the citation; relevant for book chapters.
+    The name of the publisher of the cited work; relevant for book chapters.
 ;
     _name.category_id             citation
     _name.object_id               book_publisher
@@ -17181,7 +17204,7 @@ save_citation.book_publisher_city
     _definition.update            2012-12-11
     _description.text
 ;
-    Location of publisher of the citation; relevant for book chapters.
+    The location of the publisher of the cited work; relevant for book chapters.
 ;
     _name.category_id             citation
     _name.object_id               book_publisher_city
@@ -17199,7 +17222,8 @@ save_citation.book_title
     _definition.update            2012-12-11
     _description.text
 ;
-    Title of the book in which the citation appeared.
+    The title of the book in which the cited work appeared; relevant
+    for books or book chapters.
 ;
     _name.category_id             citation
     _name.object_id               book_title
@@ -17217,7 +17241,7 @@ save_citation.coordinate_linkage
     _definition.update            2012-12-11
     _description.text
 ;
-    Code specifies whether this citation is concerned with precisely
+    A code that specifies whether this citation is concerned with precisely
     the set of coordinates given in the data block. If, for instance,
     the publication described the same structure, but the coordinates
     had undergone further refinement prior to creation of the data
@@ -17247,7 +17271,7 @@ save_citation.country
     _definition.update            2012-12-11
     _description.text
 ;
-    Country of publication; for journal articles and book chapters.
+    The country of publication; relevant for books and book chapters.
 ;
     _name.category_id             citation
     _name.object_id               country
@@ -17266,7 +17290,7 @@ save_citation.database_id_csd
     _description.text
 ;
     Identifier ('refcode') of the database record in the Cambridge
-    Structural Database containing details of the cited structure.
+    Structural Database that contains details of the cited structure.
 ;
     _name.category_id             citation
     _name.object_id               database_id_CSD
@@ -17331,7 +17355,8 @@ save_citation.id
     _definition.update            2025-07-31
     _description.text
 ;
-    Unique identifier to the CITATION list. A value of 'primary'
+    The value of citation_id must uniquely identify a record in
+    the CITATION list. A value of 'primary'
     should be used to indicate the citation that the author(s)
     consider to be the most pertinent to the contents of the data
     block. Note that this item need not be a number; it can be
@@ -17409,7 +17434,7 @@ save_citation.journal_id_astm
     _definition.update            2012-12-11
     _description.text
 ;
-    American Society for the Testing of Materials (ASTM) code assigned
+    The American Society for Testing and Materials (ASTM) code assigned
     to the journal cited (also referred to as the CODEN designator of
     the Chemical Abstracts Service); relevant for journal articles.
 ;
@@ -17451,7 +17476,7 @@ save_citation.journal_id_issn
     _description.text
 ;
     The International Standard Serial Number (ISSN) code assigned to
-    the journal cited. Relevant for journal articles.
+    the journal cited; relevant for journal articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_id_ISSN
@@ -17469,7 +17494,7 @@ save_citation.journal_issue
     _definition.update            2021-11-12
     _description.text
 ;
-    Issue identifier of the journal cited; relevant for articles.
+    The issue identifier of the journal cited; relevant for journal articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_issue
@@ -17492,7 +17517,7 @@ save_citation.journal_volume
     _definition.update            2021-03-01
     _description.text
 ;
-    Volume number of the journal cited; relevant for articles.
+    The volume number of the journal cited; relevant for journal articles.
 ;
     _name.category_id             citation
     _name.object_id               journal_volume
@@ -17532,7 +17557,8 @@ save_citation.page_first
     _definition.update            2012-12-11
     _description.text
 ;
-    First page of citation; relevant for articles and book chapters.
+    The first page of the cited work; relevant for journal articles, books
+    and book chapters.
 ;
     _name.category_id             citation
     _name.object_id               page_first
@@ -17550,7 +17576,8 @@ save_citation.page_last
     _definition.update            2012-12-11
     _description.text
 ;
-    Last page of citation; relevant for articles and book chapters.
+    The last page of the cited work; relevant for journal articles, books
+    and book chapters.
 ;
     _name.category_id             citation
     _name.object_id               page_last
@@ -17595,8 +17622,8 @@ save_citation.special_details
     _definition.update            2012-12-11
     _description.text
 ;
-    Special aspects of the relationship of the data block contents
-    to the literature item cited.
+    A description of special aspects of the relationship
+    of the contents of the data block to the literature item cited.
 ;
     _name.category_id             citation
     _name.object_id               special_details
@@ -17614,7 +17641,8 @@ save_citation.title
     _definition.update            2012-12-11
     _description.text
 ;
-    Title of citation; relevant for articles and book chapters.
+    The title of the cited work; relevant for journal articles, books
+    and book chapters.
 ;
     _name.category_id             citation
     _name.object_id               title
@@ -17653,7 +17681,8 @@ save_citation.year
     _definition.update            2021-11-14
     _description.text
 ;
-    Year of citation; relevant for articles and book chapters.
+    The year of the cited work; relevant for journal articles, books
+    and book chapters.
 ;
     _name.category_id             citation
     _name.object_id               year
@@ -17673,7 +17702,9 @@ save_CITATION_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of items describing citation author(s) details.
+    Data items in the CITATION_AUTHOR category record details
+    about the authors associated with the citations in the
+    CITATION list.
 ;
     _name.category_id             PUBLICATION
     _name.object_id               CITATION_AUTHOR
@@ -17692,8 +17723,8 @@ save_citation_author.citation_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifier in the CITATION data list. The value must match
-    an identifier specified in the CITATION list.
+    The value of _citation_author.citation_id must match an identifier
+    specified by _citation.id in the CITATION list.
 ;
     _name.category_id             citation_author
     _name.object_id               citation_id
@@ -17712,7 +17743,8 @@ save_citation_author.name
     _definition.update            2023-01-10
     _description.text
 ;
-    Name of citation author; relevant for articles and book chapters.
+    The name of an author of the cited work; relevant for journal articles,
+    books and book chapters.
     The family name(s), followed by a comma and including any
     dynastic components, precedes the first name(s) or initial(s).
     For authors with only one name, provide the full name without
@@ -17745,8 +17777,8 @@ save_citation_author.ordinal
     _definition.update            2021-03-01
     _description.text
 ;
-    Ordinal code specifies the order of the author's name in the list
-    of authors of the citation.
+    Ordinal code that specifies the order of the author's name in the list
+    of authors of the cited work.
 ;
     _name.category_id             citation_author
     _name.object_id               ordinal
@@ -17767,7 +17799,9 @@ save_CITATION_EDITOR
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of items describing citation editor(s) details.
+    Data items in the CITATION_EDITOR category record details
+    about an editor associated with the book or book chapter
+    citations in the CITATION list.
 ;
     _name.category_id             PUBLICATION
     _name.object_id               CITATION_EDITOR
@@ -17786,7 +17820,7 @@ save_citation_editor.citation_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifier in the CITATION list. The value must match an
+    The value of _citation_editor.citation_id must match an
     identifier specified by _citation.id in the CITATION list.
 ;
     _name.category_id             citation_editor
@@ -17811,9 +17845,10 @@ save_citation_editor.name
     _definition.update            2012-12-11
     _description.text
 ;
-    Name of citation editor; relevant for book chapters.
-    The family name(s), followed by a comma and including any
-    dynastic components, precedes the first name(s) or initial(s).
+    The name of an editor of the cited work; relevant for books and book
+    chapters. The family name(s), followed by a comma and including any
+    dynastic components, precedes the first name(s) or initial(s). For authors
+    with only one name, provide the full name without abbreviation.
 ;
     _name.category_id             citation_editor
     _name.object_id               name
@@ -17841,8 +17876,8 @@ save_citation_editor.ordinal
     _definition.update            2021-03-01
     _description.text
 ;
-    This data item defines the order of the editor's name in the
-    list of editors of a citation.
+    Ordinal code that specifies the order of the editor's name in the
+    list of editors of a cited work.
 ;
     _name.category_id             citation_editor
     _name.object_id               ordinal
@@ -17863,7 +17898,7 @@ save_COMPUTING
     _definition.update            2012-05-07
     _description.text
 ;
-    The category of data items used to record details of the
+    Data items in the COMPUTING category record details about the
     computer programs used in the crystal structure analysis.
 ;
     _name.category_id             PUBLICATION
@@ -21266,7 +21301,7 @@ save_ATOM
     _definition.update            2012-11-20
     _description.text
 ;
-    The category of data items used to describe atomic information
+    The parent category of data items used to describe atomic information
     used in crystallographic structure studies.
 ;
     _name.category_id             STRUCTURE
@@ -21282,7 +21317,7 @@ save_ATOM_ANALYTICAL
     _definition.update            2022-11-19
     _description.text
 ;
-    The category of data items used to describe elemental
+    Data items in the ATOM_ANALYTICAL category describe elemental
     composition information used in crystallographic
     structure studies.
 ;
@@ -21504,7 +21539,7 @@ save_ATOM_ANALYTICAL_MASS_LOSS
     _definition.update            2022-11-21
     _description.text
 ;
-    The category of data items used to describe information
+    Data items in the ATOM_ANALYTICAL_MASS_LOSS category provide information
     pertaining to mass loss during specimen preparation for
     the purposes of determining elemental composition
     information for use in crystallographic structure studies.
@@ -21702,7 +21737,7 @@ save_ATOM_ANALYTICAL_SOURCE
     _definition.update            2022-11-19
     _description.text
 ;
-    The category of data items used to describe the source
+    Data items in the ATOM_ANALYTICAL_SOURCE category describe the source
     of elemental composition information used in crystallographic
     structure studies.
 ;
@@ -21841,8 +21876,9 @@ save_ATOM_SCAT_VERSUS_STOL
     _definition.update            2023-07-05
     _description.text
 ;
-    The category of data items used to list atomic scattering factor values for
-    use in crystallographic structure studies.
+    Data items in the ATOM_SCAT_VERSUS_STOL category are used to list
+    atomic scattering factor values for use in crystallographic structure
+    studies.
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_SCAT_VERSUS_STOL
@@ -21967,8 +22003,10 @@ save_ATOM_SITE
     _definition.update            2023-02-03
     _description.text
 ;
-    The category of data items used to describe atom site information
-    used in crystallographic structure studies.
+    Data items in the ATOM_SITE category record details about
+    the atom sites in a crystal structure, such as the positional
+    coordinates, atomic displacement parameters, and magnetic moments
+    and directions.
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
@@ -22049,7 +22087,8 @@ save_atom_site.adp_type
     _definition.update            2024-02-14
     _description.text
 ;
-    Code for type of atomic displacement parameters used for the site.
+    A standard code used to describe the type of atomic displacement
+    parameters used for the site.
 ;
     _name.category_id             atom_site
     _name.object_id               ADP_type
@@ -22079,9 +22118,9 @@ save_atom_site.attached_hydrogens
     _definition.update            2021-03-01
     _description.text
 ;
-    Number of hydrogen atoms attached to the atom at this site
-    excluding any H atoms for which coordinates (measured or calculated)
-    are given.
+    The number of hydrogen atoms attached to the atom at this site
+    excluding any hydrogen atoms for which coordinates (measured or
+    calculated) are given.
 ;
     _name.category_id             atom_site
     _name.object_id               attached_hydrogens
@@ -22163,7 +22202,7 @@ save_atom_site.b_iso_or_equiv
 ;
     Isotropic atomic displacement parameter, or equivalent isotropic
     atomic displacement parameter, B(equiv), in angstroms squared,
-    calculated from anisotropic atomic displacement parameters.
+    calculated from anisotropic atomic displacement components.
 
         B(equiv) = (1/3) sum~i~[sum~j~(B^ij^ a*~i~ a*~j~ a~i~.a~j~)]
 
@@ -22467,8 +22506,8 @@ save_atom_site.disorder_assembly
     _definition.update            2023-01-29
     _description.text
 ;
-    A code which identifies a cluster of atoms that show long range disorder
-    but are locally ordered. Within each such cluster of atoms,
+    A code which identifies a cluster of atoms that show long-range positional
+    disorder but are locally ordered. Within each such cluster of atoms,
     _atom_site.disorder_group is used to identify the sites that are
     simultaneously occupied. This field is only needed if there is more than
     one cluster of disordered atoms showing independent local order.
@@ -22510,17 +22549,19 @@ save_atom_site.disorder_group
     _definition.update            2023-01-29
     _description.text
 ;
-    A code that identifies a group of disordered atom sites that are locally
-    simultaneously occupied. Atoms that are positionally disordered over two or
-    more sites (e.g. the H atoms of a methyl group that exists in two
-    orientations) should be assigned to two or more groups. Similarly, atoms
-    that describe a specific alternative composition of a compositionally
-    disordered site should be assigned to a distinct disorder group (e.g. a site
-    that is partially occupied by Mg and Mn atoms should be described by
-    assigning the Mg atom to one group and the Mn atom to another group). Sites
-    belonging to the same group are simultaneously occupied, but those belonging
-    to different groups are not. A minus prefix (e.g. "-1") is used to indicate
-    sites disordered about a special position.
+    A code which identifies a group of positionally disordered atom sites
+    that are locally simultaneously occupied. Atoms that are
+    positionally disordered over two or more sites (e.g. the hydrogen
+    atoms of a methyl group that exists in two orientations) should be
+    assigned to two or more groups. Similarly, atoms that describe a
+    specific alternative composition of a compositionally disordered
+    site should be assigned to a distinct disorder group (e.g. a site
+    that is partially occupied by Mg and Mn atoms should be described
+    by assigning the Mg atom to one group and the Mn atom to another
+    group). Sites belonging to the same group are simultaneously
+    occupied, but those belonging to different groups are not. A minus
+    prefix (e.g. "-1") is used to indicate sites disordered about a
+    special position.
 ;
     _name.category_id             atom_site
     _name.object_id               disorder_group
@@ -22879,6 +22920,8 @@ save_atom_site.refinement_flags
     _definition.update            2021-09-24
     _description.text
 ;
+    **DEPRECATED**
+
     A concatenated series of single-letter codes which indicate the
     refinement restraints or constraints applied to this site. This
     item should not be used. It has been replaced by
@@ -23270,8 +23313,9 @@ save_ATOM_SITE_ANISO
     _definition.update            2023-01-16
     _description.text
 ;
-    The category of data items used to describe the anisotropic atomic
-    displacement parameters of the atomic sites in a crystal structure.
+    Data items in the ATOM_SITE_ANISO category are used to describe the
+    anisotropic atomic displacement parameters of the atomic sites in a
+    crystal structure.
 ;
     _name.category_id             ATOM_SITE
     _name.object_id               ATOM_SITE_ANISO
@@ -23943,7 +23987,7 @@ save_atom_site_aniso.type_symbol
     _description.text
 ;
     This _atom_type.symbol code links the anisotropic atomic displacement
-    parameters to the atom type data associated with this site and must match
+    parameters to the atom-type data associated with this site and must match
     one of the _atom_type.symbol codes in this list.
 ;
     _name.category_id             atom_site_aniso
@@ -24179,7 +24223,7 @@ save_ATOM_SITES
     _definition.update            2012-11-20
     _description.text
 ;
-    The category of data items used to describe information which applies
+    Data items in the ATOM_SITES category describe information which applies
     to all atom sites in a crystal structure.
 ;
     _name.category_id             ATOM
@@ -24432,7 +24476,8 @@ save_atom_sites.special_details
     _definition.update            2012-11-20
     _description.text
 ;
-    Information about atomic coordinates not coded elsewhere in the CIF.
+    Additional information about the atomic coordinates not coded elsewhere
+    in the CIF.
 ;
     _name.category_id             atom_sites
     _name.object_id               special_details
@@ -24472,7 +24517,7 @@ save_atom_sites_cartn_transform.axes
     _definition.update            2012-12-11
     _description.text
 ;
-    Description of the relative alignment of the crystal cell axes to the
+    A description of the relative alignment of the crystal cell axes to the
     Cartesian orthogonal axes as applied in the transformation matrix
     _atom_sites_Cartn_transform.matrix.
 ;
@@ -25617,8 +25662,8 @@ save_ATOM_TYPE
     _definition.update            2025-07-30
     _description.text
 ;
-    The category of data items which describe atomic type information
-    used in crystallographic structure studies.
+    Data items in the ATOM_TYPE category record details about the
+    properties of the atoms that occupy the atom sites.
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_TYPE
@@ -25985,7 +26030,7 @@ save_ATOM_TYPE_SCAT
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to describe atomic scattering
+    Data items in the ATOM_TYPE_SCAT category describe atomic scattering
     information used in crystallographic structure studies.
 ;
     _name.category_id             ATOM_TYPE
@@ -26251,8 +26296,9 @@ save_atom_type_scat.dispersion_imag
     _definition.update            2021-09-24
     _description.text
 ;
-    The imaginary component of the anomalous dispersion scattering factors
-    for this atom type and radiation by _diffrn_radiation_wavelength.value
+    The imaginary component of the anomalous-dispersion scattering factor
+    for this atom type and the radiation specified by
+    _diffrn_radiation_wavelength.value
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag
@@ -26280,7 +26326,7 @@ save_atom_type_scat.dispersion_imag_cu
     _definition.update            2026-04-20
     _description.text
 ;
-    The imaginary component of the anomalous dispersion scattering factors
+    The imaginary component of the anomalous-dispersion scattering factor
     for this atom type and Cu Kα radiation.
 ;
     _name.category_id             atom_type_scat
@@ -26302,7 +26348,7 @@ save_atom_type_scat.dispersion_imag_mo
     _definition.update            2026-04-20
     _description.text
 ;
-    The imaginary component of the anomalous dispersion scattering factors
+    The imaginary component of the anomalous-dispersion scattering factor
     for this atom type and Mo Kα radiation.
 ;
     _name.category_id             atom_type_scat
@@ -26330,8 +26376,9 @@ save_atom_type_scat.dispersion_real
     _definition.update            2012-11-20
     _description.text
 ;
-    The real component of the anomalous dispersion scattering factors
-    for this atom type and radiation by _diffrn_radiation_wavelength.value
+    The real component of the anomalous-dispersion scattering factor
+    for this atom type and the radiation specified by
+    _diffrn_radiation_wavelength.value
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real
@@ -26359,7 +26406,7 @@ save_atom_type_scat.dispersion_real_cu
     _definition.update            2026-04-20
     _description.text
 ;
-    The real component of the anomalous dispersion scattering factors
+    The real component of the anomalous-dispersion scattering factor
     for this atom type and Cu Kα radiation.
 ;
     _name.category_id             atom_type_scat
@@ -26381,7 +26428,7 @@ save_atom_type_scat.dispersion_real_mo
     _definition.update            2026-04-20
     _description.text
 ;
-    The real component of the anomalous dispersion scattering factors
+    The real component of the anomalous-dispersion scattering factor
     for this atom type and Mo Kα radiation.
 ;
     _name.category_id             atom_type_scat
@@ -26409,7 +26456,7 @@ save_atom_type_scat.dispersion_source
     _definition.update            2012-11-20
     _description.text
 ;
-    Reference to source of real and imaginary dispersion
+    Reference to the source of real and imaginary dispersion
     corrections for scattering factors used for this atom type.
 ;
     _name.category_id             atom_type_scat
@@ -26823,7 +26870,8 @@ save_atom_type_scat.source
     _definition.update            2012-11-20
     _description.text
 ;
-    Reference to source of scattering factors used for this atom type.
+    Reference to the source of scattering factors or scattering lengths used
+    for this atom type.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               source
@@ -26880,7 +26928,7 @@ save_atom_type_scat.versus_stol_list
     used instead of this item.
 
     A table of scattering factors as a function of (sin θ)/λ (sin theta over
-    lambda, stol). This table should be well-commented to indicate the items
+    lambda, stol). This table should be well commented to indicate the items
     present. Regularly formatted lists are strongly recommended.
 ;
     _name.category_id             atom_type_scat
