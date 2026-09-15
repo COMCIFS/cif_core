@@ -17355,7 +17355,7 @@ save_citation.id
     _definition.update            2025-07-31
     _description.text
 ;
-    The value of citation_id must uniquely identify a record in
+    The value of _citation.id must uniquely identify a record in
     the CITATION list. A value of 'primary'
     should be used to indicate the citation that the author(s)
     consider to be the most pertinent to the contents of the data
