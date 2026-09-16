@@ -14075,7 +14075,7 @@ save_geom_contact.distance
          '_geom_contact_distance'
          '_geom_contact.dist'
 
-    _definition.update            2019-07-25
+    _definition.update            2026-09-17
     _description.text
 ;
     Intermolecular distance between the atomic sites identified
@@ -14096,8 +14096,8 @@ save_geom_contact.distance
 
     xc = List()
 
-    For [label,symop] in  [[c.atom_site_label_1,c.site_symmetry_1,
-                            c.atom_site_label_2,c.site_symmetry_2]] {
+    For [label,symop] in  [[ c.atom_site_label_1, c.site_symmetry_1 ],
+                           [ c.atom_site_label_2, c.site_symmetry_2 ]] {
 
         xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
 
