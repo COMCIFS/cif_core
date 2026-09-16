@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-09-11
+    _dictionary.date              2026-09-17
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -4409,7 +4409,7 @@ save_
 save_diffrn_refln.hkl
 
     _definition.id                '_diffrn_refln.hkl'
-    _definition.update            2021-03-01
+    _definition.update            2026-09-17
     _description.text
 ;
     Miller indices of a measured reflection. These need not match the
@@ -4429,7 +4429,7 @@ save_diffrn_refln.hkl
 ;
     With a as diffrn_refln
 
-          _diffrn_refln.hkl =   [a.index_h, a.index_h, a.index_l]
+          _diffrn_refln.hkl =   [a.index_h, a.index_k, a.index_l]
 ;
 
 save_
@@ -6401,7 +6401,7 @@ save_
 save_diffrn_standard_refln.hkl
 
     _definition.id                '_diffrn_standard_refln.hkl'
-    _definition.update            2021-03-01
+    _definition.update            2026-09-17
     _description.text
 ;
     Miller indices of a standard reflection.
@@ -6419,7 +6419,7 @@ save_diffrn_standard_refln.hkl
 ;
     With d as diffrn_standard_refln
 
-     _diffrn_standard_refln.hkl =  [d.index_h, d.index_h, d.index_l]
+     _diffrn_standard_refln.hkl =  [d.index_h, d.index_k, d.index_l]
 ;
 
 save_
@@ -11823,7 +11823,7 @@ save_
 save_exptl_crystal_face.hkl
 
     _definition.id                '_exptl_crystal_face.hkl'
-    _definition.update            2021-03-01
+    _definition.update            2026-09-17
     _description.text
 ;
     Miller indices of the crystal face.
@@ -11841,7 +11841,7 @@ save_exptl_crystal_face.hkl
 ;
     With f as exptl_crystal_face
 
-     _exptl_crystal_face.hkl = [f.index_h, f.index_h, f.index_l]
+     _exptl_crystal_face.hkl = [f.index_h, f.index_k, f.index_l]
 ;
 
 save_
@@ -14075,7 +14075,7 @@ save_geom_contact.distance
          '_geom_contact_distance'
          '_geom_contact.dist'
 
-    _definition.update            2019-07-25
+    _definition.update            2026-09-17
     _description.text
 ;
     Intermolecular distance between the atomic sites identified
@@ -14096,8 +14096,8 @@ save_geom_contact.distance
 
     xc = List()
 
-    For [label,symop] in  [[c.atom_site_label_1,c.site_symmetry_1,
-                            c.atom_site_label_2,c.site_symmetry_2]] {
+    For [label,symop] in  [[ c.atom_site_label_1, c.site_symmetry_1 ],
+                           [ c.atom_site_label_2, c.site_symmetry_2 ]] {
 
         xf   =   SymEquiv(symop, _atom_site[label].fract_xyz)
 
@@ -29676,7 +29676,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-09-11
+         3.3.0                    2026-09-17
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
