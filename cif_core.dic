@@ -64,7 +64,8 @@ save_DIFFRN
     _definition.update            2022-05-09
     _description.text
 ;
-    The category of data items used to describe the diffraction experiment.
+    Data items in the DIFFRN category record details about the
+    intensity measurements.
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN
@@ -79,7 +80,7 @@ save_diffrn.ambient_environment
     _definition.update            2012-11-26
     _description.text
 ;
-    The gas or liquid environment of the crystal sample, if not air.
+    The gas or liquid surrounding the sample, if not air.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_environment
@@ -103,7 +104,7 @@ save_diffrn.ambient_pressure
     _definition.update            2023-01-13
     _description.text
 ;
-    Mean hydrostatic pressure at which intensities were measured.
+    The mean hydrostatic pressure at which intensities were measured.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_pressure
@@ -146,8 +147,9 @@ save_diffrn.ambient_pressure_gt
     _definition.update            2012-12-13
     _description.text
 ;
-    Mean hydrostatic pressure above which intensities were measured.
-    These items allow for a pressure range to be given.
+    The mean hydrostatic pressure above which intensities were measured.
+    Use with _diffrn.ambient_pressure_lt allows for a pressure range to
+    be given.
     _diffrn.ambient_pressure should be used in preference to this
     item when possible.
 ;
@@ -169,8 +171,9 @@ save_diffrn.ambient_pressure_lt
     _definition.update            2012-12-13
     _description.text
 ;
-    Mean hydrostatic pressure below which intensities were measured.
-    These items allow for a pressure range to be given.
+    The mean hydrostatic pressure below which intensities were measured.
+    Use with _diffrn.ambient_pressure_gt allows for a pressure range to
+    be given.
     _diffrn.ambient_pressure should be used in preference to this
     item when possible.
 ;
@@ -198,7 +201,7 @@ save_diffrn.ambient_temperature
     _definition.update            2012-11-26
     _description.text
 ;
-    Mean temperature at which intensities were measured.
+    The mean temperature at which intensities were measured.
 ;
     _name.category_id             diffrn
     _name.object_id               ambient_temperature
@@ -272,8 +275,9 @@ save_diffrn.ambient_temperature_gt
     _definition.update            2012-12-13
     _description.text
 ;
-    Mean temperature above which intensities were measured.
-    These items allow for a temperature range to be given.
+    The mean temperature above which intensities were measured.
+    Use with _diffrn.ambient_temperature_lt allows for a temperature
+    range to be given.
     _diffrn.ambient_temperature should be used in preference to
     this item when possible.
 ;
@@ -301,8 +305,9 @@ save_diffrn.ambient_temperature_lt
     _definition.update            2012-12-13
     _description.text
 ;
-    Mean temperature below which intensities were measured.
-    These items allow for a temperature range to be given.
+    The mean temperature below which intensities were measured.
+    Use with _diffrn.ambient_temperature_gt allows for a temperature
+    range to be given.
     _diffrn.ambient_temperature should be used in preference to
     this item when possible.
 ;
@@ -515,7 +520,7 @@ save_diffrn.special_details
     _definition.update            2012-11-26
     _description.text
 ;
-    Special details of the diffraction measurement process. Should include
+    Special details of the intensity-measurement process. Should include
     information about source instability, crystal motion, degradation, etc.
 ;
     _name.category_id             diffrn
@@ -2410,8 +2415,8 @@ save_DIFFRN_ATTENUATOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the attenuators used in the
-    diffraction source.
+    Data items in the DIFFRN_ATTENUATOR category record details
+    about the diffraction attenuator scales employed.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_ATTENUATOR
@@ -2485,9 +2490,10 @@ save_DIFFRN_COMPONENT_PID
     _definition.update            2026-04-29
     _description.text
 ;
-    The category of data items providing persistent identifiers for
-    instrumentation associated with data collection. These identifiers
-    will generally be registered with independent organizations.
+    Data items in the DIFFRN_COMPONENT_PID category provide persistent
+    identifiers for instrumentation associated with data collection.
+    These identifiers will generally be registered with independent
+    organizations.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_COMPONENT_PID
@@ -2596,8 +2602,9 @@ save_DIFFRN_DETECTOR
     _definition.update            2023-01-13
     _description.text
 ;
-    The category of data items which specify the detectors used
-    in the measurement of diffraction intensities.
+    Data items in the DIFFRN_DETECTOR category describe the
+    detector used to measure the scattered radiation, including
+    any analyser and post-sample collimation.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_DETECTOR
@@ -2732,8 +2739,8 @@ save_DIFFRN_MEASUREMENT
     _definition.update            2026-04-30
     _description.text
 ;
-    The category of data items used to describe the sample mounting,
-    positioning, and measurement strategy.
+    Data items in the DIFFRN_MEASUREMENT category describe the sample
+    mounting, positioning, and measurement strategy.
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN_MEASUREMENT
@@ -2752,7 +2759,7 @@ save_diffrn_measurement.details
     _definition.update            2012-11-26
     _description.text
 ;
-    Description of special aspects of the diffraction measurement.
+    A description of special aspects of the diffraction measurement.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               details
@@ -2777,7 +2784,8 @@ save_diffrn_measurement.device_class
     _definition.update            2012-11-26
     _description.text
 ;
-    Type of goniometer device used to mount and orient the specimen.
+    The general class of goniometer or device used to support
+    and orient the specimen.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               device_class
@@ -2864,7 +2872,7 @@ save_diffrn_measurement.method
     _definition.update            2012-11-26
     _description.text
 ;
-    Description of scan method used to measure diffraction intensities.
+    A description of the scan method used to measure diffraction intensities.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               method
@@ -3048,7 +3056,8 @@ save_diffrn_measurement.specimen_support
     _definition.update            2013-01-23
     _description.text
 ;
-    Mounting method for the crystal specimen during data collection.
+    The physical device used to support the crystal during data
+    collection.
 ;
     _name.category_id             diffrn_measurement
     _name.object_id               specimen_support
@@ -3074,8 +3083,8 @@ save_DIFFRN_ORIENT
     _definition.update            2012-11-26
     _description.text
 ;
-    The category of data items which specify the orientation of the crystal
-    axes to the diffractometer goniometer.
+    The parent category of data items that describe the orientation
+    of the crystal axes to the diffractometer goniometer.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_ORIENT
@@ -3090,9 +3099,9 @@ save_DIFFRN_ORIENT_MATRIX
     _definition.update            2012-11-26
     _description.text
 ;
-    The category of data items which record details about the matrix
-    specifying the orientation of the crystal axes to the diffractometer
-    goniometer.
+    Data items in the DIFFRN_ORIENT_MATRIX category record details about
+    the matrix specifying the orientation of the crystal axes to the
+    diffractometer goniometer.
 ;
     _name.category_id             DIFFRN_ORIENT
     _name.object_id               DIFFRN_ORIENT_MATRIX
@@ -3106,8 +3115,9 @@ save_diffrn_orient_matrix.type
     _definition.update            2012-11-26
     _description.text
 ;
-    Description of orientation matrix and how it should be applied to define
-    the orientation of the crystal with respect to the diffractometer axes.
+    A description of orientation matrix and how it should be applied to
+    define the orientation of the crystal precisely with respect to the
+    diffractometer axes.
 ;
     _name.category_id             diffrn_orient_matrix
     _name.object_id               type
@@ -3308,8 +3318,8 @@ save_DIFFRN_ORIENT_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the reflections used to
-    calculate the matrix which gives the orientation of the crystal
+    Data items in the DIFFRN_ORIENT_REFLN category specify the reflections
+    used to calculate the matrix which gives the orientation of the crystal
     axes to the diffractometer goniometer.
 ;
     _name.category_id             DIFFRN_ORIENT
@@ -3558,7 +3568,7 @@ save_DIFFRN_RADIATION
     _definition.update            2026-06-30
     _description.text
 ;
-    The category of data items which describe the radiation used
+    Data items in the DIFFRN_RADIATION category describe the radiation used
     in measuring diffraction intensities. To identify and assign
     weights to distinct wavelength components from a beam,
     see DIFFRN_RADIATION_WAVELENGTH.
@@ -3675,7 +3685,8 @@ save_diffrn_radiation.inhomogeneity
     _definition.update            2012-11-26
     _description.text
 ;
-    Half-width of the incident beam perpendicular to the diffraction plane.
+    Half-width of the incident beam in the direction perpendicular to
+    the diffraction plane.
 ;
     _name.category_id             diffrn_radiation
     _name.object_id               inhomogeneity
@@ -3768,8 +3779,10 @@ save_diffrn_radiation.probe
     _definition.update            2012-11-26
     _description.text
 ;
-    Enumerated code for the nature of radiation used (i.e. name of
-    subatomic particle or region of the electromagnetic spectrum).
+    Enumerated code for the nature of the radiation used (i.e. the name of
+    the subatomic particle or the region of the electromagnetic spectrum).
+    It is strongly recommended that this information
+    be given, so that the probe radiation can be simply determined.
 ;
     _name.category_id             diffrn_radiation
     _name.object_id               probe
@@ -3829,8 +3842,8 @@ save_diffrn_radiation.xray_symbol
 ;
     **DEPRECATED**
 
-    Use _diffrn_radiation_wavelength.xray_symbol. IUPAC
-    symbol for the X-ray wavelength for probe radiation.
+    Use _diffrn_radiation_wavelength.xray_symbol. The IUPAC
+    symbol for the X-ray wavelength for the probe radiation.
 ;
     _name.category_id             diffrn_radiation
     _name.object_id               xray_symbol
@@ -3857,9 +3870,9 @@ save_DIFFRN_RADIATION_WAVELENGTH
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the wavelength of the
-    radiation used in measuring diffraction intensities. Items may be
-    looped to identify and assign weights to distinct wavelength
+    Data items in the DIFFRN_RADIATION_WAVELENGTH category describe the
+    wavelength of the radiation used in measuring the diffraction intensities.
+    Items may be looped to identify and assign weights to distinct wavelength
     components from a polychromatic beam.
 ;
     _name.category_id             DIFFRN_RADIATION
@@ -3983,7 +3996,7 @@ save_diffrn_radiation_wavelength.value
     _definition.update            2012-11-26
     _description.text
 ;
-    Wavelength of radiation used in diffraction measurements.
+    The wavelength of the radiation used in diffraction measurements.
 ;
     _name.category_id             diffrn_radiation_wavelength
     _name.object_id               value
@@ -4026,7 +4039,8 @@ save_diffrn_radiation_wavelength.wt
     _definition.update            2012-11-26
     _description.text
 ;
-    Relative intensity of a radiation used in the diffraction measurements.
+    The relative weight of a wavelength identified by the code
+    _diffrn_radiation_wavelength.id in the list of wavelengths.
 ;
     _name.category_id             diffrn_radiation_wavelength
     _name.object_id               wt
@@ -4074,6 +4088,15 @@ save_DIFFRN_REFLN
 ;
     The category of data items which specify the reflection measurements,
     prior to data reduction and merging.
+    Data items in the DIFFRN_REFLN category record details about
+    the intensities measured in the diffraction experiment,
+    prior to data reduction and merging.
+
+    The DIFFRN_REFLN data items refer to individual intensity
+    measurements and must be included in looped lists.
+
+    (Data items in the DIFFRN_REFLNS category specify the parameters
+    that apply to all intensity  measurements.)
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_REFLN
@@ -4154,7 +4177,8 @@ save_diffrn_refln.attenuator_code
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifying any attenuator setting for this reflection.
+    The code identifying the attenuator setting for this reflection.
+    This code must match one of the _diffrn_attenuator.code values.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               attenuator_code
@@ -4173,7 +4197,14 @@ save_diffrn_refln.class_code
     _definition.update            2021-10-27
     _description.text
 ;
-    Code for reflection class, if assigned, e.g. modulated structures.
+    The code identifying the class to which this reflection has
+    been assigned according to some binning strategy. This code must match a
+    value of _diffrn_reflns.class_code. Reflections may be grouped into
+    classes for a variety of purposes. For example, for modulated
+    structures each reflection class may be defined by the
+    number m = Sum | m~i |, where the m~i~ are the integer coefficients
+    that, in addition to h,k,l, index the corresponding
+    diffraction vector in the basis defined for the reciprocal cell.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               class_code
@@ -4393,7 +4424,8 @@ save_diffrn_refln.elapsed_time
     _definition.update            2012-11-26
     _description.text
 ;
-    Elapsed time from the start to the end of the intensity measurement.
+    Elapsed time from the start of the diffraction experiment to the
+    measurement of this intensity.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               elapsed_time
@@ -4709,8 +4741,8 @@ save_diffrn_refln.scale_group_code
     _definition.update            2023-11-14
     _description.text
 ;
-    Code identifying the scale applicable to this reflection. The code must
-    match a _diffrn_scale_group.code in the DIFFRN_SCALE_GROUP list.
+    The code identifying the scale applicable to this reflection. The value
+    must match a _diffrn_scale_group.code in the DIFFRN_SCALE_GROUP list.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               scale_group_code
@@ -4729,7 +4761,8 @@ save_diffrn_refln.scan_mode
     _definition.update            2023-01-13
     _description.text
 ;
-    Code identifying the mode of scanning with a diffractometer.
+    The code identifying the mode of scanning for measurements
+    with a diffractometer.
     See also _diffrn_refln.scan_width and _diffrn_refln.scan_mode_backgd.
 ;
     _name.category_id             diffrn_refln
@@ -4755,7 +4788,8 @@ save_diffrn_refln.scan_mode_backgd
     _definition.update            2012-11-26
     _description.text
 ;
-    Code identifying mode of scanning to measure the background intensity.
+    The code identifying the mode of scanning a reflection to measure
+    the background intensity.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               scan_mode_backgd
@@ -4845,7 +4879,7 @@ save_diffrn_refln.sin_theta_over_lambda
     _definition.update            2012-11-26
     _description.text
 ;
-    (sin θ)/λ value for this reflection.
+    The (sin θ)/λ value for this reflection.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               sin_theta_over_lambda
@@ -4886,7 +4920,9 @@ save_diffrn_refln.wavelength
     _definition.update            2012-11-26
     _description.text
 ;
-    Mean wavelength of radiation used to measure this intensity.
+    The mean wavelength of the radiation used to measure the intensity of
+    this reflection. This is an important parameter for reflections
+    measured using energy-dispersive detectors or the Laue method.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               wavelength
@@ -4926,8 +4962,14 @@ save_DIFFRN_REFLNS
     _definition.update            2012-11-26
     _description.text
 ;
-    The category of data items which specify the overall reflection
-    measurement information.
+    Data items in the DIFFRN_REFLNS category record details about
+    the overall set of intensities measured in the diffraction experiment.
+
+    The DIFFRN_REFLNS data items specify the parameters that apply
+     to all intensity measurements.
+
+    (Data items in the DIFFRN_REFLN category refer to individual
+    intensity measurements and must be included in looped lists.)
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_REFLNS
@@ -5163,7 +5205,7 @@ save_diffrn_reflns.number
     _definition.update            2021-03-01
     _description.text
 ;
-    Total number of measured intensities, excluding reflections that are
+    The total number of measured intensities, excluding reflections that are
     classed as systematically absent arising from translational symmetry
     in the crystal unit cell.
 ;
@@ -5240,7 +5282,8 @@ save_diffrn_reflns.reduction_process
     _definition.update            2012-11-26
     _description.text
 ;
-    How intensities were reduced to structure-factor magnitudes.
+    A description of the process used to reduce the intensities
+    to structure-factor magnitudes.
 ;
     _name.category_id             diffrn_reflns
     _name.object_id               reduction_process
@@ -5281,7 +5324,7 @@ save_diffrn_reflns.resolution_max
     _definition.update            2013-02-22
     _description.text
 ;
-    Maximum resolution of the measured diffraction pattern.
+    The maximum resolution of the measured diffraction pattern.
     The fraction of unique reflections measured out to this angle
     is given by _diffrn.measured_fraction_theta_max.
 ;
@@ -5303,7 +5346,7 @@ save_diffrn_reflns.theta_full
     _definition.update            2023-01-13
     _description.text
 ;
-    Theta angle at which the count of measured reflections is almost
+    The θ angle at which the count of measured reflections is almost
     complete. The fraction of unique reflections measured out to
     this angle is given by _diffrn.measured_fraction_theta_full.
 ;
@@ -5366,8 +5409,8 @@ save_DIFFRN_REFLNS_CLASS
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify different classes of
-    reflections in the raw measured diffraction data.
+    Data items in the DIFFRN_REFLNS_CLASS category record details
+    about the classes of reflections measured in the diffraction experiment.
 ;
     _name.category_id             DIFFRN_REFLNS
     _name.object_id               DIFFRN_REFLNS_CLASS
@@ -5382,8 +5425,9 @@ save_diffrn_reflns_class.av_r_eq
     _definition.update            2012-11-26
     _description.text
 ;
-    Residual [sum av|del(I)|/sum|av(I)|] for symmetry-equivalent
-    reflections used to calculate the average intensity av(I).
+    For each reflection class, the residual [sum av|del(I)|/sum|av(I)|]
+    for symmetry-equivalent reflections used to calculate the average
+    intensity av(I).
     The av|del(I)| term is the average absolute difference
     between av(I) and the individual intensities.
 ;
@@ -5453,7 +5497,8 @@ save_diffrn_reflns_class.d_res_high
     _definition.update            2012-11-26
     _description.text
 ;
-    Highest resolution in reflection class, i.e. smallest d value in class.
+    Highest resolution in each reflection class, i.e. the smallest
+    interplanar spacing (d value) in the class.
 ;
     _name.category_id             diffrn_reflns_class
     _name.object_id               d_res_high
@@ -5473,7 +5518,8 @@ save_diffrn_reflns_class.d_res_low
     _definition.update            2012-11-26
     _description.text
 ;
-    Lowest resolution in reflection class, i.e. largest d value in class.
+    Lowest resolution in each reflection class, i.e. the largest
+    interplanar spacing (d value) in the class.
 ;
     _name.category_id             diffrn_reflns_class
     _name.object_id               d_res_low
@@ -5512,7 +5558,7 @@ save_diffrn_reflns_class.number
     _definition.update            2021-03-01
     _description.text
 ;
-    Number of measured intensities for a reflection class, excluding
+    The number of measured intensities for a reflection class, excluding
     the systematic absences arising from centring translations.
 ;
     _name.category_id             diffrn_reflns_class
@@ -5534,7 +5580,8 @@ save_DIFFRN_REFLNS_TRANSF_MATRIX
     _definition.update            2012-11-26
     _description.text
 ;
-    The category of data items which specify the elements of the matrix
+    The data items in the DIFFRN_REFLNS_TRANSF_MATRIX category
+    specify the elements of the matrix
     used to transform the reflection indices _diffrn_refln.hkl
     into _refln.hkl.
                                 |11 12 13|
@@ -5739,8 +5786,13 @@ save_DIFFRN_SCALE_GROUP
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the groups of reflections in
-    the raw measured diffraction data with different relative scales.
+    Data items in the DIFFRN_SCALE_GROUP category record details
+    of the scaling factors applied to place all intensities in
+    the raw measured diffraction data on a common scale.
+
+    Scaling groups might, for instance, correspond to each film
+    in a multi-film data set or each crystal in a multi-crystal
+    data set.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_SCALE_GROUP
@@ -5826,8 +5878,8 @@ save_DIFFRN_SOURCE
     _definition.update            2012-11-26
     _description.text
 ;
-    The category of data items which specify information about the
-    radiation source.
+    Data items in the DIFFRN_SOURCE category record details of
+    the source of radiation used in the diffraction experiment.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_SOURCE
@@ -5884,7 +5936,7 @@ save_diffrn_source.current
     _definition.update            2012-11-26
     _description.text
 ;
-    Generator current at which the radiation source device was operated.
+    The generator current at which the radiation source device was operated.
 ;
     _name.category_id             diffrn_source
     _name.object_id               current
@@ -6040,7 +6092,7 @@ save_diffrn_source.make
     _definition.update            2021-07-26
     _description.text
 ;
-    Description of the make, model or name of the source device.
+    Description of the make, model or name of the radiation source device.
     Large-scale facilities should use _diffrn_source.facility and
     _diffrn_source.beamline to identify the source of radiation.
 ;
@@ -6061,7 +6113,7 @@ save_diffrn_source.power
     _definition.update            2012-11-26
     _description.text
 ;
-    Generator power at which the radiation source device was operated.
+    The generator power at which the radiation source device was operated.
 ;
     _name.category_id             diffrn_source
     _name.object_id               power
@@ -6081,7 +6133,7 @@ save_diffrn_source.size
     _definition.update            2012-11-26
     _description.text
 ;
-    Description of the collimated source beam as viewed from the sample.
+    A description of the collimated source beam as viewed from the sample.
 ;
     _name.category_id             diffrn_source
     _name.object_id               size
@@ -6133,7 +6185,7 @@ save_diffrn_source.target
     _definition.update            2021-10-27
     _description.text
 ;
-    Chemical element symbol for the radiation source target (usually
+    The chemical element symbol for the radiation source target (usually
     the anode). This can be used also for spallation sources.
 ;
     _name.category_id             diffrn_source
@@ -6155,7 +6207,7 @@ save_diffrn_source.voltage
     _definition.update            2012-11-26
     _description.text
 ;
-    Generator voltage at which the radiation source device was operated.
+    The generator voltage at which the radiation source device was operated.
 ;
     _name.category_id             diffrn_source
     _name.object_id               voltage
@@ -6176,8 +6228,12 @@ save_DIFFRN_STANDARDS
     _definition.update            2023-01-10
     _description.text
 ;
-    The category of data items which specify information about the
-    standard reflections used in the diffraction measurement process.
+    Data items in the DIFFRN_STANDARDS category record details
+    about the set of standard reflections used to monitor intensity
+    stability during the measurement of diffraction intensities.
+
+    Note that these records describe properties common to the set of
+    standard reflections, not the standard reflections themselves.
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_STANDARDS
@@ -6250,7 +6306,8 @@ save_diffrn_standards.interval_count
     _definition.update            2023-01-10
     _description.text
 ;
-    Reflection count between the standard reflection measurements.
+    The number of reflection intensities
+    between the measurement of standard reflection intensities.
 ;
     _name.category_id             diffrn_standards
     _name.object_id               interval_count
@@ -6290,7 +6347,8 @@ save_diffrn_standards.number
     _definition.update            2023-01-10
     _description.text
 ;
-    Number of unique standard reflections used in measurements.
+    The number of unique standard reflections used during the
+    measurement of the diffraction intensities.
 ;
     _name.category_id             diffrn_standards
     _name.object_id               number
@@ -6357,9 +6415,13 @@ save_DIFFRN_STANDARD_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the "standard" reflections
+    Data items in the DIFFRN_STANDARD_REFLN category
+    record details of the `standard' reflections
     measured repeatedly to monitor variations in intensity due to source
     flux, environment conditions or crystal quality.
+
+    Note that these are the individual standard reflections, not the
+    results of the analysis of the standard reflections.
 ;
     _name.category_id             DIFFRN_STANDARDS
     _name.object_id               DIFFRN_STANDARD_REFLN
@@ -7685,7 +7747,7 @@ save_reflns.apply_dispersion_to_fcalc
 ;
     Yes or no flag on whether the anomalous dispersion scattering
     components will be applied in the F complex calculation.
-    See _refln.F_complex
+    See _refln.F_complex.
 ;
     _name.category_id             reflns
     _name.object_id               apply_dispersion_to_Fcalc
@@ -8992,9 +9054,9 @@ save_EXPTL
     _definition.update            2024-05-15
     _description.text
 ;
-    The category of data items used to specify the experimental work
-    prior to diffraction measurements. These include crystallization
-    crystal measurements and absorption-correction techniques used.
+    Data items in the \cifcategory{EXPTL} category record details about the
+    experimental work prior to the intensity measurements. These include
+    details about the absorption-correction technique employed.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               EXPTL
@@ -9008,7 +9070,7 @@ save_exptl.crystals_number
     _definition.update            2021-03-01
     _description.text
 ;
-    Total number of crystals used in the measurement of intensities.
+    The total number of crystals used in the measurement of intensities.
 ;
     _name.category_id             exptl
     _name.object_id               crystals_number
@@ -9111,7 +9173,7 @@ save_exptl.special_details
     _description.text
 ;
     Details of the experiment prior to intensity measurement.
-    See also _exptl_crystal.preparation
+    See also _exptl_crystal.preparation.
 ;
     _name.category_id             exptl
     _name.object_id               special_details
@@ -10144,8 +10206,7 @@ save_chemical_conn_atom.type_symbol
     _description.text
 ;
     A code identifying the atom type. This code must match an
-    _atom_type.symbol code in the ATOM_TYPE list or be a
-    recognizable element symbol.
+    _atom_type.symbol code in the ATOM_TYPE list.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               type_symbol
@@ -10332,7 +10393,7 @@ save_CHEMICAL_FORMULA
     _chemical_formula.analytical, *.structural and *.sum. For the
     data item *.moiety the formula construction is broken up into
     residues or moieties, i.e. groups of atoms that form a molecular
-    unit or molecular ion. The rules given below apply within each
+    unit or molecular ion. The general rules given below apply within each
     moiety, but different requirements apply to the way that moieties
     are connected (see _chemical_formula.moiety).
 
@@ -10473,12 +10534,15 @@ save_chemical_formula.structural
     _definition.update            2023-01-13
     _description.text
 ;
-    See the CHEMICAL_FORMULA category description for the rules for writing
-    chemical formulae for inorganics, organometallics, metal complexes
+    Formula for inorganics, organometallics, metal complexes
     etc., in which bonded groups are preserved as discrete entities
     within parentheses, with post-multipliers as required. The order of
     the elements should give as much information as possible about the
     chemical structure. Parentheses may be used and nested as required.
+    Within each group, the general considerations (1)-(4) of the
+    rules for writing formulae in the CHEMICAL_FORMULA category description
+    apply.
+
     This formula should correspond to the structure as actually reported,
     i.e. trace elements not included in atom-type and atom-site lists
     should not be included (see also _chemical_formula.analytical).
@@ -10608,7 +10672,7 @@ save_exptl_absorpt.coefficient_mu
     _definition.update            2023-06-25
     _description.text
 ;
-    Linear absorption coefficient, μ, calculated from the atomic content of
+    The linear absorption coefficient, μ, calculated from the atomic content of
     the cell, the density and the radiation wavelength.
 ;
     _name.category_id             exptl_absorpt
@@ -10651,7 +10715,7 @@ save_exptl_absorpt.correction_t_max
     _definition.update            2012-11-22
     _description.text
 ;
-    Maximum transmission factor for the crystal and radiation applied
+    The maximum transmission factor for the crystal and radiation applied
     to the measured intensities. It includes the correction for
     absorption by the specimen mount and diffractometer as well
     as by the specimen itself. These values give the transmission (T)
@@ -10685,7 +10749,7 @@ save_exptl_absorpt.correction_t_min
     _definition.update            2021-08-15
     _description.text
 ;
-    Minimum transmission factor for the crystal and radiation applied
+    The minimum transmission factor for the crystal and radiation applied
     to the measured intensities, it includes the correction for
     absorption by the specimen mount and diffractometer as well
     as by the specimen itself. These values give the transmission (T)
@@ -10835,8 +10899,9 @@ save_EXPTL_CRYSTAL
     _definition.update            2022-05-09
     _description.text
 ;
-    The category of data items used to specify information about
-    crystals used in the diffraction measurements.
+    Data items in the EXPTL_CRYSTAL category record details about
+    experimental measurements on the crystal or crystals used,
+    such as shape, size or density.
 ;
     _name.category_id             EXPTL
     _name.object_id               EXPTL_CRYSTAL
@@ -10850,7 +10915,7 @@ save_exptl_crystal.colour
     _definition.update            2023-01-12
     _description.text
 ;
-    Colour description of the crystal.
+    A description of the colour of the crystal.
 
     Data items from the EXPTL_CRYSTAL_APPEARANCE category should be used in
     preference to this item when possible.
@@ -10901,7 +10966,7 @@ save_exptl_crystal.density_diffrn
     _definition.update            2012-11-22
     _description.text
 ;
-    Crystal density calculated from crystal unit cell and atomic content.
+    Crystal density calculated from the crystal unit cell and atomic content.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_diffrn
@@ -11034,7 +11099,7 @@ save_exptl_crystal.density_meas_temp
     _definition.update            2012-11-22
     _description.text
 ;
-    Temperature at which _exptl_crystal.density_meas was determined.
+    The temperature at which _exptl_crystal.density_meas was determined.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_meas_temp
@@ -11077,7 +11142,7 @@ save_exptl_crystal.density_meas_temp_gt
     _definition.update            2021-11-09
     _description.text
 ;
-    Temperature above which the measured density was determined.
+    A temperature above which the measured density was determined.
     This item is used only when _exptl_crystal.density_meas_temp
     cannot be employed. It is intended for use in reporting values
     from databases which would be misleading if reported otherwise.
@@ -11100,7 +11165,7 @@ save_exptl_crystal.density_meas_temp_lt
     _definition.update            2021-11-09
     _description.text
 ;
-    Temperature below which the measured density was determined.
+    A temperature below which the measured density was determined.
     This item is used only when _exptl_crystal.density_meas_temp
     cannot be employed. It is intended for use in reporting values
     from databases which would be misleading if reported otherwise.
@@ -11123,7 +11188,7 @@ save_exptl_crystal.density_method
     _definition.update            2012-11-22
     _description.text
 ;
-    Description of method used to measure _exptl_crystal.density_meas.
+    A description of the method used to measure _exptl_crystal.density_meas.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               density_method
@@ -11142,8 +11207,10 @@ save_exptl_crystal.description
     _definition.update            2021-08-18
     _description.text
 ;
-    Description of the quality and habit of the crystal. The crystal
+    A description of the quality and habit of the crystal. The crystal
     dimensions should be provided using the _exptl_crystal.size_* data items.
+    Use data items in the category EXPTL_CRYSTAL_FACE to describe the
+    relationship between individual faces.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               description
@@ -11161,13 +11228,13 @@ save_exptl_crystal.f_000
     _definition.update            2023-02-02
     _description.text
 ;
-    Number of electrons in the crystal unit cell contributing to F(000).
-    It may contain dispersion contributions, and is calculated as
+    The effective number of electrons in the crystal unit cell contributing
+    to F(000). This may contain dispersion contributions, and is calculated as
 
          F(000) = [ (sum f~r~)^2^ + (sum f~i~)^2^ ]^1/2^
 
-         f~r~   = real part of the scattering factors at θ = 0
-         f~i~   = imaginary part of the scattering factors at θ = 0
+         f~r~   = real part of the scattering factors at θ = 0°
+         f~i~   = imaginary part of the scattering factors at θ = 0°
 
                  the sum is taken over each atom in the unit cell.
 
@@ -11333,7 +11400,7 @@ save_exptl_crystal.pressure_history
     _definition.update            2012-11-22
     _description.text
 ;
-    Details concerning the pressure history of the crystals.
+    Relevant details concerning the pressure history of the crystals.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               pressure_history
@@ -11372,7 +11439,7 @@ save_exptl_crystal.size_length
     _definition.update            2012-11-22
     _description.text
 ;
-    The length of needle/cylindrical crystals.
+    The length of a needle or cylindrical crystal.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               size_length
@@ -11557,7 +11624,7 @@ save_exptl_crystal.thermal_history
     _definition.update            2012-11-22
     _description.text
 ;
-    Details concerning the thermal history of the crystals.
+    Relevant details concerning the thermal history of the crystals.
 ;
     _name.category_id             exptl_crystal
     _name.object_id               thermal_history
@@ -11576,8 +11643,8 @@ save_EXPTL_CRYSTAL_APPEARANCE
     _definition.update            2012-11-22
     _description.text
 ;
-    The category of enumeration items used to specify information about the
-    crystal colour and appearance.
+    Data items in the EXPTL_CRYSTAL_APPEARANCE category are used to
+    specify information about the crystal colour and general appearance.
 ;
     _name.category_id             EXPTL_CRYSTAL
     _name.object_id               EXPTL_CRYSTAL_APPEARANCE
@@ -11631,7 +11698,9 @@ save_exptl_crystal_appearance.hue
     _definition.update            2021-11-04
     _description.text
 ;
-    Colour hue of the crystals as prescribed state codes.
+    A standard name to describe the colour of a crystal or sample. The
+    enumerated list matches each permitted name to an appropriate red,
+    green, blue triplet of values.
 ;
     _name.category_id             exptl_crystal_appearance
     _name.object_id               hue
@@ -11694,8 +11763,9 @@ save_EXPTL_CRYSTAL_FACE
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the dimensions of the
-    crystal used in the diffraction measurements.
+    Data items in the EXPTL_CRYSTAL_FACE category specify
+    the detailed dimensions of the crystal used in the diffraction
+    measurements as distances to each crystal face.
 ;
     _name.category_id             EXPTL_CRYSTAL
     _name.object_id               EXPTL_CRYSTAL_FACE
@@ -11886,7 +11956,8 @@ save_exptl_crystal_face.perp_dist
     _definition.update            2012-11-22
     _description.text
 ;
-    Perpendicular distance of face to the centre of rotation of the crystal.
+    The perpendicular distance from the face to the centre of rotation
+    of the crystal.
 ;
     _name.category_id             exptl_crystal_face
     _name.object_id               perp_dist
@@ -13254,10 +13325,10 @@ save_MODEL
     _definition.update            2024-05-15
     _description.text
 ;
-    Items in the MODEL Category specify data for the crystal structure
-    postulated and modelled from the atomic coordinates derived and
-    refined from the diffraction information. The structural model is
-    described principally in terms of the geometry of the 'connected'
+    Data items in the MODEL family of categories specify data for the
+    crystal structure postulated and modelled from the atomic coordinates
+    derived and refined from the diffraction information. The structural
+    model is described principally in terms of the geometry of 'connected'
     atom sites and the crystal symmetry in which they reside.
 ;
     _name.category_id             CIF_CORE_HEAD
@@ -13273,9 +13344,9 @@ save_GEOM
     _definition.update            2012-11-22
     _description.text
 ;
-    The category of data items used to specify the geometry
+    Data items in the GEOM category describe aspects of the overall geometry
     of the structural model as derived from the atomic sites.
-    The geometry is expressed in terms of the interatomic
+    The detailed geometry is expressed in terms of the interatomic
     angles (GEOM_ANGLE data), covalent bond distances
     (GEOM_BOND data), contact distances (GEOM_CONTACT data),
     hydrogen bonds (GEOM_HBOND data) and torsion geometry
@@ -13400,7 +13471,7 @@ save_GEOM_ANGLE
     _definition.update            2025-07-28
     _description.text
 ;
-    The category of data items used to specify the geometry angles in the
+    Data items in the GEOM_ANGLE category specify the geometry angles in the
     structural model as derived from the atomic sites.
 ;
     _name.category_id             GEOM
@@ -13485,7 +13556,7 @@ save_geom_angle.atom_site_label_2
     _definition.update            2019-04-03
     _description.text
 ;
-    The unique identifier for the vertex atom of the angle.
+    This label is the unique identifier for the vertex atom of the angle.
 ;
     _name.category_id             geom_angle
     _name.object_id               atom_site_label_2
@@ -13576,7 +13647,7 @@ save_geom_angle.publ_flag
     _definition.update            2012-11-22
     _description.text
 ;
-    Code signals if the angle is referred to in a publication or
+    This code signals if the angle is referred to in a publication or
     should be placed in a table of significant angles.
 ;
     _name.category_id             geom_angle
@@ -13641,8 +13712,9 @@ save_geom_angle.value
     _definition.update            2020-03-13
     _description.text
 ;
-    Angle defined by the atoms located at atom_site_x/site_symmetry_x for
-    x = 1,2,3. The vertex atom is at site x = 2.
+    The value of the angle defined by the listed sites.
+    The vertex atom is identified by _geom_angle.atom_site_label_2
+    (and accompanying symmetry operation, if relevant).
 ;
     _name.category_id             geom_angle
     _name.object_id               value
@@ -13702,7 +13774,7 @@ save_GEOM_BOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to specify the geometry bonds in the
+    Data items in the GEOM_BOND category specify the geometry bonds in the
     structural model as derived from the atomic sites.
 ;
     _name.category_id             GEOM
@@ -13786,8 +13858,7 @@ save_geom_bond.distance
     _definition.update            2012-12-14
     _description.text
 ;
-    Intramolecular bond distance between the sites identified
-    by _geom_bond.id.
+    The intramolecular bond distance defined by the listed sites.
 ;
     _name.category_id             geom_bond
     _name.object_id               distance
@@ -13887,8 +13958,8 @@ save_geom_bond.publ_flag
     _definition.update            2012-11-22
     _description.text
 ;
-    This code signals whether the angle is referred to in a
-    publication or should be placed in a table of significant angles.
+    This code signals whether the bond is referred to in a
+    publication or should be placed in a table of significant bonds.
 ;
     _name.category_id             geom_bond
     _name.object_id               publ_flag
@@ -13940,8 +14011,8 @@ save_geom_bond.valence
     _definition.update            2025-11-05
     _description.text
 ;
-    Valence assigned to the bond between the sites identified by
-    _geom_bond.id calculated according to the bond-valence model
+    Valence assigned to the bond between the listed sites
+    calculated according to the bond-valence model
     (Brown, 2002) from the bond distance.
 
     Reference: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
@@ -13983,7 +14054,7 @@ save_GEOM_CONTACT
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to specify the interatomic
+    Data items in the GEOM_CONTACT category specify the interatomic
     contact distances in the structural model.
 ;
     _name.category_id             GEOM
@@ -14078,8 +14149,7 @@ save_geom_contact.distance
     _definition.update            2026-09-17
     _description.text
 ;
-    Intermolecular distance between the atomic sites identified
-    by _geom_contact.id.
+    The intermolecular distance between the listed sites.
 ;
     _name.category_id             geom_contact
     _name.object_id               distance
@@ -14210,8 +14280,8 @@ save_GEOM_HBOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to specify the hydrogen bond
-    distances in the structural model as derived from atomic sites.
+    Data items in the GEOM_HBOND category specify the hydrogen bond
+    distances and angles in the structural model as derived from atomic sites.
 ;
     _name.category_id             GEOM
     _name.object_id               GEOM_HBOND
@@ -14234,8 +14304,9 @@ save_geom_hbond.angle_dha
     _definition.update            2020-03-13
     _description.text
 ;
-    Angle subtended by the sites identified by _geom_hbond.id.
-    The hydrogen at site H is at the apex of the angle.
+    Angle subtended by the listed sites. The hydrogen site identified
+    by _geom_hbond.atom_site_label_H (and accompanying symmetry operation,
+    if relevant) is at the apex of the angle.
 ;
     _name.category_id             geom_hbond
     _name.object_id               angle_DHA
@@ -14351,8 +14422,8 @@ save_geom_hbond.distance_da
     _definition.update            2012-12-14
     _description.text
 ;
-    The set of data items which specify the distance between the
-    three atom sites identified by _geom_hbond.id.
+    The distance between the donor and acceptor atoms at the listed
+    sites (and accompanying symmetry operations, if relevant).
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_DA
@@ -14412,8 +14483,8 @@ save_geom_hbond.distance_dh
     _definition.update            2012-12-14
     _description.text
 ;
-    The set of data items which specify the distance between the
-    three atom sites identified by _geom_hbond.id.
+    The distance between the donor and hydrogen atoms at the listed
+    sites (and accompanying symmetry operations, if relevant).
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_DH
@@ -14473,8 +14544,8 @@ save_geom_hbond.distance_ha
     _definition.update            2012-12-14
     _description.text
 ;
-    The set of data items which specify the distance between the
-    three atom sites identified by _geom_hbond.id.
+    The distance between the hydrogen and acceptor atoms at the listed
+    sites (and accompanying symmetry operations, if relevant).
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_HA
@@ -14613,7 +14684,7 @@ save_GEOM_TORSION
     _definition.update            2025-07-28
     _description.text
 ;
-    The category of data items used to specify the torsion angles in the
+    Data items in the GEOM_TORSION category specify the torsion angles in the
     structural model as derived from the atomic sites.
 ;
     _name.category_id             GEOM
@@ -14699,7 +14770,8 @@ save_geom_torsion.angle
     _definition.update            2019-07-25
     _description.text
 ;
-    Angle defined by the sites identified by _geom_torsion.id.
+    Angle defined by the listed sites (and accompanying symmetry operation,
+    if relevant).
     The torsion-angle definition should be that of Klyne and Prelog.
     The vector direction _geom_torsion.atom_site_label_2 to
     _geom_torsion.atom_site_label_3 is the viewing
@@ -14872,7 +14944,8 @@ save_geom_torsion.publ_flag
     _definition.update            2012-11-22
     _description.text
 ;
-    Code signals if the torsion angle is required for publication.
+    This code signals whether the torsion angle is listed in a
+    publication.
 ;
     _name.category_id             geom_torsion
     _name.object_id               publ_flag
@@ -14949,8 +15022,8 @@ save_MODEL_SITE
     _definition.update            2025-07-28
     _description.text
 ;
-    The category of data items used to describe atomic sites and
-    connections in the proposed atomic model.
+    Data items in the MODEL_SITE category are used to describe atomic
+    sites and connections in the proposed atomic model.
 ;
     _name.category_id             MODEL
     _name.object_id               MODEL_SITE
@@ -15760,8 +15833,17 @@ save_PUBLICATION
     _definition.update            2024-05-15
     _description.text
 ;
-    The dictionary group encompassing the core publication data items defined
-    and used within the Crystallographic Information Framework (CIF).
+    This is the parent category of a dictionary group encompassing the
+    core publication data items defined and used within the
+    Crystallographic Information Framework (CIF). Its child categories
+    have a wider application than conventional literature publication,
+    and include: the AUDIT categories that carry general metadata
+    about the project under which the data set has been generated;
+    JOURNAL and PUBL categories, which contain publication material;
+    CITATION and COMPUTING categories, which carry subsets of
+    reference material used in a publication, and the DATABASE
+    categories that facilitate linking between publications and
+    curated databases.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               PUBLICATION
@@ -15851,7 +15933,8 @@ save_audit.creation_date
     _definition.update            2019-03-26
     _description.text
 ;
-    The date on which the data block was created.
+    The date on which the data block was created. If necessary, a
+    creation time may also be specified to an appropriate precision.
 ;
     _name.category_id             audit
     _name.object_id               creation_date
@@ -16217,7 +16300,7 @@ save_audit_author_role.role
 ;
     The role taken by the author identified by _audit_author_role.id,
     drawn from a predefined list. Additional details can be provided
-    in _audit_author_role.special_details
+    in _audit_author_role.special_details.
 ;
     _name.category_id             audit_author_role
     _name.object_id               role
@@ -16407,7 +16490,7 @@ save_AUDIT_CONTACT_AUTHOR
     crystallographic details should be addressed.
     This audit contact author list may include authors from
     the PUBL_CONTACT_AUTHOR category, i.e. author(s) submitting
-    and responsible for the manuscript associated with the data set.
+    and responsible for the publication associated with the data set.
     Authors associated with individual data blocks within
     this data set can be declared using the AUDIT_AUTHOR category.
 ;
@@ -18078,7 +18161,11 @@ save_DATABASE
     _definition.update            2012-12-13
     _description.text
 ;
-    The category of data items recording database deposition.
+    Data items in the DATABASE category record details about the
+    database identifiers of the data block.
+
+    These data items are assigned by database managers and should
+    only be used if they originate from that source.
 ;
     _name.category_id             PUBLICATION
     _name.object_id               DATABASE
@@ -18144,8 +18231,10 @@ save_database.journal_astm
     _definition.update            2012-12-13
     _description.text
 ;
-    ASTM CODEN designator for a journal as given in the Chemical
-    Source List maintained by the Chemical Abstracts Service.
+    The ASTM CODEN designator for a journal as given in the
+    Chemical Source List maintained by the Chemical Abstracts
+    Service; this is the journal code used in the Cambridge
+    Structural Database.
 ;
     _name.category_id             database
     _name.object_id               journal_ASTM
@@ -18182,9 +18271,9 @@ save_DATABASE_CODE
     _definition.update            2012-12-13
     _description.text
 ;
-    The category of data items recording database deposition. These data items
-    are assigned by database managers and should only appear in a CIF if they
-    originate from that source.
+    Data items in the DATABASE_CODE category record database deposition
+    identifiers. These data items are assigned by database managers
+    and should only be used if they originate from that source.
 ;
     _name.category_id             DATABASE
     _name.object_id               DATABASE_CODE
@@ -18495,10 +18584,10 @@ save_DATABASE_RELATED
     _definition.update            2019-01-08
     _description.text
 ;
-    A category of items recording entries in databases that describe
-    the same or related data. Databases wishing to insert their own
-    canonical codes when archiving and delivering data blocks should
-    use items from the DATABASE category.
+    Data items in the DATABASE_RELATED category record entries in
+    databases that describe the same or related data. Databases wishing
+    to insert their own canonical codes when archiving and delivering
+    data blocks should use items from the DATABASE category.
 ;
     _name.category_id             PUBLICATION
     _name.object_id               DATABASE_RELATED
@@ -18773,9 +18862,9 @@ save_JOURNAL
     _definition.update            2012-12-11
     _description.text
 ;
-    Category of items recording details about the book-keeping
+    Data items in the JOURNAL category record details about the book-keeping
     by the journal staff when processing a CIF submitted for
-    publication.  The creator of a CIF will not normally specify
+    publication. The creator of a CIF will not normally specify
     these data items.
 ;
     _name.category_id             PUBLICATION
@@ -18790,7 +18879,7 @@ save_journal.coden_astm
     _definition.update            2012-12-11
     _description.text
 ;
-    ASTM code assigned to journal.
+    ASTM code assigned to the journal.
 ;
     _name.category_id             journal
     _name.object_id               coden_ASTM
@@ -18808,7 +18897,7 @@ save_journal.coden_cambridge
     _definition.update            2012-12-11
     _description.text
 ;
-    Cambridge Crystallographic Data Centre code assigned to journal.
+    Cambridge Crystallographic Data Centre code assigned to the journal.
 ;
     _name.category_id             journal
     _name.object_id               coden_Cambridge
@@ -19131,7 +19220,9 @@ save_JOURNAL_COEDITOR
     _definition.update            2021-08-18
     _description.text
 ;
-    Category of items recording Co-editor details.
+    Data items in the JOURNAL_COEDITOR category record information
+    about the Co-editor handling this publication submission. They are
+    assigned by journal staff for internal use.
 ;
     _name.category_id             JOURNAL
     _name.object_id               JOURNAL_COEDITOR
@@ -19307,7 +19398,8 @@ save_JOURNAL_DATE
     _definition.update            2012-12-11
     _description.text
 ;
-    Category of items recording dates of publication processing.
+    Data items in the JOURNAL_DATE category record dates assigned
+    by journal staff to various publication stages.
 ;
     _name.category_id             JOURNAL
     _name.object_id               JOURNAL_DATE
@@ -19552,7 +19644,8 @@ save_JOURNAL_INDEX
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of items describing publication indices.
+    Data items in the JOURNAL_INDEX category record index terms
+    for the publication assigned by journals staff.
 ;
     _name.category_id             JOURNAL
     _name.object_id               JOURNAL_INDEX
@@ -19649,8 +19742,9 @@ save_JOURNAL_TECHEDITOR
     _definition.update            2012-12-11
     _description.text
 ;
-    Category of items recording details of the technical editor
-    processing this publication.
+    Data items in the JOURNAL_TECHEDITOR category record information
+    about the technical editor processing this publication submission.
+    They are assigned by journal staff for internal use.
 ;
     _name.category_id             JOURNAL
     _name.object_id               JOURNAL_TECHEDITOR
@@ -19867,8 +19961,8 @@ save_PUBL_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of data items recording information of an author of the
-    publication (for example the manuscript).
+    Data items in the PUBL_AUTHOR category record details of the
+    authors of the publication associated with this structure.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_AUTHOR
@@ -19883,8 +19977,7 @@ save_publ_author.address
     _definition.update            2019-01-09
     _description.text
 ;
-    The address of a publication author. If there is more than one
-    author, this will be looped with _publ_author.name.
+    The address of a publication author.
 ;
     _name.category_id             publ_author
     _name.object_id               address
@@ -19910,8 +20003,7 @@ save_publ_author.email
     _definition.update            2019-01-09
     _description.text
 ;
-    The e-mail address of a publication author. If there is more
-    than one author, this will be looped with _publ_author.name.
+    The e-mail address of a publication author.
     The format of e-mail addresses is given in RFC 2822.
 
     Reference: Resnick, P. (2001). Internet Message Format. RFC 2822.
@@ -19935,7 +20027,7 @@ save_publ_author.footnote
     _description.text
 ;
     A footnote accompanying an author's name in the list of authors
-    of a paper. Typically indicates sabbatical address, additional
+    of a publication. Typically indicates sabbatical address, additional
     affiliations or date of decease.
 ;
     _name.category_id             publ_author
@@ -20037,8 +20129,7 @@ save_publ_author.name
     _definition.update            2023-01-10
     _description.text
 ;
-    The name of a publication author. If there are multiple authors,
-    this will be looped with _publ_author.address. The family
+    The name of a publication author. The family
     name(s), followed by a comma and including any dynastic
     components, precedes the first names or initials. For authors
     with only one name, provide the full name without abbreviation.
@@ -20070,7 +20161,7 @@ save_publ_author.phone
     _definition.update            2026-09-07
     _description.text
 ;
-    Telephone number of a manuscript author.
+    Telephone number of a publication author.
 
     The recommended style starts with the international dialling
     prefix, followed by the area code in parentheses, followed by the
@@ -20168,7 +20259,7 @@ save_publ_body.format
     _definition.update            2012-12-13
     _description.text
 ;
-    Enumerated state indicating the appropriate typesetting
+    Code indicating the appropriate typesetting
     conventions for accented characters and special symbols
     in the text section.
 ;
@@ -20244,13 +20335,14 @@ save_PUBL_CONTACT_AUTHOR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used for details of a contact author
-    of the associated manuscript, to whom general correspondence should
-    be addressed.
+    Data items in the PUBL_CONTACT_AUTHOR category provide details of
+    a contact author of the associated publication, to whom general
+    correspondence should be addressed. Most journals will require
+    a single point of contact.
 
     This is the person contacted by the journal editorial staff.
-    This may or may not be the same person as _audit_contact_author,
-    which is the person responsible for the data set.
+    It may or may not be a person identified as an _audit_contact_author,
+    which identifies a person responsible for the data set.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_CONTACT_AUTHOR
@@ -20270,7 +20362,7 @@ save_publ_contact_author.address
     _definition.update            2012-11-29
     _description.text
 ;
-    The address of a contact author of the associated manuscript to
+    The address of a contact author of the associated publication to
     whom general correspondence should be addressed.
     This is the person contacted by the journal editorial staff.
 ;
@@ -20348,7 +20440,7 @@ save_publ_contact_author.email
     _description.text
 ;
     The electronic mail (e-mail) address of a contact author of the
-    associated manuscript to whom general correspondence should be
+    associated publication to whom general correspondence should be
     addressed.
     This is the person contacted by the journal editorial staff.
     The e-mail address should be given in a form recognizable to
@@ -20386,7 +20478,7 @@ save_publ_contact_author.fax
     _description.text
 ;
     Facsimile telephone number of the contact
-    author of the associated manuscript to whom general correspondence
+    author of the associated publication to whom general correspondence
     should be addressed.
     This is the person contacted by the journal editorial staff.
     The recommended style starts with the international dialling prefix,
@@ -20410,7 +20502,7 @@ save_publ_contact_author.id
     _description.text
 ;
     Arbitrary identifier for a contact author of the associated
-    manuscript to whom general correspondence should be addressed.
+    publication to whom general correspondence should be addressed.
     This is the person contacted by the journal editorial staff.
 ;
     _name.category_id             publ_contact_author
@@ -20450,7 +20542,7 @@ save_publ_contact_author.id_iucr
     _description.text
 ;
     Identifier in the IUCr contact database of a contact author of
-    the associated manuscript to whom general correspondence should be
+    the associated publication to whom general correspondence should be
     addressed.
     This is the person contacted by the journal editorial staff.
     This identifier may be available from the World Directory of
@@ -20473,7 +20565,7 @@ save_publ_contact_author.id_orcid
     _description.text
 ;
     Identifier in the ORCID Registry of a contact author of the
-    associated manuscript to whom general correspondence should be
+    associated publication to whom general correspondence should be
     addressed.
     This is the person contacted by the journal editorial staff.
     ORCID is an open, non-profit, community-driven service to provide
@@ -20501,7 +20593,7 @@ save_publ_contact_author.name
     _definition.update            2012-11-29
     _description.text
 ;
-    The name of a contact author of the associated manuscript to
+    The name of a contact author of the associated publication to
     whom general correspondence should be addressed.
     This is the person contacted by the journal editorial staff.
 ;
@@ -20528,7 +20620,7 @@ save_publ_contact_author.phone
     _description.text
 ;
     Telephone number of a contact author of the associated
-    manuscript to whom general correspondence should be addressed.
+    publication to whom general correspondence should be addressed.
     This is the person contacted by the journal editorial staff.
     The recommended style starts with the international dialling prefix,
     followed, where appropriate, by the area code in parentheses,
@@ -20560,7 +20652,9 @@ save_PUBL_MANUSCRIPT
     _definition.update            2012-12-13
     _description.text
 ;
-    Category of items describing the publication manuscript.
+    Data items in the PUBL_MANUSCRIPT category record details about
+    the submitted manuscript form of a publication. They are used by
+    journal staff in processing submissions.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_MANUSCRIPT
@@ -20649,14 +20743,20 @@ save_PUBL_MANUSCRIPT_INCL_EXTRA
     _definition.update            2021-06-29
     _description.text
 ;
-    Category of data items that allow the authors of a manuscript to
-    submit for publication data names that should be added to the
-    standard request list employed by journal printing software.
-    Although these fields are primarily intended to identify CIF data
-    items that the author wishes to include in a published paper, they
-    can also be used to identify data names created so that non-CIF items
-    can be included in the publication. Note that *.item names MUST be
-    enclosed in single quotes.
+    Data items in the PUBL_MANUSCRIPT_INCL_EXTRA category allow the
+    authors of a manuscript submitted for publication to identify
+    extra data names to be added to the standard request list
+    employed by journal processing software.
+
+    Although these fields are primarily intended to identify data
+    items in published CIF dictionaries that the author wishes to
+    include in a published paper, they can also be used to identify
+    local data names created so that non-standard information can be
+    included in the publication. Note that *.item names MUST be
+    enclosed in quotes.
+
+    Guidance on the use of this item will be provided in the journal
+    Notes for Authors.
 ;
     _name.category_id             PUBL_MANUSCRIPT
     _name.object_id               PUBL_MANUSCRIPT_INCL_EXTRA
@@ -20677,7 +20777,7 @@ save_publ_manuscript_incl_extra.defn
     _description.text
 ;
     Yes/no flags whether the corresponding data item marked for inclusion
-    in a journal request list is a standard CIF definition or not.
+    in a journal request list is found in a published CIF dictionary.
 ;
     _name.category_id             publ_manuscript_incl_extra
     _name.object_id               defn
@@ -20689,10 +20789,10 @@ save_publ_manuscript_incl_extra.defn
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         yes                     'Include item in journal request list.'
-         y                       'Abbreviation for "yes".'
-         no                      'Do not include item in journal request list.'
-         n                       'Abbreviation for "no".'
+         yes                      'Appears in a published CIF dictionary.'
+         y                        'Abbreviation for "yes".'
+         no                       'Is not found in a published CIF dictionary.'
+         n                        'Abbreviation for "no".'
 
     _enumeration.default          yes
 
@@ -20735,10 +20835,9 @@ save_publ_manuscript_incl_extra.item
     _definition.update            2012-12-13
     _description.text
 ;
-    The data name (i.e. Tag) of a specific data item included in the
-    manuscript which is not normally requested by the journal. The values
-    of this item are the extra data names (which MUST be enclosed
-    in single quotes) that will be added to the journal request list.
+    The data name (i.e. Tag) of a data item included in the
+    submitted manuscript which is not normally requested by the journal.
+    The value of this item MUST be enclosed in quotes.
 ;
     _name.category_id             publ_manuscript_incl_extra
     _name.object_id               item
@@ -20757,8 +20856,9 @@ save_PUBL_REQUESTED
     _definition.update            2012-12-13
     _description.text
 ;
-    The category of data items that enable the author to make
-    specific requests to the journal office for processing.
+    Data items in the PUBL_REQUESTED category enable the author of a
+    submitted manuscript to make specific requests to the journal
+    office for processing.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_REQUESTED
@@ -20855,7 +20955,7 @@ save_publ_requested.journal
     _definition.update            2012-12-13
     _description.text
 ;
-    Name of the journal to which the manuscript is being submitted.
+    The name of the journal to which the manuscript is being submitted.
 ;
     _name.category_id             publ_requested
     _name.object_id               journal
@@ -20874,12 +20974,10 @@ save_PUBL_SECTION
     _definition.update            2012-05-07
     _description.text
 ;
-    Manuscript section data if submitted in parts. See also
-    _publ_manuscript.text and _publ_manuscript.processed.
-    The _publ_section.exptl_prep, _publ_section.exptl_refinement
-    and _publ_section.exptl_solution items are preferred for
-    separating the chemical preparation, refinement and structure
-    solution aspects of the experimental description.
+    Data items in the PUBL_SECTION category contain specific sections of the
+    discursive text of a publication submitted to a journal which supports
+    CIF as a submission format. The recommended use of these terms
+    is specified in a journal's Notes for Authors.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_SECTION
@@ -22005,8 +22103,7 @@ save_ATOM_SITE
 ;
     Data items in the ATOM_SITE category record details about
     the atom sites in a crystal structure, such as the positional
-    coordinates, atomic displacement parameters, and magnetic moments
-    and directions.
+    coordinates and atomic displacement parameters.
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
@@ -24476,8 +24573,7 @@ save_atom_sites.special_details
     _definition.update            2012-11-20
     _description.text
 ;
-    Additional information about the atomic coordinates not coded elsewhere
-    in the CIF.
+    Additional information about the atomic coordinates not recorded elsewhere.
 ;
     _name.category_id             atom_sites
     _name.object_id               special_details
@@ -26261,7 +26357,7 @@ save_atom_type_scat.dispersion
     _description.text
 ;
     The anomalous dispersion scattering factor in its complex form
-    for this atom type and radiation by _diffrn_radiation_wavelength.value
+    for this atom type and radiation by _diffrn_radiation_wavelength.value.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion
@@ -26298,7 +26394,7 @@ save_atom_type_scat.dispersion_imag
 ;
     The imaginary component of the anomalous-dispersion scattering factor
     for this atom type and the radiation specified by
-    _diffrn_radiation_wavelength.value
+    _diffrn_radiation_wavelength.value.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_imag
@@ -26378,7 +26474,7 @@ save_atom_type_scat.dispersion_real
 ;
     The real component of the anomalous-dispersion scattering factor
     for this atom type and the radiation specified by
-    _diffrn_radiation_wavelength.value
+    _diffrn_radiation_wavelength.value.
 ;
     _name.category_id             atom_type_scat
     _name.object_id               dispersion_real
@@ -29767,5 +29863,5 @@ save_
        Modified phone and fax definitions to support mobile numbers, and
        updated examples with valid test numbers.
 
-       Updated _publ_requested.category to lates IUCr journal requirements.
+       Updated _publ_requested.category to latest IUCr journal requirements.
 ;
