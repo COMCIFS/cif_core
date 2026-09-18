@@ -4086,8 +4086,6 @@ save_DIFFRN_REFLN
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the reflection measurements,
-    prior to data reduction and merging.
     Data items in the DIFFRN_REFLN category record details about
     the intensities measured in the diffraction experiment,
     prior to data reduction and merging.
@@ -4202,7 +4200,7 @@ save_diffrn_refln.class_code
     value of _diffrn_reflns.class_code. Reflections may be grouped into
     classes for a variety of purposes. For example, for modulated
     structures each reflection class may be defined by the
-    number m = Sum | m~i |, where the m~i~ are the integer coefficients
+    number m = Sum | m~i~ |, where the m~i~ are the integer coefficients
     that, in addition to h,k,l, index the corresponding
     diffraction vector in the basis defined for the reciprocal cell.
 ;
@@ -4424,8 +4422,7 @@ save_diffrn_refln.elapsed_time
     _definition.update            2012-11-26
     _description.text
 ;
-    Elapsed time from the start of the diffraction experiment to the
-    measurement of this intensity.
+    Elapsed time from the start to the end of the intensity measurement.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               elapsed_time
@@ -6527,8 +6524,14 @@ save_REFLN
     _definition.update            2024-11-12
     _description.text
 ;
-    The category of data items that describe the reflection data
-    used in the refinement of a crystallographic structure model.
+    Data items in the REFLN category record details about the
+    reflections used to determine the ATOM_SITE data items.
+
+    The REFLN data items refer to individual reflections and must
+    be included in looped lists.
+
+    The REFLNS data items specify the parameters that apply to all
+    reflections.
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               REFLN
@@ -6761,7 +6764,7 @@ save_refln.class_code
     assigned. This code must match a value of _reflns_class.code.
     Reflections may be grouped into classes for a variety of
     purposes. For example, for modulated structures each reflection
-    class may be defined by the number m=sum|m~i~|, where the m~i~
+    class may be defined by the number m = Sum | m~i~ |, where the m~i~
     are the integer coefficients that, in addition to h,k,l, index
     the corresponding diffraction vector in the basis defined
     for the reciprocal lattice.
@@ -7143,7 +7146,7 @@ save_refln.form_factor_table
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
-    of this diffraction vector and atom types in structure.
+    of this diffraction vector and atom types in the structure.
 ;
     _name.category_id             refln
     _name.object_id               form_factor_table
@@ -7554,7 +7557,7 @@ save_refln.refinement_status
     _definition.update            2012-11-26
     _description.text
 ;
-    Status code of reflection in the structure refinement process.
+    Status code of reflection in the structure-refinement process.
 ;
     _name.category_id             refln
     _name.object_id               refinement_status
@@ -7684,7 +7687,7 @@ save_refln.wavelength
     _definition.update            2012-11-26
     _description.text
 ;
-    The mean wavelength in angstroms of radiation used to measure
+    The mean wavelength in angstroms of the radiation used to measure
     this reflection. This is an important parameter for data
     collected using energy-dispersive detectors or the Laue method.
 ;
@@ -7726,13 +7729,20 @@ save_REFLNS
     _definition.update            2012-11-26
     _description.text
 ;
-    The category of data items used to specify parameters for the complete
+    Data items in the REFLNS category record details about the complete
     set of reflections used in the structure refinement process. Note that
     these parameters are often similar measures to those defined in the
     DIFFRN categories, but differ in that the parameters refer to the
     reduced/transformed reflections which have been used to refine the
     atom site data in the ATOM_SITE category. The DIFFRN definitions refer
     to the diffraction measurements and the raw reflection data.
+
+    The REFLNS data items specify the parameters that apply to all
+    reflections.
+
+    (Data items in the REFLN category refer to individual reflections and must
+    be included in looped lists.)
+}%
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               REFLNS
@@ -7774,7 +7784,7 @@ save_reflns.d_resolution_high
     _description.text
 ;
     Highest resolution for the final REFLN data set.
-    This corresponds to the smallest interplanar d value.
+    This corresponds to the smallest interplanar spacing (d value).
 ;
     _name.category_id             reflns
     _name.object_id               d_resolution_high
@@ -7795,7 +7805,7 @@ save_reflns.d_resolution_low
     _description.text
 ;
     Lowest resolution for the final REFLN data set.
-    This corresponds to the largest interplanar d value.
+    This corresponds to the largest interplanar spacing (d value).
 ;
     _name.category_id             reflns
     _name.object_id               d_resolution_low
@@ -7820,11 +7830,11 @@ save_reflns.friedel_coverage
 
     This proportion is calculated as the ratio:
 
-          [N(Crystal class) - N(Laue symmetry)] / N(Laue symmetry)
+          [N(crystal class) - N(Laue symmetry)] / N(Laue symmetry)
 
     where, working from the DIFFRN_REFLN list,
 
-        N(Crystal class) is the number of reflections obtained on
+        N(crystal class) is the number of reflections obtained on
             averaging under the symmetry of the crystal class
         N(Laue symmetry) is the number of reflections obtained on
             averaging under the Laue symmetry.
@@ -7841,8 +7851,8 @@ save_reflns.friedel_coverage
       (c) For whole-sphere data in space group Pmm2, the value
           will be < 1.0 because although reflections h k l and
           -h -k -l are not equivalent when h k l indices are
-          non-zero, they are when l=0.
-      (d) For a crystal in the group Pmm2 measurements of the
+          non-zero, they are when l = 0.
+      (d) For a crystal in the space group Pmm2 measurements of the
           two inequivalent octants h >= 0, k >=0, l lead to the
           same value as in (c), whereas measurements of the
           two equivalent octants h >= 0, k, l >= 0 will lead to
@@ -8155,8 +8165,9 @@ save_REFLNS_CLASS
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the properties of reflections
-    in specific classes of reflections.
+    Data items in the REFLNS_CLASS category record details, for
+    each reflection class, about the reflections used to determine
+    the structural parameters.
 ;
     _name.category_id             REFLNS
     _name.object_id               REFLNS_CLASS
@@ -8191,7 +8202,7 @@ save_reflns_class.d_res_high
     _description.text
 ;
     Highest resolution for the reflections in this class.
-    This corresponds to the smallest interplanar d value.
+    This corresponds to the smallest interplanar spacing (d value).
 ;
     _name.category_id             reflns_class
     _name.object_id               d_res_high
@@ -8212,7 +8223,7 @@ save_reflns_class.d_res_low
     _description.text
 ;
     Lowest resolution for the reflections in this class.
-    This corresponds to the largest interplanar d value.
+    This corresponds to the largest interplanar spacing (d value).
 ;
     _name.category_id             reflns_class
     _name.object_id               d_res_low
@@ -8467,7 +8478,7 @@ save_REFLNS_SCALE
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the scales needed to place
+    Data items in the REFLNS_SCALE category specify the scales needed to place
     measured structure-factor coefficients on the same absolute scale.
 ;
     _name.category_id             REFLNS
@@ -8614,7 +8625,7 @@ save_REFLNS_SHELL
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the information about
+    Data items in the REFLNS_SHELL category provide information about
     reflections divided into shells bounded by d resolution limits.
 ;
     _name.category_id             REFLNS
@@ -8635,7 +8646,7 @@ save_reflns_shell.d_res_high
     _description.text
 ;
     Highest resolution for the reflections in this shell.
-    This corresponds to the smallest interplanar d value.
+    This corresponds to the smallest interplanar spacing (d value).
 ;
     _name.category_id             reflns_shell
     _name.object_id               d_res_high
@@ -8683,7 +8694,7 @@ save_reflns_shell.d_res_low
     _description.text
 ;
     Lowest resolution for the reflections in this shell.
-    This corresponds to the largest interplanar d value.
+    This corresponds to the largest interplanar spacing (d value).
 ;
     _name.category_id             reflns_shell
     _name.object_id               d_res_low
@@ -8791,7 +8802,7 @@ save_reflns_shell.number_measured_gt
     _definition.update            2024-02-14
     _description.text
 ;
-    Number of reflections measured for this resolution shell which are
+    The number of reflections measured for this resolution shell which are
     significantly intense (see _reflns.threshold_expression).
 ;
     _name.category_id             reflns_shell
@@ -8933,7 +8944,7 @@ save_reflns_shell.rmerge_f_all
     _definition.update            2012-11-26
     _description.text
 ;
-    Rmerge(F) for all reflections in a given shell.
+    The value of Rmerge(F) for all reflections in a given shell.
 
                     sum~i~ ( sum~j~ | F~j~ - <F> | )
         Rmerge(F) = --------------------------------
@@ -8971,9 +8982,10 @@ save_reflns_shell.rmerge_f_gt
     _definition.update            2024-02-14
     _description.text
 ;
-    Rmerge(F) for reflections in a shell which are significantly intense
-    (see _reflns.threshold_expression). The residual merge expression is
-    shown in the _reflns_shell.Rmerge_F_all definition.
+    The value of Rmerge(F) for reflections in a shell which are
+    significantly intense (see _reflns.threshold_expression). The
+    residual merge expression is shown in the
+    _reflns_shell.Rmerge_F_all definition.
 ;
     _name.category_id             reflns_shell
     _name.object_id               Rmerge_F_gt
@@ -8993,7 +9005,7 @@ save_reflns_shell.rmerge_i_all
     _definition.update            2012-11-26
     _description.text
 ;
-    Rmerge(I) for all reflections in a given shell.
+    The value of Rmerge(I) for all reflections in a given shell.
 
                     sum~i~ ( sum~j~ | I~j~ - <I> | )
         Rmerge(I) = --------------------------------
@@ -9031,9 +9043,9 @@ save_reflns_shell.rmerge_i_gt
     _definition.update            2024-02-14
     _description.text
 ;
-    Rmerge(I) for reflections in a shell which are significantly intense
-    (see _reflns.threshold_expression). The residual merge expression is
-    shown in the _reflns_shell.Rmerge_I_all definition.
+    The value of Rmerge(I) for reflections in a shell which are significantly
+    intense (see _reflns.threshold_expression). The residual merge expression
+    is shown in the _reflns_shell.Rmerge_I_all definition.
 ;
     _name.category_id             reflns_shell
     _name.object_id               Rmerge_I_gt
@@ -9054,7 +9066,7 @@ save_EXPTL
     _definition.update            2024-05-15
     _description.text
 ;
-    Data items in the \cifcategory{EXPTL} category record details about the
+    Data items in the EXPTL category record details about the
     experimental work prior to the intensity measurements. These include
     details about the absorption-correction technique employed.
 ;
@@ -11995,7 +12007,7 @@ save_SPACE_GROUP
     _definition.update            2025-06-18
     _description.text
 ;
-    The category of data items used to specify space group
+    Data items in the SPACE_GROUP category are used to specify space-group
     information about the crystal used in the diffraction measurements.
 
     Space-group types are identified by their number as listed in
@@ -12216,10 +12228,11 @@ save_space_group.it_number
     _description.text
 ;
     The number as assigned in International Tables for Crystallography
-    Vol. A (2016), specifying the proper affine class (i.e. the orientation
-    preserving affine class) of space groups (crystallographic space
-    group type) to which the space group belongs. This number defines
-    the space-group type but not the coordinate system expressed.
+    Vol. A (2016), specifying the proper affine class (i.e. the
+    orientation-preserving affine class) of space groups
+    (crystallographic space-group type) to which the space group
+    belongs. This number defines the space-group type but not the
+    coordinate system in which it is expressed.
 
     Reference: International Tables for Crystallography (2016). Volume A,
          Space-group symmetry, edited by M. I. Aroyo, 6th ed.
@@ -12313,8 +12326,8 @@ save_space_group.name_h-m_alt
     a Hermann-Mauguin symbol for a conventional or unconventional
     setting.
 
-    Each component of the space group name is separated by a
-    space or underscore. The use of space is strongly
+    Each component of the space-group name is separated by a
+    space or an underscore. The use of a space is strongly
     recommended. The underscore is only retained because it
     was used in earlier archived files. It should not be
     used in new CIFs. Subscripts should appear without special
@@ -12326,7 +12339,7 @@ save_space_group.name_h-m_alt
     described by more than one Hermann-Mauguin symbol. The space-group
     type is best described using _space_group.IT_number.
     The Hermann-Mauguin symbol may contain information on the
-    choice of basis though not on the choice of origin. To
+    choice of basis, but not on the choice of origin. To
     define the setting uniquely use _space_group.name_Hall or
     list the symmetry operations.
 
@@ -12382,15 +12395,16 @@ save_space_group.name_h-m_full
     _description.text
 ;
     The full international Hermann-Mauguin space-group symbol as
-    defined in Section 2.1.3.3 and given as the second item of the
-    second line of each of the space-group tables of Chapter 2.3 of
-    International Tables for Crystallography Volume A (2016).
+    defined in Section 2.1.3.3 of International Tables for
+    Crystallography Volume A (2016) and given as the second item of
+    the second line of each of the space-group tables of Chapter 2.3
+    of that volume.
 
     Each component of the space-group name is separated by a
     space or an underscore character. The use of a space is
     strongly recommended.  The underscore is only retained
-    because it was used in old CIFs. It should not be used in
-    new CIFs.
+    because it was used in earlier archived files. It should not
+    be used in new CIFs.
 
     Subscripts should appear without special symbols. Bars should
     be given as negative signs before the numbers to which they
@@ -12481,9 +12495,9 @@ save_space_group.name_hall
     _definition.update            2023-02-13
     _description.text
 ;
-    Space group symbol defined by Hall. Each component of the
-    space group name is separated by a space or an underscore.
-    The use of space is strongly recommended because it specifies
+    Space-group symbol defined by Hall. Each component of the
+    space-group name is separated by a space or an underscore.
+    The use of a space is strongly recommended because it specifies
     the coordinate system. The underscore in the name is only
     retained because it was used in earlier archived files. It
     should not be used in new CIFs.
@@ -12841,8 +12855,8 @@ save_SPACE_GROUP_GENERATOR
     _definition.update            2025-04-28
     _description.text
 ;
-    The category of data items used to list generators for
-    the space group
+    Data items in the SPACE_GROUP_GENERATOR category list generators
+    for a space group.
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_GENERATOR
@@ -12923,8 +12937,8 @@ save_SPACE_GROUP_SYMOP
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to describe symmetry equivalent sites
-    in the crystal unit cell.
+    Data items in the SPACE_GROUP_SYMOP category are used to describe
+    symmetry-equivalent sites in the crystal unit cell.
 ;
     _name.category_id             SPACE_GROUP
     _name.object_id               SPACE_GROUP_SYMOP
@@ -13168,7 +13182,8 @@ save_SPACE_GROUP_WYCKOFF
     _definition.update            2023-01-13
     _description.text
 ;
-    Contains information about Wyckoff positions of a space group.
+    Data items in the SPACE_GROUP_WYCKOFF category contain information
+    about Wyckoff positions of a space group.
     Only one site can be given for each special position, but the
     remainder can be generated by applying the symmetry operations
     stored in _space_group_symop.operation_xyz.
@@ -13714,7 +13729,7 @@ save_geom_angle.value
 ;
     The value of the angle defined by the listed sites.
     The vertex atom is identified by _geom_angle.atom_site_label_2
-    (and accompanying symmetry operation, if relevant).
+    and accompanying symmetry operation code.
 ;
     _name.category_id             geom_angle
     _name.object_id               value
@@ -14305,8 +14320,8 @@ save_geom_hbond.angle_dha
     _description.text
 ;
     Angle subtended by the listed sites. The hydrogen site identified
-    by _geom_hbond.atom_site_label_H (and accompanying symmetry operation,
-    if relevant) is at the apex of the angle.
+    by _geom_hbond.atom_site_label_H and accompanying symmetry operation
+    code is at the apex of the angle.
 ;
     _name.category_id             geom_hbond
     _name.object_id               angle_DHA
@@ -14423,7 +14438,7 @@ save_geom_hbond.distance_da
     _description.text
 ;
     The distance between the donor and acceptor atoms at the listed
-    sites (and accompanying symmetry operations, if relevant).
+    sites and accompanying symmetry operation codes.
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_DA
@@ -14484,7 +14499,7 @@ save_geom_hbond.distance_dh
     _description.text
 ;
     The distance between the donor and hydrogen atoms at the listed
-    sites (and accompanying symmetry operations, if relevant).
+    sites and accompanying symmetry operation codes.
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_DH
@@ -14545,7 +14560,7 @@ save_geom_hbond.distance_ha
     _description.text
 ;
     The distance between the hydrogen and acceptor atoms at the listed
-    sites (and accompanying symmetry operations, if relevant).
+    sites and accompanying symmetry operation codes.
 ;
     _name.category_id             geom_hbond
     _name.object_id               distance_HA
@@ -14770,8 +14785,7 @@ save_geom_torsion.angle
     _definition.update            2019-07-25
     _description.text
 ;
-    Angle defined by the listed sites (and accompanying symmetry operation,
-    if relevant).
+    Angle defined by the listed sites and accompanying symmetry operation codes.
     The torsion-angle definition should be that of Klyne and Prelog.
     The vector direction _geom_torsion.atom_site_label_2 to
     _geom_torsion.atom_site_label_3 is the viewing
@@ -15535,8 +15549,8 @@ save_VALENCE
     _definition.update            2025-11-05
     _description.text
 ;
-    The category of items used to characterize localized inorganic
-    bond valences using the model of Brown (2002).
+    Data items in the VALENCE category are used to characterize localized
+    inorganic bond valences using the model of Brown (2002).
 
     Reference: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
          the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
@@ -15554,7 +15568,7 @@ save_VALENCE_PARAM
     _definition.update            2025-11-05
     _description.text
 ;
-    The category of items that specify bond-valence parameters
+    Data items in the VALENCE_PARAM category specify bond-valence parameters
     used to calculate bond valences from bond lengths using the
     model of Brown (2002).
 
@@ -15575,7 +15589,7 @@ save_valence_param.atom_1
     _description.text
 ;
     The atom type symbol for atom 1 forming a bond whose
-    valence parameters are given in this category.
+    bond-valence parameters are given in this category.
 ;
     _name.category_id             valence_param
     _name.object_id               atom_1
@@ -15615,7 +15629,7 @@ save_valence_param.atom_2
     _description.text
 ;
     Atom type symbol for atom 2 forming a bond whose
-    valence parameters are given in this category.
+    bond-valence parameters are given in this category.
 ;
     _name.category_id             valence_param
     _name.object_id               atom_2
@@ -15655,7 +15669,7 @@ save_valence_param.b
     _description.text
 ;
     The bond-valence parameter B used in the expression
-    s = exp[(Ro - R)/B], where s is the valence of bond length R.
+    s = exp[(Ro - R)/B], where s is the valence of a bond of length R.
 ;
     _name.category_id             valence_param
     _name.object_id               B
@@ -15758,7 +15772,7 @@ save_valence_param.ro
     _description.text
 ;
     The bond-valence parameter Ro used in the expression
-    s = exp[(Ro - R)/B], where s is the valence of bond length R.
+    s = exp[(Ro - R)/B], where s is the valence of a bond of length R.
 ;
     _name.category_id             valence_param
     _name.object_id               Ro
@@ -15779,8 +15793,8 @@ save_VALENCE_REF
     _definition.update            2025-11-05
     _description.text
 ;
-    The category of items for tabulating standard literature references
-    from which the bond-valence parameters have been taken.
+    Data items in the VALENCE_REF category list standard literature
+    references from which the bond-valence parameters have been taken.
 ;
     _name.category_id             VALENCE
     _name.object_id               VALENCE_REF
@@ -15795,7 +15809,7 @@ save_valence_ref.id
     _definition.update            2023-09-12
     _description.text
 ;
-    Unique loop code of the valence references.
+    Unique loop code of the bond-valence references.
 ;
     _name.category_id             valence_ref
     _name.object_id               id
@@ -21383,8 +21397,8 @@ save_STRUCTURE
     _definition.update            2024-05-15
     _description.text
 ;
-    The dictionary group encompassing the core structure data items defined
-    and used within the Crystallographic Information Framework (CIF).
+    This is a parent category for other categories concerned with the
+    representation of a crystal structure.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               STRUCTURE
@@ -27044,7 +27058,7 @@ save_REFINE
     _definition.update            2012-11-20
     _description.text
 ;
-    The category of data items used to specify information about the
+    Data items in the REFINE category record details about the
     refinement of the structural model.
 ;
     _name.category_id             STRUCTURE
@@ -27140,7 +27154,7 @@ save_REFINE_DIFF
     _definition.update            2023-01-12
     _description.text
 ;
-    The category of data items which specify the scattering density limits
+    Data items in the REFINE_DIFF category specify the scattering density limits
     in a difference Fourier map after the structure has been refined. The
     RMS value is with respect to the arithmetic mean density, and is derived
     from summations over each grid point in the asymmetric unit of the cell.
@@ -27162,7 +27176,7 @@ save_refine_diff.density_max
     _definition.update            2023-01-12
     _description.text
 ;
-    Maximum density value in a difference Fourier map.
+    The maximum density value in a difference Fourier map.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_max
@@ -27227,7 +27241,7 @@ save_refine_diff.density_min
     _definition.update            2023-01-12
     _description.text
 ;
-    Minimum density value in a difference Fourier map.
+    The minimum density value in a difference Fourier map.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_min
@@ -27292,7 +27306,7 @@ save_refine_diff.density_rms
     _definition.update            2023-01-12
     _description.text
 ;
-    Root mean square density value in a difference Fourier map.
+    The root mean square density value in a difference Fourier map.
     This value is measured with respect to the arithmetic mean
     density and is derived from summations over each grid point
     in the asymmetric unit of the cell. This quantity is useful
@@ -27356,7 +27370,7 @@ save_refine_diff.potential_max
     _definition.update            2024-12-06
     _description.text
 ;
-    Maximum electrostatic potential value in a difference Fourier map.
+    The maximum electrostatic potential value in a difference Fourier map.
 ;
     _name.category_id             refine_diff
     _name.object_id               potential_max
@@ -27393,7 +27407,7 @@ save_refine_diff.potential_min
     _definition.update            2024-12-06
     _description.text
 ;
-    Minimum electrostatic potential value in a difference Fourier map.
+    The minimum electrostatic potential value in a difference Fourier map.
 ;
     _name.category_id             refine_diff
     _name.object_id               potential_min
@@ -27430,7 +27444,8 @@ save_refine_diff.potential_rms
     _definition.update            2024-12-06
     _description.text
 ;
-    Root mean square electrostatic potential value in a difference Fourier map.
+    The root mean square electrostatic potential value in a
+    difference Fourier map.
     This value is measured with respect to the arithmetic mean
     potential and is derived from summations over each grid point
     in the asymmetric unit of the cell. This quantity is useful
@@ -27474,8 +27489,8 @@ save_REFINE_LS
     _definition.update            2012-11-20
     _description.text
 ;
-    The category of data items used to specify information about the
-    refinement of the structural model.
+    Data items in the REFINE_LS category are used to provide information
+    about the refinement of the structural model.
 ;
     _name.category_id             REFINE
     _name.object_id               REFINE_LS
@@ -27494,7 +27509,7 @@ save_refine_ls.abs_structure_details
     _definition.update            2012-11-20
     _description.text
 ;
-    Details on the absolute structure and how it was determined.
+    Details of the absolute structure and how it was determined.
 ;
     _name.category_id             refine_ls
     _name.object_id               abs_structure_details
@@ -27660,7 +27675,7 @@ save_refine_ls.d_res_high
     _description.text
 ;
     Highest resolution for the reflections used in refinement.
-    This corresponds to the smallest interplanar d value.
+    This corresponds to the smallest interplanar spacing (d value).
 ;
     _name.category_id             refine_ls
     _name.object_id               d_res_high
@@ -27686,7 +27701,7 @@ save_refine_ls.d_res_low
     _description.text
 ;
     Lowest resolution for the reflections used in refinement.
-    This corresponds to the largest interplanar d value.
+    This corresponds to the largest interplanar spacing (d value).
 ;
     _name.category_id             refine_ls
     _name.object_id               d_res_low
@@ -27775,7 +27790,7 @@ save_refine_ls.extinction_expression
     _definition.update            2023-01-13
     _description.text
 ;
-    Description of or reference to the extinction-correction equation
+    A description of or reference to the extinction-correction equation
     used to apply the data item  _refine_ls.extinction_coef. This
     information should be sufficient to reproduce the extinction-correction
     factors applied to the structure factors.
@@ -27807,7 +27822,7 @@ save_refine_ls.extinction_method
     _definition.update            2019-01-09
     _description.text
 ;
-    Description of the extinction correction method applied with the
+    A description of the extinction correction method applied with the
     data item _refine_ls.extinction_coef. This description should
     include information about the correction method, either 'Becker-
     Coppens' or 'Zachariasen'. The latter is sometimes referred to as
@@ -27957,9 +27972,9 @@ save_refine_ls.goodness_of_fit_all
     _definition.update            2012-11-20
     _description.text
 ;
-    Least-squares goodness-of-fit parameter S for all reflections after
+    The least-squares goodness-of-fit parameter S for all reflections after
     the final cycle of refinement. Ideally, account should be taken of
-    parameters restrained in the least squares.
+    parameters restrained in the least-squares refinement.
 
              {  sum { w [ Y(meas) - Y(calc) ]^2^ }  }^1/2^
          S = { ------------------------------------ }
@@ -28024,10 +28039,10 @@ save_refine_ls.goodness_of_fit_gt
     _definition.update            2024-02-14
     _description.text
 ;
-    Least-squares goodness-of-fit parameter S for significantly
-    intense reflections, (i.e. 'observed' reflections with values
-    greater than the threshold set in _reflns.threshold_expression),
-    after the final cycle. Ideally, account should be taken of
+    The least-squares goodness-of-fit parameter S for significantly
+    intense reflections (i.e. 'observed' reflections with values
+    greater than the threshold set in _reflns.threshold_expression)
+    after the final cycle of refinement. Ideally, account should be taken of
     parameters restrained in the least-squares refinement.
 
              {  sum { w [ Y(meas_gt) - Y(calc) ]^2^ }  }^1/2^
@@ -28091,7 +28106,7 @@ save_refine_ls.goodness_of_fit_ref
     _definition.update            2012-11-20
     _description.text
 ;
-    Least-squares goodness-of-fit parameter S for those reflections
+    The least-squares goodness-of-fit parameter S for those reflections
     included in the final cycle of refinement. Account should be
     taken of restrained parameters.
 
@@ -28277,7 +28292,7 @@ save_refine_ls.number_constraints
     _definition.update            2023-01-13
     _description.text
 ;
-    Number of constrained (non-refined or dependent) parameters
+    The number of constrained (non-refined or dependent) parameters
     in the least-squares process. These may be due to symmetry or any
     other constraint process (e.g. rigid-body refinement). See also
     _atom_site.constraints and _atom_site.refinement_flags_*. A general
@@ -28306,7 +28321,7 @@ save_refine_ls.number_parameters
     _definition.update            2021-03-01
     _description.text
 ;
-    Number of parameters refined in the least-squares process. If
+    The number of parameters refined in the least-squares process. If
     possible this number should include the restrained parameters.
     The restrained parameters are distinct from the constrained
     parameters (where one or more parameters are linearly dependent
@@ -28338,7 +28353,7 @@ save_refine_ls.number_reflns
     _definition.update            2021-03-01
     _description.text
 ;
-    Number of unique reflections used in the least-squares refinement.
+    The number of unique reflections used in the least-squares refinement.
 ;
     _name.category_id             refine_ls
     _name.object_id               number_reflns
@@ -28390,7 +28405,7 @@ save_refine_ls.number_restraints
     _definition.update            2023-01-13
     _description.text
 ;
-    Number of restrained parameters in the least-squares refinement. These
+    The number of restrained parameters in the least-squares refinement. These
     parameters are not directly dependent on another refined parameter. Often
     restrained parameters involve geometry or energy dependencies. See also
     _atom_site.constraints and _atom_site.refinement_flags_*. A description
@@ -28580,9 +28595,9 @@ save_refine_ls.restrained_s_all
     _definition.update            2012-11-20
     _description.text
 ;
-    Least-squares goodness-of-fit parameter S' for all reflections after
-    the final cycle of least squares. This parameter explicitly includes
-    the restraints applied in the least-squares process. See also
+    The least-squares goodness-of-fit parameter S' for all reflections after
+    the final cycle of least-squares refinement. This parameter explicitly
+    includes the restraints applied in the least-squares process. See also
     the _refine_ls.goodness_of_fit_all definition.
 
            {sum { w [ Y(meas) - Y(calc) ]^2^ }                  }^1/2^
@@ -28652,17 +28667,18 @@ save_refine_ls.restrained_s_gt
     _definition.update            2024-02-14
     _description.text
 ;
-    Least-squares goodness-of-fit parameter S' for significantly intense
+    The least-squares goodness-of-fit parameter S' for significantly intense
     reflections (satisfying _reflns.threshold_expression) after the final
-    cycle of least squares. This parameter explicitly includes the restraints
-    applied. The expression for S' is given in _refine_ls.restrained_S_all.
+    cycle of least-squares refinement. This parameter explicitly includes
+    the restraints applied. The expression for S' is given in
+    refine_ls.restrained_S_all.
 
-           {sum { w [ Y(meas_gt) - Y(calc) ]^2^ }               }^1/2^
+           {sum { w [ Y(meas) - Y(calc) ]^2^ }               }^1/2^
            {         + sum~r~ { w~r~ [ P(calc) - P(targ) ]^2^ } }
       S' = { -------------------------------------------------- }
            {            N~ref~ + N~restr~ - N~param~            }
 
-              Y(meas_gt) = the 'observed' coefficients
+              Y(meas)    = the 'observed' coefficients
                          (see _refine_ls.structure_factor_coef)
               Y(calc)    = the calculated coefficients
                          (see _refine_ls.structure_factor_coef)
@@ -29131,8 +29147,9 @@ save_REFINE_LS_CLASS
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to specify information about the
-    refinement of the structural model.
+    Data items in the REFINE_LS_CLASS category record details
+    (for each reflection class separately) about the reflections
+    used for the structure refinement.
 ;
     _name.category_id             REFINE_LS
     _name.object_id               REFINE_LS_CLASS
@@ -29173,7 +29190,7 @@ save_refine_ls_class.d_res_high
     _description.text
 ;
     Highest resolution for the reflections in this class.
-    This corresponds to the smallest interplanar d value.
+    This corresponds to the smallest interplanar spacing (d value).
 ;
     _name.category_id             refine_ls_class
     _name.object_id               d_res_high
@@ -29194,7 +29211,7 @@ save_refine_ls_class.d_res_low
     _description.text
 ;
     Lowest resolution for the reflections in this class.
-    This corresponds to the largest interplanar d value.
+    This corresponds to the largest interplanar spacing (d value).
 ;
     _name.category_id             refine_ls_class
     _name.object_id               d_res_low
@@ -29215,7 +29232,7 @@ save_refine_ls_class.r_factor_all
     _description.text
 ;
     Residual factor for reflections in this class included in the
-    refinement.  See _refine_ls.R_factor_all definition for details.
+    refinement. See the _refine_ls.R_factor_all definition for details.
 ;
     _name.category_id             refine_ls_class
     _name.object_id               R_factor_all
@@ -29242,7 +29259,8 @@ save_refine_ls_class.r_factor_gt
 ;
     Residual factor for the reflections in this class judged
     significantly intense (see _reflns.threshold_expression) and
-    included in refinement. See _refine_ls.R_factor_gt for details.
+    included in the refinement. See the _refine_ls.R_factor_gt definition
+    for details.
 ;
     _name.category_id             refine_ls_class
     _name.object_id               R_factor_gt
@@ -29264,7 +29282,8 @@ save_refine_ls_class.r_fsqd_factor
 ;
     Residual factor R(F^2^) for reflections in this class judged
     significantly intense (see _reflns.threshold_expression) and
-    included in refinement. See _refine_ls.R_Fsqd_factor for details.
+    included in refinement. See the _refine_ls.R_Fsqd_factor definition
+    for details.
 ;
     _name.category_id             refine_ls_class
     _name.object_id               R_Fsqd_factor
@@ -29286,7 +29305,8 @@ save_refine_ls_class.r_i_factor
 ;
     Residual factor R(I) for reflections in this class judged
     significantly intense (see _reflns.threshold_expression) and
-    included in refinement. See _refine_ls.R_I_factor for details.
+    included in refinement. See the _refine_ls.R_I_factor definition
+    for details.
 ;
     _name.category_id             refine_ls_class
     _name.object_id               R_I_factor
@@ -29308,7 +29328,8 @@ save_refine_ls_class.wr_factor_all
 ;
     Weight residual for all reflections in this class judged
     significantly intense (see _reflns.threshold_expression) and
-    included in refinement. See _refine_ls.wR_factor_all for details.
+    included in refinement. See the _refine_ls.wR_factor_all definition
+    for details.
 ;
     _name.category_id             refine_ls_class
     _name.object_id               wR_factor_all
