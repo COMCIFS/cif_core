@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-09-17
+    _dictionary.date              2026-09-18
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -757,7 +757,7 @@ save_
 save_cell.convert_uij_to_betaij
 
     _definition.id                '_cell.convert_Uij_to_betaij'
-    _definition.update            2021-09-24
+    _definition.update            2026-09-18
     _description.text
 ;
     The reciprocal-space matrix for converting the U(ij) matrix of
@@ -788,7 +788,7 @@ save_cell.convert_uij_to_betaij
     With c  as  cell
 
     _cell.convert_Uij_to_betaij =
-    1.4142 * Pi * Matrix([[ c.reciprocal_length_a, 0, 0 ],
+    Sqrt(2) * Pi * Matrix([[ c.reciprocal_length_a, 0, 0 ],
                           [ 0, c.reciprocal_length_b, 0 ],
                           [ 0, 0, c.reciprocal_length_c ]])
 ;
@@ -29793,7 +29793,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-09-17
+         3.3.0                    2026-09-18
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
