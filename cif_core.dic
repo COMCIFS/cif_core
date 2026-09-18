@@ -4094,7 +4094,7 @@ save_DIFFRN_REFLN
     measurements and must be included in looped lists.
 
     (Data items in the DIFFRN_REFLNS category specify the parameters
-    that apply to all intensity  measurements.)
+    that apply to all intensity measurements.)
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_REFLN
