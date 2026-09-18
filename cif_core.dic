@@ -28671,7 +28671,7 @@ save_refine_ls.restrained_s_gt
     reflections (satisfying _reflns.threshold_expression) after the final
     cycle of least-squares refinement. This parameter explicitly includes
     the restraints applied. The expression for S' is given in
-    refine_ls.restrained_S_all.
+    _refine_ls.restrained_S_all.
 
            {sum { w [ Y(meas) - Y(calc) ]^2^ }               }^1/2^
            {         + sum~r~ { w~r~ [ P(calc) - P(targ) ]^2^ } }
