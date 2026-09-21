@@ -1223,7 +1223,18 @@ save_cell.reciprocal_angle_alpha
     _definition.update            2013-01-18
     _description.text
 ;
-    Reciprocal of the angle between _cell.length_b and _cell.length_c.
+    The reciprocal of the angle between _cell.length_b and _cell.length_c.
+    The angles defining the reciprocal cell are related to those in
+    the real cell by:
+
+    cos(recip-alpha)
+        = [cos(beta)*cos(gamma) - cos(alpha)]/[sin(beta)*sin(gamma)]
+
+    cos(recip-beta)
+        = [cos(gamma)*cos(alpha) - cos(beta)]/[sin(gamma)*sin(alpha)]
+
+    cos(recip-gamma)
+        = [cos(alpha)*cos(beta) - cos(gamma)]/[sin(alpha)*sin(beta)]
 
     Reference: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
          New York: John Wiley & Sons Inc.
@@ -1278,7 +1289,18 @@ save_cell.reciprocal_angle_beta
     _definition.update            2013-01-18
     _description.text
 ;
-    Reciprocal of the angle between _cell.length_a and _cell.length_c.
+    The reciprocal of the angle between _cell.length_a and _cell.length_c.
+    The angles defining the reciprocal cell are related to those in
+    the real cell by:
+
+    cos(recip-alpha)
+        = [cos(beta)*cos(gamma) - cos(alpha)]/[sin(beta)*sin(gamma)]
+
+    cos(recip-beta)
+        = [cos(gamma)*cos(alpha) - cos(beta)]/[sin(gamma)*sin(alpha)]
+
+    cos(recip-gamma)
+        = [cos(alpha)*cos(beta) - cos(gamma)]/[sin(alpha)*sin(beta)]
 
     Reference: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
          New York: John Wiley & Sons Inc.
@@ -1333,7 +1355,18 @@ save_cell.reciprocal_angle_gamma
     _definition.update            2016-09-09
     _description.text
 ;
-    Reciprocal of the angle between _cell.length_a and _cell.length_b.
+    The reciprocal of the angle between _cell.length_a and _cell.length_b.
+    The angles defining the reciprocal cell are related to those in
+    the real cell by:
+
+    cos(recip-alpha)
+        = [cos(beta)*cos(gamma) - cos(alpha)]/[sin(beta)*sin(gamma)]
+
+    cos(recip-beta)
+        = [cos(gamma)*cos(alpha) - cos(beta)]/[sin(gamma)*sin(alpha)]
+
+    cos(recip-gamma)
+        = [cos(alpha)*cos(beta) - cos(gamma)]/[sin(alpha)*sin(beta)]
 
     Reference: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
          New York: John Wiley & Sons Inc.
@@ -1388,7 +1421,19 @@ save_cell.reciprocal_length_a
     _definition.update            2012-11-22
     _description.text
 ;
-    Reciprocal of the _cell.length_a.
+    The reciprocal of the _cell.length_a.
+    The reciprocal-cell lengths are related to the real cell by:
+
+    recip-a = b*c*sin(alpha)/V
+
+    recip-b = c*a*sin(beta)/V
+
+    recip-c = a*b*sin(gamma)/V
+
+    where V is the cell volume.
+
+    Reference: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+         New York: John Wiley & Sons Inc.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_length_a
@@ -1436,7 +1481,19 @@ save_cell.reciprocal_length_b
     _definition.update            2012-11-22
     _description.text
 ;
-    Reciprocal of the _cell.length_b.
+    The reciprocal of the _cell.length_b.
+    The reciprocal-cell lengths are related to the real cell by:
+
+    recip-a = b*c*sin(alpha)/V
+
+    recip-b = c*a*sin(beta)/V
+
+    recip-c = a*b*sin(gamma)/V
+
+    where V is the cell volume.
+
+    Reference: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+         New York: John Wiley & Sons Inc.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_length_b
@@ -1484,7 +1541,19 @@ save_cell.reciprocal_length_c
     _definition.update            2012-11-22
     _description.text
 ;
-    Reciprocal of the _cell.length_c.
+    The reciprocal of the _cell.length_c.
+    The reciprocal-cell lengths are related to the real cell by:
+
+    recip-a = b*c*sin(alpha)/V
+
+    recip-b = c*a*sin(beta)/V
+
+    recip-c = a*b*sin(gamma)/V
+
+    where V is the cell volume.
+
+    Reference: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+         New York: John Wiley & Sons Inc.
 ;
     _name.category_id             cell
     _name.object_id               reciprocal_length_c
@@ -1933,6 +2002,16 @@ save_cell.volume
     _description.text
 ;
     Volume of the crystal unit cell.
+
+    V = a b c [1 - cos^2^(alpha) - cos^2^(beta) - cos^2^(gamma)
+                 + 2 cos(alpha) cos(beta) cos(gamma) ] ^1/2^
+
+    a     = _cell.length_a
+    b     = _cell.length_b
+    c     = _cell.length_c
+    alpha = _cell.angle_alpha
+    beta  = _cell.angle_beta
+    gamma = _cell.angle_gamma
 ;
     _name.category_id             cell
     _name.object_id               volume
@@ -4422,7 +4501,8 @@ save_diffrn_refln.elapsed_time
     _definition.update            2012-11-26
     _description.text
 ;
-    Elapsed time from the start to the end of the intensity measurement.
+    Elapsed time from the start of the experiment to the end of the
+    measurement of this reflection.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               elapsed_time
@@ -10579,11 +10659,10 @@ save_chemical_formula.sum
     _definition.update            2012-11-22
     _description.text
 ;
-    See the CHEMICAL_FORMULA category description for the rules for writing
-    chemical formulae in which all discrete bonded residues and ions are
+    Formula in which all discrete bonded residues and ions are
     summed over the constituent elements, following the ordering given
-    in general rule (5) of the category description. Parentheses are not
-    normally used.
+    in general rule (5) of the CHEMICAL_FORMULA category description.
+    Parentheses are not normally used.
 ;
     _name.category_id             chemical_formula
     _name.object_id               sum
@@ -15549,10 +15628,7 @@ save_VALENCE
     _description.text
 ;
     Data items in the VALENCE category are used to characterize localized
-    inorganic bond valences using the model of Brown (2002).
-
-    Reference: Brown, I. D. (2002). The Chemical Bond in Inorganic Chemistry:
-         the Bond-Valence Model, eq. (3.1). Oxford: Oxford University Press.
+    inorganic bond valences.
 ;
     _name.category_id             MODEL
     _name.object_id               VALENCE
@@ -18764,8 +18840,8 @@ save_DISPLAY
     _definition.update            2012-05-07
     _description.text
 ;
-    The category of data items used to enumerate the display
-    parameters used in the discipline.
+    This is the parent of utility categories for describing ways to display
+    the structural model in various media representations.
 ;
     _name.category_id             PUBLICATION
     _name.object_id               DISPLAY
@@ -18780,8 +18856,8 @@ save_DISPLAY_COLOUR
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items used to enumerate the display
-    colour codes used in the discipline.
+    Data items in the DISPLAY_COLOUR category provide reference
+    information used in representing the colour of displayed components.
 ;
     _name.category_id             DISPLAY
     _name.object_id               DISPLAY_COLOUR
@@ -21396,8 +21472,7 @@ save_STRUCTURE
     _definition.update            2024-05-15
     _description.text
 ;
-    This is a parent category for other categories concerned with the
-    representation of a crystal structure.
+    A category for collecting information about a crystallographic structure.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               STRUCTURE
@@ -24034,8 +24109,9 @@ save_atom_site_aniso.ratio
     _definition.update            2023-01-16
     _description.text
 ;
-    Ratio of the maximum to minimum eigenvalues of the atomic displacement
-    ellipsoids.
+    The ratio of the maximum to minimum eigenvalues of the atomic
+    displacement parameter matrix. In visual representation, the ratio
+    of major to minor axis lengths of the displacement ellipsoids.
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               ratio
@@ -24333,8 +24409,9 @@ save_ATOM_SITES
     _definition.update            2012-11-20
     _description.text
 ;
-    Data items in the ATOM_SITES category describe information which applies
-    to all atom sites in a crystal structure.
+    Data items in the ATOM_SITES category record details common to all
+    atom sites, such as general structure solution strategy and coordinate
+    transformations.
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_SITES
@@ -29352,6 +29429,8 @@ save_FUNCTION
     The crystallographic functions invoked in the definition
     methods of core structure data items defined and used within
     the Crystallographic Information Framework (CIF).
+
+    Unlike other categories, entries in this category do not define data names.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               FUNCTION
