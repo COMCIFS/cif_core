@@ -10,7 +10,7 @@ data_CIF_CORE
 
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
-    _dictionary.version           3.4.0
+    _dictionary.version           3.4.0-dev
     _dictionary.date              2026-09-11
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
@@ -29581,7 +29581,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-09-11
+         3.4.0-dev                2026-09-11
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
