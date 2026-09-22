@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.3.0
-    _dictionary.date              2026-09-18
+    _dictionary.date              2026-09-22
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2823,6 +2823,31 @@ save_DIFFRN_MEASUREMENT
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN_MEASUREMENT
+
+save_
+
+save_diffrn_measurement.ambient_temperature_device_make
+
+    _definition.id
+        '_diffrn_measurement.ambient_temperature_device_make'
+
+    _definition.update            2026-09-22
+    _description.text
+;
+    The make, model or name of the cooling device used during
+    intensity measurement.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               ambient_temperature_device_make
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'Oxford Cryostream 800'
+         'Bruker Kryofelx II'
 
 save_
 
@@ -29871,7 +29896,7 @@ save_
        Changed the purpose of the _diffrn_radiation_wavelength.id data item
        from 'Encode' to 'Key'.
 ;
-         3.3.0                    2026-09-18
+         3.3.0                    2026-09-22
 ;
        Expanded available form factor parameterisations, added support for
        isotopes and symmforms for atom sites. More details can be added
@@ -29963,4 +29988,6 @@ save_
        updated examples with valid test numbers.
 
        Updated _publ_requested.category to latest IUCr journal requirements.
+
+       Added _diffrn_measurement.ambient_temperature_device_make.
 ;
