@@ -20430,8 +20430,8 @@ save_PUBL_CONTACT_AUTHOR
     a single point of contact.
 
     This is the person contacted by the journal editorial staff.
-    It may or may not be a person identified as an _audit_contact_author,
-    which identifies a person responsible for the data set.
+    It may or may not be a person identified by the AUDIT_CONTACT_AUTHOR
+    category, which identifies a person responsible for the data set.
 ;
     _name.category_id             PUBL
     _name.object_id               PUBL_CONTACT_AUTHOR
