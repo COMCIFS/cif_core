@@ -4276,7 +4276,7 @@ save_diffrn_refln.class_code
 ;
     The code identifying the class to which this reflection has
     been assigned according to some binning strategy. This code must match a
-    value of _diffrn_reflns.class_code. Reflections may be grouped into
+    value of _diffrn_reflns_class.code. Reflections may be grouped into
     classes for a variety of purposes. For example, for modulated
     structures each reflection class may be defined by the
     number m = Sum | m~i~ |, where the m~i~ are the integer coefficients
