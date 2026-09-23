@@ -9327,6 +9327,11 @@ save_chemical.absolute_configuration
          anomalous-dispersion effects in diffraction measurements on
          the crystal.
 ;
+         co
+;
+         The absolute configuration has been determined by chiro-optical
+         procedures.
+;
          dyn
 ;
          Absolute configuration determined directly from dynamical refinement.
@@ -9344,6 +9349,15 @@ save_chemical.absolute_configuration
          anomalous-dispersion effects in diffraction measurements on the
          crystal. The enantiomer has been assigned by reference to an
          unchanging chiral centre in the synthetic procedure.
+;
+         synad
+;
+         Anomalous dispersion has been used to assign a particular
+         absolute configuration and the absolute configuration is known.
+         For example, the absolute configuration was established by
+         reference to an unchanging chiral centre in the synthetic procedure
+         (as in 'syn') and confirmed by anomalous-dispersion effects in
+         diffraction measurements on the crystal (from 'rmad').
 ;
          unk
 ;
