@@ -18216,10 +18216,10 @@ save_database.dataset_doi
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
-    a data set publication associated with the structure
-    described in the current data block. This should be used
-    for a data set obtained from a curated database such as
-    CSD or PDB.
+    a data set publication associated with the current data block.
+    This should be used for a data set obtained from a curated
+    database such as CSD or PDB, or an Open public repository
+    such as Zenodo.
 
     A DOI is a unique character string identifying any
     object of intellectual property. It provides a
