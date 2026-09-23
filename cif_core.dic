@@ -2830,6 +2830,8 @@ save_diffrn_measurement.ambient_temperature_device_make
 
     _definition.id
         '_diffrn_measurement.ambient_temperature_device_make'
+    _alias.definition_id
+        '_diffrn_measurement_ambient_temperature_device_make'
 
     _definition.update            2026-09-22
     _description.text
