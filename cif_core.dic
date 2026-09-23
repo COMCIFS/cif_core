@@ -7765,6 +7765,8 @@ save_reflns.apply_dispersion_to_fcalc
          no                       'Do not apply dispersion.'
          n                        'Abbreviation for "no".'
 
+    _enumeration.default          yes
+
 save_
 
 save_reflns.d_resolution_high
