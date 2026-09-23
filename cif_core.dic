@@ -9057,9 +9057,11 @@ save_EXPTL
     _definition.update            2024-05-15
     _description.text
 ;
-    Data items in the EXPTL category record details about the
-    experimental work prior to the intensity measurements. These include
-    details about the absorption-correction technique employed.
+    Data items in the EXPTL category describe general aspects of
+    the experiment not directly associated with diffraction
+    measurements or the application of other structure-determination
+    techniques, and which are not more precisely specified by its
+    various child categories.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               EXPTL
