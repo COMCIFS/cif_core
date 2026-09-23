@@ -23248,9 +23248,9 @@ save_atom_site.type_symbol
     _description.text
 ;
     A code to identify the atom species occupying this site.
-    This code must match a corresponding _atom_type.symbol. The
-    specification of this code is optional if component_0 of the
-    _atom_site.label is used for this purpose. See _atom_type.symbol.
+    This code must match a corresponding _atom_type.symbol. If
+    absent, component 0 of the _atom_site.label must be used to
+    specify atomic type. See _atom_type.symbol.
 ;
     _name.category_id             atom_site
     _name.object_id               type_symbol
