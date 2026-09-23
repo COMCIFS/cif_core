@@ -10604,7 +10604,7 @@ save_chemical_formula.weight
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.0:
+    _enumeration.range            0.0:
     _units.code                   dalton
 
 save_
@@ -10624,7 +10624,7 @@ save_chemical_formula.weight_meas
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.0:
+    _enumeration.range            0.0:
     _units.code                   dalton
 
 save_
