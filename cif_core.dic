@@ -2738,6 +2738,33 @@ save_DIFFRN_MEASUREMENT
 
 save_
 
+save_diffrn_measurement.ambient_temperature_device_make
+
+    _definition.id
+        '_diffrn_measurement.ambient_temperature_device_make'
+    _alias.definition_id
+        '_diffrn_measurement_ambient_temperature_device_make'
+
+    _definition.update            2026-09-22
+    _description.text
+;
+    The make, model or name of the cooling device used during
+    intensity measurement.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               ambient_temperature_device_make
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'Oxford Cryostream 800'
+         'Bruker Kryoflex II'
+
+save_
+
 save_diffrn_measurement.details
 
     _definition.id                '_diffrn_measurement.details'
@@ -30175,6 +30202,7 @@ save_
 
        Updated _publ_requested.category to latest IUCr journal requirements.
 
+       Added _diffrn_measurement.ambient_temperature_device_make.
        Enhanced form factor parameterisations through reprovision of
        _atom_type_scat.inv_mott_bethe_as
        _atom_type_scat.inv_mott_bethe_bs
