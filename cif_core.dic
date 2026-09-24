@@ -16394,7 +16394,7 @@ save_AUDIT_CONFORM
     _audit_conform.dict_version
     _audit_conform.dict_DOI
     _audit_conform.dict_location
-      cif_core.dic    3.3.0    10.1107/cifdic_000006  .
+      CIF_CORE        3.3.0    10.1107/cifdic_000006  .
       cif_iucr.dic    1.4.1    .
                  ftp://ftp.iucr.org/pub/cifdics/cif_iucr.dic
 ;
