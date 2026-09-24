@@ -2849,7 +2849,7 @@ save_diffrn_measurement.ambient_temperature_device_make
     loop_
       _description_example.case
          'Oxford Cryostream 800'
-         'Bruker Kryofelx II'
+         'Bruker Kryoflex II'
 
 save_
 
