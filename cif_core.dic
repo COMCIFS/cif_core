@@ -13,10 +13,11 @@ data_CIF_CORE
     _dictionary.version           3.3.0
     _dictionary.date              2026-09-22
     _dictionary.uri
-        https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
+         https://doi.org/10.1107/cifdic_000002
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore
+    _dictionary.doi               10.1107/cifdic_000002
     _description.text
 ;
     The CIF_CORE dictionary defines data items that are common to all domains
