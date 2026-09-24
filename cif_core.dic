@@ -69,7 +69,6 @@ save_DIFFRN
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN
-    _category_key.name            '_diffrn.id'
 
 save_
 
@@ -409,24 +408,6 @@ save_diffrn.flux_density
 
 save_
 
-save_diffrn.id
-
-    _definition.id                '_diffrn.id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Unique identifier for a diffraction data set collected under
-    particular diffraction conditions.
-;
-    _name.category_id             diffrn
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_diffrn.measured_fraction_theta_full
 
     _definition.id                '_diffrn.measured_fraction_theta_full'
@@ -631,7 +612,6 @@ save_CELL
 ;
     _name.category_id             DIFFRN
     _name.object_id               CELL
-    _category_key.name            '_cell.diffrn_id'
 
 save_
 
@@ -867,29 +847,6 @@ save_cell.convert_uiso_to_uij_su
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   none
-
-save_
-
-save_cell.diffrn_id
-
-    _definition.id                '_cell.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction conditions to which this cell has been applied,
-    for example, to locate and extract diffraction peaks. These will normally be
-    the same conditions as those under which the cell was measured, but some
-    legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using the
-    _cell_measurement.condition_id data item.
-;
-    _name.category_id             cell
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -2067,51 +2024,6 @@ save_CELL_MEASUREMENT
 ;
     _name.category_id             CELL
     _name.object_id               CELL_MEASUREMENT
-    _category_key.name            '_cell_measurement.diffrn_id'
-
-save_
-
-save_cell_measurement.condition_id
-
-    _definition.id                '_cell_measurement.condition_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction conditions used for cell measurement,
-    where different from the diffraction conditions used for data
-    collection.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               condition_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration.default = _cell_measurement.diffrn_id
-;
-
-save_
-
-save_cell_measurement.diffrn_id
-
-    _definition.id                '_cell_measurement.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction experiment to which the measured cell
-    has been applied.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -7249,7 +7161,7 @@ save_
 save_refln.form_factor_table
 
     _definition.id                '_refln.form_factor_table'
-    _definition.update            2023-06-16
+    _definition.update            2026-07-14
     _description.text
 ;
     Atomic scattering factor table for the scattering angle
@@ -7287,15 +7199,17 @@ save_refln.form_factor_table
 
              } Else If (s < 2.0 ) {
 
-               c  =   t.Cromer_Mann_coeffs
+               cmc  =   t.Cromer_Mann_c
+               cma  =   t.Cromer_Mann_as
+               cmb  =   t.Cromer_Mann_bs
 
-               f  =  (c[0] + c[1] * Exp (-c[2] * s*s)
-                           + c[3] * Exp (-c[4] * s*s)
-                           + c[5] * Exp (-c[6] * s*s)
-                           + c[7] * Exp (-c[8] * s*s))
+               f  =  (cmc + cma[0] * Exp (-cmb[0] * s*s)
+                          + cma[1] * Exp (-cmb[1] * s*s)
+                          + cma[2] * Exp (-cmb[2] * s*s)
+                          + cma[3] * Exp (-cmb[3] * s*s))
              } Else {
 
-               c  =   t.hi_ang_Fox_coeffs
+               c  =   t.hi_ang_Fox_coefs
 
                f  =   Exp ( c[0] + c[1]*s + c[2]*s*s + c[3]*s*s*s )
              }
@@ -7879,6 +7793,8 @@ save_reflns.apply_dispersion_to_fcalc
          y                        'Abbreviation for "yes".'
          no                       'Do not apply dispersion.'
          n                        'Abbreviation for "no".'
+
+    _enumeration.default          yes
 
 save_
 
@@ -9172,9 +9088,11 @@ save_EXPTL
     _definition.update            2024-05-15
     _description.text
 ;
-    Data items in the EXPTL category record details about the
-    experimental work prior to the intensity measurements. These include
-    details about the absorption-correction technique employed.
+    Data items in the EXPTL category describe general aspects of
+    the experiment not directly associated with diffraction
+    measurements or the application of other structure-determination
+    techniques, and which are not more precisely specified by its
+    various child categories.
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               EXPTL
@@ -9442,6 +9360,11 @@ save_chemical.absolute_configuration
          anomalous-dispersion effects in diffraction measurements on
          the crystal.
 ;
+         co
+;
+         The absolute configuration has been determined by chiro-optical
+         procedures.
+;
          dyn
 ;
          Absolute configuration determined directly from dynamical refinement.
@@ -9459,6 +9382,15 @@ save_chemical.absolute_configuration
          anomalous-dispersion effects in diffraction measurements on the
          crystal. The enantiomer has been assigned by reference to an
          unchanging chiral centre in the synthetic procedure.
+;
+         synad
+;
+         Anomalous dispersion has been used to assign a particular
+         absolute configuration and the absolute configuration is known.
+         For example, the absolute configuration was established by
+         reference to an unchanging chiral centre in the synthetic procedure
+         (as in 'syn') and confirmed by anomalous-dispersion effects in
+         diffraction measurements on the crystal (from 'rmad').
 ;
          unk
 ;
@@ -10719,7 +10651,7 @@ save_chemical_formula.weight
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.0:
+    _enumeration.range            0.0:
     _units.code                   dalton
 
 save_
@@ -10739,7 +10671,7 @@ save_chemical_formula.weight_meas
     _type.source                  Recorded
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            1.0:
+    _enumeration.range            0.0:
     _units.code                   dalton
 
 save_
@@ -16502,6 +16434,17 @@ save_AUDIT_CONFORM
     _name.category_id             AUDIT
     _name.object_id               AUDIT_CONFORM
     _category_key.name            '_audit_conform.dict_name'
+    _description_example.case
+;
+    loop_
+    _audit_conform.dict_name
+    _audit_conform.dict_version
+    _audit_conform.dict_DOI
+    _audit_conform.dict_location
+      CIF_CORE        3.3.0    10.1107/cifdic_000006  .
+      cif_iucr.dic    1.4.1    .
+                 ftp://ftp.iucr.org/pub/cifdics/cif_iucr.dic
+;
 
 save_
 
@@ -16563,7 +16506,10 @@ save_audit_conform.dict_name
     _description.text
 ;
     The string identifying the highest-level dictionary defining
-    data names used in this file.
+    data names used in this file. This should match the internal
+    dictionary identifier where this is well defined (i.e.
+    _dictionary.title for DDLm and DDL2 dictionaries,
+    _dictionary_name for DDL1 dictionaries).
 ;
     _name.category_id             audit_conform
     _name.object_id               dict_name
@@ -18315,10 +18261,10 @@ save_database.dataset_doi
     _description.text
 ;
     The digital object identifier (DOI) registered to identify
-    a data set publication associated with the structure
-    described in the current data block. This should be used
-    for a data set obtained from a curated database such as
-    CSD or PDB.
+    a data set publication associated with the current data block.
+    This should be used for a data set obtained from a curated
+    database such as CSD or PDB, or an Open public repository
+    such as Zenodo.
 
     A DOI is a unique character string identifying any
     object of intellectual property. It provides a
@@ -23363,9 +23309,9 @@ save_atom_site.type_symbol
     _description.text
 ;
     A code to identify the atom species occupying this site.
-    This code must match a corresponding _atom_type.symbol. The
-    specification of this code is optional if component_0 of the
-    _atom_site.label is used for this purpose. See _atom_type.symbol.
+    This code must match a corresponding _atom_type.symbol. If
+    absent, component 0 of the _atom_site.label must be used to
+    specify atomic type. See _atom_type.symbol.
 ;
     _name.category_id             atom_site
     _name.object_id               type_symbol
@@ -26332,6 +26278,43 @@ save_atom_type_scat.cromer_mann_a4
 
 save_
 
+save_atom_type_scat.cromer_mann_as
+
+    _definition.id                '_atom_type_scat.Cromer_Mann_as'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Cromer-Mann 'a' coefficients for generating X-ray scattering
+    factors:
+    [ a1, a2, a3, a4 ].
+
+    See also: _atom_type_scat.Cromer_Mann_bs
+              _atom_type_scat.Cromer_Mann_c
+
+    Reference: International Tables for Crystallography (2004).
+           Vol. C, Table 6.1.1.4.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Cromer_Mann_as
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[4]'
+    _type.contents                Real
+    _units.code                   none
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With t  as  atom_type_scat
+
+     _atom_type_scat.Cromer_Mann_as  =  [ t.Cromer_Mann_a1,
+                                          t.Cromer_Mann_a2,
+                                          t.Cromer_Mann_a3,
+                                          t.Cromer_Mann_a4 ]
+;
+
+save_
+
 save_atom_type_scat.cromer_mann_b1
 
     _definition.id                '_atom_type_scat.Cromer_Mann_b1'
@@ -26409,6 +26392,42 @@ save_atom_type_scat.cromer_mann_b4
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
          {'file':templ_enum.cif  'save':cromer_mann_b4}
         ]
+save_
+
+save_atom_type_scat.cromer_mann_bs
+
+    _definition.id                '_atom_type_scat.Cromer_Mann_bs'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Cromer-Mann 'b' coefficients for generating X-ray scattering
+    factors:
+    [ b1, b2, b3, b4 ].
+
+    See also: _atom_type_scat.Cromer_Mann_as
+              _atom_type_scat.Cromer_Mann_c
+
+    Reference: International Tables for Crystallography (2004).
+           Vol. C, Table 6.1.1.4.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Cromer_Mann_bs
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[4]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+    _method.purpose               Evaluation
+    _method.expression
+;
+    With t  as  atom_type_scat
+
+     _atom_type_scat.Cromer_Mann_bs  =  [ t.Cromer_Mann_b1,
+                                          t.Cromer_Mann_b2,
+                                          t.Cromer_Mann_b3,
+                                          t.Cromer_Mann_b4 ]
+;
 
 save_
 
@@ -26429,41 +26448,6 @@ save_atom_type_scat.cromer_mann_c
          {'file':templ_attr.cif  'save':cromer_mann_coeff}
          {'file':templ_enum.cif  'save':cromer_mann_c}
         ]
-
-save_
-
-save_atom_type_scat.cromer_mann_coeffs
-
-    _definition.id                '_atom_type_scat.Cromer_Mann_coeffs'
-    _definition.update            2023-06-16
-    _description.text
-;
-    The set of Cromer-Mann coefficients for generating X-ray scattering
-    factors:
-    [ c, a1, b1, a2, b2, a3, b3, a4, b4 ].
-
-    Reference: International Tables for Crystallography (2004). Vol. C,
-         Table 6.1.1.4.
-;
-    _name.category_id             atom_type_scat
-    _name.object_id               Cromer_Mann_coeffs
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               List
-    _type.dimension               '[9]'
-    _type.contents                Real
-    _units.code                   unspecified
-    _method.purpose               Evaluation
-    _method.expression
-;
-    With t  as  atom_type_scat
-
-     _atom_type_scat.Cromer_Mann_coeffs  =          [ t.Cromer_Mann_c,
-                                    t.Cromer_Mann_a1, t.Cromer_Mann_b1,
-                                    t.Cromer_Mann_a2, t.Cromer_Mann_b2,
-                                    t.Cromer_Mann_a3, t.Cromer_Mann_b3,
-                                    t.Cromer_Mann_a4, t.Cromer_Mann_b4 ]
-;
 
 save_
 
@@ -26774,50 +26758,150 @@ save_atom_type_scat.exponential_polynomial_upper_limit
 
 save_
 
-save_atom_type_scat.gaussian_coefs
+save_atom_type_scat.gaussian_as
 
-    _definition.id                '_atom_type_scat.Gaussian_coefs'
-    _definition.update            2023-06-16
+    _definition.id                '_atom_type_scat.Gaussian_as'
+    _definition.update            2026-07-14
     _description.text
 ;
-    The set of Gaussian coefficients for generating X-ray scattering factors:
-    [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
+    The set of Gaussian scalar coefficients for generating X-ray scattering
+    factors:
+    [ a_1, a_2, ... , a_N ].
 
     f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
 
-    where s = (sin θ)/λ, θ is the diffraction angle and λ is the wavelength
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
     of the incident radiation in angstroms.
 
+    See also: _atom_type_scat.Gaussian_bs
+              _atom_type_scat.Gaussian_c
+
     Reference: Thorkildsen, G. (2023). Acta Cryst. A79, 318–330.
+
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               Gaussian_coefs
+    _name.object_id               Gaussian_as
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   unspecified
+    _units.code                   none
 
 save_
 
-save_atom_type_scat.gaussian_coefs_su
+save_atom_type_scat.gaussian_as_su
 
-    _definition.id                '_atom_type_scat.Gaussian_coefs_su'
-    _definition.update            2023-07-01
+    _definition.id                '_atom_type_scat.Gaussian_as_su'
+    _definition.update            2026-07-14
     _description.text
 ;
-    Standard uncertainty of _atom_type_scat.Gaussian_coefs.
+    Standard uncertainty of _atom_type_scat.Gaussian_as.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               Gaussian_coefs_su
-    _name.linked_item_id          '_atom_type_scat.Gaussian_coefs'
+    _name.object_id               Gaussian_as_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_as'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   unspecified
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.gaussian_bs
+
+    _definition.id                '_atom_type_scat.Gaussian_bs'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian exponent coefficients for generating X-ray scattering
+    factors:
+    [ b_1, b_2, ... , b_N ].
+
+    f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
+
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.Gaussian_as
+              _atom_type_scat.Gaussian_c
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_bs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.gaussian_bs_su
+
+    _definition.id                '_atom_type_scat.Gaussian_bs_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_bs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_bs_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_bs'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.gaussian_c
+
+    _definition.id                '_atom_type_scat.Gaussian_c'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The Gaussian constant coefficient for generating X-ray scattering factors:
+    c.
+
+    f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
+
+    where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
+    of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.gaussian_as
+              _atom_type_scat.gaussian_bs
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+save_atom_type_scat.gaussian_c_su
+
+    _definition.id                '_atom_type_scat.Gaussian_c_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.Gaussian_c.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               Gaussian_c_su
+    _name.linked_item_id          '_atom_type_scat.Gaussian_c'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
 
 save_
 
@@ -26830,7 +26914,9 @@ save_atom_type_scat.gaussian_lower_limit
     The inclusive lower limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.Gaussian_coefs.
+    See also: _atom_type_scat.Gaussian_as
+              _atom_type_scat.Gaussian_bs
+              _atom_type_scat.Gaussian_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_lower_limit
@@ -26851,7 +26937,9 @@ save_atom_type_scat.gaussian_upper_limit
     The exclusive upper limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.Gaussian_coefs.
+    See also: _atom_type_scat.Gaussian_as
+              _atom_type_scat.Gaussian_bs
+              _atom_type_scat.Gaussian_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               Gaussian_upper_limit
@@ -26919,20 +27007,21 @@ save_atom_type_scat.hi_ang_fox_c3
 
 save_
 
-save_atom_type_scat.hi_ang_fox_coeffs
+save_atom_type_scat.hi_ang_fox_coefs
 
-    _definition.id                '_atom_type_scat.hi_ang_Fox_coeffs'
+    _definition.id                '_atom_type_scat.hi_ang_Fox_coefs'
+    _alias.definition_id          '_atom_type_scat.hi_ang_Fox_coeffs'
     _definition.update            2023-06-16
     _description.text
 ;
     The set of Fox et al. coefficients for generating high-angle
     X-ray scattering factors: [ c0, c1, c2, c3 ]
 
-    Reference: International Tables for Crystallography (2004). Vol. C,
-         Table 6.1.1.5
+    Reference: International Tables for Crystallography (2004).
+           Vol. C, Table 6.1.1.5.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               hi_ang_Fox_coeffs
+    _name.object_id               hi_ang_Fox_coefs
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               List
@@ -26944,63 +27033,181 @@ save_atom_type_scat.hi_ang_fox_coeffs
 ;
      With t  as  atom_type_scat
 
-    _atom_type_scat.hi_ang_Fox_coeffs  =
+    _atom_type_scat.hi_ang_Fox_coefs  =
     [t.hi_ang_Fox_c0,t.hi_ang_Fox_c1,t.hi_ang_Fox_c2,t.hi_ang_Fox_c3]
 ;
 
 save_
 
-save_atom_type_scat.inv_mott_bethe_coefs
+save_atom_type_scat.inv_mott_bethe_as
 
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs'
-    _definition.update            2025-05-16
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_as'
+    _definition.update            2026-07-14
     _description.text
 ;
-    The set of Gaussian coefficients for use in the inverse Mott-Bethe
+    The set of Gaussian scalar coefficients for use in the inverse Mott-Bethe
     relationship for generating X-ray scattering factors:
-    [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
+    [ a_1, a_2, ... , a_N ].
 
-    f(s; Z) =
-    Z - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
+    f(s; Z~0~) =
+    Z~0~ - 8π^2^ * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
-    where s = (sin θ)/λ, a~0~ is the Bohr radius and Z is the atomic number.
-    θ is the diffraction angle and λ is the wavelength of the incident
-    radiation in angstroms.
+    where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
+    electrons for the atom or ion. θ is the diffraction angle and λ is the
+    wavelength of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.inv_mott_bethe_bs
+              _atom_type_scat.inv_mott_bethe_c
 
     References:
          Thorkildsen, G. (2023). Acta Cryst. A79, 318–330.
+         Thorkildsen, G. (2024). Acta Cryst. A80, 129–136.
          Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
            127, 658–665.
          Bethe, H. (1930). Ann. Phys. 397, 325–400.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_coefs
+    _name.object_id               inv_Mott_Bethe_as
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   unspecified
+    _units.code                   angstroms
 
 save_
 
-save_atom_type_scat.inv_mott_bethe_coefs_su
+save_atom_type_scat.inv_mott_bethe_as_su
 
-    _definition.id                '_atom_type_scat.inv_Mott_Bethe_coefs_su'
-    _definition.update            2023-07-01
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_as_su'
+    _definition.update            2026-07-14
     _description.text
 ;
-    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_coefs.
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_as.
 ;
     _name.category_id             atom_type_scat
-    _name.object_id               inv_Mott_Bethe_coefs_su
-    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_coefs'
+    _name.object_id               inv_Mott_Bethe_as_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_as'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Real
-    _units.code                   unspecified
+    _units.code                   angstroms
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_bs
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_bs'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian exponent coefficients for use in the inverse Mott-Bethe
+    relationship for generating X-ray scattering factors:
+    [ b_1, b_2, ... , b_N ].
+
+    f(s; Z~0~) =
+    Z~0~ - 8π^2^ * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+
+    where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
+    electrons for the atom or ion. θ is the diffraction angle and λ is the
+    wavelength of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.inv_mott_bethe_as
+              _atom_type_scat.inv_mott_bethe_c
+
+    References:
+         Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
+         Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
+         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
+         127, 658-665.
+         Bethe, H. (1930). Ann. Phys. 397, 325-400.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_bs
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_bs_su
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_bs_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_bs.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_bs_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_bs'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Real
+    _units.code                   angstrom_squared
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_c
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_c'
+    _definition.update            2026-07-14
+    _description.text
+;
+    The set of Gaussian constant coefficient for use in the inverse Mott-Bethe
+    relationship for generating X-ray scattering factors:
+    c.
+
+    f(s; Z~0~) =
+    Z~0~ - 8π^2^ * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+
+    where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
+    electrons for the atom or ion. θ is the diffraction angle and λ is the
+    wavelength of the incident radiation in angstroms.
+
+    See also: _atom_type_scat.inv_mott_bethe_as
+              _atom_type_scat.inv_mott_bethe_bs
+
+    References:
+         Thorkildsen, G. (2023). Acta Cryst. A79, 318-330.
+         Thorkildsen, G. (2024). Acta Cryst. A80, 129-136.
+         Mott, N. F. & Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
+         127, 658-665.
+         Bethe, H. (1930). Ann. Phys. 397, 325-400.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_c
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
+
+save_
+
+save_atom_type_scat.inv_mott_bethe_c_su
+
+    _definition.id                '_atom_type_scat.inv_Mott_Bethe_c_su'
+    _definition.update            2026-07-14
+    _description.text
+;
+    Standard uncertainty of _atom_type_scat.inv_Mott_Bethe_c.
+;
+    _name.category_id             atom_type_scat
+    _name.object_id               inv_Mott_Bethe_c_su
+    _name.linked_item_id          '_atom_type_scat.inv_Mott_Bethe_c'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   angstroms
 
 save_
 
@@ -27013,7 +27220,9 @@ save_atom_type_scat.inv_mott_bethe_lower_limit
     The inclusive lower limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.inv_Mott_Bethe_coefs.
+    See also: _atom_type_scat.inv_mott_bethe_as
+              _atom_type_scat.inv_mott_bethe_bs
+              _atom_type_scat.inv_mott_bethe_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               inv_Mott_Bethe_lower_limit
@@ -27034,7 +27243,9 @@ save_atom_type_scat.inv_mott_bethe_upper_limit
     The exclusive upper limit of s for which the corresponding Gaussian
     coefficients are valid.
 
-    See _atom_type_scat.inv_Mott_Bethe_coefs.
+    See also: _atom_type_scat.inv_mott_bethe_as
+              _atom_type_scat.inv_mott_bethe_bs
+              _atom_type_scat.inv_mott_bethe_c
 ;
     _name.category_id             atom_type_scat
     _name.object_id               inv_Mott_Bethe_upper_limit
@@ -29992,4 +30203,22 @@ save_
        Updated _publ_requested.category to latest IUCr journal requirements.
 
        Added _diffrn_measurement.ambient_temperature_device_make.
+       Enhanced form factor parameterisations through reprovision of
+       _atom_type_scat.inv_mott_bethe_as
+       _atom_type_scat.inv_mott_bethe_bs
+       _atom_type_scat.inv_mott_bethe_c
+       _atom_type_scat.gaussian_as
+       _atom_type_scat.gaussian_bs
+       _atom_type_scat.gaussian_c
+       _atom_type_scat.cromer_mann_as
+       _atom_type_scat.cromer_mann_bs
+
+       Removed:
+       _atom_type_scat.inv_mott_bethe_coefs
+       _atom_type_scat.gaussian_coefs
+       _atom_type_scat.cromer_mann_coeffs
+
+       Removed _cell.diffrn_id, _cell_measurement.condition_id,
+       _cell_measurement.diffrn_id and _diffrn.id as they belong
+       logically in the multiblock dictionary.
 ;
