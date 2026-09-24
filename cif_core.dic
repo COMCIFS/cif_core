@@ -16405,6 +16405,17 @@ save_AUDIT_CONFORM
     _name.category_id             AUDIT
     _name.object_id               AUDIT_CONFORM
     _category_key.name            '_audit_conform.dict_name'
+    _description_example.case
+;
+    loop_
+    _audit_conform.dict_name
+    _audit_conform.dict_version
+    _audit_conform.dict_DOI
+    _audit_conform.dict_location
+      CIF_CORE        3.3.0    10.1107/cifdic_000006  .
+      cif_iucr.dic    1.4.1    .
+                 ftp://ftp.iucr.org/pub/cifdics/cif_iucr.dic
+;
 
 save_
 
@@ -16466,7 +16477,10 @@ save_audit_conform.dict_name
     _description.text
 ;
     The string identifying the highest-level dictionary defining
-    data names used in this file.
+    data names used in this file. This should match the internal
+    dictionary identifier where this is well defined (i.e.
+    _dictionary.title for DDLm and DDL2 dictionaries,
+    _dictionary_name for DDL1 dictionaries).
 ;
     _name.category_id             audit_conform
     _name.object_id               dict_name
