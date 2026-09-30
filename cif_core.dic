@@ -13,11 +13,11 @@ data_CIF_CORE
     _dictionary.version           3.3.0
     _dictionary.date              2026-09-22
     _dictionary.uri
-         https://doi.org/10.1107/cifdic_000002
+         https://doi.org/10.1107/cifdic_core_3.3.0
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore
-    _dictionary.doi               10.1107/cifdic_000002
+    _dictionary.doi               10.1107/cifdic_core_3.3.0
     _description.text
 ;
     The CIF_CORE dictionary defines data items that are common to all domains
@@ -136,7 +136,7 @@ save_diffrn.ambient_pressure_su
     _name.linked_item_id          '_diffrn.ambient_pressure'
     _units.code                   kilopascals
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -234,7 +234,7 @@ save_diffrn.ambient_temperature_su
     _name.linked_item_id          '_diffrn.ambient_temperature'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -577,7 +577,7 @@ save_diffrn.total_dose_su
     _name.linked_item_id          '_diffrn.total_dose'
     _units.code                   megagray
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -623,7 +623,7 @@ save_cell.angle_alpha
     _name.category_id             cell
     _name.object_id               angle_alpha
 
-    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_angle}]
 
 save_
 
@@ -641,7 +641,7 @@ save_cell.angle_alpha_su
     _name.linked_item_id          '_cell.angle_alpha'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cell_angle_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_angle_su}]
 
 save_
 
@@ -652,7 +652,7 @@ save_cell.angle_beta
     _name.category_id             cell
     _name.object_id               angle_beta
 
-    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_angle}]
 
 save_
 
@@ -670,7 +670,7 @@ save_cell.angle_beta_su
     _name.linked_item_id          '_cell.angle_beta'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cell_angle_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_angle_su}]
 
 save_
 
@@ -681,7 +681,7 @@ save_cell.angle_gamma
     _name.category_id             cell
     _name.object_id               angle_gamma
 
-    _import.get                   [{'file':templ_attr.cif  'save':cell_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_angle}]
 
 save_
 
@@ -699,7 +699,7 @@ save_cell.angle_gamma_su
     _name.linked_item_id          '_cell.angle_gamma'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cell_angle_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_angle_su}]
 
 save_
 
@@ -1027,7 +1027,7 @@ save_cell.length_a
     _name.category_id             cell
     _name.object_id               length_a
 
-    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_length}]
 
 save_
 
@@ -1045,7 +1045,7 @@ save_cell.length_a_su
     _name.linked_item_id          '_cell.length_a'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cell_length_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_length_su}]
 
 save_
 
@@ -1056,7 +1056,7 @@ save_cell.length_b
     _name.category_id             cell
     _name.object_id               length_b
 
-    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_length}]
 
 save_
 
@@ -1074,7 +1074,7 @@ save_cell.length_b_su
     _name.linked_item_id          '_cell.length_b'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cell_length_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_length_su}]
 
 save_
 
@@ -1085,7 +1085,7 @@ save_cell.length_c
     _name.category_id             cell
     _name.object_id               length_c
 
-    _import.get                   [{'file':templ_attr.cif  'save':cell_length}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_length}]
 
 save_
 
@@ -1103,7 +1103,7 @@ save_cell.length_c_su
     _name.linked_item_id          '_cell.length_c'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cell_length_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cell_length_su}]
 
 save_
 
@@ -1236,7 +1236,7 @@ save_cell.reciprocal_angle_alpha_su
     _name.linked_item_id          '_cell.reciprocal_angle_alpha'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1302,7 +1302,7 @@ save_cell.reciprocal_angle_beta_su
     _name.linked_item_id          '_cell.reciprocal_angle_beta'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1368,7 +1368,7 @@ save_cell.reciprocal_angle_gamma_su
     _name.linked_item_id          '_cell.reciprocal_angle_gamma'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1428,7 +1428,7 @@ save_cell.reciprocal_length_a_su
     _name.linked_item_id          '_cell.reciprocal_length_a'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1488,7 +1488,7 @@ save_cell.reciprocal_length_b_su
     _name.linked_item_id          '_cell.reciprocal_length_b'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1548,7 +1548,7 @@ save_cell.reciprocal_length_c_su
     _name.linked_item_id          '_cell.reciprocal_length_c'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2008,7 +2008,7 @@ save_cell.volume_su
     _name.linked_item_id          '_cell.volume'
     _units.code                   angstrom_cubed
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2077,7 +2077,7 @@ save_cell_measurement.pressure_su
     _name.linked_item_id          '_cell_measurement.pressure'
     _units.code                   kilopascals
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2187,7 +2187,7 @@ save_cell_measurement.temperature_su
     _name.linked_item_id          '_cell_measurement.temperature'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2276,7 +2276,7 @@ save_cell_measurement.wavelength_su
     _name.linked_item_id          '_cell_measurement.wavelength'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2336,7 +2336,7 @@ save_cell_measurement_refln.index_h
     _name.category_id             cell_measurement_refln
     _name.object_id               index_h
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -2347,7 +2347,7 @@ save_cell_measurement_refln.index_k
     _name.category_id             cell_measurement_refln
     _name.object_id               index_k
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -2358,7 +2358,7 @@ save_cell_measurement_refln.index_l
     _name.category_id             cell_measurement_refln
     _name.object_id               index_l
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -2395,7 +2395,7 @@ save_cell_measurement_refln.theta_su
     _name.linked_item_id          '_cell_measurement_refln.theta'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3160,7 +3160,7 @@ save_diffrn_orient_matrix.ub_11
     _name.object_id               UB_11
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3177,7 +3177,7 @@ save_diffrn_orient_matrix.ub_12
     _name.object_id               UB_12
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3194,7 +3194,7 @@ save_diffrn_orient_matrix.ub_13
     _name.object_id               UB_13
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3211,7 +3211,7 @@ save_diffrn_orient_matrix.ub_21
     _name.object_id               UB_21
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3228,7 +3228,7 @@ save_diffrn_orient_matrix.ub_22
     _name.object_id               UB_22
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3245,7 +3245,7 @@ save_diffrn_orient_matrix.ub_23
     _name.object_id               UB_23
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3262,7 +3262,7 @@ save_diffrn_orient_matrix.ub_31
     _name.object_id               UB_31
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3279,7 +3279,7 @@ save_diffrn_orient_matrix.ub_32
     _name.object_id               UB_32
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3296,7 +3296,7 @@ save_diffrn_orient_matrix.ub_33
     _name.object_id               UB_33
 
     _import.get
-        [{'file':templ_attr.cif  'save':orient_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_matrix}]
 
 save_
 
@@ -3359,7 +3359,7 @@ save_diffrn_orient_refln.angle_chi
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_chi
 
-    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_angle}]
 
 save_
 
@@ -3376,7 +3376,7 @@ save_diffrn_orient_refln.angle_chi_su
     _name.linked_item_id          '_diffrn_orient_refln.angle_chi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3387,7 +3387,7 @@ save_diffrn_orient_refln.angle_kappa
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_kappa
 
-    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_angle}]
 
 save_
 
@@ -3404,7 +3404,7 @@ save_diffrn_orient_refln.angle_kappa_su
     _name.linked_item_id          '_diffrn_orient_refln.angle_kappa'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3415,7 +3415,7 @@ save_diffrn_orient_refln.angle_omega
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_omega
 
-    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_angle}]
 
 save_
 
@@ -3432,7 +3432,7 @@ save_diffrn_orient_refln.angle_omega_su
     _name.linked_item_id          '_diffrn_orient_refln.angle_omega'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3443,7 +3443,7 @@ save_diffrn_orient_refln.angle_phi
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_phi
 
-    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_angle}]
 
 save_
 
@@ -3460,7 +3460,7 @@ save_diffrn_orient_refln.angle_phi_su
     _name.linked_item_id          '_diffrn_orient_refln.angle_phi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3471,7 +3471,7 @@ save_diffrn_orient_refln.angle_psi
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_psi
 
-    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_angle}]
 
 save_
 
@@ -3488,7 +3488,7 @@ save_diffrn_orient_refln.angle_psi_su
     _name.linked_item_id          '_diffrn_orient_refln.angle_psi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3499,7 +3499,7 @@ save_diffrn_orient_refln.angle_theta
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_theta
 
-    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':orient_angle}]
 
 save_
 
@@ -3516,7 +3516,7 @@ save_diffrn_orient_refln.angle_theta_su
     _name.linked_item_id          '_diffrn_orient_refln.angle_theta'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3553,7 +3553,7 @@ save_diffrn_orient_refln.index_h
     _name.category_id             diffrn_orient_refln
     _name.object_id               index_h
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -3564,7 +3564,7 @@ save_diffrn_orient_refln.index_k
     _name.category_id             diffrn_orient_refln
     _name.object_id               index_k
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -3575,7 +3575,7 @@ save_diffrn_orient_refln.index_l
     _name.category_id             diffrn_orient_refln
     _name.object_id               index_l
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -4047,7 +4047,7 @@ save_diffrn_radiation_wavelength.value_su
     _name.linked_item_id          '_diffrn_radiation_wavelength.value'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4128,7 +4128,7 @@ save_diffrn_refln.angle_chi
     _name.category_id             diffrn_refln
     _name.object_id               angle_chi
 
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':diffr_angle}]
 
 save_
 
@@ -4139,7 +4139,7 @@ save_diffrn_refln.angle_kappa
     _name.category_id             diffrn_refln
     _name.object_id               angle_kappa
 
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':diffr_angle}]
 
 save_
 
@@ -4150,7 +4150,7 @@ save_diffrn_refln.angle_omega
     _name.category_id             diffrn_refln
     _name.object_id               angle_omega
 
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':diffr_angle}]
 
 save_
 
@@ -4161,7 +4161,7 @@ save_diffrn_refln.angle_phi
     _name.category_id             diffrn_refln
     _name.object_id               angle_phi
 
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':diffr_angle}]
 
 save_
 
@@ -4172,7 +4172,7 @@ save_diffrn_refln.angle_psi
     _name.category_id             diffrn_refln
     _name.object_id               angle_psi
 
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':diffr_angle}]
 
 save_
 
@@ -4183,7 +4183,7 @@ save_diffrn_refln.angle_theta
     _name.category_id             diffrn_refln
     _name.object_id               angle_theta
 
-    _import.get                   [{'file':templ_attr.cif  'save':diffr_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':diffr_angle}]
 
 save_
 
@@ -4331,7 +4331,7 @@ save_diffrn_refln.counts_net_su
     _name.linked_item_id          '_diffrn_refln.counts_net'
     _units.code                   counts
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4510,7 +4510,7 @@ save_diffrn_refln.index_h
     _name.category_id             diffrn_refln
     _name.object_id               index_h
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -4521,7 +4521,7 @@ save_diffrn_refln.index_k
     _name.category_id             diffrn_refln
     _name.object_id               index_k
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -4532,7 +4532,7 @@ save_diffrn_refln.index_l
     _name.category_id             diffrn_refln
     _name.object_id               index_l
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -4573,7 +4573,7 @@ save_diffrn_refln.intensity_bg_1_su
     _name.linked_item_id          '_diffrn_refln.intensity_bg_1'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4615,7 +4615,7 @@ save_diffrn_refln.intensity_bg_2_su
     _name.linked_item_id          '_diffrn_refln.intensity_bg_2'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4662,7 +4662,7 @@ save_diffrn_refln.intensity_net_su
     _name.linked_item_id          '_diffrn_refln.intensity_net'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4704,7 +4704,7 @@ save_diffrn_refln.intensity_peak_su
     _name.linked_item_id          '_diffrn_refln.intensity_peak'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4747,7 +4747,7 @@ save_diffrn_refln.intensity_total_su
     _name.linked_item_id          '_diffrn_refln.intensity_total'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -5104,7 +5104,7 @@ save_diffrn_reflns.limit_h_max
     _name.category_id             diffrn_reflns
     _name.object_id               limit_h_max
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -5115,7 +5115,7 @@ save_diffrn_reflns.limit_h_min
     _name.category_id             diffrn_reflns
     _name.object_id               limit_h_min
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -5126,7 +5126,7 @@ save_diffrn_reflns.limit_k_max
     _name.category_id             diffrn_reflns
     _name.object_id               limit_k_max
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -5137,7 +5137,7 @@ save_diffrn_reflns.limit_k_min
     _name.category_id             diffrn_reflns
     _name.object_id               limit_k_min
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -5148,7 +5148,7 @@ save_diffrn_reflns.limit_l_max
     _name.category_id             diffrn_reflns
     _name.object_id               limit_l_max
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -5159,7 +5159,7 @@ save_diffrn_reflns.limit_l_min
     _name.category_id             diffrn_reflns
     _name.object_id               limit_l_min
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -5623,7 +5623,7 @@ save_diffrn_reflns_transf_matrix.11
     _name.object_id               11
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5640,7 +5640,7 @@ save_diffrn_reflns_transf_matrix.12
     _name.object_id               12
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5657,7 +5657,7 @@ save_diffrn_reflns_transf_matrix.13
     _name.object_id               13
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5674,7 +5674,7 @@ save_diffrn_reflns_transf_matrix.21
     _name.object_id               21
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5691,7 +5691,7 @@ save_diffrn_reflns_transf_matrix.22
     _name.object_id               22
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5708,7 +5708,7 @@ save_diffrn_reflns_transf_matrix.23
     _name.object_id               23
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5725,7 +5725,7 @@ save_diffrn_reflns_transf_matrix.31
     _name.object_id               31
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5742,7 +5742,7 @@ save_diffrn_reflns_transf_matrix.32
     _name.object_id               32
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5759,7 +5759,7 @@ save_diffrn_reflns_transf_matrix.33
     _name.object_id               33
 
     _import.get
-        [{'file':templ_attr.cif  'save':transf_matrix}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':transf_matrix}]
 
 save_
 
@@ -5883,7 +5883,7 @@ save_diffrn_scale_group.i_net_su
     _name.linked_item_id          '_diffrn_scale_group.I_net'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6213,7 +6213,7 @@ save_diffrn_source.target
     _type.contents                Word
 
     _import.get
-        [{'file':templ_enum.cif  'save':element_symbol}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':element_symbol}]
 
 save_
 
@@ -6312,7 +6312,7 @@ save_diffrn_standards.decay_percent_su
     _name.linked_item_id          '_diffrn_standards.decay_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6420,7 +6420,7 @@ save_diffrn_standards.scale_su_average_su
     _name.linked_item_id          '_diffrn_standards.scale_su_average'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6510,7 +6510,7 @@ save_diffrn_standard_refln.index_h
     _name.category_id             diffrn_standard_refln
     _name.object_id               index_h
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -6521,7 +6521,7 @@ save_diffrn_standard_refln.index_k
     _name.category_id             diffrn_standard_refln
     _name.object_id               index_k
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -6532,7 +6532,7 @@ save_diffrn_standard_refln.index_l
     _name.category_id             diffrn_standard_refln
     _name.object_id               index_l
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -6605,7 +6605,7 @@ save_refln.a_calc_su
     _name.object_id               A_calc_su
     _name.linked_item_id          '_refln.A_calc'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -6654,7 +6654,7 @@ save_refln.a_meas_su
     _name.object_id               A_meas_su
     _name.linked_item_id          '_refln.A_meas'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -6712,7 +6712,7 @@ save_refln.b_calc_su
     _name.object_id               B_calc_su
     _name.linked_item_id          '_refln.B_calc'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -6761,7 +6761,7 @@ save_refln.b_meas_su
     _name.object_id               B_meas_su
     _name.linked_item_id          '_refln.B_meas'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -6872,7 +6872,7 @@ save_refln.f_calc_su
     _name.object_id               F_calc_su
     _name.linked_item_id          '_refln.F_calc'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -7006,7 +7006,7 @@ save_refln.f_meas_su
     _name.object_id               F_meas_su
     _name.linked_item_id          '_refln.F_meas'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -7058,7 +7058,7 @@ save_refln.f_squared_calc_su
     _name.object_id               F_squared_calc_su
     _name.linked_item_id          '_refln.F_squared_calc'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -7119,7 +7119,7 @@ save_refln.f_squared_meas_su
     _name.object_id               F_squared_meas_su
     _name.linked_item_id          '_refln.F_squared_meas'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -7335,7 +7335,7 @@ save_refln.index_h
     _name.category_id             refln
     _name.object_id               index_h
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7346,7 +7346,7 @@ save_refln.index_k
     _name.category_id             refln
     _name.object_id               index_k
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7357,7 +7357,7 @@ save_refln.index_l
     _name.category_id             refln
     _name.object_id               index_l
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7399,7 +7399,7 @@ save_refln.intensity_calc_su
     _name.linked_item_id          '_refln.intensity_calc'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -7443,7 +7443,7 @@ save_refln.intensity_meas_su
     _name.linked_item_id          '_refln.intensity_meas'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -7529,7 +7529,7 @@ save_refln.phase_calc_su
     _name.linked_item_id          '_refln.phase_calc'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -7568,7 +7568,7 @@ save_refln.phase_meas_su
     _name.linked_item_id          '_refln.phase_meas'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -7955,7 +7955,7 @@ save_reflns.limit_h_max
     _name.category_id             reflns
     _name.object_id               limit_h_max
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7966,7 +7966,7 @@ save_reflns.limit_h_min
     _name.category_id             reflns
     _name.object_id               limit_h_min
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7977,7 +7977,7 @@ save_reflns.limit_k_max
     _name.category_id             reflns
     _name.object_id               limit_k_max
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7988,7 +7988,7 @@ save_reflns.limit_k_min
     _name.category_id             reflns
     _name.object_id               limit_k_min
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -7999,7 +7999,7 @@ save_reflns.limit_l_max
     _name.category_id             reflns
     _name.object_id               limit_l_max
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -8010,7 +8010,7 @@ save_reflns.limit_l_min
     _name.category_id             reflns
     _name.object_id               limit_l_min
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -8562,7 +8562,7 @@ save_reflns_scale.meas_f_su
     _name.linked_item_id          '_reflns_scale.meas_F'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -8599,7 +8599,7 @@ save_reflns_scale.meas_f_squared_su
     _name.linked_item_id          '_reflns_scale.meas_F_squared'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -8636,7 +8636,7 @@ save_reflns_scale.meas_intensity_su
     _name.linked_item_id          '_reflns_scale.meas_intensity'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9259,7 +9259,7 @@ save_exptl.transmission_factor_max_su
     _name.linked_item_id          '_exptl.transmission_factor_max'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9301,7 +9301,7 @@ save_exptl.transmission_factor_min_su
     _name.linked_item_id          '_exptl.transmission_factor_min'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9470,7 +9470,7 @@ save_chemical.enantioexcess_bulk_su
     _name.linked_item_id          '_chemical.enantioexcess_bulk'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9556,7 +9556,7 @@ save_chemical.enantioexcess_crystal_su
     _name.linked_item_id          '_chemical.enantioexcess_crystal'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9699,7 +9699,7 @@ save_chemical.melting_point_su
     _name.linked_item_id          '_chemical.melting_point'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9964,7 +9964,7 @@ save_chemical.temperature_decomposition_su
     _name.linked_item_id          '_chemical.temperature_decomposition'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10049,7 +10049,7 @@ save_chemical.temperature_sublimation_su
     _name.linked_item_id          '_chemical.temperature_sublimation'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10690,7 +10690,7 @@ save_chemical_formula.weight_meas_su
     _name.linked_item_id          '_chemical_formula.weight_meas'
     _units.code                   dalton
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10749,7 +10749,7 @@ save_exptl_absorpt.coefficient_mu_su
     _name.linked_item_id          '_exptl_absorpt.coefficient_mu'
     _units.code                   reciprocal_millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11047,7 +11047,7 @@ save_exptl_crystal.density_diffrn_su
     _name.linked_item_id          '_exptl_crystal.density_diffrn'
     _units.code                   megagrams_per_metre_cubed
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11090,7 +11090,7 @@ save_exptl_crystal.density_meas_su
     _name.linked_item_id          '_exptl_crystal.density_meas'
     _units.code                   megagrams_per_metre_cubed
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11181,7 +11181,7 @@ save_exptl_crystal.density_meas_temp_su
     _name.linked_item_id          '_exptl_crystal.density_meas_temp'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11515,7 +11515,7 @@ save_exptl_crystal.size_length_su
     _name.linked_item_id          '_exptl_crystal.size_length'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11552,7 +11552,7 @@ save_exptl_crystal.size_max_su
     _name.linked_item_id          '_exptl_crystal.size_max'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11589,7 +11589,7 @@ save_exptl_crystal.size_mid_su
     _name.linked_item_id          '_exptl_crystal.size_mid'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11626,7 +11626,7 @@ save_exptl_crystal.size_min_su
     _name.linked_item_id          '_exptl_crystal.size_min'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11663,7 +11663,7 @@ save_exptl_crystal.size_rad_su
     _name.linked_item_id          '_exptl_crystal.size_rad'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11759,7 +11759,7 @@ save_exptl_crystal_appearance.hue
     _type.container               Single
     _type.contents                Word
 
-    _import.get                   [{'file':templ_enum.cif  'save':colour_rgb}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':colour_rgb}]
 
 save_
 
@@ -11835,7 +11835,7 @@ save_exptl_crystal_face.diffr_chi
     _name.category_id             exptl_crystal_face
     _name.object_id               diffr_chi
 
-    _import.get                   [{'file':templ_attr.cif  'save':face_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':face_angle}]
 
 save_
 
@@ -11852,7 +11852,7 @@ save_exptl_crystal_face.diffr_chi_su
     _name.linked_item_id          '_exptl_crystal_face.diffr_chi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11863,7 +11863,7 @@ save_exptl_crystal_face.diffr_kappa
     _name.category_id             exptl_crystal_face
     _name.object_id               diffr_kappa
 
-    _import.get                   [{'file':templ_attr.cif  'save':face_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':face_angle}]
 
 save_
 
@@ -11880,7 +11880,7 @@ save_exptl_crystal_face.diffr_kappa_su
     _name.linked_item_id          '_exptl_crystal_face.diffr_kappa'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11891,7 +11891,7 @@ save_exptl_crystal_face.diffr_phi
     _name.category_id             exptl_crystal_face
     _name.object_id               diffr_phi
 
-    _import.get                   [{'file':templ_attr.cif  'save':face_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':face_angle}]
 
 save_
 
@@ -11908,7 +11908,7 @@ save_exptl_crystal_face.diffr_phi_su
     _name.linked_item_id          '_exptl_crystal_face.diffr_phi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11919,7 +11919,7 @@ save_exptl_crystal_face.diffr_psi
     _name.category_id             exptl_crystal_face
     _name.object_id               diffr_psi
 
-    _import.get                   [{'file':templ_attr.cif  'save':face_angle}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':face_angle}]
 
 save_
 
@@ -11936,7 +11936,7 @@ save_exptl_crystal_face.diffr_psi_su
     _name.linked_item_id          '_exptl_crystal_face.diffr_psi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11973,7 +11973,7 @@ save_exptl_crystal_face.index_h
     _name.category_id             exptl_crystal_face
     _name.object_id               index_h
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -11984,7 +11984,7 @@ save_exptl_crystal_face.index_k
     _name.category_id             exptl_crystal_face
     _name.object_id               index_k
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -11995,7 +11995,7 @@ save_exptl_crystal_face.index_l
     _name.category_id             exptl_crystal_face
     _name.object_id               index_l
 
-    _import.get                   [{'file':templ_attr.cif  'save':miller_index}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':miller_index}]
 
 save_
 
@@ -12033,7 +12033,7 @@ save_exptl_crystal_face.perp_dist_su
     _name.linked_item_id          '_exptl_crystal_face.perp_dist'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -12515,7 +12515,7 @@ save_space_group.name_h-m_ref
     _type.container               Single
     _type.contents                Text
 
-    _import.get                   [{'file':templ_enum.cif  'save':h_m_ref}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':h_m_ref}]
 
 save_
 
@@ -12594,7 +12594,7 @@ save_space_group.name_schoenflies
     _description_example.case     C2h.5
     _description_example.detail   'Schoenflies symbol for space group No. 14.'
 
-    _import.get                   [{'file':templ_enum.cif  'save':schoenflies}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':schoenflies}]
 
 save_
 
@@ -12737,7 +12737,7 @@ save_space_group.reference_setting
     _type.container               Single
     _type.contents                Text
 
-    _import.get                   [{'file':templ_enum.cif  'save':ref_set}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':ref_set}]
 
 save_
 
@@ -13296,7 +13296,7 @@ save_space_group_wyckoff.letter
     _type.contents                Text
 
     _import.get
-        [{'file':templ_enum.cif  'save':wyckoff_letter}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':wyckoff_letter}]
 
 save_
 
@@ -13593,7 +13593,7 @@ save_geom_angle.atom_site_label_1
     _name.category_id             geom_angle
     _name.object_id               atom_site_label_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -13633,7 +13633,7 @@ save_geom_angle.atom_site_label_3
     _name.category_id             geom_angle
     _name.object_id               atom_site_label_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -13730,7 +13730,7 @@ save_geom_angle.site_symmetry_1
     _name.object_id               site_symmetry_1
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -13742,7 +13742,7 @@ save_geom_angle.site_symmetry_2
     _name.object_id               site_symmetry_2
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -13754,7 +13754,7 @@ save_geom_angle.site_symmetry_3
     _name.object_id               site_symmetry_3
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -13815,7 +13815,7 @@ save_geom_angle.value_su
     _name.linked_item_id          '_geom_angle.value'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13879,7 +13879,7 @@ save_geom_bond.atom_site_label_1
     _name.category_id             geom_bond
     _name.object_id               atom_site_label_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -13895,7 +13895,7 @@ save_geom_bond.atom_site_label_2
     _name.category_id             geom_bond
     _name.object_id               atom_site_label_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -13959,7 +13959,7 @@ save_geom_bond.distance_su
     _name.linked_item_id          '_geom_bond.distance'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14041,7 +14041,7 @@ save_geom_bond.site_symmetry_1
     _name.object_id               site_symmetry_1
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14053,7 +14053,7 @@ save_geom_bond.site_symmetry_2
     _name.object_id               site_symmetry_2
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14095,7 +14095,7 @@ save_geom_bond.valence_su
     _name.linked_item_id          '_geom_bond.valence'
     _units.code                   valence_units
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14170,7 +14170,7 @@ save_geom_contact.atom_site_label_1
     _name.category_id             geom_contact
     _name.object_id               atom_site_label_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14186,7 +14186,7 @@ save_geom_contact.atom_site_label_2
     _name.category_id             geom_contact
     _name.object_id               atom_site_label_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14250,7 +14250,7 @@ save_geom_contact.distance_su
     _name.linked_item_id          '_geom_contact.distance'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14309,7 +14309,7 @@ save_geom_contact.site_symmetry_1
     _name.object_id               site_symmetry_1
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14321,7 +14321,7 @@ save_geom_contact.site_symmetry_2
     _name.object_id               site_symmetry_2
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14411,7 +14411,7 @@ save_geom_hbond.angle_dha_su
     _name.linked_item_id          '_geom_hbond.angle_DHA'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14427,7 +14427,7 @@ save_geom_hbond.atom_site_label_a
     _name.category_id             geom_hbond
     _name.object_id               atom_site_label_A
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14443,7 +14443,7 @@ save_geom_hbond.atom_site_label_d
     _name.category_id             geom_hbond
     _name.object_id               atom_site_label_D
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14459,7 +14459,7 @@ save_geom_hbond.atom_site_label_h
     _name.category_id             geom_hbond
     _name.object_id               atom_site_label_H
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14520,7 +14520,7 @@ save_geom_hbond.distance_da_su
     _name.linked_item_id          '_geom_hbond.distance_DA'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14581,7 +14581,7 @@ save_geom_hbond.distance_dh_su
     _name.linked_item_id          '_geom_hbond.distance_DH'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14642,7 +14642,7 @@ save_geom_hbond.distance_ha_su
     _name.linked_item_id          '_geom_hbond.distance_HA'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14701,7 +14701,7 @@ save_geom_hbond.site_symmetry_a
     _name.object_id               site_symmetry_A
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14713,7 +14713,7 @@ save_geom_hbond.site_symmetry_d
     _name.object_id               site_symmetry_D
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14725,7 +14725,7 @@ save_geom_hbond.site_symmetry_h
     _name.object_id               site_symmetry_H
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -14865,7 +14865,7 @@ save_geom_torsion.angle_su
     _name.linked_item_id          '_geom_torsion.angle'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -14881,7 +14881,7 @@ save_geom_torsion.atom_site_label_1
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14897,7 +14897,7 @@ save_geom_torsion.atom_site_label_2
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14913,7 +14913,7 @@ save_geom_torsion.atom_site_label_3
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -14929,7 +14929,7 @@ save_geom_torsion.atom_site_label_4
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_4
 
-    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_id}]
 
 save_
 
@@ -15026,7 +15026,7 @@ save_geom_torsion.site_symmetry_1
     _name.object_id               site_symmetry_1
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -15038,7 +15038,7 @@ save_geom_torsion.site_symmetry_2
     _name.object_id               site_symmetry_2
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -15050,7 +15050,7 @@ save_geom_torsion.site_symmetry_3
     _name.object_id               site_symmetry_3
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -15062,7 +15062,7 @@ save_geom_torsion.site_symmetry_4
     _name.object_id               site_symmetry_4
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -15366,8 +15366,8 @@ save_model_site.display_colour
     _enumeration.def_index_ids    ['_model_site.type_symbol']
 
     _import.get                   [
-                                   {'file':templ_enum.cif  'save':colour_rgb}
-                                   {'file':templ_enum.cif  'save':colour_hue}
+                                   {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':colour_rgb}
+                                   {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':colour_hue}
                                   ]
 
 save_
@@ -15552,7 +15552,7 @@ save_model_site.symop
     _name.object_id               symop
 
     _import.get
-        [{'file':templ_attr.cif  'save':site_symmetry}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':site_symmetry}]
 
 save_
 
@@ -18697,7 +18697,7 @@ save_database_related.database_id
     _type.contents                Word
 
     _import.get
-        [{'file':templ_enum.cif  'save':database_list}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':database_list}]
 
 save_
 
@@ -18846,7 +18846,7 @@ save_display_colour.blue
     _name.object_id               blue
 
     _import.get
-        [{'file':templ_attr.cif  'save':display_colour}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':display_colour}]
 
 save_
 
@@ -18857,7 +18857,7 @@ save_display_colour.green
     _name.object_id               green
 
     _import.get
-        [{'file':templ_attr.cif  'save':display_colour}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':display_colour}]
 
 save_
 
@@ -18876,7 +18876,7 @@ save_display_colour.hue
     _type.container               Single
     _type.contents                Word
 
-    _import.get                   [{'file':templ_enum.cif  'save':colour_rgb}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':colour_rgb}]
 
 save_
 
@@ -18887,7 +18887,7 @@ save_display_colour.red
     _name.object_id               red
 
     _import.get
-        [{'file':templ_attr.cif  'save':display_colour}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':display_colour}]
 
 save_
 
@@ -21526,7 +21526,7 @@ save_atom_analytical.analyte
     _type.contents                Word
 
     _import.get
-        [{'file':templ_enum.cif  'save':element_symbol}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':element_symbol}]
 
 save_
 
@@ -21562,7 +21562,7 @@ save_atom_analytical.analyte_mass_percent_su
     _name.linked_item_id          '_atom_analytical.analyte_mass_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -21650,7 +21650,7 @@ save_atom_analytical.chemical_species_mass_percent_su
         '_atom_analytical.chemical_species_mass_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -21825,7 +21825,7 @@ save_atom_analytical_mass_loss.percent_su
     _name.linked_item_id          '_atom_analytical_mass_loss.percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -21885,7 +21885,7 @@ save_atom_analytical_mass_loss.temperature_su
     _name.linked_item_id          '_atom_analytical_mass_loss.temperature'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -22129,7 +22129,7 @@ save_atom_scat_versus_stol.scat_value_su
     _name.linked_item_id          '_atom_scat_versus_stol.scat_value'
     _units.code                   electrons
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -22348,7 +22348,7 @@ save_atom_site.b_equiv_geom_mean_su
     _name.linked_item_id          '_atom_site.B_equiv_geom_mean'
     _units.code                   angstrom_squared
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -22405,7 +22405,7 @@ save_atom_site.b_iso_or_equiv_su
     _name.linked_item_id          '_atom_site.B_iso_or_equiv'
     _units.code                   angstrom_squared
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -22464,7 +22464,7 @@ save_atom_site.cartn_x
     _name.category_id             atom_site
     _name.object_id               Cartn_x
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_coord}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_coord}]
 
 save_
 
@@ -22482,7 +22482,7 @@ save_atom_site.cartn_x_su
     _name.linked_item_id          '_atom_site.Cartn_x'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cartn_coord_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_coord_su}]
 
 save_
 
@@ -22539,7 +22539,7 @@ save_atom_site.cartn_y
     _name.category_id             atom_site
     _name.object_id               Cartn_y
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_coord}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_coord}]
 
 save_
 
@@ -22557,7 +22557,7 @@ save_atom_site.cartn_y_su
     _name.linked_item_id          '_atom_site.Cartn_y'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cartn_coord_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_coord_su}]
 
 save_
 
@@ -22568,7 +22568,7 @@ save_atom_site.cartn_z
     _name.category_id             atom_site
     _name.object_id               Cartn_z
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_coord}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_coord}]
 
 save_
 
@@ -22586,7 +22586,7 @@ save_atom_site.cartn_z_su
     _name.linked_item_id          '_atom_site.Cartn_z'
 
     _import.get
-        [{'file':templ_attr.cif  'save':cartn_coord_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_coord_su}]
 
 save_
 
@@ -22794,7 +22794,7 @@ save_atom_site.fract_x
     _name.category_id             atom_site
     _name.object_id               fract_x
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_coord}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_coord}]
 
 save_
 
@@ -22812,7 +22812,7 @@ save_atom_site.fract_x_su
     _name.linked_item_id          '_atom_site.fract_x'
 
     _import.get
-        [{'file':templ_attr.cif  'save':fract_coord_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_coord_su}]
 
 save_
 
@@ -22870,7 +22870,7 @@ save_atom_site.fract_y
     _name.category_id             atom_site
     _name.object_id               fract_y
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_coord}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_coord}]
 
 save_
 
@@ -22888,7 +22888,7 @@ save_atom_site.fract_y_su
     _name.linked_item_id          '_atom_site.fract_y'
 
     _import.get
-        [{'file':templ_attr.cif  'save':fract_coord_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_coord_su}]
 
 save_
 
@@ -22899,7 +22899,7 @@ save_atom_site.fract_z
     _name.category_id             atom_site
     _name.object_id               fract_z
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_coord}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_coord}]
 
 save_
 
@@ -22917,7 +22917,7 @@ save_atom_site.fract_z_su
     _name.linked_item_id          '_atom_site.fract_z'
 
     _import.get
-        [{'file':templ_attr.cif  'save':fract_coord_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_coord_su}]
 
 save_
 
@@ -22934,7 +22934,7 @@ save_atom_site.label
     _name.object_id               label
 
     _import.get
-        [{'file':templ_attr.cif  'save':atom_site_label}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':atom_site_label}]
 
 save_
 
@@ -22946,7 +22946,7 @@ save_atom_site.label_component_0
     _name.object_id               label_component_0
 
     _import.get
-        [{'file':templ_attr.cif  'save':label_component}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_component}]
 
 save_
 
@@ -22957,7 +22957,7 @@ save_atom_site.label_component_1
     _name.category_id             atom_site
     _name.object_id               label_component_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':label_comp}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_comp}]
 
 save_
 
@@ -22968,7 +22968,7 @@ save_atom_site.label_component_2
     _name.category_id             atom_site
     _name.object_id               label_component_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':label_comp}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_comp}]
 
 save_
 
@@ -22979,7 +22979,7 @@ save_atom_site.label_component_3
     _name.category_id             atom_site
     _name.object_id               label_component_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':label_comp}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_comp}]
 
 save_
 
@@ -22990,7 +22990,7 @@ save_atom_site.label_component_4
     _name.category_id             atom_site
     _name.object_id               label_component_4
 
-    _import.get                   [{'file':templ_attr.cif  'save':label_comp}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_comp}]
 
 save_
 
@@ -23001,7 +23001,7 @@ save_atom_site.label_component_5
     _name.category_id             atom_site
     _name.object_id               label_component_5
 
-    _import.get                   [{'file':templ_attr.cif  'save':label_comp}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_comp}]
 
 save_
 
@@ -23012,7 +23012,7 @@ save_atom_site.label_component_6
     _name.category_id             atom_site
     _name.object_id               label_component_6
 
-    _import.get                   [{'file':templ_attr.cif  'save':label_comp}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':label_comp}]
 
 save_
 
@@ -23060,7 +23060,7 @@ save_atom_site.occupancy_su
     _name.linked_item_id          '_atom_site.occupancy'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -23382,7 +23382,7 @@ save_atom_site.u_equiv_geom_mean_su
     _name.linked_item_id          '_atom_site.U_equiv_geom_mean'
     _units.code                   angstrom_squared
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -23434,7 +23434,7 @@ save_atom_site.u_iso_or_equiv_su
     _name.linked_item_id          '_atom_site.U_iso_or_equiv'
     _units.code                   angstrom_squared
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -23460,7 +23460,7 @@ save_atom_site.wyckoff_symbol
     _type.contents                Text
 
     _import.get
-        [{'file':templ_enum.cif  'save':wyckoff_letter}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':wyckoff_letter}]
 
 save_
 
@@ -23495,7 +23495,7 @@ save_atom_site_aniso.b_11
     _name.category_id             atom_site_aniso
     _name.object_id               B_11
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij}]
 
 save_
 
@@ -23513,7 +23513,7 @@ save_atom_site_aniso.b_11_su
     _name.object_id               B_11_su
     _name.linked_item_id          '_atom_site_aniso.B_11'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij_su}]
 
 save_
 
@@ -23530,7 +23530,7 @@ save_atom_site_aniso.b_12
     _name.category_id             atom_site_aniso
     _name.object_id               B_12
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij}]
 
 save_
 
@@ -23548,7 +23548,7 @@ save_atom_site_aniso.b_12_su
     _name.object_id               B_12_su
     _name.linked_item_id          '_atom_site_aniso.B_12'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij_su}]
 
 save_
 
@@ -23565,7 +23565,7 @@ save_atom_site_aniso.b_13
     _name.category_id             atom_site_aniso
     _name.object_id               B_13
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij}]
 
 save_
 
@@ -23583,7 +23583,7 @@ save_atom_site_aniso.b_13_su
     _name.object_id               B_13_su
     _name.linked_item_id          '_atom_site_aniso.B_13'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij_su}]
 
 save_
 
@@ -23600,7 +23600,7 @@ save_atom_site_aniso.b_22
     _name.category_id             atom_site_aniso
     _name.object_id               B_22
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij}]
 
 save_
 
@@ -23618,7 +23618,7 @@ save_atom_site_aniso.b_22_su
     _name.object_id               B_22_su
     _name.linked_item_id          '_atom_site_aniso.B_22'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij_su}]
 
 save_
 
@@ -23635,7 +23635,7 @@ save_atom_site_aniso.b_23
     _name.category_id             atom_site_aniso
     _name.object_id               B_23
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij}]
 
 save_
 
@@ -23653,7 +23653,7 @@ save_atom_site_aniso.b_23_su
     _name.object_id               B_23_su
     _name.linked_item_id          '_atom_site_aniso.B_23'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij_su}]
 
 save_
 
@@ -23670,7 +23670,7 @@ save_atom_site_aniso.b_33
     _name.category_id             atom_site_aniso
     _name.object_id               B_33
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij}]
 
 save_
 
@@ -23688,7 +23688,7 @@ save_atom_site_aniso.b_33_su
     _name.object_id               B_33_su
     _name.linked_item_id          '_atom_site_aniso.B_33'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_bij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_bij_su}]
 
 save_
 
@@ -23699,7 +23699,7 @@ save_atom_site_aniso.beta_11
     _name.category_id             atom_site_aniso
     _name.object_id               beta_11
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij}]
 
 save_
 
@@ -23712,7 +23712,7 @@ save_atom_site_aniso.beta_11_su
     _name.linked_item_id          '_atom_site_aniso.beta_11'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij_su}]
 
 save_
 
@@ -23723,7 +23723,7 @@ save_atom_site_aniso.beta_12
     _name.category_id             atom_site_aniso
     _name.object_id               beta_12
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij}]
 
 save_
 
@@ -23736,7 +23736,7 @@ save_atom_site_aniso.beta_12_su
     _name.linked_item_id          '_atom_site_aniso.beta_12'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij_su}]
 
 save_
 
@@ -23747,7 +23747,7 @@ save_atom_site_aniso.beta_13
     _name.category_id             atom_site_aniso
     _name.object_id               beta_13
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij}]
 
 save_
 
@@ -23760,7 +23760,7 @@ save_atom_site_aniso.beta_13_su
     _name.linked_item_id          '_atom_site_aniso.beta_13'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij_su}]
 
 save_
 
@@ -23771,7 +23771,7 @@ save_atom_site_aniso.beta_22
     _name.category_id             atom_site_aniso
     _name.object_id               beta_22
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij}]
 
 save_
 
@@ -23784,7 +23784,7 @@ save_atom_site_aniso.beta_22_su
     _name.linked_item_id          '_atom_site_aniso.beta_22'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij_su}]
 
 save_
 
@@ -23795,7 +23795,7 @@ save_atom_site_aniso.beta_23
     _name.category_id             atom_site_aniso
     _name.object_id               beta_23
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij}]
 
 save_
 
@@ -23808,7 +23808,7 @@ save_atom_site_aniso.beta_23_su
     _name.linked_item_id          '_atom_site_aniso.beta_23'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij_su}]
 
 save_
 
@@ -23819,7 +23819,7 @@ save_atom_site_aniso.beta_33
     _name.category_id             atom_site_aniso
     _name.object_id               beta_33
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_betaij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij}]
 
 save_
 
@@ -23832,7 +23832,7 @@ save_atom_site_aniso.beta_33_su
     _name.linked_item_id          '_atom_site_aniso.beta_33'
 
     _import.get
-        [{'file':templ_attr.cif  'save':aniso_betaij_su}]
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_betaij_su}]
 
 save_
 
@@ -24178,7 +24178,7 @@ save_atom_site_aniso.u_11
     _name.category_id             atom_site_aniso
     _name.object_id               U_11
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij}]
 
 save_
 
@@ -24196,7 +24196,7 @@ save_atom_site_aniso.u_11_su
     _name.object_id               U_11_su
     _name.linked_item_id          '_atom_site_aniso.U_11'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij_su}]
 
 save_
 
@@ -24213,7 +24213,7 @@ save_atom_site_aniso.u_12
     _name.category_id             atom_site_aniso
     _name.object_id               U_12
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij}]
 
 save_
 
@@ -24231,7 +24231,7 @@ save_atom_site_aniso.u_12_su
     _name.object_id               U_12_su
     _name.linked_item_id          '_atom_site_aniso.U_12'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij_su}]
 
 save_
 
@@ -24248,7 +24248,7 @@ save_atom_site_aniso.u_13
     _name.category_id             atom_site_aniso
     _name.object_id               U_13
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij}]
 
 save_
 
@@ -24266,7 +24266,7 @@ save_atom_site_aniso.u_13_su
     _name.object_id               U_13_su
     _name.linked_item_id          '_atom_site_aniso.U_13'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij_su}]
 
 save_
 
@@ -24283,7 +24283,7 @@ save_atom_site_aniso.u_22
     _name.category_id             atom_site_aniso
     _name.object_id               U_22
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij}]
 
 save_
 
@@ -24301,7 +24301,7 @@ save_atom_site_aniso.u_22_su
     _name.object_id               U_22_su
     _name.linked_item_id          '_atom_site_aniso.U_22'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij_su}]
 
 save_
 
@@ -24318,7 +24318,7 @@ save_atom_site_aniso.u_23
     _name.category_id             atom_site_aniso
     _name.object_id               U_23
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij}]
 
 save_
 
@@ -24336,7 +24336,7 @@ save_atom_site_aniso.u_23_su
     _name.object_id               U_23_su
     _name.linked_item_id          '_atom_site_aniso.U_23'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij_su}]
 
 save_
 
@@ -24353,7 +24353,7 @@ save_atom_site_aniso.u_33
     _name.category_id             atom_site_aniso
     _name.object_id               U_33
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij}]
 
 save_
 
@@ -24371,7 +24371,7 @@ save_atom_site_aniso.u_33_su
     _name.object_id               U_33_su
     _name.linked_item_id          '_atom_site_aniso.U_33'
 
-    _import.get                   [{'file':templ_attr.cif  'save':aniso_uij_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':aniso_uij_su}]
 
 save_
 
@@ -24703,7 +24703,7 @@ save_atom_sites_cartn_transform.mat_11
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_11
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24729,7 +24729,7 @@ save_atom_sites_cartn_transform.mat_11_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_11'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24745,7 +24745,7 @@ save_atom_sites_cartn_transform.mat_12
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_12
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24768,7 +24768,7 @@ save_atom_sites_cartn_transform.mat_12_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_12'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24784,7 +24784,7 @@ save_atom_sites_cartn_transform.mat_13
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_13
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24807,7 +24807,7 @@ save_atom_sites_cartn_transform.mat_13_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_13'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24823,7 +24823,7 @@ save_atom_sites_cartn_transform.mat_21
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_21
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24849,7 +24849,7 @@ save_atom_sites_cartn_transform.mat_21_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_21'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24865,7 +24865,7 @@ save_atom_sites_cartn_transform.mat_22
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_22
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24890,7 +24890,7 @@ save_atom_sites_cartn_transform.mat_22_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_22'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24906,7 +24906,7 @@ save_atom_sites_cartn_transform.mat_23
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_23
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24929,7 +24929,7 @@ save_atom_sites_cartn_transform.mat_23_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_23'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24945,7 +24945,7 @@ save_atom_sites_cartn_transform.mat_31
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_31
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -24970,7 +24970,7 @@ save_atom_sites_cartn_transform.mat_31_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_31'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -24986,7 +24986,7 @@ save_atom_sites_cartn_transform.mat_32
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_32
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -25011,7 +25011,7 @@ save_atom_sites_cartn_transform.mat_32_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_32'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25027,7 +25027,7 @@ save_atom_sites_cartn_transform.mat_33
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_33
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -25050,7 +25050,7 @@ save_atom_sites_cartn_transform.mat_33_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.mat_33'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25128,7 +25128,7 @@ save_atom_sites_cartn_transform.vec_1
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_vector}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_vector}]
 
 save_
 
@@ -25145,7 +25145,7 @@ save_atom_sites_cartn_transform.vec_1_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.vec_1'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25161,7 +25161,7 @@ save_atom_sites_cartn_transform.vec_2
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_vector}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_vector}]
 
 save_
 
@@ -25178,7 +25178,7 @@ save_atom_sites_cartn_transform.vec_2_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.vec_2'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25194,7 +25194,7 @@ save_atom_sites_cartn_transform.vec_3
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':cartn_vector}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cartn_vector}]
 
 save_
 
@@ -25211,7 +25211,7 @@ save_atom_sites_cartn_transform.vec_3_su
     _name.linked_item_id          '_atom_sites_Cartn_transform.vec_3'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25319,7 +25319,7 @@ save_atom_sites_fract_transform.mat_11
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_11
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25336,7 +25336,7 @@ save_atom_sites_fract_transform.mat_11_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_11'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25352,7 +25352,7 @@ save_atom_sites_fract_transform.mat_12
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_12
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25369,7 +25369,7 @@ save_atom_sites_fract_transform.mat_12_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_12'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25385,7 +25385,7 @@ save_atom_sites_fract_transform.mat_13
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_13
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25402,7 +25402,7 @@ save_atom_sites_fract_transform.mat_13_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_13'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25418,7 +25418,7 @@ save_atom_sites_fract_transform.mat_21
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_21
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25435,7 +25435,7 @@ save_atom_sites_fract_transform.mat_21_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_21'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25451,7 +25451,7 @@ save_atom_sites_fract_transform.mat_22
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_22
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25468,7 +25468,7 @@ save_atom_sites_fract_transform.mat_22_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_22'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25484,7 +25484,7 @@ save_atom_sites_fract_transform.mat_23
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_23
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25501,7 +25501,7 @@ save_atom_sites_fract_transform.mat_23_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_23'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25517,7 +25517,7 @@ save_atom_sites_fract_transform.mat_31
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_31
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25534,7 +25534,7 @@ save_atom_sites_fract_transform.mat_31_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_31'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25550,7 +25550,7 @@ save_atom_sites_fract_transform.mat_32
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_32
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25567,7 +25567,7 @@ save_atom_sites_fract_transform.mat_32_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_32'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25583,7 +25583,7 @@ save_atom_sites_fract_transform.mat_33
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_33
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_matrix}]
 
 save_
 
@@ -25600,7 +25600,7 @@ save_atom_sites_fract_transform.mat_33_su
     _name.linked_item_id          '_atom_sites_fract_transform.mat_33'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25678,7 +25678,7 @@ save_atom_sites_fract_transform.vec_1
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_1
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_vector}]
 
 save_
 
@@ -25695,7 +25695,7 @@ save_atom_sites_fract_transform.vec_1_su
     _name.linked_item_id          '_atom_sites_fract_transform.vec_1'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25711,7 +25711,7 @@ save_atom_sites_fract_transform.vec_2
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_2
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_vector}]
 
 save_
 
@@ -25728,7 +25728,7 @@ save_atom_sites_fract_transform.vec_2_su
     _name.linked_item_id          '_atom_sites_fract_transform.vec_2'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25744,7 +25744,7 @@ save_atom_sites_fract_transform.vec_3
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_3
 
-    _import.get                   [{'file':templ_attr.cif  'save':fract_vector}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':fract_vector}]
 
 save_
 
@@ -25761,7 +25761,7 @@ save_atom_sites_fract_transform.vec_3_su
     _name.linked_item_id          '_atom_sites_fract_transform.vec_3'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25882,7 +25882,7 @@ save_atom_type.analytical_mass_percent_su
     _name.linked_item_id          '_atom_type.analytical_mass_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -25902,7 +25902,7 @@ save_atom_type.atomic_mass
     _type.contents                Real
     _enumeration.def_index_ids    ['_atom_type.symbol']
 
-    _import.get                   [{'file':templ_enum.cif  'save':atomic_mass}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':atomic_mass}]
 
 save_
 
@@ -25924,7 +25924,7 @@ save_atom_type.atomic_number
     _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
-        [{'file':templ_enum.cif  'save':atomic_number}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':atomic_number}]
 
 save_
 
@@ -25973,8 +25973,8 @@ save_atom_type.display_colour
     _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get                   [
-                                   {'file':templ_enum.cif  'save':colour_rgb}
-                                   {'file':templ_enum.cif  'save':colour_hue}
+                                   {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':colour_rgb}
+                                   {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':colour_hue}
                                   ]
 
 save_
@@ -25997,7 +25997,7 @@ save_atom_type.electron_count
     _enumeration.def_index_ids    ['_atom_type.symbol']
 
     _import.get
-        [{'file':templ_enum.cif  'save':electron_count}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':electron_count}]
 
 save_
 
@@ -26021,8 +26021,8 @@ save_atom_type.element_symbol
 
     _import.get
         [
-         {'file':templ_enum.cif  'save':element_symbol}
-         {'file':templ_enum.cif  'save':ion_to_element}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':element_symbol}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':ion_to_element}
         ]
 
 save_
@@ -26122,7 +26122,7 @@ save_atom_type.radius_bond
     _enumeration.range            0.0:5.0
     _enumeration.def_index_ids    ['_atom_type.symbol']
 
-    _import.get                   [{'file':templ_enum.cif  'save':radius_bond}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':radius_bond}]
 
 save_
 
@@ -26213,8 +26213,8 @@ save_atom_type_scat.cromer_mann_a1
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_a1}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_a1}
         ]
 
 save_
@@ -26233,8 +26233,8 @@ save_atom_type_scat.cromer_mann_a2
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_a2}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_a2}
         ]
 
 save_
@@ -26253,8 +26253,8 @@ save_atom_type_scat.cromer_mann_a3
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_a3}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_a3}
         ]
 
 save_
@@ -26273,8 +26273,8 @@ save_atom_type_scat.cromer_mann_a4
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_a4}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_a4}
         ]
 
 save_
@@ -26330,8 +26330,8 @@ save_atom_type_scat.cromer_mann_b1
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_b1}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_b1}
         ]
 
 save_
@@ -26350,8 +26350,8 @@ save_atom_type_scat.cromer_mann_b2
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_b2}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_b2}
         ]
 
 save_
@@ -26370,8 +26370,8 @@ save_atom_type_scat.cromer_mann_b3
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_b3}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_b3}
         ]
 
 save_
@@ -26390,8 +26390,8 @@ save_atom_type_scat.cromer_mann_b4
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_b4}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_b4}
         ]
 save_
 
@@ -26446,8 +26446,8 @@ save_atom_type_scat.cromer_mann_c
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':cromer_mann_coeff}
-         {'file':templ_enum.cif  'save':cromer_mann_c}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':cromer_mann_coeff}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':cromer_mann_c}
         ]
 
 save_
@@ -26536,7 +26536,7 @@ save_atom_type_scat.dispersion_imag_cu
     _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
-        [{'file':templ_enum.cif  'save':dispersion_imag_cu}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':dispersion_imag_cu}]
 
 save_
 
@@ -26558,7 +26558,7 @@ save_atom_type_scat.dispersion_imag_mo
     _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
-        [{'file':templ_enum.cif  'save':dispersion_imag_mo}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':dispersion_imag_mo}]
 
 save_
 
@@ -26616,7 +26616,7 @@ save_atom_type_scat.dispersion_real_cu
     _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
-        [{'file':templ_enum.cif  'save':dispersion_real_cu}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':dispersion_real_cu}]
 
 save_
 
@@ -26638,7 +26638,7 @@ save_atom_type_scat.dispersion_real_mo
     _enumeration.def_index_ids    ['_atom_type.element_symbol']
 
     _import.get
-        [{'file':templ_enum.cif  'save':dispersion_real_mo}]
+        [{'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':dispersion_real_mo}]
 
 save_
 
@@ -26960,8 +26960,8 @@ save_atom_type_scat.hi_ang_fox_c0
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_fox_c0}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':hi_ang_fox_coeffs}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':hi_ang_fox_c0}
         ]
 
 save_
@@ -26974,8 +26974,8 @@ save_atom_type_scat.hi_ang_fox_c1
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_fox_c1}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':hi_ang_fox_coeffs}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':hi_ang_fox_c1}
         ]
 
 save_
@@ -26988,8 +26988,8 @@ save_atom_type_scat.hi_ang_fox_c2
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_fox_c2}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':hi_ang_fox_coeffs}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':hi_ang_fox_c2}
         ]
 
 save_
@@ -27002,8 +27002,8 @@ save_atom_type_scat.hi_ang_fox_c3
 
     _import.get
         [
-         {'file':templ_attr.cif  'save':hi_ang_fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_fox_c3}
+         {'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':hi_ang_fox_coeffs}
+         {'file':https://doi.org/10.1107/cifdic_enum_1.4.9  'save':hi_ang_fox_c3}
         ]
 
 save_
@@ -27530,7 +27530,7 @@ save_refine_diff.density_max_su
     _name.object_id               density_max_su
     _name.linked_item_id          '_refine_diff.density_max'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -27595,7 +27595,7 @@ save_refine_diff.density_min_su
     _name.object_id               density_min_su
     _name.linked_item_id          '_refine_diff.density_min'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -27665,7 +27665,7 @@ save_refine_diff.density_rms_su
     _name.object_id               density_RMS_su
     _name.linked_item_id          '_refine_diff.density_RMS'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -27888,7 +27888,7 @@ save_refine_ls.abs_structure_flack_su
     _name.linked_item_id          '_refine_ls.abs_structure_Flack'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -27942,7 +27942,7 @@ save_refine_ls.abs_structure_rogers_su
     _name.linked_item_id          '_refine_ls.abs_structure_Rogers'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -28089,7 +28089,7 @@ save_refine_ls.extinction_coef_su
     _name.linked_item_id          '_refine_ls.extinction_coef'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -28263,7 +28263,7 @@ save_refine_ls.f_calc_precision_su
     _name.object_id               F_calc_precision_su
     _name.linked_item_id          '_refine_ls.F_calc_precision'
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
     _method.purpose               Definition
     _method.expression
@@ -28335,7 +28335,7 @@ save_refine_ls.goodness_of_fit_all_su
     _name.linked_item_id          '_refine_ls.goodness_of_fit_all'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -28405,7 +28405,7 @@ save_refine_ls.goodness_of_fit_gt_su
     _name.linked_item_id          '_refine_ls.goodness_of_fit_gt'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -28463,7 +28463,7 @@ save_refine_ls.goodness_of_fit_ref_su
     _name.linked_item_id          '_refine_ls.goodness_of_fit_ref'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -28964,7 +28964,7 @@ save_refine_ls.restrained_s_all_su
     _name.linked_item_id          '_refine_ls.restrained_S_all'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -29037,7 +29037,7 @@ save_refine_ls.restrained_s_gt_su
     _name.linked_item_id          '_refine_ls.restrained_S_gt'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get                   [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
