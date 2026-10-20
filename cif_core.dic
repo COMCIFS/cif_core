@@ -30715,7 +30715,7 @@ save_
       _dictionary_author.email
          1               'Hall, Sydney R.'                  .
          .
-         2               'McMahon, Brian'                   0000-0003-0391-0002
+         2               'Allen, Frank'                     .
          .
          3               'Brown, I. D.'                     .
          .
@@ -30731,6 +30731,8 @@ save_
          .
          9               'Rainer, Daniel N.'                0000-0002-3272-3161
          d.n.rainer@soton.ac.uk
+         10              'McMahon, Brian'                   0000-0003-0391-0002
+         .
 
     loop_
       _dictionary_audit.version
