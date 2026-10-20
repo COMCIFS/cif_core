@@ -10,13 +10,13 @@ data_CIF_CORE
 
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
-    _dictionary.version           3.3.0
-    _dictionary.date              2026-09-22
-    _dictionary.uri               https://doi.org/10.1107/cifdic_core_3.3.0
+    _dictionary.version           3.3.1
+    _dictionary.date              2026-10-20
+    _dictionary.uri               https://doi.org/10.1107/cifdic_core_3.3.1
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore
-    _dictionary.doi               10.1107/cifdic_core_3.3.0
+    _dictionary.doi               10.1107/cifdic_core_3.3.1
     _description.text
 ;
     The CIF_CORE dictionary defines data items that are common to all domains
@@ -30987,4 +30987,8 @@ save_
        Removed _cell.diffrn_id, _cell_measurement.condition_id,
        _cell_measurement.diffrn_id and _diffrn.id as they belong
        logically in the multiblock dictionary.
+;
+         3.3.1                    2026-10-20
+;
+       Added missing dictionary author
 ;
